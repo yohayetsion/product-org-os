@@ -340,6 +340,33 @@ Before major commitments:
 
 ---
 
+## Distribution
+
+### GitHub Repository
+
+**Repository**: https://github.com/yohayetsion/product-org-os
+
+**Install Command**:
+```bash
+claude plugins install github:yohayetsion/product-org-os
+```
+
+**Interactive Presentation**: https://yohayetsion.github.io/product-org-os
+
+### Official Plugin Directory Submission
+
+**PR #20135**: https://github.com/anthropics/claude-code/pull/20135
+
+**Status**: Submitted January 22, 2026 - Awaiting Anthropic review
+
+**Submission includes**:
+- 110 files, +16,007 lines
+- Full plugin structure in `plugins/product-org-os/`
+- MIT License
+- Comprehensive documentation
+
+---
+
 ## Credits
 
 **Framework**: Vision to Value (V2V) Operating System

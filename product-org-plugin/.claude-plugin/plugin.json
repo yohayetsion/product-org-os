@@ -1,6 +1,6 @@
 {
   "name": "product-org",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Product Organization plugin with 56 skills, 13 agents, /product gateway, V2V phase tracking, principle validators, and parallel execution based on Vision to Value framework",
   "author": {
     "name": "Yohay Etsion",
