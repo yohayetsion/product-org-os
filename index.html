@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Org OS | AI-Powered Product Organization</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #e94560;
+            --primary-dark: #c73e54;
+            --secondary: #4ecca3;
+            --accent: #0f3460;
+            --bg: #1a1a2e;
+            --bg-card: #16213e;
+            --bg-elevated: #0f3460;
+            --text: #eaeaea;
+            --text-muted: #a0a0a0;
+            --text-dim: #707070;
+            --border: #2a2a4e;
+            --gradient-1: linear-gradient(135deg, #e94560 0%, #c73e54 100%);
+            --gradient-2: linear-gradient(135deg, #4ecca3 0%, #38b593 100%);
+            --gradient-3: linear-gradient(135deg, #ffc93c 0%, #f5a623 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 1rem;
+        }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.8rem;
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+            background: var(--bg-elevated);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        /* Sections */
+        section {
+            min-height: 100vh;
+            padding: 6rem 1.5rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding-top: 8rem;
+            background: linear-gradient(135deg, var(--bg) 0%, var(--bg-card) 50%, var(--bg-elevated) 100%);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(90deg, var(--text), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-tagline {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 4rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Gateway Terminal Demo */
+        .gateway-demo {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .terminal-window {
+            background: #0d0d1a;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 700px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border);
+        }
+
+        .terminal-header {
+            background: #1a1a2e;
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .terminal-dot.red { background: #ff5f56; }
+        .terminal-dot.yellow { background: #ffbd2e; }
+        .terminal-dot.green { background: #27ca40; }
+
+        .terminal-title {
+            margin-left: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        .terminal-body {
+            padding: 1.5rem;
+            min-height: 80px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.95rem;
+        }
+
+        .typing-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .prompt {
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .typed-text {
+            color: var(--text);
+        }
+
+        .typed-text .command {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .typed-text .context {
+            color: var(--text-muted);
+        }
+
+        .cursor {
+            color: var(--primary);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .positioning-note {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            max-width: 700px;
+            margin: 3rem auto 0;
+            line-height: 1.6;
+        }
+
+        /* Usage Patterns */
+        .usage-patterns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .usage-pattern {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .usage-pattern:hover {
+            border-color: var(--primary);
+        }
+
+        .usage-pattern.featured {
+            border-color: var(--primary);
+            box-shadow: 0 0 30px rgba(233, 69, 96, 0.15);
+        }
+
+        .pattern-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        .pattern-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .pattern-badge.recommended {
+            background: var(--primary);
+            color: white;
+        }
+
+        .pattern-header h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pattern-header p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .pattern-examples {
+            padding: 1rem;
+        }
+
+        .example-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 0.75rem;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .example-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .example-item code {
+            color: var(--primary);
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .example-item span {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Value Props */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .value-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+        }
+
+        .value-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .value-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .value-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Use Cases */
+        .use-cases {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .use-case {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .use-case-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .use-case-header h3 {
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .use-case-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .use-case-body {
+            padding: 1.5rem;
+        }
+
+        .use-case-body ul {
+            list-style: none;
+        }
+
+        .use-case-body li {
+            padding: 0.5rem 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .use-case-body li::before {
+            content: ">";
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* Operating System Framework */
+        .framework-phases {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .phase {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1.5rem;
+            align-items: start;
+            transition: all 0.3s;
+        }
+
+        .phase:hover {
+            border-color: var(--primary);
+        }
+
+        .phase-number {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .phase-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .phase-content p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .phase-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-family: monospace;
+        }
+
+        /* Agents Grid */
+        .agents-section {
+            padding: 6rem 1.5rem;
+        }
+
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .agent-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .agent-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .agent-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .agent-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .agent-info h3 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .agent-cmd {
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: var(--primary);
+        }
+
+        .agent-desc {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .agent-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .agent-skill {
+            background: var(--bg-elevated);
+            color: var(--text-dim);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-family: monospace;
+        }
+
+        /* Skills Section */
+        .skills-categories {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .skill-category {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .category-header {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .category-header h3 {
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .category-count {
+            background: var(--bg-elevated);
+            color: var(--text-muted);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1px;
+            background: var(--border);
+        }
+
+        .skill-item {
+            background: var(--bg-card);
+            padding: 1rem 1.25rem;
+        }
+
+        .skill-name {
+            font-family: monospace;
+            color: var(--secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .skill-desc {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* Context Layer */
+        .context-visual {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .context-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .context-item-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .context-item h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .context-item p {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        .context-id {
+            font-family: monospace;
+            color: var(--primary);
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Principles */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+
+        .principle {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .principle-number {
+            width: 32px;
+            height: 32px;
+            background: var(--gradient-1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .principle h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .principle p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Getting Started */
+        .getting-started {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .step {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            width: 36px;
+            height: 36px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .code-block {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: var(--secondary);
+            margin-top: 0.75rem;
+            overflow-x: auto;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 4rem 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Utility */
+        .gradient-text {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .bg-gradient-1 { background: var(--gradient-1); }
+        .bg-gradient-2 { background: var(--gradient-2); }
+        .bg-gradient-3 { background: var(--gradient-3); }
+
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            section {
+                padding: 5rem 1rem 3rem;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .stat-value {
+                font-size: 2.5rem;
+            }
+
+            .phase {
+                grid-template-columns: 1fr;
+            }
+
+            .use-cases {
+                grid-template-columns: 1fr;
+            }
+
+            .step {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        .scroll-indicator span {
+            display: block;
+            width: 24px;
+            height: 24px;
+            border-right: 2px solid var(--text-muted);
+            border-bottom: 2px solid var(--text-muted);
+            transform: rotate(45deg);
+        }
+
+        /* Table of Contents (Mobile) */
+        .toc-mobile {
+            display: none;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem;
+            z-index: 999;
+            max-height: calc(100vh - 60px);
+            overflow-y: auto;
+        }
+
+        .toc-mobile.active {
+            display: block;
+        }
+
+        .toc-mobile a {
+            display: block;
+            padding: 0.75rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .toc-mobile a:hover {
+            background: var(--bg-elevated);
+            color: var(--text);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <div class="nav-logo">Product Org OS</div>
+            <div class="nav-links">
+                <a href="#value">Value</a>
+                <a href="#use-cases">Use Cases</a>
+                <a href="#how-to-use">How to Use</a>
+                <a href="#framework">V2V Framework</a>
+                <a href="#agents">Agents</a>
+                <a href="#skills">Skills</a>
+                <a href="#start">Get Started</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">&#9776;</button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="toc-mobile" id="mobileMenu">
+        <a href="#value" onclick="toggleMobileMenu()">Value Proposition</a>
+        <a href="#use-cases" onclick="toggleMobileMenu()">Use Cases</a>
+        <a href="#how-to-use" onclick="toggleMobileMenu()">How to Use It</a>
+        <a href="#framework" onclick="toggleMobileMenu()">V2V Framework</a>
+        <a href="#agents" onclick="toggleMobileMenu()">Agents (13)</a>
+        <a href="#skills" onclick="toggleMobileMenu()">Skills (56)</a>
+        <a href="#context" onclick="toggleMobileMenu()">Context Layer</a>
+        <a href="#principles" onclick="toggleMobileMenu()">Principles</a>
+        <a href="#start" onclick="toggleMobileMenu()">Get Started</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <h1><span>Product Org OS</span></h1>
+            <p style="font-family: monospace; font-size: clamp(0.9rem, 2vw, 1.2rem); letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 1.5rem;">
+                Intent → Decisions → Commitments → Execution → Outcomes → Learning
+            </p>
+            <p class="hero-subtitle">An entire product organization that becomes your superpower.</p>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+                Installable in Claude Code. Works in your repo. Uses your context.
+            </p>
+            <span class="hero-tagline">Free & Open Source</span>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 2rem;">
+                13 agents • 56 skills • 11 strategic documents • Context layer
+            </p>
+            <p style="color: var(--secondary); font-size: 0.9rem; margin-top: 1rem;">
+                Based on the Vision to Value Executive Manifesto
+            </p>
+
+            <!-- /product Gateway Demo -->
+            <div class="gateway-demo">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title">Claude Code</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="typing-container">
+                            <span class="prompt">&gt;</span>
+                            <span class="typed-text" id="typed-text"></span>
+                            <span class="cursor">|</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section id="value">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Why Product Org OS</div>
+                <h2 class="section-title">Your AI-Powered Product Organization</h2>
+                <p class="section-desc">
+                    For product professionals at any level who want to drive outsized impact. 13 specialized agents and 56 production-ready skills that work together like a real team.
+                </p>
+            </div>
+
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon bg-gradient-1">&#129302;</div>
+                    <h3>Your Full Product Team</h3>
+                    <p>13 specialized agents covering real product org roles. CPO, VP Product, PM, PMM, BizOps, and more. Delegate work like you would to team members.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon bg-gradient-2">&#128218;</div>
+                    <h3>Production-Grade Outputs</h3>
+                    <p>PRDs, roadmaps, business cases, GTM strategies, pricing models, launch plans, QBR decks. Every skill follows proven frameworks.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon bg-gradient-3">&#129504;</div>
+                    <h3>Context Layer</h3>
+                    <p>Decisions, feedback, and learnings persist across sessions. Build institutional knowledge that compounds over time.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon bg-gradient-1">&#128200;</div>
+                    <h3>Quality Guardrails</h3>
+                    <p>Built-in validation for ownership, customer value, collaboration, and scalability. Catch issues before they become problems.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon bg-gradient-2">&#128640;</div>
+                    <h3>End-to-End Coverage</h3>
+                    <p>Six V2V phases from strategic intent to learning loop. Skills for every stage of the product lifecycle.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon bg-gradient-3">&#127912;</div>
+                    <h3>Scales With You</h3>
+                    <p>Junior PM? Get senior guidance. CPO? Amplify your reach. The same system works at every level.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section id="use-cases">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Who It's For</div>
+                <h2 class="section-title">Use Cases</h2>
+                <p class="section-desc">
+                    From individual contributors to entire product organizations, Product Org OS scales with your needs.
+                </p>
+            </div>
+            <div class="use-cases">
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>
+                            <span class="use-case-icon bg-gradient-1">&#128100;</span>
+                            Solo Product Professional
+                        </h3>
+                    </div>
+                    <div class="use-case-body">
+                        <ul>
+                            <li>Create complete PRDs without starting from scratch</li>
+                            <li>Get expert guidance on pricing, positioning, GTM</li>
+                            <li>Generate business cases for stakeholder buy-in</li>
+                            <li>Build roadmaps with proper phasing and dependencies</li>
+                            <li>Run competitive analysis like a specialist would</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>
+                            <span class="use-case-icon bg-gradient-2">&#128101;</span>
+                            Product Team
+                        </h3>
+                    </div>
+                    <div class="use-case-body">
+                        <ul>
+                            <li>Maintain consistent documentation standards</li>
+                            <li>Share organizational memory across team members</li>
+                            <li>Delegate specialized work to appropriate agents</li>
+                            <li>Track strategic bets and assumptions together</li>
+                            <li>Run retrospectives with structured learning capture</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>
+                            <span class="use-case-icon bg-gradient-3">&#127970;</span>
+                            Product Organization
+                        </h3>
+                    </div>
+                    <div class="use-case-body">
+                        <ul>
+                            <li>Establish decision frameworks across the org</li>
+                            <li>Build persistent institutional knowledge</li>
+                            <li>Track portfolio health and strategic alignment</li>
+                            <li>Embed product org maturity best practices</li>
+                            <li>Scale best practices to new team members</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Use It -->
+    <section id="how-to-use">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Three Ways to Work</div>
+                <h2 class="section-title">How to Use It</h2>
+                <p class="section-desc">
+                    Use the gateway for complex requests, or go direct to agents and skills when you know what you need.
+                </p>
+            </div>
+
+            <div class="usage-patterns">
+                <!-- /product Gateway -->
+                <div class="usage-pattern featured">
+                    <div class="pattern-header">
+                        <span class="pattern-badge recommended">Recommended</span>
+                        <h3>/product Gateway</h3>
+                        <p>Route any request to the right owners. Best for cross-functional work.</p>
+                    </div>
+                    <div class="pattern-examples">
+                        <div class="example-item">
+                            <code>/product</code>
+                            <span>Launch freemium tier for SMBs. Context: pricing-research.md, competitor-tiers.xlsx</span>
+                        </div>
+                        <div class="example-item">
+                            <code>/product</code>
+                            <span>Respond to Acme RFP due Friday. See: rfp-acme.pdf, our-capabilities.md</span>
+                        </div>
+                        <div class="example-item">
+                            <code>/product</code>
+                            <span>Competitor launched AI feature. Analyze impact on our roadmap.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Direct Agents -->
+                <div class="usage-pattern">
+                    <div class="pattern-header">
+                        <h3>Direct to Agents</h3>
+                        <p>Delegate to a specific role when you know who should handle it.</p>
+                    </div>
+                    <div class="pattern-examples">
+                        <div class="example-item">
+                            <code>/cpo</code>
+                            <span>Portfolio tradeoff: should we prioritize mobile or API expansion?</span>
+                        </div>
+                        <div class="example-item">
+                            <code>/product-manager</code>
+                            <span>Break down the checkout redesign into user stories</span>
+                        </div>
+                        <div class="example-item">
+                            <code>/bizops</code>
+                            <span>Build financial model for enterprise tier. See: pricing-data.xlsx</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Direct Skills -->
+                <div class="usage-pattern">
+                    <div class="pattern-header">
+                        <h3>Direct to Skills</h3>
+                        <p>Get a specific deliverable when you know exactly what you need.</p>
+                    </div>
+                    <div class="pattern-examples">
+                        <div class="example-item">
+                            <code>/prd</code>
+                            <span>SSO integration for enterprise. Requirements in slack-thread.md</span>
+                        </div>
+                        <div class="example-item">
+                            <code>/competitive-analysis</code>
+                            <span>Deep dive on Competitor X. See: their-demo-notes.md, pricing-page.url</span>
+                        </div>
+                        <div class="example-item">
+                            <code>/decision-record</code>
+                            <span>Document our choice to build vs buy analytics module</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision to Value Operating System -->
+    <section id="framework">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">The Operating System</div>
+                <h2 class="section-title">Vision to Value</h2>
+                <p class="section-desc">
+                    Six interconnected phases that transform strategic intent into business outcomes, feeding learning back into strategy.
+                </p>
+            </div>
+            <div class="framework-phases">
+                <div class="phase">
+                    <div class="phase-number">1</div>
+                    <div class="phase-content">
+                        <h3>Strategic Foundation <span style="color: var(--text-muted); font-weight: 400;">(Input Phase)</span></h3>
+                        <p>Establish the strategic context and market understanding that informs all downstream decisions.</p>
+                        <div class="phase-skills">
+                            <span class="skill-tag">/strategic-intent</span>
+                            <span class="skill-tag">/market-analysis</span>
+                            <span class="skill-tag">/competitive-landscape</span>
+                            <span class="skill-tag">/vision-statement</span>
+                            <span class="skill-tag">/market-segment</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="phase">
+                    <div class="phase-number">2</div>
+                    <div class="phase-content">
+                        <h3>Strategic Decisions <span style="color: var(--text-muted); font-weight: 400;">(Commercial Filter)</span></h3>
+                        <p>Make critical business decisions that determine commercial viability and positioning. Not all initiatives pass this gate.</p>
+                        <div class="phase-skills">
+                            <span class="skill-tag">/business-case</span>
+                            <span class="skill-tag">/pricing-strategy</span>
+                            <span class="skill-tag">/positioning-statement</span>
+                            <span class="skill-tag">/strategic-bet</span>
+                            <span class="skill-tag">/decision-record</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="phase">
+                    <div class="phase-number">3</div>
+                    <div class="phase-content">
+                        <h3>Strategic Commitments <span style="color: var(--text-muted); font-weight: 400;">(Point of No Return)</span></h3>
+                        <p>Convert decisions into commitments: roadmaps, GTM plans, and requirements that the organization will execute.</p>
+                        <div class="phase-skills">
+                            <span class="skill-tag">/product-roadmap</span>
+                            <span class="skill-tag">/gtm-strategy</span>
+                            <span class="skill-tag">/launch-plan</span>
+                            <span class="skill-tag">/prd</span>
+                            <span class="skill-tag">/commitment-check</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="phase">
+                    <div class="phase-number">4</div>
+                    <div class="phase-content">
+                        <h3>Coordinated Execution <span style="color: var(--text-muted); font-weight: 400;">(The Doing Phase)</span></h3>
+                        <p>Execute the plan with cross-functional coordination. Marketing campaigns, sales enablement, and launch readiness.</p>
+                        <div class="phase-skills">
+                            <span class="skill-tag">/campaign-brief</span>
+                            <span class="skill-tag">/sales-enablement</span>
+                            <span class="skill-tag">/launch-readiness</span>
+                            <span class="skill-tag">/stakeholder-brief</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="phase">
+                    <div class="phase-number">5</div>
+                    <div class="phase-content">
+                        <h3>Business & Customer Outcomes <span style="color: var(--text-muted); font-weight: 400;">(Output Phase)</span></h3>
+                        <p>Realize the promised value and track outcomes. Are customers getting what we promised?</p>
+                        <div class="phase-skills">
+                            <span class="skill-tag">/onboarding-playbook</span>
+                            <span class="skill-tag">/value-realization-report</span>
+                            <span class="skill-tag">/customer-health-scorecard</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="phase">
+                    <div class="phase-number">6</div>
+                    <div class="phase-content">
+                        <h3>Learning & Adaptation Loop <span style="color: var(--text-muted); font-weight: 400;">(System Brain)</span></h3>
+                        <p>Extract learnings, validate assumptions, and feed insights back into Phase 1. The organization gets smarter.</p>
+                        <div class="phase-skills">
+                            <span class="skill-tag">/outcome-review</span>
+                            <span class="skill-tag">/retrospective</span>
+                            <span class="skill-tag">/decision-quality-audit</span>
+                            <span class="skill-tag">/context-save</span>
+                            <span class="skill-tag">/feedback-capture</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agents Section -->
+    <section id="agents" class="agents-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">AI Agents</div>
+                <h2 class="section-title">13 Specialized Agents</h2>
+                <p class="section-desc">
+                    Each agent embodies a real product org role with defined responsibilities, skills, and delegation patterns.
+                </p>
+            </div>
+            <div class="agents-grid">
+                <!-- Leadership Agents -->
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-avatar bg-gradient-1">&#128081;</div>
+                        <div class="agent-info">
+                            <h3>Chief Product Officer</h3>
+                            <span class="agent-cmd">/cpo</span>
+                        </div>
+                    </div>
+                    <p class="agent-desc">Executive product strategy, organization design, portfolio decisions, and board communication.</p>
+                    <div class="agent-skills">
+                        <span class="agent-skill">decision-record</span>
+                        <span class="agent-skill">strategic-bet</span>
+                        <span class="agent-skill">portfolio-tradeoff</span>
+                        <span class="agent-skill">vision-statement</span>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-avatar bg-gradient-1">&#127942;</div>
+                        <div class="agent-info">
+                            <h3>VP of Product</h3>
+                            <span class="agent-cmd">/vp-product</span>
+                        </div>
+                    </div>
+                    <p class="agent-desc">Product vision, roadmap accountability, pricing strategy, and org structure guidance.</p>
+                    <div class="agent-skills">
+                        <span class="agent-skill">vision-statement</span>
+                        <span class="agent-skill">pricing-strategy</span>
+                        <span class="agent-skill">product-roadmap</span>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-avatar bg-gradient-2">&#128218;</div>
+                        <div class="agent-info">
+                            <h3>Director of Product Management</h3>
+                            <span class="agent-cmd">/director-product-management</span>
+                        </div>
+                    </div>
+                    <p class="agent-desc">Roadmap governance, team coordination, requirements processes, and delivery planning.</p>
+                    <div class="agent-skills">
+                        <span class="agent-skill">product-roadmap</span>
+                        <span class="agent-skill">roadmap-theme</span>
+                        <span class="agent-skill">prd</span>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-avatar bg-gradient-3">&#128227;</div>
+                        <div class="agent-info">
+                            <h3>Director of Product Marketing</h3>
+                            <span class="agent-cmd">/director-product-marketing</span>
+                        </div>
+                    </div>
+                    <p class="agent-desc">GTM strategy, positioning, competitive intelligence, and launch coordination.</p>
+                    <div class="agent-skills">
+                        <span class="agent-skill">gtm-strategy</span>
+                        <span class="agent-skill">positioning-statement</span>
+                        <span class="agent-skill">launch-plan</span>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-avatar bg-gradient-2">&#128221;</div>
+                        <div class="agent-info">
+                            <h3>Product Manager</h3>
+                            <span class="agent-cmd">/product-manager</span>
+                        </div>
+                    </div>
+                    <p class="agent-desc">Feature specs, user stories, delivery planning, and backlog management.</p>
+                    <div class="agent-skills">
+                        <span class="agent-skill">prd</span>
+                        <span class="agent-skill">feature-spec</span>
+                        <span class="agent-skill">user-story</span>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-avatar bg-gradient-3">&#128226;</div>
+                        <div class="agent-info">
+                            <h3>Product Marketing Manager</h3>
+                            <span class="agent-cmd">/product-marketing-manager</span>
+                        </div>
+                    </div>
+                    <p class="agent-desc">Campaigns, collateral, customer research, and sales enablement materials.</p>
+                    <div class="agent-skills">
+                        <span class="agent-skill">campaign-brief</span>
+                        <span class="agent-skill">sales-enablement</span>
+                        <span class="agent-skill">competitive-analysis</span>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-avatar bg-gradient-1">&#128200;</div>
+                        <div class="agent-info">
+                            <h3>Business Operations</h3>
+                            <span class="agent-cmd">/bizops</span>
+                        </div>
+                    </div>
+                    <p class="agent-desc">Business cases, financial analysis, KPI tracking, and QBR preparation.</p>
+                    <div class="agent-skills">
+                        <span class="agent-skill">business-case</span>
+                        <span class="agent-skill">business-plan</span>
+                        <span class="agent-skill">qbr-deck</span>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-avatar bg-gradient-2">&#128176;</div>
+                        <div class="agent-info">
+                            <h3>Value Realization</h3>
+                            <span class="agent-cmd">/value-realization</span>
+                        </div>
+                    </div>
+                    <p class="agent-desc">Success metrics, ROI analysis, adoption tracking, and customer outcomes.</p>
+                    <div class="agent-skills">
+                        <span class="agent-skill">value-realization-report</span>
+                        <span class="agent-skill">customer-health-scorecard</span>
+                        <span class="agent-skill">outcome-review</span>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-avatar bg-gradient-3">&#128269;</div>
+                        <div class="agent-info">
+                            <h3>Competitive Intelligence</h3>
+                            <span class="agent-cmd">/competitive-intelligence</span>
+                        </div>
+                    </div>
+                    <p class="agent-desc">Competitor analysis, win/loss analysis, market research, and trend monitoring.</p>
+                    <div class="agent-skills">
+                        <span class="agent-skill">competitive-landscape</span>
+                        <span class="agent-skill">competitive-analysis</span>
+                        <span class="agent-skill">market-analysis</span>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-avatar bg-gradient-1">&#129309;</div>
+                        <div class="agent-info">
+                            <h3>Business Development</h3>
+                            <span class="agent-cmd">/bizdev</span>
+                        </div>
+                    </div>
+                    <p class="agent-desc">Partnership strategy, market expansion, deal structuring, and ecosystem plays.</p>
+                    <div class="agent-skills">
+                        <span class="agent-skill">market-segment</span>
+                        <span class="agent-skill">business-case</span>
+                        <span class="agent-skill">strategic-bet</span>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-avatar bg-gradient-2">&#9881;</div>
+                        <div class="agent-info">
+                            <h3>Product Operations</h3>
+                            <span class="agent-cmd">/product-operations</span>
+                        </div>
+                    </div>
+                    <p class="agent-desc">Process optimization, launch coordination, tooling, and cross-team facilitation.</p>
+                    <div class="agent-skills">
+                        <span class="agent-skill">launch-readiness</span>
+                        <span class="agent-skill">retrospective</span>
+                        <span class="agent-skill">stakeholder-brief</span>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-avatar bg-gradient-3">&#127912;</div>
+                        <div class="agent-info">
+                            <h3>UX Lead</h3>
+                            <span class="agent-cmd">/ux-lead</span>
+                        </div>
+                    </div>
+                    <p class="agent-desc">User research planning, design specs, usability testing, and design system guidance.</p>
+                    <div class="agent-skills">
+                        <span class="agent-skill">feature-spec</span>
+                        <span class="agent-skill">user-story</span>
+                        <span class="agent-skill">feedback-capture</span>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-avatar bg-gradient-1">&#128101;</div>
+                        <div class="agent-info">
+                            <h3>Product Leadership Team</h3>
+                            <span class="agent-cmd">/product-leadership-team</span>
+                        </div>
+                    </div>
+                    <p class="agent-desc">Portfolio tradeoffs, launch go/no-go decisions, strategic alignment, and outcome reviews.</p>
+                    <div class="agent-skills">
+                        <span class="agent-skill">portfolio-tradeoff</span>
+                        <span class="agent-skill">outcome-review</span>
+                        <span class="agent-skill">decision-quality-audit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Capabilities</div>
+                <h2 class="section-title">56 Professional Skills</h2>
+                <p class="section-desc">
+                    Every skill generates structured outputs following proven templates and best practices.
+                </p>
+            </div>
+            <div class="skills-categories">
+                <!-- Documents -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <h3>&#128196; Documents</h3>
+                        <span class="category-count">11 skills</span>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-name">/prd</div>
+                            <div class="skill-desc">Full Product Requirements Document</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/product-roadmap</div>
+                            <div class="skill-desc">Product roadmap with phasing</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/business-case</div>
+                            <div class="skill-desc">Investment business case</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/business-plan</div>
+                            <div class="skill-desc">Comprehensive business plan</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/gtm-strategy</div>
+                            <div class="skill-desc">Go-to-market strategy</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/pricing-strategy</div>
+                            <div class="skill-desc">Pricing with packaging</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/competitive-landscape</div>
+                            <div class="skill-desc">Competitive landscape analysis</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/market-analysis</div>
+                            <div class="skill-desc">Market analysis document</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/launch-plan</div>
+                            <div class="skill-desc">Product launch plan</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/qbr-deck</div>
+                            <div class="skill-desc">Quarterly business review</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/prd-outline</div>
+                            <div class="skill-desc">PRD outline/structure</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Context Layer -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <h3>&#129504; Context Layer</h3>
+                        <span class="category-count">7 skills</span>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-name">/context-save</div>
+                            <div class="skill-desc">Save decisions, bets, learnings</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/context-recall</div>
+                            <div class="skill-desc">Query past decisions by topic</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/portfolio-status</div>
+                            <div class="skill-desc">View current strategic bets</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/handoff</div>
+                            <div class="skill-desc">Capture context for delegation</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/relevant-learnings</div>
+                            <div class="skill-desc">Find applicable learnings</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/feedback-capture</div>
+                            <div class="skill-desc">Capture product feedback</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/feedback-recall</div>
+                            <div class="skill-desc">Query feedback by topic</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Operating System Skills -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <h3>&#128161; Operating System</h3>
+                        <span class="category-count">8 skills</span>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-name">/strategic-intent</div>
+                            <div class="skill-desc">Strategic intent document</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/strategy-communication</div>
+                            <div class="skill-desc">Strategy comms package</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/campaign-brief</div>
+                            <div class="skill-desc">Marketing campaign brief</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/sales-enablement</div>
+                            <div class="skill-desc">Sales enablement materials</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/onboarding-playbook</div>
+                            <div class="skill-desc">Customer onboarding playbook</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/value-realization-report</div>
+                            <div class="skill-desc">Customer value report</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/customer-health-scorecard</div>
+                            <div class="skill-desc">Customer health metrics</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/retrospective</div>
+                            <div class="skill-desc">Structured retrospective</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decisions -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <h3>&#9878; Decisions</h3>
+                        <span class="category-count">3 skills</span>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-name">/decision-record</div>
+                            <div class="skill-desc">Structured decision record</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/decision-charter</div>
+                            <div class="skill-desc">Charter for recurring decisions</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/escalation-rule</div>
+                            <div class="skill-desc">Escalation rules definition</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strategy -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <h3>&#9889; Strategy</h3>
+                        <span class="category-count">3 skills</span>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-name">/strategic-bet</div>
+                            <div class="skill-desc">Define bet with assumptions</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/commitment-check</div>
+                            <div class="skill-desc">Pre-commitment readiness</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/portfolio-tradeoff</div>
+                            <div class="skill-desc">Portfolio-level tradeoffs</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Assets -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <h3>&#128230; Assets</h3>
+                        <span class="category-count">8 skills</span>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-name">/vision-statement</div>
+                            <div class="skill-desc">Product vision statement</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/roadmap-theme</div>
+                            <div class="skill-desc">Roadmap theme definition</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/roadmap-item</div>
+                            <div class="skill-desc">Individual roadmap item</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/gtm-brief</div>
+                            <div class="skill-desc">Shorter GTM brief</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/pricing-model</div>
+                            <div class="skill-desc">Pricing model definition</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/positioning-statement</div>
+                            <div class="skill-desc">Market positioning</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/competitive-analysis</div>
+                            <div class="skill-desc">Single competitor analysis</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/market-segment</div>
+                            <div class="skill-desc">Market segment definition</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Requirements -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <h3>&#128203; Requirements</h3>
+                        <span class="category-count">3 skills</span>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-name">/feature-spec</div>
+                            <div class="skill-desc">Feature specification</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/user-story</div>
+                            <div class="skill-desc">User story with acceptance</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/prd-outline</div>
+                            <div class="skill-desc">PRD structure outline</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Operations -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <h3>&#128640; Operations</h3>
+                        <span class="category-count">3 skills</span>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-name">/launch-readiness</div>
+                            <div class="skill-desc">Launch readiness checklist</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/stakeholder-brief</div>
+                            <div class="skill-desc">Stakeholder briefing</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/outcome-review</div>
+                            <div class="skill-desc">Post-launch outcome review</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Assessment -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <h3>&#128202; Assessment</h3>
+                        <span class="category-count">3 skills</span>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-name">/maturity-check</div>
+                            <div class="skill-desc">Product org maturity assessment</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/pm-level-check</div>
+                            <div class="skill-desc">PM competency assessment</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/decision-quality-audit</div>
+                            <div class="skill-desc">Decision quality audit</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Setup & Utility -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <h3>&#9881; Setup & Utility</h3>
+                        <span class="category-count">2 skills</span>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-name">/setup</div>
+                            <div class="skill-desc">Initialize Product Org OS per project</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">/present</div>
+                            <div class="skill-desc">Generate HTML presentations</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Context Layer -->
+    <section id="context">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Organizational Memory</div>
+                <h2 class="section-title">The Context Layer</h2>
+                <p class="section-desc">
+                    Build persistent institutional knowledge that compounds over time. Decisions, feedback, and learnings are never lost.
+                </p>
+            </div>
+            <div class="context-visual">
+                <div class="context-item">
+                    <div class="context-item-icon">&#128221;</div>
+                    <h4>Decisions</h4>
+                    <p>Track strategic and operational decisions with options, rationale, and success criteria</p>
+                    <div class="context-id">DR-2026-001</div>
+                </div>
+                <div class="context-item">
+                    <div class="context-item-icon">&#127922;</div>
+                    <h4>Strategic Bets</h4>
+                    <p>Explicit bets with assumptions, checkpoints, and re-decision triggers</p>
+                    <div class="context-id">SB-2026-003</div>
+                </div>
+                <div class="context-item">
+                    <div class="context-item-icon">&#128161;</div>
+                    <h4>Assumptions</h4>
+                    <p>Testable assumptions with validation methods and timelines</p>
+                    <div class="context-id">A-015</div>
+                </div>
+                <div class="context-item">
+                    <div class="context-item-icon">&#127891;</div>
+                    <h4>Learnings</h4>
+                    <p>Organizational insights with evidence and application guidance</p>
+                    <div class="context-id">L-042</div>
+                </div>
+                <div class="context-item">
+                    <div class="context-item-icon">&#128172;</div>
+                    <h4>Feedback</h4>
+                    <p>Customer and market feedback with full metadata and analysis</p>
+                    <div class="context-id">FB-2026-001</div>
+                </div>
+                <div class="context-item">
+                    <div class="context-item-icon">&#128209;</div>
+                    <h4>Themes</h4>
+                    <p>Recurring patterns across 3+ feedback entries</p>
+                    <div class="context-id">TH-005</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Principles -->
+    <section id="principles">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Foundation</div>
+                <h2 class="section-title">8 Operating Principles</h2>
+                <p class="section-desc">
+                    Every skill and agent operates within these principles from the Vision to Value Operating System.
+                </p>
+            </div>
+            <div class="principles-grid">
+                <div class="principle">
+                    <div class="principle-number">1</div>
+                    <h4>End-to-end Ownership Is Non-Negotiable</h4>
+                    <p>Product org accountable from strategy through customer outcomes.</p>
+                </div>
+                <div class="principle">
+                    <div class="principle-number">2</div>
+                    <h4>Strategy Precedes Structure</h4>
+                    <p>Organizational design follows strategic priorities, not the reverse.</p>
+                </div>
+                <div class="principle">
+                    <div class="principle-number">3</div>
+                    <h4>Product Leadership Is About Decision Quality</h4>
+                    <p>The core metric for product leadership effectiveness.</p>
+                </div>
+                <div class="principle">
+                    <div class="principle-number">4</div>
+                    <h4>Alignment Beats Consensus</h4>
+                    <p>Right people, right inputs, right time - but decisions need single owners.</p>
+                </div>
+                <div class="principle">
+                    <div class="principle-number">5</div>
+                    <h4>Go-to-market Is a Strategic Choice, Not a Handoff</h4>
+                    <p>GTM is integral to product strategy, not an afterthought.</p>
+                </div>
+                <div class="principle">
+                    <div class="principle-number">6</div>
+                    <h4>Execution Is a Leadership Discipline</h4>
+                    <p>Leaders stay engaged through delivery, not just planning.</p>
+                </div>
+                <div class="principle">
+                    <div class="principle-number">7</div>
+                    <h4>Scale Changes the Nature of the Work</h4>
+                    <p>What worked at one stage must evolve as the organization grows.</p>
+                </div>
+                <div class="principle">
+                    <div class="principle-number">8</div>
+                    <h4>Organizations Learn Through Outcomes</h4>
+                    <p>Systematic capture and application of learnings from real results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Started -->
+    <section id="start">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Quick Start</div>
+                <h2 class="section-title">Get Started in 3 Steps</h2>
+                <p class="section-desc">
+                    From installation to your first deliverable in minutes.
+                </p>
+            </div>
+            <div class="getting-started">
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Install Product Org OS</h4>
+                            <p>Add Product Org OS to your Claude Code installation.</p>
+                            <div class="code-block">claude plugins install github:yohay/product-org-os</div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Initialize Your Project</h4>
+                            <p>Run setup to create the context layer folder structure in your project.</p>
+                            <div class="code-block">/setup</div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Start Creating</h4>
+                            <p>Three ways to work: gateway, agents, or skills. Point any of them at your existing context.</p>
+                            <div class="code-block">/product Launch freemium tier for SMBs. Context: pricing-research.md, competitor-tiers.xlsx</div>
+                            <div class="code-block" style="margin-top: 0.5rem;">/cpo Portfolio tradeoff: mobile app vs API expansion. See: eng-estimates.md, market-data.xlsx</div>
+                            <div class="code-block" style="margin-top: 0.5rem;">/prd SSO integration for enterprise customers. Requirements in slack-thread.md</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p style="margin-bottom: 1rem;">
+                <strong>Product Org OS</strong>
+            </p>
+            <p>
+                Based on <em>"Vision to Value: Your Executive Manifesto and Operating System for World-Class Product Organizations"</em>
+            </p>
+            <p style="margin-top: 1rem;">
+                Created by <a href="#">Yohay Etsion</a> | MIT License
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.querySelector('.mobile-menu-btn');
+            if (!menu.contains(e.target) && !btn.contains(e.target)) {
+                menu.classList.remove('active');
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.value-card, .agent-card, .skill-category, .principle, .phase').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Typing animation for /product gateway demo
+        const commands = [
+            { text: '/product', context: ' Launch freemium for SMBs. Context: pricing-research.md, competitor-tiers.xlsx, Sarah\'s Slack thread from Monday' },
+            { text: '/product', context: ' Respond to Acme Corp RFP due Friday. See: rfp-acme.pdf, our-capabilities.md, @sales channel feedback' },
+            { text: '/product', context: ' Q2 roadmap draft. Inputs: customer-interviews/, eng-capacity.md, board-feedback-jan.pdf' },
+            { text: '/product', context: ' Competitor launched AI feature. Analyze: techcrunch-article.url, their-demo-notes.md, our-roadmap.md' },
+            { text: '/product', context: ' Business case for mobile app. Data: market-size.xlsx, user-research/, CFO email from yesterday' }
+        ];
+
+        let commandIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let isPaused = false;
+        const typedText = document.getElementById('typed-text');
+
+        function typeCommand() {
+            const current = commands[commandIndex];
+            const fullText = current.text + current.context;
+
+            if (!isDeleting && charIndex <= fullText.length) {
+                // Typing
+                const displayText = fullText.substring(0, charIndex);
+                const commandPart = displayText.substring(0, current.text.length);
+                const contextPart = displayText.substring(current.text.length);
+
+                typedText.innerHTML = `<span class="command">${commandPart}</span><span class="context">${contextPart}</span>`;
+                charIndex++;
+
+                if (charIndex > fullText.length) {
+                    isPaused = true;
+                    setTimeout(() => {
+                        isPaused = false;
+                        isDeleting = true;
+                        typeCommand();
+                    }, 2500);
+                    return;
+                }
+                setTimeout(typeCommand, charIndex <= current.text.length ? 80 : 40);
+            } else if (isDeleting && charIndex >= 0) {
+                // Deleting
+                const displayText = fullText.substring(0, charIndex);
+                const commandPart = displayText.substring(0, Math.min(charIndex, current.text.length));
+                const contextPart = charIndex > current.text.length ? displayText.substring(current.text.length) : '';
+
+                typedText.innerHTML = `<span class="command">${commandPart}</span><span class="context">${contextPart}</span>`;
+                charIndex--;
+
+                if (charIndex < 0) {
+                    isDeleting = false;
+                    commandIndex = (commandIndex + 1) % commands.length;
+                    charIndex = 0;
+                    setTimeout(typeCommand, 500);
+                    return;
+                }
+                setTimeout(typeCommand, 25);
+            }
+        }
+
+        // Start typing animation
+        setTimeout(typeCommand, 1000);
+    </script>
+</body>
+</html>
