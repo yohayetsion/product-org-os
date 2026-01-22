@@ -6,7 +6,7 @@
 
 13 agents • 56 skills • 11 strategic documents • Context layer
 
-[**View the Interactive Presentation →**](https://yohay.github.io/product-org-os)
+[**View the Interactive Presentation →**](https://yohayetsion.github.io/product-org-os)
 
 ---
 
@@ -14,7 +14,7 @@
 
 ```bash
 # Install in Claude Code
-claude plugins install github:yohay/product-org-os
+claude plugins install github:yohayetsion/product-org-os
 
 # Initialize in your project
 /setup
@@ -79,7 +79,7 @@ Six phases from strategic intent to learning loop, with skills mapped to each ph
 
 ## Documentation
 
-- [Interactive Presentation](https://yohay.github.io/product-org-os) - Visual overview
+- [Interactive Presentation](https://yohayetsion.github.io/product-org-os) - Visual overview
 - [Full Documentation](./PRODUCT-ORG-CLAUDE.md) - Complete skill reference
 
 ---
