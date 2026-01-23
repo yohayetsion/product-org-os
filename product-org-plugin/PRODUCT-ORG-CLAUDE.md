@@ -226,11 +226,13 @@ context/
 │   └── index.md                 # Accumulated wisdom
 ├── handoffs/
 │   └── current-session.md       # Agent delegation context
-└── feedback/
-    ├── index.md                 # Feedback registry
-    ├── themes.md                # Recurring patterns
-    └── [YYYY]/
-        └── FB-2026-001.md       # Full feedback records
+├── feedback/
+│   ├── index.md                 # Feedback registry
+│   ├── themes.md                # Recurring patterns
+│   └── [YYYY]/
+│       └── FB-2026-001.md       # Full feedback records
+└── documents/
+    └── registry.md              # Document registry for all strategic docs
 ```
 
 ### ID Conventions
