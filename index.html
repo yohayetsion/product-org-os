@@ -2006,12 +2006,12 @@
                         <div class="step-number">3</div>
                         <div class="step-content">
                             <h4>Start Creating</h4>
-                            <p>Natural language with any combination of agents, skills, and your files.</p>
+                            <p>Natural language with gateway, agents, or skills — create, update, or find.</p>
                             <div class="code-block">/product Launch freemium tier. Context: pricing-research.md</div>
+                            <div class="code-block" style="margin-top: 0.5rem;">/prd for new checkout optimization feature</div>
+                            <div class="code-block" style="margin-top: 0.5rem;">/decision-record for build vs buy on auth system</div>
                             <div class="code-block" style="margin-top: 0.5rem;">/product-leadership-team review meeting-notes.md and update the /prd</div>
-                            <div class="code-block" style="margin-top: 0.5rem;">/cpo review board-feedback.pdf and update /strategic-intent</div>
-                            <div class="code-block" style="margin-top: 0.5rem;">/director-product-marketing review launch-data.xlsx and update /gtm-strategy</div>
-                            <div class="code-block" style="margin-top: 0.5rem;">/prd find all authentication-related requirements</div>
+                            <div class="code-block" style="margin-top: 0.5rem;">/competitive-analysis update Competitor X with announcement.md</div>
                         </div>
                     </div>
                 </div>
@@ -2086,21 +2086,28 @@
         const commands = [
             // /product gateway
             { text: '/product', context: ' Launch freemium for SMBs. Context: pricing-research.md' },
-            // Agent + review + update skill pattern
+            // Direct skill - CREATE
+            { text: '/prd', context: ' for new checkout optimization feature' },
+            // Agent + file + skill pattern
             { text: '/product-leadership-team', context: ' review meeting-notes.md and update the /prd' },
+            // Direct skill - CREATE
+            { text: '/decision-record', context: ' for build vs buy on auth system' },
+            // Agent + file + skill
             { text: '/cpo', context: ' review board-feedback.pdf and update /strategic-intent' },
+            // Direct skill - UPDATE
+            { text: '/competitive-analysis', context: ' update Competitor X with their-announcement.md' },
             // Agent with file context
             { text: '/product-manager', context: ' break down epic.md into /user-story items' },
+            // Direct skill - CREATE
+            { text: '/business-case', context: ' for mobile app expansion. Data: market-size.xlsx' },
+            // Agent + file + skill
             { text: '/director-product-marketing', context: ' review launch-data.xlsx and update /gtm-strategy' },
-            // Skills with update mode
-            { text: '/decision-record', context: ' update pricing decision with test results from ab-test.csv' },
-            { text: '/competitive-analysis', context: ' update Competitor X analysis. New data: their-announcement.md' },
-            // More natural patterns
-            { text: '/bizops', context: ' analyze churn-report.xlsx and recommend for /pricing-strategy' },
+            // Direct skill - FIND
             { text: '/prd', context: ' find all authentication-related requirements' },
-            { text: '/product', context: ' Q3 planning. Inputs: customer-feedback/, capacity.md, strategy.pdf' },
-            { text: '/roadmap-theme', context: ' update Growth with mobile initiatives from research.md' },
-            { text: '/vp-product', context: ' review sales-feedback.md and update /positioning-statement' }
+            // /product gateway
+            { text: '/product', context: ' Q3 planning. Inputs: customer-feedback/, capacity.md' },
+            // Direct skill - UPDATE
+            { text: '/roadmap-theme', context: ' update Growth with mobile initiatives' }
         ];
 
         let commandIndex = 0;
