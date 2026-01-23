@@ -34,7 +34,21 @@ Your single entry point. Routes requests to the right agents automatically.
 /product Q2 planning. Inputs: customer-interviews/, eng-capacity.md
 ```
 
+**Response Depth** (`+`/`-` modifiers):
+| Modifier | Effect | Example |
+|----------|--------|---------|
+| `-` | Brief - executive summary | `/product What's launch status? -` |
+| *(none)* | Standard - balanced depth | `/product What's launch status?` |
+| `+` | Deep - full analysis | `/product What's launch status? +` |
+
 **Meeting Mode**: When you use `/product` or `/plt`, you'll see responses from *individual agents* speaking in their own voice - like walking into a meeting room. You'll see who's engaged, their perspectives, agreements, and tensions. This isn't a monolithic AI response - it's your product org thinking together.
+
+**Multi-Product Organizations**: Filter context by product:
+```
+/context-recall pricing product:AXIA
+/feedback-recall onboarding product:SKYMOD
+/portfolio-status product:AXIA
+```
 
 ### Talk to Agents
 Delegate to specific roles. Use shortcuts for faster access.

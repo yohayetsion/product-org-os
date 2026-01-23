@@ -56,7 +56,8 @@ Gather all available context about the feedback:
 | **Source Type** | Customer / Prospect / Sales / Support / Research / Internal | Yes |
 | **Source Name** | Person, company, or study name | Yes |
 | **Source Role** | Title/role if known | If available |
-| **Product/Feature** | What the feedback relates to | Yes |
+| **Product** | Which product (for multi-product orgs, e.g., AXIA, SKYMOD) | If applicable |
+| **Feature** | What feature/area the feedback relates to | Yes |
 | **Product Version** | Version number if applicable | If available |
 | **Channel** | How feedback was received | Yes |
 | **Customer Segment** | Enterprise / SMB / Startup / etc. | If known |
@@ -162,7 +163,8 @@ Feedback captured: FB-2026-015
 | **Source Type** | [Type] |
 | **Source Name** | [Name] |
 | **Source Role** | [Role] |
-| **Product/Feature** | [What] |
+| **Product** | [Product name - for multi-product orgs] |
+| **Feature** | [Feature/area] |
 | **Product Version** | [Version] |
 | **Channel** | [Channel] |
 | **Captured By** | @[agent] |

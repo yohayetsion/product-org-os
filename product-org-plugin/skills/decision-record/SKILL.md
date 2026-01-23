@@ -68,6 +68,7 @@ Decision records capture the context, options, and rationale for important decis
 **Date**: [Date decided]
 **Status**: Proposed / Accepted / Superseded / Deprecated
 **Accountable Owner**: [Single person/role who can say yes/no]
+**Product**: [Product name - optional, for multi-product organizations]
 
 ## Context
 

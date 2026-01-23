@@ -136,6 +136,70 @@ Use principle validators at these key points:
 | Themes | `context/feedback/themes.md` | (in file) |
 | Principles | `context/principles/scorecard.md` | (in file) |
 
+## Multi-Product Organizations
+
+For organizations managing multiple products (e.g., a holding company with several product lines), the context layer supports an optional `product:` field for filtering and organization.
+
+### How It Works
+
+- **Single-product organizations**: Ignore the product field entirely. Everything works as before.
+- **Multi-product organizations**: Add a `Product` field to records and use `product:` filter in queries.
+
+### Product Field in Records
+
+When creating decisions, bets, or feedback for a specific product:
+
+```markdown
+**Product**: AXIA
+```
+
+When a record applies across products or at the holding company level:
+- Leave blank, or
+- Use `Product: [Company Name]` or `Product: all`
+
+### Filtering by Product
+
+Use the `product:` filter in recall commands:
+
+```
+/context-recall pricing product:AXIA
+→ Returns only pricing-related context for AXIA
+
+/feedback-recall onboarding product:SKYMOD
+→ Returns only onboarding feedback for SKYMOD
+
+/context-recall pricing
+→ Returns pricing context across ALL products (no filter)
+```
+
+### Index File Format
+
+Index files include an optional Product column:
+
+```markdown
+| ID | Title | Date | Owner | Product | Status | Tags |
+|----|-------|------|-------|---------|--------|------|
+| DR-2026-001 | API Pricing | 2026-01-15 | @pm | AXIA | Accepted | pricing, api |
+| DR-2026-002 | Brand Guidelines | 2026-01-20 | @marketing | SKYMOD | Accepted | brand |
+| DR-2026-003 | Shared Infra | 2026-01-22 | @cto | | Accepted | infra |
+```
+
+Records without a Product value are considered cross-product or unscoped.
+
+### Best Practices
+
+1. **Be consistent**: Use the same product names throughout (e.g., always "AXIA", not "Axia" or "axia")
+2. **Cross-product items**: Explicitly mark items that span products, or leave Product blank
+3. **Product-level portfolios**: Consider separate portfolio views per product using `/portfolio-status product:AXIA`
+4. **Learnings**: Some learnings apply broadly - don't over-filter these
+
+### Plugin Portability
+
+This feature is **fully optional**. Organizations with a single product can ignore it completely:
+- The product field is optional in all templates
+- If no product filter is specified, queries return all results
+- Index files work with or without the Product column
+
 ## ID Conventions
 
 - **Decisions**: `DR-[YYYY]-[NNN]` (e.g., DR-2026-001)

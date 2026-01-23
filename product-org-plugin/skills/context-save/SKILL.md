@@ -54,8 +54,9 @@ Ask the user what they want to save:
 #### For Decision Records
 Extract and save:
 ```markdown
-| ID | Title | Date | Owner | Status | Tags |
+| ID | Title | Date | Owner | Product | Status | Tags |
 ```
+- Include Product field if specified (for multi-product organizations)
 - Generate tags from content (3-5 relevant keywords)
 - Link related decisions if mentioned
 - Extract assumptions to assumption registry
@@ -63,8 +64,9 @@ Extract and save:
 #### For Strategic Bets
 Extract and save:
 ```markdown
-| ID | Title | Date | Owner | Status | Key Assumption |
+| ID | Title | Date | Owner | Product | Status | Key Assumption |
 ```
+- Include Product field if specified (for multi-product organizations)
 - Add to `context/portfolio/active-bets.md` if status is Active
 - Extract ALL explicit assumptions to `context/assumptions/registry.md`
 - Note upcoming checkpoints
@@ -72,8 +74,9 @@ Extract and save:
 #### For Learnings
 Extract and save:
 ```markdown
-| ID | Learning | Source | Date | Tags | Confidence |
+| ID | Learning | Source | Date | Product | Tags | Confidence |
 ```
+- Include Product field if applicable (for multi-product organizations)
 - Categorize by type (Strategy, Product, GTM, Customer, Process)
 - Link to source document
 

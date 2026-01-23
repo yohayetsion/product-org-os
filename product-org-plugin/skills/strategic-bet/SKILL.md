@@ -61,6 +61,7 @@ Strategic bets articulate what we believe will create value, why we believe it, 
 **Owner**: [Single accountable person]
 **Date Formulated**: [Date]
 **Status**: Proposed / Active / Validated / Invalidated / Pivoted
+**Product**: [Product name - optional, for multi-product organizations]
 
 ## The Bet
 
