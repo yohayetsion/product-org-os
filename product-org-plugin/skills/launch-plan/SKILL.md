@@ -1,7 +1,49 @@
 ---
 name: launch-plan
-description: Create a complete product launch plan
-argument-hint: [product or feature name]
+description: Create or update a product launch plan
+argument-hint: [product or feature name] or [update path/to/launch-plan.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "modify" in input | UPDATE | 100% |
+| File path provided (`@path/to/launch-plan.md`) | UPDATE | 100% |
+| "create", "new", "draft" in input | CREATE | 100% |
+| "find", "search", "list launch plans" | FIND | 100% |
+| "the launch plan", "our launch" | UPDATE | 85% |
+| Just product/feature name | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new launch plan using template below.
+
+**UPDATE**:
+1. Read existing launch plan (search if path not provided)
+2. Preserve unchanged sections exactly
+3. Update timeline, status, activities, owners
+4. Show diff summary: "Updated: [sections]. Unchanged: [sections]."
+5. Mark activity statuses (Not Started → In Progress → Complete)
+
+**FIND**:
+1. Search paths below for launch plans
+2. Present results: product, launch date, status, path
+3. Ask: "Update one of these, or create new?"
+
+### Search Locations for Launch Plans
+
+- `launch/`
+- `gtm/`
+- `releases/`
+- `docs/launch/`
+
 ---
 
 Create a **complete Product Launch Plan** for the specified product or feature.

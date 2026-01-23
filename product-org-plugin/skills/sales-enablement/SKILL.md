@@ -1,7 +1,38 @@
 ---
 name: sales-enablement
-description: Create sales enablement package
-argument-hint: [product or feature name]
+description: Create or update a sales enablement package
+argument-hint: [product or feature name] or [update path/to/enablement.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "refresh" in input | UPDATE | 100% |
+| File path provided | UPDATE | 100% |
+| "create", "new", "build" in input | CREATE | 100% |
+| "find", "search", "list" | FIND | 100% |
+| "the enablement", "sales package" | UPDATE | 85% |
+| Just product/feature name | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new enablement package using template below.
+
+**UPDATE**:
+1. Check document registry first, then search user's structure
+2. Preserve value proposition and positioning
+3. Update objection handling, competitive info, or demo script
+4. Show diff summary
+
+**FIND**: Check registry, then search user's folders for enablement docs.
+
 ---
 
 Create a **Sales Enablement Package** for the specified product or feature.

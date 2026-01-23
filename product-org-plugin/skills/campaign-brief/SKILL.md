@@ -1,7 +1,48 @@
 ---
 name: campaign-brief
-description: Create marketing campaign brief
-argument-hint: [campaign name or objective]
+description: Create or update a marketing campaign brief
+argument-hint: [campaign name or objective] or [update path/to/campaign.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "modify" in input | UPDATE | 100% |
+| File path provided (`@path/to/campaign.md`) | UPDATE | 100% |
+| "create", "new", "draft" in input | CREATE | 100% |
+| "find", "search", "list campaigns" | FIND | 100% |
+| "the campaign", "our campaign" | UPDATE | 85% |
+| Just campaign name/objective | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new campaign brief using template below.
+
+**UPDATE**:
+1. Read existing campaign brief (search if path not provided)
+2. Preserve unchanged sections exactly
+3. Update timeline, budget, metrics, or activities
+4. Show diff summary: "Updated: [sections]. Unchanged: [sections]."
+
+**FIND**:
+1. Search paths below for campaign briefs
+2. Present results: campaign name, status, dates, path
+3. Ask: "Update one of these, or create new?"
+
+### Search Locations for Campaign Briefs
+
+- `campaigns/`
+- `marketing/`
+- `gtm/campaigns/`
+- `marketing/campaigns/`
+
 ---
 
 Create a **Marketing Campaign Brief** for the specified campaign.

@@ -118,6 +118,41 @@ Master catalog of all skills available in the V2V Product Org Plugin. All agents
 
 ---
 
+## Document Intelligence
+
+Most document-generating skills support three modes: **Create**, **Update**, and **Find**.
+
+### How It Works
+
+Skills automatically detect which mode to use:
+- **CREATE**: Default when just providing a topic (e.g., `/prd authentication`)
+- **UPDATE**: When using "update", "revise", providing a path, or referencing "the [doc type]"
+- **FIND**: When using "find", "search", or "list"
+
+### Skills with Document Intelligence (43)
+
+All skills that produce documents support Create/Update/Find:
+- Decision skills: decision-record, decision-charter, escalation-rule, decision-quality-audit, portfolio-tradeoff
+- Strategy skills: strategic-intent, strategic-bet, commitment-check, vision-statement, strategy-communication
+- Market skills: market-analysis, market-segment, competitive-landscape, competitive-analysis, positioning-statement
+- Business skills: business-case, business-plan, pricing-strategy, pricing-model
+- Roadmap skills: product-roadmap, roadmap-theme, roadmap-item
+- GTM skills: gtm-strategy, gtm-brief, launch-plan, launch-readiness
+- Requirements skills: prd, prd-outline, feature-spec, user-story
+- Operational skills: campaign-brief, sales-enablement, stakeholder-brief, onboarding-playbook, value-realization-report, customer-health-scorecard
+- Learning skills: outcome-review, retrospective, qbr-deck
+- Validator skills: ownership-map, customer-value-trace, collaboration-check, scale-check
+
+### Skills WITHOUT Document Intelligence (13)
+
+These are context/retrieval skills that operate differently:
+- Context layer: context-save, context-recall, portfolio-status, relevant-learnings, handoff, feedback-capture, feedback-recall
+- Assessment: maturity-check, pm-level-check
+- Utility: setup, present
+- Validator: phase-check
+
+---
+
 ## Skills by V2V Phase
 
 ### Phase 1: Strategic Foundation

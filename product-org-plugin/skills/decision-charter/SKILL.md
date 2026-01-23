@@ -1,7 +1,39 @@
 ---
 name: decision-charter
-description: Create a Decision Interface Charter for recurring decisions
-argument-hint: [decision type]
+description: Create or update a Decision Interface Charter for recurring decisions
+argument-hint: [decision type] or [update path/to/charter.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "modify" in input | UPDATE | 100% |
+| File path provided | UPDATE | 100% |
+| Charter ID mentioned (e.g., DIC-2026-001) | UPDATE | 100% |
+| "create", "new", "draft" in input | CREATE | 100% |
+| "find", "search", "list" | FIND | 100% |
+| "the charter", "our charter" | UPDATE | 85% |
+| Just decision type | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new charter using template below.
+
+**UPDATE**:
+1. Check document registry first, then search user's structure
+2. Preserve charter ID and version history
+3. Update decision rules, criteria, or escalation paths
+4. Show diff summary
+
+**FIND**: Check registry, then search user's folders for charters.
+
 ---
 
 Create a **Decision Interface Charter** to govern how a recurring type of decision is made.

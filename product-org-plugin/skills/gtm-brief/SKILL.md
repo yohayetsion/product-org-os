@@ -1,7 +1,50 @@
 ---
 name: gtm-brief
-description: Create a go-to-market brief
-argument-hint: [product/feature name]
+description: Create or update a go-to-market brief
+argument-hint: [product/feature name] or [update path/to/gtm-brief.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "modify" in input | UPDATE | 100% |
+| File path provided (`@path/to/gtm-brief.md`) | UPDATE | 100% |
+| Brief ID mentioned (`GTM-2026-001`) | UPDATE | 100% |
+| "create", "new", "draft" in input | CREATE | 100% |
+| "find", "search", "list briefs" | FIND | 100% |
+| "the GTM brief", "the brief" | UPDATE | 85% |
+| Just product/feature name | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new GTM brief using template below.
+
+**UPDATE**:
+1. Read existing brief (search if path not provided)
+2. Preserve positioning and core messaging
+3. Update activities, dates, or success metrics
+4. Update status (Draft → In Review → Approved)
+5. Show diff summary: "Updated: [sections]. Status: [old] → [new]."
+
+**FIND**:
+1. Search paths below for GTM briefs
+2. Present results: product, launch date, status, path
+3. Ask: "Update one of these, or create new?"
+
+### Search Locations for GTM Briefs
+
+- `gtm/`
+- `launch/`
+- `marketing/`
+- `briefs/`
+
 ---
 
 Create a **Go-to-Market Brief** for a product or feature launch.

@@ -1,7 +1,49 @@
 ---
 name: pricing-strategy
-description: Create a complete pricing strategy document
-argument-hint: [product or feature name]
+description: Create or update a pricing strategy document
+argument-hint: [product or feature name] or [update path/to/pricing.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "modify" in input | UPDATE | 100% |
+| File path provided (`@path/to/pricing.md`) | UPDATE | 100% |
+| "create", "new", "draft" in input | CREATE | 100% |
+| "find", "search", "list pricing" | FIND | 100% |
+| "the pricing", "our pricing strategy" | UPDATE | 85% |
+| Just product/feature name | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new pricing strategy using template below.
+
+**UPDATE**:
+1. Read existing pricing doc (search if path not provided)
+2. Preserve unchanged sections exactly
+3. Update specific elements (price points, tiers, discounts)
+4. Show diff summary: "Updated: [sections]. Unchanged: [sections]."
+5. Note: Financial projections may need recalculation
+
+**FIND**:
+1. Search paths below for pricing documents
+2. Present results: title, product, path, date
+3. Ask: "Update one of these, or create new?"
+
+### Search Locations for Pricing Strategy
+
+- `pricing/`
+- `strategy/`
+- `gtm/`
+- `business/`
+
 ---
 
 Create a **complete Pricing Strategy** for the specified product or feature.

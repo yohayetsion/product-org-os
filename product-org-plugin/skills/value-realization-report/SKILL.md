@@ -1,7 +1,38 @@
 ---
 name: value-realization-report
-description: Create value realization report
-argument-hint: [customer, cohort, or product]
+description: Create or update a value realization report
+argument-hint: [customer, cohort, or product] or [update path/to/report.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "refresh", "add data" in input | UPDATE | 100% |
+| File path provided | UPDATE | 100% |
+| "create", "new", "generate" in input | CREATE | 100% |
+| "find", "search", "list" | FIND | 100% |
+| "the report", "value report" | UPDATE | 85% |
+| Just customer/cohort/product | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new report using template below.
+
+**UPDATE**:
+1. Check document registry first, then search user's structure
+2. Preserve historical data
+3. Update metrics with new data, add new learnings
+4. Show diff summary with metric changes
+
+**FIND**: Check registry, then search user's folders for value reports.
+
 ---
 
 Create a **Value Realization Report** for the specified customer, cohort, or product.

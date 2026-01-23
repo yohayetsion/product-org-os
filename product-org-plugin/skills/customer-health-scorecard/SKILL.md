@@ -1,7 +1,49 @@
 ---
 name: customer-health-scorecard
-description: Create customer health scorecard
-argument-hint: [customer name or segment]
+description: Create or update a customer health scorecard
+argument-hint: [customer name or segment] or [update path/to/scorecard.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "refresh" in input | UPDATE | 100% |
+| File path provided (`@path/to/scorecard.md`) | UPDATE | 100% |
+| "create", "new", "draft" in input | CREATE | 100% |
+| "find", "search", "list scorecards" | FIND | 100% |
+| "the scorecard", "[Customer] health" | UPDATE | 85% |
+| Just customer name/segment | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new health scorecard using template below.
+
+**UPDATE**:
+1. Read existing scorecard (search if path not provided)
+2. Preserve structure, update metrics with new data
+3. Add new month to Historical Trend
+4. Recalculate health scores
+5. Show diff summary: "Updated scores. Previous: X/100 → Current: Y/100."
+
+**FIND**:
+1. Search paths below for health scorecards
+2. Present results: customer, current score, last updated
+3. Ask: "Update one of these, or create new?"
+
+### Search Locations for Health Scorecards
+
+- `customers/`
+- `health/`
+- `customer-success/`
+- `accounts/`
+
 ---
 
 Create a **Customer Health Scorecard** for the specified customer or segment.

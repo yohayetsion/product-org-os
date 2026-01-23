@@ -1,7 +1,38 @@
 ---
 name: strategic-intent
-description: Document strategic intent and direction
-argument-hint: [initiative or planning period]
+description: Create or update strategic intent documentation
+argument-hint: [initiative or planning period] or [update path/to/intent.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "refine" in input | UPDATE | 100% |
+| File path provided | UPDATE | 100% |
+| "create", "new", "document" in input | CREATE | 100% |
+| "find", "search", "list" | FIND | 100% |
+| "the strategic intent", "our intent" | UPDATE | 85% |
+| Just initiative/period | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new strategic intent using template below.
+
+**UPDATE**:
+1. Check document registry first, then search user's structure
+2. Preserve vision alignment and core intent
+3. Update priorities, assumptions, or constraints
+4. Show diff summary
+
+**FIND**: Check registry, then search user's folders for strategic intent docs.
+
 ---
 
 Document **Strategic Intent** for the specified initiative or planning period.

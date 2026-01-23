@@ -1,7 +1,49 @@
 ---
 name: business-case
-description: Create a comprehensive business case
-argument-hint: [initiative or investment name]
+description: Create or update a comprehensive business case
+argument-hint: [initiative or investment name] or [update path/to/business-case.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "modify" in input | UPDATE | 100% |
+| File path provided (`@path/to/business-case.md`) | UPDATE | 100% |
+| "create", "new", "draft" in input | CREATE | 100% |
+| "find", "search", "list business cases" | FIND | 100% |
+| "the business case", "our business case" | UPDATE | 85% |
+| Just initiative/investment name | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new business case using template below.
+
+**UPDATE**:
+1. Read existing business case (search if path not provided)
+2. Preserve unchanged sections exactly
+3. Update specific sections (financials, risks, assumptions)
+4. Show diff summary: "Updated: [sections]. Unchanged: [sections]."
+5. Note: Financial projections may need recalculation
+
+**FIND**:
+1. Search paths below for business cases
+2. Present results: title, initiative, status, path
+3. Ask: "Update one of these, or create new?"
+
+### Search Locations for Business Cases
+
+- `business/`
+- `strategy/`
+- `proposals/`
+- `cases/`
+
 ---
 
 Create a **comprehensive Business Case** for the specified initiative or investment.

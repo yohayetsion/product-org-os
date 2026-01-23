@@ -49,6 +49,15 @@ Get a specific deliverable when you know exactly what you need.
 /decision-record Document our build vs buy choice
 ```
 
+### Working with Existing Documents
+Skills intelligently detect when to create, update, or find documents.
+```
+/prd update the auth PRD with MFA requirements    # Updates existing
+/prd @requirements/auth-prd.md add OAuth support  # Updates specific file
+/decision-record find all pricing-related         # Lists matching records
+/roadmap-theme update Growth with mobile apps     # Finds and updates theme
+```
+
 ---
 
 ## What's Included

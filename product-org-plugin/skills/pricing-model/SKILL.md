@@ -1,7 +1,49 @@
 ---
 name: pricing-model
-description: Design a pricing model
-argument-hint: [product name]
+description: Create or update a pricing model
+argument-hint: [product name] or [update path/to/pricing-model.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "change" in input | UPDATE | 100% |
+| File path provided (`@path/to/pricing-model.md`) | UPDATE | 100% |
+| "create", "new", "design" in input | CREATE | 100% |
+| "find", "search", "list models" | FIND | 100% |
+| "the pricing model", "our pricing" | UPDATE | 85% |
+| Just product name | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new pricing model using template below.
+
+**UPDATE**:
+1. Read existing model (search if path not provided)
+2. Preserve pricing philosophy and rationale
+3. Update price points, tiers, or feature matrix
+4. Increment version number
+5. Show diff summary: "Updated: [sections]. Version: X → Y."
+
+**FIND**:
+1. Search paths below for pricing models
+2. Present results: product, version, status, path
+3. Ask: "Update one of these, or create new?"
+
+### Search Locations for Pricing Models
+
+- `pricing/`
+- `strategy/pricing/`
+- `gtm/`
+- `business/`
+
 ---
 
 Design a **Pricing Model** for the specified product.

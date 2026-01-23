@@ -1,7 +1,48 @@
 ---
 name: prd-outline
-description: Create a PRD outline
-argument-hint: [product/feature name]
+description: Create or update a PRD outline
+argument-hint: [product/feature name] or [update path/to/outline.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "modify" in input | UPDATE | 100% |
+| File path provided (`@path/to/outline.md`) | UPDATE | 100% |
+| "create", "new", "draft" in input | CREATE | 100% |
+| "find", "search", "list outlines" | FIND | 100% |
+| "the outline", "the PRD outline" | UPDATE | 85% |
+| Just product/feature name | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new PRD outline using template below.
+
+**UPDATE**:
+1. Read existing outline (search if path not provided)
+2. Check off completed items
+3. Add new research questions or stakeholder inputs
+4. Show progress: "Completed: [N] sections. Remaining: [M]."
+
+**FIND**:
+1. Search paths below for PRD outlines
+2. Present results: title, path, completion status
+3. Ask: "Update one of these, or create new?"
+
+### Search Locations for PRD Outlines
+
+- `requirements/`
+- `prds/`
+- `outlines/`
+- `docs/requirements/`
+
 ---
 
 Create a **PRD Outline** as a starting point for a full PRD.

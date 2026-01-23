@@ -5,6 +5,30 @@ All notable changes to Product Org OS will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.3.0] - 2026-01-23
+
+### Added
+- **Document Intelligence** for 43 document-generating skills
+  - Three modes: Create, Update, Find
+  - Automatic mode detection based on user input signals
+  - Confidence-based decision thresholds (≥85% auto-proceed)
+  - Document Registry support for tracking strategic documents
+- Document Intelligence Template (`templates/document-intelligence.md`)
+- "Document Continuity Across Phases" guidance in v2v-flow.md
+
+### Changed
+- 43 skill files enhanced with Document Intelligence block
+- Skill descriptions updated to reflect Create/Update capability
+- Argument hints now show update path option
+- Marketing site dynamic examples include agents and skills
+- Marketing site "Start Creating" includes update mode examples
+
+### Documentation
+- Added "Document Intelligence" section to PRODUCT-ORG-CLAUDE.md
+- Added "Document Intelligence" section to rules/skill-awareness.md
+- Added "Working with Existing Documents" examples to README.md
+- Added favicon to marketing site (index.html)
+
 ## [2.2.1] - 2026-01-22
 
 ### Added

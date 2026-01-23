@@ -1,7 +1,38 @@
 ---
 name: strategy-communication
-description: Create strategy communication package for stakeholders
-argument-hint: [strategy or initiative name]
+description: Create or update a strategy communication package
+argument-hint: [strategy or initiative name] or [update path/to/communication.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "modify" in input | UPDATE | 100% |
+| File path provided | UPDATE | 100% |
+| "create", "new", "build" in input | CREATE | 100% |
+| "find", "search", "list" | FIND | 100% |
+| "the communication", "strategy comms" | UPDATE | 85% |
+| Just strategy/initiative name | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new communication package using template below.
+
+**UPDATE**:
+1. Check document registry first, then search user's structure
+2. Preserve strategic narrative
+3. Update FAQ, key messages, or communication plan
+4. Show diff summary
+
+**FIND**: Check registry, then search user's folders for strategy communications.
+
 ---
 
 Create a **Strategy Communication Package** for the specified strategy or initiative.

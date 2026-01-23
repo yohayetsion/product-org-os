@@ -1,7 +1,49 @@
 ---
 name: market-segment
-description: Define a market segment
-argument-hint: [segment name]
+description: Create or update a market segment definition
+argument-hint: [segment name] or [update path/to/segment.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "refine" in input | UPDATE | 100% |
+| File path provided (`@path/to/segment.md`) | UPDATE | 100% |
+| Segment ID mentioned (`MS-2026-001`) | UPDATE | 100% |
+| "create", "new", "define" in input | CREATE | 100% |
+| "find", "search", "list segments" | FIND | 100% |
+| "the segment", "[Name] segment" | UPDATE | 85% |
+| Just segment name | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new segment definition using template below.
+
+**UPDATE**:
+1. Read existing segment (search if path not provided)
+2. Preserve firmographic criteria unless specifically changing
+3. Update sizing, buying behavior, or GTM approach
+4. Show diff summary: "Updated: [sections]. Unchanged: [sections]."
+
+**FIND**:
+1. Search paths below for segment definitions
+2. Present results: segment name, ID, status, path
+3. Ask: "Update one of these, or create new?"
+
+### Search Locations for Market Segments
+
+- `segments/`
+- `market/`
+- `gtm/segments/`
+- `strategy/`
+
 ---
 
 Define a **Market Segment** for targeting and GTM purposes.

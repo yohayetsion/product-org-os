@@ -1,7 +1,38 @@
 ---
 name: retrospective
-description: Conduct structured retrospective
-argument-hint: [project, launch, or quarter]
+description: Create or update a structured retrospective
+argument-hint: [project, launch, or quarter] or [update path/to/retro.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "add items", "finalize" in input | UPDATE | 100% |
+| File path provided | UPDATE | 100% |
+| "create", "new", "conduct" in input | CREATE | 100% |
+| "find", "search", "list" | FIND | 100% |
+| "the retrospective", "our retro" | UPDATE | 85% |
+| Just project/quarter | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new retrospective using template below.
+
+**UPDATE**:
+1. Check document registry first, then search user's structure
+2. Preserve participant input and prior discussions
+3. Update actions, learnings, or follow-up items
+4. Show diff summary
+
+**FIND**: Check registry, then search user's folders for retrospectives.
+
 ---
 
 Conduct a **Structured Retrospective** for the specified project, launch, or time period.

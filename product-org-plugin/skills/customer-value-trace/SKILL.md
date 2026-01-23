@@ -1,7 +1,38 @@
 ---
 name: customer-value-trace
-description: Validate work traces to customer value
-argument-hint: [decision, feature, or initiative]
+description: Create or update a trace validating work connects to customer value
+argument-hint: [decision, feature, or initiative] or [update path/to/trace.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "add evidence", "strengthen" in input | UPDATE | 100% |
+| File path provided | UPDATE | 100% |
+| "create", "new", "trace" in input | CREATE | 100% |
+| "find", "search", "list" | FIND | 100% |
+| "the value trace", "our trace" | UPDATE | 85% |
+| Just decision/feature/initiative | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new customer value trace using template below.
+
+**UPDATE**:
+1. Check document registry first, then search user's structure
+2. Preserve evidence chain and value mapping
+3. Update evidence, outcomes, or assessment
+4. Show diff summary
+
+**FIND**: Check registry, then search user's folders for value traces.
+
 ---
 
 Trace a **decision, feature, or initiative** back to customer value, validating Principle #3 (Customer Obsession).

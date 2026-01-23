@@ -1,7 +1,49 @@
 ---
 name: stakeholder-brief
-description: Create a stakeholder communication brief
-argument-hint: [topic or update]
+description: Create or update a stakeholder communication brief
+argument-hint: [topic or update] or [update path/to/brief.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "modify" in input | UPDATE | 100% |
+| File path provided (`@path/to/brief.md`) | UPDATE | 100% |
+| "create", "new", "draft" in input | CREATE | 100% |
+| "find", "search", "list briefs" | FIND | 100% |
+| "the brief", "the stakeholder update" | UPDATE | 85% |
+| Just topic | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new stakeholder brief using template below.
+
+**UPDATE**:
+1. Read existing brief (search if path not provided)
+2. Preserve context and key messages
+3. Update details, timeline, or FAQ
+4. Add new stakeholder-specific messages if needed
+5. Show diff summary: "Updated: [sections]. Unchanged: [sections]."
+
+**FIND**:
+1. Search paths below for stakeholder briefs
+2. Present results: topic, date, audience, path
+3. Ask: "Update one of these, or create new?"
+
+### Search Locations for Stakeholder Briefs
+
+- `communications/`
+- `briefs/`
+- `stakeholder/`
+- `updates/`
+
 ---
 
 Create a **Stakeholder Communication Brief** for an important update.

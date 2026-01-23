@@ -1,7 +1,38 @@
 ---
 name: scale-check
-description: Assess scalability at 2x, 10x, 100x
-argument-hint: [process, system, or initiative]
+description: Create or update a scalability assessment at 2x, 10x, 100x
+argument-hint: [process, system, or initiative] or [update path/to/check.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "reassess", "refresh" in input | UPDATE | 100% |
+| File path provided | UPDATE | 100% |
+| "create", "new", "assess" in input | CREATE | 100% |
+| "find", "search", "list" | FIND | 100% |
+| "the scale check", "our assessment" | UPDATE | 85% |
+| Just process/system/initiative | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new scale check using template below.
+
+**UPDATE**:
+1. Check document registry first, then search user's structure
+2. Preserve investment roadmap and historical assessments
+3. Update scale readiness or bottleneck analysis
+4. Show diff summary
+
+**FIND**: Check registry, then search user's folders for scale checks.
+
 ---
 
 Assess **scalability** of a process, system, or initiative at 2x, 10x, and 100x scale, validating Principle #8 (Scalable Systems).

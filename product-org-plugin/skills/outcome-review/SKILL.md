@@ -1,7 +1,38 @@
 ---
 name: outcome-review
-description: Structure an outcome review for learning
-argument-hint: [initiative or launch name]
+description: Create or update an outcome review for learning
+argument-hint: [initiative or launch name] or [update path/to/review.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "add data", "finalize" in input | UPDATE | 100% |
+| File path provided | UPDATE | 100% |
+| "create", "new", "structure" in input | CREATE | 100% |
+| "find", "search", "list" | FIND | 100% |
+| "the outcome review", "our review" | UPDATE | 85% |
+| Just initiative name | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new outcome review using template below.
+
+**UPDATE**:
+1. Check document registry first, then search user's structure
+2. Preserve metrics history and prior findings
+3. Update outcomes, learnings, or recommendations
+4. Show diff summary
+
+**FIND**: Check registry, then search user's folders for outcome reviews.
+
 ---
 
 Structure an **Outcome Review** to capture learnings from an initiative.

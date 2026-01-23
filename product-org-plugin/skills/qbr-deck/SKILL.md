@@ -1,7 +1,38 @@
 ---
 name: qbr-deck
-description: Create a Quarterly Business Review presentation
-argument-hint: [quarter, e.g., Q1 2025]
+description: Create or update a Quarterly Business Review presentation
+argument-hint: [quarter, e.g., Q1 2025] or [update path/to/qbr.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "refresh" in input | UPDATE | 100% |
+| File path provided | UPDATE | 100% |
+| "create", "new", "build" in input | CREATE | 100% |
+| "find", "search", "list" | FIND | 100% |
+| "the QBR", "this quarter's QBR" | UPDATE | 85% |
+| Just quarter reference | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new QBR using template below.
+
+**UPDATE**:
+1. Check document registry first, then search user's structure
+2. Preserve historical data and metrics
+3. Update performance data, highlights, or priorities
+4. Show diff summary
+
+**FIND**: Check registry, then search user's folders for QBR decks.
+
 ---
 
 Create a **Quarterly Business Review (QBR)** for the specified quarter.

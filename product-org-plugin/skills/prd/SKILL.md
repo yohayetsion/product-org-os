@@ -1,7 +1,50 @@
 ---
 name: prd
-description: Create a complete Product Requirements Document
-argument-hint: [product/feature name]
+description: Create or update a Product Requirements Document
+argument-hint: [product/feature name] or [update path/to/prd.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "modify" in input | UPDATE | 100% |
+| File path provided (`@path/to/prd.md`) | UPDATE | 100% |
+| PRD ID mentioned (`PRD-2026-001`) | UPDATE | 100% |
+| "create", "new", "draft" in input | CREATE | 100% |
+| "find", "search", "list PRDs" | FIND | 100% |
+| "the PRD", "our requirements" | UPDATE | 85% |
+| Just topic/feature name | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new PRD using template below.
+
+**UPDATE**:
+1. Read existing PRD (search if path not provided)
+2. Preserve unchanged sections exactly
+3. Update only sections mentioned by user
+4. Show diff summary: "Updated: [sections]. Unchanged: [sections]."
+5. Update `last_modified` metadata
+
+**FIND**:
+1. Search paths below for PRDs
+2. Present results: title, path, date, summary
+3. Ask: "Update one of these, or create new?"
+
+### Search Locations for PRDs
+
+- `requirements/`
+- `prds/`
+- `specs/`
+- `docs/requirements/`
+
 ---
 
 Create a **complete Product Requirements Document (PRD)** for the specified product or feature.

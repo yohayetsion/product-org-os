@@ -140,6 +140,61 @@ your-project/              ← Your working directory
 
 ---
 
+## Document Intelligence
+
+All document-generating skills (43 of 56) support three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+Skills automatically detect which mode to use based on your input:
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "modify" in input | UPDATE | 100% |
+| File path provided (`@path/to/doc.md`) | UPDATE | 100% |
+| Document ID mentioned (e.g., `PRD-2026-001`) | UPDATE | 100% |
+| "create", "new", "draft" in input | CREATE | 100% |
+| "find", "search", "list" in input | FIND | 100% |
+| "the [doc type]" (definite article) | UPDATE | 85% |
+| No signals (just topic) | CREATE | 60% |
+
+**Decision threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE** (default): Generate complete new document using skill template.
+
+**UPDATE**:
+1. Search document registry for existing document
+2. Read and preserve unchanged sections
+3. Update only sections mentioned in your request
+4. Show diff summary: "Updated: [sections]. Unchanged: [sections]."
+
+**FIND**:
+1. Search document registry by type/topic
+2. Present results: title, path, date, summary
+3. Ask: Update one? Create new?
+
+### Example Usage
+
+```
+/prd authentication for enterprise         # CREATE - new PRD
+/prd update the auth PRD with MFA          # UPDATE - finds and updates existing
+/prd @requirements/auth-prd.md add OAuth   # UPDATE - explicit path
+/prd find all security-related             # FIND - lists matching PRDs
+```
+
+### Document Registry
+
+Skills use the document registry at `context/documents/registry.md` to track all strategic documents. The registry stores:
+- Document ID and type
+- File path (respects your folder structure)
+- Status (Draft/Active/Archived)
+- Related documents
+- Last updated date
+
+---
+
 ## Context Layer - Organizational Memory
 
 The Context Layer provides persistent memory across sessions. This enables:
