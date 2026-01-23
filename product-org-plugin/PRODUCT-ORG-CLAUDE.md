@@ -355,6 +355,32 @@ context/
 | Feedback | `FB-[YYYY]-[NNN]` | FB-2026-001 |
 | Themes | `TH-[NNN]` | TH-005 |
 
+### Multi-Product Organizations
+
+For organizations managing multiple products, the context layer supports product filtering.
+
+**Adding Product to Records:**
+```markdown
+**Product**: AXIA
+```
+
+**Filtering by Product:**
+```
+/context-recall pricing product:AXIA      # Pricing context for AXIA only
+/feedback-recall onboarding product:SKYMOD # Feedback for SKYMOD only
+/portfolio-status product:AXIA            # Portfolio for AXIA only
+```
+
+**Index File Format:**
+```markdown
+| ID | Title | Date | Owner | Product | Status | Tags |
+```
+
+**Notes:**
+- Product field is optional - omit it for single-product organizations
+- Leave Product blank for cross-product records
+- If no filter specified, queries return all products
+
 ---
 
 ## Feedback Capture (MANDATORY)
@@ -461,6 +487,30 @@ Instead of figuring out which agent or skill to use, just send your request to `
 ```
 /product [your request or question]
 ```
+
+### Response Depth Modifiers (`+`/`-`)
+
+Control how verbose responses are with simple modifiers:
+
+| Modifier | Meaning | Effect |
+|----------|---------|--------|
+| `-` | Brief | Executive summary, cut to the chase |
+| *(none)* | Standard | Balanced depth appropriate to the question |
+| `+` | Deep | Thorough exploration, full analysis, show reasoning |
+
+**Examples:**
+```
+/product What's our launch status? -        # Quick summary
+/product What's our launch status?          # Standard response
+/product What's our launch status? +        # Full analysis with details
+
+/plt Should we pivot to enterprise? -       # PLT gives brief alignment
+/plt Should we pivot to enterprise? +       # Full PLT debate with all perspectives
+```
+
+**Follow-up adjustments:**
+- Type `+` or "go deeper" → Expand the previous response
+- Type `-` or "summarize" → Compress to key points
 
 ### How It Works
 

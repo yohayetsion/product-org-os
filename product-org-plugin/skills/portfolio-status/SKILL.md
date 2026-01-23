@@ -26,6 +26,8 @@ Invoke `/portfolio-status` when:
 - Reviewing upcoming re-decision checkpoints
 - PLT needs an overview of current strategic state
 
+**Product Filter**: For multi-product organizations, use `/portfolio-status product:AXIA` to view portfolio for a specific product. Omit the filter to see all products.
+
 ## Process
 
 ### 1. Read Portfolio State
@@ -59,6 +61,7 @@ For each active bet, also check:
 
 ### [SB-ID]: [Bet Title]
 - **Owner**: @[agent/person]
+- **Product**: [Product name, if applicable]
 - **Status**: Active
 - **Health**: [Green/Yellow/Red] [emoji indicator]
 - **Started**: [Date]
@@ -113,13 +116,15 @@ Call out anything that needs attention:
 
 ## Instructions
 
-1. Read `context/portfolio/active-bets.md`
-2. Read `context/assumptions/registry.md`
-3. Read `context/bets/index.md` for additional details
-4. Generate the status report following the format above
-5. Calculate summary metrics
-6. Highlight items needing attention
-7. Provide actionable recommendations
+1. Parse optional `product:[name]` filter from input
+2. Read `context/portfolio/active-bets.md`
+3. Read `context/assumptions/registry.md`
+4. Read `context/bets/index.md` for additional details
+5. If product filter specified, filter results to that product only
+6. Generate the status report following the format above
+7. Calculate summary metrics
+8. Highlight items needing attention
+9. Provide actionable recommendations
 
 ## Health Indicators
 

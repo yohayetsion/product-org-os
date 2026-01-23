@@ -31,13 +31,17 @@ Invoke `/feedback-recall [query]` when:
 
 ### 1. Parse the Query
 
-Accept various query types:
+Accept various query types, with optional product filter:
 - **Topic**: `/feedback-recall onboarding` → feedback about onboarding
 - **Feature**: `/feedback-recall API integration` → feedback about API
 - **Segment**: `/feedback-recall enterprise` → feedback from enterprise customers
 - **Source**: `/feedback-recall Acme Corp` → feedback from specific customer
 - **Sentiment**: `/feedback-recall negative pricing` → negative pricing feedback
 - **Theme**: `/feedback-recall TH-005` → feedback linked to a specific theme
+- **Product**: `/feedback-recall onboarding product:AXIA` → filtered to AXIA product
+- **Product only**: `/feedback-recall product:SKYMOD` → all feedback for SKYMOD
+
+**Product Filter**: If `product:[name]` is specified, filter results to that product only. If omitted, search across all products.
 
 ### 2. Search Feedback Registry
 
@@ -141,15 +145,17 @@ Call out:
 ## Instructions
 
 1. Accept query from user (required)
-2. Read `context/feedback/index.md`
-3. Read `context/feedback/themes.md`
-4. Search for matches across all dimensions
-5. For top matches, read full feedback entries
-6. Synthesize findings into actionable summary
-7. Highlight patterns and themes
-8. Note connections to decisions, bets, assumptions
-9. Identify gaps where more feedback is needed
-10. Provide recommendations based on feedback
+2. Parse optional `product:[name]` filter from query
+3. Read `context/feedback/index.md`
+4. Read `context/feedback/themes.md`
+5. Search for matches across all dimensions
+6. If product filter specified, filter results to that product only
+7. For top matches, read full feedback entries
+8. Synthesize findings into actionable summary
+9. Highlight patterns and themes
+10. Note connections to decisions, bets, assumptions
+11. Identify gaps where more feedback is needed
+12. Provide recommendations based on feedback
 
 ## Query Examples
 
@@ -174,6 +180,12 @@ Call out:
 
 /feedback-recall feature requests
 → All feature request type feedback
+
+/feedback-recall pricing product:AXIA
+→ Pricing feedback for AXIA product only
+
+/feedback-recall product:SKYMOD
+→ All feedback for SKYMOD product
 ```
 
 ## If No Feedback Found

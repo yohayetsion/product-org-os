@@ -30,10 +30,14 @@ Invoke `/context-recall [topic]` when:
 
 ### 1. Parse the Query
 
-Accept a topic or keyword from the user:
-- `/context-recall pricing` → Search for pricing-related context
+Accept a topic or keyword from the user, with optional product filter:
+- `/context-recall pricing` → Search for pricing-related context (all products)
 - `/context-recall enterprise` → Search for enterprise-related context
 - `/context-recall api` → Search for API-related context
+- `/context-recall pricing product:AXIA` → Search for pricing context filtered to AXIA
+- `/context-recall onboarding product:SKYMOD` → Search filtered to SKYMOD
+
+**Product Filter**: If `product:[name]` is specified, filter results to that product only. If omitted, search across all products.
 
 ### 2. Search All Context Sources
 
@@ -113,13 +117,15 @@ If the current work might conflict with past decisions:
 ## Instructions
 
 1. Accept topic/keyword from user (required)
-2. Read all context index files
-3. Search for matches (case-insensitive, partial match OK)
-4. For strong matches, read full records
-5. Synthesize and present findings
-6. Highlight constraints that apply to current work
-7. Note any potential conflicts with past decisions
-8. If no matches found, say so clearly
+2. Parse optional `product:[name]` filter from query
+3. Read all context index files
+4. Search for matches (case-insensitive, partial match OK)
+5. If product filter specified, filter results to that product only
+6. For strong matches, read full records
+7. Synthesize and present findings
+8. Highlight constraints that apply to current work
+9. Note any potential conflicts with past decisions
+10. If no matches found, say so clearly
 
 ## Example Usage
 
