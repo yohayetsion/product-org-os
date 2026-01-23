@@ -2008,10 +2008,10 @@
                             <h4>Start Creating</h4>
                             <p>Natural language with gateway, agents, or skills — create, update, or find.</p>
                             <div class="code-block">/product Launch freemium tier. Context: pricing-research.md</div>
-                            <div class="code-block" style="margin-top: 0.5rem;">/prd for new checkout optimization feature</div>
-                            <div class="code-block" style="margin-top: 0.5rem;">/decision-record for build vs buy on auth system</div>
-                            <div class="code-block" style="margin-top: 0.5rem;">/product-leadership-team review meeting-notes.md and update the /prd</div>
-                            <div class="code-block" style="margin-top: 0.5rem;">/competitive-analysis update Competitor X with announcement.md</div>
+                            <div class="code-block" style="margin-top: 0.5rem;">Create a /prd for the new checkout feature</div>
+                            <div class="code-block" style="margin-top: 0.5rem;">Run /decision-record for the build vs buy decision</div>
+                            <div class="code-block" style="margin-top: 0.5rem;">/product-leadership-team review notes.md and update the /prd</div>
+                            <div class="code-block" style="margin-top: 0.5rem;">Run /competitive-analysis on Competitor X - see their-launch.md</div>
                         </div>
                     </div>
                 </div>
@@ -2082,75 +2082,56 @@
             observer.observe(el);
         });
 
-        // Typing animation for /product gateway demo
-        const commands = [
-            // /product gateway
-            { text: '/product', context: ' Launch freemium for SMBs. Context: pricing-research.md' },
-            // Direct skill - CREATE
-            { text: '/prd', context: ' for new checkout optimization feature' },
-            // Agent + file + skill pattern
-            { text: '/product-leadership-team', context: ' review meeting-notes.md and update the /prd' },
-            // Direct skill - CREATE
-            { text: '/decision-record', context: ' for build vs buy on auth system' },
-            // Agent + file + skill
-            { text: '/cpo', context: ' review board-feedback.pdf and update /strategic-intent' },
-            // Direct skill - UPDATE
-            { text: '/competitive-analysis', context: ' update Competitor X with their-announcement.md' },
-            // Agent with file context
-            { text: '/product-manager', context: ' break down epic.md into /user-story items' },
-            // Direct skill - CREATE
-            { text: '/business-case', context: ' for mobile app expansion. Data: market-size.xlsx' },
-            // Agent + file + skill
-            { text: '/director-product-marketing', context: ' review launch-data.xlsx and update /gtm-strategy' },
-            // Direct skill - FIND
-            { text: '/prd', context: ' find all authentication-related requirements' },
-            // /product gateway
-            { text: '/product', context: ' Q3 planning. Inputs: customer-feedback/, capacity.md' },
-            // Direct skill - UPDATE
-            { text: '/roadmap-theme', context: ' update Growth with mobile initiatives' }
+        // Typing animation - highlights /commands wherever they appear
+        const examples = [
+            '/product Launch freemium for SMBs. Context: pricing-research.md',
+            'Create a /prd for the new checkout optimization feature',
+            '/product-leadership-team review meeting-notes.md and update the /prd',
+            'Run /decision-record for the build vs buy decision on auth',
+            '/cpo review board-feedback.pdf and update /strategic-intent',
+            'Run /competitive-analysis on the new competitor - see their-launch.md',
+            '/product-manager break down epic.md into /user-story items',
+            'Create a /business-case for mobile app. Data: market-size.xlsx',
+            '/director-product-marketing review launch-data.xlsx and update /gtm-strategy',
+            'Find all authentication PRDs using /prd find',
+            '/product Q3 planning. Inputs: customer-feedback/, capacity.md',
+            'Update the /roadmap-theme for Growth with mobile initiatives'
         ];
 
         let commandIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
-        let isPaused = false;
         const typedText = document.getElementById('typed-text');
 
+        function highlightCommands(text) {
+            // Highlight /command patterns (including /product-leadership-team style)
+            return text.replace(/(\/[a-z][-a-z]*)/gi, '<span class="command">$1</span>');
+        }
+
         function typeCommand() {
-            const current = commands[commandIndex];
-            const fullText = current.text + current.context;
+            const fullText = examples[commandIndex];
 
             if (!isDeleting && charIndex <= fullText.length) {
-                // Typing
                 const displayText = fullText.substring(0, charIndex);
-                const commandPart = displayText.substring(0, current.text.length);
-                const contextPart = displayText.substring(current.text.length);
-
-                typedText.innerHTML = `<span class="command">${commandPart}</span><span class="context">${contextPart}</span>`;
+                typedText.innerHTML = highlightCommands(displayText);
                 charIndex++;
 
                 if (charIndex > fullText.length) {
-                    isPaused = true;
                     setTimeout(() => {
-                        isPaused = false;
                         isDeleting = true;
                         typeCommand();
                     }, 2000);
                     return;
                 }
-                setTimeout(typeCommand, charIndex <= current.text.length ? 50 : 20);
+                setTimeout(typeCommand, 25);
             } else if (isDeleting && charIndex >= 0) {
-                // Deleting
                 const displayText = fullText.substring(0, charIndex);
-                const commandPart = displayText.substring(0, Math.min(charIndex, current.text.length));
-                const contextPart = charIndex > current.text.length ? displayText.substring(current.text.length) : '';
-
-                typedText.innerHTML = `<span class="command">${commandPart}</span><span class="context">${contextPart}</span>`;
+                typedText.innerHTML = highlightCommands(displayText);
                 charIndex--;
 
                 if (charIndex < 0) {
                     isDeleting = false;
-                    commandIndex = (commandIndex + 1) % commands.length;
+                    commandIndex = (commandIndex + 1) % examples.length;
                     charIndex = 0;
                     setTimeout(typeCommand, 400);
                     return;
