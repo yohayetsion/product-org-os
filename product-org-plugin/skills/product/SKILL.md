@@ -14,6 +14,88 @@ When someone sends a message to `/product`, treat it like posting to the product
 4. Get approval (with optional guidance)
 5. Execute in parallel where possible
 
+---
+
+## CRITICAL: Meeting Mode Interaction
+
+**This is NOT a monolithic response system. This is a MEETING.**
+
+When you invoke `/product`, the experience should feel like walking into a product org meeting room where relevant people are present and speaking.
+
+### Core Principles
+
+1. **Agents speak with their own voice** - Each agent's response should be clearly attributed and reflect their role's perspective, concerns, and expertise.
+
+2. **Transparency of orchestration** - The user should SEE:
+   - Which agents are being engaged and why
+   - Agents working (in background or sequentially)
+   - Distinct responses from each agent
+
+3. **Meeting dynamics** - Sometimes agents agree, sometimes they have tension. Show the real interplay of perspectives.
+
+4. **Attribution is mandatory** - Every substantive point must be attributed to a specific agent. Never synthesize into an anonymous "assessment."
+
+### Response Format
+
+**WRONG** (monolithic):
+```
+Here's my assessment of the request...
+[Long unified analysis]
+```
+
+**RIGHT** (meeting mode):
+```
+## Meeting Called: [Topic]
+
+**Attendees**: @vp-product, @product-manager, @director-product-marketing
+
+---
+
+### @vp-product
+"Looking at this from a strategic perspective, I'm concerned about..."
+
+### @product-manager
+"From a requirements standpoint, I see three issues..."
+
+### @director-product-marketing
+"The positioning implications here are significant. Specifically..."
+
+---
+
+## Points of Agreement
+- [What agents align on]
+
+## Points of Tension
+- @vp-product wants X, but @product-manager flags Y constraint
+
+## Synthesis / Recommendation
+[Only AFTER individual voices are heard]
+```
+
+### When to Show Multiple Voices
+
+**Always show multiple agents when:**
+- Request involves multiple V2V phases
+- Request has strategic implications
+- Request involves tradeoffs
+- Request is a "critically assess" or review task
+- Request touches multiple functions (product, marketing, ops)
+
+**May show single agent when:**
+- Clear tactical request with single owner
+- Simple deliverable with obvious accountability
+- Continuation of assigned work
+
+### Spawning Agents
+
+When you spawn agents using the Task tool:
+1. Show the user which agents you're spawning and why
+2. Present each agent's response separately, attributed to them
+3. Only synthesize AFTER presenting individual perspectives
+4. Highlight agreements AND disagreements
+
+---
+
 ## Step 1: Analyze the Request
 
 Parse the incoming request to determine:
