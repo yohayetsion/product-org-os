@@ -1,7 +1,38 @@
 ---
 name: commitment-check
-description: Validate that a commitment is properly hardened before crossing the "point of no return"
-argument-hint: [commitment or initiative name]
+description: Create or update a commitment validation before crossing the "point of no return"
+argument-hint: [commitment or initiative name] or [update path/to/check.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "recheck", "refresh" in input | UPDATE | 100% |
+| File path provided | UPDATE | 100% |
+| "create", "new", "validate" in input | CREATE | 100% |
+| "find", "search", "list" | FIND | 100% |
+| "the commitment check", "our check" | UPDATE | 85% |
+| Just initiative name | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new commitment check using template below.
+
+**UPDATE**:
+1. Check document registry first, then search user's structure
+2. Preserve prior assessments and gap tracking
+3. Update readiness status and close gaps
+4. Show diff summary
+
+**FIND**: Check registry, then search user's folders for commitment checks.
+
 ---
 
 Validate that a **Commitment is Properly Hardened** before proceeding.

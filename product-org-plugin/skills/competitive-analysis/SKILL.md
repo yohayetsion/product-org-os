@@ -1,7 +1,49 @@
 ---
 name: competitive-analysis
-description: Structure a competitive analysis
-argument-hint: [competitor name or market]
+description: Create or update a competitive analysis
+argument-hint: [competitor name or market] or [update path/to/analysis.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "refresh", "revise" in input | UPDATE | 100% |
+| File path provided (`@path/to/analysis.md`) | UPDATE | 100% |
+| "create", "new", "analyze" in input | CREATE | 100% |
+| "find", "search", "list analyses" | FIND | 100% |
+| "the [Competitor] analysis" | UPDATE | 85% |
+| Just competitor name | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new competitive analysis using template below.
+
+**UPDATE**:
+1. Read existing analysis (search if path not provided)
+2. Update Analysis Date and Confidence Level
+3. Refresh strengths, weaknesses, and market position
+4. Update win/loss patterns with new data
+5. Show diff summary: "Updated: [sections]. Analysis date: [old] → [new]."
+
+**FIND**:
+1. Search paths below for competitor analyses
+2. Present results: competitor name, date, confidence, path
+3. Ask: "Update one of these, or create new?"
+
+### Search Locations for Competitive Analysis
+
+- `competitive/`
+- `competitors/`
+- `market/competitors/`
+- `research/`
+
 ---
 
 Structure a **Competitive Analysis** for a specific competitor or market.

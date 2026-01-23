@@ -1,7 +1,39 @@
 ---
 name: escalation-rule
-description: Define escalation rules for a decision area
-argument-hint: [decision area]
+description: Create or update escalation rules for a decision area
+argument-hint: [decision area] or [update path/to/rule.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "modify" in input | UPDATE | 100% |
+| File path provided | UPDATE | 100% |
+| Rule ID mentioned (e.g., ESC-2026-001) | UPDATE | 100% |
+| "create", "new", "define" in input | CREATE | 100% |
+| "find", "search", "list" | FIND | 100% |
+| "the escalation rule", "our rules" | UPDATE | 85% |
+| Just decision area | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new escalation rule using template below.
+
+**UPDATE**:
+1. Check document registry first, then search user's structure
+2. Preserve rule ID and version
+3. Update triggers, matrix, or resolution expectations
+4. Show diff summary
+
+**FIND**: Check registry, then search user's folders for escalation rules.
+
 ---
 
 Define **Escalation Rules** for a specific decision area.

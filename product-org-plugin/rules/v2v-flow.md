@@ -272,6 +272,40 @@ Update `context/portfolio/active-bets.md` with phase tracking:
 
 ---
 
+## Document Continuity Across Phases
+
+Documents evolve as initiatives progress through V2V phases. Use Document Intelligence (Create/Update/Find modes) to maintain document continuity:
+
+### How Documents Evolve
+
+| Phase | Document Created | Later Updated In |
+|-------|------------------|------------------|
+| Phase 1 | Strategic Intent, Market Analysis | Phase 2 (refine assumptions), Phase 6 (add learnings) |
+| Phase 2 | Business Case, Pricing Strategy | Phase 3 (finalize for commitment), Phase 6 (actual vs projected) |
+| Phase 3 | PRD, Launch Plan | Phase 4 (execution details), Phase 5 (customer feedback) |
+| Phase 5 | Value Report, Health Scorecard | Phase 6 (outcome review), Phase 1 (next cycle input) |
+
+### Update vs Create
+
+- **Same initiative, later phase**: Use UPDATE mode to add to existing document
+- **New initiative**: Use CREATE mode for fresh document
+- **Significant pivot**: May warrant new document with link to predecessor
+
+### Example: PRD Evolution
+
+```
+Phase 3: /prd authentication for enterprise     # CREATE initial PRD
+Phase 4: /prd update auth PRD with MFA scope   # UPDATE with execution details
+Phase 5: /prd update auth PRD with adoption data  # UPDATE with customer feedback
+Phase 6: /outcome-review authentication launch    # Separate review document
+```
+
+### Document Registry
+
+The document registry tracks all documents and their phase, enabling continuity across the V2V flow. Skills automatically search the registry before creating new documents.
+
+---
+
 ## V2V Operating Principle
 
 > "The V2V flow is not bureaucracy - it's a thinking framework that ensures we do the right things in the right order. Skip phases at your peril."

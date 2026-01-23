@@ -1,7 +1,49 @@
 ---
 name: positioning-statement
-description: Create a positioning statement
-argument-hint: [product name]
+description: Create or update a positioning statement
+argument-hint: [product name] or [update path/to/positioning.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "modify" in input | UPDATE | 100% |
+| File path provided (`@path/to/positioning.md`) | UPDATE | 100% |
+| "create", "new", "draft" in input | CREATE | 100% |
+| "find", "search", "list positioning" | FIND | 100% |
+| "the positioning", "our positioning" | UPDATE | 85% |
+| Just product name | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new positioning statement using template below.
+
+**UPDATE**:
+1. Read existing positioning doc (search if path not provided)
+2. Preserve unchanged sections exactly
+3. Update messaging, differentiation, or competitor sections
+4. Increment version number
+5. Show diff summary: "Updated: [sections]. Version: X → Y."
+
+**FIND**:
+1. Search paths below for positioning documents
+2. Present results: product, version, date, path
+3. Ask: "Update one of these, or create new?"
+
+### Search Locations for Positioning
+
+- `positioning/`
+- `marketing/`
+- `gtm/`
+- `messaging/`
+
 ---
 
 Create a **Positioning Statement** for the specified product.

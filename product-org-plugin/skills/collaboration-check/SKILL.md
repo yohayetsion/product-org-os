@@ -1,7 +1,38 @@
 ---
 name: collaboration-check
-description: Validate RACI and stakeholder consultation
-argument-hint: [decision or initiative]
+description: Create or update a RACI and stakeholder consultation validation
+argument-hint: [decision or initiative] or [update path/to/check.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "recheck", "add stakeholders" in input | UPDATE | 100% |
+| File path provided | UPDATE | 100% |
+| "create", "new", "validate" in input | CREATE | 100% |
+| "find", "search", "list" | FIND | 100% |
+| "the collaboration check", "our RACI" | UPDATE | 85% |
+| Just decision/initiative | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new collaboration check using template below.
+
+**UPDATE**:
+1. Check document registry first, then search user's structure
+2. Preserve RACI matrix and consultation history
+3. Update stakeholder status or add new stakeholders
+4. Show diff summary
+
+**FIND**: Check registry, then search user's folders for collaboration checks.
+
 ---
 
 Validate **stakeholder consultation and RACI clarity** for a decision or initiative, enforcing Principle #6 (Collaborative Excellence).

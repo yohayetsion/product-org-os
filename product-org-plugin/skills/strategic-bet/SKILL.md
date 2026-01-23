@@ -1,7 +1,50 @@
 ---
 name: strategic-bet
-description: Formulate a strategic bet with explicit assumptions
-argument-hint: [bet name or area]
+description: Create or update a strategic bet with explicit assumptions
+argument-hint: [bet name or area] or [update SB-2026-001]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "modify" in input | UPDATE | 100% |
+| File path provided (`@path/to/bet.md`) | UPDATE | 100% |
+| Bet ID mentioned (`SB-2026-001`) | UPDATE | 100% |
+| "create", "new", "formulate" in input | CREATE | 100% |
+| "find", "search", "list bets" | FIND | 100% |
+| "the bet", "our bet on" | UPDATE | 85% |
+| Just bet name or area | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new strategic bet using template below.
+
+**UPDATE**:
+1. Read existing bet (search if path not provided)
+2. Preserve unchanged sections exactly
+3. Update assumptions (validated/invalidated), metrics, status
+4. Show diff summary: "Updated: [sections]. Unchanged: [sections]."
+5. Consider: Update assumption status in context registry
+
+**FIND**:
+1. Search paths below AND context registry for bets
+2. Present results: ID, title, status, owner, key assumptions
+3. Ask: "Update one of these, or create new?"
+
+### Search Locations for Strategic Bets
+
+- `bets/`
+- `strategy/bets/`
+- `context/bets/`
+- `strategy/`
+
 ---
 
 Formulate a **Strategic Bet** with explicit assumptions and success criteria.

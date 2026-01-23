@@ -1,7 +1,49 @@
 ---
 name: roadmap-item
-description: Define a specific roadmap item
-argument-hint: [item name]
+description: Create or update a specific roadmap item
+argument-hint: [item name] or [update path/to/item.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "modify" in input | UPDATE | 100% |
+| File path provided (`@path/to/item.md`) | UPDATE | 100% |
+| Item ID mentioned (`RI-2026-001`) | UPDATE | 100% |
+| "create", "new", "draft" in input | CREATE | 100% |
+| "find", "search", "list items" | FIND | 100% |
+| "the item", "the initiative" | UPDATE | 85% |
+| Just item name | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new roadmap item using template below.
+
+**UPDATE**:
+1. Read existing item (search if path not provided)
+2. Preserve unchanged sections exactly
+3. Update status, priority, timeline, or scope
+4. Show diff summary: "Updated: [sections]. Unchanged: [sections]."
+
+**FIND**:
+1. Search paths below for roadmap items
+2. Present results: item name, ID, status, theme
+3. Ask: "Update one of these, or create new?"
+
+### Search Locations for Roadmap Items
+
+- `roadmap/items/`
+- `roadmap/`
+- `backlog/`
+- `epics/`
+
 ---
 
 Define a **Roadmap Item** (initiative, epic, or feature).

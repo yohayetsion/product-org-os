@@ -1,7 +1,48 @@
 ---
 name: market-analysis
-description: Create a comprehensive market analysis
-argument-hint: [market or segment name]
+description: Create or update a market analysis
+argument-hint: [market or segment name] or [update path/to/market-analysis.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "refresh", "revise" in input | UPDATE | 100% |
+| File path provided (`@path/to/analysis.md`) | UPDATE | 100% |
+| "create", "new", "draft" in input | CREATE | 100% |
+| "find", "search", "list analyses" | FIND | 100% |
+| "the market analysis", "our analysis" | UPDATE | 85% |
+| Just market/segment name | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new market analysis using template below.
+
+**UPDATE**:
+1. Read existing analysis (search if path not provided)
+2. Preserve structure and methodology
+3. Update market sizing, trends, or competitive sections with new data
+4. Show diff summary: "Updated: [sections] with [year] data."
+
+**FIND**:
+1. Search paths below for market analysis documents
+2. Present results: market, date, path
+3. Ask: "Update one of these, or create new?"
+
+### Search Locations for Market Analysis
+
+- `market/`
+- `research/`
+- `strategy/`
+- `analysis/`
+
 ---
 
 Create a **comprehensive Market Analysis** for the specified market or segment.

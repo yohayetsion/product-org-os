@@ -1,7 +1,50 @@
 ---
 name: feature-spec
-description: Create a feature specification
-argument-hint: [feature name]
+description: Create or update a feature specification
+argument-hint: [feature name] or [update path/to/spec.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "modify" in input | UPDATE | 100% |
+| File path provided (`@path/to/spec.md`) | UPDATE | 100% |
+| Spec ID mentioned (`FS-2026-001`) | UPDATE | 100% |
+| "create", "new", "draft" in input | CREATE | 100% |
+| "find", "search", "list specs" | FIND | 100% |
+| "the spec", "the feature spec" | UPDATE | 85% |
+| Just feature name | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new feature spec using template below.
+
+**UPDATE**:
+1. Read existing spec (search if path not provided)
+2. Preserve unchanged sections exactly
+3. Update only sections mentioned by user
+4. Show diff summary: "Updated: [sections]. Unchanged: [sections]."
+5. Update `last_modified` metadata
+
+**FIND**:
+1. Search paths below for feature specs
+2. Present results: title, path, date, summary
+3. Ask: "Update one of these, or create new?"
+
+### Search Locations for Feature Specs
+
+- `specs/`
+- `features/`
+- `requirements/`
+- `docs/specs/`
+
 ---
 
 Create a **Feature Specification** for the specified feature.

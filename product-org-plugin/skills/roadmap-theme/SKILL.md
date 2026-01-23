@@ -1,7 +1,49 @@
 ---
 name: roadmap-theme
-description: Define a roadmap theme with initiatives
-argument-hint: [theme name]
+description: Create or update a roadmap theme with initiatives
+argument-hint: [theme name] or [update path/to/theme.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "modify" in input | UPDATE | 100% |
+| File path provided (`@path/to/theme.md`) | UPDATE | 100% |
+| Theme ID mentioned (`RT-2026-001`) | UPDATE | 100% |
+| "create", "new", "draft" in input | CREATE | 100% |
+| "find", "search", "list themes" | FIND | 100% |
+| "the theme", "the Growth theme" | UPDATE | 85% |
+| Just theme name | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new roadmap theme using template below.
+
+**UPDATE**:
+1. Read existing theme (search if path not provided)
+2. Preserve unchanged sections exactly
+3. Add/modify initiatives, update metrics
+4. Show diff summary: "Updated: [sections]. Unchanged: [sections]."
+
+**FIND**:
+1. Search paths below for roadmap themes
+2. Present results: theme name, ID, owner, path
+3. Ask: "Update one of these, or create new?"
+
+### Search Locations for Roadmap Themes
+
+- `roadmap/themes/`
+- `roadmap/`
+- `strategy/themes/`
+- `planning/`
+
 ---
 
 Define a **Roadmap Theme** with initiatives and success criteria.

@@ -1,7 +1,49 @@
 ---
 name: competitive-landscape
-description: Create a comprehensive competitive analysis report
-argument-hint: [market or product area]
+description: Create or update a competitive landscape analysis
+argument-hint: [market or product area] or [update path/to/competitive.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "refresh", "revise" in input | UPDATE | 100% |
+| File path provided (`@path/to/competitive.md`) | UPDATE | 100% |
+| "create", "new", "draft" in input | CREATE | 100% |
+| "find", "search", "list landscapes" | FIND | 100% |
+| "the competitive landscape", "our competitive analysis" | UPDATE | 85% |
+| Just market/product area | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new competitive landscape using template below.
+
+**UPDATE**:
+1. Read existing landscape (search if path not provided)
+2. Preserve structure and historical data
+3. Update competitor profiles, pricing, or feature comparisons
+4. Add new competitors if discovered
+5. Show diff summary: "Updated: [competitors]. Added: [new]. Unchanged: [others]."
+
+**FIND**:
+1. Search paths below for competitive documents
+2. Present results: market, date, path
+3. Ask: "Update one of these, or create new?"
+
+### Search Locations for Competitive Landscape
+
+- `competitive/`
+- `market/`
+- `research/`
+- `strategy/`
+
 ---
 
 Create a **comprehensive Competitive Landscape Analysis** for the specified market or product area.

@@ -1,7 +1,50 @@
 ---
 name: user-story
-description: Write a user story with acceptance criteria
-argument-hint: [story description]
+description: Create or update a user story with acceptance criteria
+argument-hint: [story description] or [update path/to/story.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "modify" in input | UPDATE | 100% |
+| File path provided (`@path/to/story.md`) | UPDATE | 100% |
+| Story ID mentioned (`US-2026-001`) | UPDATE | 100% |
+| "create", "new", "draft" in input | CREATE | 100% |
+| "find", "search", "list stories" | FIND | 100% |
+| "the story", "the user story" | UPDATE | 85% |
+| Just story description | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new user story using template below.
+
+**UPDATE**:
+1. Read existing story (search if path not provided)
+2. Preserve unchanged sections exactly
+3. Update only sections mentioned by user
+4. Show diff summary: "Updated: [sections]. Unchanged: [sections]."
+5. Update status and metadata
+
+**FIND**:
+1. Search paths below for user stories
+2. Present results: title, path, status, summary
+3. Ask: "Update one of these, or create new?"
+
+### Search Locations for User Stories
+
+- `stories/`
+- `backlog/`
+- `requirements/stories/`
+- `epics/`
+
 ---
 
 Write a **User Story** with acceptance criteria.

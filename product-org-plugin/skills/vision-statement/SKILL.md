@@ -1,7 +1,48 @@
 ---
 name: vision-statement
-description: Draft a product vision statement
-argument-hint: [product name]
+description: Create or update a product vision statement
+argument-hint: [product name] or [update path/to/vision.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "refine" in input | UPDATE | 100% |
+| File path provided (`@path/to/vision.md`) | UPDATE | 100% |
+| "create", "new", "draft" in input | CREATE | 100% |
+| "find", "search", "list visions" | FIND | 100% |
+| "the vision", "our vision" | UPDATE | 85% |
+| Just product name | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new vision statement using template below.
+
+**UPDATE**:
+1. Read existing vision (search if path not provided)
+2. Preserve structure and aspirational elements
+3. Refine specific sections based on new context
+4. Show diff summary: "Updated: [sections]. Core vision preserved."
+
+**FIND**:
+1. Search paths below for vision documents
+2. Present results: product, date, path
+3. Ask: "Update one of these, or create new?"
+
+### Search Locations for Vision Statements
+
+- `strategy/`
+- `vision/`
+- `docs/`
+- Root level (`*vision*.md`)
+
 ---
 
 Draft a **Product Vision Statement** for the specified product.

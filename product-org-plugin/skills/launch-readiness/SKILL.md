@@ -1,7 +1,49 @@
 ---
 name: launch-readiness
-description: Launch readiness decision checklist
-argument-hint: [product/feature name]
+description: Create or update a launch readiness assessment
+argument-hint: [product/feature name] or [update path/to/readiness.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "reassess", "refresh" in input | UPDATE | 100% |
+| File path provided (`@path/to/readiness.md`) | UPDATE | 100% |
+| "create", "new", "assess" in input | CREATE | 100% |
+| "find", "search", "list assessments" | FIND | 100% |
+| "the readiness", "launch readiness" | UPDATE | 85% |
+| Just product/feature name | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new readiness assessment using template below.
+
+**UPDATE**:
+1. Read existing assessment (search if path not provided)
+2. Update Assessment Date to current
+3. Update status indicators (🟢/🟡/🔴) for each area
+4. Update blockers and recommendation
+5. Show diff summary: "Reassessed on [date]. Changed: [areas]. Recommendation: [old] → [new]."
+
+**FIND**:
+1. Search paths below for readiness assessments
+2. Present results: product, status, date, path
+3. Ask: "Update one of these, or create new?"
+
+### Search Locations for Launch Readiness
+
+- `launch/`
+- `releases/`
+- `gtm/`
+- `readiness/`
+
 ---
 
 Assess **Launch Readiness** for a product or feature.

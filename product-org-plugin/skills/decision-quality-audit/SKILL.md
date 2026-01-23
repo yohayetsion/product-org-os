@@ -1,7 +1,38 @@
 ---
 name: decision-quality-audit
-description: Audit recent decisions for quality
-argument-hint: [team, time period, or decision type]
+description: Create or update an audit of recent decisions for quality
+argument-hint: [team, time period, or decision type] or [update path/to/audit.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "add decisions", "refresh" in input | UPDATE | 100% |
+| File path provided | UPDATE | 100% |
+| "create", "new", "run" in input | CREATE | 100% |
+| "find", "search", "list" | FIND | 100% |
+| "the audit", "last audit" | UPDATE | 85% |
+| Just team/period/type | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new audit using template below.
+
+**UPDATE**:
+1. Check document registry first, then search user's structure
+2. Preserve historical scores and trend data
+3. Update with new decisions or findings
+4. Show diff summary with score changes
+
+**FIND**: Check registry, then search user's folders for audit reports.
+
 ---
 
 Audit **Decision Quality** for a set of recent decisions.

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Org OS | AI-Powered Product Organization</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -2005,10 +2006,12 @@
                         <div class="step-number">3</div>
                         <div class="step-content">
                             <h4>Start Creating</h4>
-                            <p>Three ways to work: gateway, agents, or skills. Point any of them at your existing context.</p>
-                            <div class="code-block">/product Launch freemium tier for SMBs. Context: pricing-research.md, competitor-tiers.xlsx</div>
-                            <div class="code-block" style="margin-top: 0.5rem;">/cpo Portfolio tradeoff: mobile app vs API expansion. See: eng-estimates.md, market-data.xlsx</div>
-                            <div class="code-block" style="margin-top: 0.5rem;">/prd SSO integration for enterprise customers. Requirements in slack-thread.md</div>
+                            <p>Three ways to work: gateway, agents, or skills. Create new or update existing documents.</p>
+                            <div class="code-block">/product Launch freemium tier. Context: pricing-research.md, competitor-analysis.xlsx</div>
+                            <div class="code-block" style="margin-top: 0.5rem;">/cpo Portfolio tradeoff: mobile vs API. See: eng-estimates.md, market-data.xlsx</div>
+                            <div class="code-block" style="margin-top: 0.5rem;">/product-manager Draft user stories for checkout. Research: user-interviews.md</div>
+                            <div class="code-block" style="margin-top: 0.5rem;">/prd update the auth PRD with MFA requirements. Context: security-audit.md</div>
+                            <div class="code-block" style="margin-top: 0.5rem;">/decision-record for pricing model change. Analysis: pricing-test-results.xlsx</div>
                         </div>
                     </div>
                 </div>
@@ -2081,11 +2084,17 @@
 
         // Typing animation for /product gateway demo
         const commands = [
-            { text: '/product', context: ' Launch freemium for SMBs. Context: pricing-research.md, competitor-tiers.xlsx, Sarah\'s Slack thread from Monday' },
-            { text: '/product', context: ' Respond to Acme Corp RFP due Friday. See: rfp-acme.pdf, our-capabilities.md, @sales channel feedback' },
-            { text: '/product', context: ' Q2 roadmap draft. Inputs: customer-interviews/, eng-capacity.md, board-feedback-jan.pdf' },
-            { text: '/product', context: ' Competitor launched AI feature. Analyze: techcrunch-article.url, their-demo-notes.md, our-roadmap.md' },
-            { text: '/product', context: ' Business case for mobile app. Data: market-size.xlsx, user-research/, CFO email from yesterday' }
+            // /product gateway examples
+            { text: '/product', context: ' Launch freemium for SMBs. Context: pricing-research.md, competitor-tiers.xlsx' },
+            { text: '/product', context: ' Q2 roadmap draft. Inputs: customer-interviews/, eng-capacity.md' },
+            // Agent examples
+            { text: '/cpo', context: ' Review portfolio allocation for Q2. Data: active-bets.md, resource-plan.xlsx' },
+            { text: '/product-manager', context: ' Draft user stories for search feature. See: user-research.md, wireframes/' },
+            { text: '/bizops', context: ' Analyze unit economics for enterprise tier. Data: pricing.xlsx, churn-data.csv' },
+            // Skill examples with update mode
+            { text: '/prd', context: ' update the auth requirements with OAuth2 support. See: security-review.md' },
+            { text: '/decision-record', context: ' for Q2 roadmap prioritization. Context: tradeoff-analysis.md, PLT-notes.md' },
+            { text: '/roadmap-theme', context: ' update Growth theme with mobile initiatives. See: mobile-research.md' }
         ];
 
         let commandIndex = 0;

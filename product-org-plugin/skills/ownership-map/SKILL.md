@@ -1,7 +1,38 @@
 ---
 name: ownership-map
-description: Map accountability across V2V phases
-argument-hint: [initiative or deliverable]
+description: Create or update an accountability map across V2V phases
+argument-hint: [initiative or deliverable] or [update path/to/map.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "reassign" in input | UPDATE | 100% |
+| File path provided | UPDATE | 100% |
+| "create", "new", "map" in input | CREATE | 100% |
+| "find", "search", "list" | FIND | 100% |
+| "the ownership map", "our map" | UPDATE | 85% |
+| Just initiative name | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new ownership map using template below.
+
+**UPDATE**:
+1. Check document registry first, then search user's structure
+2. Preserve ownership history
+3. Update owners, handoffs, or gap status
+4. Show diff summary
+
+**FIND**: Check registry, then search user's folders for ownership maps.
+
 ---
 
 Map **end-to-end ownership** for an initiative, validating accountability chains across all V2V phases.

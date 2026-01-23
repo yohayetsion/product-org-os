@@ -1,7 +1,48 @@
 ---
 name: gtm-strategy
-description: Create a comprehensive go-to-market strategy
-argument-hint: [product or feature name]
+description: Create or update a go-to-market strategy
+argument-hint: [product or feature name] or [update path/to/gtm.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "modify" in input | UPDATE | 100% |
+| File path provided (`@path/to/gtm.md`) | UPDATE | 100% |
+| "create", "new", "draft" in input | CREATE | 100% |
+| "find", "search", "list GTM" | FIND | 100% |
+| "the GTM", "our GTM strategy" | UPDATE | 85% |
+| Just product/feature name | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new GTM strategy using template below.
+
+**UPDATE**:
+1. Read existing GTM doc (search if path not provided)
+2. Preserve unchanged sections exactly
+3. Update specific sections (timeline, channels, budget)
+4. Show diff summary: "Updated: [sections]. Unchanged: [sections]."
+
+**FIND**:
+1. Search paths below for GTM documents
+2. Present results: title, product, launch date, path
+3. Ask: "Update one of these, or create new?"
+
+### Search Locations for GTM Strategy
+
+- `gtm/`
+- `marketing/`
+- `launch/`
+- `strategy/`
+
 ---
 
 Create a **comprehensive Go-to-Market (GTM) Strategy** for the specified product or feature.

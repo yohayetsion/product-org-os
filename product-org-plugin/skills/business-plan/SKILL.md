@@ -1,7 +1,48 @@
 ---
 name: business-plan
-description: Create a complete business plan
-argument-hint: [product or business area]
+description: Create or update a business plan
+argument-hint: [product or business area] or [update path/to/business-plan.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "refresh" in input | UPDATE | 100% |
+| File path provided (`@path/to/business-plan.md`) | UPDATE | 100% |
+| "create", "new", "draft" in input | CREATE | 100% |
+| "find", "search", "list plans" | FIND | 100% |
+| "the business plan", "our plan" | UPDATE | 85% |
+| Just product/business area | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new business plan using template below.
+
+**UPDATE**:
+1. Read existing plan (search if path not provided)
+2. Preserve structure and strategy sections
+3. Update financials, milestones, or market data
+4. Show diff summary: "Updated: [sections]. Financials recalculated."
+
+**FIND**:
+1. Search paths below for business plans
+2. Present results: product/area, date, path
+3. Ask: "Update one of these, or create new?"
+
+### Search Locations for Business Plans
+
+- `business/`
+- `strategy/`
+- `plans/`
+- `docs/business/`
+
 ---
 
 Create a **complete Business Plan** for the specified product or business area.

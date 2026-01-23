@@ -1,7 +1,39 @@
 ---
 name: portfolio-tradeoff
-description: Structure a portfolio-level tradeoff decision
-argument-hint: [tradeoff description]
+description: Create or update a portfolio-level tradeoff decision
+argument-hint: [tradeoff description] or [update path/to/tradeoff.md]
+---
+
+## Document Intelligence
+
+This skill supports three modes: **Create**, **Update**, and **Find**.
+
+### Mode Detection
+
+| Signal | Mode | Confidence |
+|--------|------|------------|
+| "update", "revise", "refine" in input | UPDATE | 100% |
+| File path provided | UPDATE | 100% |
+| Tradeoff ID mentioned (e.g., PT-2026-001) | UPDATE | 100% |
+| "create", "new", "structure" in input | CREATE | 100% |
+| "find", "search", "list" | FIND | 100% |
+| "the tradeoff", "our tradeoff" | UPDATE | 85% |
+| Just tradeoff description | CREATE | 60% |
+
+**Threshold**: ≥85% auto-proceed | 70-84% state assumption | <70% ask user
+
+### Mode Behaviors
+
+**CREATE**: Generate complete new tradeoff document using template below.
+
+**UPDATE**:
+1. Check document registry first, then search user's structure
+2. Preserve option analysis and stakeholder input
+3. Update evaluation, recommendation, or decision record
+4. Show diff summary
+
+**FIND**: Check registry, then search user's folders for tradeoff documents.
+
 ---
 
 Structure a **Portfolio-Level Tradeoff Decision**.
