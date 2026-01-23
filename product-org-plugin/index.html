@@ -907,6 +907,91 @@
             }
         }
 
+        /* Meeting Mode Conversation */
+        .meeting-demo {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .meeting-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .meeting-header h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .meeting-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .meeting-conversation {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .meeting-prompt {
+            background: var(--bg);
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.9rem;
+        }
+
+        .meeting-prompt .prompt-label {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+
+        .meeting-responses {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .agent-response {
+            padding-left: 1rem;
+            border-left: 3px solid var(--border);
+        }
+
+        .agent-response.vp { border-left-color: var(--primary); }
+        .agent-response.pm { border-left-color: var(--secondary); }
+        .agent-response.pmm { border-left-color: var(--gradient-3); border-left-color: #ffc93c; }
+
+        .agent-response-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .agent-response-header .agent-name {
+            font-family: monospace;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .agent-response.vp .agent-name { color: var(--primary); }
+        .agent-response.pm .agent-name { color: var(--secondary); }
+        .agent-response.pmm .agent-name { color: #ffc93c; }
+
+        .agent-response p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
         /* Scroll indicator */
         .scroll-indicator {
             position: absolute;
@@ -1227,6 +1312,39 @@
                         <div class="example-item">
                             <code>/decision-record</code>
                             <span>Document our choice to build vs buy analytics module</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meeting Mode Demo -->
+            <div class="meeting-demo">
+                <div class="meeting-header">
+                    <h3>Your Product Org, Thinking Together</h3>
+                    <p>Ask a question. Get perspectives from every relevant role.</p>
+                </div>
+                <div class="meeting-conversation">
+                    <div class="meeting-prompt">
+                        <span class="prompt-label">/product</span> Should we delay launch to add enterprise SSO? See: enterprise-prospects.xlsx, launch-timeline.md
+                    </div>
+                    <div class="meeting-responses">
+                        <div class="agent-response vp">
+                            <div class="agent-response-header">
+                                <span class="agent-name">@vp-product</span>
+                            </div>
+                            <p>"Strategically, this is a bet on enterprise expansion. The three prospects in enterprise-prospects.xlsx represent $840K ARR. Against a 2-week delay cost, the math favors waiting—but only if SSO is truly the blocker and not a negotiation tactic."</p>
+                        </div>
+                        <div class="agent-response pm">
+                            <div class="agent-response-header">
+                                <span class="agent-name">@product-manager</span>
+                            </div>
+                            <p>"Looking at launch-timeline.md, SSO adds 12 days to critical path. We could ship without it and fast-follow, but enterprise-prospects.xlsx shows all three have SSO as a procurement requirement—not a nice-to-have."</p>
+                        </div>
+                        <div class="agent-response pmm">
+                            <div class="agent-response-header">
+                                <span class="agent-name">@director-product-marketing</span>
+                            </div>
+                            <p>"Delaying without a narrative creates market uncertainty. If we delay, I need to reframe this as 'enterprise-ready launch' not 'delayed launch.' That positioning actually strengthens our enterprise story."</p>
                         </div>
                     </div>
                 </div>

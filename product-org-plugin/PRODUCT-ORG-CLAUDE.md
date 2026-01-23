@@ -498,19 +498,39 @@ Control how verbose responses are with simple modifiers:
 | *(none)* | Standard | Balanced depth appropriate to the question |
 | `+` | Deep | Thorough exploration, full analysis, show reasoning |
 
-**Examples:**
+**Examples with full context sentences:**
 ```
-/product What's our launch status? -        # Quick summary
-/product What's our launch status?          # Standard response
-/product What's our launch status? +        # Full analysis with details
+# Brief - quick status check
+/product Review launch-checklist.md and tell me what's blocking launch -
 
-/plt Should we pivot to enterprise? -       # PLT gives brief alignment
-/plt Should we pivot to enterprise? +       # Full PLT debate with all perspectives
+# Standard - balanced analysis
+/plt Review q2-pipeline.xlsx and assess if we should delay the enterprise push
+
+# Deep - full exploration with all perspectives
+/product Analyze competitor-launch.md and customer-feedback/ to recommend our response +
+```
+
+**Agent-specific examples:**
+```
+# PM creating user stories - brief mode
+/pm Break down epic.md into /user-story items for sprint planning -
+
+# PLT strategic decision - deep mode
+/plt Review portfolio-health.md, eng-capacity.xlsx, and market-trends.md - should we pivot to enterprise? +
+
+# CPO board preparation - standard depth
+/cpo Review board-feedback.pdf, financials.xlsx and update /strategic-intent
 ```
 
 **Follow-up adjustments:**
 - Type `+` or "go deeper" → Expand the previous response
 - Type `-` or "summarize" → Compress to key points
+
+**Works with any command pattern:**
+```
+/context-recall pricing product:AXIA -      # Brief context summary
+/feedback-recall enterprise onboarding +    # Full feedback analysis with themes
+```
 
 ### How It Works
 
