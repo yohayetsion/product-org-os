@@ -1318,19 +1318,19 @@
                 <div class="usage-pattern">
                     <div class="pattern-header">
                         <h3>Talk to Agents</h3>
-                        <p>Delegate to specific roles. Shortcuts: /pm, /plt, /vpp, /prodops, /bizops</p>
+                        <p>Delegate to specific roles. Use full names or shortcuts (/pm, /plt, /vpp).</p>
                     </div>
                     <div class="pattern-examples">
                         <div class="example-item">
-                            <code>/cpo</code>
-                            <span>review board-feedback.pdf and update the /strategic-intent</span>
-                        </div>
-                        <div class="example-item">
-                            <code>/pm</code>
-                            <span>break down epic.md into /user-story items for the sprint</span>
+                            <code>/product</code>
+                            <span>routes to the right owners — use for any cross-functional request</span>
                         </div>
                         <div class="example-item">
                             <code>/plt</code>
+                            <span>shortcut for /product-leadership-team — strategic decisions, tradeoffs</span>
+                        </div>
+                        <div class="example-item">
+                            <code>/product-leadership-team</code>
                             <span>review portfolio-health.md and run a /portfolio-tradeoff</span>
                         </div>
                     </div>
@@ -1340,20 +1340,20 @@
                 <div class="usage-pattern">
                     <div class="pattern-header">
                         <h3>Use Skills Directly</h3>
-                        <p>Create, update, or find specific deliverables.</p>
+                        <p>Create deliverables with any agent. Combine agent + skill.</p>
                     </div>
                     <div class="pattern-examples">
                         <div class="example-item">
-                            <code>Create a /prd</code>
-                            <span>for SSO integration - requirements in slack-thread.md</span>
+                            <code>/plt</code>
+                            <span>create a /prd for SSO integration - requirements in slack-thread.md</span>
                         </div>
                         <div class="example-item">
-                            <code>Run /competitive-analysis</code>
-                            <span>on Acme - see their-demo-notes.md, pricing-page.url</span>
+                            <code>/plt</code>
+                            <span>run /competitive-analysis on Acme - see their-demo-notes.md</span>
                         </div>
                         <div class="example-item">
-                            <code>Update the /roadmap-theme</code>
-                            <span>for Growth with the mobile initiatives from research.md</span>
+                            <code>/plt</code>
+                            <span>update the /roadmap-theme for Growth with mobile initiatives</span>
                         </div>
                     </div>
                 </div>
@@ -2257,17 +2257,16 @@
         // Typing animation - highlights /commands wherever they appear
         const examples = [
             '/product Launch freemium for SMBs. Context: pricing-research.md',
-            '/plt create a /prd for checkout optimization - see user-research.md',
+            '/product-leadership-team create a /prd for checkout optimization - see user-research.md',
             '/cpo review board-feedback.pdf and update /strategic-intent',
-            'Run /competitive-analysis on Acme - see their-launch.md',
+            '/product-leadership-team run /portfolio-tradeoff on q4-initiatives.md',
             '/pm break down epic.md into /user-story items',
-            '/plt create a /business-case for mobile. Data: market-size.xlsx',
+            '/product-leadership-team create a /business-case for mobile. Data: market-size.xlsx',
             '/pm-dir review launch-data.xlsx and update the /gtm-strategy',
-            '/plt create /pricing-model from pricing-data.xlsx',
-            '/product Q3 planning. Inputs: customer-feedback/, capacity.md',
-            'Update the /roadmap-theme for Growth with mobile initiatives',
             '/product-leadership-team review strategy.md and update the /prd for API v2',
-            '/bizops analyze pricing-data.xlsx and create /pricing-model'
+            '/product Q3 planning. Inputs: customer-feedback/, capacity.md',
+            '/product-leadership-team create /pricing-model from pricing-data.xlsx',
+            '/bizops analyze pricing-data.xlsx and recommend pricing tiers'
         ];
 
         let commandIndex = 0;
