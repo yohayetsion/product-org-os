@@ -30,9 +30,11 @@ context/
 │   └── index.md            # Accumulated learnings
 ├── handoffs/
 │   └── current-session.md  # Agent delegation context
-└── feedback/
-    ├── index.md            # Feedback registry
-    └── themes.md           # Recurring patterns
+├── feedback/
+│   ├── index.md            # Feedback registry
+│   └── themes.md           # Recurring patterns
+└── documents/
+    └── registry.md         # Document registry for all strategic docs
 ```
 
 ## When to Run
@@ -56,6 +58,7 @@ Create all required folders:
 - `context/learnings/`
 - `context/handoffs/`
 - `context/feedback/`
+- `context/documents/`
 
 ### 3. Create Index Files
 
@@ -88,6 +91,7 @@ The Context Layer provides **persistent memory** for your AI product organizatio
 - `learnings/` - Accumulated organizational wisdom
 - `handoffs/` - Agent-to-agent context passing
 - `feedback/` - Customer and market feedback
+- `documents/` - Registry of all strategic documents
 
 ## How It Works
 
@@ -308,6 +312,83 @@ None yet.
 Themes are identified automatically when related feedback accumulates.
 ```
 
+#### context/documents/registry.md
+```markdown
+# Document Registry
+
+*Last updated: —*
+
+The Document Registry tracks all strategic documents created by skills. This enables Document Intelligence - skills can find and update existing documents rather than always creating new ones.
+
+## All Documents
+
+| ID | Type | Title | Path | Status | V2V Phase | Related | Updated |
+|----|------|-------|------|--------|-----------|---------|---------|
+| — | No documents registered yet | — | — | — | — | — | — |
+
+## By Type
+
+### Requirements (PRDs, Specs, Stories)
+*No documents yet*
+
+### Strategy (Intent, Bets, Decisions)
+*No documents yet*
+
+### Roadmap (Themes, Items)
+*No documents yet*
+
+### GTM (Strategy, Launch Plans, Campaigns)
+*No documents yet*
+
+### Business (Cases, Pricing, Analysis)
+*No documents yet*
+
+### Operational (Playbooks, Reports, Scorecards)
+*No documents yet*
+
+### Learning (Reviews, Retrospectives)
+*No documents yet*
+
+## By Status
+
+### Active
+*Documents currently in use*
+
+### Draft
+*Work in progress*
+
+### Archived
+*Historical documents*
+
+## Registered Directories
+
+*Directories containing strategic documents (searched when finding documents)*
+
+| Directory | Contains | Notes |
+|-----------|----------|-------|
+| — | No directories registered yet | — |
+
+---
+
+## How It Works
+
+1. **When skills create documents**: They register here with ID, type, path
+2. **When skills update documents**: They search here first by type/topic
+3. **When skills find documents**: They list matching entries from this registry
+
+### Document ID Conventions
+
+| Type | Format | Example |
+|------|--------|---------|
+| PRD | `PRD-[YYYY]-[NNN]` | PRD-2026-001 |
+| Decision | `DR-[YYYY]-[NNN]` | DR-2026-015 |
+| Strategic Bet | `SB-[YYYY]-[NNN]` | SB-2026-003 |
+| Roadmap Theme | `RT-[YYYY]-[NNN]` | RT-2026-002 |
+| Launch Plan | `LP-[YYYY]-[NNN]` | LP-2026-001 |
+
+Skills auto-generate IDs when creating documents.
+```
+
 ### 4. Report Completion
 
 ```
@@ -323,6 +404,7 @@ Created context folder structure:
 ✓ context/handoffs/current-session.md
 ✓ context/feedback/index.md
 ✓ context/feedback/themes.md
+✓ context/documents/registry.md
 
 You're ready to use all Product Org skills!
 
@@ -330,6 +412,7 @@ Quick start:
 - /feedback-capture - Capture customer feedback
 - /decision-record - Create a decision record
 - /prd - Create a product requirements document
+- /prd update [topic] - Update an existing PRD
 - /strategic-bet - Define a strategic bet
 ```
 
