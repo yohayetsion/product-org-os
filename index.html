@@ -920,76 +920,121 @@
         }
 
         .meeting-header h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
         }
 
         .meeting-header p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
         .meeting-conversation {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
             max-width: 800px;
             margin: 0 auto;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .meeting-prompt {
             background: var(--bg);
-            padding: 1.25rem 1.5rem;
+            padding: 1.5rem;
             border-bottom: 1px solid var(--border);
-            font-family: 'SF Mono', 'Fira Code', monospace;
-            font-size: 0.9rem;
         }
 
-        .meeting-prompt .prompt-label {
+        .meeting-prompt code {
+            display: block;
+            font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+            font-size: 0.9rem;
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        .meeting-prompt code .cmd {
             color: var(--secondary);
             font-weight: 600;
-            margin-right: 0.5rem;
+        }
+
+        .meeting-prompt code .file {
+            color: var(--primary);
         }
 
         .meeting-responses {
             padding: 1.5rem;
             display: flex;
             flex-direction: column;
-            gap: 1.25rem;
+            gap: 1.5rem;
         }
 
         .agent-response {
-            padding-left: 1rem;
-            border-left: 3px solid var(--border);
-        }
-
-        .agent-response.vp { border-left-color: var(--primary); }
-        .agent-response.pm { border-left-color: var(--secondary); }
-        .agent-response.pmm { border-left-color: #ffc93c; }
-
-        .agent-response-header {
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
+            gap: 1rem;
+            align-items: flex-start;
         }
 
-        .agent-response-header .agent-name {
-            font-family: monospace;
+        .agent-badge {
+            flex-shrink: 0;
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            white-space: nowrap;
         }
 
-        .agent-response.vp .agent-name { color: var(--primary); }
-        .agent-response.pm .agent-name { color: var(--secondary); }
-        .agent-response.pmm .agent-name { color: #ffc93c; }
+        .agent-badge.vp { background: rgba(233, 69, 96, 0.15); color: var(--primary); }
+        .agent-badge.pm { background: rgba(78, 204, 163, 0.15); color: var(--secondary); }
+        .agent-badge.pmm { background: rgba(255, 201, 60, 0.15); color: #ffc93c; }
 
         .agent-response p {
-            color: var(--text-muted);
+            color: var(--text);
+            font-size: 0.95rem;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        .agent-response p .highlight {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .meeting-synthesis {
+            background: var(--bg-elevated);
+            border-top: 1px solid var(--border);
+            padding: 1.25rem 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .synthesis-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .synthesis-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-dim);
+            font-weight: 600;
+        }
+
+        .synthesis-value {
             font-size: 0.9rem;
-            line-height: 1.6;
-            font-style: italic;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .synthesis-value.decision {
+            color: var(--secondary);
         }
 
         /* Scroll indicator */
@@ -1317,30 +1362,38 @@
             <div class="meeting-demo">
                 <div class="meeting-header">
                     <h3>Your Product Org, Thinking Together</h3>
-                    <p>Ask a question. Get perspectives from every relevant role.</p>
+                    <p>One question. Multiple perspectives. Clear decision.</p>
                 </div>
                 <div class="meeting-conversation">
                     <div class="meeting-prompt">
-                        <span class="prompt-label">/product</span> Should we delay launch to add enterprise SSO? See: enterprise-prospects.xlsx, launch-timeline.md
+                        <code><span class="cmd">/product</span> Review <span class="file">competitor-analysis.pdf</span> and <span class="file">customer-feedback/</span> — should we prioritize mobile app or double down on API integrations?</code>
                     </div>
                     <div class="meeting-responses">
-                        <div class="agent-response vp">
-                            <div class="agent-response-header">
-                                <span class="agent-name">@vp-product</span>
-                            </div>
-                            <p>"Strategically, this is a bet on enterprise expansion. The three prospects in enterprise-prospects.xlsx represent $840K ARR. Against a 2-week delay cost, the math favors waiting—but only if SSO is truly the blocker and not a negotiation tactic."</p>
+                        <div class="agent-response">
+                            <span class="agent-badge vp">VP Product</span>
+                            <p>Three competitors shipped mobile in Q4, but <span class="highlight">customer-feedback/</span> shows our top 10 accounts are asking for API depth. This is a strategic choice: consumer platform or enterprise infrastructure.</p>
                         </div>
-                        <div class="agent-response pm">
-                            <div class="agent-response-header">
-                                <span class="agent-name">@product-manager</span>
-                            </div>
-                            <p>"Looking at launch-timeline.md, SSO adds 12 days to critical path. We could ship without it and fast-follow, but enterprise-prospects.xlsx shows all three have SSO as a procurement requirement—not a nice-to-have."</p>
+                        <div class="agent-response">
+                            <span class="agent-badge pm">Product Manager</span>
+                            <p>Engineering capacity supports one major initiative. Mobile is 4 sprints; API v2 is 3 sprints plus docs. <span class="highlight">customer-feedback/</span> has 47 webhook requests vs 12 for mobile.</p>
                         </div>
-                        <div class="agent-response pmm">
-                            <div class="agent-response-header">
-                                <span class="agent-name">@director-product-marketing</span>
-                            </div>
-                            <p>"Delaying without a narrative creates market uncertainty. If we delay, I need to reframe this as 'enterprise-ready launch' not 'delayed launch.' That positioning actually strengthens our enterprise story."</p>
+                        <div class="agent-response">
+                            <span class="agent-badge pmm">Dir. Product Marketing</span>
+                            <p>Our "API-first" positioning has traction with developers. Mobile dilutes that story. If we're pivoting to SMB, mobile becomes table stakes—but that's not what <span class="highlight">competitor-analysis.pdf</span> suggests we should do.</p>
+                        </div>
+                    </div>
+                    <div class="meeting-synthesis">
+                        <div class="synthesis-item">
+                            <span class="synthesis-label">Alignment</span>
+                            <span class="synthesis-value">API-first strengthens enterprise positioning</span>
+                        </div>
+                        <div class="synthesis-item">
+                            <span class="synthesis-label">Decision</span>
+                            <span class="synthesis-value decision">Prioritize API v2, mobile fast-follow in Q3</span>
+                        </div>
+                        <div class="synthesis-item">
+                            <span class="synthesis-label">Next Steps</span>
+                            <span class="synthesis-value">@pm drafts /prd • @pmm updates /positioning-statement</span>
                         </div>
                     </div>
                 </div>
