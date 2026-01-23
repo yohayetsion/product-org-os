@@ -27,39 +27,45 @@ claude plugins install github:yohayetsion/product-org-os
 
 ## Three Ways to Work
 
-### /product Gateway (Recommended)
-Route any request to the right owners. Best for cross-functional work.
+### /product Gateway
+Your single entry point. Routes requests to the right agents automatically.
 ```
-/product Respond to Acme RFP due Friday. See: rfp-acme.pdf, our-capabilities.md
-```
-
-### Direct to Agents
-Delegate to a specific role when you know who should handle it.
-```
-/cpo Portfolio tradeoff: mobile app vs API expansion
-/product-manager Break down checkout redesign into user stories
-/bizops Build financial model for enterprise tier
+/product Launch freemium for SMBs. Context: pricing-research.md
+/product Q2 planning. Inputs: customer-interviews/, eng-capacity.md
 ```
 
-### Direct to Skills
-Get a specific deliverable when you know exactly what you need.
+### Talk to Agents
+Delegate to specific roles. Use shortcuts for faster access.
 ```
-/prd SSO integration for enterprise. Requirements in slack-thread.md
-/competitive-analysis Deep dive on Competitor X
-/decision-record Document our build vs buy choice
-```
-
-### Working with Existing Documents
-Skills intelligently detect when to create, update, or find documents.
-```
-/prd update the auth PRD with MFA requirements    # Updates existing
-/prd @requirements/auth-prd.md add OAuth support  # Updates specific file
-/decision-record find all pricing-related         # Lists matching records
-
-# Natural language combining agents + files + skills
-/product-leadership-team review meeting-notes.md and update the /prd
 /cpo review board-feedback.pdf and update /strategic-intent
-/director-product-marketing review launch-data.xlsx and update /gtm-strategy
+/pm break down epic.md into /user-story items
+/plt review portfolio-health.md and run /portfolio-tradeoff
+/bizops analyze pricing-data.xlsx and create /pricing-model
+```
+
+**Agent Shortcuts:**
+| Shortcut | Full Agent |
+|----------|------------|
+| `/pm` | `/product-manager` |
+| `/plt` | `/product-leadership-team` |
+| `/pm-dir` | `/director-product-management` |
+| `/pmm-dir` | `/director-product-marketing` |
+| `/pmm` | `/product-marketing-manager` |
+
+### Use Skills Directly
+Create, update, or find specific deliverables.
+```
+Create a /prd for SSO integration - see slack-thread.md
+Run /competitive-analysis on Acme - their-demo-notes.md
+Update the /roadmap-theme for Growth with mobile initiatives
+Find all authentication PRDs using /prd find
+```
+
+### Conversational Commands
+Mix agents, skills, and documents naturally.
+```
+/pm-dir review launch-data.xlsx and update the /gtm-strategy
+/cpo review board-feedback.pdf and update /strategic-intent
 /vp-product review sales-feedback.md and update /positioning-statement
 ```
 

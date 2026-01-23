@@ -5,6 +5,27 @@ All notable changes to Product Org OS will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.3.1] - 2026-01-23
+
+### Added
+- **Agent Shortcuts** for faster access to common agents
+  - `/pm` → `/product-manager`
+  - `/plt` → `/product-leadership-team`
+  - `/pm-dir` → `/director-product-management`
+  - `/pmm-dir` → `/director-product-marketing`
+  - `/pmm` → `/product-marketing-manager`
+- Documents context item in Context Layer (tracked via registry)
+
+### Changed
+- Marketing site: "Free & Open Source" now links to GitHub repo
+- Marketing site: "13 Specialized Agents" → "13 Role-Based Agents"
+- Marketing site: Agent cards show shortcuts (/pm, /plt, etc.)
+- Marketing site: Dynamic examples use natural language patterns
+- Marketing site: "How to Use It" examples are conversational
+- Marketing site: Use Cases show practical team/org workflows
+- Marketing site: Context Layer shows 6 balanced items including Documents
+- Marketing site: Footer links to LinkedIn profile
+
 ## [2.3.0] - 2026-01-23
 
 ### Added
