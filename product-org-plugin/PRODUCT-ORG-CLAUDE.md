@@ -35,6 +35,42 @@ your-project/              ← Your working directory
 
 ---
 
+## 13 Role-Based Agents
+
+Delegate work to specialized agents that understand their domain.
+
+| Agent | Shortcut | Role |
+|-------|----------|------|
+| `/cpo` | — | Chief Product Officer - executive strategy, portfolio decisions |
+| `/vp-product` | `/vpp` | VP of Product - vision, roadmap accountability, pricing |
+| `/director-product-management` | `/pm-dir` | Director PM - roadmap governance, team coordination |
+| `/director-product-marketing` | `/pmm-dir` | Director PMM - GTM strategy, positioning, launches |
+| `/product-manager` | `/pm` | Product Manager - feature specs, user stories, delivery |
+| `/product-marketing-manager` | `/pmm` | PMM - campaigns, collateral, sales enablement |
+| `/product-leadership-team` | `/plt` | PLT - portfolio tradeoffs, strategic alignment |
+| `/bizops` | — | Business Operations - business cases, financial analysis |
+| `/bizdev` | — | Business Development - partnerships, market expansion |
+| `/competitive-intelligence` | — | Competitive Intelligence - competitor analysis, market research |
+| `/product-operations` | `/prodops` | Product Ops - process optimization, launch coordination |
+| `/value-realization` | — | Value Realization - success metrics, customer outcomes |
+| `/ux-lead` | — | UX Lead - user research, design specs |
+
+### Using Agents
+
+```
+# Talk to agents naturally
+/pm break down epic.md into user stories
+/plt review portfolio-health.md and run /portfolio-tradeoff
+/vpp review sales-feedback.md and update /positioning-statement
+/prodops help optimize our sprint planning process
+
+# Agents can invoke skills
+/cpo review board-feedback.pdf and update /strategic-intent
+/pmm-dir review launch-data.xlsx and update /gtm-strategy
+```
+
+---
+
 ## Complete Skill Reference
 
 ### Setup & Core (2 skills)
@@ -183,10 +219,10 @@ Skills automatically detect which mode to use based on your input:
 /prd @requirements/auth-prd.md add OAuth support                # UPDATE - explicit path
 /prd find all security-related                                  # FIND - lists matching PRDs
 
-# Natural language with agents
-/product-leadership-team review meeting-notes.md and update the /prd
+# Natural language with agents (use shortcuts)
+/plt review meeting-notes.md and run /portfolio-tradeoff
 /cpo review board-feedback.pdf and update /strategic-intent
-/director-product-marketing review launch-data.xlsx and update /gtm-strategy
+/pmm-dir review launch-data.xlsx and update /gtm-strategy
 ```
 
 ### Document Registry
@@ -464,4 +500,4 @@ Spawn in parallel: @product-manager, @product-marketing-manager, @product-operat
 Spawn in parallel: @competitive-intelligence, @bizops, @director-product-management, @director-product-marketing
 ```
 
-All 13 agents now have access to all 55 skills and can invoke any skill based on their role's needs.
+All 13 agents have access to all 56 skills and can invoke any skill based on their role's needs.
