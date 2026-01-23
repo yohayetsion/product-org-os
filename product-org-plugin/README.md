@@ -34,6 +34,8 @@ Your single entry point. Routes requests to the right agents automatically.
 /product Q2 planning. Inputs: customer-interviews/, eng-capacity.md
 ```
 
+**Meeting Mode**: When you use `/product` or `/plt`, you'll see responses from *individual agents* speaking in their own voice - like walking into a meeting room. You'll see who's engaged, their perspectives, agreements, and tensions. This isn't a monolithic AI response - it's your product org thinking together.
+
 ### Talk to Agents
 Delegate to specific roles. Use shortcuts for faster access.
 ```

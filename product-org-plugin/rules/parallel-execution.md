@@ -102,15 +102,67 @@ Each agent receives the same context and works independently. Results are synthe
 
 ---
 
+## Meeting Mode Presentation (CRITICAL)
+
+**Agent responses are presented as a MEETING, not a monolithic synthesis.**
+
+### Core Requirement
+
+When multiple agents are invoked (parallel or sequential), their responses MUST be:
+
+1. **Individually attributed** - Each agent's contribution is clearly labeled
+2. **Shown in their voice** - Reflect the agent's role perspective and concerns
+3. **Visible to the user** - Don't hide agent responses behind synthesis
+
+### Presentation Format
+
+```markdown
+## Gathering Perspectives
+
+**Inviting**: @bizops, @competitive-intelligence, @value-realization
+
+---
+
+### @bizops
+"From a financial analysis perspective, I see..."
+
+### @competitive-intelligence
+"Looking at the competitive landscape, the key issue is..."
+
+### @value-realization
+"Customer outcome data suggests..."
+
+---
+
+## Points of Agreement
+- [What agents align on]
+
+## Points of Tension
+- @bizops flags cost concern; @value-realization emphasizes customer need
+
+## Synthesis
+[Only AFTER individual voices shown]
+```
+
+### Why This Matters
+
+- **Transparency**: User sees how the org thinks, not just conclusions
+- **Trust**: Attribution builds confidence in the analysis
+- **Learning**: Seeing multiple perspectives teaches the user about their org
+- **Debugging**: When something goes wrong, you can trace which lens missed it
+
+---
+
 ## Synthesis Responsibility
 
 When parallel agents complete, a synthesizing agent must:
 
-1. **Collect all outputs** - Gather results from each parallel agent
-2. **Identify conflicts** - Note where perspectives differ
-3. **Synthesize insights** - Create unified view
-4. **Recommend actions** - Propose path forward
-5. **Document in context** - Save synthesized output with `/context-save`
+1. **Present individual outputs first** - Show each agent's attributed response
+2. **Collect all outputs** - Gather results from each parallel agent
+3. **Identify conflicts** - Note where perspectives differ (and show them)
+4. **Synthesize insights** - Create unified view AFTER showing individual perspectives
+5. **Recommend actions** - Propose path forward
+6. **Document in context** - Save synthesized output with `/context-save`
 
 ---
 

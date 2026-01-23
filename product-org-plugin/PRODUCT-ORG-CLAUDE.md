@@ -71,6 +71,74 @@ Delegate work to specialized agents that understand their domain.
 
 ---
 
+## Meeting Mode Interaction
+
+**When you use `/product` or `/product-leadership-team`, you enter a MEETING, not a monolithic AI response.**
+
+### What You'll See
+
+When engaging multiple agents, responses are presented as a meeting:
+
+```markdown
+## Meeting Called: Assess CEO Feature Requests
+
+**Attendees**: @vp-product, @product-manager, @director-product-marketing
+
+---
+
+### @vp-product
+"Looking at this from a strategic perspective, I'm concerned about
+the positioning dilution. The 'CISO' focus was deliberate..."
+
+### @product-manager
+"From a requirements standpoint, I see three types of requests here:
+quick wins, demo polish, and a potential strategic pivot..."
+
+### @director-product-marketing
+"The messaging change has implications. If we're broadening the
+buyer persona, that's a strategic decision, not a wording tweak..."
+
+---
+
+## Points of Agreement
+- Summary bars (items 2-3) are straightforward value prop visualization
+- User click-through (item 5) is a legitimate product need
+
+## Points of Tension
+- @vp-product: Concerned about positioning drift
+- @director-product-marketing: Wants to validate ICP before changing messaging
+- @product-manager: Flags demo-ware risk in several requests
+
+## Synthesis / Recommendation
+[Collective recommendation after individual voices]
+```
+
+### Why Meeting Mode?
+
+| Benefit | Description |
+|---------|-------------|
+| **Transparency** | See *how* the org thinks, not just conclusions |
+| **Trust** | Attribution builds confidence in the analysis |
+| **Learning** | Understand different functional perspectives |
+| **Debugging** | When something goes wrong, trace which lens missed it |
+| **Realistic** | Real product orgs have healthy tension - show it |
+
+### When to Expect Multiple Voices
+
+Multiple agents speak when:
+- Request involves multiple V2V phases
+- Request has strategic implications
+- Request involves tradeoffs
+- Request is a review or assessment task
+- Request touches multiple functions
+
+Single agent responds when:
+- Clear tactical request with single owner
+- Simple deliverable with obvious accountability
+- Continuation of assigned work
+
+---
+
 ## Complete Skill Reference
 
 ### Setup & Core (2 skills)
