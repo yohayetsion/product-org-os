@@ -51,6 +51,8 @@ Delegate to specific roles. Use shortcuts for faster access.
 | `/pm-dir` | `/director-product-management` |
 | `/pmm-dir` | `/director-product-marketing` |
 | `/pmm` | `/product-marketing-manager` |
+| `/vpp` | `/vp-product` |
+| `/prodops` | `/product-operations` |
 
 ### Use Skills Directly
 Create, update, or find specific deliverables.

@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `/pm-dir` → `/director-product-management`
   - `/pmm-dir` → `/director-product-marketing`
   - `/pmm` → `/product-marketing-manager`
+  - `/vpp` → `/vp-product`
+  - `/prodops` → `/product-operations`
 - Documents context item in Context Layer (tracked via registry)
 
 ### Changed
