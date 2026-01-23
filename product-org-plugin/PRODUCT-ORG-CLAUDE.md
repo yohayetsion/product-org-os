@@ -178,10 +178,15 @@ Skills automatically detect which mode to use based on your input:
 ### Example Usage
 
 ```
-/prd authentication for enterprise         # CREATE - new PRD
-/prd update the auth PRD with MFA          # UPDATE - finds and updates existing
-/prd @requirements/auth-prd.md add OAuth   # UPDATE - explicit path
-/prd find all security-related             # FIND - lists matching PRDs
+/prd authentication for enterprise                              # CREATE - new PRD
+/prd update the auth PRD with MFA requirements                  # UPDATE - finds and updates
+/prd @requirements/auth-prd.md add OAuth support                # UPDATE - explicit path
+/prd find all security-related                                  # FIND - lists matching PRDs
+
+# Natural language with agents
+/product-leadership-team review meeting-notes.md and update the /prd
+/cpo review board-feedback.pdf and update /strategic-intent
+/director-product-marketing review launch-data.xlsx and update /gtm-strategy
 ```
 
 ### Document Registry

@@ -55,7 +55,12 @@ Skills intelligently detect when to create, update, or find documents.
 /prd update the auth PRD with MFA requirements    # Updates existing
 /prd @requirements/auth-prd.md add OAuth support  # Updates specific file
 /decision-record find all pricing-related         # Lists matching records
-/roadmap-theme update Growth with mobile apps     # Finds and updates theme
+
+# Natural language combining agents + files + skills
+/product-leadership-team review meeting-notes.md and update the /prd
+/cpo review board-feedback.pdf and update /strategic-intent
+/director-product-marketing review launch-data.xlsx and update /gtm-strategy
+/vp-product review sales-feedback.md and update /positioning-statement
 ```
 
 ---

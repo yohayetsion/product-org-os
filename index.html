@@ -2006,12 +2006,12 @@
                         <div class="step-number">3</div>
                         <div class="step-content">
                             <h4>Start Creating</h4>
-                            <p>Three ways to work: gateway, agents, or skills. Create new or update existing documents.</p>
-                            <div class="code-block">/product Launch freemium tier. Context: pricing-research.md, competitor-analysis.xlsx</div>
-                            <div class="code-block" style="margin-top: 0.5rem;">/cpo Portfolio tradeoff: mobile vs API. See: eng-estimates.md, market-data.xlsx</div>
-                            <div class="code-block" style="margin-top: 0.5rem;">/product-manager Draft user stories for checkout. Research: user-interviews.md</div>
-                            <div class="code-block" style="margin-top: 0.5rem;">/prd update the auth PRD with MFA requirements. Context: security-audit.md</div>
-                            <div class="code-block" style="margin-top: 0.5rem;">/decision-record for pricing model change. Analysis: pricing-test-results.xlsx</div>
+                            <p>Natural language with any combination of agents, skills, and your files.</p>
+                            <div class="code-block">/product Launch freemium tier. Context: pricing-research.md</div>
+                            <div class="code-block" style="margin-top: 0.5rem;">/product-leadership-team review meeting-notes.md and update the /prd</div>
+                            <div class="code-block" style="margin-top: 0.5rem;">/cpo review board-feedback.pdf and update /strategic-intent</div>
+                            <div class="code-block" style="margin-top: 0.5rem;">/director-product-marketing review launch-data.xlsx and update /gtm-strategy</div>
+                            <div class="code-block" style="margin-top: 0.5rem;">/prd find all authentication-related requirements</div>
                         </div>
                     </div>
                 </div>
@@ -2084,17 +2084,23 @@
 
         // Typing animation for /product gateway demo
         const commands = [
-            // /product gateway examples
-            { text: '/product', context: ' Launch freemium for SMBs. Context: pricing-research.md, competitor-tiers.xlsx' },
-            { text: '/product', context: ' Q2 roadmap draft. Inputs: customer-interviews/, eng-capacity.md' },
-            // Agent examples
-            { text: '/cpo', context: ' Review portfolio allocation for Q2. Data: active-bets.md, resource-plan.xlsx' },
-            { text: '/product-manager', context: ' Draft user stories for search feature. See: user-research.md, wireframes/' },
-            { text: '/bizops', context: ' Analyze unit economics for enterprise tier. Data: pricing.xlsx, churn-data.csv' },
-            // Skill examples with update mode
-            { text: '/prd', context: ' update the auth requirements with OAuth2 support. See: security-review.md' },
-            { text: '/decision-record', context: ' for Q2 roadmap prioritization. Context: tradeoff-analysis.md, PLT-notes.md' },
-            { text: '/roadmap-theme', context: ' update Growth theme with mobile initiatives. See: mobile-research.md' }
+            // /product gateway
+            { text: '/product', context: ' Launch freemium for SMBs. Context: pricing-research.md' },
+            // Agent + review + update skill pattern
+            { text: '/product-leadership-team', context: ' review meeting-notes.md and update the /prd' },
+            { text: '/cpo', context: ' review board-feedback.pdf and update /strategic-intent' },
+            // Agent with file context
+            { text: '/product-manager', context: ' break down epic.md into /user-story items' },
+            { text: '/director-product-marketing', context: ' review launch-data.xlsx and update /gtm-strategy' },
+            // Skills with update mode
+            { text: '/decision-record', context: ' update pricing decision with test results from ab-test.csv' },
+            { text: '/competitive-analysis', context: ' update Competitor X analysis. New data: their-announcement.md' },
+            // More natural patterns
+            { text: '/bizops', context: ' analyze churn-report.xlsx and recommend for /pricing-strategy' },
+            { text: '/prd', context: ' find all authentication-related requirements' },
+            { text: '/product', context: ' Q3 planning. Inputs: customer-feedback/, capacity.md, strategy.pdf' },
+            { text: '/roadmap-theme', context: ' update Growth with mobile initiatives from research.md' },
+            { text: '/vp-product', context: ' review sales-feedback.md and update /positioning-statement' }
         ];
 
         let commandIndex = 0;
@@ -2122,10 +2128,10 @@
                         isPaused = false;
                         isDeleting = true;
                         typeCommand();
-                    }, 2500);
+                    }, 2000);
                     return;
                 }
-                setTimeout(typeCommand, charIndex <= current.text.length ? 80 : 40);
+                setTimeout(typeCommand, charIndex <= current.text.length ? 50 : 20);
             } else if (isDeleting && charIndex >= 0) {
                 // Deleting
                 const displayText = fullText.substring(0, charIndex);
@@ -2139,10 +2145,10 @@
                     isDeleting = false;
                     commandIndex = (commandIndex + 1) % commands.length;
                     charIndex = 0;
-                    setTimeout(typeCommand, 500);
+                    setTimeout(typeCommand, 400);
                     return;
                 }
-                setTimeout(typeCommand, 25);
+                setTimeout(typeCommand, 10);
             }
         }
 
