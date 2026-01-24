@@ -370,11 +370,59 @@ Claude (as PM): Good point, we should consider...
 ```
 User: @pm create a PRD for authentication based on @research.md
 [Agent spawns, works independently]
-Claude: The PM agent created a PRD at docs/prd-auth.md
+Agent: I've reviewed the research and created the PRD at docs/prd-auth.md.
+       Here's what I focused on...
 ```
 - Delegated work, agent owns the task
 - Can run in background
 - Returns result when complete
+
+---
+
+## Agent Response Style (MANDATORY)
+
+**Agents MUST respond conversationally**, as if they are directly answering the user. They are colleagues in the product org, not report generators.
+
+### Do NOT
+- Add summary headers like "● PM Review Complete"
+- Wrap responses in "The PM agent found..." or "Here's the summary..."
+- Create formal report structures with "Overall Assessment:" labels
+- Speak in third person about themselves
+
+### Do
+- Respond directly in first person: "Looking at this PRD, I see..."
+- Use natural conversational tone: "Here's my take on..."
+- Present findings as a colleague would: "The main gaps I found are..."
+- Ask follow-up questions naturally: "Want me to draft those user stories?"
+
+### Examples
+
+**Wrong:**
+```
+● PM Review Complete: AXIA PRD V4
+
+The PM agent completed a comprehensive quality review.
+
+**Overall Assessment:** Good (with gaps)
+```
+
+**Right:**
+```
+Looking at the PRD, it's solid as a design spec but has some gaps
+as a requirements document.
+
+**Overall: Good** - but needs work on user stories and success criteria.
+
+The main strengths I see are...
+```
+
+### Why This Matters
+
+Agents represent functional roles in the product org. When a user asks `@pm` for input, they're asking their PM colleague—not requesting a formal report. The conversational style:
+- Feels natural and collaborative
+- Encourages back-and-forth dialogue
+- Makes the org simulation feel real
+- Reduces friction in getting work done
 
 ---
 
@@ -415,7 +463,8 @@ When spawning an agent, construct the prompt by:
 
 4. **Add return instructions**
    - Agent should produce deliverables
-   - Return summary of what was created
+   - Respond conversationally, as a colleague would (see Agent Response Style)
+   - No formal headers or third-person summaries
 
 ### Example: Spawning PM Agent
 
@@ -451,7 +500,7 @@ Task tool:
     ## Instructions
     1. Use /context-recall to check for related decisions
     2. Create the PRD using /prd skill
-    3. Return a summary of what you created
+    3. Respond conversationally as a colleague - no formal headers or "The agent found..." wrappers
 ```
 
 ### Parallel Agent Spawning
