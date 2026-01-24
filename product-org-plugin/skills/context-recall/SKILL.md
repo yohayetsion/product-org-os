@@ -1,6 +1,6 @@
 ---
 name: context-recall
-description: Query past decisions, bets, and learnings by topic
+description: Query past decisions, bets, learnings, and documents by topic
 argument-hint: [topic or keyword]
 ---
 
@@ -63,6 +63,11 @@ Search across all context indexes:
 - Check if topic relates to active bets
 - Surface current strategic context
 
+#### Strategic Documents (`context/documents/index.md`)
+- Search titles, type, skill, and auto-generated tags
+- Match on document type (PRD, roadmap, GTM strategy, etc.)
+- Return matching documents with file location
+
 ### 3. Read Full Records if Needed
 
 For highly relevant matches:
@@ -101,6 +106,13 @@ Present findings in order of relevance:
 |----|----------|------------|
 | L-012 | [Learning text] | High |
 
+### Related Strategic Documents
+| ID | Title | Type | Date | Location |
+|----|-------|------|------|----------|
+| DOC-2026-001 | [Title] | [Type] | [Date] | [File path] |
+
+*Tip: Read the document at [location] for full details*
+
 ### Recommendations
 Based on past context:
 - [Recommendation 1]
@@ -118,10 +130,10 @@ If the current work might conflict with past decisions:
 
 1. Accept topic/keyword from user (required)
 2. Parse optional `product:[name]` filter from query
-3. Read all context index files
+3. Read all context index files (decisions, bets, assumptions, learnings, portfolio, documents)
 4. Search for matches (case-insensitive, partial match OK)
 5. If product filter specified, filter results to that product only
-6. For strong matches, read full records
+6. For strong matches, read full records or referenced documents
 7. Synthesize and present findings
 8. Highlight constraints that apply to current work
 9. Note any potential conflicts with past decisions
@@ -131,3 +143,17 @@ If the current work might conflict with past decisions:
 
 ```
 User: /context-recall pricing
+
+Agent: Searches context/decisions/index.md, context/bets/index.md,
+       context/assumptions/registry.md, context/learnings/index.md,
+       context/portfolio/active-bets.md, context/documents/index.md
+
+       Returns relevant matches with summaries and recommendations.
+```
+
+```
+User: /context-recall roadmap product:AXIA
+
+Agent: Searches all context indexes filtered to AXIA product only.
+       Returns AXIA-specific roadmap documents, decisions, and bets.
+```
