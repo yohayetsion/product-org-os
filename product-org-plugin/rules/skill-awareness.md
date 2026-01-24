@@ -220,6 +220,132 @@ These are context/retrieval skills that operate differently:
 
 ---
 
+## Invocation Syntax (MANDATORY)
+
+### The Correct Distinction
+
+| Notation | Tool | Purpose | Example |
+|----------|------|---------|---------|
+| `/skill-name` | Skill tool | Invoke template/workflow **inline** | `/prd`, `/decision-record` |
+| `@agent-name` | Task tool | Spawn **individual autonomous agent** | `@pm`, `@vp-product` |
+| `@product`, `@plt` | Skill tool | Trigger **gateway protocol** (Meeting Mode) | `@product launch feature` |
+| `@file.md` | Context | Include file contents in conversation | `@strategy.md` |
+
+### Key Architectural Distinction
+
+#### Individual Agents (`@pm`, `@vp-product`, `@bizops`, etc.)
+- Spawn a **single agent** via Task tool that reasons and responds
+- Agent can use `/skills` internally
+- One perspective, one voice
+- Example: `@pm @user-research.md update the PRD` → PM agent spawns, reasons, produces PRD
+
+#### Gateways (`@product`, `@plt`)
+- Trigger **group decisioning and engagement protocol** via Skill tool
+- Multiple agents weigh in with their perspectives
+- Meeting Mode presentation (attributed responses, points of agreement/tension, synthesis)
+- Orchestrated multi-perspective decision-making
+- Example: `@plt @q3-strategy.md should we prioritize webhooks or SDK?` → PLT Meeting Mode: VP Product, PM, others weigh in → synthesis → recommendation
+
+---
+
+## Agent & Gateway Roster
+
+### Individual Agents (spawn single agent via Task tool)
+
+| Agent | Alias | Domain |
+|-------|-------|--------|
+| `@product-manager` | `@pm` | PRD, feature specs, user stories, delivery planning |
+| `@cpo` | - | Executive product strategy, org design, portfolio decisions |
+| `@vp-product` | - | Product vision, roadmap accountability, pricing strategy |
+| `@director-product-management` | `@pm-dir` | Roadmap governance, team coordination, requirements strategy |
+| `@director-product-marketing` | `@pmm-dir` | GTM strategy, positioning, competitive intelligence, launch |
+| `@product-marketing-manager` | `@pmm` | Campaigns, collateral, customer research, sales enablement |
+| `@bizops` | - | Business cases, financial analysis, KPI tracking, data analysis |
+| `@bizdev` | - | Partnership strategy, market expansion, deal structuring |
+| `@competitive-intelligence` | `@ci` | Competitor analysis, market research, win/loss analysis |
+| `@product-operations` | `@prod-ops` | Process optimization, launch coordination, tooling |
+| `@ux-lead` | - | User research, design specs, usability testing |
+| `@value-realization` | - | Success metrics, ROI analysis, adoption tracking, customer outcomes |
+
+### Gateways (trigger group protocol via Skill tool)
+
+| Gateway | Alias | Behavior |
+|---------|-------|----------|
+| `@product` | - | Routes to relevant owners, collects plans, orchestrates execution |
+| `@product-leadership-team` | `@plt` | Meeting Mode with multiple leadership perspectives |
+
+---
+
+## Automatic Routing Rules (MANDATORY)
+
+### @ Mention Triggers
+
+When the user mentions an `@agent` or `@gateway`, **immediately invoke without asking**:
+
+| User Mentions | Tool | Action |
+|---------------|------|--------|
+| `@product` | Skill | Invoke `/product` gateway skill (routes to owners, orchestrates) |
+| `@plt` or `@product-leadership-team` | Skill | Invoke `/product-leadership-team` skill (Meeting Mode) |
+| `@pm` or `@product-manager` | Task | Spawn `product-manager` agent |
+| `@vp-product`, `@cpo`, `@pm-dir`, etc. | Task | Spawn the named individual agent |
+| `/[skill-name]` | Skill | Invoke that skill inline |
+
+### Invocation Examples
+
+```
+@pm @user-research.md create PRD
+```
+→ Task tool spawns PM agent with context from user-research.md
+
+```
+@plt @strategy.md prioritize Q4 initiatives
+```
+→ Skill tool invokes PLT gateway → Meeting Mode with multiple perspectives
+
+```
+@product launch freemium tier. Context: @pricing.md
+```
+→ Skill tool invokes Product gateway → Routes to owners, coordinates execution
+
+```
+/prd
+```
+→ Skill tool invokes PRD template inline
+
+**Do NOT:**
+- Ask "would you like me to route this?"
+- Respond directly when an @ mention is present
+- Explain what you're about to do before doing it
+
+**Do:**
+- Immediately invoke the correct tool (Task for agents, Skill for gateways/skills)
+- Pass the user's question/context as the prompt
+- Include any referenced `@file.md` context
+- Let the agent/gateway respond
+
+### Domain-Based Auto-Routing
+
+Even without explicit @ mentions, route automatically when the question clearly belongs to a specific domain:
+
+| Question Domain | Route To |
+|-----------------|----------|
+| PRD scope, requirements strategy, feature prioritization | `@pm` or `/product` |
+| Product vision, portfolio decisions, org structure | `@vp-product` or `@cpo` |
+| GTM strategy, positioning, competitive response | `@pmm-dir` |
+| Launch readiness, process optimization | `@prod-ops` |
+| Customer outcomes, value realization | `@value-realization` |
+| Multi-stakeholder decisions, portfolio tradeoffs | `@plt` |
+
+### Recognition Patterns
+
+Recognize these as routing signals:
+- Agent names with `@` prefix: `@pm`, `@product-manager`, `@vp-product`
+- Gateway names with `@` prefix: `@product`, `@plt`
+- Skill invocations with `/` prefix: `/prd`, `/decision-record`
+- File context with `@` prefix: `@strategy.md`, `@research.md`
+
+---
+
 ## V2V Operating Principle
 
 > "Every skill exists for a reason. Choose the right skill for the task, not the task for the skill you know."
