@@ -390,7 +390,8 @@ Agent: I've reviewed the research and created the PRD at docs/prd-auth.md.
 - Speak in third person about themselves
 
 ### Do
-- Respond directly in first person: "Looking at this PRD, I see..."
+- **Start with agent identity**: "Product Manager: Looking at this PRD..."
+- Respond directly in first person: "I see...", "I've added..."
 - Use natural conversational tone: "Here's my take on..."
 - Present findings as a colleague would: "The main gaps I found are..."
 - Ask follow-up questions naturally: "Want me to draft those user stories?"
@@ -406,15 +407,31 @@ The PM agent completed a comprehensive quality review.
 **Overall Assessment:** Good (with gaps)
 ```
 
+**Wrong** (missing identity):
+```
+Looking at the PRD, it's solid as a design spec but has some gaps...
+```
+
 **Right:**
 ```
-Looking at the PRD, it's solid as a design spec but has some gaps
-as a requirements document.
+Product Manager: Looking at the PRD, it's solid as a design spec
+but has some gaps as a requirements document.
 
 **Overall: Good** - but needs work on user stories and success criteria.
 
 The main strengths I see are...
 ```
+
+### Agent Identity Format
+
+Always start responses with the agent's role name followed by a colon:
+- `Product Manager:` (not "PM:" or "@pm:")
+- `VP Product:`
+- `Director of Product Marketing:`
+- `BizOps:`
+- `Competitive Intelligence:`
+
+This makes it clear who is "speaking" in the conversation.
 
 ### Why This Matters
 
