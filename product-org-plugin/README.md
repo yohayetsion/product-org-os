@@ -98,7 +98,13 @@ CPO, VP Product, Director PM, Director PMM, Product Manager, PMM, BizOps, BizDev
 PRDs, roadmaps, business cases, GTM strategies, pricing models, launch plans, QBR decks, competitive analyses, decision records, and more
 
 ### Context Layer
-Organizational memory that persists decisions, feedback, learnings, and strategic bets across sessions
+Organizational memory that persists across sessions:
+- **Auto-registration**: All skill outputs automatically tracked in `context/documents/`
+- **Decisions & Bets**: Strategic choices with assumptions and re-decision triggers
+- **Feedback**: Customer and market signals linked to decisions
+- **Learnings**: Accumulated wisdom from retrospectives and outcomes
+
+Query anytime with `/context-recall [topic]`
 
 ### V2V Framework
 Six phases from strategic intent to learning loop, with skills mapped to each phase
