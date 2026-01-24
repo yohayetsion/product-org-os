@@ -6,6 +6,8 @@ The Context Layer provides **persistent memory** for your AI product organizatio
 
 ```
 context/
+├── documents/          # Strategic documents registry (AUTO-POPULATED)
+│   └── index.md        # Master list of all skill-generated documents
 ├── decisions/          # Decision registry - all major decisions
 │   ├── index.md        # Master list with quick lookup
 │   └── [YYYY]/         # Individual records by year
@@ -108,10 +110,21 @@ Update `principles/scorecard.md` after outcome reviews to track improvement.
 
 ## How It Works
 
-1. **After decisions/bets**: Use `/context-save` to extract key information to the registry
-2. **Before new work**: Use `/context-recall` to check what's been decided before
-3. **For delegation**: Use `/handoff` to brief the receiving agent
-4. **For learning**: Retrospectives and outcome reviews feed into the learnings index
+1. **Auto-registration**: All skill outputs are automatically registered to `context/documents/index.md` (no action needed)
+2. **After decisions/bets**: Also use `/context-save` to extract to decision/bet registries
+3. **Before new work**: Use `/context-recall` to check what's been decided before
+4. **For delegation**: Use `/handoff` to brief the receiving agent
+5. **For learning**: Retrospectives and outcome reviews feed into the learnings index
+
+## Auto-Registration (New in v2.3)
+
+When any skill produces a strategic document and writes it to the filesystem, the system automatically:
+
+1. Registers the document in `context/documents/index.md`
+2. Captures metadata (title, type, skill used, date, owner, location, tags)
+3. Links to related decisions/bets if mentioned
+
+**This happens silently** - no prompting required. You can always query what documents exist using `/context-recall [topic]` or by reading `context/documents/index.md`.
 
 ## Maintenance
 
