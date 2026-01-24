@@ -33,6 +33,8 @@ The context layer embodies the V2V learning loop: decisions lead to outcomes, ou
 product-org-plugin/
 ├── context/                          # Persistent state folder
 │   ├── README.md                     # How to use context layer
+│   ├── documents/                    # Strategic documents registry (AUTO-POPULATED)
+│   │   └── index.md                  # All skill-generated documents
 │   ├── decisions/                    # Decision registry
 │   │   ├── index.md                  # Master list of all decisions
 │   │   └── [YYYY]/                   # Organized by year
@@ -47,12 +49,12 @@ product-org-plugin/
 │   │   └── active-bets.md            # What we're currently betting on (with V2V phase tracking)
 │   ├── learnings/                    # Accumulated wisdom
 │   │   └── index.md                  # Indexed learnings from retrospectives
-│   ├── feedback/                     # Customer/market feedback (NEW)
+│   ├── feedback/                     # Customer/market feedback
 │   │   ├── index.md                  # Master list of all feedback
 │   │   ├── themes.md                 # Recurring feedback patterns
 │   │   └── [YYYY]/                   # Organized by year
 │   │       └── FB-YYYY-NNN.md        # Individual feedback records
-│   ├── principles/                   # Operating principles tracking (NEW)
+│   ├── principles/                   # Operating principles tracking
 │   │   ├── README.md                 # Principles folder documentation
 │   │   └── scorecard.md              # Periodic principle adherence assessment
 │   └── handoffs/                     # Agent-to-agent context
@@ -498,9 +500,56 @@ BizOps: Checking assumptions from DR-2026-001...
 
 ---
 
-## Implementation Status (v2.2.0)
+## Document Auto-Registration (v2.3.0 - NEW)
 
-All context layer features are now implemented as part of v2.2.0:
+### Overview
+
+All skill outputs that produce strategic documents are **automatically registered** to `context/documents/index.md`. This happens silently - no user prompting required.
+
+### What Gets Registered
+
+| V2V Phase | Skills That Trigger Auto-Registration |
+|-----------|---------------------------------------|
+| Phase 1 | `/strategic-intent`, `/vision-statement`, `/market-analysis`, `/competitive-landscape`, `/competitive-analysis`, `/market-segment` |
+| Phase 2 | `/business-case`, `/business-plan`, `/pricing-strategy`, `/pricing-model`, `/positioning-statement`, `/decision-record`, `/strategic-bet`, `/decision-charter`, `/escalation-rule` |
+| Phase 3 | `/product-roadmap`, `/roadmap-theme`, `/roadmap-item`, `/gtm-strategy`, `/gtm-brief`, `/launch-plan`, `/strategy-communication`, `/prd`, `/prd-outline`, `/feature-spec`, `/user-story` |
+| Phase 4 | `/campaign-brief`, `/sales-enablement`, `/stakeholder-brief`, `/launch-readiness` |
+| Phase 5 | `/onboarding-playbook`, `/value-realization-report`, `/customer-health-scorecard` |
+| Phase 6 | `/qbr-deck`, `/outcome-review`, `/retrospective` |
+
+### Exclusions
+
+These skills do NOT trigger auto-registration:
+- **Assessments/checks**: `/maturity-check`, `/pm-level-check`, `/phase-check`, `/commitment-check`, `/ownership-map`, `/customer-value-trace`, `/collaboration-check`, `/scale-check`
+- **Context operations**: `/context-save`, `/context-recall`, `/portfolio-status`, `/handoff`, `/feedback-capture`, `/feedback-recall`
+- **Utility**: `/setup`, `/present`
+
+### Registration Data Captured
+
+| Field | Source |
+|-------|--------|
+| ID | Auto-generated: `DOC-[YYYY]-[NNN]` |
+| Title | Document H1 or filename |
+| Type | Based on skill used |
+| Skill | The skill that generated it |
+| Date | Current date |
+| Owner | From session context |
+| Product | From context (if multi-product) |
+| Location | File path where written |
+| Tags | Auto-generated from content |
+
+### Querying Documents
+
+Documents can be found via:
+- `/context-recall [topic]` - Searches documents as well as decisions/bets
+- Reading `context/documents/index.md` directly
+- Filtering by product: `/context-recall [topic] product:AXIA`
+
+---
+
+## Implementation Status (v2.3.0)
+
+All context layer features are now implemented:
 
 ### ✅ Completed Features
 
@@ -525,6 +574,9 @@ All context layer features are now implemented as part of v2.2.0:
 | **Principles** | `context/principles/` folder | ✅ Complete |
 | | Principles scorecard template | ✅ Complete |
 | | Principle validator skills | ✅ Complete (5 skills) |
+| **Documents (v2.3)** | `context/documents/` folder | ✅ Complete |
+| | Auto-registration rules | ✅ Complete |
+| | Document index template | ✅ Complete |
 
 ### Related Skills (v2.2.0)
 

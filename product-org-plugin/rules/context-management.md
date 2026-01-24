@@ -9,13 +9,48 @@ The Context Layer provides organizational memory across sessions and agents. Fol
 
 ## Core Behaviors
 
+### Auto-Registration of Strategic Documents (MANDATORY)
+
+**ALL skill outputs that produce strategic documents MUST be auto-registered.** This happens silently - no prompting the user.
+
+When a skill completes and writes a document to the filesystem:
+
+1. **Auto-register immediately**: Add entry to `context/documents/index.md`
+2. **Capture metadata**:
+   - Generate ID: `DOC-[YYYY]-[NNN]`
+   - Title: From document H1 or filename
+   - Type: Based on skill used (see Document Types table)
+   - Skill: The skill that generated it
+   - Date: Current date
+   - Owner: From session context
+   - Product: If multi-product org, from context
+   - Location: File path where document was written
+   - Tags: Auto-generated from content
+3. **Cross-reference**: Link to related decisions/bets if mentioned
+
+**Skills that trigger auto-registration:**
+
+| V2V Phase | Skills |
+|-----------|--------|
+| Phase 1 | `/strategic-intent`, `/vision-statement`, `/market-analysis`, `/competitive-landscape`, `/competitive-analysis`, `/market-segment` |
+| Phase 2 | `/business-case`, `/business-plan`, `/pricing-strategy`, `/pricing-model`, `/positioning-statement`, `/decision-record`, `/strategic-bet`, `/decision-charter`, `/escalation-rule` |
+| Phase 3 | `/product-roadmap`, `/roadmap-theme`, `/roadmap-item`, `/gtm-strategy`, `/gtm-brief`, `/launch-plan`, `/strategy-communication`, `/prd`, `/prd-outline`, `/feature-spec`, `/user-story` |
+| Phase 4 | `/campaign-brief`, `/sales-enablement`, `/stakeholder-brief`, `/launch-readiness` |
+| Phase 5 | `/onboarding-playbook`, `/value-realization-report`, `/customer-health-scorecard` |
+| Phase 6 | `/qbr-deck`, `/outcome-review`, `/retrospective` |
+
+**Exclusions** (do NOT auto-register):
+- Assessments/checks: `/maturity-check`, `/pm-level-check`, `/phase-check`, `/commitment-check`, `/ownership-map`, `/customer-value-trace`, `/collaboration-check`, `/scale-check`
+- Context operations: `/context-save`, `/context-recall`, `/portfolio-status`, `/handoff`, `/feedback-capture`, `/feedback-recall`
+- Utility: `/setup`, `/present`
+
 ### After Creating Decisions or Bets
 
 When you complete a `/decision-record` or `/strategic-bet`:
 
-1. **Always offer to save**: "Should I save this to the context registry? (`/context-save`)"
-2. If user agrees, run `/context-save` to:
-   - Add entry to the appropriate index
+1. **Auto-register the document** (per above rules)
+2. **Also save to context registry**: Run `/context-save` to:
+   - Add entry to the appropriate index (decisions/bets)
    - Extract assumptions to the assumption registry
    - Update portfolio if it's an active bet
 
@@ -126,6 +161,7 @@ Use principle validators at these key points:
 
 | Content Type | Index Location | Full Records |
 |--------------|----------------|--------------|
+| **Documents** | `context/documents/index.md` | (referenced by path) |
 | Decisions | `context/decisions/index.md` | `context/decisions/[YYYY]/` |
 | Strategic Bets | `context/bets/index.md` | `context/bets/[YYYY]/` |
 | Assumptions | `context/assumptions/registry.md` | (in registry) |
@@ -168,6 +204,9 @@ Use the `product:` filter in recall commands:
 /feedback-recall onboarding product:SKYMOD
 → Returns only onboarding feedback for SKYMOD
 
+/portfolio-status product:AXIA
+→ Returns portfolio for AXIA only
+
 /context-recall pricing
 → Returns pricing context across ALL products (no filter)
 ```
@@ -202,6 +241,7 @@ This feature is **fully optional**. Organizations with a single product can igno
 
 ## ID Conventions
 
+- **Documents**: `DOC-[YYYY]-[NNN]` (e.g., DOC-2026-001)
 - **Decisions**: `DR-[YYYY]-[NNN]` (e.g., DR-2026-001)
 - **Strategic Bets**: `SB-[YYYY]-[NNN]` (e.g., SB-2026-003)
 - **Assumptions**: `A-[NNN]` (sequential, e.g., A-015)
@@ -210,6 +250,13 @@ This feature is **fully optional**. Organizations with a single product can igno
 - **Themes**: `TH-[NNN]` (sequential, e.g., TH-005)
 
 ## Quality Standards
+
+### For Documents (Auto-Registered)
+- File path is accurate and accessible
+- Title reflects document purpose
+- Tags enable searchability
+- V2V phase is correctly identified
+- Product is specified (if multi-product org)
 
 ### For Decisions
 - Single accountable owner (not a team)
