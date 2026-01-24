@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <defs>
+        <!-- Full gradient for nodes -->
+        <linearGradient id="gradientFill" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#E94560"/>
+            <stop offset="100%" stop-color="#4ECCA3"/>
+        </linearGradient>
+
+        <!-- 60% opacity gradient for lines -->
+        <linearGradient id="gradientLine" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#E94560" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#4ECCA3" stop-opacity="0.6"/>
+        </linearGradient>
+
+        <!-- Subtle glow effect for nodes -->
+        <filter id="nodeGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <!--
+        Convergence Hexagon Logo
+        - Stylized hexagon formed by six interconnected nodes
+        - Represents the six V2V phases
+        - Hexagon rotated 30 degrees (flat edge at bottom)
+        - Nodes have subtle glow effect
+        - Lines at 60% opacity of gradient
+
+        V2V Phases represented:
+        1. Strategic Foundation (top)
+        2. Strategic Decisions (top-right)
+        3. Strategic Commitments (bottom-right)
+        4. Coordinated Execution (bottom)
+        5. Business Outcomes (bottom-left)
+        6. Learning Loop (top-left)
+    -->
+
+    <g transform="translate(50,50)">
+        <!-- Hexagon connecting lines (60% opacity) -->
+        <polygon
+            points="0,-40 34.6,-20 34.6,20 0,40 -34.6,20 -34.6,-20"
+            fill="none"
+            stroke="url(#gradientLine)"
+            stroke-width="2.5"
+            stroke-linejoin="round"
+        />
+
+        <!-- Six nodes representing V2V phases (with glow) -->
+        <!-- Phase 1: Strategic Foundation (top) -->
+        <circle cx="0" cy="-40" r="7" fill="url(#gradientFill)" filter="url(#nodeGlow)"/>
+
+        <!-- Phase 2: Strategic Decisions (top-right) -->
+        <circle cx="34.6" cy="-20" r="7" fill="url(#gradientFill)" filter="url(#nodeGlow)"/>
+
+        <!-- Phase 3: Strategic Commitments (bottom-right) -->
+        <circle cx="34.6" cy="20" r="7" fill="url(#gradientFill)" filter="url(#nodeGlow)"/>
+
+        <!-- Phase 4: Coordinated Execution (bottom) -->
+        <circle cx="0" cy="40" r="7" fill="url(#gradientFill)" filter="url(#nodeGlow)"/>
+
+        <!-- Phase 5: Business Outcomes (bottom-left) -->
+        <circle cx="-34.6" cy="20" r="7" fill="url(#gradientFill)" filter="url(#nodeGlow)"/>
+
+        <!-- Phase 6: Learning Loop (top-left) -->
+        <circle cx="-34.6" cy="-20" r="7" fill="url(#gradientFill)" filter="url(#nodeGlow)"/>
+    </g>
+</svg>
