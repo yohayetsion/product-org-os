@@ -35,45 +35,74 @@ your-project/              ← Your working directory
 
 ---
 
+## Invocation Patterns
+
+Two syntax patterns for two different purposes:
+
+| Syntax | Tool | Purpose | Example |
+|--------|------|---------|---------|
+| `@agent` | Task | **Delegate** - spawn autonomous agent | `@pm create PRD for auth` |
+| `/skill` | Skill | **Inline** - use template/workflow | `/prd` `/decision-record` |
+
+### Agents (`@`) vs Skills (`/`)
+
+| Mode | Behavior | Use When |
+|------|----------|----------|
+| **`@pm`** (autonomous) | Spawns agent, works independently, returns when done | Delegating work, "go do this" |
+| **`/pm`** (inline) | Claude adopts persona, continues conversation | Quick back-and-forth |
+
+Both patterns access the same agent capabilities - choose based on your workflow.
+
+---
+
 ## 13 Role-Based Agents
 
-Delegate work to specialized agents that understand their domain.
+Delegate work to specialized agents that reason autonomously.
 
 | Agent | Shortcut | Role |
 |-------|----------|------|
-| `/cpo` | — | Chief Product Officer - executive strategy, portfolio decisions |
-| `/vp-product` | `/vpp` | VP of Product - vision, roadmap accountability, pricing |
-| `/director-product-management` | `/pm-dir` | Director PM - roadmap governance, team coordination |
-| `/director-product-marketing` | `/pmm-dir` | Director PMM - GTM strategy, positioning, launches |
-| `/product-manager` | `/pm` | Product Manager - feature specs, user stories, delivery |
-| `/product-marketing-manager` | `/pmm` | PMM - campaigns, collateral, sales enablement |
-| `/product-leadership-team` | `/plt` | PLT - portfolio tradeoffs, strategic alignment |
-| `/bizops` | — | Business Operations - business cases, financial analysis |
-| `/bizdev` | — | Business Development - partnerships, market expansion |
-| `/competitive-intelligence` | — | Competitive Intelligence - competitor analysis, market research |
-| `/product-operations` | `/prodops` | Product Ops - process optimization, launch coordination |
-| `/value-realization` | — | Value Realization - success metrics, customer outcomes |
-| `/ux-lead` | — | UX Lead - user research, design specs |
+| `@cpo` | — | Chief Product Officer - executive strategy, portfolio decisions |
+| `@vp-product` | `@vpp` | VP of Product - vision, roadmap accountability, pricing |
+| `@director-product-management` | `@pm-dir` | Director PM - roadmap governance, team coordination |
+| `@director-product-marketing` | `@pmm-dir` | Director PMM - GTM strategy, positioning, launches |
+| `@product-manager` | `@pm` | Product Manager - feature specs, user stories, delivery |
+| `@product-marketing-manager` | `@pmm` | PMM - campaigns, collateral, sales enablement |
+| `@product-leadership-team` | `@plt` | PLT - portfolio tradeoffs, strategic alignment |
+| `@bizops` | — | Business Operations - business cases, financial analysis |
+| `@bizdev` | — | Business Development - partnerships, market expansion |
+| `@competitive-intelligence` | `@ci` | Competitive Intelligence - competitor analysis, market research |
+| `@product-operations` | `@prod-ops` | Product Ops - process optimization, launch coordination |
+| `@value-realization` | — | Value Realization - success metrics, customer outcomes |
+| `@ux-lead` | — | UX Lead - user research, design specs |
 
-### Using Agents
+### Delegating to Agents
 
 ```
-# Talk to agents naturally
-/pm break down epic.md into user stories
-/plt review portfolio-health.md and run /portfolio-tradeoff
-/vpp review sales-feedback.md and update /positioning-statement
-/prodops help optimize our sprint planning process
+# Spawn autonomous agents to handle tasks
+@pm break down @epic.md into user stories
+@plt review @portfolio-health.md and run /portfolio-tradeoff
+@vp-product review @sales-feedback.md and update /positioning-statement
+@prod-ops help optimize our sprint planning process
 
-# Agents can invoke skills
-/cpo review board-feedback.pdf and update /strategic-intent
-/pmm-dir review launch-data.xlsx and update /gtm-strategy
+# Agents use skills internally
+@cpo review @board-feedback.pdf and update /strategic-intent
+@pmm-dir review @launch-data.xlsx and update /gtm-strategy
 ```
+
+### Gateways
+
+Two special gateways orchestrate multiple agents:
+
+| Gateway | Behavior |
+|---------|----------|
+| `@product` | Routes to relevant owners, spawns agents, coordinates execution |
+| `@plt` | Convenes Product Leadership Team, Meeting Mode with multiple voices |
 
 ---
 
 ## Meeting Mode Interaction
 
-**When you use `/product` or `/product-leadership-team`, you enter a MEETING, not a monolithic AI response.**
+**When you use `@product` or `@plt`, you enter a MEETING, not a monolithic AI response.**
 
 ### What You'll See
 

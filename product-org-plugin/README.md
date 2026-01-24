@@ -20,28 +20,33 @@ claude plugins install github:yohayetsion/product-org-os
 /setup
 
 # Start using
-/product Launch freemium tier for SMBs. Context: pricing-research.md
+@product Launch freemium tier for SMBs. Context: @pricing-research.md
 ```
 
 ---
 
-## Three Ways to Work
+## Two Invocation Patterns
 
-### /product Gateway
+| Syntax | Purpose | Example |
+|--------|---------|---------|
+| `@agent` | **Delegate** - spawn autonomous agent | `@pm create a PRD for auth` |
+| `/skill` | **Inline** - use template/workflow directly | `/prd` `/decision-record` |
+
+### @product Gateway
 Your single entry point. Routes requests to the right agents automatically.
 ```
-/product Launch freemium for SMBs. Context: pricing-research.md
-/product Q2 planning. Inputs: customer-interviews/, eng-capacity.md
+@product Launch freemium for SMBs. Context: @pricing-research.md
+@product Q2 planning. Inputs: @customer-interviews/ @eng-capacity.md
 ```
 
 **Response Depth** (`+`/`-` modifiers):
 | Modifier | Effect | Example |
 |----------|--------|---------|
-| `-` | Brief - executive summary | `/product What's launch status? -` |
-| *(none)* | Standard - balanced depth | `/product What's launch status?` |
-| `+` | Deep - full analysis | `/product What's launch status? +` |
+| `-` | Brief - executive summary | `@product What's launch status? -` |
+| *(none)* | Standard - balanced depth | `@product What's launch status?` |
+| `+` | Deep - full analysis | `@product What's launch status? +` |
 
-**Meeting Mode**: When you use `/product` or `/plt`, you'll see responses from *individual agents* speaking in their own voice - like walking into a meeting room. You'll see who's engaged, their perspectives, agreements, and tensions. This isn't a monolithic AI response - it's your product org thinking together.
+**Meeting Mode**: When you use `@product` or `@plt`, you'll see responses from *individual agents* speaking in their own voice - like walking into a meeting room. You'll see who's engaged, their perspectives, agreements, and tensions. This isn't a monolithic AI response - it's your product org thinking together.
 
 **Multi-Product Organizations**: Filter context by product:
 ```
@@ -50,41 +55,41 @@ Your single entry point. Routes requests to the right agents automatically.
 /portfolio-status product:AXIA
 ```
 
-### Talk to Agents
-Delegate to specific roles. Use shortcuts for faster access.
+### Delegate to Agents (`@agent`)
+Spawn autonomous agents to handle tasks. Each agent reasons independently and returns results.
 ```
-/cpo review board-feedback.pdf and update /strategic-intent
-/pm break down epic.md into /user-story items
-/plt review portfolio-health.md and run /portfolio-tradeoff
-/bizops analyze pricing-data.xlsx and create /pricing-model
+@cpo review @board-feedback.pdf and update strategic intent
+@pm break down @epic.md into user stories
+@plt review @portfolio-health.md - should we pivot?
+@bizops analyze @pricing-data.xlsx and create pricing model
 ```
 
 **Agent Shortcuts:**
-| Shortcut | Full Agent |
-|----------|------------|
-| `/pm` | `/product-manager` |
-| `/plt` | `/product-leadership-team` |
-| `/pm-dir` | `/director-product-management` |
-| `/pmm-dir` | `/director-product-marketing` |
-| `/pmm` | `/product-marketing-manager` |
-| `/vpp` | `/vp-product` |
-| `/prodops` | `/product-operations` |
+| Shortcut | Full Agent | Domain |
+|----------|------------|--------|
+| `@pm` | `@product-manager` | PRDs, specs, user stories |
+| `@plt` | `@product-leadership-team` | Portfolio decisions |
+| `@pm-dir` | `@director-product-management` | Roadmap governance |
+| `@pmm-dir` | `@director-product-marketing` | GTM strategy |
+| `@pmm` | `@product-marketing-manager` | Campaigns, enablement |
+| `@ci` | `@competitive-intelligence` | Market analysis |
+| `@prod-ops` | `@product-operations` | Launch, process |
 
-### Use Skills Directly
-Create, update, or find specific deliverables.
+### Use Skills Directly (`/skill`)
+Create, update, or find specific deliverables inline.
 ```
-Create a /prd for SSO integration - see slack-thread.md
-Run /competitive-analysis on Acme - their-demo-notes.md
+Create a /prd for SSO integration - see @slack-thread.md
+Run /competitive-analysis on Acme - @their-demo-notes.md
 Update the /roadmap-theme for Growth with mobile initiatives
 Find all authentication PRDs using /prd find
 ```
 
-### Conversational Commands
-Mix agents, skills, and documents naturally.
+### Mix Both Patterns
+Combine agents and skills naturally.
 ```
-/pm-dir review launch-data.xlsx and update the /gtm-strategy
-/cpo review board-feedback.pdf and update /strategic-intent
-/vp-product review sales-feedback.md and update /positioning-statement
+@pm-dir review @launch-data.xlsx and update the /gtm-strategy
+@cpo review @board-feedback.pdf and update /strategic-intent
+@vp-product review @sales-feedback.md and run /pricing-strategy
 ```
 
 ---

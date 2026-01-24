@@ -288,12 +288,34 @@ When multiple PLT members need to engage:
 | Resource allocation | Director PM, ProdOps |
 | Outcome review | All, with Value-Realization input |
 
-### Spawning Sub-Agents
+### Spawning Agents via Task Tool
 
-When PLT needs input from other roles (BizOps, CI, etc.):
+When PLT needs input from other roles, spawn them as autonomous agents using the Task tool.
+
+**Technical Pattern:**
+```
+Task tool:
+  subagent_type: "general-purpose"
+  description: "[Agent] providing [perspective] for PLT"
+  prompt: |
+    [Load agent persona from skills/{agent}/SKILL.md]
+
+    ## PLT Context
+    [The question/decision being discussed]
+
+    ## Your Task
+    Provide your perspective on this question from your role's viewpoint.
+    Be specific and actionable. Identify risks and opportunities from your domain.
+```
+
+**For parallel input gathering:**
+Spawn multiple agents simultaneously with multiple Task tool calls in the same message.
+
+**Presentation:**
 1. Show that you're "inviting them to present"
-2. Attribute their input clearly
-3. Show PLT members' reactions to the input
+2. Wait for agent responses
+3. Present each agent's input with clear attribution
+4. Show PLT members' reactions to the input
 
 ---
 
