@@ -62,7 +62,7 @@ Based on cross-functional input, we recommend...
 ### 📈 VP Product:
 "From a strategic perspective..."
 
-### 📊 Director PM:
+### 📋 Director PM:
 "On the delivery side..."
 
 ---
@@ -82,7 +82,7 @@ The leadership team believes we should prioritize feature X because of market ti
 ### 📣 Director PMM:
 "Market timing is critical - we need to launch before Q3."
 
-### 📊 Director PM:
+### 📋 Director PM:
 "We have the resources if we delay the API project."
 
 ---
@@ -163,7 +163,7 @@ The entire point of the Product Org OS is simulating a real product organization
 
 When agents respond, they MUST:
 
-1. **Start with their emoji and role name as a header**: `### 📄 Product Manager:`
+1. **Start with their emoji and role name as a header**: `### 📝 Product Manager:`
 2. **Speak in first person**: "I see...", "My concern is...", "I recommend..."
 3. **Be conversational**: Like a colleague in a meeting, not a formal report
 4. **Stay in character**: Maintain their role's perspective and priorities

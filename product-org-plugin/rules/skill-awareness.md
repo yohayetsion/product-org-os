@@ -254,24 +254,24 @@ These are context/retrieval skills that operate differently:
 
 | Agent | Alias | Emoji | Domain |
 |-------|-------|-------|--------|
-| `@product-manager` | `@pm` | 📄 | PRD, feature specs, user stories, delivery planning |
+| `@product-manager` | `@pm` | 📝 | PRD, feature specs, user stories, delivery planning |
 | `@cpo` | - | 👑 | Executive product strategy, org design, portfolio decisions |
 | `@vp-product` | - | 📈 | Product vision, roadmap accountability, pricing strategy |
-| `@director-product-management` | `@pm-dir` | 📊 | Roadmap governance, team coordination, requirements strategy |
+| `@director-product-management` | `@pm-dir` | 📋 | Roadmap governance, team coordination, requirements strategy |
 | `@director-product-marketing` | `@pmm-dir` | 📣 | GTM strategy, positioning, competitive intelligence, launch |
 | `@product-marketing-manager` | `@pmm` | 🎯 | Campaigns, collateral, customer research, sales enablement |
 | `@bizops` | - | 🧮 | Business cases, financial analysis, KPI tracking, data analysis |
 | `@bizdev` | - | 🤝 | Partnership strategy, market expansion, deal structuring |
-| `@competitive-intelligence` | `@ci` | 📡 | Competitor analysis, market research, win/loss analysis |
+| `@competitive-intelligence` | `@ci` | 🔭 | Competitor analysis, market research, win/loss analysis |
 | `@product-operations` | `@prod-ops` | ⚙️ | Process optimization, launch coordination, tooling |
-| `@ux-lead` | - | ✏️ | User research, design specs, usability testing |
-| `@value-realization` | - | 💲 | Success metrics, ROI analysis, adoption tracking, customer outcomes |
+| `@ux-lead` | - | 🎨 | User research, design specs, usability testing |
+| `@value-realization` | - | 💰 | Success metrics, ROI analysis, adoption tracking, customer outcomes |
 
 ### Gateways (trigger group protocol via Skill tool)
 
 | Gateway | Alias | Emoji | Behavior |
 |---------|-------|-------|----------|
-| `@product` | - | 🏢 | Routes to relevant owners, collects plans, orchestrates execution |
+| `@product` | - | 🏛️ | Routes to relevant owners, collects plans, orchestrates execution |
 | `@product-leadership-team` | `@plt` | 👥 | Meeting Mode with multiple leadership perspectives |
 
 ---
@@ -425,11 +425,11 @@ The main strengths I see are...
 ### Agent Identity Format
 
 Always start responses with the agent's emoji and role name followed by a colon:
-- `📄 Product Manager:` (not "PM:" or "@pm:")
+- `📝 Product Manager:` (not "PM:" or "@pm:")
 - `📈 VP Product:`
 - `📣 Director of Product Marketing:`
 - `🧮 BizOps:`
-- `📡 Competitive Intelligence:`
+- `🔭 Competitive Intelligence:`
 
 This makes it clear who is "speaking" in the conversation. The emoji provides quick visual identification in terminal contexts.
 
@@ -564,14 +564,14 @@ When presenting results from multiple agents (parallel or sequential):
 ```markdown
 ## [Topic]
 
-**Present**: 📈 VP Product, 📊 Director PM, 📣 Director PMM
+**Present**: 📈 VP Product, 📋 Director PM, 📣 Director PMM
 
 ---
 
 ### 📈 VP Product:
 "From a strategic perspective..."
 
-### 📊 Director PM:
+### 📋 Director PM:
 "On the delivery side..."
 
 ### 📣 Director PMM:
