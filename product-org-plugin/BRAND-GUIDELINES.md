@@ -400,6 +400,41 @@ Each agent role has a visual differentiator with consistent style:
 | UX Lead | Pen/design | Violet |
 | PLT | Group circle | Gradient |
 
+### Emoji Mapping for CLI
+
+In terminal/CLI contexts where custom icons cannot render, use these official emoji equivalents. These provide quick visual identification while maintaining brand alignment with the icon concepts above.
+
+| Agent | Emoji | Rationale |
+|-------|-------|-----------|
+| CPO | 👑 | Crown represents executive authority |
+| VP Product | 📈 | Upward chart reflects strategic growth focus |
+| Director PM | 📊 | Bar chart represents delivery metrics & roadmap governance |
+| Director PMM | 📣 | Megaphone for GTM and market communication |
+| Product Manager | 📄 | Document represents specs and requirements |
+| PMM | 🎯 | Target for campaigns and customer focus |
+| BizOps | 🧮 | Abacus for financial analysis and metrics |
+| BizDev | 🤝 | Handshake for partnerships |
+| Competitive Intel | 📡 | Radar/satellite for market monitoring |
+| Product Ops | ⚙️ | Gear for process and tooling |
+| Value Realization | 💲 | Dollar for ROI and customer outcomes |
+| UX Lead | ✏️ | Pencil for design work |
+| PLT | 👥 | Group for leadership team collective |
+| Product Gateway | 🏢 | Building represents the org entry point |
+
+**Usage in CLI responses:**
+```
+### 📈 VP Product:
+"From a strategic perspective..."
+
+### 📊 Director PM:
+"On the delivery side..."
+```
+
+These emojis are used in:
+- Agent response headers in Meeting Mode
+- Multi-agent synthesis presentations
+- Task assignments and handoffs
+
 ---
 
 ## Tagline Options

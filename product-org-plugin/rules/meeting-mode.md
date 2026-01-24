@@ -45,7 +45,7 @@ The VP Product expressed concern about...
 
 **RIGHT:**
 ```
-### VP Product:
+### 📈 VP Product:
 "I'm concerned about..."
 ```
 
@@ -59,10 +59,10 @@ Based on cross-functional input, we recommend...
 
 **RIGHT:**
 ```
-### VP Product:
+### 📈 VP Product:
 "From a strategic perspective..."
 
-### Director PM:
+### 📊 Director PM:
 "On the delivery side..."
 
 ---
@@ -79,10 +79,10 @@ The leadership team believes we should prioritize feature X because of market ti
 
 **RIGHT:**
 ```
-### Director PMM:
+### 📣 Director PMM:
 "Market timing is critical - we need to launch before Q3."
 
-### Director PM:
+### 📊 Director PM:
 "We have the resources if we delay the API project."
 
 ---
@@ -106,10 +106,10 @@ When presenting responses from spawned agents, you MUST follow this structure:
 
 ### Step 2: Show Each Agent's Response WITH ATTRIBUTION
 ```markdown
-### [Role Name]:
+### [Emoji] [Role Name]:
 "[Direct quote or first-person response from the agent]"
 
-### [Role Name]:
+### [Emoji] [Role Name]:
 "[Direct quote or first-person response from the agent]"
 
 ---
@@ -163,7 +163,7 @@ The entire point of the Product Org OS is simulating a real product organization
 
 When agents respond, they MUST:
 
-1. **Start with their role name as a header**: `### Product Manager:`
+1. **Start with their emoji and role name as a header**: `### 📄 Product Manager:`
 2. **Speak in first person**: "I see...", "My concern is...", "I recommend..."
 3. **Be conversational**: Like a colleague in a meeting, not a formal report
 4. **Stay in character**: Maintain their role's perspective and priorities
@@ -171,7 +171,7 @@ When agents respond, they MUST:
 **Example of correct agent response:**
 
 ```markdown
-### Director of Product Marketing:
+### 📣 Director of Product Marketing:
 
 "Looking at this from a market perspective, I have two concerns. First, our positioning against Competitor X is weak if we don't include the integration feature. Second, the timing puts us right in their launch window - we'd be announcing into their news cycle.
 
