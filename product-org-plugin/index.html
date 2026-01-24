@@ -1295,69 +1295,69 @@
             </div>
 
             <div class="usage-patterns">
-                <!-- /product Gateway -->
+                <!-- @product Gateway -->
                 <div class="usage-pattern featured">
                     <div class="pattern-header">
                         <span class="pattern-badge recommended">Recommended</span>
-                        <h3>/product Gateway</h3>
-                        <p>Routes to the right agents. Use /product-leadership-team for strategic decisions.</p>
+                        <h3>@product Gateway</h3>
+                        <p>Routes to the right agents. Use @plt for strategic decisions.</p>
                     </div>
                     <div class="pattern-examples">
                         <div class="example-item">
-                            <code>/product</code>
-                            <span>Launch freemium for SMBs. Context: pricing-research.md, competitor-tiers.xlsx</span>
+                            <code>@product</code>
+                            <span>Launch freemium for SMBs. Context: @pricing-research.md, @competitor-tiers.xlsx</span>
                         </div>
                         <div class="example-item">
-                            <code>/product-leadership-team</code>
-                            <span>Review portfolio-health.md and run a /portfolio-tradeoff</span>
+                            <code>@product-leadership-team</code>
+                            <span>Review @portfolio-health.md and run a /portfolio-tradeoff</span>
                         </div>
                         <div class="example-item">
-                            <code>/plt</code>
-                            <span>Q2 planning. Inputs: customer-interviews/, eng-capacity.md, goals.md</span>
+                            <code>@plt</code>
+                            <span>Q2 planning. Inputs: @customer-interviews/ @eng-capacity.md @goals.md</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Direct Agents -->
+                <!-- Delegate to Agents -->
                 <div class="usage-pattern">
                     <div class="pattern-header">
-                        <h3>Talk to Agents</h3>
-                        <p>Delegate to specific roles. Shortcuts: /pm, /plt, /vpp, /bizops</p>
+                        <h3>Delegate to Agents</h3>
+                        <p>Spawn autonomous agents. Shortcuts: @pm, @plt, @ci, @prod-ops</p>
                     </div>
                     <div class="pattern-examples">
                         <div class="example-item">
-                            <code>/cpo</code>
-                            <span>review board-feedback.pdf and update the /strategic-intent</span>
+                            <code>@cpo</code>
+                            <span>review @board-feedback.pdf and update /strategic-intent</span>
                         </div>
                         <div class="example-item">
-                            <code>/pm</code>
-                            <span>break down epic.md into /user-story items for the sprint</span>
+                            <code>@pm</code>
+                            <span>break down @epic.md into /user-story items for the sprint</span>
                         </div>
                         <div class="example-item">
-                            <code>/bizops</code>
-                            <span>build financial model for enterprise tier - see pricing-data.xlsx</span>
+                            <code>@bizops</code>
+                            <span>build financial model for enterprise tier - see @pricing-data.xlsx</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Direct Skills -->
+                <!-- Use Skills Directly -->
                 <div class="usage-pattern">
                     <div class="pattern-header">
                         <h3>Use Skills Directly</h3>
-                        <p>Create deliverables. Combine any agent with any skill.</p>
+                        <p>Create deliverables inline with /skill syntax.</p>
                     </div>
                     <div class="pattern-examples">
                         <div class="example-item">
-                            <code>/pm</code>
-                            <span>create a /prd for SSO integration - requirements in slack-thread.md</span>
+                            <code>/prd</code>
+                            <span>for SSO integration - requirements in @slack-thread.md</span>
                         </div>
                         <div class="example-item">
-                            <code>/plt</code>
-                            <span>run /competitive-analysis on Acme - see their-demo-notes.md</span>
+                            <code>/competitive-analysis</code>
+                            <span>on Acme - see @their-demo-notes.md</span>
                         </div>
                         <div class="example-item">
-                            <code>/cpo</code>
-                            <span>update the /roadmap-theme for Growth with mobile initiatives</span>
+                            <code>/roadmap-theme</code>
+                            <span>for Growth with mobile initiatives</span>
                         </div>
                     </div>
                 </div>
@@ -1371,7 +1371,7 @@
                 </div>
                 <div class="meeting-conversation">
                     <div class="meeting-prompt">
-                        <code><span class="cmd">/product-leadership-team</span> Review <span class="file">q3-strategy.md</span> and update the <span class="cmd">/prd</span> for API v2 — should we prioritize webhooks or SDK improvements?</code>
+                        <code><span class="cmd">@plt</span> Review <span class="file">@q3-strategy.md</span> and update the <span class="cmd">/prd</span> for API v2 — should we prioritize webhooks or SDK improvements?</code>
                     </div>
                     <div class="meeting-responses">
                         <div class="agent-response">
@@ -2182,10 +2182,10 @@
                         <div class="step-number">3</div>
                         <div class="step-content">
                             <h4>Start Creating</h4>
-                            <p>Three ways to work: gateway, agents, or skills. Point any of them at your existing context.</p>
-                            <div class="code-block">/product Launch freemium tier for SMBs. Context: pricing-research.md, competitor-tiers.xlsx</div>
-                            <div class="code-block" style="margin-top: 0.5rem;">/cpo Portfolio tradeoff: mobile app vs API expansion. See: eng-estimates.md, market-data.xlsx</div>
-                            <div class="code-block" style="margin-top: 0.5rem;">/prd SSO integration for enterprise customers. Requirements in slack-thread.md</div>
+                            <p>Two patterns: @agent (delegate) or /skill (inline). Point any of them at your context.</p>
+                            <div class="code-block">@product Launch freemium tier for SMBs. Context: @pricing-research.md @competitor-tiers.xlsx</div>
+                            <div class="code-block" style="margin-top: 0.5rem;">@cpo Portfolio tradeoff: mobile app vs API. See: @eng-estimates.md @market-data.xlsx</div>
+                            <div class="code-block" style="margin-top: 0.5rem;">/prd SSO integration for enterprise. Requirements in @slack-thread.md</div>
                         </div>
                     </div>
                 </div>
@@ -2262,13 +2262,13 @@
             observer.observe(el);
         });
 
-        // Typing animation for /product gateway demo
+        // Typing animation for @product gateway demo
         const commands = [
-            { text: '/product', context: ' Launch freemium for SMBs. Context: pricing-research.md, competitor-tiers.xlsx, Sarah\'s Slack thread from Monday' },
-            { text: '/product', context: ' Respond to Acme Corp RFP due Friday. See: rfp-acme.pdf, our-capabilities.md, @sales channel feedback' },
-            { text: '/product', context: ' Q2 roadmap draft. Inputs: customer-interviews/, eng-capacity.md, board-feedback-jan.pdf' },
-            { text: '/product', context: ' Competitor launched AI feature. Analyze: techcrunch-article.url, their-demo-notes.md, our-roadmap.md' },
-            { text: '/product', context: ' Business case for mobile app. Data: market-size.xlsx, user-research/, CFO email from yesterday' }
+            { text: '@product', context: ' Launch freemium for SMBs. Context: @pricing-research.md @competitor-tiers.xlsx' },
+            { text: '@product', context: ' Respond to Acme Corp RFP due Friday. See: @rfp-acme.pdf @our-capabilities.md' },
+            { text: '@plt', context: ' Q2 roadmap priorities. Inputs: @customer-interviews/ @eng-capacity.md @goals.md' },
+            { text: '@pm', context: ' Create PRD for mobile app. Requirements in @user-research/ @market-size.xlsx' },
+            { text: '@product', context: ' Competitor launched AI feature. Analyze: @techcrunch-article.url @their-demo-notes.md' }
         ];
 
         let commandIndex = 0;
