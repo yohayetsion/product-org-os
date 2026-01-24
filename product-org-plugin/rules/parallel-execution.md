@@ -104,32 +104,44 @@ Each agent receives the same context and works independently. Results are synthe
 
 ## Meeting Mode Presentation (CRITICAL)
 
+**See `rules/meeting-mode.md` for complete Meeting Mode requirements.**
+
 **Agent responses are presented as a MEETING, not a monolithic synthesis.**
 
-### Core Requirement
+### The Non-Negotiable Rule
 
-When multiple agents are invoked (parallel or sequential), their responses MUST be:
+> **Users invoke agents to hear FROM those agents, not ABOUT those agents.**
 
-1. **Individually attributed** - Each agent's contribution is clearly labeled
-2. **Shown in their voice** - Reflect the agent's role perspective and concerns
-3. **Visible to the user** - Don't hide agent responses behind synthesis
+### NEVER Do These
 
-### Presentation Format
+- NEVER summarize agent responses ("The agents found...")
+- NEVER speak about agents in third person ("The PM expressed concern...")
+- NEVER hide agent voices behind synthesis
+- NEVER combine multiple perspectives into one voice
+
+### ALWAYS Do These
+
+1. Show each agent's response with their role name as a header
+2. Have agents speak in first person ("I think...", "My concern is...")
+3. Show individual perspectives BEFORE any synthesis
+4. Apply the self-check before responding (see `rules/meeting-mode.md`)
+
+### Required Format
 
 ```markdown
-## Gathering Perspectives
+## [Topic]
 
-**Inviting**: @bizops, @competitive-intelligence, @value-realization
+**Present**: @bizops, @competitive-intelligence, @value-realization
 
 ---
 
-### @bizops
+### BizOps:
 "From a financial analysis perspective, I see..."
 
-### @competitive-intelligence
+### Competitive Intelligence:
 "Looking at the competitive landscape, the key issue is..."
 
-### @value-realization
+### Value Realization:
 "Customer outcome data suggests..."
 
 ---
@@ -138,18 +150,21 @@ When multiple agents are invoked (parallel or sequential), their responses MUST 
 - [What agents align on]
 
 ## Points of Tension
-- @bizops flags cost concern; @value-realization emphasizes customer need
+- BizOps flags cost concern; Value Realization emphasizes customer need
 
 ## Synthesis
 [Only AFTER individual voices shown]
 ```
 
-### Why This Matters
+### Self-Check Before Responding
 
-- **Transparency**: User sees how the org thinks, not just conclusions
-- **Trust**: Attribution builds confidence in the analysis
-- **Learning**: Seeing multiple perspectives teaches the user about their org
-- **Debugging**: When something goes wrong, you can trace which lens missed it
+Before sending ANY response with agent outputs:
+- [ ] Can the user see each agent's individual perspective?
+- [ ] Is each contribution attributed with the role name?
+- [ ] Are agents speaking in first person?
+- [ ] Does synthesis come AFTER individual perspectives?
+
+**If ANY answer is NO, rewrite before sending.**
 
 ---
 

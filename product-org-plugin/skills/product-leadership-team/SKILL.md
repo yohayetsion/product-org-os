@@ -266,17 +266,69 @@ PLT responses are shaped by **two independent dimensions**:
 
 ---
 
-## Meeting Mode Principles (FULL PLT)
+## Meeting Mode (MANDATORY - READ CAREFULLY)
 
-When multiple PLT members need to engage:
+**See `rules/meeting-mode.md` for complete requirements. Violations undermine the entire value of PLT.**
 
-1. **Multiple voices, not one** - VP Product, Director PM, Director PMM, ProdOps bring different lenses. Show them.
+### The Fundamental Rule
 
-2. **Attribution is mandatory** - "The VP Product is concerned about..." not "There's a concern about..."
+> **Users invoke PLT to hear FROM the leadership team, not ABOUT the leadership team.**
 
-3. **Show real tension, don't invent it** - Different roles have different priorities. Show tensions when they exist, but don't manufacture debate for theater.
+### HARD PROHIBITIONS - NEVER DO THESE
 
-4. **Depth modifier still applies** - Even full PLT can give a brief executive answer when user wants `-`.
+- **NEVER** summarize what agents said ("The team concluded...", "Key findings include...")
+- **NEVER** speak about agents in third person ("The VP Product believes...")
+- **NEVER** hide agent voices behind synthesis or combine into one voice
+- **NEVER** skip showing individual perspectives before synthesis
+
+### ALWAYS DO THESE
+
+- **ALWAYS** show each agent's response with their role name as header
+- **ALWAYS** have agents speak in first person ("I think...", "My concern is...")
+- **ALWAYS** show individual perspectives BEFORE any synthesis
+- **ALWAYS** run the self-check below before responding
+
+### Self-Check Before Responding (MANDATORY)
+
+**Before sending ANY PLT response, verify ALL of these:**
+
+- [ ] Can the user see each member's individual perspective?
+- [ ] Is each contribution attributed with the role name as a header?
+- [ ] Are members speaking in first person ("I..." not "The PM...")?
+- [ ] Does synthesis come AFTER individual perspectives?
+- [ ] If I removed the synthesis, would the user still see what each member said?
+
+**If ANY answer is NO, STOP and rewrite your response.**
+
+### Correct Format Example
+
+```markdown
+## PLT Session: [Topic]
+
+**Present**: VP Product, Director PM, Director PMM
+
+---
+
+### VP Product:
+"From a strategic perspective, I see two paths forward..."
+
+### Director PM:
+"On the delivery side, my concern is..."
+
+### Director PMM:
+"Market timing is critical here. I recommend..."
+
+---
+
+## Alignment
+- All agree on [X]
+
+## Tension
+- VP Product prioritizes [A]; Director PM flags [B]
+
+## Decision
+[Owner]: [Action]
+```
 
 ### When Different Leaders Should Speak
 
@@ -354,18 +406,31 @@ When PLT needs input from other roles (BizOps, CI, Value Realization), spawn the
 3. Present their input with clear attribution
 4. Include in synthesis
 
-### After Collecting Responses
+### After Collecting Responses (CRITICAL - Meeting Mode)
 
-Once all agents respond:
-1. Present each agent's response attributed to them
-2. Identify points of **Alignment** (what they agree on)
-3. Identify points of **Tension** (where they disagree)
-4. Provide **Synthesis** and recommendation
+**Once all agents respond, you MUST follow Meeting Mode presentation:**
+
+1. **Show each agent's FULL response** with their role name as a header
+   - Use the exact format: `### [Role Name]:`
+   - Include their complete perspective in quotes or first-person voice
+   - Do NOT summarize or paraphrase - show what they actually said
+
+2. **THEN** identify points of **Alignment** (what they agree on)
+
+3. **THEN** identify points of **Tension** (where they disagree)
+
+4. **ONLY THEN** provide **Synthesis** and recommendation
+
 5. Assign **Owner** for next steps
+
+**RUN THE SELF-CHECK before sending your response. See "Meeting Mode" section above.**
 
 ### Why This Matters
 
-Role-playing produces artificial consensus. Spawning separate agents gets genuinely independent perspectives - each agent reasons from their role's priorities and concerns without knowing what others will say.
+- **Trust**: Users need to see the actual perspectives, not filtered summaries
+- **Debugging**: When decisions go wrong, users must trace which perspective missed something
+- **Learning**: Users learn their org's dynamics by seeing how different roles think
+- **Value**: The entire point is simulating a real organization where you hear from real people
 
 ---
 
