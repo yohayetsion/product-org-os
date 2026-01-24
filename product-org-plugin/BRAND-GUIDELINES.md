@@ -408,25 +408,25 @@ In terminal/CLI contexts where custom icons cannot render, use these official em
 |-------|-------|-----------|
 | CPO | 👑 | Crown represents executive authority |
 | VP Product | 📈 | Upward chart reflects strategic growth focus |
-| Director PM | 📊 | Bar chart represents delivery metrics & roadmap governance |
+| Director PM | 📋 | Clipboard represents delivery planning & roadmap governance |
 | Director PMM | 📣 | Megaphone for GTM and market communication |
-| Product Manager | 📄 | Document represents specs and requirements |
+| Product Manager | 📝 | Memo/notepad represents specs and requirements |
 | PMM | 🎯 | Target for campaigns and customer focus |
 | BizOps | 🧮 | Abacus for financial analysis and metrics |
 | BizDev | 🤝 | Handshake for partnerships |
-| Competitive Intel | 📡 | Radar/satellite for market monitoring |
+| Competitive Intel | 🔭 | Telescope for market monitoring and foresight |
 | Product Ops | ⚙️ | Gear for process and tooling |
-| Value Realization | 💲 | Dollar for ROI and customer outcomes |
-| UX Lead | ✏️ | Pencil for design work |
+| Value Realization | 💰 | Money bag for ROI and customer outcomes |
+| UX Lead | 🎨 | Artist palette for design work |
 | PLT | 👥 | Group for leadership team collective |
-| Product Gateway | 🏢 | Building represents the org entry point |
+| Product Gateway | 🏛️ | Classical building represents the org entry point |
 
 **Usage in CLI responses:**
 ```
 ### 📈 VP Product:
 "From a strategic perspective..."
 
-### 📊 Director PM:
+### 📋 Director PM:
 "On the delivery side..."
 ```
 

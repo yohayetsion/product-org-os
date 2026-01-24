@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Org OS - Brand Guidelines v2.0</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Primary Colors */
+            --color-primary: #E94560;
+            --color-primary-dark: #C73E54;
+            --color-secondary: #4ECCA3;
+            --color-accent: #FFC93C;
+
+            /* Background Colors */
+            --color-bg-primary: #1A1A2E;
+            --color-bg-card: #16213E;
+            --color-bg-accent: #0F3460;
+
+            /* Text Colors */
+            --color-text-primary: #EAEAEA;
+            --color-text-secondary: #A0A0A0;
+            --color-text-muted: #6B7280;
+
+            /* V2V Phase Colors */
+            --phase-1: #4A90D9;
+            --phase-2: #9B59B6;
+            --phase-3: #4ECCA3;
+            --phase-4: #FFC93C;
+            --phase-5: #27AE60;
+            --phase-6: #E94560;
+
+            /* Typography */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'Fira Code', 'SF Mono', monospace;
+
+            /* Effects */
+            --glow-primary: 0 0 30px rgba(233, 69, 96, 0.4);
+            --glow-secondary: 0 0 30px rgba(78, 204, 163, 0.4);
+            --glow-gold: 0 0 30px rgba(255, 201, 60, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: var(--color-bg-primary);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(78, 204, 163, 0.15);
+            padding: 1rem 2rem;
+        }
+
+        nav .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--color-secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-card) 50%, var(--color-bg-accent) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(233, 69, 96, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero .version-badge {
+            background: rgba(78, 204, 163, 0.15);
+            border: 1px solid rgba(78, 204, 163, 0.3);
+            color: var(--color-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 60px rgba(233, 69, 96, 0.3);
+        }
+
+        .hero .tagline {
+            font-size: 1.75rem;
+            color: var(--color-text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1.125rem;
+            color: var(--color-text-secondary);
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .hero .stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .hero .stat {
+            text-align: center;
+        }
+
+        .hero .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-secondary);
+        }
+
+        .hero .stat-label {
+            font-size: 0.875rem;
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--color-text-primary);
+        }
+
+        section .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 3rem;
+            max-width: 700px;
+        }
+
+        /* Color Palette Section */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .color-card {
+            background: var(--color-bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(78, 204, 163, 0.1);
+        }
+
+        .color-swatch {
+            height: 120px;
+            display: flex;
+            align-items: flex-end;
+            padding: 1rem;
+        }
+
+        .color-info {
+            padding: 1rem;
+        }
+
+        .color-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .color-hex {
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+            color: var(--color-text-secondary);
+        }
+
+        .color-use {
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+            margin-top: 0.5rem;
+        }
+
+        /* Gradient Showcase */
+        .gradient-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .gradient-card {
+            border-radius: 12px;
+            padding: 2rem;
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .gradient-card h4 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gradient-card code {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Typography Section */
+        .type-scale {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .type-sample {
+            display: flex;
+            align-items: baseline;
+            gap: 2rem;
+            padding: 1.5rem;
+            background: var(--color-bg-card);
+            border-radius: 8px;
+            border: 1px solid rgba(78, 204, 163, 0.1);
+        }
+
+        .type-label {
+            width: 100px;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .type-display { font-size: 4rem; font-weight: 700; }
+        .type-h1 { font-size: 2.5rem; font-weight: 700; }
+        .type-h2 { font-size: 2rem; font-weight: 600; }
+        .type-h3 { font-size: 1.5rem; font-weight: 600; }
+        .type-h4 { font-size: 1.25rem; font-weight: 500; }
+        .type-body { font-size: 1rem; }
+        .type-small { font-size: 0.875rem; color: var(--color-text-secondary); }
+        .type-code {
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            color: var(--color-secondary);
+        }
+
+        /* Logo Section */
+        .logo-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+
+        .logo-card {
+            background: var(--color-bg-card);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            border: 1px solid rgba(78, 204, 163, 0.1);
+        }
+
+        .logo-card.dark-bg {
+            background: var(--color-bg-primary);
+        }
+
+        .logo-card.light-bg {
+            background: #F5F7FA;
+        }
+
+        .logo-card .wordmark {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .logo-card .wordmark.gradient {
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-card .wordmark.light {
+            color: var(--color-text-primary);
+        }
+
+        .logo-card .wordmark.dark {
+            color: var(--color-bg-primary);
+        }
+
+        .logo-card .label {
+            font-size: 0.75rem;
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .logo-card.light-bg .label {
+            color: #6B7280;
+        }
+
+        /* Hexagon Logo */
+        .hexagon-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem;
+            background: var(--color-bg-primary);
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+
+        .hexagon-logo {
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+
+        .hexagon-logo svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 0 20px rgba(233, 69, 96, 0.3));
+        }
+
+        /* V2V Phases */
+        .phases-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1rem;
+            margin: 3rem 0;
+        }
+
+        .phase-card {
+            background: var(--color-bg-card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .phase-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .phase-card .phase-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .phase-card .phase-name {
+            font-size: 0.75rem;
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .phase-1 .phase-number { color: var(--phase-1); }
+        .phase-2 .phase-number { color: var(--phase-2); }
+        .phase-3 .phase-number { color: var(--phase-3); }
+        .phase-4 .phase-number { color: var(--phase-4); }
+        .phase-5 .phase-number { color: var(--phase-5); }
+        .phase-6 .phase-number { color: var(--phase-6); }
+
+        .phase-1:hover { box-shadow: 0 0 30px rgba(74, 144, 217, 0.3); }
+        .phase-2:hover { box-shadow: 0 0 30px rgba(155, 89, 182, 0.3); }
+        .phase-3:hover { box-shadow: 0 0 30px rgba(78, 204, 163, 0.3); }
+        .phase-4:hover { box-shadow: 0 0 30px rgba(255, 201, 60, 0.3); }
+        .phase-5:hover { box-shadow: 0 0 30px rgba(39, 174, 96, 0.3); }
+        .phase-6:hover { box-shadow: 0 0 30px rgba(233, 69, 96, 0.3); }
+
+        /* Buttons Section */
+        .button-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            font-family: var(--font-primary);
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: white;
+            box-shadow: var(--glow-primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-primary-dark);
+            box-shadow: 0 0 40px rgba(233, 69, 96, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-secondary);
+            border: 2px solid var(--color-secondary);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(78, 204, 163, 0.1);
+            box-shadow: var(--glow-secondary);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--color-text-primary);
+            border: 1px solid rgba(234, 234, 234, 0.3);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(234, 234, 234, 0.1);
+            border-color: rgba(234, 234, 234, 0.5);
+        }
+
+        /* Cards Section */
+        .card-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .glass-card {
+            background: rgba(22, 33, 62, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(78, 204, 163, 0.15);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .glass-card h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .glass-card p {
+            color: var(--color-text-secondary);
+            font-size: 0.9375rem;
+        }
+
+        .glass-card .tag {
+            display: inline-block;
+            background: rgba(78, 204, 163, 0.2);
+            color: var(--color-secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-top: 1rem;
+        }
+
+        /* Code Examples */
+        .code-block {
+            background: var(--color-bg-primary);
+            border: 1px solid rgba(78, 204, 163, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+
+        .code-block pre {
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+            color: var(--color-text-primary);
+            line-height: 1.6;
+        }
+
+        .code-block .comment { color: var(--color-text-muted); }
+        .code-block .property { color: var(--color-secondary); }
+        .code-block .value { color: var(--color-accent); }
+        .code-block .string { color: var(--color-primary); }
+
+        /* Agent Icons Grid */
+        .agent-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .agent-icon {
+            background: var(--color-bg-card);
+            border-radius: 12px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            border: 1px solid rgba(78, 204, 163, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .agent-icon:hover {
+            border-color: rgba(78, 204, 163, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .agent-icon .icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .agent-icon .name {
+            font-size: 0.75rem;
+            color: var(--color-text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-bg-card);
+            border-top: 1px solid rgba(78, 204, 163, 0.1);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--color-text-secondary);
+            font-size: 0.875rem;
+        }
+
+        footer .footer-logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.25rem;
+            }
+
+            .hero .stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .phases-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            nav ul {
+                display: none;
+            }
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(78, 204, 163, 0.3), transparent);
+            margin: 4rem 0;
+        }
+
+        /* Section Headers with Gradient */
+        .section-header {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <div class="logo">Product Org OS</div>
+            <ul>
+                <li><a href="#colors">Colors</a></li>
+                <li><a href="#typography">Typography</a></li>
+                <li><a href="#logo">Logo</a></li>
+                <li><a href="#components">Components</a></li>
+                <li><a href="#v2v">V2V Phases</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="version-badge">Brand Guidelines v2.0</div>
+        <h1>Product Org OS</h1>
+        <p class="tagline">Your Org Chart. In AI.</p>
+        <p class="subtitle">The Operating System for World-Class Product Organizations</p>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">13</div>
+                <div class="stat-label">Agents</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">56</div>
+                <div class="stat-label">Skills</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">6</div>
+                <div class="stat-label">V2V Phases</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Color Palette -->
+    <section id="colors">
+        <h2 class="section-header">Color Palette</h2>
+        <h2>Dark Mode First</h2>
+        <p class="section-subtitle">A sophisticated dark palette with vibrant accent colors that command attention while maintaining executive gravitas.</p>
+
+        <h3 style="color: var(--color-text-secondary); margin-bottom: 1.5rem;">Primary Colors</h3>
+        <div class="color-grid">
+            <div class="color-card">
+                <div class="color-swatch" style="background: #E94560; box-shadow: 0 0 30px rgba(233, 69, 96, 0.4);"></div>
+                <div class="color-info">
+                    <div class="color-name">Vibrant Red</div>
+                    <div class="color-hex">#E94560</div>
+                    <div class="color-use">Primary brand, CTAs</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #4ECCA3; box-shadow: 0 0 30px rgba(78, 204, 163, 0.4);"></div>
+                <div class="color-info">
+                    <div class="color-name">Emerald Teal</div>
+                    <div class="color-hex">#4ECCA3</div>
+                    <div class="color-use">Secondary, success, links</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #FFC93C; box-shadow: 0 0 30px rgba(255, 201, 60, 0.4);"></div>
+                <div class="color-info">
+                    <div class="color-name">Gold</div>
+                    <div class="color-hex">#FFC93C</div>
+                    <div class="color-use">Accent, highlights</div>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="color: var(--color-text-secondary); margin: 2rem 0 1.5rem;">Background Colors</h3>
+        <div class="color-grid">
+            <div class="color-card">
+                <div class="color-swatch" style="background: #1A1A2E;"></div>
+                <div class="color-info">
+                    <div class="color-name">Charcoal</div>
+                    <div class="color-hex">#1A1A2E</div>
+                    <div class="color-use">Primary background</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #16213E;"></div>
+                <div class="color-info">
+                    <div class="color-name">Deep Navy</div>
+                    <div class="color-hex">#16213E</div>
+                    <div class="color-use">Cards, elevated surfaces</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background: #0F3460;"></div>
+                <div class="color-info">
+                    <div class="color-name">Navy Accent</div>
+                    <div class="color-hex">#0F3460</div>
+                    <div class="color-use">Borders, subtle highlights</div>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="color: var(--color-text-secondary); margin: 2rem 0 1.5rem;">Gradients</h3>
+        <div class="gradient-showcase">
+            <div class="gradient-card" style="background: linear-gradient(135deg, #E94560 0%, #4ECCA3 100%);">
+                <h4>Primary Brand</h4>
+                <code>linear-gradient(135deg, #E94560, #4ECCA3)</code>
+            </div>
+            <div class="gradient-card" style="background: linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%);">
+                <h4>Background</h4>
+                <code>linear-gradient(135deg, #1A1A2E, #16213E, #0F3460)</code>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Typography -->
+    <section id="typography">
+        <h2 class="section-header">Typography</h2>
+        <h2>Inter + Fira Code</h2>
+        <p class="section-subtitle">A pairing that balances executive professionalism with technical credibility.</p>
+
+        <div class="type-scale">
+            <div class="type-sample">
+                <span class="type-label">Display</span>
+                <span class="type-display" style="background: linear-gradient(90deg, #E94560, #4ECCA3); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Product Org OS</span>
+            </div>
+            <div class="type-sample">
+                <span class="type-label">H1</span>
+                <span class="type-h1">Your Org Chart. In AI.</span>
+            </div>
+            <div class="type-sample">
+                <span class="type-label">H2</span>
+                <span class="type-h2">Strategic Foundation</span>
+            </div>
+            <div class="type-sample">
+                <span class="type-label">H3</span>
+                <span class="type-h3">Decision Quality Framework</span>
+            </div>
+            <div class="type-sample">
+                <span class="type-label">H4</span>
+                <span class="type-h4">13 Specialized Agents</span>
+            </div>
+            <div class="type-sample">
+                <span class="type-label">Body</span>
+                <span class="type-body">Transform heroic individual effort into systematic, repeatable excellence.</span>
+            </div>
+            <div class="type-sample">
+                <span class="type-label">Small</span>
+                <span class="type-small">Organizational memory that never forgets</span>
+            </div>
+            <div class="type-sample">
+                <span class="type-label">Code</span>
+                <span class="type-code">@product /prd /decision-record</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Logo -->
+    <section id="logo">
+        <h2 class="section-header">Logo</h2>
+        <h2>The Gradient Wordmark</h2>
+        <p class="section-subtitle">A distinctive gradient signature that transitions from red to teal, creating instant brand recognition.</p>
+
+        <div class="logo-showcase">
+            <div class="logo-card dark-bg">
+                <div class="wordmark gradient">Product Org OS</div>
+                <div class="label">Primary - Gradient on Dark</div>
+            </div>
+            <div class="logo-card" style="background: #0F3460;">
+                <div class="wordmark light">Product Org OS</div>
+                <div class="label">Solid Light on Navy</div>
+            </div>
+            <div class="logo-card light-bg">
+                <div class="wordmark dark">Product Org OS</div>
+                <div class="label">Solid Dark on Light</div>
+            </div>
+            <div class="logo-card dark-bg">
+                <div class="wordmark" style="color: var(--color-secondary);">Product Org <span style="color: var(--color-accent);">OS</span></div>
+                <div class="label">Teal + Gold Variant</div>
+            </div>
+        </div>
+
+        <h3 style="color: var(--color-text-secondary); margin: 3rem 0 1.5rem;">The Convergence Hexagon</h3>
+        <div class="hexagon-container">
+            <div class="hexagon-logo">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="hexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#E94560"/>
+                            <stop offset="100%" style="stop-color:#4ECCA3"/>
+                        </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+
+                    <!-- Hexagon outline -->
+                    <polygon
+                        points="100,10 178,55 178,145 100,190 22,145 22,55"
+                        fill="none"
+                        stroke="url(#hexGradient)"
+                        stroke-width="2"
+                        filter="url(#glow)"
+                    />
+
+                    <!-- Connecting lines -->
+                    <line x1="100" y1="10" x2="100" y2="100" stroke="url(#hexGradient)" stroke-width="1" opacity="0.5"/>
+                    <line x1="178" y1="55" x2="100" y2="100" stroke="url(#hexGradient)" stroke-width="1" opacity="0.5"/>
+                    <line x1="178" y1="145" x2="100" y2="100" stroke="url(#hexGradient)" stroke-width="1" opacity="0.5"/>
+                    <line x1="100" y1="190" x2="100" y2="100" stroke="url(#hexGradient)" stroke-width="1" opacity="0.5"/>
+                    <line x1="22" y1="145" x2="100" y2="100" stroke="url(#hexGradient)" stroke-width="1" opacity="0.5"/>
+                    <line x1="22" y1="55" x2="100" y2="100" stroke="url(#hexGradient)" stroke-width="1" opacity="0.5"/>
+
+                    <!-- Nodes at vertices -->
+                    <circle cx="100" cy="10" r="8" fill="#4A90D9" filter="url(#glow)"/>
+                    <circle cx="178" cy="55" r="8" fill="#9B59B6" filter="url(#glow)"/>
+                    <circle cx="178" cy="145" r="8" fill="#4ECCA3" filter="url(#glow)"/>
+                    <circle cx="100" cy="190" r="8" fill="#FFC93C" filter="url(#glow)"/>
+                    <circle cx="22" cy="145" r="8" fill="#27AE60" filter="url(#glow)"/>
+                    <circle cx="22" cy="55" r="8" fill="#E94560" filter="url(#glow)"/>
+
+                    <!-- Center node -->
+                    <circle cx="100" cy="100" r="12" fill="url(#hexGradient)" filter="url(#glow)"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- V2V Phases -->
+    <section id="v2v">
+        <h2 class="section-header">V2V Framework</h2>
+        <h2>Six Phases, Six Colors</h2>
+        <p class="section-subtitle">Each V2V phase has a dedicated color with glow effects for dark mode.</p>
+
+        <div class="phases-grid">
+            <div class="phase-card phase-1">
+                <div class="phase-number">1</div>
+                <div class="phase-name">Strategic Foundation</div>
+            </div>
+            <div class="phase-card phase-2">
+                <div class="phase-number">2</div>
+                <div class="phase-name">Strategic Decisions</div>
+            </div>
+            <div class="phase-card phase-3">
+                <div class="phase-number">3</div>
+                <div class="phase-name">Commitments</div>
+            </div>
+            <div class="phase-card phase-4">
+                <div class="phase-number">4</div>
+                <div class="phase-name">Execution</div>
+            </div>
+            <div class="phase-card phase-5">
+                <div class="phase-number">5</div>
+                <div class="phase-name">Outcomes</div>
+            </div>
+            <div class="phase-card phase-6">
+                <div class="phase-number">6</div>
+                <div class="phase-name">Learning</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Components -->
+    <section id="components">
+        <h2 class="section-header">Components</h2>
+        <h2>UI Elements</h2>
+        <p class="section-subtitle">Buttons, cards, and interactive elements with glassmorphism and glow effects.</p>
+
+        <h3 style="color: var(--color-text-secondary); margin: 2rem 0 1.5rem;">Buttons</h3>
+        <div class="button-showcase">
+            <button class="btn btn-primary">Primary Action</button>
+            <button class="btn btn-secondary">Secondary</button>
+            <button class="btn btn-ghost">Ghost Button</button>
+        </div>
+
+        <h3 style="color: var(--color-text-secondary); margin: 2rem 0 1.5rem;">Glass Cards</h3>
+        <div class="card-showcase">
+            <div class="glass-card">
+                <h4>Organizational Memory</h4>
+                <p>Context that persists across sessions and agents. Your decisions, bets, and learnings - always accessible.</p>
+                <span class="tag">Context Layer</span>
+            </div>
+            <div class="glass-card">
+                <h4>Multi-Agent Orchestration</h4>
+                <p>13 specialized agents from CPO to PM, each with domain expertise and shared context.</p>
+                <span class="tag">13 Agents</span>
+            </div>
+            <div class="glass-card">
+                <h4>Decision Quality</h4>
+                <p>Structured decision-making with single owners, success criteria, and re-decision triggers.</p>
+                <span class="tag">56 Skills</span>
+            </div>
+        </div>
+
+        <h3 style="color: var(--color-text-secondary); margin: 2rem 0 1.5rem;">Code Styling</h3>
+        <div class="code-block">
+<pre><span class="comment">/* Skill invocation */</span>
+<span class="property">@product</span> create a PRD for authentication
+
+<span class="comment">/* Direct skill usage */</span>
+<span class="property">/prd</span> <span class="string">"User Authentication Feature"</span>
+<span class="property">/decision-record</span> <span class="string">"API Pricing Model"</span>
+
+<span class="comment">/* Context recall */</span>
+<span class="property">/context-recall</span> pricing <span class="value">product:AXIA</span></pre>
+        </div>
+
+        <h3 style="color: var(--color-text-secondary); margin: 2rem 0 1.5rem;">Agent Icons</h3>
+        <div class="agent-grid">
+            <div class="agent-icon">
+                <div class="icon" style="color: #FFC93C;">👑</div>
+                <div class="name">CPO</div>
+            </div>
+            <div class="agent-icon">
+                <div class="icon" style="color: #4ECCA3;">📈</div>
+                <div class="name">VP Product</div>
+            </div>
+            <div class="agent-icon">
+                <div class="icon" style="color: #4A90D9;">📋</div>
+                <div class="name">Director PM</div>
+            </div>
+            <div class="agent-icon">
+                <div class="icon" style="color: #9B59B6;">📣</div>
+                <div class="name">Director PMM</div>
+            </div>
+            <div class="agent-icon">
+                <div class="icon" style="color: #EAEAEA;">📝</div>
+                <div class="name">PM</div>
+            </div>
+            <div class="agent-icon">
+                <div class="icon" style="color: #E94560;">🎯</div>
+                <div class="name">PMM</div>
+            </div>
+            <div class="agent-icon">
+                <div class="icon" style="color: #FFC93C;">🧮</div>
+                <div class="name">BizOps</div>
+            </div>
+            <div class="agent-icon">
+                <div class="icon" style="color: #4ECCA3;">🤝</div>
+                <div class="name">BizDev</div>
+            </div>
+            <div class="agent-icon">
+                <div class="icon" style="color: #9B59B6;">🔭</div>
+                <div class="name">Comp Intel</div>
+            </div>
+            <div class="agent-icon">
+                <div class="icon" style="color: #EAEAEA;">⚙️</div>
+                <div class="name">Prod Ops</div>
+            </div>
+            <div class="agent-icon">
+                <div class="icon" style="color: #27AE60;">💰</div>
+                <div class="name">Value</div>
+            </div>
+            <div class="agent-icon">
+                <div class="icon" style="color: #805AD5;">🎨</div>
+                <div class="name">UX Lead</div>
+            </div>
+            <div class="agent-icon">
+                <div class="icon" style="color: #4ECCA3;">👥</div>
+                <div class="name">PLT</div>
+            </div>
+            <div class="agent-icon">
+                <div class="icon" style="color: #E94560;">🏛️</div>
+                <div class="name">Gateway</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- CSS Variables Reference -->
+    <section>
+        <h2 class="section-header">Implementation</h2>
+        <h2>CSS Variables</h2>
+        <p class="section-subtitle">Copy these CSS custom properties to implement the brand consistently.</p>
+
+        <div class="code-block">
+<pre><span class="property">:root</span> {
+  <span class="comment">/* Primary Colors */</span>
+  <span class="property">--color-primary</span>: <span class="value">#E94560</span>;
+  <span class="property">--color-primary-dark</span>: <span class="value">#C73E54</span>;
+  <span class="property">--color-secondary</span>: <span class="value">#4ECCA3</span>;
+  <span class="property">--color-accent</span>: <span class="value">#FFC93C</span>;
+
+  <span class="comment">/* Background Colors */</span>
+  <span class="property">--color-bg-primary</span>: <span class="value">#1A1A2E</span>;
+  <span class="property">--color-bg-card</span>: <span class="value">#16213E</span>;
+  <span class="property">--color-bg-accent</span>: <span class="value">#0F3460</span>;
+
+  <span class="comment">/* Text Colors */</span>
+  <span class="property">--color-text-primary</span>: <span class="value">#EAEAEA</span>;
+  <span class="property">--color-text-secondary</span>: <span class="value">#A0A0A0</span>;
+
+  <span class="comment">/* Effects */</span>
+  <span class="property">--glow-primary</span>: <span class="value">0 0 20px rgba(233, 69, 96, 0.4)</span>;
+  <span class="property">--glow-secondary</span>: <span class="value">0 0 20px rgba(78, 204, 163, 0.4)</span>;
+  <span class="property">--glass-bg</span>: <span class="value">rgba(22, 33, 62, 0.6)</span>;
+  <span class="property">--glass-border</span>: <span class="value">1px solid rgba(78, 204, 163, 0.15)</span>;
+
+  <span class="comment">/* Typography */</span>
+  <span class="property">--font-primary</span>: <span class="string">'Inter', sans-serif</span>;
+  <span class="property">--font-mono</span>: <span class="string">'Fira Code', monospace</span>;
+}</pre>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">Product Org OS</div>
+        <p>Brand Guidelines v2.0 | Updated January 2026</p>
+        <p style="margin-top: 0.5rem;">Questions? Contact Product Marketing</p>
+    </footer>
+</body>
+</html>
