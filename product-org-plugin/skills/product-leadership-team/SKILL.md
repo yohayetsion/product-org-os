@@ -288,34 +288,84 @@ When multiple PLT members need to engage:
 | Resource allocation | Director PM, ProdOps |
 | Outcome review | All, with Value-Realization input |
 
-### Spawning Agents via Task Tool
+---
 
-When PLT needs input from other roles, spawn them as autonomous agents using the Task tool.
+## Agent Spawning (MANDATORY)
 
-**Technical Pattern:**
+**Once you decide which agents are needed based on the Adaptive Response System above, you MUST spawn them as separate agents using the Task tool. Do NOT role-play their perspectives yourself.**
+
+### How It Works
+
+1. **Assess complexity** using Dimension 1 (SINGLE / PRIMARY+ / FULL PLT)
+2. **Decide which agents are needed** based on the domain ownership map
+3. **Spawn those agents in parallel** using multiple Task tool calls in a single message
+4. **Collect their independent responses**
+5. **Synthesize** only after all agents have responded
+
+### Agent Mapping for PLT
+
+| PLT Role | Agent to Spawn |
+|----------|----------------|
+| VP Product | `@vp-product` |
+| Director of Product Management | `@director-product-management` |
+| Director of Product Marketing | `@director-product-marketing` |
+| Product Operations | `@product-operations` |
+| BizOps (when needed) | `@bizops` |
+| Competitive Intelligence (when needed) | `@competitive-intelligence` |
+| Value Realization (when needed) | `@value-realization` |
+
+### Spawning Pattern
+
+For FULL PLT sessions, spawn all core PLT members:
+
 ```
-Task tool:
+Task tool call #1:
   subagent_type: "general-purpose"
-  description: "[Agent] providing [perspective] for PLT"
+  description: "VP Product perspective on [topic]"
   prompt: |
-    [Load agent persona from skills/{agent}/SKILL.md]
+    You are the VP Product. [Include full agent persona]
 
-    ## PLT Context
-    [The question/decision being discussed]
+    Topic: [The question/decision]
+    Context: [Any relevant context]
 
-    ## Your Task
-    Provide your perspective on this question from your role's viewpoint.
-    Be specific and actionable. Identify risks and opportunities from your domain.
+    Provide your perspective. Start with "VP Product:" and speak conversationally.
+
+Task tool call #2:
+  subagent_type: "general-purpose"
+  description: "Director PM perspective on [topic]"
+  prompt: [Similar structure for Director PM]
+
+Task tool call #3:
+  subagent_type: "general-purpose"
+  description: "Director PMM perspective on [topic]"
+  prompt: [Similar structure for Director PMM]
+
+Task tool call #4:
+  subagent_type: "general-purpose"
+  description: "ProdOps perspective on [topic]"
+  prompt: [Similar structure for ProdOps]
 ```
 
-**For parallel input gathering:**
-Spawn multiple agents simultaneously with multiple Task tool calls in the same message.
+### For Supporting Input
 
-**Presentation:**
+When PLT needs input from other roles (BizOps, CI, Value Realization), spawn them similarly:
 1. Show that you're "inviting them to present"
-2. Wait for agent responses
-3. Present each agent's input with clear attribution
-4. Show PLT members' reactions to the input
+2. Spawn them as autonomous agents
+3. Present their input with clear attribution
+4. Include in synthesis
+
+### After Collecting Responses
+
+Once all agents respond:
+1. Present each agent's response attributed to them
+2. Identify points of **Alignment** (what they agree on)
+3. Identify points of **Tension** (where they disagree)
+4. Provide **Synthesis** and recommendation
+5. Assign **Owner** for next steps
+
+### Why This Matters
+
+Role-playing produces artificial consensus. Spawning separate agents gets genuinely independent perspectives - each agent reasons from their role's priorities and concerns without knowing what others will say.
 
 ---
 
