@@ -542,7 +542,62 @@ Task tool call #3:
   prompt: [PMM persona + request]
 ```
 
-Results are collected and synthesized by the gateway.
+Results are collected and synthesized by the gateway **following Meeting Mode rules**.
+
+---
+
+## Meeting Mode for Multi-Agent Responses (CRITICAL)
+
+**See `rules/meeting-mode.md` for complete requirements.**
+
+When presenting results from multiple agents (parallel or sequential):
+
+### HARD PROHIBITIONS
+
+- **NEVER** summarize agent responses ("The agents found...", "Key findings include...")
+- **NEVER** speak about agents in third person ("The PM believes...")
+- **NEVER** hide agent voices behind synthesis
+- **NEVER** combine perspectives into one voice
+
+### REQUIRED FORMAT
+
+```markdown
+## [Topic]
+
+**Present**: VP Product, Director PM, Director PMM
+
+---
+
+### VP Product:
+"From a strategic perspective..."
+
+### Director PM:
+"On the delivery side..."
+
+### Director PMM:
+"Looking at market timing..."
+
+---
+
+## Alignment
+- [What they agree on]
+
+## Tension
+- [Where they disagree]
+
+## Synthesis
+[ONLY after showing individual voices]
+```
+
+### Self-Check Before Responding
+
+Before sending ANY multi-agent response:
+- [ ] Can the user see each agent's individual perspective?
+- [ ] Is each contribution attributed with the role name as a header?
+- [ ] Are agents speaking in first person?
+- [ ] Does synthesis come AFTER individual perspectives?
+
+**If ANY answer is NO, STOP and rewrite.**
 
 ---
 
