@@ -1233,7 +1233,7 @@
                     </div>
                     <div class="use-case-body">
                         <ul>
-                            <li>"/pm help me write user stories from this epic.md"</li>
+                            <li>"@pm help me write user stories from this epic.md"</li>
                             <li>"Create a /business-case for this feature - data in research/"</li>
                             <li>"Run /competitive-analysis on Acme - their-site.url"</li>
                             <li>"Update the /prd with the new MFA requirements"</li>
@@ -1268,7 +1268,7 @@
                     <div class="use-case-body">
                         <ul>
                             <li>Portfolio-level decisions in context/decisions/</li>
-                            <li>"/plt review portfolio-health.md" for leadership reviews</li>
+                            <li>"@plt review portfolio-health.md" for leadership reviews</li>
                             <li>Track strategic bets with assumptions and checkpoints</li>
                             <li>"/phase-check" validates teams follow the process</li>
                             <li>Institutional knowledge survives team changes</li>
@@ -1291,24 +1291,24 @@
             </div>
 
             <div class="usage-patterns">
-                <!-- /product Gateway -->
+                <!-- @product Gateway -->
                 <div class="usage-pattern featured">
                     <div class="pattern-header">
                         <span class="pattern-badge recommended">Start Here</span>
-                        <h3>/product Gateway</h3>
-                        <p>Routes to the right agents. Use /product-leadership-team for strategic decisions.</p>
+                        <h3>@product Gateway</h3>
+                        <p>Routes to the right agents. Use @product-leadership-team or @plt for strategic decisions.</p>
                     </div>
                     <div class="pattern-examples">
                         <div class="example-item">
-                            <code>/product</code>
+                            <code>@product</code>
                             <span>Launch freemium for SMBs. Context: pricing-research.md, competitor-tiers.xlsx</span>
                         </div>
                         <div class="example-item">
-                            <code>/product-leadership-team</code>
+                            <code>@product-leadership-team</code>
                             <span>Review portfolio-health.md and run a /portfolio-tradeoff</span>
                         </div>
                         <div class="example-item">
-                            <code>/plt</code>
+                            <code>@plt</code>
                             <span>Q2 planning. Inputs: customer-interviews/, eng-capacity.md, goals.md</span>
                         </div>
                     </div>
@@ -1318,19 +1318,19 @@
                 <div class="usage-pattern">
                     <div class="pattern-header">
                         <h3>Talk to Agents</h3>
-                        <p>Delegate to specific roles. Shortcuts: /pm, /plt, /vpp, /bizops</p>
+                        <p>Delegate to specific roles. Shortcuts: @pm, @plt, @vp-product, @bizops</p>
                     </div>
                     <div class="pattern-examples">
                         <div class="example-item">
-                            <code>/cpo</code>
+                            <code>@cpo</code>
                             <span>review board-feedback.pdf and update the /strategic-intent</span>
                         </div>
                         <div class="example-item">
-                            <code>/pm</code>
+                            <code>@pm</code>
                             <span>break down epic.md into /user-story items for the sprint</span>
                         </div>
                         <div class="example-item">
-                            <code>/bizops</code>
+                            <code>@bizops</code>
                             <span>build financial model for enterprise tier - see pricing-data.xlsx</span>
                         </div>
                     </div>
@@ -1344,15 +1344,15 @@
                     </div>
                     <div class="pattern-examples">
                         <div class="example-item">
-                            <code>/pm</code>
+                            <code>@pm</code>
                             <span>create a /prd for SSO integration - requirements in slack-thread.md</span>
                         </div>
                         <div class="example-item">
-                            <code>/plt</code>
+                            <code>@plt</code>
                             <span>run /competitive-analysis on Acme - see their-demo-notes.md</span>
                         </div>
                         <div class="example-item">
-                            <code>/cpo</code>
+                            <code>@cpo</code>
                             <span>update the /roadmap-theme for Growth with mobile initiatives</span>
                         </div>
                     </div>
@@ -1367,7 +1367,7 @@
                 </div>
                 <div class="meeting-conversation">
                     <div class="meeting-prompt">
-                        <code><span class="cmd">/product-leadership-team</span> Review <span class="file">q3-strategy.md</span> and run <span class="cmd">/portfolio-tradeoff</span> — should we prioritize webhooks or SDK improvements?</code>
+                        <code><span class="cmd">@product-leadership-team</span> Review <span class="file">q3-strategy.md</span> and run <span class="cmd">/portfolio-tradeoff</span> — should we prioritize webhooks or SDK improvements?</code>
                     </div>
                     <div class="meeting-responses">
                         <div class="agent-response">
@@ -2179,10 +2179,10 @@
                         <div class="step-content">
                             <h4>Start Creating</h4>
                             <p>Natural language with gateway, agents, or skills — create, update, or find.</p>
-                            <div class="code-block">/product Launch freemium tier. Context: pricing-research.md</div>
+                            <div class="code-block">@product Launch freemium tier. Context: pricing-research.md</div>
                             <div class="code-block" style="margin-top: 0.5rem;">Create a /prd for the new checkout feature</div>
                             <div class="code-block" style="margin-top: 0.5rem;">Run /decision-record for the build vs buy decision</div>
-                            <div class="code-block" style="margin-top: 0.5rem;">/pm review notes.md and update the /prd</div>
+                            <div class="code-block" style="margin-top: 0.5rem;">@pm review notes.md and update the /prd</div>
                             <div class="code-block" style="margin-top: 0.5rem;">Run /competitive-analysis on Competitor X - see their-launch.md</div>
                         </div>
                     </div>
@@ -2259,13 +2259,13 @@
             '@product Launch freemium for SMBs. Context: pricing-research.md',
             '@pm create a /prd for checkout optimization - see user-research.md',
             '@cpo review board-feedback.pdf and update /strategic-intent',
-            '@plt run /portfolio-tradeoff on q4-initiatives.md',
+            '@product-leadership-team run /portfolio-tradeoff on q4-initiatives.md',
             '@pm break down epic.md into /user-story items',
-            '@plt create a /business-case for mobile. Data: market-size.xlsx',
+            '@product-leadership-team create a /business-case for mobile. Data: market-size.xlsx',
             '@pm-dir review launch-data.xlsx and update the /gtm-strategy',
-            '@plt run /outcome-review on API v1 adoption - see usage-data.xlsx',
+            '@product-leadership-team run /outcome-review on API v1 adoption - see usage-data.xlsx',
             '@product Q3 planning. Inputs: customer-feedback/, capacity.md',
-            '@plt create /pricing-model from pricing-data.xlsx',
+            '@product-leadership-team create /pricing-model from pricing-data.xlsx',
             '@bizops analyze pricing-data.xlsx and recommend pricing tiers'
         ];
 
