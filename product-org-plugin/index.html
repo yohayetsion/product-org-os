@@ -5,23 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Org OS | AI-Powered Product Organization</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #e94560;
-            --primary-dark: #c73e54;
-            --secondary: #4ecca3;
-            --accent: #0f3460;
-            --bg: #1a1a2e;
-            --bg-card: #16213e;
-            --bg-elevated: #0f3460;
-            --text: #eaeaea;
-            --text-muted: #a0a0a0;
-            --text-dim: #707070;
+            /* Primary Colors */
+            --primary: #E94560;
+            --primary-dark: #C73E54;
+            --secondary: #4ECCA3;
+            --accent: #FFC93C;
+
+            /* Background Colors */
+            --bg: #1A1A2E;
+            --bg-card: #16213E;
+            --bg-elevated: #0F3460;
+
+            /* Text Colors */
+            --text: #EAEAEA;
+            --text-muted: #A0A0A0;
+            --text-dim: #6B7280;
             --border: #2a2a4e;
-            --gradient-1: linear-gradient(135deg, #e94560 0%, #c73e54 100%);
+
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, #E94560 0%, #4ECCA3 100%);
+            --gradient-1: linear-gradient(135deg, #e94560 0%, #4ECCA3 100%);
             --gradient-2: linear-gradient(135deg, #4ecca3 0%, #38b593 100%);
             --gradient-3: linear-gradient(135deg, #ffc93c 0%, #f5a623 100%);
+            --gradient-bg: linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%);
+
+            /* Effects */
+            --glow-primary: 0 0 20px rgba(233, 69, 96, 0.4);
+            --glow-secondary: 0 0 20px rgba(78, 204, 163, 0.4);
+            --glow-accent: 0 0 20px rgba(255, 201, 60, 0.4);
+            --glass-bg: rgba(22, 33, 62, 0.6);
+            --glass-blur: blur(12px);
+            --glass-border: 1px solid rgba(78, 204, 163, 0.15);
+
+            /* Typography */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'Fira Code', 'SF Mono', 'JetBrains Mono', monospace;
+
+            /* Spacing */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
         }
 
         * {
@@ -35,7 +61,7 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: var(--font-primary);
             background: var(--bg);
             color: var(--text);
             line-height: 1.6;
@@ -66,7 +92,7 @@
         .nav-logo {
             font-size: 1.25rem;
             font-weight: 700;
-            background: var(--gradient-1);
+            background: linear-gradient(90deg, #E94560 0%, #4ECCA3 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -134,7 +160,7 @@
         .hero {
             text-align: center;
             padding-top: 8rem;
-            background: linear-gradient(135deg, var(--bg) 0%, var(--bg-card) 50%, var(--bg-elevated) 100%);
+            background: var(--gradient-bg);
         }
 
         .hero h1 {
@@ -145,7 +171,7 @@
         }
 
         .hero h1 span {
-            background: linear-gradient(90deg, var(--text), var(--primary));
+            background: linear-gradient(90deg, #E94560 0%, #4ECCA3 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -166,6 +192,13 @@
             border-radius: 50px;
             font-weight: 600;
             font-size: 1.1rem;
+            box-shadow: var(--glow-primary);
+            transition: all 0.3s ease;
+        }
+
+        .hero-tagline:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(233, 69, 96, 0.5);
         }
 
         .hero-stats {
@@ -238,7 +271,7 @@
         .terminal-body {
             padding: 1.5rem;
             min-height: 80px;
-            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-family: var(--font-mono);
             font-size: 0.95rem;
         }
 
@@ -366,8 +399,8 @@
         }
 
         .example-item code {
-            color: var(--primary);
-            font-family: 'SF Mono', 'Fira Code', monospace;
+            color: var(--secondary);
+            font-family: var(--font-mono);
             font-size: 0.9rem;
             font-weight: 600;
         }
@@ -415,16 +448,20 @@
         }
 
         .value-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: var(--glass-border);
+            border-radius: var(--radius-lg);
             padding: 2rem;
             transition: all 0.3s;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .value-card:hover {
             transform: translateY(-4px);
-            border-color: var(--primary);
+            border-color: rgba(78, 204, 163, 0.4);
+            box-shadow: var(--glow-secondary);
         }
 
         .value-icon {
@@ -561,11 +598,11 @@
 
         .skill-tag {
             background: var(--bg-elevated);
-            color: var(--text-muted);
+            color: var(--secondary);
             padding: 0.25rem 0.6rem;
             border-radius: 6px;
             font-size: 0.75rem;
-            font-family: monospace;
+            font-family: var(--font-mono);
         }
 
         /* Agents Grid */
@@ -580,16 +617,19 @@
         }
 
         .agent-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: var(--glass-border);
+            border-radius: var(--radius-lg);
             padding: 1.5rem;
             transition: all 0.3s;
         }
 
         .agent-card:hover {
-            border-color: var(--primary);
+            border-color: rgba(233, 69, 96, 0.4);
             transform: translateY(-2px);
+            box-shadow: var(--glow-primary);
         }
 
         .agent-header {
@@ -615,9 +655,9 @@
         }
 
         .agent-cmd {
-            font-family: monospace;
+            font-family: var(--font-mono);
             font-size: 0.8rem;
-            color: var(--primary);
+            color: var(--secondary);
         }
 
         .agent-desc {
@@ -634,11 +674,11 @@
 
         .agent-skill {
             background: var(--bg-elevated);
-            color: var(--text-dim);
+            color: var(--secondary);
             padding: 0.2rem 0.5rem;
-            border-radius: 4px;
+            border-radius: var(--radius-sm);
             font-size: 0.7rem;
-            font-family: monospace;
+            font-family: var(--font-mono);
         }
 
         /* Skills Section */
@@ -693,7 +733,7 @@
         }
 
         .skill-name {
-            font-family: monospace;
+            font-family: var(--font-mono);
             color: var(--secondary);
             font-size: 0.9rem;
             margin-bottom: 0.4rem;
@@ -713,11 +753,19 @@
         }
 
         .context-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: var(--glass-border);
+            border-radius: var(--radius-lg);
             padding: 1.25rem;
             text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .context-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(128, 90, 213, 0.3);
         }
 
         .context-item-icon {
@@ -736,8 +784,8 @@
         }
 
         .context-id {
-            font-family: monospace;
-            color: var(--primary);
+            font-family: var(--font-mono);
+            color: var(--secondary);
             font-size: 0.75rem;
             margin-top: 0.5rem;
         }
@@ -750,10 +798,17 @@
         }
 
         .principle {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: var(--glass-border);
+            border-radius: var(--radius-lg);
             padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .principle:hover {
+            border-color: rgba(233, 69, 96, 0.3);
         }
 
         .principle-number {
@@ -781,11 +836,14 @@
 
         /* Getting Started */
         .getting-started {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: var(--glass-border);
             border-radius: 16px;
             padding: 2rem;
             margin-top: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .steps {
@@ -825,9 +883,9 @@
         .code-block {
             background: var(--bg);
             border: 1px solid var(--border);
-            border-radius: 8px;
+            border-radius: var(--radius-md);
             padding: 0.75rem 1rem;
-            font-family: monospace;
+            font-family: var(--font-mono);
             font-size: 0.85rem;
             color: var(--secondary);
             margin-top: 0.75rem;
@@ -951,7 +1009,7 @@
 
         .meeting-prompt code {
             display: block;
-            font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+            font-family: var(--font-mono);
             font-size: 0.9rem;
             color: var(--text);
             line-height: 1.5;
@@ -1137,16 +1195,16 @@
             <p style="font-family: monospace; font-size: clamp(0.9rem, 2vw, 1.2rem); letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 1.5rem;">
                 Intent → Decisions → Commitments → Execution → Outcomes → Learning
             </p>
-            <p class="hero-subtitle">An entire product organization that becomes your superpower.</p>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
-                Installable in Claude Code. Works in your repo. Uses your context.
+            <p class="hero-subtitle" style="font-size: clamp(1.25rem, 3vw, 1.75rem); font-weight: 600; color: var(--text); margin-bottom: 0.5rem;">Your Org Chart. In AI.</p>
+            <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                13 agents | 56 skills | Organizational memory
             </p>
             <span class="hero-tagline">Free & Open Source</span>
-            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 2rem;">
-                13 agents • 56 skills • 11 strategic documents • Context layer
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 2rem;">
+                Installable in Claude Code. Works in your repo. Uses your context.
             </p>
-            <p style="color: var(--secondary); font-size: 0.9rem; margin-top: 1rem;">
-                Based on the Vision to Value Executive Manifesto
+            <p style="color: var(--secondary); font-size: 0.85rem; margin-top: 0.75rem;">
+                Based on the V2V Operating System from "Vision to Value"
             </p>
 
             <!-- /product Gateway Demo -->

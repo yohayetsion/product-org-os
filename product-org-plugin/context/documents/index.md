@@ -2,13 +2,14 @@
 
 This registry automatically tracks all strategic documents created by skills. Documents are registered silently when created.
 
-*Last updated: 2026-01-23*
+*Last updated: 2026-01-24*
 
 ## Registry Format
 
 | ID | Title | Type | Skill | Date | Owner | Product | Location | Tags |
 |----|-------|------|-------|------|-------|---------|----------|------|
 | DOC-2026-001 | AXIA PRD V4 | PRD | `/prd` | 2026-01-23 | Product | AXIA | `AXIA/Collaterals/Version 4/PRD-V4.md` | prd, requirements, insider-risk |
+| DOC-2026-002 | Product Org OS Brand Guidelines | Brand Guidelines | manual | 2026-01-24 | Product Marketing | Product Org OS | `product-org-plugin/BRAND-GUIDELINES.md` | brand, visual-identity, design-system, marketing |
 
 ## Document Types
 
