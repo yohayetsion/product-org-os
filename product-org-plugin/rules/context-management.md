@@ -33,7 +33,7 @@ When a skill completes and writes a document to the filesystem:
 | V2V Phase | Skills |
 |-----------|--------|
 | Phase 1 | `/strategic-intent`, `/vision-statement`, `/market-analysis`, `/competitive-landscape`, `/competitive-analysis`, `/market-segment` |
-| Phase 2 | `/business-case`, `/business-plan`, `/pricing-strategy`, `/pricing-model`, `/positioning-statement`, `/decision-record`, `/strategic-bet`, `/decision-charter`, `/escalation-rule` |
+| Phase 2 | `/business-case`, `/business-plan`, `/pricing-strategy`, `/pricing-model`, `/positioning-statement`, `/decision-record`, `/strategic-bet`, `/decision-charter`, `/escalation-rule`, `/portfolio-tradeoff` |
 | Phase 3 | `/product-roadmap`, `/roadmap-theme`, `/roadmap-item`, `/gtm-strategy`, `/gtm-brief`, `/launch-plan`, `/strategy-communication`, `/prd`, `/prd-outline`, `/feature-spec`, `/user-story` |
 | Phase 4 | `/campaign-brief`, `/sales-enablement`, `/stakeholder-brief`, `/launch-readiness` |
 | Phase 5 | `/onboarding-playbook`, `/value-realization-report`, `/customer-health-scorecard` |
