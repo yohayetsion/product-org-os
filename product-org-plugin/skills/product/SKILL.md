@@ -395,14 +395,39 @@ Execute the plan using parallel agent spawning where possible.
 7. Synthesize and present results
 ```
 
-### Spawning Agents
+### Spawning Agents via Task Tool
 
-When spawning agents, include in their prompt:
-- The original user request
-- Their specific assignment from the plan
-- Any user guidance that applies to them
-- Context from dependent deliverables (if sequential)
-- Instruction to produce the deliverable and return it
+Use the Task tool with `general-purpose` subagent type to spawn autonomous agents.
+
+**Technical Pattern:**
+```
+Task tool:
+  subagent_type: "general-purpose"
+  description: "[Agent] executing [task]"
+  prompt: |
+    [Load agent persona from skills/{agent}/SKILL.md]
+
+    ## Original Request
+    [The user's request to /product]
+
+    ## Your Assignment
+    [Specific task from the plan]
+
+    ## User Guidance
+    [Any modifications or focus areas]
+
+    ## Context
+    [File contents if @file.md was referenced]
+    [Deliverables from prior agents if sequential]
+
+    ## Instructions
+    1. Execute your assignment
+    2. Use appropriate /skills for deliverables
+    3. Return summary of what you created
+```
+
+**Parallel Execution:**
+Spawn multiple agents simultaneously by making multiple Task tool calls in a single message.
 
 ### Synthesis
 

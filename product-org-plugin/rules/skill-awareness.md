@@ -346,6 +346,140 @@ Recognize these as routing signals:
 
 ---
 
+## Dual-Mode Invocation
+
+Each agent supports two invocation modes:
+
+| Mode | Syntax | Behavior | Use Case |
+|------|--------|----------|----------|
+| **Inline** | `/pm` | Skill tool - Claude adopts persona, continues conversation | Quick back-and-forth, iterating together |
+| **Autonomous** | `@pm` | Task tool - Spawns agent, returns when done | Delegating work, "go do this" |
+
+### Inline Mode (`/pm`)
+```
+User: /pm what do you think about this feature scope?
+Claude (as PM): Looking at this from a delivery perspective...
+User: what about edge cases?
+Claude (as PM): Good point, we should consider...
+```
+- Conversational, shared context
+- Claude wears the PM "hat"
+- Good for exploration and iteration
+
+### Autonomous Mode (`@pm`)
+```
+User: @pm create a PRD for authentication based on @research.md
+[Agent spawns, works independently]
+Claude: The PM agent created a PRD at docs/prd-auth.md
+```
+- Delegated work, agent owns the task
+- Can run in background
+- Returns result when complete
+
+---
+
+## Technical Implementation: Agent Spawning
+
+When spawning an agent via `@agent` syntax, use the Task tool with `general-purpose` subagent type.
+
+### Task Tool Pattern
+
+```
+Task tool call:
+  subagent_type: "general-purpose"
+  description: "PM agent creating PRD"
+  prompt: |
+    [Agent persona from skills/{agent}/SKILL.md]
+
+    ## Your Task
+    [User's request]
+
+    ## Context
+    [Any @file.md contents referenced]
+  allowed_tools: ["Read", "Write", "Edit", "Glob", "Grep", "Bash", "WebSearch", "Skill"]
+```
+
+### Agent Prompt Construction
+
+When spawning an agent, construct the prompt by:
+
+1. **Load agent persona** from `skills/{agent-name}/SKILL.md`
+   - Include role description, responsibilities, collaboration patterns
+   - Include the skills they should use
+
+2. **Add the user's request** as the task
+
+3. **Include any `@file.md` context** referenced in the request
+   - Read the file contents
+   - Include relevant sections in the prompt
+
+4. **Add return instructions**
+   - Agent should produce deliverables
+   - Return summary of what was created
+
+### Example: Spawning PM Agent
+
+When user types: `@pm create a PRD for authentication @research.md`
+
+```
+Task tool:
+  subagent_type: "general-purpose"
+  description: "PM creating authentication PRD"
+  prompt: |
+    You are a **Product Manager**, responsible for defining and delivering product features.
+
+    ## Your Responsibilities
+    - Product Delivery Planning
+    - Product Requirements
+    - Feature definitions
+    - User stories with acceptance criteria
+
+    ## Skills Available
+    Use these skills via the Skill tool:
+    - /prd - Create Product Requirements Document
+    - /feature-spec - Create feature specification
+    - /user-story - Write user stories
+    - /context-recall - Check for related decisions
+    - /feedback-recall - Check customer feedback
+
+    ## Your Task
+    Create a PRD for authentication
+
+    ## Context
+    [Contents of research.md inserted here]
+
+    ## Instructions
+    1. Use /context-recall to check for related decisions
+    2. Create the PRD using /prd skill
+    3. Return a summary of what you created
+```
+
+### Parallel Agent Spawning
+
+Gateways (`@product`, `@plt`) spawn multiple agents in parallel:
+
+```
+// Spawn multiple agents simultaneously
+Task tool call #1:
+  subagent_type: "general-purpose"
+  description: "VP Product strategic perspective"
+  prompt: [VP Product persona + request]
+
+Task tool call #2:
+  subagent_type: "general-purpose"
+  description: "PM delivery perspective"
+  prompt: [PM persona + request]
+
+Task tool call #3:
+  subagent_type: "general-purpose"
+  description: "PMM market perspective"
+  prompt: [PMM persona + request]
+```
+
+Results are collected and synthesized by the gateway.
+
+---
+
 ## V2V Operating Principle
 
 > "Every skill exists for a reason. Choose the right skill for the task, not the task for the skill you know."
