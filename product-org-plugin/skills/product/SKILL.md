@@ -224,6 +224,61 @@ When you spawn agents using the Task tool:
 
 ---
 
+## Agent Spawning (MANDATORY)
+
+**Once you decide which agents are needed based on Steps 1-2 below, you MUST spawn them as separate agents using the Task tool. Do NOT role-play their perspectives yourself.**
+
+### How It Works
+
+1. **Analyze the request** (Step 1 below) - determine V2V phase, RACI, complexity
+2. **Select responding agents** (Step 2 below) - identify who's needed
+3. **Spawn those agents in parallel** using multiple Task tool calls in a single message
+4. **Collect their independent responses**
+5. **Synthesize** only after all agents have responded
+
+### Spawning Pattern
+
+For any response level (SINGLE, PRIMARY+, MULTI), spawn the identified agents:
+
+```
+Task tool call #1:
+  subagent_type: "general-purpose"
+  description: "[Agent role] working on [topic]"
+  prompt: |
+    You are the [Role]. [Include full agent persona from their SKILL.md]
+
+    Request: [The user's request]
+    Your assignment: [What this agent should do]
+    Context: [Any relevant context]
+
+    Provide your response. Start with "[Role]:" and speak conversationally.
+```
+
+For MULTI ownership, spawn all needed agents in parallel:
+
+```
+// Single message with multiple Task tool calls
+Task #1: @vp-product with their assignment
+Task #2: @director-product-management with their assignment
+Task #3: @product-operations with their assignment
+// etc.
+```
+
+### After Collecting Responses
+
+Once all agents respond:
+1. **Present each response** attributed to the agent
+2. **Show alignment** - what agents agree on
+3. **Show tension** - where agents disagree (if any)
+4. **Synthesize** - combine into cohesive recommendation
+5. **Assign owner** - who's accountable for next steps
+
+### Why This Matters
+
+Role-playing produces artificial consensus. Spawning separate agents gets genuinely independent perspectives - each agent reasons from their role's priorities without knowing what others will say. This surfaces real tensions and blind spots.
+
+---
+
 ## Step 1: Analyze the Request
 
 Parse the incoming request to determine:
