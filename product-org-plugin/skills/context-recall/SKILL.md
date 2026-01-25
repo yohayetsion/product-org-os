@@ -39,9 +39,31 @@ Accept a topic or keyword from the user, with optional product filter:
 
 **Product Filter**: If `product:[name]` is specified, filter results to that product only. If omitted, search across all products.
 
-### 2. Search All Context Sources
+### 2. Search JSON Index First (Fast Path)
 
-Search across all context indexes:
+**Primary search method**: Use `context/index.json` for fast topic-based retrieval.
+
+```json
+// Read context/index.json
+{
+  "topicIndex": {
+    "pricing": ["DR-2026-001", "DOC-2026-015"],
+    "api": ["DR-2026-003", "DOC-2026-008"]
+  }
+}
+```
+
+1. Check `topicIndex` for exact topic match
+2. Check `typeIndex` if user specifies a type (e.g., "prd", "decision")
+3. Check `phaseIndex` if user specifies a phase
+4. Retrieve matching `entries` by ID
+5. Get file paths from entries for full document access
+
+**If JSON index doesn't exist or has no matches**, fall back to markdown index search.
+
+### 3. Search Markdown Indexes (Fallback)
+
+If JSON index has no matches, search across markdown indexes:
 
 #### Decisions (`context/decisions/index.md`)
 - Search titles and tags

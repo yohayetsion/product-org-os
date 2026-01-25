@@ -10,6 +10,7 @@ This registry automatically tracks all strategic documents created by skills. Do
 |----|-------|------|-------|------|-------|---------|----------|------|
 | DOC-2026-001 | AXIA PRD V4 | PRD | `/prd` | 2026-01-23 | Product | AXIA | `AXIA/Collaterals/Version 4/PRD-V4.md` | prd, requirements, insider-risk |
 | DOC-2026-002 | Product Org OS Brand Guidelines | Brand Guidelines | manual | 2026-01-24 | Product Marketing | Product Org OS | `product-org-plugin/BRAND-GUIDELINES.md` | brand, visual-identity, design-system, marketing |
+| DOC-2026-003 | Phase 2 Intelligence Enhancements PRD | PRD | `/prd` | 2026-01-24 | Product Manager | Product Org OS | `V2 Planning/phase2-intelligence-enhancements-prd.md` | prd, roi-tracker, routing, context-sharing, phase-2b, intelligence |
 
 ## Document Types
 

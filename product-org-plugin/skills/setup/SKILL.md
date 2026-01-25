@@ -389,7 +389,98 @@ The Document Registry tracks all strategic documents created by skills. This ena
 Skills auto-generate IDs when creating documents.
 ```
 
-### 4. Report Completion
+### 4. Create ROI Tracking Structure
+
+Create ROI tracking folders and files:
+- `context/roi/session-log.md`
+- `context/roi/history/README.md`
+
+### 5. Create JSON Index
+
+Create `context/index.json` for fast topic-based retrieval:
+
+```json
+{
+  "version": "1.0",
+  "lastUpdated": "[current date]",
+  "entries": [],
+  "topicIndex": {},
+  "typeIndex": {},
+  "phaseIndex": {}
+}
+```
+
+### 6. First-Run Welcome
+
+Display welcome message with exploration guidance:
+
+```markdown
+# Welcome to Product Org OS!
+
+Your AI-powered product organization is ready.
+
+---
+
+## Explore with Demo Content
+
+This plugin includes **demo content** so you can see how everything works:
+
+| Demo Content | Description |
+|--------------|-------------|
+| 3 decisions | Pricing, API versioning, mobile-first |
+| 2 strategic bets | Enterprise tier, self-serve growth |
+| 7 feedback entries | Customer interviews, support, sales |
+| 1 PRD | Dashboard redesign |
+
+**Try these commands:**
+```
+/context-recall pricing        → See pricing-related decisions
+/context-recall enterprise     → See enterprise strategy context
+/portfolio-status              → View active strategic bets
+/feedback-recall onboarding    → See onboarding feedback patterns
+```
+
+---
+
+## Meet Your Team
+
+Invoke agents for their perspective:
+
+| Agent | Focus | Try |
+|-------|-------|-----|
+| `@pm` | Requirements, delivery | `@pm review the dashboard PRD` |
+| `@vp-product` | Strategy, portfolio | `@vp-product our enterprise strategy` |
+| `@plt` | Leadership decisions | `@plt should we prioritize enterprise or self-serve?` |
+
+---
+
+## Ready for Real Work?
+
+When you want to use your own organizational context:
+
+```
+/clear-demo     → Removes all demo content
+```
+
+Demo content is clearly marked with `[DEMO DATA]` tags.
+
+---
+
+## Quick Reference
+
+| Task | Command |
+|------|---------|
+| Create a PRD | `/prd [topic]` |
+| Document a decision | `/decision-record [topic]` |
+| Capture feedback | `/feedback-capture` |
+| Check portfolio | `/portfolio-status` |
+| Get PM perspective | `@pm [question]` |
+| Leadership meeting | `@plt [question]` |
+
+**Full documentation**: See `reference/v2v-skill-map.md` and `reference/agent-roster.md`
+```
+
+### 7. Report Completion
 
 ```
 Product Org Plugin initialized successfully!
@@ -405,15 +496,14 @@ Created context folder structure:
 ✓ context/feedback/index.md
 ✓ context/feedback/themes.md
 ✓ context/documents/registry.md
+✓ context/roi/session-log.md
+✓ context/roi/history/README.md
+✓ context/index.json
+
+Demo content included - explore with /context-recall or /portfolio-status
+For production use: /clear-demo
 
 You're ready to use all Product Org skills!
-
-Quick start:
-- /feedback-capture - Capture customer feedback
-- /decision-record - Create a decision record
-- /prd - Create a product requirements document
-- /prd update [topic] - Update an existing PRD
-- /strategic-bet - Define a strategic bet
 ```
 
 ## Instructions
