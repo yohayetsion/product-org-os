@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#4ECCA3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <filter id="glow-bizdev" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Handshake - BizDev -->
+  <path d="M17 11h3a2 2 0 012 2v1a2 2 0 01-2 2h-1"/>
+  <path d="M7 11H4a2 2 0 00-2 2v1a2 2 0 002 2h1"/>
+  <!-- Hands meeting -->
+  <path d="M11 17l-3-3 2-2 4 4"/>
+  <path d="M13 17l3-3-2-2-4 4"/>
+  <!-- Arms -->
+  <path d="M7 11V8a2 2 0 012-2h6a2 2 0 012 2v3"/>
+  <!-- Cuff details -->
+  <line x1="8" y1="16" x2="5" y2="16"/>
+  <line x1="16" y1="16" x2="19" y2="16"/>
+</svg>

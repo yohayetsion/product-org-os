@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Org OS - Agent Icons</title>
+  <style>
+    :root {
+      --bg-primary: #0D0D0D;
+      --bg-card: #1A1A2E;
+      --text-primary: #FFFFFF;
+      --text-secondary: #B0B0B0;
+      --border-subtle: #2A2A3E;
+      --red-primary: #E94560;
+      --teal-primary: #4ECCA3;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      padding: 40px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, var(--red-primary), var(--teal-primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin: 40px 0 24px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .icon-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .icon-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--teal-primary);
+      box-shadow: 0 8px 24px rgba(78, 204, 163, 0.15);
+    }
+
+    .icon-card:hover .icon-container {
+      filter: url(#glow);
+    }
+
+    .icon-container {
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: filter 0.3s ease;
+    }
+
+    .icon-container img {
+      width: 48px;
+      height: 48px;
+    }
+
+    .icon-info {
+      text-align: center;
+    }
+
+    .icon-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    .icon-file {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      font-family: 'Fira Code', monospace;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .logo-section {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+
+    .logo-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 40px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo-card .icon-container {
+      width: 96px;
+      height: 96px;
+    }
+
+    .logo-card .icon-container img {
+      width: 80px;
+      height: 80px;
+    }
+
+    .logo-card .icon-name {
+      font-size: 1.25rem;
+    }
+
+    .color-indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    /* Size variants preview */
+    .size-preview {
+      display: flex;
+      gap: 16px;
+      align-items: flex-end;
+      margin-top: 8px;
+    }
+
+    .size-preview img {
+      opacity: 0.6;
+    }
+
+    .size-preview img:last-child {
+      opacity: 1;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    footer a {
+      color: var(--teal-primary);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Global glow filter for hover states -->
+  <svg width="0" height="0" style="position: absolute;">
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </svg>
+
+  <div class="header">
+    <h1>Product Org OS</h1>
+    <p>Agent Icon Library</p>
+  </div>
+
+  <div class="logo-section">
+    <div class="logo-card">
+      <div class="icon-container">
+        <img src="convergence-hexagon.svg" alt="Convergence Hexagon Logo">
+      </div>
+      <div class="icon-info">
+        <div class="icon-name">Convergence Hexagon</div>
+        <div class="icon-file">convergence-hexagon.svg</div>
+      </div>
+      <div class="size-preview">
+        <img src="convergence-hexagon.svg" width="16" height="16" alt="16px">
+        <img src="convergence-hexagon.svg" width="24" height="24" alt="24px">
+        <img src="convergence-hexagon.svg" width="32" height="32" alt="32px">
+        <img src="convergence-hexagon.svg" width="48" height="48" alt="48px">
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Executive Leadership</h2>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <div class="icon-container">
+        <img src="cpo.svg" alt="CPO">
+      </div>
+      <div class="icon-info">
+        <div class="icon-name"><span class="color-indicator" style="background: #FFC93C;"></span>CPO</div>
+        <div class="icon-file">cpo.svg</div>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-container">
+        <img src="vp-product.svg" alt="VP Product">
+      </div>
+      <div class="icon-info">
+        <div class="icon-name"><span class="color-indicator" style="background: #4ECCA3;"></span>VP Product</div>
+        <div class="icon-file">vp-product.svg</div>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-container">
+        <img src="plt.svg" alt="PLT">
+      </div>
+      <div class="icon-info">
+        <div class="icon-name"><span class="color-indicator" style="background: linear-gradient(135deg, #E94560, #4ECCA3);"></span>PLT</div>
+        <div class="icon-file">plt.svg</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Directors</h2>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <div class="icon-container">
+        <img src="director-pm.svg" alt="Director PM">
+      </div>
+      <div class="icon-info">
+        <div class="icon-name"><span class="color-indicator" style="background: #4A90D9;"></span>Director PM</div>
+        <div class="icon-file">director-pm.svg</div>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-container">
+        <img src="director-pmm.svg" alt="Director PMM">
+      </div>
+      <div class="icon-info">
+        <div class="icon-name"><span class="color-indicator" style="background: #9B59B6;"></span>Director PMM</div>
+        <div class="icon-file">director-pmm.svg</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Individual Contributors</h2>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <div class="icon-container">
+        <img src="product-manager.svg" alt="Product Manager">
+      </div>
+      <div class="icon-info">
+        <div class="icon-name"><span class="color-indicator" style="background: #EAEAEA;"></span>Product Manager</div>
+        <div class="icon-file">product-manager.svg</div>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-container">
+        <img src="pmm.svg" alt="PMM">
+      </div>
+      <div class="icon-info">
+        <div class="icon-name"><span class="color-indicator" style="background: #E94560;"></span>PMM</div>
+        <div class="icon-file">pmm.svg</div>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-container">
+        <img src="ux-lead.svg" alt="UX Lead">
+      </div>
+      <div class="icon-info">
+        <div class="icon-name"><span class="color-indicator" style="background: #805AD5;"></span>UX Lead</div>
+        <div class="icon-file">ux-lead.svg</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Supporting Functions</h2>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <div class="icon-container">
+        <img src="bizops.svg" alt="BizOps">
+      </div>
+      <div class="icon-info">
+        <div class="icon-name"><span class="color-indicator" style="background: #FFC93C;"></span>BizOps</div>
+        <div class="icon-file">bizops.svg</div>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-container">
+        <img src="bizdev.svg" alt="BizDev">
+      </div>
+      <div class="icon-info">
+        <div class="icon-name"><span class="color-indicator" style="background: #4ECCA3;"></span>BizDev</div>
+        <div class="icon-file">bizdev.svg</div>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-container">
+        <img src="competitive-intel.svg" alt="Competitive Intel">
+      </div>
+      <div class="icon-info">
+        <div class="icon-name"><span class="color-indicator" style="background: #9B59B6;"></span>Competitive Intel</div>
+        <div class="icon-file">competitive-intel.svg</div>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-container">
+        <img src="product-ops.svg" alt="Product Ops">
+      </div>
+      <div class="icon-info">
+        <div class="icon-name"><span class="color-indicator" style="background: #EAEAEA;"></span>Product Ops</div>
+        <div class="icon-file">product-ops.svg</div>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-container">
+        <img src="value-realization.svg" alt="Value Realization">
+      </div>
+      <div class="icon-info">
+        <div class="icon-name"><span class="color-indicator" style="background: #27AE60;"></span>Value Realization</div>
+        <div class="icon-file">value-realization.svg</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Gateways</h2>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <div class="icon-container">
+        <img src="product-gateway.svg" alt="Product Gateway">
+      </div>
+      <div class="icon-info">
+        <div class="icon-name"><span class="color-indicator" style="background: linear-gradient(135deg, #E94560, #4ECCA3);"></span>Product Gateway</div>
+        <div class="icon-file">product-gateway.svg</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Product Org OS Agent Icons &bull; 24x24 SVG &bull; 1.75px stroke weight</p>
+    <p style="margin-top: 8px;">Part of the <a href="#">V2V Operating System</a></p>
+  </footer>
+</body>
+</html>

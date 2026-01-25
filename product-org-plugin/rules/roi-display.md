@@ -12,29 +12,29 @@ Every skill and agent invocation saves time compared to manual equivalent work. 
 
 ## Display Requirements
 
-### After EVERY Skill Completion
+### Compact Single-Line Format (DEFAULT)
 
-Display the ROI block at the end of the skill output:
-
-```markdown
----
-⏱️ **Time saved**: ~[X] minutes
-📊 Manual equivalent: [brief description]
-📈 This session: ~[Y] hours saved ([N] interactions)
----
-```
-
-### After EVERY Agent Completion
-
-Same format, adjusted for agent context:
+Display ROI on a single line after skill or agent completion:
 
 ```markdown
----
-⏱️ **Time saved**: ~[X] minutes
-📊 Task: [what the agent did]
-📈 This session: ~[Y] hours saved ([N] interactions)
----
+⏱️ ~[X] min saved (vs. [brief manual equivalent])
 ```
+
+**Examples:**
+- `⏱️ ~60 min saved (vs. marketing audit + gap analysis)`
+- `⏱️ ~180 min saved (vs. drafting PRD from scratch)`
+- `⏱️ ~45 min saved (vs. competitive research + synthesis)`
+
+### When to Show
+- After agent spawning (Task tool) produces planning, insights, or deliverables
+- After skill execution that creates or updates documents
+- After PLT or gateway sessions that produce recommendations
+
+### When NOT to Show
+- Simple lookups or context retrieval (`/context-recall`, `/feedback-recall`)
+- Failed operations
+- System operations (setup, indexing)
+- Pure read operations with no synthesis
 
 ---
 
@@ -64,41 +64,39 @@ Add to running session total for cumulative display.
 
 ### Simple User Story
 ```markdown
----
-⏱️ **Time saved**: ~10 minutes
-📊 Manual equivalent: Writing story + acceptance criteria
-📈 This session: ~0.5 hours saved (3 interactions)
----
+⏱️ ~10 min saved (vs. writing story + acceptance criteria)
 ```
 
 ### Complex PRD
 ```markdown
----
-⏱️ **Time saved**: ~360 minutes (6 hours)
-📊 Manual equivalent: Requirements research + documentation + stakeholder alignment
-📈 This session: ~8.5 hours saved (12 interactions)
----
+⏱️ ~6 hrs saved (vs. requirements research + documentation)
 ```
 
 ### PLT Meeting Session
 ```markdown
----
-⏱️ **Time saved**: ~600 minutes (10 hours)
-📊 Task: Cross-functional portfolio tradeoff with 5 perspectives synthesized
-📈 This session: ~14 hours saved (8 interactions)
----
+⏱️ ~10 hrs saved (vs. cross-functional alignment meeting)
 ```
 
----
-
-## Quiet Mode
-
-Users can request minimal display by including "quiet" or "minimal" in their prompt:
-
-**Quiet format** (single line):
+### Agent Spawning
 ```markdown
-⏱️ ~120 min saved | Session: ~4.5 hrs
+⏱️ ~90 min saved (vs. competitive analysis research)
 ```
+
+---
+
+## Session Totals (Optional)
+
+For longer sessions, you may optionally add session totals after the standard line:
+
+```markdown
+⏱️ ~90 min saved (vs. market research + analysis)
+📈 Session total: ~4.5 hrs saved
+```
+
+Only add session totals when:
+- Session has 5+ skill/agent interactions
+- User has requested session tracking
+- Using `/roi-report` skill
 
 ---
 

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="convergence-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E94560"/>
+      <stop offset="50%" stop-color="#805AD5"/>
+      <stop offset="100%" stop-color="#4ECCA3"/>
+    </linearGradient>
+    <filter id="glow-convergence" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Convergence Hexagon Logo -->
+  <!-- Outer hexagon -->
+  <polygon points="12,2 21,7 21,17 12,22 3,17 3,7" stroke="url(#convergence-gradient)"/>
+  <!-- Inner hexagon (rotated/offset for depth) -->
+  <polygon points="12,5 18,8.5 18,15.5 12,19 6,15.5 6,8.5" stroke="url(#convergence-gradient)" stroke-width="1.5"/>
+  <!-- Convergence lines to center -->
+  <line x1="12" y1="5" x2="12" y2="12" stroke="url(#convergence-gradient)" stroke-width="1.25"/>
+  <line x1="6" y1="8.5" x2="12" y2="12" stroke="url(#convergence-gradient)" stroke-width="1.25"/>
+  <line x1="18" y1="8.5" x2="12" y2="12" stroke="url(#convergence-gradient)" stroke-width="1.25"/>
+  <line x1="6" y1="15.5" x2="12" y2="12" stroke="url(#convergence-gradient)" stroke-width="1.25"/>
+  <line x1="18" y1="15.5" x2="12" y2="12" stroke="url(#convergence-gradient)" stroke-width="1.25"/>
+  <line x1="12" y1="19" x2="12" y2="12" stroke="url(#convergence-gradient)" stroke-width="1.25"/>
+  <!-- Center point -->
+  <circle cx="12" cy="12" r="1.5" stroke="url(#convergence-gradient)" stroke-width="1.5"/>
+</svg>

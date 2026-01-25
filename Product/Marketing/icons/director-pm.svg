@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#4A90D9" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <filter id="glow-dpm" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Gantt bars - Director PM -->
+  <rect x="3" y="4" width="10" height="3" rx="1"/>
+  <rect x="6" y="10" width="12" height="3" rx="1"/>
+  <rect x="9" y="16" width="8" height="3" rx="1"/>
+  <!-- Connection lines -->
+  <line x1="8" y1="7" x2="8" y2="10" stroke-width="1.25" stroke-dasharray="1.5 1"/>
+  <line x1="12" y1="13" x2="12" y2="16" stroke-width="1.25" stroke-dasharray="1.5 1"/>
+</svg>
