@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#4ECCA3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <filter id="glow-vp" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Upward trend chart - VP Product -->
+  <polyline points="3 17 9 11 13 14 21 6"/>
+  <polyline points="17 6 21 6 21 10"/>
+  <!-- Chart baseline -->
+  <line x1="3" y1="20" x2="21" y2="20"/>
+  <line x1="3" y1="20" x2="3" y2="5"/>
+</svg>

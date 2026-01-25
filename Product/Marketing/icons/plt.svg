@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="plt-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E94560"/>
+      <stop offset="100%" stop-color="#4ECCA3"/>
+    </linearGradient>
+    <filter id="glow-plt" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Group circle - PLT (Product Leadership Team) -->
+  <circle cx="12" cy="12" r="9" stroke="url(#plt-gradient)"/>
+  <!-- People icons in circle -->
+  <circle cx="12" cy="8" r="2" stroke="url(#plt-gradient)"/>
+  <circle cx="7" cy="14" r="2" stroke="url(#plt-gradient)"/>
+  <circle cx="17" cy="14" r="2" stroke="url(#plt-gradient)"/>
+  <!-- Connection lines -->
+  <line x1="10" y1="9.5" x2="8.5" y2="12.5" stroke="url(#plt-gradient)" stroke-width="1.25"/>
+  <line x1="14" y1="9.5" x2="15.5" y2="12.5" stroke="url(#plt-gradient)" stroke-width="1.25"/>
+  <line x1="9" y1="14" x2="15" y2="14" stroke="url(#plt-gradient)" stroke-width="1.25"/>
+</svg>

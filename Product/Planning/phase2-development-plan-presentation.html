@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 2 Development Plan - Product Org OS</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #7c3aed;
+            --accent: #06b6d4;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --bg: #0f172a;
+            --bg-card: #1e293b;
+            --bg-elevated: #334155;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #475569;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .slide {
+            min-height: 100vh;
+            padding: 60px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .slide-title {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        .slide-title h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .slide-title .meta {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem;
+            color: var(--accent);
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            margin: 1rem 0 0.5rem;
+            color: var(--text-muted);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-header .emoji {
+            font-size: 2rem;
+        }
+
+        .card-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated));
+            border-left: 4px solid var(--primary);
+        }
+
+        .feature-card.priority-0 { border-left-color: var(--warning); }
+        .feature-card.priority-1 { border-left-color: var(--success); }
+        .feature-card.priority-2 { border-left-color: var(--accent); }
+        .feature-card.priority-3 { border-left-color: var(--secondary); }
+        .feature-card.priority-4 { border-left-color: var(--primary); }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+        }
+
+        .tag-priority-0 { background: var(--warning); color: #000; }
+        .tag-priority-1 { background: var(--success); color: #000; }
+        .tag-priority-2 { background: var(--accent); color: #000; }
+        .tag-priority-3 { background: var(--secondary); color: #fff; }
+        .tag-priority-4 { background: var(--primary); color: #fff; }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin-top: 2rem;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -2rem;
+            top: 1.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid var(--bg);
+        }
+
+        .timeline-day {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--bg-elevated);
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        tr:hover {
+            background: rgba(255,255,255,0.02);
+        }
+
+        .agent-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .agent-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .agent-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .agent-card .emoji {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .agent-card .name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .agent-card .principle {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(124, 58, 237, 0.2));
+            border: 1px solid var(--primary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-card .number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-card .label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .code-block {
+            background: #0d1117;
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        .nav {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 0.5rem;
+            z-index: 100;
+        }
+
+        .nav button {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+
+        .nav button:hover {
+            background: var(--primary);
+        }
+
+        .toc {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            z-index: 100;
+            max-height: 80vh;
+            overflow-y: auto;
+            opacity: 0.9;
+        }
+
+        .toc a {
+            display: block;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 0.25rem 0;
+            font-size: 0.85rem;
+        }
+
+        .toc a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 1200px) {
+            .slide { padding: 40px; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .agent-grid { grid-template-columns: repeat(2, 1fr); }
+            .stat-grid { grid-template-columns: repeat(2, 1fr); }
+            .toc { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="toc">
+        <strong style="color: var(--accent);">Contents</strong>
+        <a href="#title">Title</a>
+        <a href="#overview">Overview</a>
+        <a href="#features">6 Features</a>
+        <a href="#personas">Agent Personas</a>
+        <a href="#agents-detail">All 13 Agents</a>
+        <a href="#roi">ROI Tracker</a>
+        <a href="#routing">Intelligent Routing</a>
+        <a href="#context">Scalable Context</a>
+        <a href="#demo">Demo Environment</a>
+        <a href="#timeline">6-Day Timeline</a>
+        <a href="#files">Files Summary</a>
+        <a href="#verification">Verification</a>
+    </nav>
+
+    <!-- Slide 1: Title -->
+    <section class="slide slide-title" id="title">
+        <h1>Phase 2 Intelligence Enhancements</h1>
+        <div class="subtitle">Product Org OS Development Plan</div>
+        <div class="meta">
+            <div>Date: 2026-01-25</div>
+            <div>Status: Ready for Implementation</div>
+            <div>Duration: 6 Days</div>
+        </div>
+    </section>
+
+    <!-- Slide 2: Overview -->
+    <section class="slide" id="overview">
+        <h2>📋 Plan Overview</h2>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="number">6</div>
+                <div class="label">Features</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">6</div>
+                <div class="label">Days</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">17</div>
+                <div class="label">New Files</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">17</div>
+                <div class="label">Modified Files</div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Core Philosophy</h3>
+            <p>Transform Product Org OS from a "toolkit of skills" into an <strong>intelligent, autonomous operating system</strong> with authentic agent personas, visible ROI, autonomous routing, and demo-ready onboarding.</p>
+        </div>
+
+        <div class="highlight-box" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(239, 68, 68, 0.2)); border-color: var(--warning);">
+            <h3>Critical Guardrails</h3>
+            <p><strong>No Speculative Estimates:</strong> Agents NEVER provide R&D timelines, deployment costs, or implementation estimates. They focus on product/business value, not engineering projections.</p>
+            <p style="margin-top: 0.5rem;"><strong>Approval-Free Chains:</strong> Agent-to-agent delegation runs without user interruption. Sub-agents spawn autonomously when needed.</p>
+        </div>
+    </section>
+
+    <!-- Slide 3: Feature Summary -->
+    <section class="slide" id="features">
+        <h2>🚀 6 Features</h2>
+
+        <div class="grid-2">
+            <div class="card feature-card priority-0">
+                <div class="card-header">
+                    <span class="tag tag-priority-0">P0</span>
+                    <h3>Agent Persona Enhancement</h3>
+                </div>
+                <p>Systematically enhance all 13 agent SKILL.md files with V2V mindsets, RACI accountability, and distinct voices.</p>
+            </div>
+
+            <div class="card feature-card priority-0">
+                <div class="card-header">
+                    <span class="tag tag-priority-0">Quick Win</span>
+                    <h3>Fix Agent Icons</h3>
+                </div>
+                <p>Update all agents to use emojis (📝, 👑, 📈, etc.) in response headers for visual identification.</p>
+            </div>
+
+            <div class="card feature-card priority-1">
+                <div class="card-header">
+                    <span class="tag tag-priority-1">P1</span>
+                    <h3>ROI Tracker</h3>
+                </div>
+                <p>Per-interaction time-savings display after every skill/agent completion. Session totals and dashboard.</p>
+            </div>
+
+            <div class="card feature-card priority-2">
+                <div class="card-header">
+                    <span class="tag tag-priority-2">P2</span>
+                    <h3>Intelligent Routing</h3>
+                </div>
+                <p>Analyze requests, determine minimum agents needed, provide rich guidance. Minimize questions.</p>
+            </div>
+
+            <div class="card feature-card priority-3">
+                <div class="card-header">
+                    <span class="tag tag-priority-3">P3</span>
+                    <h3>Scalable Context</h3>
+                </div>
+                <p>Auto-save all outputs, JSON indexing for fast topic retrieval, folder indexing capability.</p>
+            </div>
+
+            <div class="card feature-card priority-4">
+                <div class="card-header">
+                    <span class="tag tag-priority-4">P4</span>
+                    <h3>Demo Environment</h3>
+                </div>
+                <p>Ship with pre-populated realistic data. First-run welcome. /clear-demo for production.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: Agent Persona Enhancement -->
+    <section class="slide" id="personas">
+        <h2>👥 Agent Persona Enhancement</h2>
+        <h4>Priority 0 - Foundation</h4>
+
+        <div class="grid-2">
+            <div>
+                <h3>Why This Matters</h3>
+                <p>Current personas are functional but shallow. They know skills but don't embody:</p>
+                <ul>
+                    <li>How their role thinks and makes decisions</li>
+                    <li>What they're accountable for vs. influence</li>
+                    <li>How they collaborate with other agents</li>
+                    <li>Which V2V principles they guard</li>
+                    <li>What mistakes to avoid</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Enhanced Template Structure</h3>
+                <ul>
+                    <li><strong>Core Accountability</strong> - What they OWN</li>
+                    <li><strong>How I Think</strong> - Mindset & decision approach</li>
+                    <li><strong>RACI Breakdown</strong> - A/R/C assignments</li>
+                    <li><strong>Collaboration Patterns</strong> - How they work together</li>
+                    <li><strong>Principle I Guard</strong> - Their V2V focus</li>
+                    <li><strong>Anti-Patterns I Refuse</strong> - Mistakes to catch</li>
+                    <li><strong>Sub-Agent Spawning</strong> - When to delegate</li>
+                </ul>
+
+                <h3 style="margin-top: 1rem; color: var(--warning);">⚠️ Critical Guardrail</h3>
+                <p style="font-size: 0.9rem;">Agents NEVER provide speculative estimates for R&D effort, deployment time, or implementation costs. Focus on product/business value.</p>
+            </div>
+        </div>
+
+        <h3>Source Materials</h3>
+        <table>
+            <tr>
+                <th>Source</th>
+                <th>Use For</th>
+            </tr>
+            <tr>
+                <td>V2V Book</td>
+                <td>8 Operating Principles, mindsets, anti-patterns</td>
+            </tr>
+            <tr>
+                <td>R&R Blueprints</td>
+                <td>RACI matrix, accountabilities per role</td>
+            </tr>
+            <tr>
+                <td>Leading the Charge</td>
+                <td>Team dynamics, career levels, processes</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Slide 5: All 13 Agents -->
+    <section class="slide" id="agents-detail">
+        <h2>🎭 All 13 Agents</h2>
+
+        <div class="agent-grid">
+            <div class="agent-card">
+                <div class="emoji">📝</div>
+                <div class="name">Product Manager</div>
+                <div class="principle">#3 Decision Quality</div>
+            </div>
+            <div class="agent-card">
+                <div class="emoji">👑</div>
+                <div class="name">CPO</div>
+                <div class="principle">#1 End-to-End Ownership</div>
+            </div>
+            <div class="agent-card">
+                <div class="emoji">📈</div>
+                <div class="name">VP Product</div>
+                <div class="principle">#2 Strategy Precedes Structure</div>
+            </div>
+            <div class="agent-card">
+                <div class="emoji">📋</div>
+                <div class="name">Director PM</div>
+                <div class="principle">#4 Alignment Beats Consensus</div>
+            </div>
+            <div class="agent-card">
+                <div class="emoji">📣</div>
+                <div class="name">Director PMM</div>
+                <div class="principle">#5 GTM Is Strategic</div>
+            </div>
+            <div class="agent-card">
+                <div class="emoji">🎯</div>
+                <div class="name">PMM</div>
+                <div class="principle">#5 GTM (Execution)</div>
+            </div>
+            <div class="agent-card">
+                <div class="emoji">🧮</div>
+                <div class="name">BizOps</div>
+                <div class="principle">#8 Learn Through Outcomes</div>
+            </div>
+            <div class="agent-card">
+                <div class="emoji">🤝</div>
+                <div class="name">BizDev</div>
+                <div class="principle">#7 Scale Changes Work</div>
+            </div>
+            <div class="agent-card">
+                <div class="emoji">🔭</div>
+                <div class="name">Competitive Intel</div>
+                <div class="principle">#3 Market Evidence</div>
+            </div>
+            <div class="agent-card">
+                <div class="emoji">⚙️</div>
+                <div class="name">Product Ops</div>
+                <div class="principle">#6 Execution Discipline</div>
+            </div>
+            <div class="agent-card">
+                <div class="emoji">🎨</div>
+                <div class="name">UX Lead</div>
+                <div class="principle">#3 Customer Obsession</div>
+            </div>
+            <div class="agent-card">
+                <div class="emoji">💰</div>
+                <div class="name">Value Realization</div>
+                <div class="principle">#8 Outcomes</div>
+            </div>
+            <div class="agent-card" style="grid-column: span 2;">
+                <div class="emoji">👥</div>
+                <div class="name">Product Leadership Team</div>
+                <div class="principle">All 8 Principles - The Brain</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 6: ROI Tracker -->
+    <section class="slide" id="roi">
+        <h2>📊 Feature 1: ROI Tracker</h2>
+        <h4>Priority 1 - Prove Value (Dynamic Calculation)</h4>
+
+        <div class="grid-2">
+            <div>
+                <h3>Per-Interaction Display</h3>
+                <div class="code-block">
+---
+⏱️ Time saved: ~52 minutes
+📊 Calculation: Base(30) × Complexity(1.3) × Depth(1.2) + Chain(15)
+📈 This session: ~3.2 hours (4 interactions)
+---
+                </div>
+
+                <h3>Dynamic Calculation Formula</h3>
+                <div class="code-block" style="font-size: 0.8rem;">
+base_minutes = skill_category_base (10-60 min)
+complexity_multiplier = 1.0 + (score × 0.5)
+depth_multiplier = 1.0 + (sections / 10)
+chain_bonus = sub_agent_count × 15 min
+
+total = (base × complexity × depth) + chain
+                </div>
+            </div>
+
+            <div>
+                <h3>Category Base Ranges</h3>
+                <table>
+                    <tr><th>Category</th><th>Base Range</th></tr>
+                    <tr><td>Simple (user-story)</td><td>10-20 min</td></tr>
+                    <tr><td>Medium (decision-record)</td><td>30-45 min</td></tr>
+                    <tr><td>Complex (prd, business-case)</td><td>45-60 min</td></tr>
+                    <tr><td>Strategic (strategic-bet)</td><td>60+ min</td></tr>
+                    <tr><td>Multi-agent (@plt)</td><td>+15 min/agent</td></tr>
+                </table>
+
+                <h3 style="margin-top: 1rem;">Files to Create</h3>
+                <ul>
+                    <li><code>reference/roi-baselines.md</code></li>
+                    <li><code>rules/roi-display.md</code></li>
+                    <li><code>context/roi/</code></li>
+                    <li><code>skills/roi-report/</code></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 7: Intelligent Routing -->
+    <section class="slide" id="routing">
+        <h2>🧭 Feature 2: Intelligent Routing</h2>
+        <h4>Priority 2 - Autonomous Operation with Sub-Agent Spawning</h4>
+
+        <div class="grid-2">
+            <div>
+                <h3>Enhanced Decision Matrix</h3>
+                <table style="font-size: 0.85rem;">
+                    <tr><th>Intent Pattern</th><th>Route To</th><th>May Spawn</th></tr>
+                    <tr><td>PRD, feature scope</td><td>@pm</td><td>@ux-lead</td></tr>
+                    <tr><td>Pricing, financials</td><td>@bizops</td><td>@ci</td></tr>
+                    <tr><td>Launch coordination</td><td>@pmm-dir</td><td>@prod-ops</td></tr>
+                    <tr><td>Strategic direction</td><td>@vp-product</td><td>@bizops</td></tr>
+                    <tr><td>Multi-stakeholder</td><td>@plt</td><td>Multiple</td></tr>
+                    <tr><td>Competitive intel</td><td>@ci</td><td>@pmm</td></tr>
+                    <tr><td>Customer outcomes</td><td>@value-realization</td><td>@pm</td></tr>
+                </table>
+            </div>
+
+            <div>
+                <h3>Sub-Agent Spawning</h3>
+                <p style="margin-bottom: 0.5rem;">Agents spawn sub-agents when:</p>
+                <ul>
+                    <li>Specialized expertise needed</li>
+                    <li>Different RACI perspective required</li>
+                    <li>Validation from another function needed</li>
+                </ul>
+
+                <h3 style="margin-top: 1rem;">Approval-Free Operation</h3>
+                <div class="code-block" style="font-size: 0.75rem;">
+permissions.allow: [
+  "Task(product-manager*)",
+  "Task(vp-product*)",
+  "Skill(*)"
+]
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Question Threshold</h3>
+            <p><strong>ONLY ask when:</strong> Request is truly ambiguous | Critical info missing | User requested options</p>
+            <p><strong>NEVER ask because:</strong> Multiple agents could handle it | Confidence is "medium" | Want confirmation</p>
+        </div>
+    </section>
+
+    <!-- Slide 8: Scalable Context -->
+    <section class="slide" id="context">
+        <h2>💾 Feature 3: Scalable Context</h2>
+        <h4>Priority 3 - Organizational Memory</h4>
+
+        <div class="grid-2">
+            <div>
+                <h3>JSON Master Index</h3>
+                <div class="code-block" style="font-size: 0.8rem;">
+{
+  "entries": [
+    {
+      "id": "DOC-2026-001",
+      "type": "prd",
+      "title": "Auth PRD",
+      "topics": ["auth", "security"],
+      "path": "documents/prd-auth.md"
+    }
+  ],
+  "topicIndex": {
+    "authentication": ["DOC-2026-001"],
+    "pricing": ["DR-2026-003"]
+  }
+}
+                </div>
+            </div>
+
+            <div>
+                <h3>Capabilities</h3>
+                <ul>
+                    <li><strong>Auto-save</strong> - All agent outputs indexed automatically</li>
+                    <li><strong>Topic retrieval</strong> - Fast lookup by topic</li>
+                    <li><strong>Folder indexing</strong> - Index important folders on demand</li>
+                    <li><strong>Session summaries</strong> - End-of-session capture</li>
+                    <li><strong>Smart filtering</strong> - Skip node_modules, .git, etc.</li>
+                </ul>
+
+                <h3>Files to Create</h3>
+                <ul>
+                    <li><code>context/index.json</code></li>
+                    <li><code>context/sessions/</code></li>
+                    <li><code>skills/index-folder/</code></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 9: Demo Environment -->
+    <section class="slide" id="demo">
+        <h2>🎮 Feature 4: Demo Environment</h2>
+        <h4>Priority 4 - First Impressions</h4>
+
+        <div class="grid-2">
+            <div>
+                <h3>Demo Content Package</h3>
+                <div class="code-block" style="font-size: 0.8rem;">
+context/demo/
+├── decisions/
+│   ├── DR-DEMO-001-pricing-model.md
+│   ├── DR-DEMO-002-api-versioning.md
+│   └── ... (5 total)
+├── bets/
+│   ├── SB-DEMO-001-enterprise-tier.md
+│   └── SB-DEMO-002-self-serve.md
+├── feedback/
+│   └── ... (15 entries + themes)
+├── documents/
+│   ├── prd-dashboard-redesign.md
+│   ├── roadmap-q1-2026.md
+│   └── gtm-enterprise-launch.md
+└── roi/
+    └── demo-history.md
+                </div>
+            </div>
+
+            <div>
+                <h3>First-Run Welcome</h3>
+                <div class="code-block">
+Welcome to Product Org OS!
+
+This plugin ships with demo content.
+
+Try these:
+  /context-recall pricing
+  /portfolio-status
+  /roi-report
+
+Ready for real work?
+  /clear-demo
+                </div>
+
+                <h3>Commands</h3>
+                <ul>
+                    <li><code>/clear-demo</code> - Remove demo content</li>
+                    <li><code>/reset-demo</code> - Restore demo content</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 10: Timeline -->
+    <section class="slide" id="timeline">
+        <h2>📅 6-Day Implementation Timeline</h2>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-day">Day 1: Agent Persona Foundation + Icons</div>
+                <ul>
+                    <li>Create enhanced agent persona template</li>
+                    <li>Fix agent icons (all 13 files)</li>
+                    <li>Enhance @pm, @vp-product, @pm-dir personas</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-day">Day 2: Core Team Personas + ROI Foundation</div>
+                <ul>
+                    <li>Enhance @cpo, @pmm-dir, @pmm personas</li>
+                    <li>Create ROI baselines and display rules</li>
+                    <li>Create context/roi/ structure</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-day">Day 3: Specialist Personas + ROI Complete</div>
+                <ul>
+                    <li>Enhance @bizops, @prod-ops, @bizdev personas</li>
+                    <li>Enhance @ci, @value-realization, @ux-lead personas</li>
+                    <li>Create /roi-report skill and test</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-day">Day 4: PLT + Intelligent Routing</div>
+                <ul>
+                    <li>Enhance @plt persona (Meeting Mode)</li>
+                    <li>Create intelligent-routing.md rule</li>
+                    <li>Add sub-agent spawning to all agents</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-day">Day 5: Scalable Context</div>
+                <ul>
+                    <li>Create context/index.json structure</li>
+                    <li>Update /context-save and /context-recall</li>
+                    <li>Create /index-folder skill</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-day">Day 6: Demo Environment + Validation</div>
+                <ul>
+                    <li>Create demo content package</li>
+                    <li>Create /clear-demo and /reset-demo skills</li>
+                    <li>Full integration testing</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 11: Files Summary -->
+    <section class="slide" id="files">
+        <h2>📁 Files Summary</h2>
+
+        <div class="grid-2">
+            <div>
+                <h3>New Files (17)</h3>
+                <table style="font-size: 0.85rem;">
+                    <tr><th>File</th><th>Purpose</th></tr>
+                    <tr><td>reference/roi-baselines.md</td><td>Dynamic calculation params</td></tr>
+                    <tr><td>rules/roi-display.md</td><td>Display rules</td></tr>
+                    <tr><td>rules/intelligent-routing.md</td><td>Routing + decision matrix</td></tr>
+                    <tr><td>rules/no-estimates.md</td><td>Estimation guardrail</td></tr>
+                    <tr><td>rules/sub-agent-spawning.md</td><td>Delegation patterns</td></tr>
+                    <tr><td>context/index.json</td><td>Master index</td></tr>
+                    <tr><td>context/roi/*</td><td>ROI storage</td></tr>
+                    <tr><td>context/sessions/*</td><td>Session summaries</td></tr>
+                    <tr><td>context/demo/*</td><td>Demo content</td></tr>
+                    <tr><td>skills/roi-report/</td><td>Dashboard</td></tr>
+                    <tr><td>skills/index-folder/</td><td>Folder indexing</td></tr>
+                    <tr><td>skills/clear-demo/</td><td>Clear demo</td></tr>
+                    <tr><td>skills/reset-demo/</td><td>Reset demo</td></tr>
+                </table>
+            </div>
+
+            <div>
+                <h3>Modified Files (17)</h3>
+                <table style="font-size: 0.85rem;">
+                    <tr><th>File</th><th>Change</th></tr>
+                    <tr><td>13 agent SKILL.md files</td><td>Full persona + sub-agent</td></tr>
+                    <tr><td>context-save/SKILL.md</td><td>JSON indexing</td></tr>
+                    <tr><td>context-recall/SKILL.md</td><td>Topic retrieval</td></tr>
+                    <tr><td>setup/SKILL.md</td><td>First-run welcome</td></tr>
+                    <tr><td>rules/skill-awareness.md</td><td>Agent roster + routing</td></tr>
+                </table>
+
+                <h3 style="margin-top: 1rem;">Config Updates</h3>
+                <table style="font-size: 0.85rem;">
+                    <tr><th>File</th><th>Change</th></tr>
+                    <tr><td>settings.json</td><td>Approval-free permissions</td></tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 12: Verification -->
+    <section class="slide" id="verification">
+        <h2>✅ Verification Checklist</h2>
+
+        <div class="grid-2">
+            <div class="card">
+                <h3>Agent Personas</h3>
+                <ul>
+                    <li>Invoke @pm - verify emoji, first-person voice</li>
+                    <li>Invoke @vp-product - verify strategic lens</li>
+                    <li>Invoke @plt - verify Meeting Mode</li>
+                    <li>Multi-agent scenario - verify distinct voices</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>ROI Tracker</h3>
+                <ul>
+                    <li>Run /prd - verify dynamic ROI appears</li>
+                    <li>Verify calculation reflects complexity</li>
+                    <li>Check session totals accumulate</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Intelligent Routing & Sub-Agents</h3>
+                <ul>
+                    <li>"I need pricing strategy" → routes to @bizops</li>
+                    <li>Verify sub-agents spawn without approval</li>
+                    <li>Check agent chain runs to completion</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Critical Guardrails</h3>
+                <ul>
+                    <li>Ask agent for "timeline estimate" → refuses</li>
+                    <li>Ask for "implementation cost" → declines</li>
+                    <li>Focus stays on product/business value</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="highlight-box" style="margin-top: 2rem; text-align: center;">
+            <h3>Ready for Implementation</h3>
+            <p>All changes are additive. Backward compatible. No breaking changes.</p>
+            <p style="margin-top: 0.5rem; color: var(--warning);">⚠️ Guardrails: No speculative estimates | Approval-free chains | Dynamic ROI</p>
+        </div>
+    </section>
+
+    <script>
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            const slides = document.querySelectorAll('.slide');
+            const current = Math.floor(window.scrollY / window.innerHeight);
+
+            if (e.key === 'ArrowDown' || e.key === ' ' || e.key === 'PageDown') {
+                e.preventDefault();
+                if (current < slides.length - 1) {
+                    slides[current + 1].scrollIntoView({ behavior: 'smooth' });
+                }
+            } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+                e.preventDefault();
+                if (current > 0) {
+                    slides[current - 1].scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    </script>
+</body>
+</html>

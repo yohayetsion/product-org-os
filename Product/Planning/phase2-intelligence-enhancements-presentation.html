@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 2 Intelligence Enhancements | Product Org OS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/theme/black.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #E94560;
+            --color-secondary: #4ECCA3;
+            --color-accent: #FFC93C;
+            --color-bg-primary: #1A1A2E;
+            --color-bg-card: #16213E;
+            --color-text-primary: #EAEAEA;
+            --color-text-secondary: #A0A0A0;
+            --color-violet: #805AD5;
+        }
+
+        .reveal {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%);
+        }
+
+        .reveal h1, .reveal h2, .reveal h3 {
+            font-family: 'Inter', sans-serif;
+            color: var(--color-text-primary);
+            text-transform: none;
+            font-weight: 700;
+        }
+
+        .reveal h1 { font-size: 1.8em; }
+        .reveal h2 { font-size: 1.3em; margin-bottom: 0.6em; }
+        .reveal h3 { font-size: 0.95em; color: var(--color-secondary); }
+
+        .reveal p, .reveal li {
+            color: var(--color-text-primary);
+            font-size: 0.65em;
+            line-height: 1.5;
+        }
+
+        .reveal .slides section { padding: 20px; }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #E94560 0%, #4ECCA3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-card {
+            background: rgba(22, 33, 62, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(78, 204, 163, 0.15);
+            border-radius: 10px;
+            padding: 16px;
+            margin: 10px 0;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .metric-card {
+            background: rgba(22, 33, 62, 0.8);
+            border: 1px solid rgba(78, 204, 163, 0.15);
+            border-radius: 8px;
+            padding: 14px 10px;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: var(--color-secondary);
+            margin-bottom: 4px;
+        }
+
+        .metric-label {
+            font-size: 0.5em;
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .feature-card {
+            background: rgba(22, 33, 62, 0.8);
+            border-left: 3px solid var(--color-primary);
+            border-radius: 0 8px 8px 0;
+            padding: 14px;
+            text-align: left;
+        }
+
+        .feature-card.teal { border-left-color: var(--color-secondary); }
+        .feature-card.gold { border-left-color: var(--color-accent); }
+        .feature-card.violet { border-left-color: var(--color-violet); }
+
+        .feature-title {
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: 6px;
+            font-size: 0.7em;
+        }
+
+        .feature-desc {
+            color: var(--color-text-secondary);
+            font-size: 0.55em;
+            line-height: 1.4;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(78, 204, 163, 0.15);
+            color: var(--color-secondary);
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.5em;
+            font-weight: 500;
+            margin: 3px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            text-align: left;
+        }
+
+        .three-column {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .reveal ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .reveal ul li {
+            position: relative;
+            padding-left: 16px;
+            margin-bottom: 8px;
+            text-align: left;
+            font-size: 0.6em;
+        }
+
+        .reveal ul li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.5em;
+            width: 6px;
+            height: 6px;
+            background: var(--color-secondary);
+            border-radius: 50%;
+        }
+
+        .quote {
+            font-style: italic;
+            color: var(--color-text-secondary);
+            border-left: 2px solid var(--color-primary);
+            padding-left: 14px;
+            margin: 12px 0;
+            text-align: left;
+            font-size: 0.6em;
+        }
+
+        code {
+            font-family: 'Fira Code', monospace;
+            background: rgba(78, 204, 163, 0.1);
+            color: var(--color-secondary);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.75em;
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 6px;
+            padding: 12px;
+            text-align: left;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.55em;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        .badge-must {
+            background: var(--color-primary);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.6em;
+            font-weight: 500;
+        }
+
+        .badge-new {
+            background: var(--color-accent);
+            color: #1A1A2E;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.6em;
+            font-weight: 500;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .timeline-phase {
+            background: var(--color-primary);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.55em;
+            min-width: 70px;
+            text-align: center;
+        }
+
+        .timeline-phase.teal { background: var(--color-secondary); color: #1A1A2E; }
+        .timeline-phase.gold { background: var(--color-accent); color: #1A1A2E; }
+
+        .timeline-content {
+            flex: 1;
+            text-align: left;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            color: var(--color-text-primary);
+            font-size: 0.6em;
+        }
+
+        .timeline-detail {
+            color: var(--color-text-secondary);
+            font-size: 0.5em;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.55em;
+            margin-top: 12px;
+        }
+
+        .comparison-table th {
+            background: rgba(78, 204, 163, 0.15);
+            color: var(--color-secondary);
+            padding: 8px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 8px;
+            border-bottom: 1px solid rgba(78, 204, 163, 0.1);
+            color: var(--color-text-primary);
+        }
+
+        .highlight-box {
+            background: rgba(233, 69, 96, 0.1);
+            border: 1px solid rgba(233, 69, 96, 0.3);
+            border-radius: 6px;
+            padding: 12px;
+            margin: 10px 0;
+        }
+
+        .success-box {
+            background: rgba(78, 204, 163, 0.1);
+            border: 1px solid rgba(78, 204, 163, 0.3);
+            border-radius: 6px;
+            padding: 12px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Slide 1: Title -->
+            <section>
+                <h1 class="gradient-text">Phase 2 Intelligence Enhancements</h1>
+                <h3 style="color: var(--color-text-secondary); font-weight: 400; margin-top: 20px;">Product Org OS v3.0</h3>
+                <div style="margin-top: 30px;">
+                    <span class="tag">PRD v3.0</span>
+                    <span class="tag">2026-01-25</span>
+                </div>
+                <p style="margin-top: 30px; color: var(--color-text-secondary); font-size: 0.55em;">
+                    Updated based on user feedback
+                </p>
+            </section>
+
+            <!-- Slide 2: What Changed -->
+            <section>
+                <h2>What Changed in v3.0</h2>
+                <table class="comparison-table">
+                    <tr>
+                        <th>Area</th>
+                        <th>v2.0 Approach</th>
+                        <th>v3.0 Approach</th>
+                    </tr>
+                    <tr>
+                        <td>ROI Display</td>
+                        <td>Dashboard-focused</td>
+                        <td><span class="badge-new">NEW</span> Per-interaction (Claude Code style)</td>
+                    </tr>
+                    <tr>
+                        <td>Routing</td>
+                        <td>Confidence tiers + questions</td>
+                        <td><span class="badge-new">NEW</span> Orchestrator: minimum agents, no questions</td>
+                    </tr>
+                    <tr>
+                        <td>Context</td>
+                        <td>Manual + relevance filtering</td>
+                        <td><span class="badge-new">NEW</span> Auto-save, indexing, scalable</td>
+                    </tr>
+                    <tr>
+                        <td>Planning Mode</td>
+                        <td>Build custom</td>
+                        <td>Use Claude Code native</td>
+                    </tr>
+                    <tr>
+                        <td>Demo</td>
+                        <td>Not included</td>
+                        <td><span class="badge-new">NEW</span> Pre-populated demo environment</td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- Slide 3: Four Features -->
+            <section>
+                <h2>Four Interconnected Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-title">ROI Tracker</div>
+                        <div class="feature-desc">Per-interaction time-savings display. Session totals. Export for stakeholders.</div>
+                    </div>
+                    <div class="feature-card teal">
+                        <div class="feature-title">Intelligent Routing</div>
+                        <div class="feature-desc">Orchestrator determines minimum agents. Rich guidance. Sub-agent spawning.</div>
+                    </div>
+                    <div class="feature-card violet">
+                        <div class="feature-title">Scalable Context</div>
+                        <div class="feature-desc">Auto-save outputs. JSON indexing. Fast topic retrieval. Easy onboarding.</div>
+                    </div>
+                    <div class="feature-card gold">
+                        <div class="feature-title">Demo Environment</div>
+                        <div class="feature-desc">Pre-populated context. Explore capabilities. One command to clear.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: ROI Tracker -->
+            <section>
+                <h2>Feature 1: ROI Tracker</h2>
+                <div class="two-column">
+                    <div>
+                        <p style="font-size: 0.6em; color: var(--color-secondary); margin-bottom: 12px;">Per-Interaction Display (Claude Code Style)</p>
+                        <ul>
+                            <li>Time saved after EVERY skill/agent</li>
+                            <li>Session running total visible</li>
+                            <li>Interaction-level storage</li>
+                            <li>Dashboard with 30/90 day views</li>
+                            <li>Export PDF/CSV for stakeholders</li>
+                            <li>Quiet mode for power users</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card">
+                        <p style="font-size: 0.55em; color: var(--color-text-secondary); margin-bottom: 8px;">Example output:</p>
+                        <div class="code-block">
+[PRD created successfully]<br>
+---<br>
+Time saved: ~3.5 hours<br>
+Manual: 2h research + 1.5h writing<br>
+This session: 4.2 hours (3 tasks)
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 5: Intelligent Routing -->
+            <section>
+                <h2>Feature 2: Intelligent Routing</h2>
+                <div class="two-column">
+                    <div>
+                        <p style="font-size: 0.6em; color: var(--color-secondary); margin-bottom: 12px;">Orchestrator Pattern</p>
+                        <ul>
+                            <li>Analyze request before any spawn</li>
+                            <li>Determine MINIMUM agents needed</li>
+                            <li>Generate rich guidance per agent</li>
+                            <li>Agents can spawn sub-agents</li>
+                            <li>Sub-agents inherit context</li>
+                            <li>NO questions (unless truly ambiguous)</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card">
+                        <p style="font-size: 0.55em; color: var(--color-text-secondary); margin-bottom: 8px;">Philosophy shift:</p>
+                        <div class="highlight-box" style="font-size: 0.55em; text-align: left;">
+                            <strong style="color: var(--color-primary);">OLD:</strong> "This could be X or Y. Which do you want?"<br><br>
+                            <strong style="color: var(--color-secondary);">NEW:</strong> System picks the best option, executes, user can override if wrong.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 6: Routing Flow -->
+            <section>
+                <h2>Orchestrator Flow</h2>
+                <div class="glass-card" style="text-align: center;">
+                    <div style="font-size: 0.6em; color: var(--color-text-primary);">
+                        <div style="margin: 8px 0;">User Request</div>
+                        <div style="color: var(--color-secondary);">v</div>
+                        <div style="margin: 8px 0; background: rgba(78, 204, 163, 0.2); padding: 8px; border-radius: 4px;">
+                            <strong>Orchestrator</strong><br>
+                            <span style="font-size: 0.85em; color: var(--color-text-secondary);">Parse intent | Select minimum agents | Generate guidance</span>
+                        </div>
+                        <div style="color: var(--color-secondary);">v</div>
+                        <div style="margin: 8px 0; display: flex; justify-content: center; gap: 20px;">
+                            <div style="background: rgba(233, 69, 96, 0.2); padding: 8px 16px; border-radius: 4px;">
+                                Primary Agent<br>
+                                <span style="font-size: 0.85em; color: var(--color-text-secondary);">(with guidance)</span>
+                            </div>
+                            <div style="background: rgba(128, 90, 213, 0.2); padding: 8px 16px; border-radius: 4px;">
+                                Sub-Agent<br>
+                                <span style="font-size: 0.85em; color: var(--color-text-secondary);">(if needed)</span>
+                            </div>
+                        </div>
+                        <div style="color: var(--color-secondary);">v</div>
+                        <div style="margin: 8px 0;">Result + ROI Display</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 7: Scalable Context -->
+            <section>
+                <h2>Feature 3: Scalable Context</h2>
+                <div class="two-column">
+                    <div>
+                        <p style="font-size: 0.6em; color: var(--color-secondary); margin-bottom: 12px;">Auto-Capture & Indexing</p>
+                        <ul>
+                            <li>Auto-save ALL agent outputs</li>
+                            <li>JSON master index for fast queries</li>
+                            <li>Topic-based retrieval</li>
+                            <li>Smart filtering (skip noise)</li>
+                            <li><code>/setup-context</code> for easy onboarding</li>
+                            <li>Session summaries for continuity</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card">
+                        <p style="font-size: 0.55em; color: var(--color-text-secondary); margin-bottom: 8px;">Index structure:</p>
+                        <div class="code-block">
+{<br>
+&nbsp;&nbsp;"entries": [...],<br>
+&nbsp;&nbsp;"topicIndex": {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"pricing": ["DR-001", "SB-002"],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"auth": ["DOC-001", "DR-005"]<br>
+&nbsp;&nbsp;}<br>
+}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 8: Demo Environment -->
+            <section>
+                <h2>Feature 4: Demo Environment</h2>
+                <div class="two-column">
+                    <div>
+                        <p style="font-size: 0.6em; color: var(--color-secondary); margin-bottom: 12px;">Explore Before Committing</p>
+                        <ul>
+                            <li>Ships with realistic demo data</li>
+                            <li>5-10 decisions, 2-3 bets, 15 feedback items</li>
+                            <li>Sample PRD, roadmap, GTM brief</li>
+                            <li>ROI dashboard with usage history</li>
+                            <li>Clear visual indicator: demo vs real</li>
+                            <li><code>/clear-demo</code> for production</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card">
+                        <p style="font-size: 0.55em; color: var(--color-text-secondary); margin-bottom: 8px;">First-run message:</p>
+                        <div class="code-block">
+Welcome to Product Org OS!<br><br>
+Try these with demo data:<br>
+&nbsp;&nbsp;/context-recall pricing<br>
+&nbsp;&nbsp;/portfolio-status<br>
+&nbsp;&nbsp;/roi-report<br><br>
+Ready for real work?<br>
+&nbsp;&nbsp;/clear-demo
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 9: Success Metrics -->
+            <section>
+                <h2>Success Metrics</h2>
+                <div class="metric-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">100%</div>
+                        <div class="metric-label">Per-interaction ROI</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">&lt;10%</div>
+                        <div class="metric-label">Routing questions</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">90%+</div>
+                        <div class="metric-label">Routing accuracy</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">60%+</div>
+                        <div class="metric-label">Demo exploration</div>
+                    </div>
+                </div>
+                <div class="success-box" style="margin-top: 16px; font-size: 0.55em; text-align: center;">
+                    <strong style="color: var(--color-secondary);">Business Goal:</strong> 8%+ Free to Pro conversion at T+12 weeks
+                </div>
+            </section>
+
+            <!-- Slide 10: Timeline -->
+            <section>
+                <h2>Timeline: 26 Weeks</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-phase">Wk 1-2</div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">Technical Design</div>
+                            <div class="timeline-detail">Architecture, API contracts, demo content spec</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-phase">Wk 3-10</div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">Phase 2A: Validation MVP</div>
+                            <div class="timeline-detail">ROI inline, orchestrator MVP, context index, demo package</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-phase gold">Checkpoint</div>
+                        <div class="timeline-content">
+                            <div class="timeline-title" style="color: var(--color-accent);">2A Validation Gate</div>
+                            <div class="timeline-detail">Validate core assumptions before full investment</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-phase teal">Wk 11-26</div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">Phase 2B: Full Build</div>
+                            <div class="timeline-detail">Dashboard, sub-agents, folder indexing, polish, rollout</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 11: Investment -->
+            <section>
+                <h2>Investment Summary</h2>
+                <div class="three-column">
+                    <div class="metric-card">
+                        <div class="metric-value" style="color: var(--color-primary);">$25K</div>
+                        <div class="metric-label">Phase 2A (10 wks)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" style="color: var(--color-secondary);">$100K</div>
+                        <div class="metric-label">Phase 2B (16 wks)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" style="color: var(--color-accent);">$125K</div>
+                        <div class="metric-label">Total</div>
+                    </div>
+                </div>
+                <div class="glass-card" style="margin-top: 20px;">
+                    <p style="font-size: 0.55em; text-align: center; margin: 0;">
+                        <strong style="color: var(--color-secondary);">Checkpoint gate</strong> at Week 10: Validate before committing to 2B
+                    </p>
+                </div>
+            </section>
+
+            <!-- Slide 12: Key Risks -->
+            <section>
+                <h2>Key Risks</h2>
+                <table class="comparison-table">
+                    <tr>
+                        <th>Risk</th>
+                        <th>Mitigation</th>
+                    </tr>
+                    <tr>
+                        <td>Orchestrator makes wrong routing decisions</td>
+                        <td>Override capability, learn from corrections</td>
+                    </tr>
+                    <tr>
+                        <td>ROI estimates feel inaccurate</td>
+                        <td>Conservative baselines, "~" prefix, calibration</td>
+                    </tr>
+                    <tr>
+                        <td>Auto-save creates context clutter</td>
+                        <td>Smart filtering, folder organization</td>
+                    </tr>
+                    <tr>
+                        <td>Demo confuses users</td>
+                        <td>Clear visual indicators, first-run guidance</td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- Slide 13: Out of Scope -->
+            <section>
+                <h2>Explicitly Out of Scope</h2>
+                <div class="two-column">
+                    <div class="glass-card">
+                        <p style="font-size: 0.6em; color: var(--color-secondary); margin-bottom: 10px;">Deferred to Phase 3</p>
+                        <ul style="font-size: 0.55em;">
+                            <li>Team-level ROI aggregation</li>
+                            <li>Team/org context sharing</li>
+                            <li>Custom planning mode (SaaS)</li>
+                            <li>Real-time collaborative context</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card">
+                        <p style="font-size: 0.6em; color: var(--color-primary); margin-bottom: 10px;">Not Planned</p>
+                        <ul style="font-size: 0.55em;">
+                            <li>ROI gamification/targets</li>
+                            <li>Voice/audio input</li>
+                            <li>Time-tracking integrations</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 14: Next Steps -->
+            <section>
+                <h2>Next Steps</h2>
+                <div class="glass-card">
+                    <ol style="font-size: 0.6em; padding-left: 20px;">
+                        <li style="margin-bottom: 10px; padding-left: 8px;"><strong style="color: var(--color-secondary);">PRD Review</strong> - Stakeholder sign-off on v3.0</li>
+                        <li style="margin-bottom: 10px; padding-left: 8px;"><strong style="color: var(--color-secondary);">Technical Design</strong> - Orchestrator architecture, index schema</li>
+                        <li style="margin-bottom: 10px; padding-left: 8px;"><strong style="color: var(--color-secondary);">Demo Content</strong> - Create realistic demo package</li>
+                        <li style="margin-bottom: 10px; padding-left: 8px;"><strong style="color: var(--color-secondary);">Phase 2A Kickoff</strong> - Begin validation MVP</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Slide 15: Closing -->
+            <section>
+                <h1 class="gradient-text">Ready for Review</h1>
+                <div style="margin-top: 30px;">
+                    <span class="tag">PRD v3.0</span>
+                    <span class="tag">4 Features</span>
+                    <span class="tag">26 Weeks</span>
+                    <span class="tag">$125K</span>
+                </div>
+                <div class="success-box" style="margin-top: 30px; max-width: 500px; margin-left: auto; margin-right: auto;">
+                    <p style="font-size: 0.55em; margin: 0; text-align: center;">
+                        <strong>Core Philosophy:</strong> Autonomous operation. Minimum agents. No unnecessary questions. ROI visible on every interaction.
+                    </p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: 'c/t',
+            controls: true,
+            progress: true,
+            center: true,
+            touch: true,
+            transition: 'slide',
+            backgroundTransition: 'fade'
+        });
+    </script>
+</body>
+</html>

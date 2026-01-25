@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#E94560" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <filter id="glow-pmm" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Target/campaign - PMM -->
+  <circle cx="12" cy="12" r="9"/>
+  <circle cx="12" cy="12" r="5"/>
+  <circle cx="12" cy="12" r="1"/>
+  <!-- Arrow hitting target -->
+  <line x1="20" y1="4" x2="14" y2="10"/>
+  <polyline points="16 4 20 4 20 8"/>
+</svg>

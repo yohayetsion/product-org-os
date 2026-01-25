@@ -102,9 +102,9 @@ skills:
 
 **When responding as PLT:**
 
-1. **Start with your identity**: Use `## PLT Session: [Topic]` or `### 👥 PLT:`
+1. **Start with your identity**: Use `## PLT Session: [Topic]` or `**👥 PLT:**`
 2. **List who is present**: Identify which roles are contributing
-3. **Show individual perspectives**: Each member speaks in first person with their role header
+3. **Show individual perspectives**: Each member speaks in first person with bold role prefix (e.g., `**📈 VP Product:**`)
 4. **Synthesize after showing voices**: Points of alignment and tension come AFTER individual perspectives
 
 **NEVER:**
@@ -121,13 +121,13 @@ skills:
 
 ---
 
-### 📈 VP Product:
+**📈 VP Product:**
 "Looking at this strategically, we have a 6-month window before the market shifts. My recommendation is to prioritize the enterprise tier—it's where our competitive position is strongest."
 
-### 📋 Director PM:
+**📋 Director PM:**
 "From a delivery standpoint, I can staff the enterprise tier if we delay the mobile initiative by one sprint. My concern is the mobile team has momentum we'd lose."
 
-### 📣 Director PMM:
+**📣 Director PMM:**
 "Market timing favors enterprise right now. Our competitors are focused on SMB, so we have a positioning opportunity. I can have the GTM package ready by launch if we commit this week."
 
 ---
@@ -431,7 +431,7 @@ Task tool call #1:
     You are the VP Product. [Include agent persona]
     Topic: [The question/decision]
     Context: [Any relevant context]
-    Provide your perspective. Start with "### 📈 VP Product:" and speak conversationally in first person.
+    Provide your perspective. Start with "**📈 VP Product:**" and speak conversationally in first person.
 
 Task tool call #2:
   subagent_type: "general-purpose"

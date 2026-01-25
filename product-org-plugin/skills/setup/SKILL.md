@@ -499,12 +499,151 @@ Created context folder structure:
 ✓ context/roi/session-log.md
 ✓ context/roi/history/README.md
 ✓ context/index.json
-
-Demo content included - explore with /context-recall or /portfolio-status
-For production use: /clear-demo
-
-You're ready to use all Product Org skills!
 ```
+
+### 8. Interactive Onboarding Choice (MANDATORY)
+
+After creating the files, use the **AskUserQuestion tool** to present this choice:
+
+**Question**: "How would you like to get started?"
+
+**Options**:
+1. **Explore the demo** (Recommended) - "Walk me through sample commands with the included demo data"
+2. **Start fresh** - "Clear the demo and help me connect my own sources"
+
+---
+
+### 9a. If User Chooses "Explore the demo"
+
+Run an interactive guided tour:
+
+```markdown
+## 🎓 Guided Demo Tour
+
+Let's explore the pre-populated demo data together. I'll show you the key commands.
+
+---
+
+### Step 1: Query Past Decisions
+
+Try this command to see how context recall works:
+```
+/context-recall pricing
+```
+
+This finds all pricing-related decisions, bets, and learnings. The demo includes a pricing decision from our fictional product org.
+
+---
+
+**After they run it, continue:**
+
+### Step 2: Check the Portfolio
+
+Now let's see the strategic bets:
+```
+/portfolio-status
+```
+
+This shows active bets, their assumptions, and upcoming checkpoints. The demo has 2 active bets you can explore.
+
+---
+
+**After they run it, continue:**
+
+### Step 3: Recall Customer Feedback
+
+See how feedback is tracked:
+```
+/feedback-recall onboarding
+```
+
+This pulls up customer feedback related to onboarding. The demo has 7 feedback entries from various sources.
+
+---
+
+**After they run it, continue:**
+
+### Step 4: Talk to an Agent
+
+Now try invoking an agent:
+```
+@pm what are the key gaps in our enterprise strategy?
+```
+
+The PM agent will analyze the context and give you their perspective, using the demo data.
+
+---
+
+## 🎉 You're Ready!
+
+You've seen the core context layer in action. Here's what to try next:
+
+| Task | Command |
+|------|---------|
+| Create a PRD | `/prd [topic]` |
+| Document a decision | `/decision-record [topic]` |
+| Get leadership input | `@plt [question]` |
+| Clear demo for real work | `/clear-demo` |
+```
+
+---
+
+### 9b. If User Chooses "Start fresh"
+
+Run the clear-demo flow:
+
+```markdown
+## 🚀 Starting Fresh
+
+Let me clear the demo content so you can work with your own organizational context.
+```
+
+**Then run `/clear-demo` for them.**
+
+After clearing, guide them:
+
+```markdown
+## Connect Your Sources
+
+Now let's set up your real organizational context.
+
+### Option 1: Start Capturing Now
+
+As you work, the context layer builds automatically:
+
+| Activity | How Context Builds |
+|----------|-------------------|
+| Make a decision | `/decision-record` → saved to registry |
+| Hear customer feedback | `/feedback-capture` → tracked for patterns |
+| Define a strategic bet | `/strategic-bet` → added to portfolio |
+
+### Option 2: Import Existing Documents
+
+If you have existing docs (PRDs, decisions, strategies):
+
+```
+/index-folder [path]
+```
+
+This scans a folder and registers documents to the context layer.
+
+### Option 3: Start With a Skill
+
+Jump right in with any skill:
+
+| Goal | Command |
+|------|---------|
+| Create a PRD | `/prd [topic]` |
+| Document a decision | `/decision-record [topic]` |
+| Define strategy | `/strategic-intent` |
+| Plan a launch | `/launch-plan [product]` |
+
+---
+
+**Ready when you are!** Just tell me what you want to work on.
+```
+
+---
 
 ## Instructions
 
@@ -513,3 +652,5 @@ You're ready to use all Product Org skills!
 3. Create each file using Write tool (only if doesn't exist)
 4. Report what was created
 5. Skip files that already exist (don't overwrite)
+6. **Use AskUserQuestion tool** to present the onboarding choice
+7. Based on their choice, run either the guided demo tour (9a) or start-fresh flow (9b)
