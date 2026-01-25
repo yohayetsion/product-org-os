@@ -9,7 +9,7 @@ Master catalog of all skills available in the V2V Product Org Plugin. All agents
 
 ## Skill Categories
 
-### Context Layer Skills (7)
+### Context Layer Skills (9)
 | Skill | Purpose |
 |-------|---------|
 | `/context-save` | Save decision, bet, or learning to context registry |
@@ -19,6 +19,8 @@ Master catalog of all skills available in the V2V Product Org Plugin. All agents
 | `/handoff` | Capture context for agent-to-agent delegation |
 | `/feedback-capture` | Capture and analyze product feedback |
 | `/feedback-recall` | Query past feedback by topic, source, or theme |
+| `/roi-report` | View ROI dashboard and time savings |
+| `/index-folder` | Index folder contents to JSON for fast retrieval |
 
 ### Principle Validator Skills (5)
 | Skill | Principle | Purpose |
@@ -110,11 +112,14 @@ Master catalog of all skills available in the V2V Product Org Plugin. All agents
 | `/maturity-check` | Assess organizational maturity for a dimension |
 | `/pm-level-check` | Assess PM competency level |
 
-### Utility Skills (2)
+### Utility Skills (5)
 | Skill | Purpose |
 |-------|---------|
 | `/setup` | Initialize the Product Org plugin |
 | `/present` | Convert a deliverable document to HTML presentation |
+| `/clear-demo` | Remove demo content for production |
+| `/reset-demo` | Restore demo content for testing |
+| `/tour` | Interactive 5-step walkthrough of Product Org OS |
 
 ---
 
@@ -203,7 +208,7 @@ These are context/retrieval skills that operate differently:
 
 | Category | Count |
 |----------|-------|
-| Context Layer | 7 |
+| Context Layer | 9 |
 | Principle Validators | 5 |
 | Decisions | 5 |
 | Strategy | 5 |
@@ -215,8 +220,8 @@ These are context/retrieval skills that operate differently:
 | Operational | 6 |
 | Learning & Review | 3 |
 | Assessment | 2 |
-| Utility | 2 |
-| **TOTAL** | **55** |
+| Utility | 5 |
+| **TOTAL** | **61** |
 
 ---
 

@@ -508,139 +508,189 @@ After creating the files, use the **AskUserQuestion tool** to present this choic
 **Question**: "How would you like to get started?"
 
 **Options**:
-1. **Explore the demo** (Recommended) - "Walk me through sample commands with the included demo data"
-2. **Start fresh** - "Clear the demo and help me connect my own sources"
+1. **Take the tour** (Recommended) - "Interactive 5-step walkthrough of gateways, agents, and skills with demo data"
+2. **Explore on my own** - "Show me a quick reference and let me dive in"
 
 ---
 
-### 9a. If User Chooses "Explore the demo"
+### 9a. If User Chooses "Take the tour"
 
-Run an interactive guided tour:
+Walk through the 5-step interactive architecture tour. Each step introduces a concept, the user tries it, sees the result, then continues to the next step.
+
+**Architecture Hierarchy**: Gateway → Agent → Skill → Document → Utility
+
+---
 
 ```markdown
-## 🎓 Guided Demo Tour
+## 🚪 Step 1: Gateways (Entry Points)
 
-Let's explore the pre-populated demo data together. I'll show you the key commands.
+Product Org OS has two main entry points that route requests to the right experts:
+
+| Gateway | What It Does |
+|---------|--------------|
+| `@product` | Routes to relevant owners, coordinates execution |
+| `@plt` (Product Leadership Team) | Gets multi-perspective input on decisions |
+
+**Try this with the demo data:**
+```
+@plt Based on our enterprise strategy and customer feedback,
+should we prioritize the dashboard redesign or API improvements?
+```
+
+This will spawn multiple agents who weigh in with their perspectives.
+```
+
+*Wait for user to run the command, then continue to Step 2...*
 
 ---
 
-### Step 1: Query Past Decisions
+```markdown
+## 👤 Step 2: Individual Agents (Expert Perspectives)
 
-Try this command to see how context recall works:
+Beyond gateways, you can invoke specific agents directly for their expertise:
+
+| Agent | Focus |
+|-------|-------|
+| `@pm` | Requirements, delivery, user stories |
+| `@vp-product` | Strategy, portfolio, pricing |
+| `@pmm` | Positioning, GTM, competitive |
+
+**Try this:**
+```
+@pm Review the dashboard PRD and identify any gaps in the requirements.
+```
+
+The PM agent will analyze the demo PRD and give their perspective.
+```
+
+*Wait for user to run the command, then continue to Step 3...*
+
+---
+
+```markdown
+## 🛠️ Step 3: Skills (Deliverable Creation)
+
+Skills create production-ready deliverables following proven frameworks:
+
+| Skill | Creates |
+|-------|---------|
+| `/prd` | Product Requirements Document |
+| `/decision-record` | Structured decision with rationale |
+| `/strategic-bet` | Bet with explicit assumptions |
+| `/launch-plan` | Complete launch playbook |
+
+**Try this:**
+```
+/decision-record Should we add webhook support to the API?
+```
+
+This creates a structured decision record you can fill in.
+```
+
+*Wait for user to run the command, then continue to Step 4...*
+
+---
+
+```markdown
+## 📝 Step 4: Document Updates (Agent + Existing Doc)
+
+Agents can work with existing documents in your codebase—not just create new ones.
+
+**Try this:**
+```
+@pm Update the dashboard PRD to add acceptance criteria for the filtering feature.
+```
+
+The PM will read the existing PRD and add to it.
+```
+
+*Wait for user to run the command, then continue to Step 5...*
+
+---
+
+```markdown
+## 🔧 Step 5: Utility Skills (Context Layer)
+
+The context layer stores decisions, feedback, and learnings—organizational memory:
+
+| Skill | Purpose |
+|-------|---------|
+| `/context-recall [topic]` | Find related decisions/context |
+| `/feedback-recall [topic]` | Query customer feedback |
+| `/portfolio-status` | View active strategic bets |
+| `/clear-demo` | Remove demo data for production |
+
+**Try this:**
 ```
 /context-recall pricing
 ```
 
-This finds all pricing-related decisions, bets, and learnings. The demo includes a pricing decision from our fictional product org.
+This shows how past decisions on pricing are retrieved.
+```
+
+*Wait for user to run the command, then show completion...*
 
 ---
 
-**After they run it, continue:**
-
-### Step 2: Check the Portfolio
-
-Now let's see the strategic bets:
-```
-/portfolio-status
-```
-
-This shows active bets, their assumptions, and upcoming checkpoints. The demo has 2 active bets you can explore.
-
----
-
-**After they run it, continue:**
-
-### Step 3: Recall Customer Feedback
-
-See how feedback is tracked:
-```
-/feedback-recall onboarding
-```
-
-This pulls up customer feedback related to onboarding. The demo has 7 feedback entries from various sources.
-
----
-
-**After they run it, continue:**
-
-### Step 4: Talk to an Agent
-
-Now try invoking an agent:
-```
-@pm what are the key gaps in our enterprise strategy?
-```
-
-The PM agent will analyze the context and give you their perspective, using the demo data.
-
----
-
+```markdown
 ## 🎉 You're Ready!
 
-You've seen the core context layer in action. Here's what to try next:
+You've seen the core patterns:
 
-| Task | Command |
+✓ **Gateways** for multi-perspective input (`@product`, `@plt`)
+✓ **Agents** for expert perspectives (`@pm`, `@vp-product`)
+✓ **Skills** for deliverable creation (`/prd`, `/decision-record`)
+✓ **Document updates** with agents
+✓ **Context layer** for organizational memory
+
+---
+
+### What's Next?
+
+| Goal | Command |
 |------|---------|
-| Create a PRD | `/prd [topic]` |
-| Document a decision | `/decision-record [topic]` |
-| Get leadership input | `@plt [question]` |
-| Clear demo for real work | `/clear-demo` |
+| Start using skills on YOUR product | `/prd [topic]` |
+| Keep demo as reference | Demo content coexists with your work |
+| Go production-ready | `/clear-demo` removes sample data |
+
+**Quick reference:** See `reference/v2v-skill-map.md`
 ```
 
 ---
 
-### 9b. If User Chooses "Start fresh"
+### 9b. If User Chooses "Explore on my own"
 
-Run the clear-demo flow:
-
-```markdown
-## 🚀 Starting Fresh
-
-Let me clear the demo content so you can work with your own organizational context.
-```
-
-**Then run `/clear-demo` for them.**
-
-After clearing, guide them:
+Show the quick reference and let them dive in:
 
 ```markdown
-## Connect Your Sources
+## 🚀 Quick Reference
 
-Now let's set up your real organizational context.
+### Entry Points
+| Command | Use When |
+|---------|----------|
+| `@product [request]` | Need coordination across functions |
+| `@plt [question]` | Strategic decision needs perspectives |
+| `@pm [task]` | Requirements or delivery work |
 
-### Option 1: Start Capturing Now
-
-As you work, the context layer builds automatically:
-
-| Activity | How Context Builds |
-|----------|-------------------|
-| Make a decision | `/decision-record` → saved to registry |
-| Hear customer feedback | `/feedback-capture` → tracked for patterns |
-| Define a strategic bet | `/strategic-bet` → added to portfolio |
-
-### Option 2: Import Existing Documents
-
-If you have existing docs (PRDs, decisions, strategies):
-
-```
-/index-folder [path]
-```
-
-This scans a folder and registers documents to the context layer.
-
-### Option 3: Start With a Skill
-
-Jump right in with any skill:
-
+### Common Skills
 | Goal | Command |
 |------|---------|
 | Create a PRD | `/prd [topic]` |
 | Document a decision | `/decision-record [topic]` |
-| Define strategy | `/strategic-intent` |
-| Plan a launch | `/launch-plan [product]` |
+| Define a strategic bet | `/strategic-bet [topic]` |
+| Check past decisions | `/context-recall [topic]` |
+| View portfolio | `/portfolio-status` |
+
+### Demo Data
+Sample data included—try: `/context-recall pricing`
+
+When ready for production: `/clear-demo`
 
 ---
 
-**Ready when you are!** Just tell me what you want to work on.
+**Start with:** `@product [your question]` or `/prd [topic]`
+
+Full documentation: `reference/v2v-skill-map.md`
 ```
 
 ---

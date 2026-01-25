@@ -5,6 +5,27 @@ All notable changes to Product Org OS will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.4.1] - 2026-01-25
+
+### Added
+- **`/tour` skill** - Interactive 5-step walkthrough of Product Org OS
+  - Gateways → Agents → Skills → Documents → Utilities
+  - Works anytime, not just during setup
+  - Uses demo data for hands-on learning
+- **Demo Auto-Filtering** - Demo data hides automatically in production
+  - `rules/demo-data-handling.md` defines filtering behavior
+  - Demo excluded from queries when production data exists
+  - Use `--include-demo` flag to see demo alongside production
+  - Use `--demo-only` flag for testing/learning
+- Updated `/setup` with new onboarding options:
+  - "Take the tour" - 5-step interactive walkthrough
+  - "Explore on my own" - Quick reference card
+
+### Changed
+- `/context-recall`, `/feedback-recall`, `/portfolio-status`, `/relevant-learnings` - Auto-filter demo data
+- Skill count: 60 → 61
+- Marketing site updated with demo auto-filtering messaging
+
 ## [2.4.0] - 2026-01-25
 
 ### Added
