@@ -6,7 +6,9 @@ This rule governs how time-savings are displayed after skill and agent completio
 
 ## The Principle
 
-Every skill and agent invocation saves time compared to manual equivalent work. Making this visible helps users understand the leverage they're getting from the Product Org OS.
+Every skill and agent invocation saves time compared to **manual product management work**. Making this visible helps users understand the leverage they're getting from the Product Org OS.
+
+**CRITICAL**: The Product Org OS helps with PRODUCT WORK - strategy, decisions, requirements, GTM, analysis, documentation, etc. ROI comparisons should ALWAYS reference the manual PM/product equivalent, NEVER software development or coding effort.
 
 ---
 
@@ -20,10 +22,16 @@ Display ROI on a single line after skill or agent completion:
 ⏱️ ~[X] min saved (vs. [brief manual equivalent])
 ```
 
-**Examples:**
-- `⏱️ ~60 min saved (vs. marketing audit + gap analysis)`
-- `⏱️ ~180 min saved (vs. drafting PRD from scratch)`
-- `⏱️ ~45 min saved (vs. competitive research + synthesis)`
+**Examples (Product Work):**
+- `⏱️ ~4 hrs saved (vs. manual PRD writing + stakeholder reviews)`
+- `⏱️ ~2 hrs saved (vs. conducting competitive analysis manually)`
+- `⏱️ ~90 min saved (vs. documenting decision + aligning stakeholders)`
+- `⏱️ ~45 min saved (vs. gathering context from past decisions)`
+
+**NEVER frame as:**
+- "vs. coding this feature" (wrong - we don't code)
+- "vs. implementing manually" (wrong - we don't implement)
+- "vs. building this" (wrong - we don't build software)
 
 ### When to Show
 - After agent spawning (Task tool) produces planning, insights, or deliverables
@@ -60,26 +68,36 @@ Add to running session total for cumulative display.
 
 ---
 
-## Examples
+## Examples (Always Reference Product Work)
 
 ### Simple User Story
 ```markdown
-⏱️ ~10 min saved (vs. writing story + acceptance criteria)
+⏱️ ~20 min saved (vs. writing story + acceptance criteria manually)
 ```
 
 ### Complex PRD
 ```markdown
-⏱️ ~6 hrs saved (vs. requirements research + documentation)
+⏱️ ~6 hrs saved (vs. gathering requirements + stakeholder interviews + documentation)
 ```
 
 ### PLT Meeting Session
 ```markdown
-⏱️ ~10 hrs saved (vs. cross-functional alignment meeting)
+⏱️ ~10 hrs saved (vs. scheduling + running cross-functional alignment meeting)
 ```
 
-### Agent Spawning
+### Agent Spawning (PM Review)
 ```markdown
-⏱️ ~90 min saved (vs. competitive analysis research)
+⏱️ ~90 min saved (vs. manual competitive research + synthesis)
+```
+
+### Decision Record
+```markdown
+⏱️ ~60 min saved (vs. documenting decision + gathering stakeholder input)
+```
+
+### Context Retrieval
+```markdown
+⏱️ ~30 min saved (vs. searching through past decisions manually)
 ```
 
 ---

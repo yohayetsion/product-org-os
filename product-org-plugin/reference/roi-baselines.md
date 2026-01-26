@@ -2,13 +2,15 @@
 
 This reference provides baseline time-savings estimates for skills and agents. Actual savings are calculated dynamically based on complexity factors.
 
+**SCOPE**: All time savings represent **PRODUCT MANAGEMENT WORK** - research, analysis, writing, stakeholder alignment, documentation, reviews. NOT software development or coding.
+
 ---
 
 ## Calculation Method
 
 **Formula**: `Base Time × Complexity Factor = Estimated Savings`
 
-Time savings represent the manual equivalent effort - research, writing, formatting, review, iteration - that the skill automates.
+Time savings represent the manual **product work** effort - research, writing, formatting, stakeholder review, iteration, alignment meetings - that the skill automates.
 
 ---
 
@@ -185,10 +187,21 @@ Context: Portfolio tradeoff, cross-functional alignment, strategic bet
 
 ## Usage Notes
 
-1. **Complexity detection is automatic** - Based on prompt length, topic breadth, stakeholder mentions
-2. **Conservative estimates** - These represent productive time, not calendar time
-3. **Cumulative tracking** - Session totals aggregate across all skill/agent invocations
-4. **Learning improves estimates** - Actual usage patterns refine baseline accuracy over time
+1. **Product work only** - All estimates represent PM/product activities (analysis, documentation, alignment), NOT coding or development
+2. **Complexity detection is automatic** - Based on prompt length, topic breadth, stakeholder mentions
+3. **Conservative estimates** - These represent productive time, not calendar time
+4. **Cumulative tracking** - Session totals aggregate across all skill/agent invocations
+5. **Learning improves estimates** - Actual usage patterns refine baseline accuracy over time
+
+### Correct ROI Framing Examples
+- "~4 hours saved (vs. manual PRD writing + stakeholder reviews)"
+- "~2 hours saved (vs. conducting competitive analysis manually)"
+- "~90 min saved (vs. documenting decision + aligning stakeholders)"
+
+### INCORRECT ROI Framing (NEVER use)
+- "vs. coding this feature" (wrong scope)
+- "vs. implementing manually" (wrong scope)
+- "vs. building this" (wrong scope)
 
 ---
 

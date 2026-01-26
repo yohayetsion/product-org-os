@@ -11,6 +11,8 @@ tools:
 
 Generate a report showing time savings from using the Product Org OS.
 
+**SCOPE**: All time savings represent PRODUCT MANAGEMENT WORK (strategy, decisions, requirements, GTM, analysis, documentation), NOT software development or coding effort.
+
 ## Trigger Patterns
 
 - `/roi-report` - Show full dashboard
@@ -128,7 +130,7 @@ Assume average interaction takes 2-3 minutes of user time.
 
 ---
 
-*Time estimates based on manual equivalent tasks. See reference/roi-baselines.md for methodology.*
+*Time estimates based on manual product management work. See reference/roi-baselines.md for methodology.*
 ```
 
 ### 4. Empty State
@@ -142,11 +144,13 @@ If no data exists yet:
 
 Start using skills and agents to begin tracking your ROI:
 
-- `/prd [topic]` - Create a PRD (~4 hours saved)
-- `/decision-record [topic]` - Document a decision (~1 hour saved)
-- `@pm [question]` - Get PM perspective (~1-2 hours saved)
+- `/prd [topic]` - Create a PRD (~4 hours saved vs. manual writing + stakeholder reviews)
+- `/decision-record [topic]` - Document a decision (~1 hour saved vs. manual documentation + alignment)
+- `@pm [question]` - Get PM perspective (~1-2 hours saved vs. manual analysis + research)
 
 Each completed skill/agent interaction is automatically logged with its time-savings estimate.
+
+Note: All time savings represent PRODUCT WORK (research, analysis, documentation, stakeholder alignment), not development effort.
 ```
 
 ## Session Log Format
@@ -206,4 +210,4 @@ When logging interactions, complexity affects time saved:
 - Setting `roi_display: none` disables per-interaction display
 - Setting `roi_display: minimal` shows only the time saved line
 - History is preserved even if display is disabled
-- All time estimates are approximations based on manual equivalent tasks
+- All time estimates are approximations based on manual product management work (NOT development/coding)
