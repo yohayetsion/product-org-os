@@ -606,6 +606,61 @@ Before sending ANY multi-agent response:
 
 ---
 
+## Post-Completion Requirements (MANDATORY)
+
+After ANY skill or agent completes its primary task, display time-savings following `rules/roi-display.md`.
+
+**SCOPE**: ROI comparisons reflect PRODUCT WORK (strategy, decisions, requirements, GTM, analysis, documentation) - NOT coding or development effort.
+
+### ROI Display Format
+
+```
+⏱️ ~[X] min saved (vs. [brief manual equivalent])
+```
+
+### Calculation Steps
+
+1. **Look up base time** in `reference/roi-baselines.md`
+2. **Assess complexity**:
+   - Simple (0.5×): Short prompt, single topic, straightforward
+   - Standard (1.0×): Typical request, moderate detail (default)
+   - Complex (1.5×): Multiple topics, significant context, stakeholder considerations
+   - Enterprise (2.0×): Strategic, cross-functional, multi-phase
+3. **Calculate**: Base Time × Complexity Factor = Minutes Saved
+4. **Display**: Single line after task completion
+
+### Examples
+
+| Task | Base | Complexity | Display |
+|------|------|------------|---------|
+| `/prd` for simple feature | 240 min | Simple (0.5×) | `⏱️ ~2 hrs saved (vs. manual PRD writing + stakeholder reviews)` |
+| `/decision-record` standard | 60 min | Standard (1.0×) | `⏱️ ~60 min saved (vs. documenting decision + aligning stakeholders)` |
+| `@plt` portfolio tradeoff | 300 min | Enterprise (2.0×) | `⏱️ ~10 hrs saved (vs. scheduling + running cross-functional alignment meeting)` |
+
+### When to Show
+
+**MUST Display**:
+- After completing any `/skill` invocation that produces a deliverable
+- After completing any `@agent` task
+- After `@plt` or `@product` gateway completions
+
+**MAY Skip**:
+- Context retrieval: `/context-recall`, `/feedback-recall`, `/relevant-learnings`, `/portfolio-status`
+- Pure lookups: `/phase-check` when no analysis
+- System operations: `/setup`, `/clear-demo`, `/reset-demo`
+- Failed/cancelled operations
+
+### Self-Check
+
+Before completing ANY response that involved skill/agent work:
+- [ ] Did I show the time-savings line?
+- [ ] Is the estimate based on the baseline + complexity?
+- [ ] Does the manual equivalent describe what was actually automated?
+
+**If you produced a deliverable and didn't show ROI, add it now.**
+
+---
+
 ## V2V Operating Principle
 
 > "Every skill exists for a reason. Choose the right skill for the task, not the task for the skill you know."

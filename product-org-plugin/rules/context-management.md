@@ -157,6 +157,29 @@ Use principle validators at these key points:
 | Committing resources | `/scale-check` |
 | Phase transitions | `/phase-check` |
 
+### After Completing ANY Skill or Agent Task (MANDATORY)
+
+**Display ROI inline after every skill/agent completion.** This is non-negotiable per `rules/roi-display.md`.
+
+**SCOPE**: ROI reflects PRODUCT WORK (strategy, decisions, requirements, GTM, analysis, documentation) - NOT coding/development effort.
+
+1. **Calculate time saved**:
+   - Look up base time in `reference/roi-baselines.md`
+   - Apply complexity factor (Simple: 0.5×, Standard: 1.0×, Complex: 1.5×, Enterprise: 2.0×)
+
+2. **Display single line**:
+   ```
+   ⏱️ ~[X] min saved (vs. [brief manual equivalent])
+   ```
+
+3. **Skip ONLY for**:
+   - Context retrieval: `/context-recall`, `/feedback-recall`, `/relevant-learnings`, `/portfolio-status`
+   - Pure assessments: `/phase-check` (no deliverable)
+   - System operations: `/setup`, `/clear-demo`, `/reset-demo`
+   - Failed operations
+
+**This makes ROI visible on every interaction - the primary Free → Pro conversion driver.**
+
 ## Context File Locations
 
 | Content Type | Index Location | Full Records |
