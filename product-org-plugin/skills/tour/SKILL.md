@@ -12,7 +12,7 @@ tools:
 
 Interactive 5-step walkthrough that teaches the system through hands-on exploration with demo data. Shows the real patterns you'll use daily.
 
-## V2V Phase
+## Phase
 
 **Cross-phase** - Onboarding and education skill.
 
@@ -184,16 +184,16 @@ This creates a structured decision record with options, rationale, assumptions, 
 
 ---
 
-### 7. Step 5: The Vision-to-Value Framework
+### 7. Step 5: Portfolio & Phases
 
 ```markdown
 ## Step 5: Where Work Fits
 
-Everything in Product Org OS connects to the Vision-to-Value (V2V) framework—six phases from strategy to outcomes:
+Product Org OS organizes work into six phases from strategy to outcomes:
 
 ```
-Vision → Foundation → Decisions → Commitments → Execution → Outcomes → Learning
-         (Phase 1)    (Phase 2)    (Phase 3)      (Phase 4)   (Phase 5)  (Phase 6)
+Foundation → Decisions → Commitments → Execution → Outcomes → Learning
+ (Phase 1)   (Phase 2)    (Phase 3)     (Phase 4)   (Phase 5)  (Phase 6)
 ```
 
 **Try this:**
@@ -201,7 +201,7 @@ Vision → Foundation → Decisions → Commitments → Execution → Outcomes �
 /portfolio-status
 ```
 
-This shows your active strategic bets and where they are in the V2V flow.
+This shows your active strategic bets and where they are in the flow.
 
 **Skills map to phases:**
 - Phase 1: `/market-analysis`, `/competitive-landscape`, `/vision-statement`
@@ -230,7 +230,7 @@ You've learned the core patterns of Product Org OS:
 | `@product task @files` | Don't know who to ask | `@product launch feature @strategy.md` |
 | `/context-recall topic` | Before new decisions | `/context-recall pricing` |
 | `/skill topic` | Know exact deliverable | `/decision-record webhook support` |
-| `/portfolio-status` | Check strategic state | See active bets and phases |
+| `/portfolio-status` | Check strategic state | See active bets and phase progress |
 
 ---
 
@@ -254,6 +254,7 @@ You can use skills directly for power-user control, or let agents choose them fo
 | Create a PRD | `@pm @your-research.md create PRD for [feature]` |
 | Check past decisions | `/context-recall [topic]` |
 | Save important work | `/context-save` |
+| See time saved | `/roi-report` |
 | View full skill catalog | Visit yohayetsion.github.io/product-org-os |
 | Run tour again | `/tour` |
 
@@ -275,7 +276,7 @@ You can use skills directly for power-user control, or let agents choose them fo
 - **Context files = business grounding** - every example references real files
 - **Delegate outcomes, not formats** - agents choose methods
 - **Context layer = institutional memory** - the differentiator
-- **V2V framework = where work fits** - everything connects
+- **6-phase framework = where work fits** - everything connects
 
 ## Notes
 
