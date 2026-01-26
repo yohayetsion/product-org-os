@@ -87,7 +87,9 @@ Restored:
 
 **Demo content is clearly marked with [DEMO DATA] tags.**
 
-When ready for production: `/clear-demo`
+**Auto-filtering:** Once you create production data, demo content is automatically excluded from queries. No need to run `/clear-demo` - your real data takes precedence.
+
+Optional: `/clear-demo` removes demo files if you prefer a clean folder.
 ```
 
 ## Demo Content Source

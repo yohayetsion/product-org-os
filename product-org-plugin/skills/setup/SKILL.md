@@ -456,13 +456,12 @@ Invoke agents for their perspective:
 
 ## Ready for Real Work?
 
-When you want to use your own organizational context:
+Just start creating! Demo content **auto-filters** once you have production data:
+- Your real decisions, bets, and feedback take precedence
+- Demo content is automatically excluded from queries
+- No need to run `/clear-demo` - it's optional
 
-```
-/clear-demo     → Removes all demo content
-```
-
-Demo content is clearly marked with `[DEMO DATA]` tags.
+Demo content stays available for reference. Use `--include-demo` to see it alongside your data, or `/clear-demo` if you prefer a clean folder.
 
 ---
 
@@ -650,8 +649,9 @@ You've seen the core patterns:
 | Goal | Command |
 |------|---------|
 | Start using skills on YOUR product | `/prd [topic]` |
-| Keep demo as reference | Demo content coexists with your work |
-| Go production-ready | `/clear-demo` removes sample data |
+| Demo auto-filters | Once you have production data, demo is excluded |
+| Include demo in queries | Use `--include-demo` flag |
+| Clean up demo files (optional) | `/clear-demo` removes sample data |
 
 **Quick reference:** See `reference/v2v-skill-map.md`
 ```
@@ -684,7 +684,7 @@ Show the quick reference and let them dive in:
 ### Demo Data
 Sample data included—try: `/context-recall pricing`
 
-When ready for production: `/clear-demo`
+Demo auto-filters when you have production data. Optional: `/clear-demo`
 
 ---
 

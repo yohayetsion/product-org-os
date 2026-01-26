@@ -1,6 +1,6 @@
 ---
 name: clear-demo
-description: Remove all demo content to use your own organizational context
+description: (Optional) Remove demo content for a clean context folder
 model: haiku
 tools:
   - Read
@@ -8,9 +8,16 @@ tools:
   - Glob
 ---
 
-# Clear Demo Content
+# Clear Demo Content (Optional)
 
-Remove all demo content from the context layer so you can populate your own organizational data.
+Remove demo content from the context layer for a clean folder structure.
+
+**Note:** This is optional. Demo data **auto-filters** once you have production data:
+- When no production data exists → Demo included, marked `[DEMO]`
+- When production data exists → Demo excluded by default
+- Override with `--include-demo` or `--demo-only` flags
+
+Use `/clear-demo` only if you want to physically remove demo files.
 
 ## Trigger Patterns
 
@@ -108,6 +115,8 @@ To restore demo content: `/reset-demo`
 
 ## Notes
 
-- Demo content is designed to be temporary
-- Real organizational context should go in main context folders
+- **This is optional** - demo content auto-filters when production data exists
+- Demo content uses isolated `context/demo/` folder
+- Real organizational context goes in main context folders
 - Demo content can be restored anytime with `/reset-demo`
+- Use `--include-demo` flag on context queries to see demo alongside production data
