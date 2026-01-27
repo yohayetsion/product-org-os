@@ -169,6 +169,8 @@ Based on past context:
 ---
 *[If demo excluded]: X demo results excluded. Use `--include-demo` to show.*
 *[If demo included]: Results include demo data marked with `[DEMO]`.*
+
+💬 Related conversations may exist. Use `/interaction-recall [topic]` to search past interactions.
 ```
 
 **Demo Display Rules**:

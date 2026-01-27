@@ -4,7 +4,7 @@
 
 > Intent → Decisions → Commitments → Execution → Outcomes → Learning
 
-13 agents • 56 skills • 11 strategic documents • Context layer
+13 agents • 57 skills • 11 strategic documents • Context layer
 
 [**View the Interactive Presentation →**](https://yohayetsion.github.io/product-org-os)
 
@@ -56,11 +56,12 @@ Get a specific deliverable when you know exactly what you need.
 ### 13 Role-Based Agents
 CPO, VP Product, Director PM, Director PMM, Product Manager, PMM, BizOps, BizDev, Competitive Intelligence, Product Operations, Value Realization, UX Lead, Product Leadership Team
 
-### 56 Production Skills
+### 57 Production Skills
 PRDs, roadmaps, business cases, GTM strategies, pricing models, launch plans, QBR decks, competitive analyses, decision records, and more
 
 ### Context Layer
-Organizational memory that persists decisions, feedback, learnings, and strategic bets across sessions
+Organizational memory that persists decisions, feedback, learnings, and strategic bets across sessions.
+**New: Interaction history** — full conversation logging with `/interaction-recall` for cross-session continuity.
 
 ### V2V Framework
 Six phases from strategic intent to learning loop, with skills mapped to each phase
