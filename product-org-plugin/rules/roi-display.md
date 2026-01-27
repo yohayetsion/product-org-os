@@ -16,17 +16,19 @@ Every skill and agent invocation saves time compared to **manual product managem
 
 ### Compact Single-Line Format (DEFAULT)
 
-Display ROI on a single line after skill or agent completion:
+Display ROI on a single line after skill or agent completion, including the actual elapsed time:
 
 ```markdown
-⏱️ ~[X] min saved (vs. [brief manual equivalent])
+⏱️ ~[X] hrs/min saved in [Y]s (vs. [brief manual equivalent])
 ```
 
 **Examples (Product Work):**
-- `⏱️ ~4 hrs saved (vs. manual PRD writing + stakeholder reviews)`
-- `⏱️ ~2 hrs saved (vs. conducting competitive analysis manually)`
-- `⏱️ ~90 min saved (vs. documenting decision + aligning stakeholders)`
-- `⏱️ ~45 min saved (vs. gathering context from past decisions)`
+- `⏱️ ~4 hrs saved in 52s (vs. manual PRD writing + stakeholder reviews)`
+- `⏱️ ~2 hrs saved in 38s (vs. conducting competitive analysis manually)`
+- `⏱️ ~90 min saved in 25s (vs. documenting decision + aligning stakeholders)`
+- `⏱️ ~45 min saved in 12s (vs. gathering context from past decisions)`
+
+**Why include elapsed time?** It makes the leverage concrete: "I waited 52 seconds and saved 4 hours of product work."
 
 **NEVER frame as:**
 - "vs. coding this feature" (wrong - we don't code)
@@ -72,32 +74,32 @@ Add to running session total for cumulative display.
 
 ### Simple User Story
 ```markdown
-⏱️ ~20 min saved (vs. writing story + acceptance criteria manually)
+⏱️ ~20 min saved in 8s (vs. writing story + acceptance criteria manually)
 ```
 
 ### Complex PRD
 ```markdown
-⏱️ ~6 hrs saved (vs. gathering requirements + stakeholder interviews + documentation)
+⏱️ ~6 hrs saved in 65s (vs. gathering requirements + stakeholder interviews + documentation)
 ```
 
 ### PLT Meeting Session
 ```markdown
-⏱️ ~10 hrs saved (vs. scheduling + running cross-functional alignment meeting)
+⏱️ ~10 hrs saved in 95s (vs. scheduling + running cross-functional alignment meeting)
 ```
 
 ### Agent Spawning (PM Review)
 ```markdown
-⏱️ ~90 min saved (vs. manual competitive research + synthesis)
+⏱️ ~90 min saved in 28s (vs. manual competitive research + synthesis)
 ```
 
 ### Decision Record
 ```markdown
-⏱️ ~60 min saved (vs. documenting decision + gathering stakeholder input)
+⏱️ ~60 min saved in 22s (vs. documenting decision + gathering stakeholder input)
 ```
 
 ### Context Retrieval
 ```markdown
-⏱️ ~30 min saved (vs. searching through past decisions manually)
+⏱️ ~30 min saved in 15s (vs. searching through past decisions manually)
 ```
 
 ---
@@ -107,8 +109,8 @@ Add to running session total for cumulative display.
 For longer sessions, you may optionally add session totals after the standard line:
 
 ```markdown
-⏱️ ~90 min saved (vs. market research + analysis)
-📈 Session total: ~4.5 hrs saved
+⏱️ ~90 min saved in 31s (vs. market research + analysis)
+📊 Session: ~4.5 hrs saved in 6 min actual time
 ```
 
 Only add session totals when:
@@ -133,13 +135,13 @@ Session data logged to `context/roi/session-log.md` (ephemeral, per-session)
 ```markdown
 ## Session: [Date] [Time]
 
-| Time | Type | Name | Complexity | Minutes Saved |
-|------|------|------|------------|---------------|
-| 09:15 | skill | /prd | complex | 360 |
-| 09:32 | agent | @pm | standard | 90 |
-| 10:05 | skill | /user-story | simple | 10 |
+| Time | Type | Name | Complexity | Elapsed | Minutes Saved |
+|------|------|------|------------|---------|---------------|
+| 09:15 | skill | /prd | complex | 52s | 360 |
+| 09:32 | agent | @pm | standard | 28s | 90 |
+| 10:05 | skill | /user-story | simple | 8s | 10 |
 
-**Session Total**: 460 minutes (~7.7 hours)
+**Session Total**: 460 min saved (~7.7 hrs) in 88s actual time
 ```
 
 ---
@@ -185,6 +187,6 @@ This enables `/roi-report` to show 30/90 day summaries.
 
 ---
 
-## V2V Operating Principle
+## Operating Principle
 
 > "What gets measured gets managed. Tracking time savings makes the value of AI-assisted product work visible and improvable."

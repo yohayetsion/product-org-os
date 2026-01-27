@@ -330,16 +330,7 @@ When the user mentions an `@agent` or `@gateway`, **immediately invoke without a
 
 ### Domain-Based Auto-Routing
 
-Even without explicit @ mentions, route automatically when the question clearly belongs to a specific domain:
-
-| Question Domain | Route To |
-|-----------------|----------|
-| PRD scope, requirements strategy, feature prioritization | `@pm` or `/product` |
-| Product vision, portfolio decisions, org structure | `@vp-product` or `@cpo` |
-| GTM strategy, positioning, competitive response | `@pmm-dir` |
-| Launch readiness, process optimization | `@prod-ops` |
-| Customer outcomes, value realization | `@value-realization` |
-| Multi-stakeholder decisions, portfolio tradeoffs | `@plt` |
+Even without explicit @ mentions, route automatically when the question clearly belongs to a specific domain. See `rules/agent-spawn-protocol.md` **Section 6 (Domain Routing Table)** for the full domain-to-agent mapping with primary and backup agents.
 
 ### Recognition Patterns
 
@@ -450,104 +441,27 @@ Agents represent functional roles in the product org. When a user asks `@pm` for
 
 ## Technical Implementation: Agent Spawning
 
-When spawning an agent via `@agent` syntax, use the Task tool with `general-purpose` subagent type.
+**See `rules/agent-spawn-protocol.md` for the canonical spawning protocol.** That rule defines:
 
-### Task Tool Pattern
+- **Agent Identity Registry** (Section 1) — emoji + display name for every agent
+- **Mandatory Prompt Injection Template** (Section 2) — what every Task prompt MUST start with
+- **ROI Aggregation** (Section 3) — per-agent and multi-agent ROI display
+- **Spawning Decision Tree** (Section 4) — when and how to spawn
+- **Sub-Agent Instructions** (Section 5) — nested spawning rules
+- **Domain Routing Table** (Section 6) — domain-to-agent mapping
+- **Self-Check Checklist** (Section 7) — mandatory pre-spawn verification
+- **Complete Example** (Section 9) — full Task tool call for @pm
 
-```
-Task tool call:
-  subagent_type: "general-purpose"
-  description: "PM agent creating PRD"
-  prompt: |
-    [Agent persona from skills/{agent}/SKILL.md]
+### Summary
 
-    ## Your Task
-    [User's request]
+When spawning via `@agent` syntax:
+1. Use Task tool with `subagent_type: "general-purpose"`
+2. **Prepend the Agent Identity & Response Protocol** from `agent-spawn-protocol.md` Section 2
+3. Load agent persona from `skills/{agent-name}/SKILL.md`
+4. Include user's request and any `@file.md` context
+5. Set `allowed_tools: ["Read", "Write", "Edit", "Glob", "Grep", "Bash", "WebSearch", "Skill"]`
 
-    ## Context
-    [Any @file.md contents referenced]
-  allowed_tools: ["Read", "Write", "Edit", "Glob", "Grep", "Bash", "WebSearch", "Skill"]
-```
-
-### Agent Prompt Construction
-
-When spawning an agent, construct the prompt by:
-
-1. **Load agent persona** from `skills/{agent-name}/SKILL.md`
-   - Include role description, responsibilities, collaboration patterns
-   - Include the skills they should use
-
-2. **Add the user's request** as the task
-
-3. **Include any `@file.md` context** referenced in the request
-   - Read the file contents
-   - Include relevant sections in the prompt
-
-4. **Add return instructions**
-   - Agent should produce deliverables
-   - Respond conversationally, as a colleague would (see Agent Response Style)
-   - No formal headers or third-person summaries
-
-### Example: Spawning PM Agent
-
-When user types: `@pm create a PRD for authentication @research.md`
-
-```
-Task tool:
-  subagent_type: "general-purpose"
-  description: "PM creating authentication PRD"
-  prompt: |
-    You are a **Product Manager**, responsible for defining and delivering product features.
-
-    ## Your Responsibilities
-    - Product Delivery Planning
-    - Product Requirements
-    - Feature definitions
-    - User stories with acceptance criteria
-
-    ## Skills Available
-    Use these skills via the Skill tool:
-    - /prd - Create Product Requirements Document
-    - /feature-spec - Create feature specification
-    - /user-story - Write user stories
-    - /context-recall - Check for related decisions
-    - /feedback-recall - Check customer feedback
-
-    ## Your Task
-    Create a PRD for authentication
-
-    ## Context
-    [Contents of research.md inserted here]
-
-    ## Instructions
-    1. Use /context-recall to check for related decisions
-    2. Create the PRD using /prd skill
-    3. Respond conversationally as a colleague - no formal headers or "The agent found..." wrappers
-```
-
-### Parallel Agent Spawning
-
-Gateways (`@product`, `@plt`) spawn multiple agents in parallel:
-
-```
-// Spawn multiple agents simultaneously
-Task tool call #1:
-  subagent_type: "general-purpose"
-  description: "VP Product strategic perspective"
-  prompt: [VP Product persona + request]
-
-Task tool call #2:
-  subagent_type: "general-purpose"
-  description: "PM delivery perspective"
-  prompt: [PM persona + request]
-
-Task tool call #3:
-  subagent_type: "general-purpose"
-  description: "PMM market perspective"
-  prompt: [PMM persona + request]
-```
-
-Results are collected and synthesized by the gateway **following Meeting Mode rules**.
+For parallel spawning (gateways), spawn multiple Task tool calls in a single message, then present results following Meeting Mode rules.
 
 ---
 
