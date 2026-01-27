@@ -36,8 +36,11 @@ context/
 ├── feedback/
 │   ├── index.md            # Feedback registry
 │   └── themes.md           # Recurring patterns
-└── documents/
-    └── registry.md         # Document registry for all strategic docs
+├── documents/
+│   └── registry.md         # Document registry for all strategic docs
+└── interactions/
+    ├── index.json          # Interaction metadata & indexes
+    └── current-session.md  # Rolling session summary
 ```
 
 ## When to Run
@@ -55,9 +58,10 @@ Before creating or modifying anything, scan the workspace and build an inventory
 | Category | Check | Items |
 |----------|-------|-------|
 | **Rules** | `.claude/rules/agent-spawn-protocol.md` | 1 file |
-| **Directories** | `context/`, `context/decisions/`, `context/bets/`, `context/assumptions/`, `context/portfolio/`, `context/learnings/`, `context/handoffs/`, `context/feedback/`, `context/documents/`, `context/roi/`, `context/roi/history/` | 11 dirs |
+| **Directories** | `context/`, `context/decisions/`, `context/bets/`, `context/assumptions/`, `context/portfolio/`, `context/learnings/`, `context/handoffs/`, `context/feedback/`, `context/documents/`, `context/roi/`, `context/roi/history/`, `context/interactions/` | 12 dirs |
 | **Index files** | `context/README.md`, `context/decisions/index.md`, `context/bets/index.md`, `context/assumptions/registry.md`, `context/portfolio/active-bets.md`, `context/learnings/index.md`, `context/handoffs/current-session.md`, `context/feedback/index.md`, `context/feedback/themes.md`, `context/documents/registry.md` | 10 files |
 | **ROI files** | `context/roi/session-log.md`, `context/roi/history/README.md` | 2 files |
+| **Interaction files** | `context/interactions/index.json`, `context/interactions/current-session.md` | 2 files |
 | **JSON index** | `context/index.json` | 1 file |
 
 **Build a status report:**
@@ -65,18 +69,19 @@ Before creating or modifying anything, scan the workspace and build an inventory
 ```
 Pre-flight audit:
   Rules:       [0/1] or [1/1]
-  Directories: [X/11]
+  Directories: [X/12]
   Index files: [X/10]
   ROI files:   [X/2]
+  Interaction: [X/2]
   JSON index:  [0/1] or [1/1]
   ─────────────────────────────
-  Total:       [X/25] already exist
+  Total:       [X/28] already exist
 ```
 
 **Decision logic:**
-- If **25/25** exist → Skip to Step 6 (welcome) and report "Already fully initialized"
-- If **0/25** exist → Fresh install, run all steps
-- If **1-24/25** exist → Partial setup, create only what's missing (never overwrite)
+- If **28/28** exist → Skip to Step 6 (welcome) and report "Already fully initialized"
+- If **0/28** exist → Fresh install, run all steps
+- If **1-27/28** exist → Partial setup, create only what's missing (never overwrite)
 
 Display the audit result to the user before proceeding.
 
@@ -98,6 +103,7 @@ Create **only missing** directories (skip any that already exist):
 - `context/documents/`
 - `context/roi/`
 - `context/roi/history/`
+- `context/interactions/`
 
 Use `mkdir -p` (or equivalent) which is inherently safe for existing directories.
 
@@ -122,6 +128,7 @@ The Context Layer provides **persistent memory** for your AI product organizatio
 | `/relevant-learnings [topic]` | Find applicable past learnings |
 | `/feedback-capture` | Capture and analyze feedback |
 | `/feedback-recall [topic]` | Query past feedback |
+| `/interaction-recall [topic]` | Query past conversations |
 
 ## Folder Structure
 
@@ -133,6 +140,7 @@ The Context Layer provides **persistent memory** for your AI product organizatio
 - `handoffs/` - Agent-to-agent context passing
 - `feedback/` - Customer and market feedback
 - `documents/` - Registry of all strategic documents
+- `interactions/` - Conversation history and session summaries
 
 ## How It Works
 
@@ -444,6 +452,32 @@ Create ROI tracking folders and files:
 - `context/roi/session-log.md`
 - `context/roi/history/README.md`
 
+### 4b. Create Interaction Tracking Files
+
+Create interaction log files:
+
+#### context/interactions/index.json
+```json
+{
+  "version": "1.0",
+  "lastUpdated": "",
+  "nextId": 1,
+  "entries": [],
+  "topicIndex": {},
+  "agentIndex": {},
+  "dateIndex": {}
+}
+```
+
+#### context/interactions/current-session.md
+```markdown
+# Current Session
+
+*No active session*
+
+Use any agent (`@pm`, `@plt`) or skill (`/prd`, `/decision-record`) to start logging interactions.
+```
+
 ### 5. Create JSON Index
 
 Create `context/index.json` for fast topic-based retrieval:
@@ -552,6 +586,8 @@ Context structure:
 [✓/·] context/documents/registry.md
 [✓/·] context/roi/session-log.md
 [✓/·] context/roi/history/README.md
+[✓/·] context/interactions/index.json
+[✓/·] context/interactions/current-session.md
 [✓/·] context/index.json
 
 Created: X new | Skipped: Y existing
@@ -560,7 +596,7 @@ Created: X new | Skipped: Y existing
 If everything already existed, show:
 ```
 Product Org Plugin — already fully initialized.
-All 25 items present. No changes made.
+All 28 items present. No changes made.
 ```
 
 ### 8. Interactive Onboarding Choice (MANDATORY)
@@ -760,8 +796,8 @@ Full documentation: `reference/v2v-skill-map.md`
 
 ## Instructions
 
-1. **Run pre-flight audit** (Step 0) — scan all 25 items and display status
-2. If fully initialized (25/25), report status and skip to onboarding choice
+1. **Run pre-flight audit** (Step 0) — scan all 28 items and display status
+2. If fully initialized (28/28), report status and skip to onboarding choice
 3. Ask user to confirm their working directory is correct
 4. Create **only missing** folders using `mkdir -p` (Bash tool)
 5. Create **only missing** files using Write tool — NEVER overwrite existing files

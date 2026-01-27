@@ -9,7 +9,7 @@ Master catalog of all skills available in the V2V Product Org Plugin. All agents
 
 ## Skill Categories
 
-### Context Layer Skills (9)
+### Context Layer Skills (10)
 | Skill | Purpose |
 |-------|---------|
 | `/context-save` | Save decision, bet, or learning to context registry |
@@ -19,6 +19,7 @@ Master catalog of all skills available in the V2V Product Org Plugin. All agents
 | `/handoff` | Capture context for agent-to-agent delegation |
 | `/feedback-capture` | Capture and analyze product feedback |
 | `/feedback-recall` | Query past feedback by topic, source, or theme |
+| `/interaction-recall` | Query past conversation history by topic, agent, or date |
 | `/roi-report` | View ROI dashboard and time savings |
 | `/index-folder` | Index folder contents to JSON for fast retrieval |
 
@@ -148,10 +149,10 @@ All skills that produce documents support Create/Update/Find:
 - Learning skills: outcome-review, retrospective, qbr-deck
 - Validator skills: ownership-map, customer-value-trace, collaboration-check, scale-check
 
-### Skills WITHOUT Document Intelligence (13)
+### Skills WITHOUT Document Intelligence (14)
 
 These are context/retrieval skills that operate differently:
-- Context layer: context-save, context-recall, portfolio-status, relevant-learnings, handoff, feedback-capture, feedback-recall
+- Context layer: context-save, context-recall, portfolio-status, relevant-learnings, handoff, feedback-capture, feedback-recall, interaction-recall
 - Assessment: maturity-check, pm-level-check
 - Utility: setup, present
 - Validator: phase-check
@@ -179,7 +180,7 @@ These are context/retrieval skills that operate differently:
 `/outcome-review`, `/retrospective`, `/decision-quality-audit`, `/relevant-learnings`, `/context-save`, `/feedback-capture`
 
 ### Cross-Phase
-`/context-recall`, `/feedback-recall`, `/portfolio-status`, `/portfolio-tradeoff`, `/handoff`, `/setup`, `/present`, `/qbr-deck`, `/maturity-check`, `/pm-level-check`, `/phase-check`, `/ownership-map`, `/customer-value-trace`, `/collaboration-check`, `/scale-check`
+`/context-recall`, `/feedback-recall`, `/interaction-recall`, `/portfolio-status`, `/portfolio-tradeoff`, `/handoff`, `/setup`, `/present`, `/qbr-deck`, `/maturity-check`, `/pm-level-check`, `/phase-check`, `/ownership-map`, `/customer-value-trace`, `/collaboration-check`, `/scale-check`
 
 ---
 
@@ -198,7 +199,7 @@ These are context/retrieval skills that operate differently:
 
 ### By Validation Need
 
-**Before decisions**: `/context-recall`, `/feedback-recall`, `/customer-value-trace`
+**Before decisions**: `/context-recall`, `/feedback-recall`, `/interaction-recall`, `/customer-value-trace`
 **Before commitments**: `/commitment-check`, `/ownership-map`, `/phase-check`
 **After outcomes**: `/outcome-review`, `/scale-check`, `/context-save`
 
@@ -208,7 +209,7 @@ These are context/retrieval skills that operate differently:
 
 | Category | Count |
 |----------|-------|
-| Context Layer | 9 |
+| Context Layer | 10 |
 | Principle Validators | 5 |
 | Decisions | 5 |
 | Strategy | 5 |
@@ -221,7 +222,7 @@ These are context/retrieval skills that operate differently:
 | Learning & Review | 3 |
 | Assessment | 2 |
 | Utility | 5 |
-| **TOTAL** | **61** |
+| **TOTAL** | **62** |
 
 ---
 
@@ -559,7 +560,7 @@ After ANY skill or agent completes its primary task, display time-savings follow
 - After `@plt` or `@product` gateway completions
 
 **MAY Skip**:
-- Context retrieval: `/context-recall`, `/feedback-recall`, `/relevant-learnings`, `/portfolio-status`
+- Context retrieval: `/context-recall`, `/feedback-recall`, `/interaction-recall`, `/relevant-learnings`, `/portfolio-status`
 - Pure lookups: `/phase-check` when no analysis
 - System operations: `/setup`, `/clear-demo`, `/reset-demo`
 - Failed/cancelled operations

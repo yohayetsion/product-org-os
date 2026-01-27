@@ -99,9 +99,9 @@ Rules:
 After displaying ROI, log to `context/roi/session-log.md`:
 
 ```markdown
-| Time | Type | Operation | Agents | Complexity | Elapsed | Minutes Saved |
-|------|------|-----------|--------|------------|---------|---------------|
-| HH:MM | agent | [user request summary] | @pm, @ci | standard | 45s | 150 |
+| Time | Type | Operation | Agents | Complexity | Elapsed | Minutes Saved | IX-ID |
+|------|------|-----------|--------|------------|---------|---------------|-------|
+| HH:MM | agent | [user request summary] | @pm, @ci | standard | 45s | 150 | IX-2026-00042 |
 ```
 
 For multi-agent operations, log ONE row per operation (not per agent).
@@ -144,6 +144,8 @@ When you spawn sub-agents:
 - Report their findings as part of YOUR response, attributed:
   "I consulted {emoji} {Name} who noted..."
 - Your ROI covers your work + sub-agent work combined
+- Use /interaction-recall to check past conversation history on a topic
+
 ```
 
 ---
