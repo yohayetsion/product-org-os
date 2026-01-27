@@ -222,7 +222,7 @@ These are context/retrieval skills that operate differently:
 | Learning & Review | 3 |
 | Assessment | 2 |
 | Utility | 5 |
-| **TOTAL** | **62** |
+| **TOTAL** | **61** |
 
 ---
 

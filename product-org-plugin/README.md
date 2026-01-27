@@ -4,7 +4,7 @@
 
 > Intent → Decisions → Commitments → Execution → Outcomes → Learning
 
-13 agents • 62 skills • 11 strategic documents • Context layer • Demo environment
+13 agents • 61 skills • 11 strategic documents • Context layer • Demo environment
 
 [**View the Interactive Presentation →**](https://yohayetsion.github.io/product-org-os)
 

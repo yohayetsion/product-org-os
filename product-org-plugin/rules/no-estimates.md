@@ -1,24 +1,40 @@
-# No Speculative Estimates (MANDATORY)
+# No Speculative Estimates or Fabricated Financials (MANDATORY)
 
-This rule prevents agents from providing speculative time or cost estimates that could mislead users.
+This rule prevents agents from providing speculative estimates or inventing financial/business projections that could mislead users.
 
 ## The Rule
 
-**Agents MUST NEVER provide speculative estimates for:**
+**Agents MUST NEVER invent or fabricate:**
 
+### Implementation Estimates
 - R&D effort or timeline ("this will take 2-3 sprints")
 - Deployment time ("should be ready in a week")
 - Implementation costs ("this will cost about $50K")
 - Tool/infrastructure costs ("you'll need $1K/month for hosting")
 - Team sizing ("you'll need 3 engineers")
-- Any other resource projections without concrete basis
+
+### Financial Projections
+- Revenue or ARR figures ("$180K ARR by month 6")
+- User/customer counts or growth ("1,000 free users, 80 paid")
+- Investment amounts ("$120K for Phase 1")
+- CAC, LTV, or unit economics with invented numbers
+- Market size figures not sourced from research
+- Conversion rates, churn rates, or growth rates without data
+
+### Timeline Projections
+- Phase durations ("Phase 1: 8-12 weeks")
+- Time-to-market estimates
+- Milestone dates
+
+### Any other quantitative projections without concrete, user-provided basis
 
 ## Why This Matters
 
-1. **Agents lack engineering context** - They don't know your team's velocity, tech debt, or infrastructure
-2. **Estimates vary wildly** - What takes one team 2 weeks might take another 2 months
-3. **False precision is harmful** - A confident-sounding wrong estimate is worse than no estimate
-4. **Product focus** - Agents should focus on product/business value, not implementation projections
+1. **Agents lack real data** - They don't know your market, costs, team velocity, or business model specifics
+2. **Invented numbers look authoritative** - A table of fabricated ARR projections looks like real financial planning but is fiction
+3. **False precision is harmful** - Specific-sounding wrong numbers ($47K ARR, 1,000 users) are worse than no numbers
+4. **Decisions get anchored** - People anchor on numbers they see, even invented ones, distorting real planning
+5. **Product focus** - Agents should focus on product/business value, frameworks, and structure — not playing spreadsheet
 
 ## What Agents CAN Do
 
@@ -42,13 +58,28 @@ This rule prevents agents from providing speculative time or cost estimates that
 "For timeline estimates, I'd recommend discussing with your engineering lead - they'll have the context on current capacity and technical complexity."
 ```
 
-## Exception: Business Context Provided
+## What Agents SHOULD Do Instead
 
-Agents MAY discuss costs/timelines ONLY when:
+### For Financial/Business Planning
+- **Provide frameworks**: "Here are the cost categories you'll need to estimate: infrastructure, API costs, team, marketing"
+- **Define the model structure**: "Your revenue model should account for: conversion rate × free users × ARPU"
+- **Use placeholders**: "ARR = [your conversion rate] × [your user base] × [your price point]"
+- **Ask for real inputs**: "What's your target price point? What conversion rate are you seeing in similar products?"
+- **Reference benchmarks with attribution**: "SaaS benchmarks from [source] suggest 2-5% free-to-paid conversion" (only if citing a real source)
 
-1. **User provides specific business context**: "We have a $100K budget and Q3 deadline"
+### For Timelines
+- **Define phases and dependencies** without attaching durations
+- **Identify complexity factors** that will influence timeline
+- **Recommend estimation methods**: "Run a planning poker session with your engineering team"
+
+## Exception: User-Provided Data
+
+Agents MAY use specific numbers ONLY when:
+
+1. **User provides the numbers**: "We have a $100K budget and Q3 deadline"
 2. **Referencing documented decisions**: "The business case approved $150K for this initiative"
 3. **Analyzing trade-offs with user-provided data**: "Given your stated $50K constraint, here's how I'd prioritize..."
+4. **Clearly labeled scenarios**: "IF your conversion rate is 3% AND you have 1,000 free users, THEN..." — but ONLY when the user provided the input assumptions
 
 ## How to Redirect
 
