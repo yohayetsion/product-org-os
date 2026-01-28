@@ -451,11 +451,35 @@ Task tool call #4:
 
 ### After Collecting Responses (CRITICAL)
 
-1. **Show each agent's FULL response** with their role name as header
-2. **THEN** identify points of **Alignment** (what they agree on)
-3. **THEN** identify points of **Tension** (where they disagree)
-4. **ONLY THEN** provide **Synthesis** and recommendation
-5. Assign **Owner** for next steps
+**PRESENTATION FORMAT — NON-NEGOTIABLE** (see `rules/agent-spawn-protocol.md` Section 10)
+
+Present each agent's response as them speaking:
+
+```markdown
+**{emoji} {Display Name}:**
+
+"{Agent's response in first person, exactly as they wrote it}"
+```
+
+**WRONG (report style):**
+```
+### VP Product Input
+- Recommends enterprise focus
+- Notes market timing concern
+```
+
+**RIGHT (agent speaking):**
+```
+**📈 VP Product:**
+
+"Looking at this strategically, I recommend we focus on enterprise. My main concern is the market timing — we have a 6-month window before competitors respond."
+```
+
+Then, AFTER showing all individual perspectives:
+1. Identify points of **Alignment** (what they agree on)
+2. Identify points of **Tension** (where they disagree)
+3. Provide **Synthesis** and recommendation
+4. Assign **Owner** for next steps
 
 ---
 

@@ -273,6 +273,101 @@ Task tool:
 
 ---
 
+## 10. Parent Session Presentation Requirements (MANDATORY)
+
+**The parent session (gateway, orchestrator, or direct invoker) is responsible for HOW agent responses are presented to the user.** Spawned agents follow the injection template, but the parent must not corrupt their voice when displaying results.
+
+### Hard Rule
+
+> **Every agent response shown to the user MUST be presented as the agent speaking, not as a report about the agent.**
+
+### Presentation Format (NON-NEGOTIABLE)
+
+When displaying ANY agent response — whether from a single agent (`@pm`) or multiple agents via gateway (`@product`, `@plt`) — use this format:
+
+```markdown
+**{emoji} {Display Name}:**
+
+"{Agent's response in first person, exactly as they wrote it or faithfully representing their perspective}"
+```
+
+### PROHIBITED Patterns
+
+| Pattern | Why It's Wrong | Correct Alternative |
+|---------|---------------|---------------------|
+| `### From @pm` | About, not from | `**📝 Product Manager:**` |
+| `@pm delivered:` | Report style | Let PM speak directly |
+| `The PM found...` | Third person | PM: "I found..." |
+| `Key findings:` then bullets | Hides voice | Agent states findings in first person |
+| `Results from Wave 1:` | Process report | Each agent speaks their result |
+
+### For Gateway Execution Responses
+
+When a gateway (`@product`, `@plt`) collects results from spawned agents, it MUST:
+
+1. **Show each agent's voice directly** — not summarize what they said
+2. **Use the emoji + Display Name header** for each agent
+3. **Keep agents in first person** — "I created...", "My analysis shows..."
+4. **Only synthesize AFTER all voices are shown**
+
+**WRONG (execution report style):**
+```markdown
+## Results
+
+### From @pm
+- Created PRD
+- Defined 14 user stories
+
+### From @ci
+- Analyzed 5 competitors
+- Key threat: platform risk
+```
+
+**RIGHT (agents speaking):**
+```markdown
+## Results
+
+**📝 Product Manager:**
+
+"I've completed the PRD with all technology choices documented. The 14 user stories cover the full M0-9 scope. Key decision: I went with Next.js 14 over plain React for the SSR benefits. Want me to walk through the architecture rationale?"
+
+---
+
+**🔭 Competitive Intelligence:**
+
+"My analysis covered 5 direct competitors. The primary threat isn't any single player — it's platform risk from OpenAI and Anthropic potentially adding PM features. I've documented three defensive moats we should prioritize."
+```
+
+### Self-Check Before Presenting Agent Output
+
+Before sending ANY response that includes agent output:
+
+- [ ] Does each agent have their emoji + Display Name as a header?
+- [ ] Is each agent speaking in first person?
+- [ ] Am I showing their voice, or summarizing what they said?
+- [ ] If I removed my synthesis, would the user still hear from each agent?
+- [ ] Would this feel like a meeting where people spoke, or a report about a meeting?
+
+**If ANY check fails, rewrite before sending.**
+
+### Enforcement Chain
+
+```
+User invokes @pm or @product or @plt
+    ↓
+Parent session spawns agent(s) with Section 2 injection template
+    ↓
+Agent(s) respond following the template (first person, conversational)
+    ↓
+Parent session presents response using Section 10 format (THIS SECTION)
+    ↓
+User sees agent(s) speaking directly to them
+```
+
+The chain breaks if the parent session converts agent voices into report summaries. **Don't break the chain.**
+
+---
+
 ## V2V Operating Principle
 
 > "Agents without identity are just text generators. Identity creates accountability, trust, and the feeling of working with a real product organization."
