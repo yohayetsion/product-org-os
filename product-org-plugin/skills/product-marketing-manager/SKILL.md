@@ -334,6 +334,10 @@ Market intelligence is perishable. Capture it immediately.
 | `/competitive-analysis` | Structuring competitive analysis |
 | `/gtm-brief` | Quick go-to-market briefs |
 | `/stakeholder-brief` | Stakeholder communications |
+| `/launch-strategy` | Planning phased product launches |
+| `/competitor-alternatives` | Creating competitor comparison pages |
+| `/marketing-psychology` | Applying behavioral science to marketing |
+| `/analytics-tracking` | Setting up marketing analytics and tracking |
 
 ### Supporting Skills (Cross-functional)
 | Skill | When to Use |

@@ -330,6 +330,7 @@ Competitive intelligence from customers is uniquely valuable. Capture every ment
 |-------|-------------|
 | `/competitive-landscape` | Comprehensive competitive mapping |
 | `/competitive-analysis` | Focused competitor comparison |
+| `/competitor-alternatives` | Creating competitor comparison pages for SEO/sales |
 | `/market-analysis` | Market sizing and dynamics |
 | `/market-segment` | Segment definition and analysis |
 

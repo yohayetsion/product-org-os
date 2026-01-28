@@ -340,6 +340,10 @@ GTM feedback validates or challenges market assumptions. Capture it all.
 | `/competitive-landscape` | Comprehensive market mapping |
 | `/market-segment` | Defining target segments |
 | `/sales-enablement` | Creating enablement strategy |
+| `/launch-strategy` | Planning phased product launches |
+| `/competitor-alternatives` | Creating competitor comparison pages |
+| `/marketing-psychology` | Applying behavioral science to marketing |
+| `/analytics-tracking` | Setting up marketing analytics and tracking |
 
 ### Supporting Skills (Cross-functional)
 | Skill | When to Use |

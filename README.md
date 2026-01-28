@@ -4,7 +4,7 @@
 
 > Intent → Decisions → Commitments → Execution → Outcomes → Learning
 
-13 agents • 57 skills • 11 strategic documents • Context layer
+13 agents • 65 skills • 11 strategic documents • Context layer
 
 [**View the Interactive Presentation →**](https://yohayetsion.github.io/product-org-os)
 
@@ -56,8 +56,8 @@ Get a specific deliverable when you know exactly what you need.
 ### 13 Role-Based Agents
 CPO, VP Product, Director PM, Director PMM, Product Manager, PMM, BizOps, BizDev, Competitive Intelligence, Product Operations, Value Realization, UX Lead, Product Leadership Team
 
-### 57 Production Skills
-PRDs, roadmaps, business cases, GTM strategies, pricing models, launch plans, QBR decks, competitive analyses, decision records, and more
+### 65 Production Skills
+PRDs, roadmaps, business cases, GTM strategies, pricing models, launch plans, QBR decks, competitive analyses, decision records, launch strategies, competitor alternatives, analytics tracking, marketing psychology, and more
 
 ### Context Layer
 Organizational memory that persists decisions, feedback, learnings, and strategic bets across sessions.
@@ -65,6 +65,31 @@ Organizational memory that persists decisions, feedback, learnings, and strategi
 
 ### V2V Framework
 Six phases from strategic intent to learning loop, with skills mapped to each phase
+
+### Optional: Memory MCP Integration
+Supercharge your context layer with a **persistent knowledge graph**. Memory MCP enables Claude to remember entities, relationships, and observations across all sessions.
+
+```json
+// Add to your .mcp.json
+{
+  "mcpServers": {
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "env": {
+        "MEMORY_FILE_PATH": "./context/memory/knowledge-graph.json"
+      }
+    }
+  }
+}
+```
+
+**What it adds:**
+- **Entities**: Track people, products, competitors, decisions as graph nodes
+- **Relations**: Map connections ("owns", "decided", "competes_with")
+- **Observations**: Store facts that persist across sessions
+
+Works alongside the file-based context layer — use both for maximum organizational memory.
 
 ---
 
