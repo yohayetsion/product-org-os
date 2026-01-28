@@ -1187,7 +1187,7 @@
         <a href="#how-to-use" onclick="toggleMobileMenu()">How to Use It</a>
         <a href="#framework" onclick="toggleMobileMenu()">Vision to Value</a>
         <a href="#agents" onclick="toggleMobileMenu()">Agents (13)</a>
-        <a href="#skills" onclick="toggleMobileMenu()">Skills (62)</a>
+        <a href="#skills" onclick="toggleMobileMenu()">Skills (65)</a>
         <a href="#context" onclick="toggleMobileMenu()">Context Layer</a>
         <a href="#principles" onclick="toggleMobileMenu()">Principles</a>
         <a href="#start" onclick="toggleMobileMenu()">Get Started</a>
@@ -1241,7 +1241,7 @@
             </p>
             <a href="https://github.com/yohayetsion/product-org-os" target="_blank" class="hero-tagline" style="text-decoration: none;">Free & Open Source</a>
             <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 2rem;">
-                13 agents • 61 skills • 11 strategic documents • Context layer
+                13 agents • 65 skills • 11 strategic documents • Context layer
             </p>
             <p style="color: var(--secondary); font-size: 0.9rem; margin-top: 1rem;">
                 Based on the Vision to Value Executive Manifesto
@@ -2244,6 +2244,38 @@
                     <h4>Interactions</h4>
                     <p>Every agent conversation logged with full content. Query by topic, agent, or date.</p>
                     <div class="context-id">IX-2026-00042</div>
+                </div>
+            </div>
+
+            <!-- Memory MCP Enhancement -->
+            <div style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, rgba(78, 204, 163, 0.1), rgba(74, 144, 217, 0.1)); border-radius: 12px; border: 1px solid rgba(78, 204, 163, 0.3);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <span style="font-size: 2rem;">🧠</span>
+                    <h3 style="margin: 0; color: var(--secondary);">Optional: Memory MCP Integration</h3>
+                </div>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                    Supercharge your context layer with a <strong>persistent knowledge graph</strong>. Memory MCP enables Claude to remember entities, relationships, and observations across all sessions.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="text-align: center; padding: 1rem;">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📦</div>
+                        <strong style="color: var(--text);">Entities</strong>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.5rem 0 0;">People, products, competitors as graph nodes</p>
+                    </div>
+                    <div style="text-align: center; padding: 1rem;">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🔗</div>
+                        <strong style="color: var(--text);">Relations</strong>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.5rem 0 0;">Map connections and dependencies</p>
+                    </div>
+                    <div style="text-align: center; padding: 1rem;">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">💡</div>
+                        <strong style="color: var(--text);">Observations</strong>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.5rem 0 0;">Facts that persist across sessions</p>
+                    </div>
+                </div>
+                <div style="background: var(--bg-card); padding: 1rem; border-radius: 8px; font-family: monospace; font-size: 0.85rem; overflow-x: auto;">
+                    <span style="color: var(--text-muted);">// Add to .mcp.json</span><br>
+                    "memory": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-memory"] }
                 </div>
             </div>
         </div>

@@ -332,6 +332,14 @@ Never let feedback pass through a conversation without capturing it to the regis
 | `/prd-outline` | Planning a PRD before full elaboration |
 | `/prd` | Creating comprehensive requirements documentation |
 | `/decision-record` | Documenting requirements decisions |
+| `/brainstorming` | Exploring approaches before implementation |
+| `/writing-plans` | Creating detailed implementation plans |
+
+### Process Skills (Development Coordination)
+| Skill | When to Use |
+|-------|-------------|
+| `/verification-before-completion` | Before claiming any work is done |
+| `/dispatching-parallel-agents` | When multiple independent tasks can run concurrently |
 
 ### Supporting Skills (Cross-functional)
 | Skill | When to Use |

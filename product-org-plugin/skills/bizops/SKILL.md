@@ -336,6 +336,7 @@ Business feedback directly impacts revenue. Capture it systematically.
 | `/decision-record` | Documenting business decisions |
 | `/outcome-review` | Reviewing business outcomes |
 | `/market-analysis` | Market sizing and analysis |
+| `/analytics-tracking` | Setting up business metrics and tracking plans |
 
 ### Principle Validators (Apply to Your Work)
 | Skill | When to Use |
