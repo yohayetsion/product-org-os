@@ -3,9 +3,36 @@ globs:
   - "**/*"
 ---
 
-# Interaction Logging Rules
+# Interaction Logging Rules (MANDATORY)
 
 Every meaningful agent, gateway, and skill interaction is logged to provide cross-session continuity, audit trails, and usage analytics.
+
+---
+
+## Enforcement (CRITICAL)
+
+> **See `rules/agent-spawn-protocol.md` Section 12 for the binding post-response sequence.**
+
+Interaction logging is **MANDATORY** as Step 3 in the post-response sequence:
+
+```
+Agent/skill returns response
+  1. Apply Meeting Mode (if multi-agent)
+  2. Display ROI
+  3. LOG INTERACTION ← MANDATORY
+  4. Run agent-output-handler.py (if deliverable created)
+```
+
+### Self-Check (MANDATORY)
+
+Before completing ANY response involving agents/gateways:
+
+- [ ] Was an agent or gateway invoked?
+- [ ] Did I append to `context/interactions/YYYY/YYYY-MM-DD.md`?
+- [ ] Did I update `context/interactions/index.json`?
+- [ ] Did I update `context/interactions/current-session.md`?
+
+**If ANY check is YES but action was not taken, STOP and complete logging before responding.**
 
 ---
 
