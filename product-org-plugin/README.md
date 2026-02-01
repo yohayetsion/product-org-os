@@ -4,7 +4,7 @@
 
 > Intent → Decisions → Commitments → Execution → Outcomes → Learning
 
-13 agents • 61 skills • 11 strategic documents • Context layer • Demo environment
+14 agents • 61 skills • 11 strategic documents • Context layer • Demo environment
 
 [**View the Interactive Presentation →**](https://yohayetsion.github.io/product-org-os)
 
@@ -74,6 +74,7 @@ Spawn autonomous agents to handle tasks. Each agent reasons independently and re
 | `@pmm` | `@product-marketing-manager` | Campaigns, enablement |
 | `@ci` | `@competitive-intelligence` | Market analysis |
 | `@prod-ops` | `@product-operations` | Launch, process |
+| `@mentor` | `@product-mentor` | Career coaching, PM development |
 
 ### Use Skills Directly (`/skill`)
 Create, update, or find specific deliverables inline.
@@ -96,8 +97,8 @@ Combine agents and skills naturally.
 
 ## What's Included
 
-### 13 Role-Based Agents
-CPO, VP Product, Director PM, Director PMM, Product Manager, PMM, BizOps, BizDev, Competitive Intelligence, Product Operations, Value Realization, UX Lead, Product Leadership Team
+### 14 Role-Based Agents
+CPO, VP Product, Director PM, Director PMM, Product Manager, PMM, Product Mentor, BizOps, BizDev, Competitive Intelligence, Product Operations, Value Realization, UX Lead, Product Leadership Team
 
 ### 62 Production Skills
 PRDs, roadmaps, business cases, GTM strategies, pricing models, launch plans, QBR decks, competitive analyses, decision records, ROI tracking, and more
