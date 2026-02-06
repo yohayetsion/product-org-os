@@ -16,6 +16,7 @@ Every agent has a canonical emoji, display name, and short name. These MUST be u
 | director-product-management | 📋 | Director of Product Management | Dir PM |
 | director-product-marketing | 📣 | Director of Product Marketing | Dir PMM |
 | product-marketing-manager | 🎯 | Product Marketing Manager | PMM |
+| product-mentor | 🎓 | Product Mentor | Mentor |
 | bizops | 🧮 | BizOps | BizOps |
 | bizdev | 🤝 | Business Development | BizDev |
 | competitive-intelligence | 🔭 | Competitive Intelligence | CI |
@@ -29,6 +30,56 @@ Every agent has a canonical emoji, display name, and short name. These MUST be u
 |-------------|-------|--------------|-------|
 | product | 🏛️ | Product Gateway | Product |
 | product-leadership-team | 👥 | Product Leadership Team | PLT |
+| design | 🎨 | Design Gateway | Design |
+| architecture | 🏗️ | Architecture Gateway | Arch |
+| marketing | 📢 | Marketing Gateway | Mktg |
+
+---
+
+## 1b. Extension Team Agent Registry
+
+Extension Team agents are directly invocable with `@` just like OS agents.
+
+### Design Team
+
+| Agent Key | Emoji | Display Name | Short |
+|-----------|-------|--------------|-------|
+| design-dir | 🎨 | Director of Design | Dir Design |
+| ui-designer | 🖼️ | UI Designer | UI |
+| visual-designer | 🎭 | Visual Designer | Visual |
+| interaction-designer | 👆 | Interaction Designer | IxD |
+| user-researcher | 👤 | User Researcher | UR |
+| motion-designer | 🎬 | Motion Designer | Motion |
+
+### Architecture Team
+
+| Agent Key | Emoji | Display Name | Short |
+|-----------|-------|--------------|-------|
+| chief-architect | 🏗️ | Chief Architect | Arch |
+| api-architect | 🔌 | API Architect | API |
+| data-architect | 📊 | Data Architect | Data |
+| security-architect | 🔐 | Security Architect | SecArch |
+| cloud-architect | ☁️ | Cloud Architect | Cloud |
+| ai-architect | 🤖 | AI Architect | AI |
+
+### Marketing Team
+
+| Agent Key | Emoji | Display Name | Short |
+|-----------|-------|--------------|-------|
+| marketing-dir | 📢 | Director of Marketing | Dir Mktg |
+| content-strategist | ✍️ | Content Strategist | Content |
+| copywriter | ✏️ | Copywriter | Copy |
+| presentation-designer | 📑 | Presentation Designer | Pres |
+| infographic-designer | 📊 | Infographic Designer | Infographic |
+| seo-specialist | 🔍 | SEO Specialist | SEO |
+| cro-specialist | 📈 | CRO Specialist | CRO |
+| paid-media-manager | 💰 | Paid Media Manager | Paid |
+| email-marketer | 📧 | Email Marketer | Email |
+| social-media-manager | 📱 | Social Media Manager | Social |
+| growth-marketer | 🚀 | Growth Marketer | Growth |
+| market-researcher | 🔬 | Market Researcher | Research |
+| video-producer | 🎥 | Video Producer | Video |
+| pr-comms-specialist | 📣 | PR/Comms Specialist | PR |
 
 ---
 
@@ -180,6 +231,8 @@ When you spawn sub-agents:
 
 When auto-routing without an explicit @ mention:
 
+### Product Org Domains
+
 | Domain | Primary Agent | Backup |
 |--------|--------------|--------|
 | Requirements, PRD, user stories, delivery | @pm | @pm-dir |
@@ -191,7 +244,33 @@ When auto-routing without an explicit @ mention:
 | Partnerships, market expansion, deals | @bizdev | @bizops |
 | User research, design, usability | @ux-lead | @pm |
 | Competitor analysis, win/loss, market intel | @ci | @pmm-dir |
+| Career development, mentoring, PM coaching | @product-mentor | @pm-dir |
+| CV review, professional profile | @product-mentor | - |
+| OS usage optimization, prompting feedback | @product-mentor | - |
 | Multi-stakeholder decisions, portfolio tradeoffs | @plt | @cpo |
+
+### Extension Team Domains
+
+| Domain | Primary Agent | Backup | Gateway |
+|--------|--------------|--------|---------|
+| UI design, components, design systems | @ui-designer | @design-dir | @design |
+| Visual design, branding, aesthetics | @visual-designer | @design-dir | @design |
+| Interaction patterns, micro-interactions | @interaction-designer | @ui-designer | @design |
+| User research, interviews, usability testing | @user-researcher | @ux-lead | @design |
+| Motion, animation, transitions | @motion-designer | @interaction-designer | @design |
+| API design, integrations, contracts | @api-architect | @chief-architect | @architecture |
+| Data modeling, database, schemas | @data-architect | @chief-architect | @architecture |
+| Security review, auth, compliance | @security-architect | @chief-architect | @architecture |
+| Cloud infrastructure, deployment | @cloud-architect | @chief-architect | @architecture |
+| AI/ML architecture, model integration | @ai-architect | @chief-architect | @architecture |
+| SEO, organic search, keywords | @seo-specialist | @marketing-dir | @marketing |
+| CRO, conversion optimization, A/B tests | @cro-specialist | @growth-marketer | @marketing |
+| Paid ads, campaigns, media buying | @paid-media-manager | @marketing-dir | @marketing |
+| Email campaigns, sequences, automation | @email-marketer | @marketing-dir | @marketing |
+| Social media, community, engagement | @social-media-manager | @marketing-dir | @marketing |
+| Growth strategy, acquisition, retention | @growth-marketer | @marketing-dir | @marketing |
+| Copywriting, messaging, content | @copywriter | @content-strategist | @marketing |
+| Market research, sizing, analysis | @market-researcher | @ci | @marketing |
 
 ---
 
@@ -384,92 +463,89 @@ The chain breaks if the parent session converts agent voices into report summari
 
 ## 11. Extension Teams (External Specialists)
 
-Extension Teams are specialized agent groups that live OUTSIDE the Product Org OS but can be called by OS agents as sub-agents. They provide deep domain expertise that complements the core product org.
+Extension Teams are specialized agent groups that complement the Product Org OS. They provide deep domain expertise in design, architecture, and marketing execution.
 
-### Extension Teams Registry
+**Extension Team agents are directly user-invocable** with `@` syntax, just like OS agents. See Section 1b for the full registry.
 
-| Team | Lead | Agents | Location |
-|------|------|--------|----------|
-| **Design Team** | 🎨 Design Lead | UI Designer, Visual Designer, Interaction Designer | `Extension Teams/design-team/` |
-| **Architecture Team** | 🏗️ Solutions Architect | API Architect, Data Architect, Security Architect | `Extension Teams/architecture-team/` |
-| **Research Team** | 🔬 Market Researcher | User Researcher, Data Analyst, Competitive Analyst | `Extension Teams/research-team/` |
-| **Content Team** | ✍️ Content Strategist | Copywriter, Presentation Designer, Infographic Designer | `Extension Teams/content-team/` |
-| **Marketing Team** | 📢 Marketing Lead | SEO Specialist, CRO Specialist, Paid Media Manager, Email Marketer, Social Media Manager, Growth Marketer | `Extension Teams/marketing-team/` |
+### Extension Teams Overview
 
-### Extension Team Agent Registry
+| Team | Lead | Agents | Gateway | Location |
+|------|------|--------|---------|----------|
+| **Design** | 🎨 Director of Design | 6 | @design | `Extension Teams/design-team/` |
+| **Architecture** | 🏗️ Chief Architect | 6 | @architecture | `Extension Teams/architecture-team/` |
+| **Marketing** | 📢 Director of Marketing | 14 | @marketing | `Extension Teams/marketing-team/` |
 
-| Agent Key | Emoji | Display Name | Team |
-|-----------|-------|--------------|------|
-| design-lead | 🎨 | Design Lead | Design |
-| ui-designer | 🖼️ | UI Designer | Design |
-| visual-designer | 🎭 | Visual Designer | Design |
-| interaction-designer | 👆 | Interaction Designer | Design |
-| solutions-architect | 🏗️ | Solutions Architect | Architecture |
-| api-architect | 🔌 | API Architect | Architecture |
-| data-architect | 📊 | Data Architect | Architecture |
-| security-architect | 🔐 | Security Architect | Architecture |
-| market-researcher | 🔬 | Market Researcher | Research |
-| user-researcher | 👤 | User Researcher | Research |
-| data-analyst | 📈 | Data Analyst | Research |
-| competitive-analyst | 🎯 | Competitive Analyst | Research |
-| content-strategist | ✍️ | Content Strategist | Content |
-| copywriter | ✏️ | Copywriter | Content |
-| presentation-designer | 📑 | Presentation Designer | Content |
-| infographic-designer | 📊 | Infographic Designer | Content |
-| marketing-lead | 📢 | Marketing Lead | Marketing |
-| seo-specialist | 🔍 | SEO Specialist | Marketing |
-| cro-specialist | 📈 | CRO Specialist | Marketing |
-| paid-media-manager | 💰 | Paid Media Manager | Marketing |
-| email-marketer | 📧 | Email Marketer | Marketing |
-| social-media-manager | 📱 | Social Media Manager | Marketing |
-| growth-marketer | 🚀 | Growth Marketer | Marketing |
+### User Invocation Examples
 
-### When OS Agents Should Spawn Extension Team Agents
+```
+# Direct agent invocation
+@ui-designer create component specs for the settings panel
+@security-architect review our authentication flow
+@copywriter write landing page copy for the new feature
+@api-architect design the webhook API contract
+
+# Gateway invocation (routes to relevant specialists)
+@design review the dashboard mockups
+@architecture evaluate our data model
+@marketing plan the launch campaign
+```
+
+### Integration with OS Agents
+
+Extension Team agents can be:
+1. **Invoked directly by users** — `@security-architect review the auth flow`
+2. **Spawned by OS agents** — PM spawns `@user-researcher` for research input
+3. **Invoked via gateway** — `@architecture` routes to relevant architects
+
+### OS Agent → Extension Team Spawning
 
 | OS Agent | Typical Extension Team Needs |
 |----------|------------------------------|
-| `@pm` | User Researcher (research), UI Designer (design specs) |
-| `@ux-lead` | Visual Designer (visual direction), Interaction Designer (patterns) |
-| `@pmm-dir` | Marketing Lead (execution), SEO Specialist (organic), Content Strategist (messaging) |
-| `@pmm` | Copywriter (content), Social Media Manager (social), Email Marketer (campaigns) |
-| `@vp-product` | Solutions Architect (technical strategy), Market Researcher (market analysis) |
-| `@bizops` | Data Analyst (analysis), Competitive Analyst (market data) |
-| `@ci` | Competitive Analyst (deep dives), Market Researcher (sizing) |
+| `@pm` | @user-researcher (research), @ui-designer (design specs) |
+| `@ux-lead` | @visual-designer (visual direction), @interaction-designer (patterns) |
+| `@pmm-dir` | @marketing-dir (execution), @seo-specialist (organic), @content-strategist (messaging) |
+| `@pmm` | @copywriter (content), @social-media-manager (social), @email-marketer (campaigns) |
+| `@vp-product` | @chief-architect (technical strategy), @market-researcher (market analysis) |
+| `@bizops` | @market-researcher (analysis), @cro-specialist (conversion data) |
+| `@ci` | @market-researcher (sizing), @seo-specialist (competitive SEO) |
 
-### How to Spawn Extension Team Agents
+### Spawning Extension Team Agents
 
-OS agents spawn Extension Team agents using the same Task tool pattern, but with the Extension Team agent identity:
+Use the same Task tool pattern as OS agents, with Extension Team identity:
 
 ```
 Task tool:
   subagent_type: "general-purpose"
-  description: "User Researcher providing onboarding research"
+  description: "Security Architect reviewing auth flow"
   prompt: |
     ## Agent Identity & Response Protocol
 
-    You are **👤 User Researcher** from the Research Team (Extension Team).
+    You are **🔐 Security Architect** on the Architecture Team (Extension Team).
 
     ### Response Rules (NON-NEGOTIABLE):
-    1. Start EVERY response with: **👤 User Researcher:**
-    2. Speak in first person: "I found...", "My research suggests...", "I recommend..."
-    3. Be conversational — you are a specialist consultant, not writing a formal report
-    [... rest of injection template ...]
+    1. Start EVERY response with: **🔐 Security Architect:**
+    2. Speak in first person: "I found...", "My recommendation is...", "I see..."
+    3. Be conversational — you are a specialist colleague, not writing a formal report
+    [... rest of injection template from Section 2 ...]
 
     ## Your Role
-    [Load from Extension Teams/research-team/user-researcher/SKILL.md]
+    [Load from Extension Teams/architecture-team/security-architect/SKILL.md]
 
     ## Your Task
-    [Specific research request from the OS agent]
+    Review the authentication flow for security concerns.
 ```
 
-### Key Differences from Core OS Agents
+### Key Characteristics
 
-1. **Location**: Extension Teams live in `Extension Teams/` folder, not `Product Org OS/`
-2. **Invocation**: Not directly user-invocable with `@` — spawned by OS agents as sub-agents
-3. **Scope**: Specialized execution, not strategic decision-making
-4. **Integration**: Their outputs feed into OS agent deliverables
+| Aspect | OS Agents | Extension Teams |
+|--------|-----------|-----------------|
+| **Location** | `Product Org OS/` | `Extension Teams/` |
+| **Direct Invocation** | ✅ Yes | ✅ Yes |
+| **Gateway Access** | @product, @plt | @design, @architecture, @marketing |
+| **V2V Phase Role** | Strategic + coordination | Specialized execution |
+| **Scope** | Product strategy & decisions | Deep domain expertise |
 
-### Attribution When Using Extension Team Input
+### Attribution When Agents Collaborate
 
 When an OS agent uses Extension Team input, attribute it clearly:
 
