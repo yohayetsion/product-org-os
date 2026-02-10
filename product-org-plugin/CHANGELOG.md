@@ -8,15 +8,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [3.0.0] - 2026-02-10
 
 ### Added
-- **Extension Teams** — 3 specialist teams (Design, Architecture, Marketing) with 26 agents and 3 gateways
-  - `rules/extension-teams.md` — team overview, invocation patterns, integration with OS agents
-  - `agent-spawn-protocol.md` Section 1b — full Extension Team agent registry (emoji, display name, short)
-  - `agent-spawn-protocol.md` Section 11 — spawning protocol, OS↔Extension collaboration, attribution
-  - Design Team: 6 agents (Dir Design, UI, Visual, Interaction, User Researcher, Motion)
-  - Architecture Team: 6 agents (Chief Architect, API, Data, Security, Cloud, AI)
-  - Marketing Team: 14 agents (Dir Marketing + 13 specialists)
-  - Direct `@agent` invocation and `@gateway` routing, same as OS agents
-
 - **Product Mentor agent** (`@mentor` / `@product-mentor`) — Career coaching, PM skill assessment, stakeholder navigation, OS usage optimization
 
 - **MCP Integration Framework** — agents auto-detect and use connected tools
@@ -53,7 +44,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `migration-guide.md` — CLI to cloud migration path
 
 ### Changed
-- **Conversational-First Response Model** — all 38 agents (12 OS + 26 Extension) keep responses to 2-4 paragraphs, create documents for detailed analysis. Prevents parent session compression from losing agent voice. Enforced via agent spawn protocol Section 2.
+- **Conversational-First Response Model** — all 13 agents keep responses to 2-4 paragraphs, create documents for detailed analysis. Prevents parent session compression from losing agent voice. Enforced via agent spawn protocol Section 2.
 - **Meeting Mode Enforcement** — Claude Code is invisible infrastructure when Product Org is active. Agent responses are the complete output with zero preamble/postamble. Synthesis attributed to named senior agent, never unnamed. `rules/meeting-mode.md` defines format and self-check.
 - **No Fabricated Numbers Rule** — agents never invent financial projections, timeline estimates, or implementation costs. Use frameworks, placeholders (`[TBD]`), and calculation structures instead. `rules/no-estimates.md` expanded with detailed examples and redirect patterns.
 
