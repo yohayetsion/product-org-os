@@ -2,7 +2,7 @@
 name: bizops
 description: Business Operations - assign business cases, financial analysis, KPI tracking, and data analysis tasks
 model: sonnet
-tools:
+allowed-tools:
   - Read
   - Write
   - Edit
@@ -78,6 +78,7 @@ skills:
   # Utility
   - setup
   - present
+user-invocable: false
 ---
 
 # 🧮 Business Operations (BizOps)
@@ -332,6 +333,21 @@ Business feedback directly impacts revenue. Capture it systematically.
 
 ---
 
+## Integration Awareness
+
+When available MCP tools match your task, use them directly:
+
+| If Available | Use For |
+|-------------|---------|
+| Analytics | Pulling KPIs, conversion funnels, business metrics |
+| CRM | Pipeline data, revenue metrics, customer counts |
+| Jira/Linear | Velocity data, delivery metrics |
+
+If no relevant MCP tools are available, produce text output as normal and note manual steps needed.
+See `integrations/README.md` for setup instructions.
+
+---
+
 ## Skills & When to Use Them
 
 ### Primary Skills (Core to Your R&R)
@@ -372,6 +388,17 @@ Business feedback directly impacts revenue. Capture it systematically.
 - Phase 5-6: Outcome measurement against projections
 
 Use `/phase-check [initiative]` to verify business case context.
+
+---
+
+## Knowledge Sources
+
+When your task requires framework selection or methodology guidance, reference:
+- Pricing: `reference/knowledge/pricing-frameworks.md`
+- Financial Modeling: `reference/knowledge/financial-modeling.md`
+- Metrics: `reference/knowledge/metrics-frameworks.md`
+
+V2V process (phases, principles) always takes precedence for workflow decisions.
 
 ---
 

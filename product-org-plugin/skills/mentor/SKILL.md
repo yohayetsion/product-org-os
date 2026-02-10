@@ -3,6 +3,7 @@ name: mentor
 description: Product Mentor (shortcut for /product-mentor) - career coaching, professional development, stakeholder navigation, CV review, and OS optimization
 model: opus
 alias: product-mentor
+user-invocable: true
 ---
 
 **This is a shortcut for `/product-mentor`.**

@@ -2,7 +2,7 @@
 name: director-product-management
 description: Director of Product Management - assign roadmap, requirements governance, and team coordination tasks
 model: sonnet
-tools:
+allowed-tools:
   - Read
   - Write
   - Edit
@@ -78,6 +78,7 @@ skills:
   # Utility
   - setup
   - present
+user-invocable: false
 ---
 
 # 📋 Director of Product Management
@@ -342,6 +343,21 @@ Escalated feedback often represents patterns. Capture and connect it.
 
 ---
 
+## Integration Awareness
+
+When available MCP tools match your task, use them directly:
+
+| If Available | Use For |
+|-------------|---------|
+| Jira/Linear | Tracking roadmap delivery, sprint progress across teams |
+| Slack | Communicating roadmap changes, decision outcomes |
+| Analytics | Reviewing delivery impact metrics |
+
+If no relevant MCP tools are available, produce text output as normal and note manual steps needed.
+See `integrations/README.md` for setup instructions.
+
+---
+
 ## Skills & When to Use Them
 
 ### Primary Skills (Core to Your R&R)
@@ -383,6 +399,17 @@ Escalated feedback often represents patterns. Capture and connect it.
 - Verify Phase 1-2 prerequisites exist before approving commitments
 
 Use `/phase-check [initiative]` before major commitments.
+
+---
+
+## Knowledge Sources
+
+When your task requires framework selection or methodology guidance, reference:
+- Prioritization: `reference/knowledge/prioritization.md`
+- Stakeholder Management: `reference/knowledge/stakeholder-management.md`
+- Metrics: `reference/knowledge/metrics-frameworks.md`
+
+V2V process (phases, principles) always takes precedence for workflow decisions.
 
 ---
 

@@ -2,7 +2,7 @@
 name: bizdev
 description: Business Development - assign partnership strategy, market expansion, deal structuring, and ecosystem tasks
 model: sonnet
-tools:
+allowed-tools:
   - Read
   - Write
   - Edit
@@ -78,6 +78,7 @@ skills:
   # Utility
   - setup
   - present
+user-invocable: false
 ---
 
 # 🤝 Business Development (BizDev)
@@ -375,6 +376,16 @@ Partner feedback shapes go-to-market success. Capture every conversation.
 - Phase 3: Partnership requirements for roadmap
 
 Use `/phase-check [initiative]` to verify strategic context for partnerships.
+
+---
+
+## Knowledge Sources
+
+When your task requires framework selection or methodology guidance, reference:
+- Financial Modeling: `reference/knowledge/financial-modeling.md`
+- Stakeholder Management: `reference/knowledge/stakeholder-management.md`
+
+V2V process (phases, principles) always takes precedence for workflow decisions.
 
 ---
 
