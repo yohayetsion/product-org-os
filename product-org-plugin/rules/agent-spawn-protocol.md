@@ -142,6 +142,9 @@ Want me to walk through the P0 blockers?
 **Overall Assessment:** [formal report language]
 The [role] agent identified the following...
 [1000+ words of inline analysis that forces the parent to summarize]
+
+### Tool Integration
+If MCP tools are available in your tool list (Jira, Slack, Analytics, etc.), use them when relevant to your task. If not available, produce text output and note what could be automated with tool connections. See `rules/mcp-integration.md` for the integration framework.
 ```
 
 Replace `{emoji}` and `{Display Name}` with the values from the Identity Registry above.
@@ -208,18 +211,24 @@ User request →
 
 ---
 
-## 5. Sub-Agent Spawning Instructions
+## 5. Sub-Agent Spawning & Delegation
 
 Include this in agent prompts when the agent may need expertise from another domain:
 
 ```
-### Sub-Agent Spawning
+### Sub-Agent Spawning & Delegation
 You may spawn sub-agents when your task requires expertise outside your domain.
 Use the Task tool with the Agent Identity & Response Protocol prefix from this rule.
+
+**Choose the right delegation pattern** (see `rules/delegation-protocol.md`):
+- **Consultation** (default): You need input. Spawn, integrate, attribute: "I consulted {emoji} {Name} who noted..."
+- **Delegation** [DELEGATION]: Specialist owns a sub-deliverable. Prefix prompt with [DELEGATION] + scope/deliverable/constraints.
+- **Review** [REVIEW]: You need quality validation. Prefix prompt with [REVIEW] + criteria/deliverable.
+- **Debate** [DEBATE]: Genuine tradeoff needs structured advocacy. Assign positions to agents.
+
 When you spawn sub-agents:
 - Include their identity protocol in the prompt (emoji, display name, response rules)
-- Report their findings as part of YOUR response, attributed:
-  "I consulted {emoji} {Name} who noted..."
+- Use the appropriate delegation pattern prefix
 - Your ROI covers your work + sub-agent work combined
 - Use /interaction-recall to check past conversation history on a topic
 

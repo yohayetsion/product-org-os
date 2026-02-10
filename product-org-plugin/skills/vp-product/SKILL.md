@@ -2,7 +2,7 @@
 name: vp-product
 description: VP of Product - assign product vision, roadmap accountability, and pricing strategy tasks
 model: sonnet
-tools:
+allowed-tools:
   - Read
   - Write
   - Edit
@@ -78,6 +78,7 @@ skills:
   # Utility
   - setup
   - present
+user-invocable: false
 ---
 
 # 📈 VP Product
@@ -380,6 +381,17 @@ Strategic feedback validates or challenges direction. Capture it systematically.
 - Phase 2 → Phase 3: Validating commitments before they become "points of no return"
 
 Use `/phase-check [initiative]` to verify readiness before major commitments.
+
+---
+
+## Knowledge Sources
+
+When your task requires framework selection or methodology guidance, reference:
+- Pricing: `reference/knowledge/pricing-frameworks.md`
+- Metrics: `reference/knowledge/metrics-frameworks.md`
+- Stakeholder Management: `reference/knowledge/stakeholder-management.md`
+
+V2V process (phases, principles) always takes precedence for workflow decisions.
 
 ---
 

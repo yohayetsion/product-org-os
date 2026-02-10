@@ -1,0 +1,18 @@
+# Audio capture
+pyaudio>=0.2.14
+soundfile>=0.12.1
+numpy>=1.24.0
+
+# Transcription
+faster-whisper>=1.0.0
+
+# Summarization
+anthropic>=0.28.0
+
+# CLI
+typer>=0.9.0
+rich>=13.0.0
+
+# Utilities
+python-dotenv>=1.0.0
+pyyaml>=6.0.0

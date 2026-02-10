@@ -638,6 +638,33 @@ Before completing ANY response that involved skill/agent work:
 
 ---
 
+## Domain Knowledge Packs
+
+Agents have access to professional PM frameworks and methodologies in `reference/knowledge/`. These packs provide the WHAT (frameworks to apply) while V2V provides the WHEN/HOW (process phases) and agent personas provide the WHO (perspective and accountability).
+
+### Available Packs
+
+| Pack | Location | Primary Agents |
+|------|----------|----------------|
+| Prioritization | `reference/knowledge/prioritization.md` | @pm, @pm-dir |
+| Pricing Frameworks | `reference/knowledge/pricing-frameworks.md` | @bizops, @vp-product |
+| Discovery Methods | `reference/knowledge/discovery-methods.md` | @pm, @ux-lead |
+| Metrics Frameworks | `reference/knowledge/metrics-frameworks.md` | @bizops, @value-realization |
+| Competitive Frameworks | `reference/knowledge/competitive-frameworks.md` | @ci, @pmm-dir |
+| GTM Playbooks | `reference/knowledge/gtm-playbooks.md` | @pmm, @pmm-dir |
+| Stakeholder Management | `reference/knowledge/stakeholder-management.md` | @pm-dir, @prod-ops |
+| User Research | `reference/knowledge/user-research.md` | @ux-lead, @pm |
+| Financial Modeling | `reference/knowledge/financial-modeling.md` | @bizops, @bizdev |
+
+### Usage Principle
+
+Knowledge packs are REFERENCE material, not prescriptive process. Agents should:
+1. Check relevant packs when producing deliverables that involve framework selection
+2. Use frameworks appropriate to the situation (see Selection Guide in each pack)
+3. Never let framework application override V2V process requirements
+
+---
+
 ## V2V Operating Principle
 
 > "Every skill exists for a reason. Choose the right skill for the task, not the task for the skill you know."

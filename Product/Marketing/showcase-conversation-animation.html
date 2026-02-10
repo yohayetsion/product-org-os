@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Org OS — Live Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ── Reset & Base ─────────────────────────────── */
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        html, body { height:100%; overflow:hidden; background:#0a0a1a; color:#c8ccd4; font-family:'SF Mono','Fira Code','Cascadia Code','JetBrains Mono',monospace; font-size:15px; line-height:1.55; display:flex; align-items:center; justify-content:center; }
+
+        /* ── Progress Bar (top) ───────────────────────── */
+        #progress-bar { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,#7c3aed,#64ffda); width:0%; z-index:1000; transition:width .3s ease; }
+
+        /* ── Controls (top-right) ─────────────────────── */
+        #controls { position:fixed; top:12px; right:16px; z-index:1001; display:flex; gap:8px; align-items:center; }
+        #controls button, #controls select {
+            background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1);
+            color:#8892b0; font-family:inherit; font-size:12px; padding:5px 12px;
+            border-radius:6px; cursor:pointer; transition:all .2s;
+        }
+        #controls button:hover, #controls select:hover { background:rgba(255,255,255,.12); color:#c8ccd4; }
+        #controls select { appearance:none; padding-right:20px; background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%238892b0' fill='none'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 6px center; }
+        #controls .active { background:rgba(124,58,237,.25); border-color:#7c3aed; color:#a78bfa; }
+
+        /* ── Terminal Frame ────────────────────────────── */
+        #terminal {
+            display:flex; flex-direction:column;
+            width:min(70vw, 720px); height:min(82vh, 760px);
+            border-radius:12px; overflow:hidden; position:relative;
+            border:1px solid rgba(255,255,255,.08);
+            box-shadow:0 8px 60px rgba(0,0,0,.6), 0 0 120px rgba(124,58,237,.08);
+            background:#0d0d1a;
+        }
+
+        .terminal-header {
+            background:#1a1a2e; padding:10px 16px; display:flex; align-items:center; gap:8px;
+            border-bottom:1px solid rgba(255,255,255,.06); flex-shrink:0;
+            border-radius:12px 12px 0 0;
+        }
+        .terminal-dot { width:12px; height:12px; border-radius:50%; }
+        .terminal-dot.red { background:#ff5f56; }
+        .terminal-dot.yellow { background:#ffbd2e; }
+        .terminal-dot.green { background:#27ca40; }
+        .terminal-title { margin-left:8px; color:#8892b0; font-size:13px; font-family:'Inter',sans-serif; }
+
+        .terminal-body {
+            flex:1; overflow-y:auto; padding:20px 24px 80px; scroll-behavior:smooth;
+            scrollbar-width:thin; scrollbar-color:#2d2d4a transparent;
+        }
+        .terminal-body::-webkit-scrollbar { width:6px; }
+        .terminal-body::-webkit-scrollbar-track { background:transparent; }
+        .terminal-body::-webkit-scrollbar-thumb { background:#2d2d4a; border-radius:3px; }
+
+        /* ── CRT Scanline Effect (subtle) ─────────────── */
+        #terminal::after {
+            content:''; position:absolute; top:0; left:0; right:0; bottom:0;
+            background:repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,.03) 2px, rgba(0,0,0,.03) 4px);
+            pointer-events:none; z-index:999; border-radius:12px;
+        }
+
+        /* ── Line Blocks ──────────────────────────────── */
+        .line { margin-bottom:2px; opacity:0; transition:opacity .15s ease; white-space:pre-wrap; word-break:break-word; }
+        .line.visible { opacity:1; }
+        .line.flash-green { animation:flashGreen .8s ease; }
+        .line.flash-pulse { animation:flashPulse 1s ease; }
+        .line.flash-gold { animation:flashGold .8s ease; }
+
+        /* ── Prompt & User ────────────────────────────── */
+        .prompt { color:#64ffda; font-weight:bold; }
+        .user-text { color:#e2e8f0; }
+
+        /* ── System / Bullet Lines ────────────────────── */
+        .bullet { color:#7c3aed; font-weight:bold; }
+        .system-text { color:#a0aec0; }
+
+        /* ── Headers ──────────────────────────────────── */
+        .h2 { font-size:1.15em; font-weight:700; color:#e2e8f0; margin-top:14px; margin-bottom:6px; }
+        .h3 { font-size:1.05em; font-weight:600; color:#c8ccd4; margin-top:10px; margin-bottom:4px; }
+
+        /* ── Highlights ───────────────────────────────── */
+        .accent { color:#7c3aed; font-weight:600; }
+        .agent-ref { color:#a78bfa; font-weight:600; }
+        .skill-ref { color:#64ffda; font-weight:600; }
+        .success { color:#27ca40; font-weight:600; }
+        .warning { color:#ffbd2e; }
+        .gold { color:#ffd700; font-weight:600; }
+        .cyan { color:#64ffda; font-weight:600; }
+        .pink { color:#e94560; font-weight:600; }
+        .bright { color:#e2e8f0; font-weight:600; }
+        .dim { color:#5a617a; }
+        .bold { font-weight:700; color:#e2e8f0; }
+        .muted { color:#5a617a; }
+        .file-ref { color:#4ecca3; }
+        .number { color:#ffd700; }
+        .tech { color:#61dafb; font-weight:500; }
+        .brand { color:#a78bfa; font-weight:700; font-style:italic; }
+
+        /* ── Separator Lines ──────────────────────────── */
+        .separator { color:#2d2d4a; margin:6px 0; }
+
+        /* ── Tables ───────────────────────────────────── */
+        .styled-table { border-collapse:collapse; margin:8px 0 12px; width:auto; max-width:100%; font-size:14px; }
+        .styled-table th, .styled-table td { padding:6px 14px; border:1px solid #2d2d4a; text-align:left; white-space:nowrap; }
+        .styled-table th { background:#1a1a2e; color:#a78bfa; font-weight:600; }
+        .styled-table td { color:#c8ccd4; }
+        .styled-table tr:hover td { background:rgba(124,58,237,.06); }
+
+        /* ── Progress Bars ────────────────────────────── */
+        .progress-bar-container { display:inline-block; width:160px; height:10px; background:#1a1a2e; border-radius:5px; overflow:hidden; vertical-align:middle; margin:0 6px; }
+        .progress-bar-fill { height:100%; background:linear-gradient(90deg,#7c3aed,#64ffda); border-radius:5px; width:0%; transition:width .3s ease; }
+
+        /* ── Cursor ───────────────────────────────────── */
+        .cursor { color:#7c3aed; animation:blink 1s infinite; }
+        @keyframes blink { 0%,50%{opacity:1;} 51%,100%{opacity:0;} }
+
+        /* ── Flash animations ─────────────────────────── */
+        @keyframes flashGreen { 0%{background:rgba(39,202,64,.25);} 100%{background:transparent;} }
+        @keyframes flashPulse { 0%{background:rgba(124,58,237,.2);} 50%{background:rgba(124,58,237,.05);} 100%{background:transparent;} }
+        @keyframes flashGold { 0%{background:rgba(255,215,0,.15);} 100%{background:transparent;} }
+
+        /* ── Celebration ──────────────────────────────── */
+        @keyframes celebrateGlow {
+            0%  { box-shadow:0 8px 60px rgba(0,0,0,.6), 0 0 120px rgba(124,58,237,.08); }
+            50% { box-shadow:0 8px 60px rgba(0,0,0,.6), 0 0 60px rgba(100,255,218,.2), 0 0 120px rgba(124,58,237,.15); }
+            100%{ box-shadow:0 8px 60px rgba(0,0,0,.6), 0 0 120px rgba(124,58,237,.08); }
+        }
+        .celebrate { animation:celebrateGlow 2.5s ease; }
+
+        /* ── Confetti Canvas ──────────────────────────── */
+        #confetti { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:998; }
+
+        /* ── Pulsing dot for "thinking" ───────────────── */
+        .thinking-dots span { animation:thinkPulse 1.4s infinite; color:#7c3aed; font-size:1.1em; }
+        .thinking-dots span:nth-child(2) { animation-delay:.2s; }
+        .thinking-dots span:nth-child(3) { animation-delay:.4s; }
+        @keyframes thinkPulse { 0%,80%,100%{opacity:.15;} 40%{opacity:1;} }
+
+        /* ── Responsive ───────────────────────────────── */
+        @media (max-width:768px) {
+            body { font-size:13px; }
+            #terminal { width:92vw; height:80vh; }
+            .terminal-body { padding:14px 12px 60px; }
+            .styled-table { font-size:12px; }
+            .styled-table th, .styled-table td { padding:4px 8px; }
+            #controls { top:8px; right:8px; gap:4px; }
+            #controls button, #controls select { font-size:11px; padding:4px 8px; }
+        }
+        @media (max-width:480px) {
+            body { font-size:12px; }
+            #terminal { width:96vw; height:85vh; border-radius:8px; }
+            .styled-table { display:block; overflow-x:auto; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<div id="controls">
+    <select id="speed-select" title="Playback speed">
+        <option value="0.5">0.5x</option>
+        <option value="1" selected>1x</option>
+        <option value="2">2x</option>
+        <option value="5">5x</option>
+        <option value="10">10x</option>
+    </select>
+    <button id="btn-pause">Pause</button>
+    <button id="btn-skip">Skip to End</button>
+</div>
+
+<canvas id="confetti"></canvas>
+
+<div id="terminal">
+    <div class="terminal-header">
+        <div class="terminal-dot red"></div>
+        <div class="terminal-dot yellow"></div>
+        <div class="terminal-dot green"></div>
+        <span class="terminal-title">Product Org OS &mdash; Live Session</span>
+    </div>
+    <div class="terminal-body" id="output"></div>
+</div>
+
+<script>
+// ════════════════════════════════════════════════
+//  TYPES
+// ════════════════════════════════════════════════
+
+const S = {
+    USER: 'user',
+    SYSTEM: 'system',
+    HTML: 'html',         // pre-colored rich line
+    HEADER: 'header',
+    SEP: 'separator',
+    TABLE: 'table',
+    PROGRESS: 'progress',
+    COMPLETION: 'completion',
+    BLANK: 'blank',
+    CELEBRATE: 'celebrate',
+    THINK: 'think',       // animated thinking dots
+};
+
+// ════════════════════════════════════════════════
+//  CONVERSATION SCRIPT — "THE SHOW"
+// ════════════════════════════════════════════════
+
+const script = [
+
+// ─── ACT 1: THE REQUEST ─────────────────────────
+
+{type:S.BLANK},
+{type:S.USER, text:`@product`, charSpeed:60, pauseAfter:1200},
+{type:S.BLANK},
+{type:S.USER, text:`I've reviewed the plans`, charSpeed:35, pauseAfter:600},
+{type:S.USER, text:` — My take: Let's build a plan for M0-9.`, charSpeed:30, pauseAfter:1400},
+{type:S.BLANK},
+{type:S.USER, text:`Team, please create following docs:`, charSpeed:28, pauseAfter:500},
+{type:S.HTML, html:`<span class="prompt">❯ </span><span class="user-text">  a <span class="bright">PRD</span> with the clear technology choices,</span>`, charSpeed:25, pauseAfter:200},
+{type:S.HTML, html:`<span class="prompt">❯ </span><span class="user-text">  <span class="bright">UX Guidelines</span> (for every user touchpoint, consult the PRD),</span>`, charSpeed:25, pauseAfter:200},
+{type:S.HTML, html:`<span class="prompt">❯ </span><span class="user-text">  <span class="bright">Branding, Positioning & Messaging</span> (alternatives & suggestions),</span>`, charSpeed:25, pauseAfter:200},
+{type:S.HTML, html:`<span class="prompt">❯ </span><span class="user-text">  <span class="bright">Value Proposition</span>,</span>`, charSpeed:25, pauseAfter:200},
+{type:S.HTML, html:`<span class="prompt">❯ </span><span class="user-text">  <span class="bright">Marketing Competitor Analysis</span>, and</span>`, charSpeed:25, pauseAfter:200},
+{type:S.HTML, html:`<span class="prompt">❯ </span><span class="user-text">  <span class="bright">Pricing Strategy</span>.</span>`, charSpeed:25, pauseAfter:800},
+{type:S.BLANK},
+{type:S.USER, text:`In general let's move forward making sure all our V2V documents get into draft mode for my review.`, charSpeed:25, pauseAfter:400},
+{type:S.USER, text:`Span subagents as needed.`, charSpeed:22, pauseAfter:1000},
+{type:S.BLANK},
+{type:S.USER, text:`Deliverables for each requested document:`, charSpeed:28, pauseAfter:300},
+{type:S.HTML, html:`<span class="prompt">❯ </span><span class="user-text">  - <span class="file-ref">MD file</span></span>`, charSpeed:22, pauseAfter:200},
+{type:S.HTML, html:`<span class="prompt">❯ </span><span class="user-text">  - <span class="file-ref">HTML Presentation(s)</span> — mobile responsive</span>`, charSpeed:22, pauseAfter:200},
+{type:S.HTML, html:`<span class="prompt">❯ </span><span class="user-text">  - Don't forget to document</span>`, charSpeed:22, pauseAfter:2500},
+
+// ─── ACT 2: THE SYSTEM WAKES UP ────────────────
+
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="skill-ref">Skill(product)</span>`, instant:true, pauseAfter:400},
+{type:S.HTML, html:`<span class="dim">  ⎿ Successfully loaded skill</span>`, instant:true, pauseAfter:1200},
+
+{type:S.THINK, duration:2500, pauseAfter:600},
+
+{type:S.SYSTEM, text:`I'll analyze this request and build the execution plan.`, charSpeed:30, pauseAfter:800},
+{type:S.SYSTEM, text:`Let me first read the master plan and existing context.`, charSpeed:28, pauseAfter:1500},
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="dim">Reading master plan, GTM strategy, and existing documents...</span>`, instant:true, pauseAfter:2800},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="dim">Reading roadmap, pricing model, strategic plan, and GTM details...</span>`, instant:true, pauseAfter:2200},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">Comprehensive understanding acquired. Building execution plan.</span>`, instant:true, pauseAfter:1800},
+
+// ─── ACT 3: THE ANALYSIS ───────────────────────
+
+{type:S.SEP, pauseBefore:600},
+{type:S.HEADER, text:`  Product Org Request`, level:2, pauseAfter:400},
+{type:S.SEP, pauseAfter:800},
+{type:S.BLANK},
+{type:S.HEADER, text:`Analysis`, level:3, pauseAfter:600},
+{type:S.BLANK},
+
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">Your Request: Create <span class="number">6</span> V2V documents for Project SaaS M0-9, each with <span class="file-ref">MD + HTML presentation(s)</span>, all mobile responsive.</span>`, charSpeed:22, pauseAfter:1200},
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">V2V Phase: <span class="accent">Phase 2</span> (Strategic Decisions) + <span class="accent">Phase 3</span> (Strategic Commitments)</span>`, charSpeed:25, pauseAfter:500},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">Complexity: <span class="warning">High</span> — <span class="number">6</span> major deliverables, cross-functional, each requiring MD + HTML outputs.</span>`, charSpeed:25, pauseAfter:500},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">Triage: <span class="pink">MULTI</span> — This requires PM, PMM, BizOps, UX, and CI perspectives.</span>`, charSpeed:25, pauseAfter:1200},
+{type:S.BLANK},
+
+{type:S.SYSTEM, text:`Existing Context:`, charSpeed:30, pauseAfter:400},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - <span class="bright">Master Plan v2</span> — Post-pivot <span class="cyan">"Full Capability Day 1"</span> strategy</span>`, charSpeed:20, pauseAfter:300},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - <span class="bright">Roadmap</span> — 3-phase (M0-3 Foundation, M4-6 Single-Agent, M7-9 Multi-Agent)</span>`, charSpeed:20, pauseAfter:300},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - <span class="bright">Pricing Model</span> — Usage-based, <span class="number">$39/$119</span> hybrid recommended</span>`, charSpeed:20, pauseAfter:300},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - <span class="bright">GTM Strategy</span> — Positioning, competitive differentiation, launch messaging</span>`, charSpeed:20, pauseAfter:300},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - <span class="bright">Strategic Plan</span> — Vision, phased approach, market positioning</span>`, charSpeed:20, pauseAfter:1200},
+
+// ─── ACT 4: THE TEAM ASSEMBLES ─────────────────
+
+{type:S.HEADER, text:`Responding Owners`, level:3, pauseBefore:400, pauseAfter:600},
+{type:S.BLANK},
+{type:S.TABLE, headers:['Agent','Role','Deliverable(s)'], rows:[
+    ['📋 Director PM','Accountable','PRD with technology choices'],
+    ['🎨 UX Lead','Responsible','UX Guidelines (consulting the PRD)'],
+    ['📣 Director PMM','Responsible','Branding, Positioning & Messaging + Value Prop'],
+    ['🔭 Competitive Intelligence','Responsible','Marketing Competitor Analysis'],
+    ['🧮 BizOps','Responsible','Pricing Strategy'],
+], pauseAfter:1500},
+
+{type:S.HEADER, text:`Proposed Execution Plan`, level:3, pauseAfter:600},
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="bright">Wave 1 — Parallel</span> <span class="dim">(no dependencies):</span>`, charSpeed:25, pauseAfter:400},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  1. <span class="agent-ref">📋 Director PM</span> → PRD with technology choices <span class="dim">(MD + HTML)</span></span>`, charSpeed:18, pauseAfter:250},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  2. <span class="agent-ref">🔭 Competitive Intelligence</span> → Competitor Analysis <span class="dim">(MD + HTML)</span></span>`, charSpeed:18, pauseAfter:250},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  3. <span class="agent-ref">🧮 BizOps</span> → Pricing Strategy <span class="dim">(MD + HTML)</span></span>`, charSpeed:18, pauseAfter:700},
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="bright">Wave 2 — Parallel</span> <span class="dim">(depends on PRD from Wave 1):</span>`, charSpeed:25, pauseAfter:400},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  4. <span class="agent-ref">🎨 UX Lead</span> → UX Guidelines <span class="dim">(MD + HTML)</span></span>`, charSpeed:18, pauseAfter:250},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  5. <span class="agent-ref">📣 Director PMM</span> → Branding + Value Proposition <span class="dim">(MD + HTML × 2)</span></span>`, charSpeed:18, pauseAfter:800},
+{type:S.BLANK},
+{type:S.SEP},
+{type:S.SYSTEM, text:`  Proceed with this plan? (approve, modify, or cancel)`, charSpeed:28, pauseAfter:400},
+{type:S.SEP, pauseAfter:2500},
+
+// ─── ACT 5: GREEN LIGHT ────────────────────────
+
+{type:S.USER, text:`go`, charSpeed:80, pauseAfter:1800},
+
+// ─── ACT 6: WAVE 1 LAUNCH ──────────────────────
+
+{type:S.THINK, duration:1500, pauseAfter:400},
+
+{type:S.HTML, html:`<span class="bullet">● </span><span class="bright">Launching Wave 1.</span> <span class="accent">Spawning 3 agents in parallel...</span>`, charSpeed:25, flash:'pulse', pauseAfter:800},
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="system-text">  ├─ <span class="agent-ref">📋 Dir PM</span> creating PRD with tech choices</span>`, charSpeed:18, pauseAfter:200},
+{type:S.HTML, html:`<span class="dim">  │  ⎿ Running in the background</span>`, instant:true, pauseAfter:500},
+{type:S.HTML, html:`<span class="system-text">  ├─ <span class="agent-ref">🔭 CI</span> creating competitor analysis</span>`, charSpeed:18, pauseAfter:200},
+{type:S.HTML, html:`<span class="dim">  │  ⎿ Running in the background</span>`, instant:true, pauseAfter:500},
+{type:S.HTML, html:`<span class="system-text">  └─ <span class="agent-ref">🧮 BizOps</span> creating pricing strategy</span>`, charSpeed:18, pauseAfter:200},
+{type:S.HTML, html:`<span class="dim">     ⎿ Running in the background</span>`, instant:true, pauseAfter:1200},
+
+// ─── ACT 7: WAVE 1 PROGRESS ────────────────────
+
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="warning">⏳ Wave 1 in progress... 3 agents working in parallel</span>`, instant:true, pauseAfter:600},
+{type:S.BLANK},
+{type:S.PROGRESS, agents:[
+    {emoji:'📋', name:'Dir PM', speed:0.7},
+    {emoji:'🔭', name:'CI', speed:0.95},
+    {emoji:'🧮', name:'BizOps', speed:0.85},
+], duration:10000, pauseAfter:1200},
+
+// ─── ACT 8: FIRST COMPLETION — CI ──────────────
+
+{type:S.COMPLETION, text:`✅ 1/6 COMPLETE: Competitor Analysis`, pauseBefore:600, pauseAfter:800},
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="agent-ref">🔭 Competitive Intelligence</span> <span class="system-text">delivered:</span>`, charSpeed:22, pauseAfter:400},
+{type:S.HTML, html:`<span class="system-text">  - <span class="file-ref">📄 competitor-analysis.md</span></span>`, charSpeed:15, pauseAfter:200},
+{type:S.HTML, html:`<span class="system-text">  - <span class="file-ref">🎞️ competitor-analysis.html</span> <span class="dim">(29 slides)</span></span>`, charSpeed:15, pauseAfter:800},
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">Key insight: <span class="bright">No competitor occupies both high AI sophistication + deep PM specialization.</span></span>`, charSpeed:28, pauseAfter:1000},
+{type:S.BLANK},
+{type:S.SYSTEM, text:`Top 3 threats:`, charSpeed:30, pauseAfter:400},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  1. <span class="warning">"Good enough" syndrome</span> (ChatGPT settling)</span>`, charSpeed:22, pauseAfter:400},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  2. <span class="warning">Notion AI Agent templates</span> (distribution advantage)</span>`, charSpeed:22, pauseAfter:400},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  3. <span class="warning">Platform-level PM features</span> from OpenAI/Anthropic</span>`, charSpeed:22, pauseAfter:1500},
+
+// ─── ACT 9: SECOND COMPLETION — BizOps ─────────
+
+{type:S.BLANK},
+{type:S.COMPLETION, text:`✅ 2/6 COMPLETE: Pricing Strategy`, pauseAfter:800},
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="agent-ref">🧮 BizOps</span> <span class="system-text">delivered:</span>`, charSpeed:22, pauseAfter:400},
+{type:S.HTML, html:`<span class="system-text">  - <span class="file-ref">📄 pricing-strategy.md</span></span>`, charSpeed:15, pauseAfter:200},
+{type:S.HTML, html:`<span class="system-text">  - <span class="file-ref">🎞️ pricing-strategy.html</span> <span class="dim">(24 slides)</span></span>`, charSpeed:15, pauseAfter:800},
+{type:S.BLANK},
+{type:S.SYSTEM, text:`Key decisions:`, charSpeed:30, pauseAfter:400},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - Launch at <span class="gold">$39/$119</span> (Hybrid) — <span class="number">$9</span> margin cushion at <span class="number">$30</span> COGS</span>`, charSpeed:22, pauseAfter:400},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - <span class="bright">Operations as value metric</span> (aligns customer value + our costs)</span>`, charSpeed:22, pauseAfter:400},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - <span class="bright">Model gating</span> as primary COGS control</span>`, charSpeed:22, pauseAfter:400},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - <span class="bright">ROI tracking</span> as conversion engine</span>`, charSpeed:22, pauseAfter:800},
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="success">⏱️ ~8 hrs saved</span>`, instant:true, pauseAfter:1500},
+
+// ─── ACT 10: THIRD COMPLETION — PRD ────────────
+
+{type:S.BLANK},
+{type:S.COMPLETION, text:`✅ 3/6 COMPLETE: PRD with Technology Choices`, pauseAfter:800},
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="agent-ref">📋 Director PM</span> <span class="system-text">delivered:</span>`, charSpeed:22, pauseAfter:400},
+{type:S.HTML, html:`<span class="system-text">  - <span class="file-ref">📄 prd-project-saas.md</span></span>`, charSpeed:15, pauseAfter:200},
+{type:S.HTML, html:`<span class="system-text">  - <span class="file-ref">🎞️ prd-project-saas.html</span> <span class="dim">(24 slides)</span></span>`, charSpeed:15, pauseAfter:800},
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="bright">Tech stack:</span>`, charSpeed:30, pauseAfter:500},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - Frontend: <span class="tech">Next.js 14</span> + <span class="tech">React 18</span> + <span class="tech">Tailwind 4</span> + <span class="tech">Radix UI</span></span>`, charSpeed:18, pauseAfter:350},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - Backend: <span class="tech">Node.js 22 LTS</span> + <span class="tech">Hono</span> + <span class="tech">REST/OpenAPI 3.1</span></span>`, charSpeed:18, pauseAfter:350},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - DB: <span class="tech">Neon PostgreSQL</span> + <span class="tech">Drizzle ORM</span></span>`, charSpeed:18, pauseAfter:350},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - Storage: <span class="tech">Cloudflare R2</span> <span class="dim">(zero egress)</span></span>`, charSpeed:18, pauseAfter:350},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - Auth: <span class="tech">Clerk</span> | Payments: <span class="tech">Stripe</span></span>`, charSpeed:18, pauseAfter:350},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - Hosting: <span class="tech">Vercel</span> (FE) + <span class="tech">Railway</span> (BE)</span>`, charSpeed:18, pauseAfter:350},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - Monorepo: <span class="tech">Turborepo</span></span>`, charSpeed:18, pauseAfter:800},
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text"><span class="number">14</span> user stories across all <span class="number">3</span> phases.</span>`, charSpeed:25, pauseAfter:2000},
+
+// ─── ACT 11: WAVE 2 LAUNCH ─────────────────────
+
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="success">🚀 Wave 1 COMPLETE!</span> <span class="accent">Launching Wave 2...</span>`, charSpeed:28, flash:'pulse', pauseAfter:1200},
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="system-text">  ├─ <span class="agent-ref">🎨 UX Lead</span> creating UX Guidelines</span>`, charSpeed:18, pauseAfter:200},
+{type:S.HTML, html:`<span class="dim">  │  ⎿ Running in the background</span>`, instant:true, pauseAfter:500},
+{type:S.HTML, html:`<span class="system-text">  └─ <span class="agent-ref">📣 Dir PMM</span> creating Branding + Value Prop</span>`, charSpeed:18, pauseAfter:200},
+{type:S.HTML, html:`<span class="dim">     ⎿ Running in the background</span>`, instant:true, pauseAfter:1200},
+
+// ─── ACT 12: WAVE 2 PROGRESS ───────────────────
+
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="warning">⏳ Wave 2 in progress... 2 agents working in parallel</span>`, instant:true, pauseAfter:600},
+{type:S.BLANK},
+{type:S.PROGRESS, agents:[
+    {emoji:'🎨', name:'UX Lead', speed:0.85},
+    {emoji:'📣', name:'Dir PMM', speed:0.7},
+], duration:8000, pauseAfter:1200},
+
+// ─── ACT 13: FOURTH COMPLETION — UX ────────────
+
+{type:S.COMPLETION, text:`✅ 4/6 COMPLETE: UX Guidelines`, pauseAfter:800},
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="agent-ref">🎨 UX Lead</span> <span class="system-text">delivered:</span>`, charSpeed:22, pauseAfter:400},
+{type:S.HTML, html:`<span class="system-text">  - <span class="file-ref">📄 ux-guidelines.md</span></span>`, charSpeed:15, pauseAfter:200},
+{type:S.HTML, html:`<span class="system-text">  - <span class="file-ref">🎞️ ux-guidelines.html</span> <span class="dim">(30 slides)</span></span>`, charSpeed:15, pauseAfter:800},
+{type:S.BLANK},
+{type:S.SYSTEM, text:`Key design decisions:`, charSpeed:28, pauseAfter:500},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - <span class="cyan">Progressive Mastery</span> (not disclosure) — all <span class="number">61</span> skills day 1</span>`, charSpeed:20, pauseAfter:400},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - <span class="cyan">Flat chat layout</span> (not bubbles) — professional, scannable</span>`, charSpeed:20, pauseAfter:400},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - <span class="number">12</span> unique agent colors for Meeting Mode</span>`, charSpeed:20, pauseAfter:400},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - <span class="cyan">ROI display</span> as primary Free→Pro conversion engine</span>`, charSpeed:20, pauseAfter:400},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - <span class="cyan">Dual-panel paradigm</span>: conversation left, output right</span>`, charSpeed:20, pauseAfter:400},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - <span class="number">5</span>-step onboarding targeting <span class="bright">&lt;5 min to "aha moment"</span></span>`, charSpeed:20, pauseAfter:800},
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="dim">Covers: Design Philosophy, Info Architecture, 8 User Flows, Component Guidelines, Responsive Design, Accessibility, Motion/Animation, Error Handling, Dark Mode, Anti-Patterns</span>`, charSpeed:12, pauseAfter:1500},
+
+// ─── ACT 14: FIFTH + SIXTH — BRANDING ──────────
+
+{type:S.BLANK},
+{type:S.COMPLETION, text:`✅ 5/6 & 6/6 COMPLETE: Branding + Value Proposition`, pauseAfter:800},
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="agent-ref">📣 Director of Product Marketing</span> <span class="system-text">delivered <span class="number">4</span> files:</span>`, charSpeed:22, pauseAfter:600},
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="bright">Branding, Positioning & Messaging:</span>`, charSpeed:25, pauseAfter:300},
+{type:S.HTML, html:`<span class="system-text">  - <span class="file-ref">📄 branding-positioning-messaging.md</span></span>`, charSpeed:15, pauseAfter:200},
+{type:S.HTML, html:`<span class="system-text">  - <span class="file-ref">🎞️ branding-positioning-messaging.html</span> <span class="dim">(24 slides)</span></span>`, charSpeed:15, pauseAfter:500},
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="bright">Value Proposition:</span>`, charSpeed:25, pauseAfter:300},
+{type:S.HTML, html:`<span class="system-text">  - <span class="file-ref">📄 value-proposition.md</span></span>`, charSpeed:15, pauseAfter:200},
+{type:S.HTML, html:`<span class="system-text">  - <span class="file-ref">🎞️ value-proposition.html</span> <span class="dim">(25 slides)</span></span>`, charSpeed:15, pauseAfter:1000},
+{type:S.BLANK},
+{type:S.SYSTEM, text:`Key recommendations:`, charSpeed:28, pauseAfter:500},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - Keep <span class="brand">"Product Org OS"</span> as brand name <span class="dim">(creates the category)</span></span>`, charSpeed:22, pauseAfter:500},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - Brand voice: <span class="brand">"The Sage-Commander"</span> — authoritative + decisive</span>`, charSpeed:22, pauseAfter:500},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - Tagline: <span class="gold">"Complete from Day 1."</span></span>`, charSpeed:22, pauseAfter:700},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - Core value prop: <span class="gold">25.6× ROI</span> (<span class="number">$1,000</span> value / <span class="number">$39</span> cost)</span>`, charSpeed:22, flash:'gold', pauseAfter:700},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">  - Three-part value story: <span class="bright">Day 1 → Day 30 → Day 180</span></span>`, charSpeed:22, pauseAfter:2500},
+
+// ─── ACT 15: GRAND FINALE ──────────────────────
+
+{type:S.BLANK},
+{type:S.CELEBRATE, text:`🎉 ALL 6/6 DELIVERABLES COMPLETE!`, pauseAfter:3000},
+
+{type:S.BLANK},
+{type:S.SEP},
+{type:S.HEADER, text:`  Product Org Gateway — Execution Complete`, level:2, pauseAfter:500},
+{type:S.SEP, pauseAfter:1200},
+{type:S.BLANK},
+
+{type:S.TABLE, headers:['#','Document','Agent','Slides'], rows:[
+    ['1','PRD with Technology Choices','📋 Dir PM','24'],
+    ['2','Competitor Analysis','🔭 CI','29'],
+    ['3','Pricing Strategy','🧮 BizOps','24'],
+    ['4','UX Guidelines','🎨 UX Lead','30'],
+    ['5','Branding, Positioning & Messaging','📣 Dir PMM','24'],
+    ['6','Value Proposition','📣 Dir PMM','25'],
+], pauseAfter:1200},
+
+{type:S.HTML, html:`<span class="bullet">● </span><span class="bright">Total: <span class="number">12</span> files (<span class="number">6</span> MD + <span class="number">6</span> HTML presentations, ~<span class="number">156</span> slides)</span>`, charSpeed:22, pauseAfter:1200},
+{type:S.BLANK},
+
+{type:S.HEADER, text:`Key Cross-Document Alignment`, level:3, pauseAfter:600},
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">Tech stack: <span class="tech">Next.js 14</span> + <span class="tech">Hono</span> + <span class="tech">Neon PostgreSQL</span> + <span class="tech">Cloudflare R2</span> + <span class="tech">Clerk</span> + <span class="tech">Stripe</span></span>`, charSpeed:18, pauseAfter:500},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">Pricing: <span class="gold">$39 Pro</span> / <span class="gold">$119 Pro Plus</span> hybrid — operations-based with model gating</span>`, charSpeed:18, pauseAfter:500},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">Brand: <span class="brand">"Product Org OS"</span> — <span class="gold">Complete from Day 1.</span></span>`, charSpeed:18, pauseAfter:500},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">UX: <span class="cyan">Progressive Mastery</span>, flat chat, dual-panel, <span class="bright">&lt;5 min aha moment</span></span>`, charSpeed:18, pauseAfter:500},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">Competitive: Create the <span class="bright">"Product Operating Systems"</span> category</span>`, charSpeed:18, pauseAfter:500},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">Value: <span class="gold">25.6× ROI</span>. <span class="bright">Day 1 → Day 30 → Day 180</span></span>`, charSpeed:18, pauseAfter:1800},
+
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="success">⏱️ Total: ~30 hrs saved in ~8 min actual time</span>`, charSpeed:30, flash:'gold', pauseAfter:1200},
+{type:S.BLANK},
+
+{type:S.TABLE, headers:['Agent','Savings'], rows:[
+    ['📋 Dir PM (PRD)','~6 hrs'],
+    ['🔭 CI (Competitor Analysis)','~5 hrs'],
+    ['🧮 BizOps (Pricing Strategy)','~8 hrs'],
+    ['🎨 UX Lead (UX Guidelines)','~5 hrs'],
+    ['📣 Dir PMM (Branding + Value Prop)','~6 hrs'],
+], pauseAfter:1500},
+
+{type:S.BLANK},
+{type:S.HTML, html:`<span class="bullet">● </span><span class="system-text">All documents in draft status, ready for review. <span class="accent">🏛️</span></span>`, charSpeed:30, pauseAfter:3000},
+];
+
+
+// ════════════════════════════════════════════════
+//  ENGINE
+// ════════════════════════════════════════════════
+
+const output = document.getElementById('output');
+const progressBar = document.getElementById('progress-bar');
+const speedSelect = document.getElementById('speed-select');
+const btnPause = document.getElementById('btn-pause');
+const btnSkip = document.getElementById('btn-skip');
+
+let speedMultiplier = parseFloat(speedSelect.value);
+let paused = false;
+let skipToEnd = false;
+let currentStep = 0;
+let progressId = 0; // unique IDs for progress bars
+
+speedSelect.addEventListener('change', () => { speedMultiplier = parseFloat(speedSelect.value); });
+
+btnPause.addEventListener('click', () => {
+    paused = !paused;
+    btnPause.textContent = paused ? 'Resume' : 'Pause';
+    btnPause.classList.toggle('active', paused);
+});
+
+btnSkip.addEventListener('click', () => {
+    skipToEnd = true;
+    paused = false;
+    btnPause.textContent = 'Pause';
+    btnPause.classList.remove('active');
+});
+
+function delay(ms) {
+    if (skipToEnd) return Promise.resolve();
+    const actual = ms / speedMultiplier;
+    return new Promise(resolve => {
+        const check = () => {
+            if (skipToEnd) { resolve(); return; }
+            if (paused) { requestAnimationFrame(check); return; }
+            resolve();
+        };
+        setTimeout(check, actual);
+    });
+}
+
+function waitWhilePaused() {
+    return new Promise(resolve => {
+        const check = () => { if (!paused || skipToEnd) resolve(); else requestAnimationFrame(check); };
+        check();
+    });
+}
+
+function scrollToBottom() {
+    const body = document.querySelector('.terminal-body');
+    body.scrollTop = body.scrollHeight;
+}
+
+function updateProgress() {
+    const pct = (currentStep / script.length) * 100;
+    progressBar.style.width = pct + '%';
+}
+
+function createLineEl(classes='') {
+    const el = document.createElement('div');
+    el.className = 'line ' + classes;
+    output.appendChild(el);
+    return el;
+}
+
+function escapeHtml(s) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function highlightSyntax(text) {
+    return text
+        .replace(/(@(?:product|plt|pm|pm-dir|pmm-dir|pmm|cpo|vp-product|bizops|bizdev|ci|prod-ops|ux-lead|value-realization|product-manager|product-leadership-team|director-product-management|director-product-marketing|product-marketing-manager|competitive-intelligence|product-operations))/g, '<span class="agent-ref">$1</span>')
+        .replace(/(\/(?:prd|decision-record|strategic-bet|pricing-strategy|market-analysis|competitive-landscape|gtm-strategy|launch-plan|user-story|feature-spec|roadmap-theme|commitment-check|context-recall|feedback-recall|portfolio-status|setup|present))/g, '<span class="skill-ref">$1</span>');
+}
+
+function showInstant(el, html) {
+    el.innerHTML = html;
+    el.classList.add('visible');
+    scrollToBottom();
+}
+
+// Type out raw text with syntax highlighting
+async function typeText(el, text, charSpeedMs) {
+    if (skipToEnd) { el.innerHTML = highlightSyntax(escapeHtml(text)); el.classList.add('visible'); scrollToBottom(); return; }
+    el.classList.add('visible');
+    const speed = charSpeedMs / speedMultiplier;
+    let displayed = '';
+    for (let i = 0; i < text.length; i++) {
+        await waitWhilePaused();
+        if (skipToEnd) { el.innerHTML = highlightSyntax(escapeHtml(text)); scrollToBottom(); return; }
+        displayed += text[i];
+        el.innerHTML = highlightSyntax(escapeHtml(displayed)) + '<span class="cursor">█</span>';
+        scrollToBottom();
+        await new Promise(r => setTimeout(r, speed));
+    }
+    el.innerHTML = highlightSyntax(escapeHtml(text));
+    scrollToBottom();
+}
+
+// Type out pre-colored HTML char by char (strips tags for timing, reveals progressively)
+async function typeHtml(el, html, charSpeedMs) {
+    if (skipToEnd) { el.innerHTML = html; el.classList.add('visible'); scrollToBottom(); return; }
+    el.classList.add('visible');
+    const speed = charSpeedMs / speedMultiplier;
+
+    // Extract plain text for character-by-character pacing
+    const tmp = document.createElement('span');
+    tmp.innerHTML = html;
+    const plainText = tmp.textContent || '';
+    const totalChars = plainText.length;
+
+    // We reveal by setting a clip approach: show full HTML but track position
+    // Simpler: type plain text with cursor, then reveal full HTML at end
+    let displayed = '';
+    for (let i = 0; i < totalChars; i++) {
+        await waitWhilePaused();
+        if (skipToEnd) { el.innerHTML = html; scrollToBottom(); return; }
+        displayed += plainText[i];
+        el.innerHTML = escapeHtml(displayed) + '<span class="cursor">█</span>';
+        scrollToBottom();
+        await new Promise(r => setTimeout(r, speed));
+    }
+    el.innerHTML = html;
+    scrollToBottom();
+}
+
+function renderTable(headers, rows) {
+    const el = document.createElement('div');
+    el.className = 'line visible';
+    let html = '<table class="styled-table"><thead><tr>';
+    headers.forEach(h => html += `<th>${escapeHtml(h)}</th>`);
+    html += '</tr></thead><tbody>';
+    rows.forEach(row => {
+        html += '<tr>';
+        row.forEach(cell => html += `<td>${escapeHtml(cell)}</td>`);
+        html += '</tr>';
+    });
+    html += '</tbody></table>';
+    el.innerHTML = html;
+    output.appendChild(el);
+    scrollToBottom();
+    return el;
+}
+
+async function renderProgressBars(agents, durationMs) {
+    const pid = ++progressId;
+    const container = document.createElement('div');
+    container.className = 'line visible';
+    let html = '';
+    agents.forEach((a, i) => {
+        html += `<div style="margin:4px 0;">  ${a.emoji} <span style="display:inline-block;width:80px;color:#a78bfa;">${escapeHtml(a.name)}</span> <span class="progress-bar-container"><span class="progress-bar-fill" id="pb-${pid}-${i}"></span></span></div>`;
+    });
+    container.innerHTML = html;
+    output.appendChild(container);
+    scrollToBottom();
+
+    if (skipToEnd) {
+        agents.forEach((_, i) => { const b = document.getElementById(`pb-${pid}-${i}`); if(b) b.style.width='100%'; });
+        return;
+    }
+
+    const actualDur = durationMs / speedMultiplier;
+    const start = performance.now();
+    await new Promise(resolve => {
+        function tick() {
+            if (skipToEnd) {
+                agents.forEach((_, i) => { const b = document.getElementById(`pb-${pid}-${i}`); if(b) b.style.width='100%'; });
+                resolve(); return;
+            }
+            if (paused) { requestAnimationFrame(tick); return; }
+            const elapsed = performance.now() - start;
+            const t = Math.min(elapsed / actualDur, 1);
+            agents.forEach((a, i) => {
+                const b = document.getElementById(`pb-${pid}-${i}`);
+                if (b) {
+                    const pct = Math.min(t * a.speed * 1.2, 1) * 100;
+                    b.style.width = pct + '%';
+                }
+            });
+            scrollToBottom();
+            if (t >= 1) {
+                agents.forEach((_, i) => { const b = document.getElementById(`pb-${pid}-${i}`); if(b) b.style.width='100%'; });
+                resolve();
+            } else {
+                requestAnimationFrame(tick);
+            }
+        }
+        requestAnimationFrame(tick);
+    });
+}
+
+async function showThinkingDots(durationMs) {
+    if (skipToEnd) return;
+    const el = createLineEl('thinking-dots');
+    el.classList.add('visible');
+    el.innerHTML = '<span class="bullet">● </span><span>.</span><span>.</span><span>.</span>';
+    scrollToBottom();
+    await delay(durationMs);
+    el.remove();
+}
+
+// ── Confetti ────────────────────────────────────
+function launchConfetti() {
+    const canvas = document.getElementById('confetti');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const particles = [];
+    const colors = ['#64ffda','#7c3aed','#a78bfa','#27ca40','#ffbd2e','#ff5f56','#e94560','#4ecca3','#ffd700'];
+    for (let i = 0; i < 150; i++) {
+        particles.push({
+            x: Math.random() * canvas.width,
+            y: -20 - Math.random() * 300,
+            w: 4 + Math.random() * 6,
+            h: 6 + Math.random() * 10,
+            vx: (Math.random() - 0.5) * 5,
+            vy: 2 + Math.random() * 5,
+            rot: Math.random() * 360,
+            rotSpeed: (Math.random() - 0.5) * 14,
+            color: colors[Math.floor(Math.random() * colors.length)],
+            life: 1,
+        });
+    }
+    let frame = 0;
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let alive = false;
+        particles.forEach(p => {
+            if (p.life <= 0) return;
+            alive = true;
+            p.x += p.vx;
+            p.y += p.vy;
+            p.vy += 0.04;
+            p.rot += p.rotSpeed;
+            p.life -= 0.004;
+            ctx.save();
+            ctx.translate(p.x, p.y);
+            ctx.rotate(p.rot * Math.PI / 180);
+            ctx.globalAlpha = Math.max(0, p.life);
+            ctx.fillStyle = p.color;
+            ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+            ctx.restore();
+        });
+        frame++;
+        if (alive && frame < 400) requestAnimationFrame(draw);
+        else ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+    requestAnimationFrame(draw);
+}
+
+// ── Main Runner ─────────────────────────────────
+async function run() {
+    for (let i = 0; i < script.length; i++) {
+        currentStep = i;
+        updateProgress();
+        const step = script[i];
+        const charSpeed = step.charSpeed || 25;
+
+        if (step.pauseBefore && !skipToEnd) await delay(step.pauseBefore);
+
+        switch (step.type) {
+
+            case S.USER: {
+                const el = createLineEl();
+                const prefix = '<span class="prompt">❯ </span><span class="user-text">';
+                if (skipToEnd) {
+                    showInstant(el, prefix + highlightSyntax(escapeHtml(step.text)) + '</span>');
+                } else {
+                    el.classList.add('visible');
+                    const speed = charSpeed / speedMultiplier;
+                    let displayed = '';
+                    for (let c = 0; c < step.text.length; c++) {
+                        await waitWhilePaused();
+                        if (skipToEnd) { showInstant(el, prefix + highlightSyntax(escapeHtml(step.text)) + '</span>'); break; }
+                        displayed += step.text[c];
+                        el.innerHTML = prefix + highlightSyntax(escapeHtml(displayed)) + '<span class="cursor">█</span></span>';
+                        scrollToBottom();
+                        await new Promise(r => setTimeout(r, speed));
+                    }
+                    if (!skipToEnd) el.innerHTML = prefix + highlightSyntax(escapeHtml(step.text)) + '</span>';
+                    scrollToBottom();
+                }
+                break;
+            }
+
+            case S.SYSTEM: {
+                const el = createLineEl(step.cls || '');
+                const prefix = '<span class="bullet">● </span><span class="system-text' + (step.cls ? ' '+step.cls : '') + '">';
+                if (step.instant || skipToEnd) {
+                    showInstant(el, prefix + highlightSyntax(escapeHtml(step.text)) + '</span>');
+                } else {
+                    el.classList.add('visible');
+                    const speed = charSpeed / speedMultiplier;
+                    let displayed = '';
+                    for (let c = 0; c < step.text.length; c++) {
+                        await waitWhilePaused();
+                        if (skipToEnd) { showInstant(el, prefix + highlightSyntax(escapeHtml(step.text)) + '</span>'); break; }
+                        displayed += step.text[c];
+                        el.innerHTML = prefix + highlightSyntax(escapeHtml(displayed)) + '<span class="cursor">█</span></span>';
+                        scrollToBottom();
+                        await new Promise(r => setTimeout(r, speed));
+                    }
+                    if (!skipToEnd) el.innerHTML = prefix + highlightSyntax(escapeHtml(step.text)) + '</span>';
+                    scrollToBottom();
+                }
+                if (step.flash === 'pulse') el.classList.add('flash-pulse');
+                if (step.flash === 'gold') el.classList.add('flash-gold');
+                break;
+            }
+
+            case S.HTML: {
+                const el = createLineEl();
+                if (step.instant || skipToEnd) {
+                    showInstant(el, step.html);
+                } else {
+                    await typeHtml(el, step.html, charSpeed);
+                }
+                if (step.flash === 'pulse') el.classList.add('flash-pulse');
+                if (step.flash === 'gold') el.classList.add('flash-gold');
+                break;
+            }
+
+            case S.HEADER: {
+                const cls = step.level === 2 ? 'h2' : 'h3';
+                const el = createLineEl(cls);
+                if (skipToEnd) {
+                    showInstant(el, escapeHtml(step.text));
+                } else {
+                    await typeText(el, step.text, 18);
+                }
+                break;
+            }
+
+            case S.SEP: {
+                const el = createLineEl('separator');
+                showInstant(el, '─────────────────────────────────────────────────────');
+                break;
+            }
+
+            case S.BLANK: {
+                const el = createLineEl();
+                showInstant(el, '&nbsp;');
+                break;
+            }
+
+            case S.THINK: {
+                await showThinkingDots(step.duration || 2000);
+                break;
+            }
+
+            case S.TABLE: {
+                if (skipToEnd) {
+                    renderTable(step.headers, step.rows);
+                } else {
+                    const tableEl = document.createElement('div');
+                    tableEl.className = 'line visible';
+                    output.appendChild(tableEl);
+
+                    let html = '<table class="styled-table"><thead><tr>';
+                    step.headers.forEach(h => html += `<th>${escapeHtml(h)}</th>`);
+                    html += '</tr></thead><tbody>';
+                    tableEl.innerHTML = html + '</tbody></table>';
+                    scrollToBottom();
+                    await delay(400);
+
+                    const tbody = tableEl.querySelector('tbody');
+                    for (const row of step.rows) {
+                        await waitWhilePaused();
+                        if (skipToEnd) break;
+                        const tr = document.createElement('tr');
+                        row.forEach(cell => { const td = document.createElement('td'); td.textContent = cell; tr.appendChild(td); });
+                        tr.style.opacity = '0';
+                        tr.style.transition = 'opacity .35s ease';
+                        tbody.appendChild(tr);
+                        scrollToBottom();
+                        await delay(150);
+                        tr.style.opacity = '1';
+                        await delay(250);
+                    }
+                    if (skipToEnd) {
+                        tableEl.remove();
+                        renderTable(step.headers, step.rows);
+                    }
+                }
+                break;
+            }
+
+            case S.PROGRESS: {
+                await renderProgressBars(step.agents, step.duration || 8000);
+                break;
+            }
+
+            case S.COMPLETION: {
+                const el = createLineEl('success');
+                if (skipToEnd) {
+                    showInstant(el, '<span class="success">' + escapeHtml(step.text) + '</span>');
+                } else {
+                    showInstant(el, '<span class="success">' + escapeHtml(step.text) + '</span>');
+                    el.classList.add('flash-green');
+                }
+                break;
+            }
+
+            case S.CELEBRATE: {
+                const el = createLineEl('success');
+                showInstant(el, '<span class="success" style="font-size:1.2em;font-weight:700;letter-spacing:.5px;">' + escapeHtml(step.text) + '</span>');
+                el.classList.add('flash-green');
+                if (!skipToEnd) {
+                    document.getElementById('terminal').classList.add('celebrate');
+                    launchConfetti();
+                    setTimeout(() => document.getElementById('terminal').classList.remove('celebrate'), 3000);
+                }
+                break;
+            }
+        }
+
+        if (step.pauseAfter && !skipToEnd) await delay(step.pauseAfter);
+    }
+
+    // Done
+    currentStep = script.length;
+    updateProgress();
+    btnSkip.textContent = 'Done';
+    btnSkip.disabled = true;
+}
+
+// Start after a brief load delay
+setTimeout(run, 1200);
+
+</script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 name: cpo
 description: Chief Product Officer - assign executive product strategy, organization design, and portfolio decisions
 model: sonnet
-tools:
+allowed-tools:
   - Read
   - Write
   - Edit
@@ -78,6 +78,7 @@ skills:
   # Utility
   - setup
   - present
+user-invocable: false
 ---
 
 # 👑 Chief Product Officer
