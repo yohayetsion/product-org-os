@@ -17,11 +17,11 @@ What's new:
 
 - 9 knowledge packs give agents real frameworks. Prioritization, pricing, competitive analysis, GTM playbooks. Not generic AI.
 
-- Extension Teams: 26 specialists across Design, Architecture, and Marketing. Your PM can pull in a Security Architect mid-task.
-
 - Agents respond like colleagues, not report generators. First person, concise, no fabricated projections.
 
-39 agents. 61 skills. 8 gateways. Cross-platform (Claude Code, Cursor, Copilot, Gemini CLI). All open source.
+- Auto-context injection loads relevant decisions and feedback before every deliverable. Your org gets smarter with each interaction.
+
+13 agents. 61 skills. Cross-platform (Claude Code, Cursor, Copilot, Gemini CLI). All open source.
 
 After 17 years building product orgs at NICE and Cognyte, I keep coming back to the same insight: product leadership is a system design problem. v3 makes that system smarter and more connected.
 

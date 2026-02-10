@@ -502,7 +502,7 @@ User: Here's feedback from Acme Corp: "Your API rate limits are killing us."
 |-----------|-------|
 | Skills | 61 |
 | Agents | 13 |
-| Gateways | 5 (`@product`, `@plt`, `@design`, `@architecture`, `@marketing`) |
+| Gateways | 2 (`@product`, `@plt`) |
 | Knowledge Packs | 9 |
 | Integration Templates | 6 |
 | Delegation Patterns | 4 |
