@@ -1,6 +1,9 @@
 ---
 name: reset-demo
-description: "Restore demo content for testing or demonstration. Use when user says 'reset demo', 'restore examples', or needs demo data for learning."
+description: |
+  Restore demo content for testing, demonstration, or learning purposes.
+  Activate when: "reset demo", "restore examples", demo data for learning, bring back demo content
+  Do NOT activate for: removing demo content (/clear-demo), plugin setup (/setup), interactive tour (/tour)
 model: haiku
 allowed-tools:
   - Read

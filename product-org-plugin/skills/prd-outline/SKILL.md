@@ -1,6 +1,9 @@
 ---
 name: prd-outline
-description: "Create a PRD outline for initial scoping. Use when user says 'PRD outline', 'scope this feature', 'rough requirements', or needs lightweight requirements framing."
+description: |
+  Create a lightweight PRD outline for initial scoping before committing to a full PRD.
+  Activate when: "PRD outline", "scope this feature", "rough requirements", lightweight requirements, initial scoping, quick PRD
+  Do NOT activate for: full PRD with detailed requirements (/prd), feature-level spec (/feature-spec), user story writing (/user-story)
 argument-hint: [product/feature name] or [update path/to/outline.md]
 user-invocable: true
 metadata:

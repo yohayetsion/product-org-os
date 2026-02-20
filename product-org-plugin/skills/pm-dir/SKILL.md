@@ -1,6 +1,9 @@
 ---
 name: pm-dir
-description: "Director of Product Management (shortcut for /director-product-management) - assign roadmap, requirements governance, and team coordination tasks. Use when user says /pm-dir or needs roadmap governance."
+description: |
+  Director of Product Management (shortcut for /director-product-management) - roadmap governance, requirements standards, and cross-team coordination.
+  Activate when: /pm-dir, @pm-dir, "roadmap governance", "requirements review", "cross-team priority", "PM team coordination", "commitment validation"
+  Do NOT activate for: individual feature specs (@pm), product vision or pricing (@vp-product), GTM strategy (@pmm-dir), process/tooling (@prodops)
 model: sonnet
 alias: director-product-management
 user-invocable: true

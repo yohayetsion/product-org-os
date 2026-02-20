@@ -1,6 +1,9 @@
 ---
 name: interaction-recall
-description: "Query past conversation history by topic, agent, or date. Use when user says 'what did we discuss about', 'past conversations on', or needs session history."
+description: |
+  Query past agent conversations and session history by topic, agent, or date.
+  Activate when: "what did we discuss about", "past conversations on", session history, previous agent work, interaction log
+  Do NOT activate for: recalling decisions and bets (/context-recall), recalling feedback (/feedback-recall), recalling learnings (/relevant-learnings)
 argument-hint: [topic or keyword] [agent:name] [date:YYYY-MM] [product:name] [type:agent|gateway|skill]
 user-invocable: true
 metadata:

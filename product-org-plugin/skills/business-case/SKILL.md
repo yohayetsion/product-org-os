@@ -1,6 +1,9 @@
 ---
 name: business-case
-description: "Create comprehensive business case with ROI analysis. Use when user says 'build a business case', 'justify this investment', 'ROI analysis', or needs investment justification."
+description: |
+  Create comprehensive business case with ROI analysis and investment justification.
+  Activate when: "build a business case", "justify this investment", "ROI analysis", investment justification, cost-benefit
+  Do NOT activate for: full business plan with operations (/business-plan), pricing decisions (/pricing-strategy), strategic bet formulation (/strategic-bet)
 argument-hint: [initiative or investment name] or [update path/to/business-case.md]
 user-invocable: true
 metadata:

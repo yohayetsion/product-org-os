@@ -1,6 +1,9 @@
 ---
 name: mentor
-description: "Product Mentor (shortcut for /product-mentor) - career coaching, professional development, stakeholder navigation, CV review, and OS usage optimization. Use when user says /mentor or asks for career guidance."
+description: |
+  Product Mentor (shortcut for /product-mentor) - career coaching, professional development, stakeholder navigation, and PM skill growth.
+  Activate when: /mentor, @mentor, "career advice", "PM coaching", "professional development", "CV review", "stakeholder navigation", "how to grow as PM"
+  Do NOT activate for: operational product work (@pm), roadmap decisions (@pm-dir), strategy (@vp-product), business analysis (@bizops)
 model: opus
 alias: product-mentor
 user-invocable: true

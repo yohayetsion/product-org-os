@@ -1,6 +1,9 @@
 ---
 name: commitment-check
-description: "Validate commitment readiness before point of no return. Use when user says 'are we ready to commit', 'commitment check', 'go/no-go', or before locking resources."
+description: |
+  Validate commitment readiness before the point of no return on resources.
+  Activate when: "are we ready to commit", "commitment check", "go/no-go", before locking resources, Phase 3 gate
+  Do NOT activate for: V2V phase assessment (/phase-check), launch readiness check (/launch-readiness), decision records (/decision-record)
 argument-hint: [commitment or initiative name] or [update path/to/check.md]
 user-invocable: true
 metadata:

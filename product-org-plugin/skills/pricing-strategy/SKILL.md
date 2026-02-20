@@ -1,6 +1,9 @@
 ---
 name: pricing-strategy
-description: "Create complete pricing strategy document. Use when user says 'pricing strategy', 'how should we price', 'monetization model', or needs pricing decisions."
+description: |
+  Create pricing strategy document with monetization approach, value metrics, and competitive pricing analysis.
+  Activate when: "pricing strategy", "how should we price", "monetization model", pricing decisions, value-based pricing
+  Do NOT activate for: pricing tiers and packaging design (/pricing-model), business case financials (/business-case), positioning (/positioning-statement)
 argument-hint: [product or feature name] or [update path/to/pricing.md]
 user-invocable: true
 metadata:

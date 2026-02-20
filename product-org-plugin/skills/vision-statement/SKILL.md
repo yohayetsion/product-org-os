@@ -1,6 +1,9 @@
 ---
 name: vision-statement
-description: "Draft a product vision statement. Use when user says 'write a vision', 'product vision', 'define the vision', or needs to articulate product direction."
+description: |
+  Draft a product vision statement articulating aspirational product direction.
+  Activate when: "write a vision", "product vision", "define the vision", articulate product direction, north star
+  Do NOT activate for: roadmap planning (/product-roadmap), strategy communication packages (/strategy-communication), strategic intent with priorities (/strategic-intent)
 argument-hint: [product name] or [update path/to/vision.md]
 user-invocable: true
 metadata:

@@ -1,6 +1,9 @@
 ---
 name: customer-health-scorecard
-description: "Create customer health scorecard. Use when user says 'customer health', 'health score', 'account health', or needs customer status assessment."
+description: |
+  Create customer health scorecard assessing account status across engagement, adoption, and satisfaction.
+  Activate when: "customer health", "health score", "account health", customer status assessment, churn risk, renewal readiness
+  Do NOT activate for: value realization reports (/value-realization-report), customer value trace validation (/customer-value-trace), onboarding playbooks (/onboarding-playbook)
 argument-hint: [customer name or segment] or [update path/to/scorecard.md]
 user-invocable: true
 metadata:

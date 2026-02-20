@@ -1,6 +1,9 @@
 ---
 name: product-manager
-description: "Product Manager - assign feature specs, user stories, delivery planning, and requirements tasks. Use when user asks to write a PRD, create user stories, define requirements, plan delivery, write acceptance criteria, or mentions @pm."
+description: |
+  Product Manager - feature specs, user stories, delivery planning, and requirements definition.
+  Activate when: @pm, /product-manager, "write a PRD", "create user stories", "feature spec", "acceptance criteria", "requirements", "delivery plan", "backlog", "sprint planning"
+  Do NOT activate for: pricing strategy (@vp-product), GTM or positioning (@pmm-dir), business case (@bizops), partnerships (@bizdev), process optimization (@prodops)
 model: sonnet
 allowed-tools:
   - Read

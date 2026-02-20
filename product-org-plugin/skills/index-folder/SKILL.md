@@ -1,6 +1,9 @@
 ---
 name: index-folder
-description: "Index a folder's contents into the context system for fast retrieval. Use when user says 'index this folder', 'catalog these files', or needs folder contents indexed."
+description: |
+  Index a folder's contents into the context system for fast retrieval and discovery.
+  Activate when: "index this folder", "catalog these files", folder contents indexed, build file index, scan folder
+  Do NOT activate for: saving decisions to context (/context-save), recalling context (/context-recall), plugin setup (/setup)
 model: haiku
 allowed-tools:
   - Read

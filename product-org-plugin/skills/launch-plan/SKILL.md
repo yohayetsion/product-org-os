@@ -1,6 +1,9 @@
 ---
 name: launch-plan
-description: "Create complete product launch plan with timeline and owners. Use when user says 'launch plan', 'plan the launch', 'release plan', or needs launch coordination."
+description: |
+  Create complete product launch plan with timeline, owners, and cross-functional coordination.
+  Activate when: "launch plan", "plan the launch", "release plan", launch coordination, launch timeline, launch checklist
+  Do NOT activate for: launch readiness assessment (/launch-readiness), GTM strategy (/gtm-strategy), campaign execution (/campaign-brief)
 argument-hint: [product or feature name] or [update path/to/launch-plan.md]
 user-invocable: true
 metadata:

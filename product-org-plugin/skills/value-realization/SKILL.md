@@ -1,6 +1,9 @@
 ---
 name: value-realization
-description: "Value Realization - assign success metrics, ROI analysis, adoption tracking, and customer outcome tasks. Use when user asks about customer outcomes, adoption tracking, ROI analysis, customer health, churn, or mentions @value-realization."
+description: |
+  Value Realization - success metrics, adoption tracking, customer outcomes, and post-launch value measurement.
+  Activate when: @value-realization, /value-realization, "customer outcomes", "adoption tracking", "customer health", "churn analysis", "time-to-value", "onboarding metrics", "outcome review"
+  Do NOT activate for: financial modeling or business cases (@bizops), pricing strategy (@vp-product), competitive analysis (@ci), feature requirements (@pm)
 model: sonnet
 allowed-tools:
   - Read

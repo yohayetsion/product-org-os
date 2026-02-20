@@ -1,6 +1,9 @@
 ---
 name: vp-product
-description: "VP of Product - assign product vision, roadmap accountability, and pricing strategy tasks. Use when user asks about product vision, roadmap ownership, pricing strategy, portfolio direction, or mentions @vp-product."
+description: |
+  VP of Product - product vision, strategic bets, portfolio direction, and pricing strategy.
+  Activate when: @vp-product, /vp-product, "product vision", "strategic bet", "pricing strategy", "portfolio direction", "roadmap themes", "where to play", "strategic intent"
+  Do NOT activate for: tactical PM work or feature specs (@pm), roadmap governance or team coordination (@pm-dir), GTM execution (@pmm-dir), financial modeling (@bizops)
 model: sonnet
 allowed-tools:
   - Read

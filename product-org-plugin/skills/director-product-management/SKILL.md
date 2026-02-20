@@ -1,6 +1,9 @@
 ---
 name: director-product-management
-description: "Director of Product Management - assign roadmap, requirements governance, and team coordination tasks. Use when user asks about roadmap governance, requirements strategy, team coordination, sprint planning, or mentions @pm-dir."
+description: |
+  Director of Product Management - roadmap governance, requirements standards, cross-team coordination, and PM team leadership.
+  Activate when: @pm-dir, /director-product-management, "roadmap governance", "requirements review", "cross-team priority", "PM team coordination", "commitment validation", "delivery oversight"
+  Do NOT activate for: individual feature specs or user stories (@pm), product vision or pricing (@vp-product), GTM strategy (@pmm-dir), process tooling (@prodops)
 model: sonnet
 allowed-tools:
   - Read

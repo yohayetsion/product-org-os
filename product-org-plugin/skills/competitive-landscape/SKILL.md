@@ -1,6 +1,9 @@
 ---
 name: competitive-landscape
-description: "Create comprehensive competitive analysis report. Use when user says 'competitive landscape', 'market map', 'who are our competitors', or needs broad competitive understanding."
+description: |
+  Create broad competitive landscape mapping across an entire market or product area.
+  Activate when: "competitive landscape", "market map", "who are our competitors", broad competitive understanding, competitive overview
+  Do NOT activate for: focused head-to-head competitor comparison (/competitive-analysis), market sizing or dynamics (/market-analysis), positioning decisions (/positioning-statement)
 argument-hint: [market or product area] or [update path/to/competitive.md]
 user-invocable: true
 metadata:

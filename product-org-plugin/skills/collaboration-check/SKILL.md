@@ -1,6 +1,9 @@
 ---
 name: collaboration-check
-description: "Validate RACI and stakeholder consultation. Use when user says 'who was consulted', 'RACI check', 'stakeholder alignment', or needs collaboration validation."
+description: |
+  Validate RACI assignments and stakeholder consultation for a decision or initiative.
+  Activate when: "who was consulted", "RACI check", "stakeholder alignment", collaboration validation, cross-functional alignment
+  Do NOT activate for: ownership and accountability mapping (/ownership-map), decision ownership charters (/decision-charter), stakeholder communication (/stakeholder-brief)
 argument-hint: [decision or initiative] or [update path/to/check.md]
 user-invocable: true
 metadata:

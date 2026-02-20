@@ -1,6 +1,9 @@
 ---
 name: positioning-statement
-description: "Create a positioning statement. Use when user says 'define our positioning', 'how should we position', 'positioning statement', or needs differentiation clarity."
+description: |
+  Create a positioning statement defining market category, differentiation, and target audience framing.
+  Activate when: "define our positioning", "how should we position", "positioning statement", differentiation, category creation, messaging framework
+  Do NOT activate for: GTM execution strategy (/gtm-strategy), campaign briefs (/campaign-brief), competitive analysis (/competitive-analysis)
 argument-hint: [product name] or [update path/to/positioning.md]
 user-invocable: true
 metadata:

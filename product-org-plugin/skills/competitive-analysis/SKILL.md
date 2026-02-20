@@ -1,6 +1,9 @@
 ---
 name: competitive-analysis
-description: "Structure a focused competitive comparison. Use when user says 'compare us to competitors', 'competitive analysis', 'how do we stack up', or needs feature-level comparison."
+description: |
+  Structure a focused competitive comparison against specific competitors with feature-level detail.
+  Activate when: "compare us to [competitor]", "competitive analysis", "how do we stack up", feature-level comparison, head-to-head analysis, win/loss
+  Do NOT activate for: broad market-wide competitive landscape (/competitive-landscape), market sizing (/market-analysis), positioning strategy (/positioning-statement)
 argument-hint: [competitor name or market] or [update path/to/analysis.md]
 user-invocable: true
 metadata:

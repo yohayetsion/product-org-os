@@ -1,6 +1,9 @@
 ---
 name: pm-level-check
-description: "Assess PM competency level against framework. Use when user says 'PM level check', 'assess my PM skills', 'competency assessment', or needs professional development input."
+description: |
+  Assess PM competency level against the PM Career Blueprint framework.
+  Activate when: "PM level check", "assess my PM skills", "competency assessment", professional development, PM career level, PM growth
+  Do NOT activate for: organizational maturity assessment (/maturity-check), V2V phase check (/phase-check), product mentor coaching (@product-mentor)
 argument-hint: [PM name or self-assessment]
 user-invocable: true
 metadata:

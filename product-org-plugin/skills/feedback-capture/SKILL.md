@@ -1,6 +1,9 @@
 ---
 name: feedback-capture
-description: "Capture and analyze product feedback with full metadata. Use when user says 'log this feedback', 'capture customer input', 'record this complaint', or encounters user/market feedback."
+description: |
+  Capture and analyze product feedback with full metadata, sentiment, and theme classification.
+  Activate when: "log this feedback", "capture customer input", "record this complaint", user feedback, market feedback, feature request
+  Do NOT activate for: recalling past feedback (/feedback-recall), saving decisions (/context-save), customer health assessment (/customer-health-scorecard)
 argument-hint: [paste feedback or describe source]
 user-invocable: true
 metadata:

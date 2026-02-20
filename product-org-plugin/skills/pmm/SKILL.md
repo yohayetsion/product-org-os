@@ -1,6 +1,9 @@
 ---
 name: pmm
-description: "Product Marketing Manager (shortcut for /product-marketing-manager) - assign campaigns, collateral, customer research, and sales enablement tasks. Use when user says /pmm or needs marketing collateral."
+description: |
+  Product Marketing Manager (shortcut for /product-marketing-manager) - campaigns, collateral, customer research, and sales enablement execution.
+  Activate when: /pmm, @pmm, "campaign brief", "sales collateral", "battle card", "customer research", "marketing materials", "product messaging"
+  Do NOT activate for: GTM strategy or positioning (@pmm-dir), pricing strategy (@vp-product), business case (@bizops), competitive landscape (@ci)
 model: sonnet
 alias: product-marketing-manager
 user-invocable: true

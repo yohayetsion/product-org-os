@@ -1,6 +1,9 @@
 ---
 name: vpp
-description: "VP of Product (shortcut for /vp-product) - assign product vision, roadmap accountability, and pricing strategy tasks. Use when user says /vpp or needs strategic product direction."
+description: |
+  VP of Product (shortcut for /vp-product) - product vision, strategic bets, portfolio direction, and pricing strategy.
+  Activate when: /vpp, @vpp, "product vision", "strategic bet", "pricing strategy", "portfolio direction", "roadmap themes", "where to play"
+  Do NOT activate for: tactical PM work or feature specs (@pm), roadmap governance (@pm-dir), GTM execution (@pmm-dir), financial modeling (@bizops)
 model: sonnet
 alias: vp-product
 user-invocable: true

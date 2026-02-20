@@ -1,6 +1,9 @@
 ---
 name: market-analysis
-description: "Create comprehensive market analysis. Use when user says 'analyze the market', 'market sizing', 'TAM SAM SOM', 'market opportunity', or needs market understanding."
+description: |
+  Create comprehensive market analysis with sizing, dynamics, and opportunity assessment.
+  Activate when: "analyze the market", "market sizing", "TAM SAM SOM", "market opportunity", market understanding, market dynamics
+  Do NOT activate for: competitive landscape mapping (/competitive-landscape), focused competitor comparison (/competitive-analysis), business case justification (/business-case)
 argument-hint: [market or segment name] or [update path/to/market-analysis.md]
 user-invocable: true
 metadata:

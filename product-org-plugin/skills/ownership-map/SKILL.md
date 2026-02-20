@@ -1,6 +1,9 @@
 ---
 name: ownership-map
-description: "Map accountability chain across V2V phases. Use when user says 'who owns this', 'ownership map', 'accountability chain', or needs to clarify end-to-end ownership."
+description: |
+  Map the accountability chain for an initiative across V2V phases.
+  Activate when: "who owns this", "ownership map", "accountability chain", end-to-end ownership, single accountable owner
+  Do NOT activate for: RACI and collaboration validation (/collaboration-check), decision ownership charters (/decision-charter), stakeholder briefs (/stakeholder-brief)
 argument-hint: [initiative or deliverable] or [update path/to/map.md]
 user-invocable: true
 metadata:

@@ -1,6 +1,9 @@
 ---
 name: tour
-description: "Interactive walkthrough of Product Org OS - learn how agents, gateways, skills, and context work together. Use when user says 'show me around', 'how does this work', 'give me a tour', or is new to Product Org OS."
+description: |
+  Interactive walkthrough of Product Org OS showing agents, gateways, skills, and context.
+  Activate when: "show me around", "how does this work", "give me a tour", new to Product Org OS, learn the system
+  Do NOT activate for: plugin initialization (/setup), demo data management (/reset-demo, /clear-demo), specific skill execution
 argument-hint: (no arguments needed)
 model: haiku
 allowed-tools:

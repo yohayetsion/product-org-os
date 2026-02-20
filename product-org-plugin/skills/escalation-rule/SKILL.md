@@ -1,6 +1,9 @@
 ---
 name: escalation-rule
-description: "Define escalation rules for a decision area. Use when user says 'when to escalate', 'escalation path', 'create escalation rule', or needs to define escalation triggers."
+description: |
+  Define escalation rules and triggers for a specific decision area.
+  Activate when: "when to escalate", "escalation path", "create escalation rule", escalation triggers, escalation criteria, when to involve leadership
+  Do NOT activate for: documenting individual decisions (/decision-record), decision ownership charters (/decision-charter), decision audits (/decision-quality-audit)
 argument-hint: [decision area] or [update path/to/rule.md]
 user-invocable: true
 metadata:

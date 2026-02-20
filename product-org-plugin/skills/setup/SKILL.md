@@ -1,6 +1,9 @@
 ---
 name: setup
-description: "Initialize the Product Org plugin - creates context folders and index files. Use when user says 'set up the plugin', 'initialize', or is starting fresh with Product Org OS."
+description: |
+  Initialize the Product Org plugin by creating context folders and index files.
+  Activate when: "set up the plugin", "initialize", starting fresh with Product Org OS, first-time setup
+  Do NOT activate for: configuration changes mid-session, resetting demo data (/reset-demo), interactive walkthrough (/tour)
 argument-hint: (no arguments needed)
 user-invocable: true
 metadata:

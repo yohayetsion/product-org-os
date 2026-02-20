@@ -1,6 +1,9 @@
 ---
 name: portfolio-tradeoff
-description: "Structure portfolio-level tradeoff decisions. Use when user says 'prioritize between', 'portfolio tradeoff', 'which bet to fund', or faces competing investment choices."
+description: |
+  Structure portfolio-level tradeoff decisions between competing investments or bets.
+  Activate when: "prioritize between", "portfolio tradeoff", "which bet to fund", competing investment choices, resource allocation tradeoff
+  Do NOT activate for: portfolio status overview (/portfolio-status), individual decision records (/decision-record), strategic bet formulation (/strategic-bet)
 argument-hint: [tradeoff description] or [update path/to/tradeoff.md]
 user-invocable: true
 metadata:
