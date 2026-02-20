@@ -1,6 +1,9 @@
 ---
 name: bizdev
-description: "Business Development - assign partnership strategy, market expansion, deal structuring, and ecosystem tasks. Use when user asks about partnership strategy, market expansion, deal structuring, channel partners, or mentions @bizdev."
+description: |
+  Business Development - partnership strategy, market expansion, deal structuring, and ecosystem development.
+  Activate when: @bizdev, /bizdev, "partnership", "market expansion", "deal structure", "channel partners", "ecosystem", "integration partner", "alliance"
+  Do NOT activate for: financial analysis or business cases (@bizops), GTM strategy (@pmm-dir), competitive analysis (@ci), pricing strategy (@vp-product)
 model: sonnet
 allowed-tools:
   - Read

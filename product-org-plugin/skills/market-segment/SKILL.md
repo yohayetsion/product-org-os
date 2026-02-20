@@ -1,6 +1,9 @@
 ---
 name: market-segment
-description: "Define a target market segment with personas and needs. Use when user says 'define our segment', 'target audience', 'ideal customer profile', or needs segment definition."
+description: |
+  Define a target market segment with buyer personas, needs, and characteristics.
+  Activate when: "define our segment", "target audience", "ideal customer profile", ICP, segment definition, buyer persona
+  Do NOT activate for: full market analysis with sizing (/market-analysis), user research and usability personas (@ux-lead), positioning for a segment (/positioning-statement)
 argument-hint: [segment name] or [update path/to/segment.md]
 user-invocable: true
 metadata:

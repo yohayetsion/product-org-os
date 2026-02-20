@@ -1,6 +1,9 @@
 ---
 name: ux-lead
-description: "UX Lead - assign user research, design specifications, usability testing, and design system tasks. Use when user asks about user research, usability testing, design specs, wireframes, user experience, or mentions @ux-lead."
+description: |
+  UX Lead - user research, design specifications, usability testing, and design system governance.
+  Activate when: @ux-lead, /ux-lead, "user research", "usability testing", "design specs", "wireframes", "user experience", "information architecture", "design system"
+  Do NOT activate for: visual design or branding (@visual-designer), deep user research studies (@user-researcher), UI component specs (@ui-designer), interaction prototypes (@interaction-designer)
 model: sonnet
 allowed-tools:
   - Read

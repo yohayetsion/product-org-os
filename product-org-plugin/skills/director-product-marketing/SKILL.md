@@ -1,6 +1,9 @@
 ---
 name: director-product-marketing
-description: "Director of Product Marketing - assign GTM strategy, positioning, competitive intelligence, and launch tasks. Use when user asks about GTM strategy, product positioning, competitive response, launch strategy, or mentions @pmm-dir."
+description: |
+  Director of Product Marketing - GTM strategy, positioning, competitive response, and launch strategy ownership.
+  Activate when: @pmm-dir, /director-product-marketing, "GTM strategy", "positioning", "competitive response", "launch strategy", "market segmentation", "sales motion", "messaging framework"
+  Do NOT activate for: individual campaign execution (@pmm), pricing strategy decisions (@vp-product), business case financials (@bizops), partnerships (@bizdev)
 model: sonnet
 allowed-tools:
   - Read

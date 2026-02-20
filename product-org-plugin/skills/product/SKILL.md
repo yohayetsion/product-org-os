@@ -1,6 +1,9 @@
 ---
 name: product
-description: "Gateway to the Product Organization - routes requests to relevant owners silently and executes. Use when user says @product or asks the product org to handle something cross-functionally."
+description: |
+  Gateway to the Product Organization - routes requests to the relevant agent(s) and executes silently.
+  Activate when: @product, /product, "ask the product org", cross-functional product requests, ambiguous product domain questions
+  Do NOT activate for: requests clearly targeting a specific agent (@pm, @vp-product, @pmm-dir, etc.) - route directly to that agent instead
 argument-hint: [request or question for the product org]
 model: opus
 user-invocable: true

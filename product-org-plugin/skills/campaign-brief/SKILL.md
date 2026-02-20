@@ -1,6 +1,9 @@
 ---
 name: campaign-brief
-description: "Create marketing campaign brief. Use when user says 'campaign brief', 'plan a campaign', 'marketing brief', or needs campaign planning."
+description: |
+  Create marketing campaign brief with objectives, audience, messaging, and channels.
+  Activate when: "campaign brief", "plan a campaign", "marketing brief", campaign planning, marketing campaign
+  Do NOT activate for: full GTM strategy (/gtm-strategy), sales enablement materials (/sales-enablement), positioning statements (/positioning-statement)
 argument-hint: [campaign name or objective] or [update path/to/campaign.md]
 user-invocable: true
 metadata:

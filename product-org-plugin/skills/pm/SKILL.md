@@ -1,6 +1,9 @@
 ---
 name: pm
-description: "Product Manager (shortcut for /product-manager) - assign feature specs, user stories, delivery planning, and requirements tasks. Use when user says /pm or asks for quick PM input."
+description: |
+  Product Manager (shortcut for /product-manager) - feature specs, user stories, delivery planning, and requirements.
+  Activate when: /pm, @pm, "write a PRD", "create user stories", "feature spec", "acceptance criteria", "requirements", "delivery plan", "backlog"
+  Do NOT activate for: pricing strategy (@vp-product), GTM or positioning (@pmm-dir), business case (@bizops), partnerships (@bizdev), process optimization (@prodops)
 model: sonnet
 alias: product-manager
 user-invocable: true

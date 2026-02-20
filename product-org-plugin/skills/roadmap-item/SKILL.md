@@ -1,6 +1,9 @@
 ---
 name: roadmap-item
-description: "Define a specific roadmap item with details and dependencies. Use when user says 'add to the roadmap', 'roadmap item', 'plan this initiative', or needs a single item detailed."
+description: |
+  Define a specific roadmap item with scope, dependencies, and success criteria.
+  Activate when: "add to the roadmap", "roadmap item", "plan this initiative", single initiative detail, roadmap entry
+  Do NOT activate for: defining a theme grouping (/roadmap-theme), full roadmap document (/product-roadmap), PRD-level requirements (/prd)
 argument-hint: [item name] or [update path/to/item.md]
 user-invocable: true
 metadata:

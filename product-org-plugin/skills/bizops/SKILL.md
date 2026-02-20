@@ -1,6 +1,9 @@
 ---
 name: bizops
-description: "Business Operations - assign business cases, financial analysis, KPI tracking, and data analysis tasks. Use when user asks about business case, financial analysis, KPI tracking, revenue model, unit economics, or mentions @bizops."
+description: |
+  Business Operations - business cases, financial analysis, KPI tracking, and data-driven decision support.
+  Activate when: @bizops, /bizops, "business case", "financial analysis", "KPI tracking", "revenue model", "unit economics", "QBR", "pricing model analysis"
+  Do NOT activate for: pricing strategy ownership (@vp-product), partnerships (@bizdev), GTM strategy (@pmm-dir), customer outcomes tracking (@value-realization)
 model: sonnet
 allowed-tools:
   - Read

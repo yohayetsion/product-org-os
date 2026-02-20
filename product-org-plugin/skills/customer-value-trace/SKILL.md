@@ -1,6 +1,9 @@
 ---
 name: customer-value-trace
-description: "Validate work traces to customer value. Use when user says 'does this help customers', 'customer value', 'trace to value', or needs customer impact validation."
+description: |
+  Validate that planned work traces back to measurable customer value.
+  Activate when: "does this help customers", "customer value", "trace to value", customer impact validation, value chain
+  Do NOT activate for: customer health scoring (/customer-health-scorecard), value realization reporting (/value-realization-report), business case ROI (/business-case)
 argument-hint: [decision, feature, or initiative] or [update path/to/trace.md]
 user-invocable: true
 metadata:

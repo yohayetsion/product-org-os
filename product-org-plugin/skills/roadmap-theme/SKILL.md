@@ -1,6 +1,9 @@
 ---
 name: roadmap-theme
-description: "Define a roadmap theme with initiatives and success metrics. Use when user says 'define a roadmap theme', 'group these initiatives', 'theme for Q3', or needs thematic roadmap organization."
+description: |
+  Define a single roadmap theme with grouped initiatives and success metrics.
+  Activate when: "define a roadmap theme", "group these initiatives", "theme for Q3", thematic roadmap organization, initiative grouping
+  Do NOT activate for: full roadmap with multiple themes (/product-roadmap), detailing a single initiative (/roadmap-item), strategic intent (/strategic-intent)
 argument-hint: [theme name] or [update path/to/theme.md]
 user-invocable: true
 metadata:

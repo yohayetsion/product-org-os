@@ -1,6 +1,9 @@
 ---
 name: onboarding-playbook
-description: "Create customer onboarding playbook. Use when user says 'onboarding playbook', 'customer onboarding', 'first-run experience', or needs onboarding design."
+description: |
+  Create customer onboarding playbook with milestones, success metrics, and engagement sequences.
+  Activate when: "onboarding playbook", "customer onboarding", "first-run experience", onboarding design, time-to-value, activation
+  Do NOT activate for: value realization tracking (/value-realization-report), customer health scoring (/customer-health-scorecard), launch planning (/launch-plan)
 argument-hint: [product or customer segment] or [update path/to/playbook.md]
 user-invocable: true
 metadata:

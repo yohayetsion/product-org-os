@@ -1,6 +1,9 @@
 ---
 name: gtm-brief
-description: "Create a go-to-market brief for a specific initiative. Use when user says 'GTM brief', 'launch brief', 'market entry plan', or needs a focused GTM document."
+description: |
+  Create a focused go-to-market brief for a specific initiative or feature launch.
+  Activate when: "GTM brief", "launch brief", "market entry plan", focused GTM document, initiative-level GTM
+  Do NOT activate for: comprehensive GTM strategy (/gtm-strategy), launch execution timeline (/launch-plan), marketing campaign planning (/campaign-brief)
 argument-hint: [product/feature name] or [update path/to/gtm-brief.md]
 user-invocable: true
 metadata:

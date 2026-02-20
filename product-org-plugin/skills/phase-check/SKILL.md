@@ -1,6 +1,9 @@
 ---
 name: phase-check
-description: "Assess which V2V phase an initiative is in. Use when user says 'what phase are we in', 'phase check', 'V2V progress', or needs to understand initiative maturity."
+description: |
+  Assess which V2V phase an initiative is in and identify gaps for progression.
+  Activate when: "what phase are we in", "phase check", "V2V progress", initiative maturity, phase gate, V2V assessment
+  Do NOT activate for: commitment readiness validation (/commitment-check), organizational maturity (/maturity-check), portfolio status (/portfolio-status)
 argument-hint: [initiative name]
 user-invocable: true
 metadata:

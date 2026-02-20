@@ -1,6 +1,9 @@
 ---
 name: pricing-model
-description: "Design a pricing model with tiers and packaging. Use when user says 'design pricing tiers', 'pricing model', 'package our offering', or needs pricing structure."
+description: |
+  Design a pricing model with specific tiers, packaging, and feature allocation per plan.
+  Activate when: "design pricing tiers", "pricing model", "package our offering", pricing structure, tier design, free vs paid
+  Do NOT activate for: pricing strategy and monetization approach (/pricing-strategy), business case ROI (/business-case), GTM planning (/gtm-strategy)
 argument-hint: [product name] or [update path/to/pricing-model.md]
 user-invocable: true
 metadata:

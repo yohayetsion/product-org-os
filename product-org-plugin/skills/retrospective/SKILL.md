@@ -1,6 +1,9 @@
 ---
 name: retrospective
-description: "Conduct structured retrospective. Use when user says 'run a retro', 'retrospective', 'what went well', 'lessons learned', or needs team reflection."
+description: |
+  Conduct structured retrospective focused on team process, collaboration, and improvement actions.
+  Activate when: "run a retro", "retrospective", "what went well", "lessons learned", team reflection, process improvement
+  Do NOT activate for: outcome review of initiative results (/outcome-review), decision quality audit (/decision-quality-audit), relevant learnings recall (/relevant-learnings)
 argument-hint: [project, launch, or quarter] or [update path/to/retro.md]
 user-invocable: true
 metadata:

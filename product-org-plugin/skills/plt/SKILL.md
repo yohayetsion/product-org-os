@@ -1,6 +1,9 @@
 ---
 name: plt
-description: "Product Leadership Team (shortcut for /product-leadership-team) - assign portfolio tradeoffs, cross-functional decisions, strategic alignment, and outcome reviews. Use when user says /plt or needs multi-stakeholder decisions."
+description: |
+  Product Leadership Team (shortcut for /product-leadership-team) - multi-stakeholder portfolio tradeoffs, cross-functional decisions, and strategic alignment.
+  Activate when: /plt, @plt, "portfolio tradeoff", "leadership team", "cross-functional decision", "strategic alignment", "go/no-go", "stop or continue"
+  Do NOT activate for: single-domain questions (route to specific agent), individual feature specs (@pm), pricing analysis (@bizops), GTM execution (@pmm)
 model: sonnet
 alias: product-leadership-team
 user-invocable: true

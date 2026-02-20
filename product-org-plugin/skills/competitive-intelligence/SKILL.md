@@ -1,6 +1,9 @@
 ---
 name: competitive-intelligence
-description: "Competitive Intelligence - assign competitor analysis, market research, win/loss analysis, and trend monitoring tasks. Use when user asks about competitor analysis, market research, win/loss analysis, competitive landscape, or mentions @ci."
+description: |
+  Competitive Intelligence - competitor analysis, win/loss analysis, competitive landscape mapping, and market trend monitoring.
+  Activate when: @ci, /competitive-intelligence, "competitor analysis", "win/loss", "competitive landscape", "market intelligence", "battle card data", "competitive pricing"
+  Do NOT activate for: broad market research or sizing (@market-researcher), business case financials (@bizops), partnership evaluation (@bizdev), GTM strategy (@pmm-dir)
 model: sonnet
 allowed-tools:
   - Read

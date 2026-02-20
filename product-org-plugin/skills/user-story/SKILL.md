@@ -1,6 +1,9 @@
 ---
 name: user-story
-description: "Write a user story with acceptance criteria. Use when user says 'write a user story', 'as a user I want', 'acceptance criteria', or needs story-level requirements."
+description: |
+  Write a user story with acceptance criteria in Given/When/Then format.
+  Activate when: "write a user story", "as a user I want", "acceptance criteria", story-level requirements, sprint-ready stories
+  Do NOT activate for: feature-level specification (/feature-spec), full PRD (/prd), roadmap item planning (/roadmap-item)
 argument-hint: [story description] or [update path/to/story.md]
 user-invocable: true
 metadata:

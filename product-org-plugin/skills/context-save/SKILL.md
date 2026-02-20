@@ -1,6 +1,9 @@
 ---
 name: context-save
-description: "Save decision, bet, or learning to the context registry. Use when user says 'save this decision', 'record this learning', 'add to context', or after creating decisions and bets."
+description: |
+  Save a decision, bet, or learning to the persistent context registry.
+  Activate when: "save this decision", "record this learning", "add to context", after creating decisions and bets, persist to registry
+  Do NOT activate for: recalling past context (/context-recall), capturing feedback (/feedback-capture), agent handoff briefings (/handoff)
 argument-hint: [decision-record | strategic-bet | learning]
 user-invocable: true
 metadata:

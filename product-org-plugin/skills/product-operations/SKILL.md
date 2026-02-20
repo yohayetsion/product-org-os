@@ -1,6 +1,9 @@
 ---
 name: product-operations
-description: "Product Operations - assign process optimization, launch coordination, tooling, and cross-team facilitation tasks. Use when user asks about process optimization, launch coordination, tooling, cross-team facilitation, or mentions @prod-ops."
+description: |
+  Product Operations - process optimization, launch coordination, tooling, and cross-team facilitation.
+  Activate when: @prod-ops, /product-operations, "launch coordination", "process optimization", "tooling", "retrospective", "launch readiness", "cross-team facilitation", "ceremony design"
+  Do NOT activate for: product strategy or vision (@vp-product), feature requirements (@pm), GTM strategy (@pmm-dir), marketing campaigns (@pmm)
 model: sonnet
 allowed-tools:
   - Read

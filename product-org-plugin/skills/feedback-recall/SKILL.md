@@ -1,6 +1,9 @@
 ---
 name: feedback-recall
-description: "Query past feedback by topic, source, or theme. Use when user says 'what feedback do we have on', 'find customer complaints about', or needs feedback history."
+description: |
+  Query past feedback by topic, source, or theme from the feedback registry.
+  Activate when: "what feedback do we have on", "find customer complaints about", feedback history, feedback on [topic], customer sentiment
+  Do NOT activate for: capturing new feedback (/feedback-capture), recalling decisions (/context-recall), recalling past interactions (/interaction-recall)
 argument-hint: [topic, feature, or customer segment]
 user-invocable: true
 metadata:

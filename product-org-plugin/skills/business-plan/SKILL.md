@@ -1,6 +1,9 @@
 ---
 name: business-plan
-description: "Create complete business plan. Use when user says 'write a business plan', 'business model', 'go-to-market plan', or needs end-to-end business planning."
+description: |
+  Create complete business plan covering strategy, operations, financials, and go-to-market.
+  Activate when: "write a business plan", "business model", "end-to-end business planning", comprehensive plan, business model canvas
+  Do NOT activate for: single investment business case (/business-case), GTM-only strategy (/gtm-strategy), pricing decisions (/pricing-strategy)
 argument-hint: [product or business area] or [update path/to/business-plan.md]
 user-invocable: true
 metadata:

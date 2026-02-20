@@ -1,6 +1,9 @@
 ---
 name: scale-check
-description: "Assess scalability at 2x, 10x, 100x. Use when user says 'will this scale', 'scalability check', 'what breaks at scale', or needs growth readiness assessment."
+description: |
+  Assess scalability of a process, system, or initiative at 2x, 10x, and 100x growth.
+  Activate when: "will this scale", "scalability check", "what breaks at scale", growth readiness, scaling bottlenecks
+  Do NOT activate for: organizational maturity assessment (/maturity-check), commitment readiness (/commitment-check), architecture review (@chief-architect)
 argument-hint: [process, system, or initiative] or [update path/to/check.md]
 user-invocable: true
 metadata:

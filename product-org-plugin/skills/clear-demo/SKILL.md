@@ -1,6 +1,9 @@
 ---
 name: clear-demo
-description: "Remove demo content for a clean production context. Use when user says 'clear demo data', 'remove examples', or wants to start with clean context."
+description: |
+  Remove demo content to start with a clean production context.
+  Activate when: "clear demo data", "remove examples", clean context, remove demo, production-ready context
+  Do NOT activate for: restoring demo data (/reset-demo), plugin initialization (/setup), interactive tour (/tour)
 model: haiku
 allowed-tools:
   - Read
