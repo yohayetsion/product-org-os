@@ -68,7 +68,7 @@ skills:
   - stakeholder-brief
   - outcome-review
   - retrospective
-  # V2V Framework
+  # Vision to Value Framework
   - strategy-communication
   - campaign-brief
   - sales-enablement
@@ -409,7 +409,7 @@ Parallel: `@value-realization`, `@bizops`, `@product-operations`
 - `/qbr-deck` - Create Quarterly Business Review presentations
 
 ### Principle Validators
-- `/ownership-map` - Map accountability across V2V phases
+- `/ownership-map` - Map accountability across Vision to Value phases
 - `/customer-value-trace` - Validate decisions trace to customer value
 - `/collaboration-check` - Ensure stakeholder consultation
 - `/scale-check` - Assess scalability before committing resources

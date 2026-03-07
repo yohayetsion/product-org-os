@@ -9,7 +9,7 @@ Extract and save learnings from completed tasks to build compound organizational
 - When something went wrong (or unexpectedly right)
 - Periodically as a reflection habit (weekly/monthly)
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 6: Learning & Adaptation** (but usable after any phase)
 

@@ -57,7 +57,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Structure a **Competitive Analysis** for a specific competitor or market.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 1: Strategic Foundation** - Focused competitive analysis informs positioning and differentiation.
 

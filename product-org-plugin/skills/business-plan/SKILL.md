@@ -56,7 +56,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Create a **complete Business Plan** for the specified product or business area.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 2: Strategic Decisions** - Business plans consolidate the strategic foundation into a comprehensive commercial blueprint.
 

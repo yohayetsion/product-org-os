@@ -46,7 +46,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Create a **Strategy Communication Package** for the specified strategy or initiative.
 
-## V2V Phase
+## Vision to Value Phase
 **Phase 3: Strategic Commitments** - This skill creates the communication materials after commitments are hardened.
 
 ## Output Structure

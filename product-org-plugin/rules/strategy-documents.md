@@ -43,7 +43,7 @@ For strategic bets specifically:
 - [ ] Assumptions are numbered and testable
 - [ ] Re-decision points are scheduled
 
-## V2V Operating Principle
+## Vision to Value Operating Principle
 
 > "Strategic clarity means clear bets with explicit assumptions."
 

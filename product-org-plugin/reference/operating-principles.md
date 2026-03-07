@@ -1,4 +1,4 @@
-# V2V Operating Principles
+# Vision to Value Operating Principles
 
 The 8 Operating Principles for World-Class Product Organizations.
 
@@ -16,7 +16,7 @@ The 8 Operating Principles for World-Class Product Organizations.
 - Stay involved through launch and adoption
 - Own success metrics end-to-end
 
-**Enforcement Skill**: `/ownership-map` - Maps accountability across V2V phases
+**Enforcement Skill**: `/ownership-map` - Maps accountability across Vision to Value phases
 **When to use**: Before major commitments (Phase 2→3 transition)
 
 ## 2. Decision Quality
@@ -137,8 +137,8 @@ The 8 Operating Principles for World-Class Product Organizations.
 | #6 Collaborative Excellence | `/collaboration-check` | For cross-functional work |
 | #8 Scalable Systems | `/scale-check` | Before resource commitments |
 
-### Additional V2V Validator
+### Additional Vision to Value Validator
 
 | Skill | Purpose | Trigger |
 |-------|---------|---------|
-| `/phase-check` | Assess V2V phase readiness | Before phase transitions |
+| `/phase-check` | Assess Vision to Value phase readiness | Before phase transitions |

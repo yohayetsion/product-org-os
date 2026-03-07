@@ -57,7 +57,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Create a **complete Pricing Strategy** for the specified product or feature.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 2: Strategic Decisions** - Pricing is a critical commercial decision that must be made before commitment.
 

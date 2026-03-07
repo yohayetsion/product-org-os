@@ -68,7 +68,7 @@ skills:
   - stakeholder-brief
   - outcome-review
   - retrospective
-  # V2V Framework
+  # Vision to Value Framework
   - strategy-communication
   - campaign-brief
   - sales-enablement
@@ -349,7 +349,7 @@ This requires cross-functional input and alignment.
 
 ---
 
-## V2V Phase Context
+## Vision to Value Phase Context
 
 **Operating across all phases** with focus on Phase 2 (Strategic Decisions) and Phase 6 (Learning Loop)
 

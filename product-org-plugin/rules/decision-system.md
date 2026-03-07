@@ -43,7 +43,7 @@ Before finalizing any decision document, verify:
 Use the `/decision-record` skill template for individual decisions.
 Use the `/decision-charter` skill template for recurring decision types.
 
-## V2V Operating Principle
+## Vision to Value Operating Principle
 
 > "Decision quality is the core metric for product leadership effectiveness."
 

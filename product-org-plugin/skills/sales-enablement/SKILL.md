@@ -46,7 +46,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Create a **Sales Enablement Package** for the specified product or feature.
 
-## V2V Phase
+## Vision to Value Phase
 **Phase 4: Coordinated Execution** - This skill enables sales to effectively sell.
 
 ## Output Structure

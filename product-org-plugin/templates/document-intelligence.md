@@ -1,6 +1,6 @@
 # Document Intelligence Template
 
-This template defines the standard Document Intelligence enhancement block for all document-generating skills in the V2V Product Org Plugin.
+This template defines the standard Document Intelligence enhancement block for all document-generating skills in the Vision to Value Product Org Plugin.
 
 ## Overview
 

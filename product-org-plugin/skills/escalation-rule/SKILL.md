@@ -47,7 +47,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Define **Escalation Rules** for a specific decision area.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 2: Strategic Decisions** - Escalation rules ensure decision quality when standard authority is insufficient.
 

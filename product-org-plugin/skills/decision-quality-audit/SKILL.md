@@ -46,7 +46,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Audit **Decision Quality** for a set of recent decisions.
 
-## V2V Context
+## Vision to Value Context
 **Phase 6: Learning & Adaptation Loop** - Decision quality is the core metric for product leadership effectiveness.
 
 ## Output Structure

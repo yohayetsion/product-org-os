@@ -206,6 +206,6 @@ Context: Portfolio tradeoff, cross-functional alignment, strategic bet
 
 ---
 
-## V2V Operating Principle
+## Vision to Value Operating Principle
 
 > "Time saved is time reinvested in higher-value work. Track it to demonstrate and improve the leverage AI provides to product organizations."

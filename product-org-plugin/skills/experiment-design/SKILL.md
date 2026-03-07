@@ -9,7 +9,7 @@ Design a lean experiment to validate a specific assumption or hypothesis.
 - When stakeholders disagree and data could resolve it
 - During Phase 1-2 to de-risk strategic bets
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 1-2: Strategic Foundation / Decisions**
 

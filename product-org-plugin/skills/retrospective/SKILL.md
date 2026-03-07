@@ -46,7 +46,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Conduct a **Structured Retrospective** for the specified project, launch, or time period.
 
-## V2V Phase
+## Vision to Value Phase
 **Phase 6: Learning & Adaptation Loop** - This skill captures learnings for continuous improvement.
 
 ## Output Structure

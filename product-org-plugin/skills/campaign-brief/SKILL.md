@@ -56,7 +56,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Create a **Marketing Campaign Brief** for the specified campaign.
 
-## V2V Phase
+## Vision to Value Phase
 **Phase 4: Coordinated Execution** - This skill supports marketing execution.
 
 ## Output Structure

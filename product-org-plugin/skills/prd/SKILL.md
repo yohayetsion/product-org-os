@@ -58,7 +58,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Create a **complete Product Requirements Document (PRD)** for the specified product or feature.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 3: Strategic Commitments** - PRDs commit engineering resources to specific requirements.
 

@@ -56,7 +56,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Create a **comprehensive Market Analysis** for the specified market or segment.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 1: Strategic Foundation** - Market analysis establishes the factual foundation for strategic decisions.
 

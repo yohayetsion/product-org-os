@@ -4,7 +4,7 @@
 **Owner**: [Name]
 **Timeframe**: [Quarters]
 **Investment**: [% capacity]
-**V2V Phase**: Phase 3 (Strategic Commitments)
+**Vision to Value Phase**: Phase 3 (Strategic Commitments)
 
 ## Theme Overview
 
@@ -19,7 +19,7 @@
 **Supports Bet**: [Link to strategic bet]
 **Company Goal**: [Which goal]
 
-## V2V Phase Status
+## Vision to Value Phase Status
 
 | Phase | Status | Key Artifacts |
 |-------|--------|---------------|
@@ -60,4 +60,4 @@
 
 ---
 
-*Template aligned with v2.2.0 - includes V2V Phase tracking*
+*Template aligned with v2.2.0 - includes Vision to Value Phase tracking*

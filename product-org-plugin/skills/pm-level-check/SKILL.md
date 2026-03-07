@@ -3,7 +3,7 @@ name: pm-level-check
 description: |
   Assess PM competency level against the PM Career Blueprint framework.
   Activate when: "PM level check", "assess my PM skills", "competency assessment", professional development, PM career level, PM growth
-  Do NOT activate for: organizational maturity assessment (/maturity-check), V2V phase check (/phase-check), product mentor coaching (@product-mentor)
+  Do NOT activate for: organizational maturity assessment (/maturity-check), Vision to Value phase check (/phase-check), product mentor coaching (@product-mentor)
 argument-hint: [PM name or self-assessment]
 user-invocable: true
 metadata:
@@ -15,14 +15,14 @@ compatibility: Requires Product Org OS v3+ context layer and rules
 
 Assess **PM Competency Level** against the PM Career Blueprint.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Cross-phase** - PM assessments support career development independent of product phases.
 
 **Prerequisites**: PM to assess identified, assessment approach agreed
 **Outputs used by**: Development planning, role assignment, hiring decisions
 
-## PM Levels (V2V Framework)
+## PM Levels (Vision to Value Framework)
 
 | Level | Title | Focus |
 |-------|-------|-------|

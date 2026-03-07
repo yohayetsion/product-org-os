@@ -58,7 +58,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Create a **Go-to-Market Brief** for a product or feature launch.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 3: Strategic Commitments** - GTM briefs summarize the go-to-market commitment for execution.
 

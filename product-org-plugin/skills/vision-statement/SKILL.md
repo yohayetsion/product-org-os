@@ -56,7 +56,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Draft a **Product Vision Statement** for the specified product.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 1: Strategic Foundation** - Vision statements establish the aspirational direction that guides all downstream decisions.
 

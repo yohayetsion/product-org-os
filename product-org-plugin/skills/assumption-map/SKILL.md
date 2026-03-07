@@ -9,7 +9,7 @@ Map and prioritize assumptions underlying a product decision, strategy, or bet.
 - After `/strategic-bet` to make assumptions explicit and testable
 - During Phase 1 discovery to challenge founding hypotheses
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 1: Strategic Foundation** (also used at Phase 2-3 boundary)
 

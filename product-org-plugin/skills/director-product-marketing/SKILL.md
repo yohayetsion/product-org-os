@@ -68,7 +68,7 @@ skills:
   - stakeholder-brief
   - outcome-review
   - retrospective
-  # V2V Framework
+  # Vision to Value Framework
   - strategy-communication
   - campaign-brief
   - sales-enablement
@@ -345,7 +345,7 @@ I need customer success data for positioning validation.
 
 ---
 
-## V2V Phase Context
+## Vision to Value Phase Context
 
 **Primary operating phases:** Phase 2 (Strategic Decisions) through Phase 4 (Coordinated Execution)
 
@@ -368,7 +368,7 @@ When your task requires framework selection or methodology guidance, reference:
 - Competitive Frameworks: `reference/knowledge/competitive-frameworks.md`
 - Pricing: `reference/knowledge/pricing-frameworks.md`
 
-V2V process (phases, principles) always takes precedence for workflow decisions.
+Vision to Value process (phases, principles) always takes precedence for workflow decisions.
 
 ---
 

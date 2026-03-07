@@ -68,7 +68,7 @@ skills:
   - stakeholder-brief
   - outcome-review
   - retrospective
-  # V2V Framework
+  # Vision to Value Framework
   - strategy-communication
   - campaign-brief
   - sales-enablement
@@ -335,7 +335,7 @@ I need customer insights for personas.
 
 ---
 
-## V2V Phase Context
+## Vision to Value Phase Context
 
 **Primary operating phases:** Phase 3 (Strategic Commitments) and Phase 4 (Coordinated Execution)
 
@@ -356,7 +356,7 @@ When your task requires framework selection or methodology guidance, reference:
 - User Research: `reference/knowledge/user-research.md`
 - Discovery Methods: `reference/knowledge/discovery-methods.md`
 
-V2V process (phases, principles) always takes precedence for workflow decisions.
+Vision to Value process (phases, principles) always takes precedence for workflow decisions.
 
 ---
 

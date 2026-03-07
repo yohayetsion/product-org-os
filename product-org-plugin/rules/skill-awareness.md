@@ -5,7 +5,7 @@ globs:
 
 # Skill Awareness & Routing
 
-Skill catalog, invocation syntax, routing rules, and agent selection for the V2V Product Org Plugin.
+Skill catalog, invocation syntax, routing rules, and agent selection for the Vision to Value Product Org Plugin.
 
 ---
 
@@ -67,7 +67,7 @@ When user mentions `@agent` or `@gateway`, **immediately invoke without asking**
 
 ---
 
-## Skills by V2V Phase
+## Skills by Vision to Value Phase
 
 | Phase | Skills |
 |-------|--------|
@@ -92,7 +92,7 @@ When user mentions `@agent` or `@gateway`, **immediately invoke without asking**
 
 ---
 
-## V2V Operating Principle
+## Vision to Value Operating Principle
 
 > "Every skill exists for a reason. Choose the right skill for the task, not the task for the skill you know."
 

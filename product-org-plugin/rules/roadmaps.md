@@ -50,7 +50,7 @@ Every roadmap MUST have:
 5. Validate capacity
 6. Communicate
 
-## V2V Operating Principle
+## Vision to Value Operating Principle
 
 > "Roadmap themes should connect to strategic bets."
 

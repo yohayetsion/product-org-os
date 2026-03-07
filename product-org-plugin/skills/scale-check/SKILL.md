@@ -46,7 +46,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Assess **scalability** of a process, system, or initiative at 2x, 10x, and 100x scale, validating Principle #8 (Scalable Systems).
 
-## V2V Phase
+## Vision to Value Phase
 
 **Cross-phase** - This skill validates scalability when designing processes, systems, or operational approaches at any phase.
 

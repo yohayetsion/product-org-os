@@ -57,7 +57,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Create a **complete Product Roadmap** for the specified timeframe or product area.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 3: Strategic Commitments** - The roadmap is a key commitment artifact that follows strategic decisions.
 

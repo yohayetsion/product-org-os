@@ -4,7 +4,7 @@
 **Owner**: [Name]
 **Date**: [Date]
 **Status**: Proposed / Active / Validated / Invalidated
-**V2V Phase**: Phase 2 (Strategic Decisions)
+**Vision to Value Phase**: Phase 2 (Strategic Decisions)
 
 ## The Bet
 

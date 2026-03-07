@@ -9,7 +9,7 @@ Build an Opportunity Solution Tree to map the path from desired outcome to testa
 - To align a team on what opportunities to pursue
 - Before jumping to solutions, to ensure you're solving the right problems
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 1: Strategic Foundation**
 

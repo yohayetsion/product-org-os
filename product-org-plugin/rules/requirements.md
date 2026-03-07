@@ -53,7 +53,7 @@ Acceptance Criteria:
 - Given [context], when [action], then [result]
 ```
 
-## V2V Operating Principle
+## Vision to Value Operating Principle
 
 > "Start with the customer problem, not the solution. Every feature needs success criteria."
 

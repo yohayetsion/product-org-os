@@ -4,7 +4,7 @@
 **Date**: [Date]
 **Status**: Proposed / Accepted / Superseded
 **Accountable Owner**: [Name/Role]
-**V2V Phase**: [Phase 1-6 or Cross-Phase]
+**Vision to Value Phase**: [Phase 1-6 or Cross-Phase]
 
 ## Context
 

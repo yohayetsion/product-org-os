@@ -46,7 +46,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Create a **Value Realization Report** for the specified customer, cohort, or product.
 
-## V2V Phase
+## Vision to Value Phase
 **Phase 5: Business & Customer Outcomes** - This skill measures whether customers achieved value.
 
 ## Output Structure

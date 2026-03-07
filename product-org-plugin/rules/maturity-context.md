@@ -51,7 +51,7 @@ This rule provides maturity-level context for all product org work.
 | GTM | Reactive | Playbooks | Strategic choice | Market shaping |
 | Requirements | Verbal | Basic PRD | Full spec process | Customer co-creation |
 
-## V2V Operating Principle
+## Vision to Value Operating Principle
 
 > "Scalable systems are processes that work as the organization grows."
 

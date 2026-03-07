@@ -68,7 +68,7 @@ skills:
   - stakeholder-brief
   - outcome-review
   - retrospective
-  # V2V Framework
+  # Vision to Value Framework
   - strategy-communication
   - campaign-brief
   - sales-enablement
@@ -331,7 +331,7 @@ I need positioning context for competitive analysis.
 
 ---
 
-## V2V Phase Context
+## Vision to Value Phase Context
 
 **Primary operating phases:** Phase 1 (Strategic Foundation) with input to all phases
 
@@ -353,7 +353,7 @@ When your task requires framework selection or methodology guidance, reference:
 - Competitive Frameworks: `reference/knowledge/competitive-frameworks.md`
 - Metrics: `reference/knowledge/metrics-frameworks.md`
 
-V2V process (phases, principles) always takes precedence for workflow decisions.
+Vision to Value process (phases, principles) always takes precedence for workflow decisions.
 
 ---
 

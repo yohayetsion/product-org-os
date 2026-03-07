@@ -15,7 +15,7 @@ compatibility: Requires Product Org OS v3+ context layer and rules
 
 Search the **learnings index** for wisdom from past experiences that applies to current work.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 6: Learning & Adaptation** - This skill surfaces learnings to inform new work.
 
@@ -179,4 +179,4 @@ When finding relevant learnings:
 1. **Search learning topic index**: Match keywords against `topicIndex` in `context/index.json`
 2. **Follow decision links**: Learnings linked to decisions get higher relevance when the current task relates to those decisions
 3. **Show origin**: For each learning, show the decision or outcome review it came from via cross-references
-4. **Phase awareness**: Use `phaseIndex` to prioritize learnings from the same V2V phase as the current work
+4. **Phase awareness**: Use `phaseIndex` to prioritize learnings from the same Vision to Value phase as the current work
