@@ -15,12 +15,12 @@ The Vision to Value (V2V) Operating System defines how product work flows from s
 
 | Phase | Name | Purpose | Key Skills | Exit Criteria |
 |-------|------|---------|------------|---------------|
-| **1** | Strategic Foundation | Establish strategic context and market understanding | `/strategic-intent`, `/market-analysis`, `/competitive-landscape`, `/vision-statement`, `/market-segment` | Clear where-to-play and why |
+| **1** | Strategic Foundation | Establish strategic context and market understanding | `/strategic-intent`, `/market-analysis`, `/competitive-landscape`, `/vision-statement`, `/market-segment`, `/assumption-map`, `/opportunity-tree`, `/experiment-design` | Clear where-to-play and why |
 | **2** | Strategic Decisions | Critical business decisions for commercial viability | `/business-case`, `/pricing-strategy`, `/positioning-statement`, `/decision-record`, `/strategic-bet` | Viability validated, decisions documented |
 | **3** | Strategic Commitments | Convert decisions into executable commitments | `/product-roadmap`, `/gtm-strategy`, `/launch-plan`, `/prd`, `/feature-spec`, `/user-story`, `/commitment-check` | Organization aligned, resources committed |
 | **4** | Coordinated Execution | Execute plan with cross-functional coordination | `/campaign-brief`, `/sales-enablement`, `/launch-readiness`, `/stakeholder-brief` | Product launched, GTM executing |
 | **5** | Business & Customer Outcomes | Realize promised value and track outcomes | `/onboarding-playbook`, `/value-realization-report`, `/customer-health-scorecard` | Outcomes measurable, success evaluable |
-| **6** | Learning & Adaptation | Extract learnings, validate assumptions, feed back | `/outcome-review`, `/retrospective`, `/decision-quality-audit`, `/context-save`, `/feedback-capture` | Learning loop complete |
+| **6** | Learning & Adaptation | Extract learnings, validate assumptions, feed back | `/outcome-review`, `/retrospective`, `/decision-quality-audit`, `/context-save`, `/feedback-capture`, `/compound` | Learning loop complete |
 
 ### Cross-Phase Skills
 

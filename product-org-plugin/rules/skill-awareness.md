@@ -58,20 +58,7 @@ When user mentions `@agent` or `@gateway`, **immediately invoke without asking**
 | Launch Ops | readiness, coordination, process | `@prod-ops` |
 | Customer Outcomes | adoption, success, health, churn | `@value-realization` |
 | Partnerships | partner, ecosystem, channel | `@bizdev` |
-| Design/UX | user research, usability, design | `@ux-lead` |
-| Multi-stakeholder | "help me decide", portfolio tradeoff | `@plt` |
-
-### Question Threshold
-
-**ONLY ask when**: Truly ambiguous (could mean opposite things), critical info missing (no topic specified), or user explicitly requested options.
-
-**NEVER ask because**: Multiple agents could handle it, confidence is "medium", or you want confirmation.
-
----
-
-## Document Intelligence
-
-43 document-generating skills support three modes:
+47 document-generating skills support three modes:
 - **CREATE**: Default — `/prd authentication`
 - **UPDATE**: When using "update", "revise", or providing a path
 - **FIND**: When using "find", "search", or "list"
@@ -84,12 +71,12 @@ When user mentions `@agent` or `@gateway`, **immediately invoke without asking**
 
 | Phase | Skills |
 |-------|--------|
-| **1. Foundation** | `/strategic-intent`, `/market-analysis`, `/competitive-landscape`, `/competitive-analysis`, `/vision-statement`, `/market-segment` |
+| **1. Foundation** | `/strategic-intent`, `/market-analysis`, `/competitive-landscape`, `/competitive-analysis`, `/vision-statement`, `/market-segment`, `/assumption-map`, `/opportunity-tree`, `/experiment-design` |
 | **2. Decisions** | `/business-case`, `/business-plan`, `/pricing-strategy`, `/pricing-model`, `/positioning-statement`, `/decision-record`, `/strategic-bet`, `/decision-charter`, `/escalation-rule` |
 | **3. Commitments** | `/product-roadmap`, `/roadmap-theme`, `/roadmap-item`, `/gtm-strategy`, `/gtm-brief`, `/launch-plan`, `/strategy-communication`, `/commitment-check`, `/prd`, `/prd-outline`, `/feature-spec`, `/user-story` |
 | **4. Execution** | `/campaign-brief`, `/sales-enablement`, `/launch-readiness`, `/stakeholder-brief` |
 | **5. Outcomes** | `/onboarding-playbook`, `/value-realization-report`, `/customer-health-scorecard` |
-| **6. Learning** | `/outcome-review`, `/retrospective`, `/decision-quality-audit`, `/relevant-learnings`, `/context-save`, `/feedback-capture` |
+| **6. Learning** | `/outcome-review`, `/retrospective`, `/decision-quality-audit`, `/relevant-learnings`, `/context-save`, `/feedback-capture`, `/compound` |
 | **Cross-Phase** | `/context-recall`, `/feedback-recall`, `/interaction-recall`, `/portfolio-status`, `/portfolio-tradeoff`, `/handoff`, `/qbr-deck`, `/maturity-check`, `/pm-level-check`, `/phase-check`, `/ownership-map`, `/customer-value-trace`, `/collaboration-check`, `/scale-check` |
 
 ---
@@ -97,13 +84,7 @@ When user mentions `@agent` or `@gateway`, **immediately invoke without asking**
 ## Skill Selection by Task Type
 
 **Strategic planning**: `/strategic-intent`, `/strategic-bet`, `/vision-statement`
-**Market understanding**: `/market-analysis`, `/competitive-landscape`, `/market-segment`
-**Commercial decisions**: `/business-case`, `/pricing-strategy`, `/decision-record`
-**Execution planning**: `/product-roadmap`, `/gtm-strategy`, `/launch-plan`
-**Requirements**: `/prd`, `/feature-spec`, `/user-story`
-**Go-to-market**: `/campaign-brief`, `/sales-enablement`, `/launch-readiness`
-**Customer success**: `/onboarding-playbook`, `/value-realization-report`
-**Learning**: `/outcome-review`, `/retrospective`, `/decision-quality-audit`
+**Learning**: `/outcome-review`, `/retrospective`, `/decision-quality-audit`, `/compound`
 
 **Before decisions**: `/context-recall`, `/feedback-recall`, `/customer-value-trace`
 **Before commitments**: `/commitment-check`, `/ownership-map`, `/phase-check`
