@@ -5,6 +5,18 @@ All notable changes to Product Org OS will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.1.0] - 2026-03-07
+
+### Added
+- **4 New Discovery & Learning Skills**
+  - `/assumption-map` (Phase 1) — Assumption mapping based on Itamar Gilad's framework. Identify, surface, score (impact × uncertainty), prioritize via 2×2 matrix, and plan validation.
+  - `/opportunity-tree` (Phase 1) — Opportunity solution tree based on Teresa Torres' Continuous Discovery Habits. Define outcomes, discover opportunities, structure tree, assess, generate solutions, design experiments.
+  - `/experiment-design` (Phase 1-2) — Experiment design based on Savoia's pretotyping. 8 experiment types (Fake Door, Concierge, Wizard of Oz, etc.), hypothesis-driven with guard rails.
+  - `/compound` (Phase 6) — Learning extraction and compounding. Extract insights from outcomes, root cause analysis, generalize into reusable principles, save to context layer.
+
+### Changed
+- **Skill Routing Updated** — `rules/skill-awareness.md` and `rules/v2v-flow.md` updated with new skills in Phase 1 and Phase 6 tables, routing keywords for discovery/validation, and task type mapping. Document-generating skill count: 43 → 47.
+
 ## [3.0.1] - 2026-02-13
 
 ### Changed
