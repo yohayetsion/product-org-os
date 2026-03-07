@@ -15,7 +15,7 @@ compatibility: Requires Product Org OS v3+ context layer and rules
 
 Convert a document into an **HTML Presentation** using reveal.js.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Cross-phase** - Presentations can be created from deliverables in any phase.
 

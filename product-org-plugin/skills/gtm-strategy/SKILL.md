@@ -56,7 +56,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Create a **comprehensive Go-to-Market (GTM) Strategy** for the specified product or feature.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 3: Strategic Commitments** - GTM strategy is a critical commitment that follows Phase 2 decisions.
 

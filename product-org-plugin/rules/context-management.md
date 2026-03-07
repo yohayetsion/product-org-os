@@ -77,7 +77,7 @@ Before `/commitment-check`:
 
 ### Pre-Work Checklists
 
-**For Decisions/Bets** — Before: `/context-recall`, `/feedback-recall`, identify V2V phase. After: verify customer value trace, stakeholder consultation, explicit assumptions.
+**For Decisions/Bets** — Before: `/context-recall`, `/feedback-recall`, identify Vision to Value phase. After: verify customer value trace, stakeholder consultation, explicit assumptions.
 
 **For Commitments** — Before: Phase 1-2 complete, single accountable owner. After: `/commitment-check`, `/ownership-map`.
 
@@ -126,6 +126,6 @@ Optional `product:` field for filtering. Single-product orgs ignore it. Use cons
 
 ---
 
-## V2V Operating Principle
+## Vision to Value Operating Principle
 
 > "Organizational memory is a competitive advantage. Document decisions not for bureaucracy, but for learning velocity."

@@ -46,7 +46,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Create a **Customer Onboarding Playbook** for the specified product or customer segment.
 
-## V2V Phase
+## Vision to Value Phase
 **Phase 5: Business & Customer Outcomes** - This skill ensures customers realize value.
 
 ## Output Structure

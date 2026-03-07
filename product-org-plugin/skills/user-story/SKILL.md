@@ -58,7 +58,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Write a **User Story** with acceptance criteria.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 3: Strategic Commitments** - User stories are the atomic unit of requirements commitment.
 

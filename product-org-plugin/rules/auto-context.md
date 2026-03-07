@@ -58,7 +58,7 @@ Topic matching uses these strategies:
 1. **Exact ID match**: If request mentions DR-2026-003, inject that record
 2. **Keyword match**: Match request keywords against `topicIndex` in index.json
 3. **Product match**: If multi-product org, filter by product context
-4. **Phase match**: Match V2V phase of the task to phase-indexed items
+4. **Phase match**: Match Vision to Value phase of the task to phase-indexed items
 
 ## Depth Control
 
@@ -73,6 +73,6 @@ Auto-context reads from but never writes to the context index. Writing happens t
 - `/feedback-capture` — explicit capture
 - Auto-registration of strategic documents (per `context-management.md`)
 
-## V2V Operating Principle
+## Vision to Value Operating Principle
 
 > "The best context system is invisible. Agents should work with organizational memory naturally, not through manual lookups."

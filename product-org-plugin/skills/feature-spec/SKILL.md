@@ -58,7 +58,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Create a **Feature Specification** for the specified feature.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 3: Strategic Commitments** - Feature specs detail requirements for implementation.
 

@@ -15,7 +15,7 @@ compatibility: Requires Product Org OS v3+ context layer and rules
 
 Recall relevant **past context** before making new decisions or starting strategic work.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Cross-phase** - This skill is used before work in any phase to surface relevant history.
 

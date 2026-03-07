@@ -49,7 +49,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Prioritization, Pricing Frameworks, Discovery Methods, Metrics Frameworks
   - Competitive Frameworks, GTM Playbooks, Stakeholder Management
   - User Research, Financial Modeling
-  - Three-layer architecture: V2V Process → Domain Knowledge → Agent Persona
+  - Three-layer architecture: Vision to Value Process → Domain Knowledge → Agent Persona
   - Knowledge Sources section added to 12 agent SKILL.md files
   - Knowledge pack catalog added to `rules/skill-awareness.md`
 
@@ -138,7 +138,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `rules/no-estimates.md` to avoid time predictions
 
 ### Changed
-- **All 13 agent personas enhanced** with full V2V template:
+- **All 13 agent personas enhanced** with full Vision to Value template:
   - Core Accountability, How I Think, RACI breakdown
   - Sub-agent spawning patterns (permissive: "Don't ask for permission")
   - Anti-patterns as redirects, not blocks
@@ -213,20 +213,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `/product` gateway as single entry point to the product organization
 - 5 principle validator skills: `/ownership-map`, `/customer-value-trace`, `/collaboration-check`, `/scale-check`, `/phase-check`
 - 4 new rules: `v2v-flow.md`, `principles-enforcement.md`, `parallel-execution.md`, `skill-awareness.md`
-- V2V phase reference mapping (`reference/v2v-skill-map.md`)
+- Vision to Value phase reference mapping (`reference/v2v-skill-map.md`)
 - Principles tracking folder with scorecard template
 
 ### Changed
 - All 13 agents now have full access to all 56 skills
-- 35 skills updated with V2V phase markers
+- 35 skills updated with Vision to Value phase markers
 - 4 skills enhanced with principle additions (`decision-record`, `outcome-review`, `strategic-bet`, `commitment-check`)
-- Context layer expanded with V2V phase tracking and principles tracking
+- Context layer expanded with Vision to Value phase tracking and principles tracking
 - Updated documentation with gateway, parallel execution, and principle validators
 
 ## [2.1.0] - 2026-01
 
 ### Added
-- V2V phase markers across all skills
+- Vision to Value phase markers across all skills
 - Principle additions to key skills
 - Parallel execution patterns
 
@@ -238,7 +238,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 13 role-based agents
 
 ### Changed
-- Skills reorganized by V2V phase
+- Skills reorganized by Vision to Value phase
 
 ## [1.0.0] - 2025-11
 

@@ -57,7 +57,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Create a **Customer Health Scorecard** for the specified customer or segment.
 
-## V2V Phase
+## Vision to Value Phase
 **Phase 5: Business & Customer Outcomes** - This skill tracks customer health indicators.
 
 ## Output Structure

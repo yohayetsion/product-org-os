@@ -13,7 +13,7 @@
 - **Status**: Proposed / Active / Validated / Invalidated / Pivoted
 - **Owner**: @[agent]
 - **Started**: [Date]
-- **Current V2V Phase**: Phase X ([Phase Name])
+- **Current Vision to Value Phase**: Phase X ([Phase Name])
 - **Phase Progress**: P1 ✓ | P2 ✓ | P3 ▶ | P4 — | P5 — | P6 —
 - **Next checkpoint**: [Date] ([Checkpoint type])
 - **Key assumptions at risk**: [A-NNN list]
@@ -21,7 +21,7 @@
 - **Notes**: [Current status notes]
 ```
 
-### V2V Phase Legend
+### Vision to Value Phase Legend
 - **P1**: Strategic Foundation (research, vision)
 - **P2**: Strategic Decisions (business case, pricing)
 - **P3**: Strategic Commitments (roadmap, GTM)
@@ -40,7 +40,7 @@
 | At Risk (Yellow/Red) | 0 |
 | Checkpoints This Month | 0 |
 
-## V2V Phase Distribution
+## Vision to Value Phase Distribution
 
 | Bet ID | Name | P1 | P2 | P3 | P4 | P5 | P6 | Status |
 |--------|------|----|----|----|----|----|----|--------|

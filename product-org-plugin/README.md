@@ -136,7 +136,7 @@ See time savings after every skill completion:
 - Session totals and historical tracking
 - View dashboard with `/roi-report`
 
-### V2V Framework
+### Vision to Value Framework
 Six phases from strategic intent to learning loop, with skills mapped to each phase
 
 ---

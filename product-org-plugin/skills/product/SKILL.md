@@ -30,7 +30,7 @@ Responses are shaped by **two independent dimensions**:
 
 | Level | Signals | Who Responds |
 |-------|---------|--------------|
-| **SINGLE** | Clear domain owner, tactical, single V2V phase | One agent directly |
+| **SINGLE** | Clear domain owner, tactical, single Vision to Value phase | One agent directly |
 | **PRIMARY+** | Spans 2 domains, needs input not debate | Lead agent + brief input from others |
 | **MULTI** | 3+ domains, strategic, cross-functional decision | Multiple agents, show perspectives |
 
@@ -83,7 +83,7 @@ Responses are shaped by **two independent dimensions**:
 
 Parse the incoming request to determine:
 
-#### V2V Phase Detection
+#### Vision to Value Phase Detection
 Which phase does this request primarily belong to?
 
 | Phase | Signals | Primary Owners |
@@ -110,7 +110,7 @@ Which phase does this request primarily belong to?
 #### Complexity Assessment
 
 **Route through @product-leadership-team when:**
-- Request spans multiple V2V phases
+- Request spans multiple Vision to Value phases
 - Request involves portfolio-level tradeoffs
 - Request is ambiguous about ownership
 - Request has significant strategic implications
@@ -255,9 +255,9 @@ If the request references existing initiatives:
 
 ---
 
-## Integration with V2V
+## Integration with Vision to Value
 
-This gateway embodies the V2V Operating Principles:
+This gateway embodies the Vision to Value Operating Principles:
 
 - **#1 End-to-End Ownership**: Clear accountability for every request
 - **#2 Decision Quality**: Structured analysis before action

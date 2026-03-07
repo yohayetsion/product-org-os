@@ -3,7 +3,7 @@ name: commitment-check
 description: |
   Validate commitment readiness before the point of no return on resources.
   Activate when: "are we ready to commit", "commitment check", "go/no-go", before locking resources, Phase 3 gate
-  Do NOT activate for: V2V phase assessment (/phase-check), launch readiness check (/launch-readiness), decision records (/decision-record)
+  Do NOT activate for: Vision to Value phase assessment (/phase-check), launch readiness check (/launch-readiness), decision records (/decision-record)
 argument-hint: [commitment or initiative name] or [update path/to/check.md]
 user-invocable: true
 metadata:
@@ -49,7 +49,7 @@ Validate that a **Commitment is Properly Hardened** before proceeding.
 ## Purpose
 The commitment check ensures decisions are thoroughly vetted before crossing the "point of no return" where reversal becomes costly.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 3: Strategic Commitments** - This is the "point of no return" gate. Once passed, resources are committed and reversal is expensive.
 
@@ -72,7 +72,7 @@ The commitment check ensures decisions are thoroughly vetted before crossing the
 **Timeline**: [Commitment duration]
 **Point of No Return**: [What happens after commitment]
 
-## V2V Phase Prerequisites
+## Vision to Value Phase Prerequisites
 
 ### Phase 1: Strategic Foundation ✅/⚠️/❌
 
@@ -100,7 +100,7 @@ The commitment check ensures decisions are thoroughly vetted before crossing the
 
 ## Ownership Chain (Principle #1)
 
-| V2V Phase | Accountable Owner | Status |
+| Vision to Value Phase | Accountable Owner | Status |
 |-----------|-------------------|--------|
 | Phase 1: Strategic Foundation | [Name] | ✅/⚠️/❌ |
 | Phase 2: Strategic Decisions | [Name] | ✅/⚠️/❌ |

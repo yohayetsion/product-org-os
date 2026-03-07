@@ -46,7 +46,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Structure an **Outcome Review** to capture learnings from an initiative.
 
-## V2V Phase
+## Vision to Value Phase
 **Phase 6: Learning & Adaptation Loop** - This skill drives continuous improvement.
 
 ## Output Structure

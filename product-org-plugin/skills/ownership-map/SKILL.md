@@ -1,7 +1,7 @@
 ---
 name: ownership-map
 description: |
-  Map the accountability chain for an initiative across V2V phases.
+  Map the accountability chain for an initiative across Vision to Value phases.
   Activate when: "who owns this", "ownership map", "accountability chain", end-to-end ownership, single accountable owner
   Do NOT activate for: RACI and collaboration validation (/collaboration-check), decision ownership charters (/decision-charter), stakeholder briefs (/stakeholder-brief)
 argument-hint: [initiative or deliverable] or [update path/to/map.md]
@@ -44,9 +44,9 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 ---
 
-Map **end-to-end ownership** for an initiative, validating accountability chains across all V2V phases.
+Map **end-to-end ownership** for an initiative, validating accountability chains across all Vision to Value phases.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Cross-phase** - This skill validates Principle #1 (End-to-End Ownership) at any phase transition, especially before Phase 3 commitments.
 
@@ -61,11 +61,11 @@ End-to-end ownership means a single person is accountable from strategic intent 
 
 **Date**: [Date]
 **Initiative**: [Brief description]
-**Current V2V Phase**: [Phase 1-6]
+**Current Vision to Value Phase**: [Phase 1-6]
 
 ## Ownership Chain
 
-| V2V Phase | Deliverable | Owner | Status |
+| Vision to Value Phase | Deliverable | Owner | Status |
 |-----------|-------------|-------|--------|
 | Phase 1: Strategic Foundation | Strategic Intent | [Name/Role] | [Complete/In Progress/Gap] |
 | Phase 1: Strategic Foundation | Market Analysis | [Name/Role] | [Complete/In Progress/Gap] |
@@ -139,7 +139,7 @@ End-to-end ownership means a single person is accountable from strategic intent 
 ## Instructions
 
 1. Ask what initiative or deliverable to map ownership for
-2. Identify the current V2V phase
+2. Identify the current Vision to Value phase
 3. Map owners for each phase's relevant deliverables
 4. Identify the single end-to-end accountable owner
 5. Document all handoff points

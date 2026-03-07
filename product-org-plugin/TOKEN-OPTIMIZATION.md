@@ -64,7 +64,7 @@
 #### 2a. PRINCIPLES.md (already existed)
 
 - Updated cross-references for deleted `principles-enforcement.md`
-- Canonical V2V Operating Principles: 8 principles with enforcement mapping
+- Canonical Vision to Value Operating Principles: 8 principles with enforcement mapping
 - Referenced by all 13 agents via `../PRINCIPLES.md`
 
 #### 2b. shared-agent-protocol.md (new, 2.5 KB)
@@ -94,7 +94,7 @@ For each agent, 4 edits applied:
 
 - Non-standard section order (Success Signals + Anti-Patterns after Sub-Agent Spawning)
 - Unique sections preserved: Mentorship Session Logging, Skills I Teach Through, Mode Selection, Level Awareness
-- `<!-- IDENTITY END -->` placed after Anti-Patterns (before V2V Phase Context)
+- `<!-- IDENTITY END -->` placed after Anti-Patterns (before Vision to Value Phase Context)
 
 #### 2d. Injection Template Verification
 
@@ -177,7 +177,7 @@ Extension Teams already had per-team PRINCIPLES.md files (design: 5.3 KB, archit
 - **49 KB removed** across 26 agents (~1.9 KB/agent average)
 - **104 compile markers** added (4 x 26)
 - **0 shared protocol sections** remaining
-- **All unique content preserved** (Delegation Patterns, Skills, V2V Phase Context, Knowledge Sources, Parallel Execution)
+- **All unique content preserved** (Delegation Patterns, Skills, Vision to Value Phase Context, Knowledge Sources, Parallel Execution)
 
 ---
 

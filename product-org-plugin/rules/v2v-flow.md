@@ -3,9 +3,9 @@ globs:
   - "**/*"
 ---
 
-# V2V Operating System Flow
+# Vision to Value Operating System Flow
 
-The Vision to Value (V2V) Operating System defines how product work flows from strategic intent to customer outcomes.
+The Vision to Value (Vision to Value) Operating System defines how product work flows from strategic intent to customer outcomes.
 
 **Flow**: Phase 1 → 2 → 3 → 4 → 5 → 6 → (feeds back to Phase 1)
 
@@ -61,6 +61,6 @@ Documents evolve across phases. Skills support **Create/Update/Find** modes:
 
 ---
 
-## V2V Operating Principle
+## Vision to Value Operating Principle
 
-> "The V2V flow is not bureaucracy - it's a thinking framework that ensures we do the right things in the right order. Skip phases at your peril."
+> "The Vision to Value flow is not bureaucracy - it's a thinking framework that ensures we do the right things in the right order. Skip phases at your peril."

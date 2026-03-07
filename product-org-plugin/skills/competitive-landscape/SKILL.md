@@ -57,7 +57,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Create a **comprehensive Competitive Landscape Analysis** for the specified market or product area.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 1: Strategic Foundation** - Competitive understanding is essential before making strategic bets.
 

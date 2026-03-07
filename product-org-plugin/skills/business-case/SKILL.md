@@ -57,7 +57,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Create a **comprehensive Business Case** for the specified initiative or investment.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 2: Strategic Decisions** - Business cases are the commercial filter that determines whether to proceed.
 

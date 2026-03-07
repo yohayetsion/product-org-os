@@ -15,9 +15,9 @@ compatibility: Requires Product Org OS v3+ context layer and rules
 
 Initialize the **Product Org Plugin** for first-time use. This creates the context folder structure and all necessary index files in your current working directory.
 
-## V2V Phase
+## Vision to Value Phase
 
-**Cross-phase** - Setup is a prerequisite for all V2V work. Run once per project.
+**Cross-phase** - Setup is a prerequisite for all Vision to Value work. Run once per project.
 
 **Prerequisites**: None (this is the starting point)
 **Outputs used by**: All skills that use the context layer
@@ -389,7 +389,7 @@ The Document Registry tracks all strategic documents created by skills. This ena
 
 ## All Documents
 
-| ID | Type | Title | Path | Status | V2V Phase | Related | Updated |
+| ID | Type | Title | Path | Status | Vision to Value Phase | Related | Updated |
 |----|------|-------|------|--------|-----------|---------|---------|
 | — | No documents registered yet | — | — | — | — | — | — |
 

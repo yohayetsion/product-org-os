@@ -5,7 +5,7 @@
 **Date**: 2025-12-01
 **Owner**: Product Manager
 **Status**: In Development
-**V2V Phase**: Phase 3
+**Vision to Value Phase**: Phase 3
 
 ---
 

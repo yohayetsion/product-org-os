@@ -14,7 +14,7 @@ This registry automatically tracks all strategic documents created by skills. Do
 
 ## Document Types
 
-| Type | Skills That Generate | V2V Phase |
+| Type | Skills That Generate | Vision to Value Phase |
 |------|---------------------|-----------|
 | **Strategic Foundation** | | Phase 1 |
 | Strategic Intent | `/strategic-intent` | 1 |
@@ -59,7 +59,7 @@ This registry automatically tracks all strategic documents created by skills. Do
 ### By Type
 *Auto-populated from skill outputs*
 
-### By V2V Phase
+### By Vision to Value Phase
 - **Phase 1**: Strategic foundation documents
 - **Phase 2**: Strategic decision documents
 - **Phase 3**: Commitment documents (roadmaps, PRDs, GTM)

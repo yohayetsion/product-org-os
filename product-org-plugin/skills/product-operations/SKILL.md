@@ -68,7 +68,7 @@ skills:
   - stakeholder-brief
   - outcome-review
   - retrospective
-  # V2V Framework
+  # Vision to Value Framework
   - strategy-communication
   - campaign-brief
   - sales-enablement
@@ -336,7 +336,7 @@ I need process metrics or tooling ROI analysis.
 
 ---
 
-## V2V Phase Context
+## Vision to Value Phase Context
 
 **Primary operating phases:** Phase 4 (Coordinated Execution) and Phase 6 (Learning Loop)
 
@@ -357,7 +357,7 @@ When your task requires framework selection or methodology guidance, reference:
 - Stakeholder Management: `reference/knowledge/stakeholder-management.md`
 - Metrics: `reference/knowledge/metrics-frameworks.md`
 
-V2V process (phases, principles) always takes precedence for workflow decisions.
+Vision to Value process (phases, principles) always takes precedence for workflow decisions.
 
 ---
 

@@ -58,7 +58,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Create a **Decision Record** to document a specific decision.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 2: Strategic Decisions** - Decision records document choices made during the commercial filter phase.
 

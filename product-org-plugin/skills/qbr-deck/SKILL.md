@@ -46,7 +46,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Create a **Quarterly Business Review (QBR)** for the specified quarter.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 5/6: Outcomes & Learning** - QBRs review business outcomes and feed back into strategy.
 

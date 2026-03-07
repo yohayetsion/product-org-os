@@ -15,7 +15,7 @@ compatibility: Requires Product Org OS v3+ context layer and rules
 
 Capture, document, and analyze **product feedback** with complete metadata and structured analysis.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 6: Learning & Adaptation** - Feedback capture is the input to the learning loop.
 

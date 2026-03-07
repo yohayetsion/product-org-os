@@ -15,7 +15,7 @@ compatibility: Requires Product Org OS v3+ context layer and rules
 
 Save a **decision record**, **strategic bet**, or **learning** to the persistent context registry.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 6: Learning & Adaptation** - This skill persists organizational knowledge for future use.
 

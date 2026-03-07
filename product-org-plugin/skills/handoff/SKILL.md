@@ -15,7 +15,7 @@ compatibility: Requires Product Org OS v3+ context layer and rules
 
 Capture and transfer **session context** when delegating work from one agent to another.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Cross-phase** - Handoffs enable delegation between agents at any phase.
 

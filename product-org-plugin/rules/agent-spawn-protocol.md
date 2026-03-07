@@ -286,6 +286,6 @@ Log when agents/gateways/skills produce deliverables. Skip simple Q&A, context r
 
 ---
 
-## V2V Operating Principle
+## Vision to Value Operating Principle
 
 > "Agents without identity are just text generators. Identity creates accountability, trust, and the feeling of working with a real product organization."

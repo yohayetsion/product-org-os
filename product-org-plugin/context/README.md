@@ -17,7 +17,7 @@ context/
 ├── assumptions/        # Assumption tracker
 │   └── registry.md     # All assumptions with validation status
 ├── portfolio/          # Current state
-│   └── active-bets.md  # What we're currently betting on (includes V2V phase tracking)
+│   └── active-bets.md  # What we're currently betting on (includes Vision to Value phase tracking)
 ├── learnings/          # Accumulated wisdom
 │   └── index.md        # Indexed learnings from retrospectives
 ├── feedback/           # Customer and market feedback
@@ -58,7 +58,7 @@ context/
 /relevant-learnings [topic]
 ```
 
-### Check initiative V2V phase
+### Check initiative Vision to Value phase
 ```
 /phase-check [initiative]
 ```
@@ -78,9 +78,9 @@ context/
 /feedback-recall [topic]
 ```
 
-## V2V Phase Tracking
+## Vision to Value Phase Tracking
 
-The portfolio tracks initiatives by V2V phase:
+The portfolio tracks initiatives by Vision to Value phase:
 
 | Phase | Name | Key Activities |
 |-------|------|----------------|
@@ -135,7 +135,7 @@ When agents create deliverables, relevant context is automatically injected base
 Context entries link to each other. When you recall a decision, you also see related bets, feedback, and learnings. See `rules/context-graph.md`.
 
 ### Structured Indexes
-The context index (`index.json`) supports multi-dimensional queries: by topic, product, V2V phase, status, source, and sentiment. This enables faster and more precise context retrieval.
+The context index (`index.json`) supports multi-dimensional queries: by topic, product, Vision to Value phase, status, source, and sentiment. This enables faster and more precise context retrieval.
 
 ## Maintenance
 

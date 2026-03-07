@@ -57,7 +57,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Create a **Positioning Statement** for the specified product.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 2: Strategic Decisions** - Positioning defines how we compete and is foundational to GTM.
 

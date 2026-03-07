@@ -4,7 +4,7 @@ This folder tracks adherence to the **8 Operating Principles** over time.
 
 ## Purpose
 
-The principles are not just guidelines—they're functional guardrails embedded into the V2V Operating System. This context layer helps track how well the organization is applying them.
+The principles are not just guidelines—they're functional guardrails embedded into the Vision to Value Operating System. This context layer helps track how well the organization is applying them.
 
 ## The 8 Operating Principles
 
@@ -47,7 +47,7 @@ Before finalizing major decisions:
 ### Update Scorecard
 After outcome reviews or retrospectives, update the scorecard to reflect learnings about principle adherence.
 
-## Connection to V2V Flow
+## Connection to Vision to Value Flow
 
 Principles are embedded at key transition points:
 
