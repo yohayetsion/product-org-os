@@ -4,7 +4,7 @@
 
 > Intent → Decisions → Commitments → Execution → Outcomes → Learning
 
-13 agents • 61 skills • 5 gateways • 9 knowledge packs • MCP integrations • Context layer
+13 agents • 65 skills • 2 gateways • 9 knowledge packs • MCP integrations • Context layer
 
 [**View the Interactive Presentation →**](https://yohayetsion.github.io/product-org-os)
 
@@ -102,10 +102,10 @@ Combine agents and skills naturally.
 ### 13 Role-Based Agents
 CPO, VP Product, Director PM, Director PMM, Product Manager, PMM, Product Mentor, BizOps, BizDev, Competitive Intelligence, Product Operations, Value Realization, UX Lead
 
-### 5 Gateways
-Product, Product Leadership Team, Design, Architecture, Marketing — route to relevant agents automatically
+### 2 Gateways
+Product and Product Leadership Team — route to relevant agents automatically
 
-### 61 Skills
+### 65 Skills
 PRDs, roadmaps, business cases, GTM strategies, pricing models, launch plans, QBR decks, competitive analyses, decision records, ROI tracking, and more
 
 ### 9 Knowledge Packs
