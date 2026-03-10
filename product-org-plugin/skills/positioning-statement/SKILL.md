@@ -64,6 +64,38 @@ Create a **Positioning Statement** for the specified product.
 **Prerequisites**: Phase 1 complete (competitive analysis, market segment, vision)
 **Outputs used by**: Phase 3 (GTM strategy, messaging), Phase 4 (campaigns, sales enablement)
 
+## Methodology
+
+<!-- Source: April Dunford, "Obviously Awesome" (2019)
+     Dunford's 5-step positioning process: Competitive Alternatives → Unique Attributes →
+     Value → Target Customer Characteristics → Market Category.
+     Key insight: positioning is NOT messaging — it's the strategic context that makes
+     messaging obvious. Start from what customers would use if you didn't exist. -->
+
+This skill follows **April Dunford's positioning methodology** from *Obviously Awesome*. The process works **inside-out**: start with competitive alternatives (what customers would do without you), derive unique attributes, map to customer value, identify who cares most, then choose the market category that makes your value obvious.
+
+### Dunford's 5-Step Process
+
+| Step | Question | Output |
+|------|----------|--------|
+| 1. Competitive Alternatives | What would customers use if we didn't exist? | List of real alternatives (including "do nothing") |
+| 2. Unique Attributes | What do we have that alternatives lack? | Defensible capabilities, features, or properties |
+| 3. Value | What value do those attributes enable? | Customer outcomes tied to unique attributes |
+| 4. Target Customer Characteristics | Who cares most about that value? | Characteristics of best-fit customers |
+| 5. Market Category | What context makes our value obvious? | Category name + positioning strategy |
+
+### Category Strategy Decision
+
+<!-- Source: April Dunford, "Obviously Awesome" ch. 10-12
+     Three positioning strategies: Head-to-Head (win in existing category),
+     Big Fish Small Pond (dominate a subsegment), Create New Category (reframe the market). -->
+
+| Strategy | When to Use | Risk |
+|----------|-------------|------|
+| **Head-to-Head** | Strong in existing category, clear differentiator | Must beat incumbents on their turf |
+| **Big Fish, Small Pond** | Can dominate a subsegment before expanding | Market may be too small |
+| **Create New Category** | Truly novel, no existing category fits | Must educate market (expensive, slow) |
+
 ## Output Structure
 
 ```markdown
@@ -73,15 +105,52 @@ Create a **Positioning Statement** for the specified product.
 **Owner**: [Name]
 **Date**: [Date]
 
+## Positioning Canvas
+<!-- Source: Derived from April Dunford's "Obviously Awesome" 5-step process -->
+
+### Step 1: Competitive Alternatives
+What would our best customers use if we didn't exist?
+| Alternative | Type | Why customers use it |
+|-------------|------|---------------------|
+| [Alt 1] | Direct / Indirect / Status quo | [Reason] |
+| [Alt 2] | Direct / Indirect / Status quo | [Reason] |
+
+### Step 2: Unique Attributes
+What do we have that none of the alternatives have?
+| Attribute | Which alternatives lack it | Defensible? |
+|-----------|---------------------------|-------------|
+| [Attr 1] | [Which] | Yes/No + why |
+| [Attr 2] | [Which] | Yes/No + why |
+
+### Step 3: Value
+What value do those attributes enable for customers?
+| Attribute | Enabled Value | Evidence |
+|-----------|--------------|----------|
+| [Attr 1] | [Customer outcome] | [Proof] |
+| [Attr 2] | [Customer outcome] | [Proof] |
+
+### Step 4: Target Customer Characteristics
+Who cares most about the value we deliver?
+| Characteristic | Why it matters |
+|---------------|----------------|
+| [Char 1] | [They care because...] |
+| [Char 2] | [They care because...] |
+
+### Step 5: Market Category
+What category context makes our value obvious?
+**Category**: [Category name]
+**Strategy**: Head-to-Head / Big Fish Small Pond / Create New Category
+**Rationale**: [Why this category and strategy]
+
 ## Positioning Statement
 
-**For** [target customer segment]
+**For** [target customer segment — from Step 4]
 **Who** [statement of need or opportunity]
 **The** [product name]
-**Is a** [product category]
-**That** [key benefit / reason to buy]
-**Unlike** [primary competitive alternative]
-**Our product** [primary point of differentiation]
+**Is a** [product category — from Step 5]
+**That** [key benefit / reason to buy — from Step 3]
+**Unlike** [primary competitive alternative — from Step 1]
+**Our product** [primary point of differentiation — from Step 2]
 
 ## Expanded Positioning
 
@@ -89,33 +158,35 @@ Create a **Positioning Statement** for the specified product.
 **Who they are**: [Description]
 **What they do**: [Role/function]
 **What they care about**: [Priorities]
+**Best-fit characteristics**: [From Step 4 — what makes someone an ideal customer]
 
 ### Need / Opportunity
 **The problem**: [What problem they face]
-**Current solutions**: [How they solve it today]
-**Gap**: [What's missing]
+**Current solutions**: [How they solve it today — from Step 1]
+**Gap**: [What's missing — links to Step 2]
 
 ### Category
-**Category we play in**: [Category name]
-**Why this category**: [Rationale]
-**Category alternatives**: [Other categories considered]
+**Category we play in**: [Category name — from Step 5]
+**Category strategy**: [Head-to-Head / Big Fish Small Pond / Create New Category]
+**Why this category**: [Rationale — why this context makes value obvious]
+**Category alternatives considered**: [Other categories and why rejected]
 
 ### Key Benefit
-**Primary benefit**: [Main benefit]
+**Primary benefit**: [Main benefit — from Step 3]
 **Benefit proof**: [Evidence]
-**Benefit to whom**: [Which persona cares most]
+**Benefit to whom**: [Which persona cares most — from Step 4]
 
 ### Differentiation
-**Primary differentiator**: [What makes us different]
+**Primary differentiator**: [From Step 2]
 **Defensibility**: [Why hard to copy]
 **Evidence**: [Proof of differentiation]
 
 ## Positioning vs. Competitors
 
-| Competitor | Their Position | Our Position Against Them |
-|------------|----------------|---------------------------|
-| [Competitor 1] | [Their positioning] | [How we differ] |
-| [Competitor 2] | [Their positioning] | [How we differ] |
+| Competitor | Their Position | Our Unique Attributes vs. Them | Our Value vs. Them |
+|------------|----------------|-------------------------------|-------------------|
+| [Competitor 1] | [Their positioning] | [What we have they don't] | [Value we enable they can't] |
+| [Competitor 2] | [Their positioning] | [What we have they don't] | [Value we enable they can't] |
 
 ## Positioning Perceptual Map
 
@@ -129,32 +200,37 @@ Create a **Positioning Statement** for the specified product.
 
 **Tagline**: [Short memorable phrase]
 **Elevator Pitch** (30 seconds): [Brief pitch]
-**Key Messages**:
-1. [Message 1]
-2. [Message 2]
-3. [Message 3]
+**Key Messages** (each tied to a unique attribute → value pair):
+1. [Message 1] ← [Attribute → Value link]
+2. [Message 2] ← [Attribute → Value link]
+3. [Message 3] ← [Attribute → Value link]
 
 ## Proof Points
 
-| Claim | Proof |
-|-------|-------|
-| [Claim 1] | [Evidence] |
-| [Claim 2] | [Evidence] |
-| [Claim 3] | [Evidence] |
+| Claim | Proof | Source |
+|-------|-------|--------|
+| [Claim 1] | [Evidence] | [Customer quote / data / case study] |
+| [Claim 2] | [Evidence] | [Customer quote / data / case study] |
+| [Claim 3] | [Evidence] | [Customer quote / data / case study] |
 
 ## Positioning by Audience
 
-| Audience | Emphasis | Key Message |
-|----------|----------|-------------|
-| [Buyer] | [What to emphasize] | [Message] |
-| [User] | [What to emphasize] | [Message] |
-| [Influencer] | [What to emphasize] | [Message] |
+| Audience | Emphasis | Key Message | Unique Attributes to Lead With |
+|----------|----------|-------------|-------------------------------|
+| [Buyer] | [What to emphasize] | [Message] | [Which attributes] |
+| [User] | [What to emphasize] | [Message] | [Which attributes] |
+| [Influencer] | [What to emphasize] | [Message] | [Which attributes] |
 ```
 
 ## Instructions
 
-1. Ask about target customer and competitors if not clear
-2. Reference any competitive or market documents via @file syntax
-3. Ensure differentiation is defensible
-4. Include proof points for claims
-5. Save in positioning/ or gtm/ folder
+1. **Start with Competitive Alternatives** (Step 1) — ask "What would your customers do if you didn't exist?" if not clear
+<!-- Source: Dunford principle — positioning starts from the customer's real alternatives, not your features -->
+2. Work through Steps 2-5 in order — each step feeds the next
+3. Reference any competitive or market documents via @file syntax
+4. Ensure unique attributes (Step 2) are genuinely defensible
+5. Verify value claims (Step 3) have evidence, not assumptions
+6. Choose category strategy (Step 5) deliberately — don't default to "create new category"
+<!-- Source: Dunford warns most startups default to category creation when they shouldn't —
+     it's the hardest and most expensive strategy -->
+7. Save in positioning/ or gtm/ folder
