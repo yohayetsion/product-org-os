@@ -4,7 +4,7 @@ This plugin provides AI-powered product organization capabilities based on the *
 
 > For Claude Code and Agent Skills-compatible tools (Cursor, Copilot, Gemini CLI, Windsurf)
 
-> **Context tracking**: See [`AGENT-INTEGRATION.md`](./AGENT-INTEGRATION.md) for automatic post-agent tracking (ROI, interactions, documents) and pre-agent context injection setup.
+> **Start here**: [`agent-guide.md`](./agent-guide.md) — complete system overview for any coding agent. For context tracking setup specifically, see [`AGENT-INTEGRATION.md`](./AGENT-INTEGRATION.md).
 
 ## Quick Start
 
