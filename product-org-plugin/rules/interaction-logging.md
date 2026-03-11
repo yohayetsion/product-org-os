@@ -45,15 +45,15 @@ Before logging, ask: **"Did an agent do meaningful work that should be remembere
 
 ---
 
-## Implementation Details
+## Implementation
 
-**For full logging implementation (entry format, JSON index, session summary, storage structure), see `agent-spawn-protocol.md` Section 12.**
+Interaction logging is handled automatically by `hooks/os-tracker.py`. When hooks are configured (Claude Code PostToolUse), logging happens without manual action. For manual setups, see `AGENT-INTEGRATION.md`.
 
 Key points:
-- Entry ID format: `IX-YYYY-NNNNN` (5-digit zero-padded)
-- Storage: `context/interactions/YYYY/YYYY-MM-DD.md`
-- Index: `context/interactions/index.json`
-- Session: `context/interactions/current-session.md`
+- Entry ID format: `IX-YYYY-NNNNN` (content-hash based)
+- Storage: `context/interactions/YYYY/YYYY-MM-DD.md` (append-only)
+- Session: `context/interactions/current-session.md` (running summary)
+- JSON indexes: rebuilt from markdown source via `--diagnose --repair`
 
 ---
 
