@@ -1,32 +1,8 @@
-# Strategic Bet Registry
+# Bets Index
 
-*Last updated: —*
+*Rebuilt: 2026-03-11 13:20*
 
-## All Strategic Bets
-
-| ID | Title | Date | Owner | Status | Key Assumption |
-|----|-------|------|-------|--------|----------------|
-| — | No bets recorded yet | — | — | — | — |
-
-## Quick Filters
-
-### By Status
-- **Active**: —
-- **Proposed**: —
-- **Validated**: —
-- **Invalidated**: —
-- **Pivoted**: —
-
-### By Owner
-*Owners will appear here as bets are added*
-
-## Upcoming Checkpoints
-*Re-decision checkpoints will appear here*
-
----
-
-## How to Add Bets
-
-After creating a strategic bet with `/strategic-bet`, run `/context-save` to add it to this registry.
-
-Each bet should be saved to `context/bets/[YYYY]/SB-[YYYY]-[NNN].md`
+| ID | Title | Status | Date | File |
+|-----|-------|--------|------|------|
+| SB-2026-005 | Legionis as Central User Hub |  |  | SB-2026-005.md |
+| SB-2026-006 | AXIA IRM Judgment Layer |  |  | SB-2026-006.md |

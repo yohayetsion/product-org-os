@@ -4,7 +4,7 @@ description: |
   Product Leadership Team (PLT) - multi-stakeholder meeting mode for portfolio tradeoffs, cross-functional decisions, and strategic alignment.
   Activate when: @plt, /product-leadership-team, "portfolio tradeoff", "leadership team decision", "cross-functional alignment", "go/no-go", "stop or continue", "strategic pivot", "resource allocation"
   Do NOT activate for: single-domain questions (route to the specific agent instead), individual feature specs (@pm), routine status updates, simple lookups
-model: sonnet
+model: opus
 allowed-tools:
   - Read
   - Write

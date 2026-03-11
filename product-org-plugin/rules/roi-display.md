@@ -33,7 +33,7 @@ Always reference product work, never coding/development.
 
 ## Session Tracking
 
-Log to `context/roi/session-log.md`. At session end, update `context/roi/history/[YYYY-MM].md` for `/roi-report`.
+ROI logging is handled automatically by `hooks/os-tracker.py`. When hooks are configured (Claude Code PostToolUse), tracking happens without manual action. For manual setups, see `AGENT-INTEGRATION.md`.
 
 For multi-agent ROI aggregation, see `agent-spawn-protocol.md` Section 3.
 

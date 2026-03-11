@@ -4,7 +4,7 @@ description: |
   Director of Product Marketing (shortcut for /director-product-marketing) - GTM strategy, positioning, competitive response, and launch strategy.
   Activate when: /pmm-dir, @pmm-dir, "GTM strategy", "positioning", "competitive response", "launch strategy", "market segmentation", "sales motion"
   Do NOT activate for: individual campaign execution (@pmm), pricing strategy (@vp-product), business case financials (@bizops), partnerships (@bizdev)
-model: sonnet
+model: opus
 alias: director-product-marketing
 user-invocable: true
 metadata:
