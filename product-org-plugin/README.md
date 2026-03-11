@@ -4,7 +4,7 @@
 
 > Intent → Decisions → Commitments → Execution → Outcomes → Learning
 
-13 agents • 65 skills • 2 gateways • 9 knowledge packs • MCP integrations • Context layer
+13 agents • 103 skills • 2 gateways • 9 knowledge packs • Automatic context tracking • MCP integrations
 
 [**View the Interactive Presentation →**](https://yohayetsion.github.io/product-org-os)
 
@@ -105,8 +105,8 @@ CPO, VP Product, Director PM, Director PMM, Product Manager, PMM, Product Mentor
 ### 2 Gateways
 Product and Product Leadership Team — route to relevant agents automatically
 
-### 65 Skills
-PRDs, roadmaps, business cases, GTM strategies, pricing models, launch plans, QBR decks, competitive analyses, decision records, ROI tracking, and more
+### 103 Skills
+PRDs, roadmaps, business cases, GTM strategies, pricing models, launch plans, QBR decks, competitive analyses, decision records, ROI tracking, Porter's Five Forces, Blue Ocean Strategy, SWOT, PESTLE, Business Model Canvas, Lean Canvas, and more
 
 ### 9 Knowledge Packs
 Prioritization, Pricing, Discovery, Metrics, Competitive, GTM, Stakeholder Management, User Research, Financial Modeling
@@ -141,22 +141,62 @@ Six phases from strategic intent to learning loop, with skills mapped to each ph
 
 ---
 
-## What's New in v3
+## What's New in v3.2
+
+### 103 Skills — 21 New Strategy Frameworks
+The frameworks product leaders reach for daily, now built in with full source attribution:
+
+| Skill | Framework | Creator |
+|-------|-----------|---------|
+| `/porter-five-forces` | Five Forces | Michael Porter (HBR, 1979) |
+| `/blue-ocean` | Blue Ocean Strategy | W. Chan Kim & Renée Mauborgne (2005) |
+| `/swot-analysis` | SWOT | Albert Humphrey (Stanford Research Institute, 1960s) |
+| `/pestle-analysis` | PESTLE | Francis Aguilar (Harvard, 1967) |
+| `/business-model-canvas` | Business Model Canvas | Alexander Osterwalder & Yves Pigneur (2010) |
+| `/lean-canvas` | Lean Canvas | Ash Maurya (2012) |
+| `/ansoff-matrix` | Ansoff Growth Matrix | H. Igor Ansoff (HBR, 1957) |
+| `/bcg-matrix` | Growth-Share Matrix | Bruce Henderson / BCG (1970) |
+| `/dhm-analysis` | DHM Model | Gibson Biddle (Netflix/Chegg) |
+| `/four-risks-check` | Four Big Risks | Marty Cagan / SVPG (2017) |
+| `/growth-model` | Growth Loops + Racecar | Brian Balfour / Reforge (2018) |
+| `/prioritize-features` | RICE, Kano, MoSCoW, WSJF | Intercom, Noriaki Kano, Dai Clegg |
+| `/bias-check` | Cognitive Biases | Daniel Kahneman (2011), Chip & Dan Heath (2013) |
+| `/press-release-faq` | Working Backwards / PRFAQ | Jeff Bezos / Amazon (~2004) |
+| `/pretotype` | Pretotyping | Alberto Savoia (Google, 2019) |
+| `/north-star-metric` | North Star Framework | Sean Ellis / Amplitude (2017) |
+| `/product-teardown` | Product Teardown | PM community practice |
+| `/stakeholder-map` | Power/Interest Matrix | Aubrey Mendelow (1991) |
+| `/interview-synthesis` | Thematic Analysis | Braun & Clarke (2006), Teresa Torres (2021) |
+| `/customer-journey-map` | Journey Mapping | Adaptive Path (2007) |
+| `/competitive-battlecard` | Battlecards | Klue, Crayon (B2B standard) |
+
+### Automatic Context Tracking
+Agents now remember everything automatically — decisions, deliverables, ROI, conventions. Before spawning an agent, the system surfaces related past decisions and feedback. No manual steps needed.
+
+- `hooks/os-tracker.py` — standalone CLI, zero dependencies
+- Claude Code hooks for automatic triggering
+- Self-diagnosis + repair when indexes drift
+- See `AGENT-INTEGRATION.md` for Cursor, Windsurf, Copilot integration
+
+### Organizational Conventions
+Define how your org works once — naming conventions, prioritization frameworks, fiscal calendar — and every agent respects it across every session. Saved in `context/preferences/conventions.md`.
+
+### Strategic Asset Map
+`/vision-to-value-document-map` shows exactly where your product strategy has coverage and where it has gaps, across all six Vision to Value phases.
+
+## What's in v3.0
 
 ### MCP Integrations
-Agents auto-detect connected tools (Jira, Slack, Analytics) and use them when available. No MCP? They fall back gracefully to text output with manual action notes. Setup templates in `integrations/`.
+Agents auto-detect connected tools (Jira, Slack, Analytics) and use them when available. No MCP? They fall back gracefully to text output with manual action notes.
 
 ### 9 Domain Knowledge Packs
-Professional PM frameworks that agents reference when producing deliverables. Covers prioritization (RICE, Kano, MoSCoW), pricing (value-based, freemium, Van Westendorp), competitive analysis (Porter's, SWOT, battlecards), and 6 more domains. See `reference/knowledge/`.
-
-### Enhanced Context Layer
-Auto-context injection eliminates manual `/context-recall` for common patterns. Cross-reference graph connects decisions, bets, feedback, and learnings. Structured JSON indexes for fast multi-dimensional queries.
+Professional PM frameworks that agents reference when producing deliverables. Covers prioritization, pricing, competitive analysis, and 6 more domains.
 
 ### Agent Delegation Patterns
-Four structured collaboration patterns: Consultation (quick input), Delegation (transfer ownership), Review (quality validation), and Structured Debate (opposing perspectives for decision-making).
+Four structured collaboration patterns: Consultation, Delegation, Review, and Structured Debate.
 
 ### Cross-Platform via Agent Skills Standard
-Plugin uses `allowed-tools:` and `user-invocable:` frontmatter per the Agent Skills open standard. Works in Claude Code, Cursor, Copilot, Gemini CLI, and expanding.
+Works in Claude Code, Cursor, Copilot, Gemini CLI, and expanding.
 
 ---
 
