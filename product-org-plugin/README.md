@@ -25,7 +25,7 @@ claude plugins install github:yohayetsion/product-org-os
 
 > **Cross-platform**: Also compatible with Cursor, GitHub Copilot, Gemini CLI, and other [Agent Skills](https://github.com/anthropics/agent-skills)-standard tools.
 
-> **Coding agents**: Read [`AGENT-INTEGRATION.md`](./AGENT-INTEGRATION.md) for automatic context tracking setup — hooks, CLI usage, and platform-specific wiring.
+> **New here?** Read [`agent-guide.md`](./agent-guide.md) — a complete top-to-bottom guide for any coding agent to understand, install, and operate the system.
 
 ---
 
@@ -178,7 +178,7 @@ Agents now remember everything automatically — decisions, deliverables, ROI, c
 - `hooks/os-tracker.py` — standalone CLI, zero dependencies
 - Claude Code hooks for automatic triggering
 - Self-diagnosis + repair when indexes drift
-- See `AGENT-INTEGRATION.md` for Cursor, Windsurf, Copilot integration
+- See [`agent-guide.md`](./agent-guide.md) for full setup across all platforms
 
 ### Organizational Conventions
 Define how your org works once — naming conventions, prioritization frameworks, fiscal calendar — and every agent respects it across every session. Saved in `context/preferences/conventions.md`.
@@ -214,8 +214,10 @@ Works in Claude Code, Cursor, Copilot, Gemini CLI, and expanding.
 
 ## Documentation
 
+- [**Agent Guide**](./agent-guide.md) - Start here — complete system overview for any coding agent
 - [Interactive Presentation](https://yohayetsion.github.io/product-org-os) - Visual overview
 - [Full Documentation](./PRODUCT-ORG-CLAUDE.md) - Complete skill reference
+- [Context Tracking Setup](./AGENT-INTEGRATION.md) - Hooks, CLI, platform wiring
 
 ---
 
