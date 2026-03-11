@@ -25,6 +25,8 @@ claude plugins install github:yohayetsion/product-org-os
 
 > **Cross-platform**: Also compatible with Cursor, GitHub Copilot, Gemini CLI, and other [Agent Skills](https://github.com/anthropics/agent-skills)-standard tools.
 
+> **Coding agents**: Read [`AGENT-INTEGRATION.md`](./AGENT-INTEGRATION.md) for automatic context tracking setup — hooks, CLI usage, and platform-specific wiring.
+
 ---
 
 ## Two Invocation Patterns
