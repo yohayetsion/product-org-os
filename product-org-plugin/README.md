@@ -4,7 +4,7 @@
 
 > Intent → Decisions → Commitments → Execution → Outcomes → Learning
 
-13 agents • 103 skills • 2 gateways • 9 knowledge packs • Automatic context tracking • MCP integrations
+13 agents • 103 skills • 2 gateways • 9 knowledge packs • Typed skill relationships • Automatic context tracking • MCP integrations
 
 [**View the Interactive Presentation →**](https://yohayetsion.github.io/product-org-os)
 
@@ -144,6 +144,9 @@ Six phases from strategic intent to learning loop, with skills mapped to each ph
 ---
 
 ## What's New in v3.2
+
+### Typed Skill Relationships
+Agents now have structured awareness of their toolkit. Each agent declares `primary-skills` (what it owns), `supporting-skills` (what extends it), `validator-skills` (quality gates before commitments), and `knowledge-packs` (domain depth on demand). Agents don't guess which tool to use — they know.
 
 ### 103 Skills — 21 New Strategy Frameworks
 The frameworks product leaders reach for daily, now built in with full source attribution:
