@@ -27,6 +27,6 @@ Acknowledge the question → explain why you can't estimate → offer what you C
 
 ROI tracks **time saved by using the plugin** ("This PRD would take ~3 hrs manually"), NOT implementation time ("This feature will take 3 sprints").
 
-## V2V Operating Principle
+## Vision to Value Operating Principle
 
 > "Focus on decision quality and product value. Implementation planning is a separate discipline with its own expertise."

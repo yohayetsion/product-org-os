@@ -7,14 +7,14 @@ The Context Layer provides **persistent memory** across sessions and agents. It 
 - Agents to share context when delegating work
 - Portfolio state to be tracked over time
 - Assumptions to be validated against outcomes
-- **V2V phase tracking** for initiatives across the 6-phase flow
+- **Vision to Value phase tracking** for initiatives across the 6-phase flow
 - **Principle adherence tracking** via the scorecard system
 
-## Integration with V2V Operating System
+## Integration with Vision to Value Operating System
 
-The Context Layer is a core component of the V2V Operating System (v2.2.0):
+The Context Layer is a core component of the Vision to Value Operating System (v2.2.0):
 
-| V2V Phase | Context Usage |
+| Vision to Value Phase | Context Usage |
 |-----------|---------------|
 | Phase 1: Strategic Foundation | Store strategic intent, market analysis findings |
 | Phase 2: Strategic Decisions | Record decisions, capture assumptions |
@@ -23,7 +23,7 @@ The Context Layer is a core component of the V2V Operating System (v2.2.0):
 | Phase 5: Business Outcomes | Value realization data, customer health |
 | Phase 6: Learning Loop | Learnings, retrospectives, principle scorecards |
 
-The context layer embodies the V2V learning loop: decisions lead to outcomes, outcomes validate assumptions, validated/invalidated assumptions become learnings, learnings improve future decisions.
+The context layer embodies the Vision to Value learning loop: decisions lead to outcomes, outcomes validate assumptions, validated/invalidated assumptions become learnings, learnings improve future decisions.
 
 ---
 
@@ -46,7 +46,7 @@ product-org-plugin/
 │   ├── assumptions/                  # Assumption tracker
 │   │   └── registry.md               # All assumptions with status
 │   ├── portfolio/                    # Current state
-│   │   └── active-bets.md            # What we're currently betting on (with V2V phase tracking)
+│   │   └── active-bets.md            # What we're currently betting on (with Vision to Value phase tracking)
 │   ├── learnings/                    # Accumulated wisdom
 │   │   └── index.md                  # Indexed learnings from retrospectives
 │   ├── feedback/                     # Customer/market feedback
@@ -269,7 +269,7 @@ Each principle is scored 1-5:
 
 *Last updated: 2026-01-21*
 
-## Active Bets with V2V Phase Tracking
+## Active Bets with Vision to Value Phase Tracking
 
 | Bet ID | Name | Current Phase | P1 | P2 | P3 | P4 | P5 | Status | Health |
 |--------|------|---------------|----|----|----|----|----|----|--------|
@@ -282,7 +282,7 @@ Each principle is scored 1-5:
 
 ### SB-2026-001: Enterprise Expansion
 - **Status**: Active
-- **V2V Phase**: 4 - Coordinated Execution
+- **Vision to Value Phase**: 4 - Coordinated Execution
 - **Owner**: @cpo
 - **Next checkpoint**: 2026-02-15 (Early signal)
 - **Key assumption at risk**: A-001 (Enterprise annual contracts)
@@ -290,7 +290,7 @@ Each principle is scored 1-5:
 
 ### SB-2026-002: Platform API Launch
 - **Status**: Proposed
-- **V2V Phase**: 2 - Strategic Decisions
+- **Vision to Value Phase**: 2 - Strategic Decisions
 - **Owner**: @vp-product
 - **Awaiting**: PLT approval
 - **Dependencies**: DR-2026-001 (Pricing model)
@@ -508,7 +508,7 @@ All skill outputs that produce strategic documents are **automatically registere
 
 ### What Gets Registered
 
-| V2V Phase | Skills That Trigger Auto-Registration |
+| Vision to Value Phase | Skills That Trigger Auto-Registration |
 |-----------|---------------------------------------|
 | Phase 1 | `/strategic-intent`, `/vision-statement`, `/market-analysis`, `/competitive-landscape`, `/competitive-analysis`, `/market-segment` |
 | Phase 2 | `/business-case`, `/business-plan`, `/pricing-strategy`, `/pricing-model`, `/positioning-statement`, `/decision-record`, `/strategic-bet`, `/decision-charter`, `/escalation-rule` |
@@ -561,7 +561,7 @@ All context layer features are now implemented:
 | | `rules/context-management.md` | ✅ Complete |
 | **Portfolio** | `/portfolio-status` skill | ✅ Complete |
 | | Index file templates | ✅ Complete |
-| | V2V phase tracking columns | ✅ Complete |
+| | Vision to Value phase tracking columns | ✅ Complete |
 | **Agent Integration** | `/handoff` skill | ✅ Complete |
 | | Agent context awareness | ✅ Complete (all 13 agents) |
 | | Decision/bet skills context integration | ✅ Complete |
@@ -586,7 +586,7 @@ The context layer integrates with these skills:
 - `/context-save`, `/context-recall`, `/portfolio-status`, `/handoff`, `/relevant-learnings`, `/feedback-capture`, `/feedback-recall`
 
 **Principle Validators** (5 skills):
-- `/ownership-map` (Principle #1), `/customer-value-trace` (Principle #3), `/collaboration-check` (Principle #6), `/scale-check` (Principle #8), `/phase-check` (V2V Flow)
+- `/ownership-map` (Principle #1), `/customer-value-trace` (Principle #3), `/collaboration-check` (Principle #6), `/scale-check` (Principle #8), `/phase-check` (Vision to Value Flow)
 
 ---
 
@@ -613,7 +613,7 @@ The context index (`context/index.json`) is expanded from a flat entry list to m
 |-------|---------|---------|
 | `topicIndex` | Keyword-based lookup | `/context-recall`, auto-context |
 | `productIndex` | Multi-product filtering | All context skills with `product:` filter |
-| `phaseIndex` | V2V phase-based queries | `/portfolio-status`, `/phase-check` |
+| `phaseIndex` | Vision to Value phase-based queries | `/portfolio-status`, `/phase-check` |
 | `statusIndex` | Status-based filtering (bets, assumptions) | `/portfolio-status` |
 | `sourceIndex` | Feedback source tracking | `/feedback-recall` |
 | `sentimentIndex` | Feedback sentiment analysis | `/feedback-recall` |

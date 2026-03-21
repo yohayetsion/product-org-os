@@ -6,10 +6,21 @@ Before agents produce deliverables, automatically inject relevant context from t
 
 ## How It Works
 
-1. **Parse the user's request** for topic keywords (feature names, product areas, decision types)
-2. **Query `context/index.json`** topic indexes for matches
-3. **If matches found**, include a summary in the agent's working context
-4. **Agent sees**: An "Auto-Context" section with related items
+Auto-context injection is handled by `hooks/os-tracker.py --pre-inject`:
+
+```bash
+python hooks/os-tracker.py --pre-inject "[topic keywords]" --context-dir ./context
+```
+
+The parent agent runs this **before** spawning a sub-agent. If the output is non-empty, it is prepended to the agent's prompt. See `agent-spawn-protocol.md` Section 7 for the full spawn flow.
+
+1. **Parent extracts topic keywords** from the user's request
+2. **Tracker scans context/** markdown files for keyword matches (decisions, bets, feedback, learnings)
+3. **If matches found**, returns a markdown block on stdout
+4. **Parent prepends** the block to the agent's prompt
+5. **Agent sees**: An "Auto-Context" section with related items
+
+For coding agents without hooks, call `--pre-inject` manually before delegating work. See `AGENT-INTEGRATION.md` for platform-specific instructions.
 
 ## Injection Triggers
 
@@ -58,7 +69,7 @@ Topic matching uses these strategies:
 1. **Exact ID match**: If request mentions DR-2026-003, inject that record
 2. **Keyword match**: Match request keywords against `topicIndex` in index.json
 3. **Product match**: If multi-product org, filter by product context
-4. **Phase match**: Match V2V phase of the task to phase-indexed items
+4. **Phase match**: Match Vision to Value phase of the task to phase-indexed items
 
 ## Depth Control
 
@@ -73,6 +84,6 @@ Auto-context reads from but never writes to the context index. Writing happens t
 - `/feedback-capture` — explicit capture
 - Auto-registration of strategic documents (per `context-management.md`)
 
-## V2V Operating Principle
+## Vision to Value Operating Principle
 
 > "The best context system is invisible. Agents should work with organizational memory naturally, not through manual lookups."

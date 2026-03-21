@@ -99,6 +99,6 @@ All patterns use standard Task tool spawning from `agent-spawn-protocol.md` Sect
 
 ---
 
-## V2V Operating Principle
+## Vision to Value Operating Principle
 
 > "Good delegation amplifies team intelligence. The right pattern at the right time turns individual expertise into collective wisdom."

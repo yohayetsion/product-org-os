@@ -4,7 +4,7 @@
 **Version**: 1.0
 **Last Updated**: [Date]
 **Charter Owner**: [Role]
-**V2V Phase**: [Phase where this decision typically occurs]
+**Vision to Value Phase**: [Phase where this decision typically occurs]
 
 ## Decision Scope
 
@@ -85,4 +85,4 @@
 
 ---
 
-*Template aligned with v2.2.0 - includes V2V Phase and Principle Validation checklist*
+*Template aligned with v2.2.0 - includes Vision to Value Phase and Principle Validation checklist*

@@ -7,6 +7,23 @@ globs:
 
 The Context Layer provides organizational memory across sessions and agents.
 
+## Context Layer Architecture
+
+The context system has two layers:
+
+**Automatic Layer** (`hooks/os-tracker.py`): Background tracking — no user action needed when hooks are configured.
+- **Pre-inject** (`--pre-inject`): Scans context/ before agent work, surfaces related items + conventions
+- **Post-track** (`--hook`): Logs ROI, interactions, documents after agent work
+- **Self-heal** (`--diagnose --repair`): Rebuilds stale indexes from markdown source files
+
+**Explicit Layer** (Skills): User-initiated knowledge management.
+- `/context-save` — Save decisions, bets, learnings, conventions
+- `/context-recall` — Deep query with synthesis + recommendations
+- `/feedback-capture` — Structured feedback with metadata + sentiment
+- `/feedback-recall`, `/interaction-recall`, `/relevant-learnings` — Targeted queries
+
+See `AGENT-INTEGRATION.md` for the full integration guide.
+
 ## v3 Enhancements
 
 1. **Auto-Context Injection** (`rules/auto-context.md`): Auto-injects relevant context before agents produce deliverables
@@ -17,9 +34,14 @@ The Context Layer provides organizational memory across sessions and agents.
 
 ## Core Behaviors
 
-### Auto-Registration of Strategic Documents (MANDATORY)
+### Auto-Registration of Strategic Documents
 
-ALL skill outputs producing strategic documents MUST be auto-registered silently to `context/documents/index.md` with metadata (ID: `DOC-[YYYY]-[NNN]`, title, type, skill, date, owner, product, location, tags). Cross-reference to related decisions/bets.
+Document registration is handled automatically by `hooks/os-tracker.py` when hooks are configured. The tracker detects file paths in agent responses and appends them to `context/documents/registry.md`.
+
+For manual setups, see `AGENT-INTEGRATION.md` or run:
+```bash
+python hooks/os-tracker.py --agent [agent-id] --context-dir ./context
+```
 
 **Registrable skills**: All Phase 1-6 document-producing skills (see `rules/v2v-flow.md` for skill lists).
 
@@ -77,7 +99,7 @@ Before `/commitment-check`:
 
 ### Pre-Work Checklists
 
-**For Decisions/Bets** — Before: `/context-recall`, `/feedback-recall`, identify V2V phase. After: verify customer value trace, stakeholder consultation, explicit assumptions.
+**For Decisions/Bets** — Before: `/context-recall`, `/feedback-recall`, identify Vision to Value phase. After: verify customer value trace, stakeholder consultation, explicit assumptions.
 
 **For Commitments** — Before: Phase 1-2 complete, single accountable owner. After: `/commitment-check`, `/ownership-map`.
 
@@ -115,6 +137,7 @@ Calculation: Look up base time in `reference/roi-baselines.md` × complexity fac
 | Handoffs | `context/handoffs/current-session.md` | (overwritten) |
 | Feedback | `context/feedback/index.md` | `context/feedback/[YYYY]/` |
 | Interactions | `context/interactions/index.json` | `context/interactions/[YYYY]/` |
+| Preferences | `context/preferences/conventions.md` | (single file) |
 
 ## ID Conventions
 
@@ -126,6 +149,6 @@ Optional `product:` field for filtering. Single-product orgs ignore it. Use cons
 
 ---
 
-## V2V Operating Principle
+## Vision to Value Operating Principle
 
 > "Organizational memory is a competitive advantage. Document decisions not for bureaucracy, but for learning velocity."

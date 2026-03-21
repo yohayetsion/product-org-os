@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's New in v3.2 | Product Org OS</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='hexGradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23E94560'/%3E%3Cstop offset='100%25' stop-color='%234ECCA3'/%3E%3C/linearGradient%3E%3Cfilter id='glow'%3E%3CfeGaussianBlur stdDeviation='3' result='coloredBlur'/%3E%3CfeMerge%3E%3CfeMergeNode in='coloredBlur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Cpolygon points='100,10 178,55 178,145 100,190 22,145 22,55' fill='none' stroke='url(%23hexGradient)' stroke-width='2' filter='url(%23glow)'/%3E%3Cline x1='100' y1='10' x2='100' y2='100' stroke='url(%23hexGradient)' stroke-width='1' opacity='0.5'/%3E%3Cline x1='178' y1='55' x2='100' y2='100' stroke='url(%23hexGradient)' stroke-width='1' opacity='0.5'/%3E%3Cline x1='178' y1='145' x2='100' y2='100' stroke='url(%23hexGradient)' stroke-width='1' opacity='0.5'/%3E%3Cline x1='100' y1='190' x2='100' y2='100' stroke='url(%23hexGradient)' stroke-width='1' opacity='0.5'/%3E%3Cline x1='22' y1='145' x2='100' y2='100' stroke='url(%23hexGradient)' stroke-width='1' opacity='0.5'/%3E%3Cline x1='22' y1='55' x2='100' y2='100' stroke='url(%23hexGradient)' stroke-width='1' opacity='0.5'/%3E%3Ccircle cx='100' cy='10' r='8' fill='%234A90D9' filter='url(%23glow)'/%3E%3Ccircle cx='178' cy='55' r='8' fill='%239B59B6' filter='url(%23glow)'/%3E%3Ccircle cx='178' cy='145' r='8' fill='%234ECCA3' filter='url(%23glow)'/%3E%3Ccircle cx='100' cy='190' r='8' fill='%23FFC93C' filter='url(%23glow)'/%3E%3Ccircle cx='22' cy='145' r='8' fill='%2327AE60' filter='url(%23glow)'/%3E%3Ccircle cx='22' cy='55' r='8' fill='%23E94560' filter='url(%23glow)'/%3E%3Ccircle cx='100' cy='100' r='12' fill='url(%23hexGradient)' filter='url(%23glow)'/%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #e94560;
+            --primary-dark: #c73e54;
+            --secondary: #4ecca3;
+            --accent: #0f3460;
+            --bg: #1a1a2e;
+            --bg-card: #16213e;
+            --bg-elevated: #0f3460;
+            --text: #eaeaea;
+            --text-muted: #a0a0a0;
+            --text-dim: #707070;
+            --border: #2a2a4e;
+            --gradient-1: linear-gradient(135deg, #e94560 0%, #c73e54 100%);
+            --gradient-2: linear-gradient(135deg, #4ecca3 0%, #38b593 100%);
+            --gradient-3: linear-gradient(135deg, #ffc93c 0%, #f5a623 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 1rem;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .nav-logo-text {
+            background: linear-gradient(90deg, #E94560, #4ECCA3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-logo-icon { width: 28px; height: 28px; }
+
+        .nav-back {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 0.4rem 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .nav-back:hover {
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 10rem 1.5rem 5rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .version-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(78, 204, 163, 0.08);
+            border: 1px solid rgba(78, 204, 163, 0.2);
+            border-radius: 999px;
+            padding: 0.4rem 1.25rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+        }
+
+        .version-badge .dot {
+            width: 8px; height: 8px;
+            background: var(--secondary);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #E94560, #4ECCA3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 1rem;
+            line-height: 1.7;
+        }
+
+        .hero-tagline {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            font-weight: 500;
+        }
+
+        /* Stats */
+        .stats-bar {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 2rem 1.5rem;
+        }
+
+        .stats-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 120px;
+            padding: 0.75rem 1rem;
+        }
+
+        .stat-value {
+            font-size: 2.25rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-top: 0.25rem;
+        }
+
+        /* Feature Sections */
+        .feature-section {
+            padding: 6rem 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .feature-inner {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .feature-section:nth-child(even) .feature-inner {
+            direction: rtl;
+        }
+
+        .feature-section:nth-child(even) .feature-inner > * {
+            direction: ltr;
+        }
+
+        .feature-icon-area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .feature-icon-box {
+            width: 280px;
+            height: 280px;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-icon-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            padding: 1px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        .feature-icon-box .icon-emoji {
+            font-size: 4rem;
+            margin-bottom: 0.75rem;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+        }
+
+        .feature-icon-box .icon-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+        }
+
+        .feature-content h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.15;
+        }
+
+        .feature-content h2 .highlight {
+            background: linear-gradient(90deg, #E94560, #4ECCA3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .feature-content .lead {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .feature-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .bullet {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-top: 2px;
+        }
+
+        .bullet-primary { background: rgba(233, 69, 96, 0.15); color: var(--primary); }
+        .bullet-secondary { background: rgba(78, 204, 163, 0.15); color: var(--secondary); }
+
+        .feature-tag {
+            display: inline-block;
+            margin-top: 1.25rem;
+            padding: 0.3rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            background: rgba(78, 204, 163, 0.1);
+            color: var(--secondary);
+            border: 1px solid rgba(78, 204, 163, 0.2);
+        }
+
+        /* Skill Cards */
+        .skill-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-card {
+            background: rgba(15, 52, 96, 0.2);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .skill-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .skill-card-name {
+            font-family: 'Courier New', monospace;
+            color: var(--secondary);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-card-phase {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-card-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .skill-card-framework {
+            margin-top: 0.75rem;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            font-style: italic;
+        }
+
+        /* Gradient Dividers */
+        .gradient-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        /* CTA */
+        .cta-section {
+            padding: 6rem 1.5rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg) 50%, var(--bg-card) 100%);
+            position: relative;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), transparent);
+        }
+
+        .cta-section h2 {
+            font-size: clamp(1.75rem, 4vw, 2.75rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .cta-subtitle {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 2.5rem;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-install {
+            background: #0d0d1a;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        .cta-install .prompt {
+            color: var(--secondary);
+            font-weight: 600;
+            font-family: 'Courier New', monospace;
+            white-space: nowrap;
+        }
+
+        .cta-install code {
+            color: var(--text);
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+
+        .cta-install .copy-btn {
+            background: rgba(78, 204, 163, 0.12);
+            border: 1px solid rgba(78, 204, 163, 0.3);
+            color: var(--secondary);
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .cta-install .copy-btn:hover {
+            background: rgba(78, 204, 163, 0.2);
+        }
+
+        .cta-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .cta-btn-primary {
+            background: var(--gradient-1);
+            color: white;
+        }
+
+        .cta-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(233, 69, 96, 0.3);
+        }
+
+        .cta-btn-secondary {
+            border: 1px solid var(--border);
+            color: var(--text);
+            background: transparent;
+        }
+
+        .cta-btn-secondary:hover {
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+
+        .cta-btn-guide {
+            border: 1px solid rgba(78, 204, 163, 0.3);
+            color: var(--secondary);
+            background: rgba(78, 204, 163, 0.05);
+        }
+
+        .cta-btn-guide:hover {
+            background: rgba(78, 204, 163, 0.12);
+            border-color: var(--secondary);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        /* Attribution Table */
+        .attribution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+        }
+
+        .attribution-table th {
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border-bottom: 2px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+        }
+
+        .attribution-table td {
+            padding: 0.6rem 1rem;
+            border-bottom: 1px solid rgba(42, 42, 78, 0.5);
+            vertical-align: top;
+        }
+
+        .attribution-table tr:hover td {
+            background: rgba(78, 204, 163, 0.03);
+        }
+
+        .attribution-table .skill-col {
+            font-family: 'Courier New', monospace;
+            color: var(--secondary);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .attribution-table .creator-col {
+            color: var(--text-muted);
+        }
+
+        .attribution-table .year-col {
+            color: var(--text-dim);
+            white-space: nowrap;
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* Version history link */
+        .version-history {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+        }
+
+        .version-history a {
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid var(--text-dim);
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .version-history a:hover {
+            color: var(--secondary);
+            border-color: var(--secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .feature-inner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .feature-section:nth-child(even) .feature-inner {
+                direction: ltr;
+            }
+
+            .feature-icon-box {
+                width: 200px;
+                height: 200px;
+            }
+
+            .feature-icon-box .icon-emoji {
+                font-size: 3rem;
+            }
+
+            .feature-list li {
+                justify-content: center;
+                text-align: left;
+            }
+
+            .skill-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .attribution-table {
+                font-size: 0.8rem;
+            }
+
+            .attribution-table th,
+            .attribution-table td {
+                padding: 0.5rem 0.5rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .stats-grid { gap: 0.75rem; }
+            .stat-item { min-width: 100px; padding: 0.6rem 0.75rem; }
+            .stat-value { font-size: 1.5rem; }
+            .stat-label { font-size: 0.7rem; }
+            .feature-section { padding: 4rem 1rem; }
+            .cta-install { padding: 1rem 1.25rem; }
+            .cta-install code { font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <svg class="nav-logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="navHexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#E94560"/>
+                            <stop offset="100%" stop-color="#4ECCA3"/>
+                        </linearGradient>
+                        <filter id="navGlow">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <polygon points="100,10 178,55 178,145 100,190 22,145 22,55" fill="none" stroke="url(#navHexGradient)" stroke-width="2" filter="url(#navGlow)"/>
+                    <line x1="100" y1="10" x2="100" y2="100" stroke="url(#navHexGradient)" stroke-width="1" opacity="0.5"/>
+                    <line x1="178" y1="55" x2="100" y2="100" stroke="url(#navHexGradient)" stroke-width="1" opacity="0.5"/>
+                    <line x1="178" y1="145" x2="100" y2="100" stroke="url(#navHexGradient)" stroke-width="1" opacity="0.5"/>
+                    <line x1="100" y1="190" x2="100" y2="100" stroke="url(#navHexGradient)" stroke-width="1" opacity="0.5"/>
+                    <line x1="22" y1="145" x2="100" y2="100" stroke="url(#navHexGradient)" stroke-width="1" opacity="0.5"/>
+                    <line x1="22" y1="55" x2="100" y2="100" stroke="url(#navHexGradient)" stroke-width="1" opacity="0.5"/>
+                    <circle cx="100" cy="10" r="8" fill="#4A90D9" filter="url(#navGlow)"/>
+                    <circle cx="178" cy="55" r="8" fill="#9B59B6" filter="url(#navGlow)"/>
+                    <circle cx="178" cy="145" r="8" fill="#4ECCA3" filter="url(#navGlow)"/>
+                    <circle cx="100" cy="190" r="8" fill="#FFC93C" filter="url(#navGlow)"/>
+                    <circle cx="22" cy="145" r="8" fill="#27AE60" filter="url(#navGlow)"/>
+                    <circle cx="22" cy="55" r="8" fill="#E94560" filter="url(#navGlow)"/>
+                    <circle cx="100" cy="100" r="12" fill="url(#navHexGradient)" filter="url(#navGlow)"/>
+                </svg>
+                <span class="nav-logo-text">Product Org OS</span>
+            </a>
+            <a href="index.html" class="nav-back">&larr; Back to Main</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="version-badge reveal">
+            <span class="dot"></span>
+            v3.2 Release
+        </div>
+        <h1 class="reveal reveal-delay-1">
+            What's New in<br><span class="gradient-text">Product Org OS</span>
+        </h1>
+        <p class="hero-subtitle reveal reveal-delay-2">
+            Your agents got significantly smarter. They remember past decisions,
+            know exactly which skills to use, and gained 21 new strategic capabilities.
+            The product organization just leveled up.
+        </p>
+        <p class="hero-tagline reveal reveal-delay-3">+21 new skills &middot; Automatic context tracking &middot; Organizational conventions</p>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stats-grid">
+            <div class="stat-item reveal">
+                <div class="stat-value">+21</div>
+                <div class="stat-label">New Skills</div>
+            </div>
+            <div class="stat-item reveal reveal-delay-1">
+                <div class="stat-value">Auto</div>
+                <div class="stat-label">Context Tracking</div>
+            </div>
+            <div class="stat-item reveal reveal-delay-2">
+                <div class="stat-value">Typed</div>
+                <div class="stat-label">Skill Relationships</div>
+            </div>
+            <div class="stat-item reveal reveal-delay-3">
+                <div class="stat-value">0</div>
+                <div class="stat-label">Dependencies</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feature 1: Agents That Remember (TOP IMPACT) -->
+    <section class="feature-section" id="tracking">
+        <div class="feature-inner">
+            <div class="feature-icon-area reveal">
+                <div class="feature-icon-box">
+                    <div class="icon-emoji">&#x1F9E0;</div>
+                    <div class="icon-label">Organizational Memory</div>
+                </div>
+            </div>
+            <div class="feature-content reveal reveal-delay-1">
+                <h2>Agents That<br><span class="highlight">Remember</span></h2>
+                <p class="lead">
+                    Every decision, interaction, and deliverable is now tracked automatically.
+                    Before your next session, agents surface related past decisions and customer
+                    feedback. No manual steps. No forgotten context. Your product organization
+                    builds institutional memory that compounds over time.
+                </p>
+                <ul class="feature-list">
+                    <li>
+                        <span class="bullet bullet-primary">&#x2713;</span>
+                        Before agent work: automatically surfaces related decisions, bets, and feedback
+                    </li>
+                    <li>
+                        <span class="bullet bullet-secondary">&#x2713;</span>
+                        After agent work: logs ROI, interactions, and documents automatically
+                    </li>
+                    <li>
+                        <span class="bullet bullet-primary">&#x2713;</span>
+                        Self-healing: diagnoses and repairs its own indexes when they drift
+                    </li>
+                    <li>
+                        <span class="bullet bullet-secondary">&#x2713;</span>
+                        Fail-open: on any error, exits silently. Never blocks your workflow.
+                    </li>
+                </ul>
+                <span class="feature-tag">New in v3.2</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="gradient-divider"></div>
+
+    <!-- Feature 2: Typed Skill Relationships -->
+    <section class="feature-section" id="skill-architecture">
+        <div class="feature-inner">
+            <div class="feature-icon-area reveal">
+                <div class="feature-icon-box">
+                    <div class="icon-emoji">&#x1F517;</div>
+                    <div class="icon-label">Skill Architecture</div>
+                </div>
+            </div>
+            <div class="feature-content reveal reveal-delay-1">
+                <h2>Agents Know Their<br><span class="highlight">Own Toolkit</span></h2>
+                <p class="lead">
+                    Every agent now has a typed relationship with the skills it uses.
+                    Primary skills define what it owns. Supporting skills extend its reach.
+                    Validator skills enforce quality before commitments. Knowledge packs
+                    give domain depth. Agents don't guess which tool to use — they know.
+                </p>
+                <ul class="feature-list">
+                    <li>
+                        <span class="bullet bullet-primary">&#x2713;</span>
+                        <strong>Primary skills</strong>: The agent's core deliverables — what it owns end-to-end
+                    </li>
+                    <li>
+                        <span class="bullet bullet-secondary">&#x2713;</span>
+                        <strong>Supporting skills</strong>: Adjacent capabilities the agent can draw on
+                    </li>
+                    <li>
+                        <span class="bullet bullet-primary">&#x2713;</span>
+                        <strong>Validator skills</strong>: Quality gates that run before commitments ship
+                    </li>
+                    <li>
+                        <span class="bullet bullet-secondary">&#x2713;</span>
+                        <strong>Knowledge packs</strong>: Domain context loaded when the agent needs depth
+                    </li>
+                </ul>
+                <span class="feature-tag">New in v3.2</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="gradient-divider"></div>
+
+    <!-- Feature 3: New Strategic Capabilities -->
+    <section class="feature-section" id="smarter-agents">
+        <div class="feature-inner">
+            <div class="feature-icon-area reveal">
+                <div class="feature-icon-box">
+                    <div class="icon-emoji">&#x1F3AF;</div>
+                    <div class="icon-label">Smarter Agents</div>
+                </div>
+            </div>
+            <div class="feature-content reveal reveal-delay-1">
+                <h2>21 New Strategic<br><span class="highlight">Capabilities</span></h2>
+                <p class="lead">
+                    Every agent just got significantly more capable. Your PM can now run
+                    a Four Big Risks check before committing. Your VP Product can evaluate
+                    growth loops and blue ocean opportunities. Your BizOps can model with
+                    Lean Canvas and Business Model Canvas. 21 proven strategy methodologies,
+                    available to every agent in the organization.
+                </p>
+                <ul class="feature-list">
+                    <li>
+                        <span class="bullet bullet-primary">&#x2713;</span>
+                        Competitive analysis: Porter's Five Forces, Blue Ocean, SWOT, PESTLE, Battlecards
+                    </li>
+                    <li>
+                        <span class="bullet bullet-secondary">&#x2713;</span>
+                        Business modeling: Business Model Canvas, Lean Canvas, Ansoff, BCG Matrix
+                    </li>
+                    <li>
+                        <span class="bullet bullet-primary">&#x2713;</span>
+                        Decision quality: Four Big Risks, Cognitive Bias Check, DHM Analysis
+                    </li>
+                    <li>
+                        <span class="bullet bullet-secondary">&#x2713;</span>
+                        Growth &amp; metrics: Growth Loops, North Star Metric, RICE/Kano/MoSCoW
+                    </li>
+                    <li>
+                        <span class="bullet bullet-primary">&#x2713;</span>
+                        Discovery: Pretotyping, PRFAQ, Interview Synthesis, Customer Journey Mapping
+                    </li>
+                </ul>
+                <span class="feature-tag">+21 New Skills</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="gradient-divider"></div>
+
+    <!-- Attribution Table -->
+    <section class="feature-section" id="attribution">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2 class="reveal" style="text-align: center; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; margin-bottom: 0.75rem;">
+                Standing on <span class="gradient-text">Shoulders</span>
+            </h2>
+            <p class="reveal reveal-delay-1" style="text-align: center; color: var(--text-muted); margin-bottom: 2.5rem;">
+                Every new capability credits the original work. Building on giants, giving credit.
+            </p>
+            <div class="reveal reveal-delay-2">
+                <table class="attribution-table">
+                    <thead>
+                        <tr>
+                            <th>Skill</th>
+                            <th>Framework</th>
+                            <th>Creator</th>
+                            <th>Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="skill-col">/porter-five-forces</td><td>Five Forces</td><td class="creator-col">Michael Porter</td><td class="year-col">1979</td></tr>
+                        <tr><td class="skill-col">/blue-ocean</td><td>Blue Ocean Strategy</td><td class="creator-col">W. Chan Kim &amp; Renee Mauborgne</td><td class="year-col">2005</td></tr>
+                        <tr><td class="skill-col">/swot-analysis</td><td>SWOT</td><td class="creator-col">Albert Humphrey / SRI</td><td class="year-col">1960s</td></tr>
+                        <tr><td class="skill-col">/pestle-analysis</td><td>PESTLE</td><td class="creator-col">Francis Aguilar / Harvard</td><td class="year-col">1967</td></tr>
+                        <tr><td class="skill-col">/business-model-canvas</td><td>Business Model Canvas</td><td class="creator-col">Alexander Osterwalder &amp; Yves Pigneur</td><td class="year-col">2010</td></tr>
+                        <tr><td class="skill-col">/lean-canvas</td><td>Lean Canvas</td><td class="creator-col">Ash Maurya</td><td class="year-col">2012</td></tr>
+                        <tr><td class="skill-col">/ansoff-matrix</td><td>Ansoff Growth Matrix</td><td class="creator-col">H. Igor Ansoff</td><td class="year-col">1957</td></tr>
+                        <tr><td class="skill-col">/bcg-matrix</td><td>Growth-Share Matrix</td><td class="creator-col">Bruce Henderson / BCG</td><td class="year-col">1970</td></tr>
+                        <tr><td class="skill-col">/dhm-analysis</td><td>DHM Model</td><td class="creator-col">Gibson Biddle</td><td class="year-col">Netflix era</td></tr>
+                        <tr><td class="skill-col">/four-risks-check</td><td>Four Big Risks</td><td class="creator-col">Marty Cagan / SVPG</td><td class="year-col">2017</td></tr>
+                        <tr><td class="skill-col">/growth-model</td><td>Growth Loops + Racecar</td><td class="creator-col">Brian Balfour / Reforge</td><td class="year-col">2018</td></tr>
+                        <tr><td class="skill-col">/prioritize-features</td><td>RICE, Kano, MoSCoW, WSJF</td><td class="creator-col">Intercom, Noriaki Kano, Dai Clegg</td><td class="year-col">Various</td></tr>
+                        <tr><td class="skill-col">/bias-check</td><td>Cognitive Biases</td><td class="creator-col">Daniel Kahneman, Chip &amp; Dan Heath</td><td class="year-col">2011</td></tr>
+                        <tr><td class="skill-col">/press-release-faq</td><td>Working Backwards / PRFAQ</td><td class="creator-col">Jeff Bezos / Amazon</td><td class="year-col">~2004</td></tr>
+                        <tr><td class="skill-col">/pretotype</td><td>Pretotyping</td><td class="creator-col">Alberto Savoia</td><td class="year-col">2019</td></tr>
+                        <tr><td class="skill-col">/north-star-metric</td><td>North Star Framework</td><td class="creator-col">Sean Ellis / Amplitude</td><td class="year-col">2017</td></tr>
+                        <tr><td class="skill-col">/product-teardown</td><td>Product Teardown</td><td class="creator-col">PM community practice</td><td class="year-col">&mdash;</td></tr>
+                        <tr><td class="skill-col">/stakeholder-map</td><td>Power/Interest Matrix</td><td class="creator-col">Aubrey Mendelow</td><td class="year-col">1991</td></tr>
+                        <tr><td class="skill-col">/interview-synthesis</td><td>Thematic Analysis</td><td class="creator-col">Braun &amp; Clarke, Teresa Torres</td><td class="year-col">2006</td></tr>
+                        <tr><td class="skill-col">/customer-journey-map</td><td>Journey Mapping</td><td class="creator-col">Adaptive Path</td><td class="year-col">2007</td></tr>
+                        <tr><td class="skill-col">/competitive-battlecard</td><td>Battlecards</td><td class="creator-col">Klue, Crayon (B2B standard)</td><td class="year-col">&mdash;</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <div class="gradient-divider"></div>
+
+    <!-- Feature 3: Organizational Conventions -->
+    <section class="feature-section" id="conventions">
+        <div class="feature-inner">
+            <div class="feature-icon-area reveal">
+                <div class="feature-icon-box">
+                    <div class="icon-emoji">&#x1F3DB;</div>
+                    <div class="icon-label">Conventions</div>
+                </div>
+            </div>
+            <div class="feature-content reveal reveal-delay-1">
+                <h2>Define Once,<br><span class="highlight">Respected Always</span></h2>
+                <p class="lead">
+                    Naming conventions, prioritization frameworks, fiscal calendars,
+                    customer tier definitions. Define how your organization works once
+                    and every agent respects it across every session. No more re-explaining
+                    how your org operates.
+                </p>
+                <ul class="feature-list">
+                    <li>
+                        <span class="bullet bullet-primary">&#x2713;</span>
+                        Automatically included in every agent's context. No keyword matching needed.
+                    </li>
+                    <li>
+                        <span class="bullet bullet-secondary">&#x2713;</span>
+                        Save conventions naturally: "We use RICE for prioritization, fiscal year starts April 1"
+                    </li>
+                    <li>
+                        <span class="bullet bullet-primary">&#x2713;</span>
+                        Agents reference your norms when producing deliverables
+                    </li>
+                </ul>
+                <span class="feature-tag">New in v3.2</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="reveal">One Link. <span class="gradient-text">Full System.</span></h2>
+            <p class="cta-subtitle reveal reveal-delay-1">
+                Point your Claude Code, Codex, Cursor, Copilot, Gemini CLI, or Windsurf agent at the guide. It covers all 103 skills, 13 agents, the context layer, and platform-specific setup.
+            </p>
+            <div class="reveal reveal-delay-2" style="margin-bottom: 2rem;">
+                <a href="https://github.com/yohayetsion/product-org-os/blob/main/product-org-plugin/agent-guide.md" target="_blank" rel="noopener" style="display: inline-block; background: #0d0d1a; border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 2rem; text-decoration: none; transition: border-color 0.3s; max-width: 100%;">
+                    <code style="color: var(--secondary); font-family: 'Courier New', monospace; font-size: 0.95rem; word-break: break-all;">github.com/yohayetsion/product-org-os/.../agent-guide.md</code>
+                </a>
+            </div>
+            <p style="color: var(--text-dim); font-size: 0.85rem; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">Or install directly</p>
+            <div class="cta-install reveal reveal-delay-3">
+                <span class="prompt">$</span>
+                <code>claude plugins install github:yohayetsion/product-org-os</code>
+                <button class="copy-btn" onclick="copyInstall()">Copy</button>
+            </div>
+            <div class="cta-links reveal reveal-delay-4">
+                <a href="https://github.com/yohayetsion/product-org-os" class="cta-btn cta-btn-primary" target="_blank" rel="noopener">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    GitHub
+                </a>
+                <a href="index.html" class="cta-btn cta-btn-secondary">
+                    &larr; Product Org OS Home
+                </a>
+            </div>
+            <div class="version-history reveal reveal-delay-4">
+                <a href="whats-new-v3.1.html">What was new in v3.1</a>
+                <span style="color: var(--text-dim); margin: 0 0.5rem;">|</span>
+                <a href="whats-new-v3.html">What was new in v3.0</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Built by <a href="https://github.com/yohayetsion" target="_blank" rel="noopener">Yohay Etsion</a> &middot; 2025-2026</p>
+    </footer>
+
+    <!-- Scroll Reveal -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        function copyInstall() {
+            const cmd = 'claude plugins install github:yohayetsion/product-org-os';
+            navigator.clipboard.writeText(cmd).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = 'Copied!';
+                setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+            });
+        }
+    </script>
+
+</body>
+</html>

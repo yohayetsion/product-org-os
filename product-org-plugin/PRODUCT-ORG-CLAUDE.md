@@ -1,8 +1,10 @@
 # Product Organization Plugin
 
-This plugin provides AI-powered product organization capabilities based on the **Vision to Value (V2V) System** framework.
+This plugin provides AI-powered product organization capabilities based on the **Vision to Value (Vision to Value) System** framework.
 
 > For Claude Code and Agent Skills-compatible tools (Cursor, Copilot, Gemini CLI, Windsurf)
+
+> **Start here**: [`agent-guide.md`](./agent-guide.md) — complete system overview for any coding agent. For context tracking setup specifically, see [`AGENT-INTEGRATION.md`](./AGENT-INTEGRATION.md).
 
 ## Quick Start
 
@@ -157,7 +159,7 @@ buyer persona, that's a strategic decision, not a wording tweak..."
 ### When to Expect Multiple Voices
 
 Multiple agents speak when:
-- Request involves multiple V2V phases
+- Request involves multiple Vision to Value phases
 - Request has strategic implications
 - Request involves tradeoffs
 - Request is a review or assessment task
@@ -207,7 +209,7 @@ Single agent responds when:
 | `/launch-plan` | Product launch plan | `/launch-plan [product]` |
 | `/qbr-deck` | Quarterly business review deck | `/qbr-deck [quarter]` |
 
-### V2V Framework (8 skills)
+### Vision to Value Framework (8 skills)
 
 | Skill | Purpose | Usage |
 |-------|---------|-------|
@@ -433,9 +435,9 @@ Each feedback entry includes:
 
 ---
 
-## The V2V System Flow
+## The Vision to Value System Flow
 
-The V2V System is a 6-phase flow transforming strategic intent into business outcomes:
+The Vision to Value System is a 6-phase flow transforming strategic intent into business outcomes:
 
 1. **Strategic Foundation** (Input Phase) - Strategic Intent, Market Analysis, Product Vision
 2. **Strategic Decisions** (Commercial Filter) - Business Cases, Pricing, Positioning
@@ -567,7 +569,7 @@ Control how verbose responses are with simple modifiers:
 
 ### How It Works
 
-1. **Analysis**: Determines V2V phase, identifies relevant owners using RACI from blueprints
+1. **Analysis**: Determines Vision to Value phase, identifies relevant owners using RACI from blueprints
 2. **Plan Collection**: Each owner proposes what they'll do, which skills they'll use, and dependencies
 3. **Approval**: You review plans and can approve, provide guidance, or cancel
 4. **Execution**: Agents run in parallel where possible, results are synthesized
@@ -605,7 +607,7 @@ Control how verbose responses are with simple modifiers:
 | Context Layer | 7 | context-save, context-recall, portfolio-status, handoff, relevant-learnings, feedback-capture, feedback-recall |
 | Principle Validators | 5 | ownership-map, customer-value-trace, collaboration-check, scale-check, phase-check |
 | Documents | 10 | prd, prd-outline, product-roadmap, business-case, business-plan, gtm-strategy, pricing-strategy, competitive-landscape, market-analysis, launch-plan, qbr-deck |
-| V2V Framework | 8 | strategic-intent, strategy-communication, campaign-brief, sales-enablement, onboarding-playbook, value-realization-report, customer-health-scorecard, retrospective |
+| Vision to Value Framework | 8 | strategic-intent, strategy-communication, campaign-brief, sales-enablement, onboarding-playbook, value-realization-report, customer-health-scorecard, retrospective |
 | Decisions | 3 | decision-record, decision-charter, escalation-rule |
 | Strategy | 3 | strategic-bet, commitment-check, portfolio-tradeoff |
 | Assets | 8 | vision-statement, roadmap-theme, roadmap-item, gtm-brief, pricing-model, positioning-statement, competitive-analysis, market-segment |
@@ -617,19 +619,19 @@ Control how verbose responses are with simple modifiers:
 
 ## Principle Validators (5 skills)
 
-These skills enforce the V2V Operating Principles:
+These skills enforce the Vision to Value Operating Principles:
 
 | Skill | Principle | Purpose | When to Use |
 |-------|-----------|---------|-------------|
-| `/ownership-map` | #1 End-to-End Ownership | Map accountability across V2V phases | Before major commitments |
+| `/ownership-map` | #1 End-to-End Ownership | Map accountability across Vision to Value phases | Before major commitments |
 | `/customer-value-trace` | #3 Customer Obsession | Validate decisions trace to customer value | When decisions affect customers |
 | `/collaboration-check` | #6 Collaborative Excellence | Validate RACI and stakeholder consultation | For cross-functional work |
 | `/scale-check` | #8 Scalable Systems | Assess scalability at 2x, 10x, 100x | Before committing resources |
-| `/phase-check` | V2V Flow | Assess which V2V phase an initiative is in | Before phase transitions |
+| `/phase-check` | Vision to Value Flow | Assess which Vision to Value phase an initiative is in | Before phase transitions |
 
 ---
 
-## V2V Phase System
+## Vision to Value Phase System
 
 All work flows through 6 phases. Use `/phase-check [initiative]` to assess current phase.
 
@@ -701,7 +703,7 @@ Professional PM frameworks organized in a three-layer architecture:
 
 | Layer | Location | Purpose |
 |-------|----------|---------|
-| V2V Process | `rules/` | WHEN and HOW to work (6 phases, 8 principles) |
+| Vision to Value Process | `rules/` | WHEN and HOW to work (6 phases, 8 principles) |
 | Domain Knowledge | `reference/knowledge/` | WHAT frameworks to apply |
 | Agent Persona | `skills/*/SKILL.md` | WHO you are (R&R, perspective) |
 
@@ -747,7 +749,7 @@ Before agents produce deliverables, relevant context is automatically injected b
 Context entries link to each other: decisions ↔ bets ↔ assumptions ↔ feedback ↔ learnings. When you recall a decision, you also see related bets and feedback.
 
 ### Structured Indexes
-The context index supports multi-dimensional queries: by topic, product, V2V phase, status, source, and sentiment.
+The context index supports multi-dimensional queries: by topic, product, Vision to Value phase, status, source, and sentiment.
 
 See `rules/auto-context.md` and `rules/context-graph.md`.
 

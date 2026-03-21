@@ -1,6 +1,6 @@
-# V2V Skill Map
+# Vision to Value Skill Map
 
-Quick reference mapping all skills to V2V phases.
+Quick reference mapping all skills to Vision to Value phases.
 
 ## Phase 1: Strategic Foundation (Input Phase)
 
@@ -133,11 +133,11 @@ These skills enforce the 8 Operating Principles:
 
 | Skill | Principle | Purpose |
 |-------|-----------|---------|
-| `/ownership-map` | #1 End-to-End Ownership | Map accountability across V2V phases |
+| `/ownership-map` | #1 End-to-End Ownership | Map accountability across Vision to Value phases |
 | `/customer-value-trace` | #3 Customer Obsession | Validate work traces to customer value |
 | `/collaboration-check` | #6 Collaborative Excellence | Validate RACI and stakeholder consultation |
 | `/scale-check` | #8 Scalable Systems | Assess scalability at 2x, 10x, 100x |
-| `/phase-check` | V2V Flow | Assess which V2V phase an initiative is in |
+| `/phase-check` | Vision to Value Flow | Assess which Vision to Value phase an initiative is in |
 
 ---
 
@@ -154,6 +154,6 @@ These skills enforce the 8 Operating Principles:
 ```
 
 ### Find Skills for Current Phase
-1. Identify your current V2V phase
+1. Identify your current Vision to Value phase
 2. Reference the skill table for that phase
 3. Use appropriate skills based on deliverable needed

@@ -4,9 +4,9 @@
 **Assessed By**: [Name]
 **Launch Date**: [Date]
 **Overall Status**: 🟢 Go / 🟡 Conditional Go / 🔴 No Go
-**V2V Phase**: Phase 4 (Coordinated Execution)
+**Vision to Value Phase**: Phase 4 (Coordinated Execution)
 
-## V2V Phase Prerequisites
+## Vision to Value Phase Prerequisites
 
 | Phase | Requirement | Status | Artifact |
 |-------|-------------|--------|----------|
@@ -96,4 +96,4 @@
 
 ---
 
-*Template aligned with v2.2.0 - includes V2V Phase Prerequisites and Value Realization Readiness*
+*Template aligned with v2.2.0 - includes Vision to Value Phase Prerequisites and Value Realization Readiness*

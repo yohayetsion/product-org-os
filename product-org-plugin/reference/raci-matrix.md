@@ -11,11 +11,11 @@
 
 **Rule**: Every activity has exactly ONE Accountable owner.
 
-## V2V Phase Mapping
+## Vision to Value Phase Mapping
 
-The RACI matrix maps to the V2V Operating System phases:
+The RACI matrix maps to the Vision to Value Operating System phases:
 
-| V2V Phase | Primary Activities | Key Accountability |
+| Vision to Value Phase | Primary Activities | Key Accountability |
 |-----------|-------------------|-------------------|
 | **Phase 1: Strategic Foundation** | Market & Customer Intimacy | CPO/VP Product (A) |
 | **Phase 2: Strategic Decisions** | Pricing Strategy, Business Plan | VP Product (A), BizOps (A) |
@@ -26,7 +26,7 @@ The RACI matrix maps to the V2V Operating System phases:
 
 ## Core Roles RACI
 
-| Activity | V2V Phase | CPO | VP Product | Dir PM | PM | Dir PMM | PMM |
+| Activity | Vision to Value Phase | CPO | VP Product | Dir PM | PM | Dir PMM | PMM |
 |----------|-----------|-----|------------|--------|-----|---------|-----|
 | Product Vision & Roadmap | 1, 3 | A | A | R | C | C | - |
 | Product Delivery Planning | 4 | C | C | R | R | - | - |
@@ -40,7 +40,7 @@ The RACI matrix maps to the V2V Operating System phases:
 
 ## Complementary Roles RACI
 
-| Activity | V2V Phase | BizOps | Value Real | CI | BizDev | Prod Ops | UX Lead |
+| Activity | Vision to Value Phase | BizOps | Value Real | CI | BizDev | Prod Ops | UX Lead |
 |----------|-----------|--------|------------|-----|--------|----------|---------|
 | Product Vision & Roadmap | 1, 3 | - | - | - | - | - | - |
 | Product Delivery Planning | 4 | - | - | - | - | R | - |

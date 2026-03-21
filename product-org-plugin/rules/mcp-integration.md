@@ -81,6 +81,6 @@ Here are the user stories ready for your project tracker:
 
 For setup instructions on connecting specific tools, see `integrations/README.md`.
 
-## V2V Operating Principle
+## Vision to Value Operating Principle
 
 > "Real tools amplify agent intelligence. But intelligence should never depend on tools being present. The plugin works everywhere — tools make it work better."

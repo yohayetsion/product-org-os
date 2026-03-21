@@ -1,6 +1,6 @@
 # Domain Knowledge Packs
 
-Professional PM frameworks and methodologies that agents reference when producing deliverables. These complement the V2V operating system — V2V defines WHEN and HOW to work, knowledge packs define WHAT tools and frameworks to use within that process.
+Professional PM frameworks and methodologies that agents reference when producing deliverables. These complement the Vision to Value operating system — Vision to Value defines WHEN and HOW to work, knowledge packs define WHAT tools and frameworks to use within that process.
 
 ## Available Packs
 
@@ -20,11 +20,11 @@ Professional PM frameworks and methodologies that agents reference when producin
 
 Agents reference these packs automatically when their task calls for framework selection or methodology guidance. You can also read them directly as professional reference material.
 
-## Relationship to V2V
+## Relationship to Vision to Value
 
-Knowledge packs INFORM agent work within the V2V framework:
-- **V2V** says "do a competitive analysis in Phase 1" (the WHEN)
+Knowledge packs INFORM agent work within the Vision to Value framework:
+- **Vision to Value** says "do a competitive analysis in Phase 1" (the WHEN)
 - **Knowledge packs** say "use Porter's Five Forces when analyzing industry structure" (the WHAT)
 - **Agent persona** says "I'm the CI analyst, I focus on actionable competitive intelligence" (the WHO)
 
-These layers are independent. Changing a knowledge pack doesn't affect V2V process rules or agent personalities.
+These layers are independent. Changing a knowledge pack doesn't affect Vision to Value process rules or agent personalities.

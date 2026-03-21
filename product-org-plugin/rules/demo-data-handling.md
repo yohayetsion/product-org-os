@@ -27,6 +27,6 @@ When shown: prefix with `[DEMO]`. When excluded: show count of excluded results 
 
 ---
 
-## V2V Operating Principle
+## Vision to Value Operating Principle
 
 > "Demo data is training wheels. Once you're riding, they should automatically retract—but remain available if you need to practice again."
