@@ -11,6 +11,7 @@ metadata:
   version: 3.0.0
   category: market-analysis
 compatibility: Requires Product Org OS v3+ context layer and rules
+context: fork
 ---
 
 ## Document Intelligence
@@ -54,10 +55,17 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 - `research/`
 
 ---
+## Gotchas
+
+- Head-to-head comparisons must be fair — use the same evaluation criteria for both sides
+- Win/loss data must come from actual deals, not assumptions about why customers chose competitors
+- Never fabricate market share percentages — cite sources or say 'not available'
+
+
 
 Structure a **Competitive Analysis** for a specific competitor or market.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 1: Strategic Foundation** - Focused competitive analysis informs positioning and differentiation.
 

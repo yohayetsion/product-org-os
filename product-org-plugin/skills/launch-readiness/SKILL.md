@@ -57,7 +57,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Assess **Launch Readiness** for a product or feature.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 4: Coordinated Execution** - Launch readiness assessment ensures all functions are ready.
 

@@ -57,7 +57,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Create a **Stakeholder Communication Brief** for an important update.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 4: Coordinated Execution** - Stakeholder briefs keep everyone informed during execution.
 

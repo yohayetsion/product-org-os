@@ -57,7 +57,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Define a **Roadmap Item** (initiative, epic, or feature).
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 3: Strategic Commitments** - Roadmap items are the specific commitments within themes.
 

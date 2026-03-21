@@ -11,6 +11,7 @@ metadata:
   version: 3.0.0
   category: business-planning
 compatibility: Requires Product Org OS v3+ context layer and rules
+context: fork
 ---
 
 ## Document Intelligence
@@ -54,10 +55,17 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 - `cases/`
 
 ---
+## Gotchas
+
+- Never fabricate financial projections (revenue, costs, ROI) — provide frameworks with [TBD] inputs
+- Sensitivity analysis must test key assumptions — a business case with only one scenario is fiction
+- Opportunity cost must be stated — what are we NOT investing in if we do this?
+
+
 
 Create a **comprehensive Business Case** for the specified initiative or investment.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 2: Strategic Decisions** - Business cases are the commercial filter that determines whether to proceed.
 

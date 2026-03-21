@@ -43,10 +43,16 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 **FIND**: Check registry, then search user's folders for value traces.
 
 ---
+## Gotchas
+
+- Value must trace from customer need to feature to outcome — breaks in the chain mean the feature may not deliver value
+- Customer evidence must be from actual customers, not internal assumptions about what customers want
+
+
 
 Trace a **decision, feature, or initiative** back to customer value, validating Principle #3 (Customer Obsession).
 
-## V2V Phase
+## Vision to Value Phase
 
 **Cross-phase** - This skill validates customer value alignment at any phase, especially before Phase 2 decisions and Phase 3 commitments.
 
@@ -61,7 +67,7 @@ Every decision should trace to customer value. This skill validates that work is
 
 **Date**: [Date]
 **Subject**: [Decision/Feature/Initiative being traced]
-**Current V2V Phase**: [Phase 1-6]
+**Current Vision to Value Phase**: [Phase 1-6]
 
 ## Customer Problem Statement
 

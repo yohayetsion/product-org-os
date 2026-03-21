@@ -47,7 +47,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Structure a **Portfolio-Level Tradeoff Decision**.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Cross-phase** - Portfolio tradeoffs occur when Phase 2/3 commitments conflict with capacity.
 

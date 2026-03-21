@@ -43,10 +43,16 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 **FIND**: Check registry, then search user's folders for outcome reviews.
 
 ---
+## Gotchas
+
+- Distinguish outputs (what we shipped) from outcomes (what changed for customers) — shipping is not success
+- Compare actual results to original success criteria — don't move the goalposts after the fact
+
+
 
 Structure an **Outcome Review** to capture learnings from an initiative.
 
-## V2V Phase
+## Vision to Value Phase
 **Phase 6: Learning & Adaptation Loop** - This skill drives continuous improvement.
 
 ## Output Structure

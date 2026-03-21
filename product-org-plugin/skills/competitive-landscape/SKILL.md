@@ -11,6 +11,7 @@ metadata:
   version: 3.0.0
   category: market-analysis
 compatibility: Requires Product Org OS v3+ context layer and rules
+context: fork
 ---
 
 ## Document Intelligence
@@ -54,10 +55,17 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 - `strategy/`
 
 ---
+## Gotchas
+
+- Competitor information must be current — stale competitive intel is worse than none
+- Never assume competitor pricing without verification — check their website or cite sources
+- Feature comparison must be fact-based — don't downplay competitors or inflate own capabilities
+
+
 
 Create a **comprehensive Competitive Landscape Analysis** for the specified market or product area.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 1: Strategic Foundation** - Competitive understanding is essential before making strategic bets.
 

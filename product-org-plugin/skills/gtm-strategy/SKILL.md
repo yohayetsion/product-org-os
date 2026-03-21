@@ -53,10 +53,17 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 - `strategy/`
 
 ---
+## Gotchas
+
+- Sales motion must match customer buying behavior — don't default to 'enterprise sales' without evidence
+- Launch timeline must be realistic — don't compress arbitrary dates without flagging risks
+- Never invent conversion rates or CAC/LTV numbers — use industry benchmarks with attribution or [TBD]
+
+
 
 Create a **comprehensive Go-to-Market (GTM) Strategy** for the specified product or feature.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 3: Strategic Commitments** - GTM strategy is a critical commitment that follows Phase 2 decisions.
 

@@ -11,6 +11,7 @@ metadata:
   version: 3.0.0
   category: business-planning
 compatibility: Requires Product Org OS v3+ context layer and rules
+context: fork
 ---
 
 ## Document Intelligence
@@ -56,7 +57,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Create a **complete Business Plan** for the specified product or business area.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 2: Strategic Decisions** - Business plans consolidate the strategic foundation into a comprehensive commercial blueprint.
 

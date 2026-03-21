@@ -15,7 +15,7 @@ compatibility: Requires Product Org OS v3+ context layer and rules
 
 Query **past interactions** — agent conversations, gateway sessions, and skill invocations — to understand what was discussed, who contributed, and what conclusions were reached.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Cross-phase** — This skill surfaces conversation history relevant to any phase of work.
 

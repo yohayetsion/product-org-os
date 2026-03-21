@@ -11,6 +11,7 @@ metadata:
   version: 3.0.0
   category: market-analysis
 compatibility: Requires Product Org OS v3+ context layer and rules
+context: fork
 ---
 
 ## Document Intelligence
@@ -53,10 +54,17 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 - `analysis/`
 
 ---
+## Gotchas
+
+- Never fabricate TAM/SAM/SOM numbers — use cited sources or [TBD]
+- Market growth rates require attribution — don't present analyst projections as your own analysis
+- Competitive positioning must be evidence-based, not aspirational
+
+
 
 Create a **comprehensive Market Analysis** for the specified market or segment.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 1: Strategic Foundation** - Market analysis establishes the factual foundation for strategic decisions.
 

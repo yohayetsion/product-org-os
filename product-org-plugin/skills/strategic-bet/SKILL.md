@@ -55,6 +55,14 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 - `strategy/`
 
 ---
+## Gotchas
+
+- Never invent market size, growth projections, or ROI estimates — use [TBD] or cite sources
+- Assumptions must be numbered and explicitly testable — vague assumptions are unfalsifiable
+- Re-decision triggers must be specific and observable, not subjective ('if it doesn't work')
+- Every bet must state what we're NOT doing (opportunity cost)
+
+
 
 Formulate a **Strategic Bet** with explicit assumptions and success criteria.
 

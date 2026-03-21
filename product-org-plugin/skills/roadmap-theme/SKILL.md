@@ -57,7 +57,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Define a **Roadmap Theme** with initiatives and success criteria.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 3: Strategic Commitments** - Themes organize roadmap commitments around strategic priorities.
 

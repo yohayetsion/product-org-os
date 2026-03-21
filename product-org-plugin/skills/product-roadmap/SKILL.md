@@ -54,10 +54,17 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 - `docs/roadmap/`
 
 ---
+## Gotchas
+
+- Roadmap themes must connect to strategic bets — features without strategic alignment are noise
+- Confidence levels decrease with distance — 'Now' is high confidence, 'Later' is directional only
+- Never commit to specific dates in the 'Later' horizon — use quarters or 'H2' at most
+
+
 
 Create a **complete Product Roadmap** for the specified timeframe or product area.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 3: Strategic Commitments** - The roadmap is a key commitment artifact that follows strategic decisions.
 

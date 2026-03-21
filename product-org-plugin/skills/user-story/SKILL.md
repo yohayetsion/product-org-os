@@ -55,10 +55,17 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 - `epics/`
 
 ---
+## Gotchas
+
+- User stories must follow 'As a [type], I want [action], so that [benefit]' — don't skip the 'so that'
+- Acceptance criteria are mandatory — a user story without them is just a wish
+- Don't combine multiple stories into one — split until each is independently deliverable
+
+
 
 Write a **User Story** with acceptance criteria.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 3: Strategic Commitments** - User stories are the atomic unit of requirements commitment.
 
