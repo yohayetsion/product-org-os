@@ -1,4 +1,4 @@
-# Product Org Operating Principles (V2V)
+# Product Org Operating Principles (Vision to Value)
 
 **Version**: 1.0
 **Type**: operating-system
@@ -10,7 +10,7 @@
 
 We believe product organizations exist for one purpose: to create customer value that drives business success. Not to ship features. Not to hit deadlines. Not to please stakeholders. To create value.
 
-The Vision to Value (V2V) Operating System is our framework for doing this systematically. It ensures we start with strategy, make quality decisions, commit deliberately, execute coordinately, deliver outcomes, and learn continuously. Skip a phase at your peril.
+The Vision to Value (Vision to Value) Operating System is our framework for doing this systematically. It ensures we start with strategy, make quality decisions, commit deliberately, execute coordinately, deliver outcomes, and learn continuously. Skip a phase at your peril.
 
 ---
 
@@ -208,9 +208,9 @@ The Vision to Value (V2V) Operating System is our framework for doing this syste
 
 ---
 
-## V2V Phase Integration
+## Vision to Value Phase Integration
 
-These principles are enforced throughout the V2V phases:
+These principles are enforced throughout the Vision to Value phases:
 
 | Phase | Key Principles |
 |-------|---------------|
@@ -232,8 +232,8 @@ These principles are enforced throughout the V2V phases:
 | #6 Collaborative Excellence | `/collaboration-check` | For cross-functional work |
 | #8 Scalable Systems | `/scale-check` | Before resource commitments |
 
-Additional V2V enforcement:
-- `/phase-check` — Assess V2V phase readiness
+Additional Vision to Value enforcement:
+- `/phase-check` — Assess Vision to Value phase readiness
 - `/commitment-check` — Validate before point of no return
 
 ---
@@ -259,7 +259,7 @@ Additional V2V enforcement:
 
 ## Cross-Reference
 
-This document formalizes the V2V Operating Principles. For detailed reference:
+This document formalizes the Vision to Value Operating Principles. For detailed reference:
 - **Detailed Principles**: `reference/operating-principles.md`
-- **V2V Flow**: `rules/v2v-flow.md`
+- **Vision to Value Flow**: `rules/v2v-flow.md`
 - **Enforcement Rules**: Merged into `rules/context-management.md`

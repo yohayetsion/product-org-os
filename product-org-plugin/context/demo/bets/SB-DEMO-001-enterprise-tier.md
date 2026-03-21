@@ -4,7 +4,7 @@
 **Date**: 2025-11-15
 **Status**: Active
 **Owner**: VP Product
-**V2V Phase**: Phase 3 (Strategic Commitments)
+**Vision to Value Phase**: Phase 3 (Strategic Commitments)
 **Tags**: enterprise, growth, pricing, go-to-market
 
 ---

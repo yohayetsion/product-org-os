@@ -4,7 +4,7 @@
 **Date**: 2025-12-01
 **Status**: Active
 **Owner**: Director of Product Management
-**V2V Phase**: Phase 2 (Strategic Decisions)
+**Vision to Value Phase**: Phase 2 (Strategic Decisions)
 **Tags**: growth, self-serve, product-led, onboarding
 
 ---

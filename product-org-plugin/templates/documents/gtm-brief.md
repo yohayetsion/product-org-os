@@ -4,7 +4,7 @@
 **Owner**: [Name]
 **Launch Date**: [Date]
 **Status**: Draft / In Review / Approved
-**V2V Phase**: Phase 3-4 (Strategic Commitments → Coordinated Execution)
+**Vision to Value Phase**: Phase 3-4 (Strategic Commitments → Coordinated Execution)
 
 ## Launch Overview
 
@@ -12,7 +12,7 @@
 **Why**: [One sentence]
 **When**: [Date]
 
-## V2V Prerequisites Check
+## Vision to Value Prerequisites Check
 
 | Prerequisite | Status | Artifact |
 |--------------|--------|----------|
@@ -69,4 +69,4 @@ For [target] who [need], [product] is a [category] that [benefit]. Unlike [compe
 
 ---
 
-*Template aligned with v2.2.0 - includes V2V Prerequisites Check*
+*Template aligned with v2.2.0 - includes Vision to Value Prerequisites Check*

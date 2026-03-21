@@ -56,7 +56,7 @@ Every GTM document MUST have:
 10. Execute launch
 11. Measure and iterate
 
-## V2V Operating Principle
+## Vision to Value Operating Principle
 
 > "GTM is a strategic choice, not just execution. Positioning should happen early, not at launch."
 

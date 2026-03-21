@@ -17,7 +17,7 @@ Enables parallel spawning of agents for efficient cross-functional work.
 **DON'T parallelize when:**
 - Outputs are dependencies
 - Coordination is required
-- Sequence matters (V2V phase order)
+- Sequence matters (Vision to Value phase order)
 
 ## Common Parallel Patterns
 
@@ -70,6 +70,6 @@ Key points:
 - **Context sharing**: All receive `/handoff`, `/portfolio-status`, `/context-recall` context
 - **Conflict resolution**: Document disagreements, identify root cause, escalate if needed
 
-## V2V Operating Principle
+## Vision to Value Operating Principle
 
 > "Parallel execution is about comprehensive input, not speed. Speed is a side effect of good design."

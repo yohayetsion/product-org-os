@@ -3,9 +3,9 @@ globs:
   - "**/*"
 ---
 
-# V2V Operating System Flow
+# Vision to Value Operating System Flow
 
-The Vision to Value (V2V) Operating System defines how product work flows from strategic intent to customer outcomes.
+The Vision to Value (Vision to Value) Operating System defines how product work flows from strategic intent to customer outcomes.
 
 **Flow**: Phase 1 → 2 → 3 → 4 → 5 → 6 → (feeds back to Phase 1)
 
@@ -15,12 +15,12 @@ The Vision to Value (V2V) Operating System defines how product work flows from s
 
 | Phase | Name | Purpose | Key Skills | Exit Criteria |
 |-------|------|---------|------------|---------------|
-| **1** | Strategic Foundation | Establish strategic context and market understanding | `/strategic-intent`, `/market-analysis`, `/competitive-landscape`, `/vision-statement`, `/market-segment` | Clear where-to-play and why |
-| **2** | Strategic Decisions | Critical business decisions for commercial viability | `/business-case`, `/pricing-strategy`, `/positioning-statement`, `/decision-record`, `/strategic-bet` | Viability validated, decisions documented |
-| **3** | Strategic Commitments | Convert decisions into executable commitments | `/product-roadmap`, `/gtm-strategy`, `/launch-plan`, `/prd`, `/feature-spec`, `/user-story`, `/commitment-check` | Organization aligned, resources committed |
-| **4** | Coordinated Execution | Execute plan with cross-functional coordination | `/campaign-brief`, `/sales-enablement`, `/launch-readiness`, `/stakeholder-brief` | Product launched, GTM executing |
-| **5** | Business & Customer Outcomes | Realize promised value and track outcomes | `/onboarding-playbook`, `/value-realization-report`, `/customer-health-scorecard` | Outcomes measurable, success evaluable |
-| **6** | Learning & Adaptation | Extract learnings, validate assumptions, feed back | `/outcome-review`, `/retrospective`, `/decision-quality-audit`, `/context-save`, `/feedback-capture` | Learning loop complete |
+| **1** | Strategic Foundation | Establish strategic context and market understanding | `/strategic-intent`, `/market-analysis`, `/competitive-landscape`, `/vision-statement`, `/market-segment`, `/assumption-map`, `/opportunity-tree`, `/experiment-design`, `/lean-canvas`, `/business-model-canvas`, `/customer-journey-map`, `/interview-synthesis`, `/pretotype`, `/press-release-faq`, `/ansoff-matrix`, `/pestle-analysis`, `/porter-five-forces`, `/swot-analysis`, `/blue-ocean` | Clear where-to-play and why |
+| **2** | Strategic Decisions | Critical business decisions for commercial viability | `/business-case`, `/pricing-strategy`, `/positioning-statement`, `/decision-record`, `/strategic-bet`, `/four-risks-check`, `/dhm-analysis`, `/growth-model`, `/bcg-matrix`, `/stakeholder-map` | Viability validated, decisions documented |
+| **3** | Strategic Commitments | Convert decisions into executable commitments | `/product-roadmap`, `/gtm-strategy`, `/launch-plan`, `/prd`, `/feature-spec`, `/user-story`, `/commitment-check`, `/prioritize-features` | Organization aligned, resources committed |
+| **4** | Coordinated Execution | Execute plan with cross-functional coordination | `/campaign-brief`, `/sales-enablement`, `/launch-readiness`, `/stakeholder-brief`, `/competitive-battlecard` | Product launched, GTM executing |
+| **5** | Business & Customer Outcomes | Realize promised value and track outcomes | `/onboarding-playbook`, `/value-realization-report`, `/customer-health-scorecard`, `/north-star-metric` | Outcomes measurable, success evaluable |
+| **6** | Learning & Adaptation | Extract learnings, validate assumptions, feed back | `/outcome-review`, `/retrospective`, `/decision-quality-audit`, `/context-save`, `/feedback-capture`, `/compound`, `/product-teardown`, `/bias-check` | Learning loop complete |
 
 ### Cross-Phase Skills
 
@@ -61,6 +61,6 @@ Documents evolve across phases. Skills support **Create/Update/Find** modes:
 
 ---
 
-## V2V Operating Principle
+## Vision to Value Operating Principle
 
-> "The V2V flow is not bureaucracy - it's a thinking framework that ensures we do the right things in the right order. Skip phases at your peril."
+> "The Vision to Value flow is not bureaucracy - it's a thinking framework that ensures we do the right things in the right order. Skip phases at your peril."

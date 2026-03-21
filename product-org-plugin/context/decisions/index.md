@@ -1,30 +1,9 @@
-# Decision Registry
+# Decisions Index
 
-*Last updated: —*
+*Rebuilt: 2026-03-11 13:20*
 
-## All Decisions
-
-| ID | Title | Date | Owner | Status | Tags |
-|----|-------|------|-------|--------|------|
-| — | No decisions recorded yet | — | — | — | — |
-
-## Quick Filters
-
-### By Status
-- **Accepted**: —
-- **Proposed**: —
-- **Superseded**: —
-
-### By Tag
-*Tags will appear here as decisions are added*
-
-## Recent Decisions
-*Most recent decisions will appear here*
-
----
-
-## How to Add Decisions
-
-After creating a decision record with `/decision-record`, run `/context-save` to add it to this registry.
-
-Each decision record should be saved to `context/decisions/[YYYY]/DR-[YYYY]-[NNN].md`
+| ID | Title | Status | Date | File |
+|-----|-------|--------|------|------|
+| DR-2026-003 | Legionis Naming |  |  | DR-2026-003.md |
+| DR-2026-004 | Token Bank Pricing |  |  | DR-2026-004.md |
+| DR-2026-005 | AXIA IRM Repositioning |  |  | DR-2026-005.md |

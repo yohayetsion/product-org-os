@@ -4,7 +4,7 @@
 
 Product organizations produce and maintain these core assets:
 
-| # | Asset | Owner | Purpose | V2V Phase | Related Skills |
+| # | Asset | Owner | Purpose | Vision to Value Phase | Related Skills |
 |---|-------|-------|---------|-----------|----------------|
 | 1 | Product Vision & Roadmap | VP Product / Dir PM | Strategic direction | 1, 3 | `/vision-statement`, `/product-roadmap`, `/roadmap-theme` |
 | 2 | Product Delivery Planning | Dir PM / PM | Execution coordination | 4 | `/launch-readiness`, `/launch-plan` |
@@ -17,9 +17,9 @@ Product organizations produce and maintain these core assets:
 | 9 | Stakeholder Intimacy | Dir PM / Dir PMM | Relationship management | Cross | `/stakeholder-brief`, `/strategy-communication` |
 | 10 | Value Realization | Value Realization | Outcome tracking | 5, 6 | `/value-realization-report`, `/customer-health-scorecard`, `/outcome-review` |
 
-## V2V Phase Coverage
+## Vision to Value Phase Coverage
 
-| V2V Phase | Primary Assets | Key Skills |
+| Vision to Value Phase | Primary Assets | Key Skills |
 |-----------|---------------|------------|
 | **1. Strategic Foundation** | Product Vision & Roadmap, Market & Customer Intimacy | `/strategic-intent`, `/vision-statement`, `/market-analysis` |
 | **2. Strategic Decisions** | Pricing Strategy, Business Plan | `/pricing-strategy`, `/business-case`, `/decision-record` |

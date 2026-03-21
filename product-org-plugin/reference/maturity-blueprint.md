@@ -9,14 +9,14 @@
 | 3 | **Company Leading** | Optimizing, cross-functional excellence | System-driven |
 | 4 | **Market Leading** | Innovating, setting industry standards | Culture-driven |
 
-## V2V Operating System Adoption by Maturity
+## Vision to Value Operating System Adoption by Maturity
 
-| Level | V2V Phase Adoption | Skills Emphasis | Principle Validators |
+| Level | Vision to Value Phase Adoption | Skills Emphasis | Principle Validators |
 |-------|-------------------|-----------------|---------------------|
 | **L1: Enabling** | Focus on Phases 4-5 (execution, outcomes) | `/prd`, `/feature-spec`, `/launch-readiness` | Minimal - `/phase-check` |
 | **L2: Established** | Add Phases 2-3 (decisions, commitments) | `/decision-record`, `/product-roadmap`, `/gtm-brief` | `/ownership-map`, `/customer-value-trace` |
-| **L3: Company Leading** | Full V2V flow including Phase 1 & 6 | `/strategic-bet`, `/commitment-check`, `/outcome-review` | All 5 validators regularly |
-| **L4: Market Leading** | Advanced V2V with portfolio orchestration | `/portfolio-tradeoff`, `/decision-quality-audit`, `/principles scorecard` | Systematic audits |
+| **L3: Company Leading** | Full Vision to Value flow including Phase 1 & 6 | `/strategic-bet`, `/commitment-check`, `/outcome-review` | All 5 validators regularly |
+| **L4: Market Leading** | Advanced Vision to Value with portfolio orchestration | `/portfolio-tradeoff`, `/decision-quality-audit`, `/principles scorecard` | Systematic audits |
 
 ## Assessment Skills
 

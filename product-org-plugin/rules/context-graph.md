@@ -92,6 +92,6 @@ When running `/portfolio-status` or `/context-recall`:
 - Flag broken links (referenced ID not found)
 - Suggest cleanup for stale links
 
-## V2V Operating Principle
+## Vision to Value Operating Principle
 
 > "Context without connections is just data. The cross-reference graph turns individual records into organizational intelligence."
