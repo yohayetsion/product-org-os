@@ -15,7 +15,7 @@ compatibility: Requires Product Org OS v3+ context layer and rules
 
 View the **current state** of the strategic portfolio — all active bets, their health, and upcoming checkpoints.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Cross-phase** - This skill provides portfolio context for any strategic work.
 
@@ -180,6 +180,6 @@ Present the status report in a clear, scannable format. Offer to:
 When reporting portfolio status:
 
 1. **Use status index**: Pull active bets from `bets.statusIndex` in `context/index.json`
-2. **Phase-based filtering**: Use `phaseIndex` to show bets by their current V2V phase
+2. **Phase-based filtering**: Use `phaseIndex` to show bets by their current Vision to Value phase
 3. **Cross-reference enrichment**: For each active bet, show linked assumptions and their validation status
 4. **Product filtering**: In multi-product orgs, support `product:` filter using `productIndex`

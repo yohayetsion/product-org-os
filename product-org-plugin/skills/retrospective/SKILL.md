@@ -43,10 +43,16 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 **FIND**: Check registry, then search user's folders for retrospectives.
 
 ---
+## Gotchas
+
+- Focus on systemic improvements, not individual blame — 'who' is less important than 'why'
+- Action items from retros must have owners and deadlines — retros without follow-through are therapy sessions
+
+
 
 Conduct a **Structured Retrospective** for the specified project, launch, or time period.
 
-## V2V Phase
+## Vision to Value Phase
 **Phase 6: Learning & Adaptation Loop** - This skill captures learnings for continuous improvement.
 
 ## Output Structure

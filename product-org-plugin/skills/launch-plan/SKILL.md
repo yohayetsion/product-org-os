@@ -54,10 +54,17 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 - `docs/launch/`
 
 ---
+## Gotchas
+
+- Launch dates should be working backward from readiness criteria, not arbitrary deadlines
+- Cross-functional dependencies must be mapped — marketing, sales, support, engineering
+- Success metrics must be defined before launch, not after — post-hoc metrics are cherry-picked
+
+
 
 Create a **complete Product Launch Plan** for the specified product or feature.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 3: Strategic Commitments** - Launch plans commit cross-functional resources to execution.
 

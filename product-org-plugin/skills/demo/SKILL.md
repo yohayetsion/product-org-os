@@ -29,7 +29,7 @@ When invoked, immediately run the tour skill content. Present the same 5-step wa
 2. **@product Gateway** - Routing to the right agents
 3. **Context Layer** - Institutional memory
 4. **Direct Skills** - Power user mode
-5. **V2V Framework** - Where work fits
+5. **Vision to Value Framework** - Where work fits
 
 ## Instructions
 

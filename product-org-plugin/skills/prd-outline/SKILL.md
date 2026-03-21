@@ -56,7 +56,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Create a **PRD Outline** as a starting point for a full PRD.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 3: Strategic Commitments** - PRD outlines start the requirements commitment process.
 

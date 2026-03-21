@@ -47,7 +47,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Create a **Decision Interface Charter** to govern how a recurring type of decision is made.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 2: Strategic Decisions** - Decision charters establish governance for recurring decisions at any phase.
 

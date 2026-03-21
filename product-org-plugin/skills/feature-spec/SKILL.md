@@ -55,10 +55,17 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 - `docs/specs/`
 
 ---
+## Gotchas
+
+- Never invent implementation estimates (effort, timelines, sprint counts) — that's engineering's job
+- Acceptance criteria must be testable — 'Given/When/Then' format preferred
+- Each feature spec needs a single owner, not a committee
+
+
 
 Create a **Feature Specification** for the specified feature.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 3: Strategic Commitments** - Feature specs detail requirements for implementation.
 

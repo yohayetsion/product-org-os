@@ -55,10 +55,17 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 - `adr/` (architecture decision records)
 
 ---
+## Gotchas
+
+- Always document at least 2-3 alternatives considered — a decision with no alternatives wasn't a decision
+- Single accountable owner required — never 'the team' or 'leadership'
+- Re-decision triggers must be specific events or thresholds, not calendar dates
+
+
 
 Create a **Decision Record** to document a specific decision.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 2: Strategic Decisions** - Decision records document choices made during the commercial filter phase.
 

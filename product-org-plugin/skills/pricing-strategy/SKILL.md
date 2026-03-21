@@ -54,10 +54,17 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 - `business/`
 
 ---
+## Gotchas
+
+- Never fabricate willingness-to-pay data or price sensitivity analysis — use research or [TBD]
+- Pricing must consider competitive alternatives — customers always have an alternative (including doing nothing)
+- Price changes have irreversible effects on positioning — raising prices is easier than recovering from underpricing
+
+
 
 Create a **complete Pricing Strategy** for the specified product or feature.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 2: Strategic Decisions** - Pricing is a critical commercial decision that must be made before commitment.
 

@@ -4,7 +4,7 @@ description: |
   Director of Product Management (shortcut for /director-product-management) - roadmap governance, requirements standards, and cross-team coordination.
   Activate when: /pm-dir, @pm-dir, "roadmap governance", "requirements review", "cross-team priority", "PM team coordination", "commitment validation"
   Do NOT activate for: individual feature specs (@pm), product vision or pricing (@vp-product), GTM strategy (@pmm-dir), process/tooling (@prodops)
-model: sonnet
+model: opus
 alias: director-product-management
 user-invocable: true
 metadata:

@@ -15,7 +15,7 @@ compatibility: Requires Product Org OS v3+ context layer and rules
 
 Save a **decision record**, **strategic bet**, or **learning** to the persistent context registry.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 6: Learning & Adaptation** - This skill persists organizational knowledge for future use.
 
@@ -57,6 +57,7 @@ Ask the user what they want to save:
 - **Strategic Bet** → Extract to `context/bets/` and `context/portfolio/`
 - **Learning** → Extract to `context/learnings/`
 - **Assumptions** → Extract to `context/assumptions/registry.md`
+- **Preference / Convention** → Append to `context/preferences/conventions.md`
 
 ### 2. Extract Key Information
 
@@ -97,6 +98,23 @@ Extract and save:
 - Generate assumption ID (A-NNN, sequential)
 - Link back to source decision/bet
 - Set initial status to "Pending"
+
+#### For Preferences / Conventions
+Append to `context/preferences/conventions.md` under the appropriate category:
+```markdown
+## Terminology
+- Customer tiers: SMB / Mid-Market / Enterprise
+
+## Processes
+- Fiscal year: April 1 - March 31
+
+## Defaults
+- Prioritization framework: RICE
+```
+- Create the file with `# Organizational Conventions` header if it doesn't exist
+- Group by category (Terminology, Processes, Defaults, Competitive Set, etc.)
+- These are always included in pre-inject output — no keyword matching needed
+- No ID generation needed — conventions are a single living document
 
 ### 3. Update Index Files
 

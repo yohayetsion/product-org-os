@@ -43,10 +43,16 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 **FIND**: Check registry, then search user's folders for collaboration checks.
 
 ---
+## Gotchas
+
+- Cross-functional handoffs are where value leaks — focus analysis on transition points
+- Collaboration is not 'more meetings' — look for structural alignment, not communication volume
+
+
 
 Validate **stakeholder consultation and RACI clarity** for a decision or initiative, enforcing Principle #6 (Collaborative Excellence).
 
-## V2V Phase
+## Vision to Value Phase
 
 **Cross-phase** - This skill validates collaborative excellence at any phase, especially before Phase 2 decisions and Phase 3 commitments.
 
@@ -61,7 +67,7 @@ Collaborative Excellence means the right people provide input at the right time.
 
 **Date**: [Date]
 **Subject**: [Decision/Initiative being validated]
-**Current V2V Phase**: [Phase 1-6]
+**Current Vision to Value Phase**: [Phase 1-6]
 **Decision Owner**: [Name/Role - the "A" in RACI]
 
 ## RACI Matrix

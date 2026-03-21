@@ -46,7 +46,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Document **Strategic Intent** for the specified initiative or planning period.
 
-## V2V Phase
+## Vision to Value Phase
 **Phase 1: Strategic Foundation** - This skill captures the strategic direction that drives all downstream decisions.
 
 ## Output Structure

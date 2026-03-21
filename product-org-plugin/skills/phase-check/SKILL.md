@@ -1,8 +1,8 @@
 ---
 name: phase-check
 description: |
-  Assess which V2V phase an initiative is in and identify gaps for progression.
-  Activate when: "what phase are we in", "phase check", "V2V progress", initiative maturity, phase gate, V2V assessment
+  Assess which Vision to Value phase an initiative is in and identify gaps for progression.
+  Activate when: "what phase are we in", "phase check", "Vision to Value progress", initiative maturity, phase gate, Vision to Value assessment
   Do NOT activate for: commitment readiness validation (/commitment-check), organizational maturity (/maturity-check), portfolio status (/portfolio-status)
 argument-hint: [initiative name]
 user-invocable: true
@@ -13,15 +13,21 @@ metadata:
 compatibility: Requires Product Org OS v3+ context layer and rules
 ---
 
-Assess which **V2V phase** an initiative is currently in and identify what's needed to progress.
+## Gotchas
 
-## V2V Phase
+- Phase transitions require exit criteria from previous phase — don't skip phases without acknowledging it
+- Phase 2→3 is the commercial filter — not everything passes. Flag questionable viability explicitly.
+
+
+Assess which **Vision to Value phase** an initiative is currently in and identify what's needed to progress.
+
+## Vision to Value Phase
 
 **Cross-phase** - This skill assesses phase status for any initiative at any time.
 
 ## Purpose
 
-The V2V Operating System has 6 phases. This skill determines where an initiative currently sits, what deliverables are complete, what gaps exist, and what's needed to move forward.
+The Vision to Value Operating System has 6 phases. This skill determines where an initiative currently sits, what deliverables are complete, what gaps exist, and what's needed to move forward.
 
 ## Output Structure
 
@@ -181,7 +187,7 @@ These gaps should be addressed but don't block progression:
 - `/[skill]` - [Purpose]
 - `/[skill]` - [Purpose]
 
-## V2V Flow Visualization
+## Vision to Value Flow Visualization
 
 ```
 Phase 1          Phase 2          Phase 3          Phase 4          Phase 5          Phase 6

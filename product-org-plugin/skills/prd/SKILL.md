@@ -11,6 +11,7 @@ metadata:
   version: 3.0.0
   category: requirements
 compatibility: Requires Product Org OS v3+ context layer and rules
+context: fork
 ---
 
 ## Document Intelligence
@@ -55,10 +56,18 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 - `docs/requirements/`
 
 ---
+## Gotchas
+
+- Never invent user counts, revenue projections, or market size — use [TBD] placeholders
+- Success criteria must be measurable — reject vague 'improve user experience' or 'better performance'
+- Problem statement must be from customer perspective with evidence, not internal assumptions
+- Scope boundaries (in/out) must be explicit — ambiguity in scope is the #1 cause of scope creep
+
+
 
 Create a **complete Product Requirements Document (PRD)** for the specified product or feature.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 3: Strategic Commitments** - PRDs commit engineering resources to specific requirements.
 

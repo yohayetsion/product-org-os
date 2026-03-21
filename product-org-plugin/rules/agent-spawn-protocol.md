@@ -262,6 +262,8 @@ Log when agents/gateways/skills produce deliverables. Skip simple Q&A, context r
 
 1. Apply Meeting Mode (if multi-agent) → 2. Display ROI → 3. Log Interaction → 4. Run agent-output-handler.py (if deliverable)
 
+> **Step 4**: The handler converts MD to AXIA V3 slide-based HTML with inline commenting. See `templates/presentations/TEMPLATE-REFERENCE.md` for full spec.
+
 ### Logging Steps
 
 1. Read `context/interactions/index.json` → get `nextId`

@@ -63,7 +63,7 @@ For each file, extract:
   "type": "[detected type]",
   "path": "[relative path]",
   "topics": ["topic1", "topic2"],
-  "phase": "[V2V phase if detectable]",
+  "phase": "[Vision to Value phase if detectable]",
   "created": "[file creation date]",
   "lastAccessed": "[current date]",
   "size": "[file size]"
@@ -89,7 +89,7 @@ For each file, extract:
 - Limit to 5-10 topics per document
 
 **Phase Detection:**
-Look for V2V phase indicators:
+Look for Vision to Value phase indicators:
 - "Strategic Foundation" → phase1
 - "Strategic Decision" → phase2
 - "Commitment" or "Roadmap" → phase3

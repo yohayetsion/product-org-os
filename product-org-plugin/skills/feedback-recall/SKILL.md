@@ -15,7 +15,7 @@ compatibility: Requires Product Org OS v3+ context layer and rules
 
 Search and synthesize **past feedback** to inform current work.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Cross-phase** - This skill surfaces customer voice before work in any phase.
 

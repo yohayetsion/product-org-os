@@ -57,7 +57,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 Define a **Market Segment** for targeting and GTM purposes.
 
-## V2V Phase
+## Vision to Value Phase
 
 **Phase 1: Strategic Foundation** - Segment definition determines who we serve and how we target them.
 

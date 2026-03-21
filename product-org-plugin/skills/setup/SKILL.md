@@ -15,9 +15,9 @@ compatibility: Requires Product Org OS v3+ context layer and rules
 
 Initialize the **Product Org Plugin** for first-time use. This creates the context folder structure and all necessary index files in your current working directory.
 
-## V2V Phase
+## Vision to Value Phase
 
-**Cross-phase** - Setup is a prerequisite for all V2V work. Run once per project.
+**Cross-phase** - Setup is a prerequisite for all Vision to Value work. Run once per project.
 
 **Prerequisites**: None (this is the starting point)
 **Outputs used by**: All skills that use the context layer
@@ -76,30 +76,33 @@ Before creating or modifying anything, scan the workspace and build an inventory
 | Category | Check | Items |
 |----------|-------|-------|
 | **Rules** | `.claude/rules/agent-spawn-protocol.md`, `.claude/rules/mcp-integration.md`, `.claude/rules/auto-context.md`, `.claude/rules/context-graph.md`, `.claude/rules/delegation-protocol.md` | 5 files |
-| **Directories** | `context/`, `context/decisions/`, `context/bets/`, `context/assumptions/`, `context/portfolio/`, `context/learnings/`, `context/handoffs/`, `context/feedback/`, `context/documents/`, `context/roi/`, `context/roi/history/`, `context/interactions/` | 12 dirs |
+| **Directories** | `context/`, `context/decisions/`, `context/bets/`, `context/assumptions/`, `context/portfolio/`, `context/learnings/`, `context/handoffs/`, `context/feedback/`, `context/documents/`, `context/roi/`, `context/roi/history/`, `context/interactions/`, `context/preferences/` | 13 dirs |
 | **Index files** | `context/README.md`, `context/decisions/index.md`, `context/bets/index.md`, `context/assumptions/registry.md`, `context/portfolio/active-bets.md`, `context/learnings/index.md`, `context/handoffs/current-session.md`, `context/feedback/index.md`, `context/feedback/themes.md`, `context/documents/registry.md` | 10 files |
 | **ROI files** | `context/roi/session-log.md`, `context/roi/history/README.md` | 2 files |
 | **Interaction files** | `context/interactions/index.json`, `context/interactions/current-session.md` | 2 files |
 | **JSON index** | `context/index.json` | 1 file |
+| **Tracker** | `hooks/os-tracker.py`, `hooks/baselines.json` | 2 files |
 
 **Build a status report:**
 
 ```
 Pre-flight audit:
   Rules:       [0/5] or [X/5]
-  Directories: [X/12]
+  Directories: [X/13]
   Index files: [X/10]
   ROI files:   [X/2]
   Interaction: [X/2]
   JSON index:  [0/1] or [1/1]
   ─────────────────────────────
-  Total:       [X/32] already exist
+  Tracker:     [X/2]
+  ─────────────────────────────
+  Total:       [X/35] already exist
 ```
 
 **Decision logic:**
-- If **32/32** exist → Skip to Step 6 (welcome) and report "Already fully initialized"
-- If **0/32** exist → Fresh install, run all steps
-- If **1-31/32** exist → Partial setup, create only what's missing (never overwrite)
+- If **35/35** exist → Skip to Step 6 (welcome) and report "Already fully initialized"
+- If **0/35** exist → Fresh install, run all steps
+- If **1-34/35** exist → Partial setup, create only what's missing (never overwrite)
 
 Display the audit result to the user before proceeding.
 
@@ -122,6 +125,7 @@ Create **only missing** directories (skip any that already exist):
 - `context/roi/`
 - `context/roi/history/`
 - `context/interactions/`
+- `context/preferences/`
 
 Use `mkdir -p` (or equivalent) which is inherently safe for existing directories.
 
@@ -389,7 +393,7 @@ The Document Registry tracks all strategic documents created by skills. This ena
 
 ## All Documents
 
-| ID | Type | Title | Path | Status | V2V Phase | Related | Updated |
+| ID | Type | Title | Path | Status | Vision to Value Phase | Related | Updated |
 |----|------|-------|------|--------|-----------|---------|---------|
 | — | No documents registered yet | — | — | — | — | — | — |
 
@@ -478,7 +482,38 @@ Create ROI tracking folders and files:
 - `context/roi/session-log.md`
 - `context/roi/history/README.md`
 
-### 4b. Create Interaction Tracking Files
+### 4b. Configure Context Tracker
+
+Set up automatic post-agent tracking via `hooks/os-tracker.py`:
+
+1. **Verify Python**: Run `python hooks/os-tracker.py --diagnose --context-dir ./context` to verify Python 3.8+ is available and baselines.json loads correctly.
+
+2. **Claude Code** (if `.claude/` directory exists): Add PostToolUse hook to project settings (`.claude/settings.json`):
+   ```json
+   {
+     "hooks": {
+       "PostToolUse": [
+         {
+           "matcher": "Agent",
+           "hooks": [
+             {
+               "type": "command",
+               "command": "python hooks/os-tracker.py --hook",
+               "timeout": 10000
+             }
+           ]
+         }
+       ]
+     }
+   }
+   ```
+   Note: Merge with existing hooks if settings.json already has hook configuration.
+
+3. **Other platforms**: Point users to `AGENT-INTEGRATION.md` in the plugin root for Cursor, Windsurf, and other agent integration instructions.
+
+4. Report: `[✓] Context tracker configured` + platform-specific note (e.g., "Claude Code PostToolUse hook added" or "See AGENT-INTEGRATION.md for your platform").
+
+### 4d. Create Interaction Tracking Files
 
 Create interaction log files:
 
@@ -655,6 +690,8 @@ Context structure:
 [✓/·] context/interactions/index.json
 [✓/·] context/interactions/current-session.md
 [✓/·] context/index.json
+[✓/·] hooks/os-tracker.py (context tracker)
+[✓/·] hooks/baselines.json (ROI baselines)
 
 Created: X new | Skipped: Y existing
 ```
@@ -662,7 +699,7 @@ Created: X new | Skipped: Y existing
 If everything already existed, show:
 ```
 Product Org Plugin — already fully initialized.
-All 32 items present. No changes made.
+All 34 items present. No changes made.
 ```
 
 ### 8. Interactive Onboarding Choice (MANDATORY)
