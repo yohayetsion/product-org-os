@@ -4,7 +4,7 @@
 
 > Intent → Decisions → Commitments → Execution → Outcomes → Learning
 
-110 agents • 346 skills • 18 gateways • 95 knowledge packs • 15 teams • Automatic context tracking • MCP integrations
+13 agents • 133 skills • 2 gateways • 10 knowledge packs • Typed skill relationships • Automatic context tracking • MCP integrations
 
 [**View the Interactive Presentation →**](https://yohayetsion.github.io/product-org-os)
 
@@ -101,43 +101,17 @@ Combine agents and skills naturally.
 
 ## What's Included
 
-### 110 Agents Across 15 Teams
+### 13 Role-Based Agents
+CPO, VP Product, Director PM, Director PMM, Product Manager, PMM, Product Mentor, BizOps, BizDev, Competitive Intelligence, Product Operations, Value Realization, UX Lead
 
-**Product Org (13 agents)**: CPO, VP Product, Director PM, Director PMM, Product Manager, PMM, Product Mentor, BizOps, BizDev, Competitive Intelligence, Product Operations, Value Realization, UX Lead
+### 2 Gateways
+Product and Product Leadership Team — route to relevant agents automatically
 
-**Extension Teams (91 agents across 15 teams)**:
+### 133 Skills
+PRDs, roadmaps, business cases, GTM strategies, pricing models, launch plans, QBR decks, competitive analyses, decision records, ROI tracking, plus 31 strategy frameworks including Porter's Five Forces, Blue Ocean, SWOT, PESTLE, Business Model Canvas, Lean Canvas, Shape Up, Wardley Maps, Seven Powers, Kano Analysis, OKR Writer, and more. Plus CRO skills, marketing psychology, programmatic SEO, email sequences, and GEO/LLM SEO.
 
-| Team | Agents | Examples |
-|------|--------|----------|
-| Design | 6 | UI Designer, Visual Designer, User Researcher, Motion Designer |
-| Architecture | 6 | Chief Architect, API Architect, Cloud Architect, AI/ML Architect, Security Architect |
-| Marketing | 15 | CMO, SEO Specialist, Copywriter, Growth Marketer, Paid Media Manager |
-| Finance | 8 | CFO, FP&A Analyst, Revenue Analyst, Tax Planning, Treasury |
-| Legal | 7 | General Counsel, Contracts, Privacy, IP, Employment, Compliance |
-| Operations | 7 | COO, Program Manager, Project Manager, Risk Manager, Procurement |
-| HR / People Ops | 7 | CHRO, Recruiter, Onboarding, Performance, Compensation, People Analytics |
-| Customer Success | 6 | CS Director, CSM, Support Lead, KB Specialist, Onboarding CSM, CS Ops |
-| Sales Engineering | 6 | Sales Director, Sales Engineer, SDR, Account Exec, Sales Ops, Proposal Writer |
-| Data Science | 5 | Data Lead, Data Analyst, BI Engineer, ML Engineer, Experimentation Analyst |
-| Dev | 5 | Tech Lead, Frontend Dev, Backend Dev, DevOps, QA Engineer |
-| Executive | 1 | CEO |
-| Corp Dev | 4 | Head of Corp Dev, M&A Analyst, Strategic Partnerships, Corporate Venture |
-| IT Governance | 5 | CIO, IT Director, Data Governance, Enterprise Systems, IT Security Policy |
-| Personal Staff | 3 | PA, Analyst, Coach |
-
-**PMTK OS (6 agents)**: Product Planner, Product Marketer, Product Architect, Sales Engineer, MarCom Manager, Director of Products
-
-### 18 Gateways
-Product, PLT, PMTK, Design, Architecture, Marketing, Finance, Legal, Operations, Executive, Corp Dev, IT Governance, Personal Staff, Development, HR, Customer Success, Sales, Data Science
-
-### 346 Skills
-PRDs, roadmaps, business cases, GTM strategies, pricing models, launch plans, QBR decks, competitive analyses, decision records, ROI tracking, plus 31 strategy frameworks including Porter's Five Forces, Blue Ocean, SWOT, PESTLE, Business Model Canvas, Lean Canvas, Shape Up, Wardley Maps, Seven Powers, Kano Analysis, OKR Writer, and more
-
-### GEO / LLM SEO
-`/llm-seo` — optimize brand visibility across ChatGPT, Claude, Gemini, and AI Overviews
-
-### 95 Knowledge Packs
-Domain expertise across security, compliance, contracts, SaaS metrics, coaching, cloud architecture, API design, user research, accessibility, email marketing, content strategy, financial modeling, and 80+ more professional domains
+### 10 Knowledge Packs
+Prioritization, Pricing, Discovery, Metrics, Competitive, GTM, Stakeholder Management, User Research, Financial Modeling, GEO Playbook
 
 ### Context Layer
 Organizational memory that persists across sessions:
@@ -174,23 +148,20 @@ Six phases from strategic intent to learning loop, with skills mapped to each ph
 
 ## What's New in v3.2
 
-### 4 New Agent Teams (24 Agents)
-The system grew from 11 to 15 specialist teams:
-- **HR / People Ops** (7 agents) — Recruiting, onboarding, performance management, compensation, people analytics
-- **Customer Success** (6 agents) — Account health, support triage, KB content, customer onboarding, CS ops
-- **Sales Engineering** (6 agents) — Pipeline management, technical demos, proposals, prospecting, deal management
-- **Data Science** (5 agents) — SQL analysis, dashboards, ML models, A/B test analysis, analytics strategy
+### 30 New Skills (103 → 133)
+
+The biggest skill expansion since launch, adding strategy frameworks, CRO optimization, marketing psychology, and GEO.
 
 ### 10 New Strategy Frameworks
 Shape Up, Wardley Maps, Seven Powers, AARRR/Pirate Metrics, HEART Metrics, OKR Writer, Kano Analysis, Design Sprint, DACI, Pre-mortem — each with full source attribution.
 
 ### GEO: AI Search Visibility
-New `/llm-seo` skill for Generative Engine Optimization — optimize brand presence across ChatGPT, Claude, Gemini, and Google AI Overviews.
+New `/llm-seo` skill for Generative Engine Optimization — optimize brand presence across ChatGPT, Claude, Gemini, and Google AI Overviews. Comes with a dedicated GEO Playbook knowledge pack.
 
-### 95 Knowledge Packs (was 9)
-From product-focused packs to full organizational coverage: security, compliance, contracts, SaaS metrics, coaching, cloud architecture, API design, user research, accessibility, email marketing, and 80+ more.
+### New CRO & Marketing Skills
+A/B Test Setup, Analytics Tracking, Competitor Alternatives, Content Strategy, Copywriting, Copy Editing, Email Sequences, Form CRO, Signup Flow CRO, Paywall/Upgrade CRO, Popup CRO, Free Tool Strategy, Launch Strategy, Marketing Psychology, Programmatic SEO, Referral Programs, Social Content, and more.
 
-### 31 Strategy Frameworks
+### 31 Strategy Frameworks (Total)
 The frameworks product leaders reach for daily:
 
 | Skill | Framework | Creator |
