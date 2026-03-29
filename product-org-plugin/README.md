@@ -133,10 +133,13 @@ Ships with pre-populated sample data so you can explore immediately:
 - `/clear-demo` removes demo entirely when ready
 
 ### ROI Tracking
-See time savings after every skill completion:
-- Automatic display of estimated time saved
-- Session totals and historical tracking
-- View dashboard with `/roi-report`
+Full cost-value transparency after every skill completion:
+```
+⏱️ ~1.5hrs saved in 31s, 19k tkns ~$0.1 cost, Value ~$150
+```
+- Time saved, token usage, estimated cost, and dollar value per deliverable
+- Per-agent breakdown for multi-agent sessions
+- Session totals and historical tracking with `/roi-report`
 
 ### Vision to Value Framework
 Six phases from strategic intent to learning loop, with skills mapped to each phase

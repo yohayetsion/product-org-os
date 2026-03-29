@@ -118,7 +118,7 @@ Before `/commitment-check`:
 
 Show ROI when a tangible deliverable is produced. Skip for Q&A, lookups, recalls, system ops.
 
-Format: `⏱️ ~[X] hrs/min saved in [Y]s (vs. [brief manual equivalent])`
+Format: `⏱️ ~[X]hrs saved in [Y]s, [Z]k tkns ~$[C] cost, Value ~$[V]`
 
 Calculation: Look up base time in `reference/roi-baselines.md` × complexity factor (Simple 0.5×, Standard 1.0×, Complex 1.5×, Enterprise 2.0×).
 

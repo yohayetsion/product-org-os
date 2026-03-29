@@ -242,6 +242,23 @@ Key messages that resonate when competing against [Competitor]:
 
 ---
 
+## AI Search Visibility
+
+Track competitor presence across AI search engines as part of the competitive landscape:
+
+| Engine | Our Brand Role | Competitor Role | Notes |
+|--------|---------------|----------------|-------|
+| ChatGPT | [Primary/Secondary/Mention/Absent] | [Their role] | [Key observation] |
+| Claude | [Primary/Secondary/Mention/Absent] | [Their role] | [Key observation] |
+| Gemini | [Primary/Secondary/Mention/Absent] | [Their role] | [Key observation] |
+| AI Overviews | [Primary/Secondary/Mention/Absent] | [Their role] | [Key observation] |
+
+**AI Search Talking Point**: [How our AI search presence compares to competitor's]
+
+Use `/llm-seo audit` to generate baseline data for this section.
+
+---
+
 ## Recommended Demo Focus
 
 When demoing against [Competitor], emphasize:

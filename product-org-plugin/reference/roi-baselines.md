@@ -194,10 +194,25 @@ Context: Portfolio tradeoff, cross-functional alignment, strategic bet
 4. **Cumulative tracking** - Session totals aggregate across all skill/agent invocations
 5. **Learning improves estimates** - Actual usage patterns refine baseline accuracy over time
 
-### Correct ROI Framing Examples
-- "~4 hours saved (vs. manual PRD writing + stakeholder reviews)"
-- "~2 hours saved (vs. conducting competitive analysis manually)"
-- "~90 min saved (vs. documenting decision + aligning stakeholders)"
+### ROI Display Format
+
+**Single Agent:**
+```
+⏱️ ~[X]hrs saved in [Y]s, [Z]k tkns ~$[C] cost, Value ~$[V]
+```
+
+**Multi-Agent (Gateway/PLT):**
+```
+⏱️ Total: ~[X]hrs saved in [Y]min, [Z]k tkns ~$[C] cost, Value ~$[V]
+
+└─ {emoji} {Display Name}: ~[X]hrs saved, [Z]k tkns ~$[C] cost, Value ~$[V]
+└─ {emoji} {Display Name}: ~[X]hrs saved, [Z]k tkns ~$[C] cost, Value ~$[V]
+```
+
+**Field Calculations:**
+- **Tokens**: Sum input + output tokens, round to 1k, use `k` suffix
+- **Cost**: Opus ~$0.015/1k input + $0.075/1k output. Round to $0.1
+- **Value**: Time saved (hrs) × $100/hr (senior product professional rate)
 
 ### INCORRECT ROI Framing (NEVER use)
 - "vs. coding this feature" (wrong scope)

@@ -186,7 +186,7 @@ Task tool call #1:
     - NEVER dump 1000+ word analysis inline
 
     ### After completing your primary task, display ROI:
-    ⏱️ ~[X] min/hrs saved (vs. [manual equivalent])
+    ⏱️ ~[X]hrs saved in [Y]s, [Z]k tkns ~$[C] cost, Value ~$[V]
 
     ---
 

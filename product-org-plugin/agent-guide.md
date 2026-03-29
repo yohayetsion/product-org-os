@@ -400,7 +400,7 @@ Agents auto-detect connected tools and use them when available:
 Every skill completion shows estimated time saved vs. manual equivalent:
 
 ```
-⏱️ ~90 min saved in 31s (vs. manual requirements analysis + stakeholder review)
+⏱️ ~1.5hrs saved in 31s, 19k tkns ~$0.1 cost, Value ~$150
 ```
 
 - Automatic display after deliverables
