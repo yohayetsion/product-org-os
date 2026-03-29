@@ -1,14 +1,14 @@
 ---
 name: prioritize-features
 description: |
-  Prioritize a list of features or initiatives using proven frameworks (RICE, Kano, MoSCoW, WSJF). Produces scored, ranked output with rationale.
-  Activate when: "prioritize", "rank features", "RICE score", "Kano", "MoSCoW", "feature scoring", "what to build first", "priority matrix", "WSJF", "which features first", "stack rank"
+  Prioritize a list of features or initiatives using proven frameworks (RICE, ICE, Kano, MoSCoW, WSJF, Value vs Effort). Produces scored, ranked output with rationale.
+  Activate when: "prioritize", "rank features", "RICE score", "ICE score", "Kano", "MoSCoW", "feature scoring", "what to build first", "priority matrix", "WSJF", "which features first", "stack rank", "value effort matrix", "impact effort", "quick wins"
   Do NOT activate for: roadmap planning (/product-roadmap), commitment checks (/commitment-check), strategic bet formulation (/strategic-bet)
 argument-hint: [list of features/initiatives] or [update path/to/prioritization.md]
 user-invocable: true
 metadata:
   author: Product Org OS
-  version: 1.0.0
+  version: 1.1.0
   category: product-management
 compatibility: Requires Product Org OS v3+ context layer and rules
 ---
@@ -55,7 +55,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 ---
 ## Gotchas
 
-- Prioritization criteria must be stated explicitly — different frameworks (RICE, Kano, MoSCoW) give different results
+- Prioritization criteria must be stated explicitly — different frameworks (RICE, ICE, Kano, MoSCoW, WSJF, Value vs Effort) give different results
 - Never fabricate reach, impact, or confidence scores — use data or explicitly label as team estimates
 - Prioritization without strategic alignment is just sorting — connect to strategic bets
 
@@ -78,6 +78,10 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 <!-- Source: WSJF (Weighted Shortest Job First) — Don Reinertsen, "The Principles of Product Development Flow" (2009). Adopted by SAFe (Scaled Agile Framework). Formula: (Business Value + Time Criticality + Risk Reduction/Opportunity Enablement) / Job Size. Based on Cost of Delay economics. Key insight: prioritize by economic value delivered per unit of time, not just by value alone. -->
 
+<!-- Source: ICE Scoring — Sean Ellis, GrowthHackers (~2010). Originally designed for prioritizing growth experiments. Simpler than RICE (no Reach component) but less precise. Each dimension scored 1-10. -->
+
+<!-- Source: Value vs Effort Matrix — common product management 2×2 framework. Also known as Impact/Effort Matrix or Priority Matrix. Popularized by multiple sources including Eisenhower Matrix variants adapted for product work. -->
+
 ### Framework Selection Guide
 
 | Framework | Best For | Strengths | Limitations |
@@ -86,6 +90,8 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 | **Kano** | Customer-facing features | Reveals non-obvious priorities | Requires customer survey data |
 | **MoSCoW** | Release planning, MVP scoping | Simple, stakeholder-friendly | Subjective without scoring |
 | **WSJF** | Agile/SAFe teams, flow-based | Accounts for time value | Requires relative sizing discipline |
+| **ICE** | Growth experiments, rapid prioritization | Simple, fast, equal weighting | Less precise than RICE (no Reach) |
+| **Value vs Effort** | Quick triage, executive alignment | Visual, intuitive 2x2 | Binary classification, no granular scoring |
 
 When unsure, ask the user which framework to apply. If they say "just prioritize", default to RICE.
 
@@ -149,6 +155,39 @@ M = Must-Be, O = One-Dimensional, A = Attractive, I = Indifferent, R = Reverse, 
 
 **Formula**: WSJF = (Business Value + Time Criticality + Risk Reduction) / Job Size
 
+### ICE Scoring
+
+| Component | Scale (1-10) | Guidance |
+|-----------|-------------|---------|
+| **Impact** | 1 = Minimal, 10 = Massive | How much will this move the target metric? |
+| **Confidence** | 1 = Pure guess, 10 = Data-backed certainty | How confident are you in the impact estimate? |
+| **Ease** | 1 = Very hard, 10 = Trivial | How easy is this to implement? (Inverse of effort) |
+
+**Formula**: ICE Score = Impact × Confidence × Ease
+
+**Score interpretation**: Max = 1000, practical range 1-500. Higher = prioritize first.
+
+**When to use over RICE**: ICE is faster to score (no Reach estimation needed) and works well for growth experiments, A/B tests, and quick-iteration contexts where all items have similar reach. Use RICE when reach varies significantly across features.
+
+### Value vs Effort Matrix
+
+Plot each feature on a 2×2 matrix with Value (vertical axis) and Effort (horizontal axis):
+
+| | Low Effort | High Effort |
+|--|-----------|------------|
+| **High Value** | **Quick Wins** — Do first. High ROI, low investment. | **Big Bets** — Plan carefully. High reward but significant investment. |
+| **Low Value** | **Fill-Ins** — Do if capacity allows. Low cost, low reward. | **Money Pit** — Avoid. High cost, low return. |
+
+**Scoring approach**: Rate Value and Effort each on a 1-5 scale, then classify:
+- Value >= 4, Effort <= 2 → Quick Win
+- Value >= 4, Effort >= 3 → Big Bet
+- Value <= 3, Effort <= 2 → Fill-In
+- Value <= 3, Effort >= 3 → Money Pit
+
+**Priority order**: Quick Wins > Big Bets > Fill-Ins > Money Pit (avoid)
+
+**When to use**: Best for initial triage with stakeholders, executive-level alignment, or when you need a fast visual prioritization without detailed scoring. Often used as a first pass before applying RICE or WSJF to the Quick Wins and Big Bets quadrants.
+
 ## Output Structure
 
 ```markdown
@@ -156,7 +195,7 @@ M = Must-Be, O = One-Dimensional, A = Attractive, I = Indifferent, R = Reverse, 
 
 **Date**: [YYYY-MM-DD]
 **Owner**: [Who owns this prioritization]
-**Framework(s)**: [RICE / Kano / MoSCoW / WSJF]
+**Framework(s)**: [RICE / ICE / Kano / MoSCoW / WSJF / Value vs Effort]
 **Input source**: [Backlog, stakeholder request, etc.]
 
 ## Features Under Consideration
@@ -203,12 +242,14 @@ M = Must-Be, O = One-Dimensional, A = Attractive, I = Indifferent, R = Reverse, 
 1. Ask the user for: (a) the list of features/initiatives, (b) which framework(s) to use (default: RICE)
 2. If the user provides features without descriptions, ask for brief descriptions
 3. For RICE: ask the user to estimate Reach and Effort; propose Impact and Confidence based on context
-4. For Kano: note that ideal Kano requires customer survey data; offer to classify based on product knowledge as a proxy
-5. For MoSCoW: facilitate classification discussion; challenge "Must Have" inflation
-6. For WSJF: use relative sizing (Fibonacci); anchor with the smallest item as 1
-7. Multiple frameworks can be applied to the same list for cross-validation
-8. Save output as markdown file
-9. Offer `/product-roadmap` to convert prioritized list into a roadmap
+4. For ICE: score all three dimensions 1-10; ideal for growth experiments and rapid prioritization
+5. For Kano: note that ideal Kano requires customer survey data; offer to classify based on product knowledge as a proxy
+6. For MoSCoW: facilitate classification discussion; challenge "Must Have" inflation
+7. For WSJF: use relative sizing (Fibonacci); anchor with the smallest item as 1
+8. For Value vs Effort: rate each dimension 1-5; classify into quadrants; best as a first-pass triage
+9. Multiple frameworks can be applied to the same list for cross-validation
+10. Save output as markdown file
+11. Offer `/product-roadmap` to convert prioritized list into a roadmap
 
 ## Integration
 

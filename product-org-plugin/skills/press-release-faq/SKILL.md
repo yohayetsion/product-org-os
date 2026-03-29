@@ -1,14 +1,14 @@
 ---
 name: press-release-faq
 description: |
-  Write a Working Backwards PRFAQ document — a press release announcing the finished product as if it already shipped, plus internal and external FAQs. Forces clarity on customer value before building.
+  Write a Working Backwards PRFAQ document — a press release announcing the finished product as if it already shipped, plus internal and external FAQs, and optionally tenets for guiding tradeoff decisions. Forces clarity on customer value before building.
   Activate when: "press release", "PRFAQ", "working backwards", "Amazon PR FAQ", "announce the product", "vision press release", "write the press release first", "PR/FAQ"
   Do NOT activate for: strategy communications (/strategy-communication), stakeholder briefs (/stakeholder-brief), launch plans (/launch-plan), actual media press releases (@pr-comms-specialist)
 argument-hint: [product or feature name] or [update path/to/prfaq.md]
 user-invocable: true
 metadata:
   author: Product Org OS
-  version: 1.0.0
+  version: 1.1.0
   category: strategy
 compatibility: Requires Product Org OS v3+ context layer and rules
 ---
@@ -76,6 +76,43 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 <!-- Source: The press release format forces several critical clarifications: (1) Who is the customer? (2) What is the customer problem or opportunity? (3) What is the most important customer benefit? (4) How do you know what customers need? (5) What does the customer experience look like? The FAQ section forces teams to confront hard questions from both customers and internal stakeholders before investing resources. -->
 
 <!-- Source: Narrative-driven decision making — Edward Tufte, "The Cognitive Style of PowerPoint" (2003). Amazon's preference for 6-page narratives over slide decks is rooted in the principle that prose forces clearer thinking than bullet points. The PRFAQ is the entry point to Amazon's narrative culture. -->
+
+<!-- Source: Working Backwards process details — Colin Bryar & Bill Carr, "Working Backwards: Insights, Stories, and Secrets from Inside Amazon" (2021, St. Martin's Press). Bryar was Jeff Bezos's Chief of Staff ("shadow") from 2003-2004. The book details the internal mechanisms including the narrative review ritual, bar raiser hiring, and single-threaded leadership. -->
+
+<!-- Source: Inspired by pmprompt/claude-plugin-product-management PRFAQ skill. Enhanced with full Working Backwards process context, tenets, and narrative review ritual. -->
+
+### The Working Backwards Process
+
+The PRFAQ is Step 1 of Amazon's broader Working Backwards process:
+
+| Step | Artifact | Purpose | Time |
+|------|----------|---------|------|
+| 1 | **PRFAQ** (this skill) | Define the customer experience and value | 1-2 weeks |
+| 2 | **Tenets** | Principles that guide tradeoff decisions | During PRFAQ review |
+| 3 | **Narrative Review** | 6-page memo read silently in meeting, then discussed | 60-min meeting |
+| 4 | **Mock-ups / Wireframes** | Visual representation of the customer experience | 1-2 weeks |
+| 5 | **Data & Metrics** | Define how success will be measured | During review |
+| 6 | **Resource Ask** | What team/budget is needed | After approval |
+
+**The Narrative Review ritual**:
+- No slides. Ever. The PRFAQ is printed as a 6-page narrative.
+- Everyone reads silently for 20 minutes at the start of the meeting.
+- Discussion follows reading — ensures everyone has the same context.
+- Senior leader asks: "Is this worth doing?" and "Is this the best version of this idea?"
+
+**Iteration is expected**: Most PRFAQs go through 3-10 iterations before approval. The first draft is rarely the last. Each review cycle sharpens the customer value proposition.
+
+### Tenets (Optional but Recommended)
+
+Tenets are the principles that will guide tradeoff decisions during execution. They should be:
+- **Controversial enough to have an opposite**: "We prioritize user privacy over personalization" (opposite: "We prioritize personalization over privacy"). If nobody would disagree, it's not a tenet.
+- **Ordered by priority**: When tenets conflict, higher-ranked tenets win.
+- **Specific to this initiative**: Not generic company values.
+
+Example tenets for a payment product:
+1. Security over convenience — we will never sacrifice transaction security for faster checkout
+2. Merchant experience over internal efficiency — we optimize for merchant UX even if it increases our operational cost
+3. Transparency over simplicity — we show all fees even if it makes the interface more complex
 
 ### Why Write a Press Release First?
 

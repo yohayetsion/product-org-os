@@ -77,7 +77,7 @@ After significant deliverables:
 If you encounter ANY customer feedback, quotes, feature requests, or market signals during your work, immediately run `/feedback-capture` to document them. Never let feedback pass uncaptured.
 
 ### After completing your primary task, display ROI:
-⏱️ ~[X] min/hrs saved in [Y]s (vs. [brief manual product work equivalent])
+⏱️ ~[X]hrs saved in [Y]s, [Z]k tkns ~$[C] cost, Value ~$[V]
 
 ### What GOOD looks like:
 **{emoji} {Display Name}:** Looking at this from [my domain], I see solid fundamentals but have two concerns around [X] and [Y].
@@ -86,7 +86,7 @@ I've put the detailed analysis in `[path/review.md]` — it covers all 8 items w
 
 Want me to walk through the P0 blockers?
 
-⏱️ ~90 min saved in 31s (vs. manual requirements analysis + stakeholder review)
+⏱️ ~1.5hrs saved in 31s, 19k tkns ~$0.1 cost, Value ~$150
 
 ### What BAD looks like:
 ● PM Review Complete
@@ -100,6 +100,10 @@ If MCP tools are available in your tool list (Jira, Slack, Analytics, etc.), use
 
 Replace `{emoji}` and `{Display Name}` with values from the Identity Registry.
 
+### Agent Identity for Tracking
+
+When spawning agents via the Agent/Task tool, include the agent key in the description field using the format: `[agent-key] descriptive text`. Example: `[product-manager] Review the PRD for authentication`. This gives the PostToolUse hook (`hooks/os-tracker.py`) a structured way to identify the agent for ROI and interaction logging. The prompt regex (`You are **{emoji} {Display Name}**`) is used as fallback.
+
 ---
 
 ## 3. ROI Aggregation
@@ -107,15 +111,21 @@ Replace `{emoji}` and `{Display Name}` with values from the Identity Registry.
 - **Single-agent**: Show only the agent's ROI line
 - **Multi-agent**: Aggregate + per-agent breakdown:
   ```
-  ⏱️ **Total: ~X hrs saved in Ys** (vs. [manual equivalent])
-     └─ {emoji} Agent1: ~A min | {emoji} Agent2: ~B min
+  ⏱️ Total: ~8hrs saved in 13min, 102k tkns ~$0.5 cost, Value ~$750
+
+  └─ 📈 VP Product: ~3hrs saved, 19k tkns ~$0.1 cost, Value ~$300
+  └─ 📋 Director of Product Management: ~3hrs saved, 36k tkns ~$0.2 cost, Value ~$300
+  └─ 🎯 Product Marketing Manager: ~2hrs saved, 44k tkns ~$0.3 cost, Value ~$150
   ```
 - **Nested sub-agents**: Parent ROI covers its work + sub-agents
 - **Wall-clock**: Parallel = max elapsed; sequential = sum
+- **Tokens**: Sum all agent tokens. Round to nearest 1k, use `k` suffix
+- **Cost**: Tokens × model rate. Opus: ~$0.015/1k input + $0.075/1k output. Round to $0.1
+- **Value**: Time saved (hrs) × $100/hr (senior product professional rate)
 
 Log to `context/roi/session-log.md`:
 ```
-| Time | Type | Operation | Agents | Complexity | Elapsed | Minutes Saved | IX-ID |
+| Time | Type | Operation | Agents | Complexity | Elapsed | Tokens | Cost | Minutes Saved | Value | IX-ID |
 ```
 
 ---
@@ -175,11 +185,34 @@ Include identity protocol in sub-agent prompts. Your ROI covers sub-agent work.
 
 ## 7. Self-Check Before Every Spawn
 
+- [ ] **Pre-inject context** run: `python hooks/os-tracker.py --pre-inject "[topic]" --context-dir ./context` — if output is non-empty, prepend to agent prompt
 - [ ] Prompt starts with **Agent Identity & Response Protocol** block
 - [ ] `{emoji}` and `{Display Name}` replaced with correct values
 - [ ] User's request included as clear task section
 - [ ] Any `@file.md` context read and included
 - [ ] `subagent_type` set to `"general-purpose"`
+
+### Pre-Inject Context (MANDATORY for deliverable-producing agents)
+
+Before spawning any agent that will produce a deliverable, run:
+
+```bash
+python hooks/os-tracker.py --pre-inject "[topic keywords from user request]" --context-dir ./context
+```
+
+If the output is non-empty, prepend it to the agent's prompt (after the identity block, before the task). This gives the agent awareness of related decisions, feedback, and active bets without relying on the agent to run `/context-recall` itself.
+
+**Skip pre-inject for**: Simple Q&A, context recalls, system ops, quick lookups.
+
+**Example flow**:
+```
+User: @pm review the pricing PRD
+
+Parent agent:
+1. Bash: python hooks/os-tracker.py --pre-inject "pricing PRD" --context-dir ./context
+   → Returns: "## Auto-Context: 2 related items found..."
+2. Agent tool: Spawn @pm with [identity block] + [auto-context output] + [task]
+```
 
 ---
 
@@ -254,40 +287,25 @@ Before presenting ANY agent output:
 
 ---
 
-## 12. Interaction Logging
+## 12. Interaction & ROI Logging
 
-Log when agents/gateways/skills produce deliverables. Skip simple Q&A, context recalls, system ops.
+Interaction and ROI logging are handled automatically by `hooks/os-tracker.py`.
 
 ### Post-Response Sequence
 
-1. Apply Meeting Mode (if multi-agent) → 2. Display ROI → 3. Log Interaction → 4. Run agent-output-handler.py (if deliverable)
+1. Apply Meeting Mode (if multi-agent) → 2. Display ROI line → 3. **Automatic**: `os-tracker.py` logs ROI + interaction + session summary → 4. Run agent-output-handler.py (if deliverable)
 
-> **Step 4**: The handler converts MD to AXIA V3 slide-based HTML with inline commenting. See `templates/presentations/TEMPLATE-REFERENCE.md` for full spec.
+When Claude Code hooks are configured, Step 3 fires automatically via PostToolUse. For manual setups, see `AGENT-INTEGRATION.md`.
 
-### Logging Steps
+### What Gets Logged
 
-1. Read `context/interactions/index.json` → get `nextId`
-2. Generate ID: `IX-YYYY-NNNNN`
-3. Append to `context/interactions/YYYY/YYYY-MM-DD.md`:
-```markdown
-### IX-2026-NNNNN | {emoji} @{agent} | YYYY-MM-DD HH:MM
-
-**Type**: agent | gateway
-**Agent**: {emoji} {Display Name}
-**Topics**: topic1, topic2
-**Related**: DR-YYYY-NNN
-
-#### User Request
-> {verbatim request}
-
-#### Response
-{2-3 sentence summary}
-```
-4. Update `index.json` (entries, topicIndex, agentIndex, dateIndex, nextId)
-5. Update `context/interactions/current-session.md`
+- **ROI**: Appended to `context/roi/session-log.md`
+- **Interaction**: Appended to `context/interactions/YYYY/YYYY-MM-DD.md`
+- **Session summary**: Updated in `context/interactions/current-session.md`
+- **Documents**: Detected file paths appended to `context/documents/registry.md`
 
 ---
 
-## V2V Operating Principle
+## Vision to Value Operating Principle
 
 > "Agents without identity are just text generators. Identity creates accountability, trust, and the feeling of working with a real product organization."
