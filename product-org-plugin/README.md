@@ -4,7 +4,7 @@
 
 > Intent → Decisions → Commitments → Execution → Outcomes → Learning
 
-13 agents • 103 skills • 2 gateways • 9 knowledge packs • Typed skill relationships • Automatic context tracking • MCP integrations
+110 agents • 346 skills • 18 gateways • 95 knowledge packs • 15 teams • Automatic context tracking • MCP integrations
 
 [**View the Interactive Presentation →**](https://yohayetsion.github.io/product-org-os)
 
@@ -101,17 +101,43 @@ Combine agents and skills naturally.
 
 ## What's Included
 
-### 13 Role-Based Agents
-CPO, VP Product, Director PM, Director PMM, Product Manager, PMM, Product Mentor, BizOps, BizDev, Competitive Intelligence, Product Operations, Value Realization, UX Lead
+### 110 Agents Across 15 Teams
 
-### 2 Gateways
-Product and Product Leadership Team — route to relevant agents automatically
+**Product Org (13 agents)**: CPO, VP Product, Director PM, Director PMM, Product Manager, PMM, Product Mentor, BizOps, BizDev, Competitive Intelligence, Product Operations, Value Realization, UX Lead
 
-### 103 Skills
-PRDs, roadmaps, business cases, GTM strategies, pricing models, launch plans, QBR decks, competitive analyses, decision records, ROI tracking, Porter's Five Forces, Blue Ocean Strategy, SWOT, PESTLE, Business Model Canvas, Lean Canvas, and more
+**Extension Teams (91 agents across 15 teams)**:
 
-### 9 Knowledge Packs
-Prioritization, Pricing, Discovery, Metrics, Competitive, GTM, Stakeholder Management, User Research, Financial Modeling
+| Team | Agents | Examples |
+|------|--------|----------|
+| Design | 6 | UI Designer, Visual Designer, User Researcher, Motion Designer |
+| Architecture | 6 | Chief Architect, API Architect, Cloud Architect, AI/ML Architect, Security Architect |
+| Marketing | 15 | CMO, SEO Specialist, Copywriter, Growth Marketer, Paid Media Manager |
+| Finance | 8 | CFO, FP&A Analyst, Revenue Analyst, Tax Planning, Treasury |
+| Legal | 7 | General Counsel, Contracts, Privacy, IP, Employment, Compliance |
+| Operations | 7 | COO, Program Manager, Project Manager, Risk Manager, Procurement |
+| HR / People Ops | 7 | CHRO, Recruiter, Onboarding, Performance, Compensation, People Analytics |
+| Customer Success | 6 | CS Director, CSM, Support Lead, KB Specialist, Onboarding CSM, CS Ops |
+| Sales Engineering | 6 | Sales Director, Sales Engineer, SDR, Account Exec, Sales Ops, Proposal Writer |
+| Data Science | 5 | Data Lead, Data Analyst, BI Engineer, ML Engineer, Experimentation Analyst |
+| Dev | 5 | Tech Lead, Frontend Dev, Backend Dev, DevOps, QA Engineer |
+| Executive | 1 | CEO |
+| Corp Dev | 4 | Head of Corp Dev, M&A Analyst, Strategic Partnerships, Corporate Venture |
+| IT Governance | 5 | CIO, IT Director, Data Governance, Enterprise Systems, IT Security Policy |
+| Personal Staff | 3 | PA, Analyst, Coach |
+
+**PMTK OS (6 agents)**: Product Planner, Product Marketer, Product Architect, Sales Engineer, MarCom Manager, Director of Products
+
+### 18 Gateways
+Product, PLT, PMTK, Design, Architecture, Marketing, Finance, Legal, Operations, Executive, Corp Dev, IT Governance, Personal Staff, Development, HR, Customer Success, Sales, Data Science
+
+### 346 Skills
+PRDs, roadmaps, business cases, GTM strategies, pricing models, launch plans, QBR decks, competitive analyses, decision records, ROI tracking, plus 31 strategy frameworks including Porter's Five Forces, Blue Ocean, SWOT, PESTLE, Business Model Canvas, Lean Canvas, Shape Up, Wardley Maps, Seven Powers, Kano Analysis, OKR Writer, and more
+
+### GEO / LLM SEO
+`/llm-seo` — optimize brand visibility across ChatGPT, Claude, Gemini, and AI Overviews
+
+### 95 Knowledge Packs
+Domain expertise across security, compliance, contracts, SaaS metrics, coaching, cloud architecture, API design, user research, accessibility, email marketing, content strategy, financial modeling, and 80+ more professional domains
 
 ### Context Layer
 Organizational memory that persists across sessions:
@@ -148,57 +174,61 @@ Six phases from strategic intent to learning loop, with skills mapped to each ph
 
 ## What's New in v3.2
 
-### Typed Skill Relationships
-Agents now have structured awareness of their toolkit. Each agent declares `primary-skills` (what it owns), `supporting-skills` (what extends it), `validator-skills` (quality gates before commitments), and `knowledge-packs` (domain depth on demand). Agents don't guess which tool to use — they know.
+### 4 New Agent Teams (24 Agents)
+The system grew from 11 to 15 specialist teams:
+- **HR / People Ops** (7 agents) — Recruiting, onboarding, performance management, compensation, people analytics
+- **Customer Success** (6 agents) — Account health, support triage, KB content, customer onboarding, CS ops
+- **Sales Engineering** (6 agents) — Pipeline management, technical demos, proposals, prospecting, deal management
+- **Data Science** (5 agents) — SQL analysis, dashboards, ML models, A/B test analysis, analytics strategy
 
-### 103 Skills — 21 New Strategy Frameworks
-The frameworks product leaders reach for daily, now built in with full source attribution:
+### 10 New Strategy Frameworks
+Shape Up, Wardley Maps, Seven Powers, AARRR/Pirate Metrics, HEART Metrics, OKR Writer, Kano Analysis, Design Sprint, DACI, Pre-mortem — each with full source attribution.
+
+### GEO: AI Search Visibility
+New `/llm-seo` skill for Generative Engine Optimization — optimize brand presence across ChatGPT, Claude, Gemini, and Google AI Overviews.
+
+### 95 Knowledge Packs (was 9)
+From product-focused packs to full organizational coverage: security, compliance, contracts, SaaS metrics, coaching, cloud architecture, API design, user research, accessibility, email marketing, and 80+ more.
+
+### 31 Strategy Frameworks
+The frameworks product leaders reach for daily:
 
 | Skill | Framework | Creator |
 |-------|-----------|---------|
 | `/porter-five-forces` | Five Forces | Michael Porter (HBR, 1979) |
 | `/blue-ocean` | Blue Ocean Strategy | W. Chan Kim & Renée Mauborgne (2005) |
 | `/swot-analysis` | SWOT | Albert Humphrey (Stanford Research Institute, 1960s) |
-| `/pestle-analysis` | PESTLE | Francis Aguilar (Harvard, 1967) |
 | `/business-model-canvas` | Business Model Canvas | Alexander Osterwalder & Yves Pigneur (2010) |
 | `/lean-canvas` | Lean Canvas | Ash Maurya (2012) |
-| `/ansoff-matrix` | Ansoff Growth Matrix | H. Igor Ansoff (HBR, 1957) |
-| `/bcg-matrix` | Growth-Share Matrix | Bruce Henderson / BCG (1970) |
-| `/dhm-analysis` | DHM Model | Gibson Biddle (Netflix/Chegg) |
-| `/four-risks-check` | Four Big Risks | Marty Cagan / SVPG (2017) |
-| `/growth-model` | Growth Loops + Racecar | Brian Balfour / Reforge (2018) |
-| `/prioritize-features` | RICE, Kano, MoSCoW, WSJF | Intercom, Noriaki Kano, Dai Clegg |
-| `/bias-check` | Cognitive Biases | Daniel Kahneman (2011), Chip & Dan Heath (2013) |
-| `/press-release-faq` | Working Backwards / PRFAQ | Jeff Bezos / Amazon (~2004) |
-| `/pretotype` | Pretotyping | Alberto Savoia (Google, 2019) |
-| `/north-star-metric` | North Star Framework | Sean Ellis / Amplitude (2017) |
-| `/product-teardown` | Product Teardown | PM community practice |
-| `/stakeholder-map` | Power/Interest Matrix | Aubrey Mendelow (1991) |
-| `/interview-synthesis` | Thematic Analysis | Braun & Clarke (2006), Teresa Torres (2021) |
-| `/customer-journey-map` | Journey Mapping | Adaptive Path (2007) |
-| `/competitive-battlecard` | Battlecards | Klue, Crayon (B2B standard) |
+| `/wardley-map` | Wardley Maps | Simon Wardley (2005) |
+| `/seven-powers` | Seven Powers | Hamilton Helmer (2016) |
+| `/shape-up` | Shape Up | Ryan Singer / Basecamp (2019) |
+| `/kano-analysis` | Kano Model | Noriaki Kano (1984) |
+| `/okr-writer` | OKRs | Andy Grove / John Doerr |
+| `/design-sprint` | Design Sprint | Jake Knapp / Google Ventures (2016) |
+| `/daci` | DACI | Intuit decision framework |
+| `/pre-mortem` | Pre-mortem | Gary Klein (2007) |
+| `/pirate-metrics` | AARRR | Dave McClure (2007) |
+| `/heart-metrics` | HEART | Kerry Rodden / Google (2010) |
+| `/saas-health-check` | SaaS Metrics | David Skok, Jason Lemkin |
+| `/theory-of-constraints` | TOC | Eliyahu Goldratt (1984) |
+| ...and 14 more | | |
+
+### Typed Skill Relationships
+Agents declare `primary-skills`, `supporting-skills`, `validator-skills`, and `knowledge-packs`. They know exactly which tools to use.
 
 ### Automatic Context Tracking
-Agents now remember everything automatically — decisions, deliverables, ROI, conventions. Before spawning an agent, the system surfaces related past decisions and feedback. No manual steps needed.
+Decisions, deliverables, ROI, conventions — all tracked automatically across sessions.
 
 - `hooks/os-tracker.py` — standalone CLI, zero dependencies
 - Claude Code hooks for automatic triggering
 - Self-diagnosis + repair when indexes drift
 - See [`agent-guide.md`](./agent-guide.md) for full setup across all platforms
 
-### Organizational Conventions
-Define how your org works once — naming conventions, prioritization frameworks, fiscal calendar — and every agent respects it across every session. Saved in `context/preferences/conventions.md`.
-
-### Strategic Asset Map
-`/vision-to-value-document-map` shows exactly where your product strategy has coverage and where it has gaps, across all six Vision to Value phases.
-
 ## What's in v3.0
 
 ### MCP Integrations
-Agents auto-detect connected tools (Jira, Slack, Analytics) and use them when available. No MCP? They fall back gracefully to text output with manual action notes.
-
-### 9 Domain Knowledge Packs
-Professional PM frameworks that agents reference when producing deliverables. Covers prioritization, pricing, competitive analysis, and 6 more domains.
+Agents auto-detect connected tools (Jira, Slack, Analytics) and use them when available. Graceful fallback to text output.
 
 ### Agent Delegation Patterns
 Four structured collaboration patterns: Consultation, Delegation, Review, and Structured Debate.
