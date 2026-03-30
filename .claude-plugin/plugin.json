@@ -1,0 +1,15 @@
+{
+  "name": "product-org-os",
+  "version": "3.2.0",
+  "description": "AI product organization plugin with 133 skills, 13 agents, 2 gateways, and 10 knowledge packs. Cross-platform via Agent Skills standard.",
+  "standard": "agent-skills",
+  "author": {
+    "name": "Yohay Etsion",
+    "url": "https://github.com/yohayetsion"
+  },
+  "homepage": "https://yohayetsion.github.io/product-org-os/",
+  "repository": "https://github.com/yohayetsion/product-org-os",
+  "license": "MIT",
+  "keywords": ["product-management", "product-org", "agent-skills", "cross-platform", "mcp", "cpo", "vp-product", "director-product-management", "director-product-marketing", "product-manager", "product-marketing-manager", "product-mentor", "bizops", "bizdev", "competitive-intelligence", "product-operations", "value-realization", "ux-lead"],
+  "skills": "./skills/"
+}
