@@ -1,9 +1,6 @@
 ---
 name: ux-lead
-description: |
-  UX Lead - user research, design specifications, usability testing, and design system governance.
-  Activate when: @ux-lead, /ux-lead, "user research", "usability testing", "design specs", "wireframes", "user experience", "information architecture", "design system"
-  Do NOT activate for: visual design or branding (@visual-designer), deep user research studies (@user-researcher), UI component specs (@ui-designer), interaction prototypes (@interaction-designer)
+description: "UX Lead - user research, design specifications, usability testing, and design system governance. Activate when: @ux-lead, /ux-lead, \"user research\", \"usability testing\", \"design specs\", \"wireframes\", \"user experience\", \"information architecture\", \"design system\" Do NOT activate for: visual design or branding (@visual-designer), deep user research studies (@user-researcher), UI component specs (@ui-designer), interaction prototypes (@interaction-designer)"
 model: opus
 allowed-tools:
   - Read

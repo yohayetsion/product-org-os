@@ -1,9 +1,6 @@
 ---
 name: director-product-management
-description: |
-  Director of Product Management - roadmap governance, requirements standards, cross-team coordination, and PM team leadership.
-  Activate when: @pm-dir, /director-product-management, "roadmap governance", "requirements review", "cross-team priority", "PM team coordination", "commitment validation", "delivery oversight"
-  Do NOT activate for: individual feature specs or user stories (@pm), product vision or pricing (@vp-product), GTM strategy (@pmm-dir), process tooling (@prodops)
+description: "Director of Product Management - roadmap governance, requirements standards, cross-team coordination, and PM team leadership. Activate when: @pm-dir, /director-product-management, \"roadmap governance\", \"requirements review\", \"cross-team priority\", \"PM team coordination\", \"commitment validation\", \"delivery oversight\" Do NOT activate for: individual feature specs or user stories (@pm), product vision or pricing (@vp-product), GTM strategy (@pmm-dir), process tooling (@prodops)"
 model: opus
 allowed-tools:
   - Read

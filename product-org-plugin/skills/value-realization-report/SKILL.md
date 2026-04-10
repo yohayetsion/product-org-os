@@ -1,10 +1,7 @@
 ---
 name: value-realization-report
-description: |
-  Create value realization report tracking whether customers are achieving promised outcomes.
-  Activate when: "value report", "customer outcomes", "are customers getting value", outcome tracking, value delivery, ROI for customers
-  Do NOT activate for: customer health scoring (/customer-health-scorecard), onboarding playbooks (/onboarding-playbook), outcome reviews of initiatives (/outcome-review)
-argument-hint: [customer, cohort, or product] or [update path/to/report.md]
+description: "Create value realization report tracking whether customers are achieving promised outcomes. Activate when: \"value report\", \"customer outcomes\", \"are customers getting value\", outcome tracking, value delivery, ROI for customers Do NOT activate for: customer health scoring (/customer-health-scorecard), onboarding playbooks (/onboarding-playbook), outcome reviews of initiatives (/outcome-review)"
+argument-hint: "[customer, cohort, or product] or [update path/to/report.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

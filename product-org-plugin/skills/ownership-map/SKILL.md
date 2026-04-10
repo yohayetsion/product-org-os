@@ -1,10 +1,7 @@
 ---
 name: ownership-map
-description: |
-  Map the accountability chain for an initiative across Vision to Value phases.
-  Activate when: "who owns this", "ownership map", "accountability chain", end-to-end ownership, single accountable owner
-  Do NOT activate for: RACI and collaboration validation (/collaboration-check), decision ownership charters (/decision-charter), stakeholder briefs (/stakeholder-brief)
-argument-hint: [initiative or deliverable] or [update path/to/map.md]
+description: "Map the accountability chain for an initiative across Vision to Value phases. Activate when: \"who owns this\", \"ownership map\", \"accountability chain\", end-to-end ownership, single accountable owner Do NOT activate for: RACI and collaboration validation (/collaboration-check), decision ownership charters (/decision-charter), stakeholder briefs (/stakeholder-brief)"
+argument-hint: "[initiative or deliverable] or [update path/to/map.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

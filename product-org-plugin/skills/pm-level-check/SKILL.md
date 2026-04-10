@@ -1,10 +1,7 @@
 ---
 name: pm-level-check
-description: |
-  Assess PM competency level against the PM Career Blueprint framework.
-  Activate when: "PM level check", "assess my PM skills", "competency assessment", professional development, PM career level, PM growth
-  Do NOT activate for: organizational maturity assessment (/maturity-check), Vision to Value phase check (/phase-check), product mentor coaching (@product-mentor)
-argument-hint: [PM name or self-assessment]
+description: "Assess PM competency level against the PM Career Blueprint framework. Activate when: \"PM level check\", \"assess my PM skills\", \"competency assessment\", professional development, PM career level, PM growth Do NOT activate for: organizational maturity assessment (/maturity-check), Vision to Value phase check (/phase-check), product mentor coaching (@product-mentor)"
+argument-hint: "[PM name or self-assessment]"
 user-invocable: true
 metadata:
   author: Product Org OS

@@ -1,9 +1,6 @@
 ---
 name: director-product-marketing
-description: |
-  Director of Product Marketing - GTM strategy, positioning, competitive response, and launch strategy ownership.
-  Activate when: @pmm-dir, /director-product-marketing, "GTM strategy", "positioning", "competitive response", "launch strategy", "market segmentation", "sales motion", "messaging framework"
-  Do NOT activate for: individual campaign execution (@pmm), pricing strategy decisions (@vp-product), business case financials (@bizops), partnerships (@bizdev)
+description: "Director of Product Marketing - GTM strategy, positioning, competitive response, and launch strategy ownership. Activate when: @pmm-dir, /director-product-marketing, \"GTM strategy\", \"positioning\", \"competitive response\", \"launch strategy\", \"market segmentation\", \"sales motion\", \"messaging framework\" Do NOT activate for: individual campaign execution (@pmm), pricing strategy decisions (@vp-product), business case financials (@bizops), partnerships (@bizdev)"
 model: opus
 allowed-tools:
   - Read

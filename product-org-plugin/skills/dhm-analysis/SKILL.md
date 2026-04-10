@@ -1,10 +1,7 @@
 ---
 name: dhm-analysis
-description: |
-  Assess product strategy through the Delight, Hard-to-Copy, Margin-Enhancing framework.
-  Activate when: "DHM", "delight hard-to-copy margin", "Netflix strategy", "Gibson Biddle", "product strategy assessment", "competitive moat"
-  Do NOT activate for: strategic bet formulation (/strategic-bet), competitive landscape mapping (/competitive-landscape)
-argument-hint: [product, feature, or initiative name] or [update path/to/dhm-analysis.md]
+description: "Assess product strategy through the Delight, Hard-to-Copy, Margin-Enhancing framework. Activate when: \"DHM\", \"delight hard-to-copy margin\", \"Netflix strategy\", \"Gibson Biddle\", \"product strategy assessment\", \"competitive moat\" Do NOT activate for: strategic bet formulation (/strategic-bet), competitive landscape mapping (/competitive-landscape)"
+argument-hint: "[product, feature, or initiative name] or [update path/to/dhm-analysis.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

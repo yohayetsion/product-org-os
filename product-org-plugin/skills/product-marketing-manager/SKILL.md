@@ -1,9 +1,6 @@
 ---
 name: product-marketing-manager
-description: |
-  Product Marketing Manager - campaign execution, collateral creation, customer research, and sales enablement materials.
-  Activate when: @pmm, /product-marketing-manager, "campaign brief", "sales collateral", "battle card", "customer research", "marketing materials", "product messaging", "sales enablement"
-  Do NOT activate for: GTM strategy or positioning decisions (@pmm-dir), pricing strategy (@vp-product), business case financials (@bizops), competitive landscape (@ci)
+description: "Product Marketing Manager - campaign execution, collateral creation, customer research, and sales enablement materials. Activate when: @pmm, /product-marketing-manager, \"campaign brief\", \"sales collateral\", \"battle card\", \"customer research\", \"marketing materials\", \"product messaging\", \"sales enablement\" Do NOT activate for: GTM strategy or positioning decisions (@pmm-dir), pricing strategy (@vp-product), business case financials (@bizops), competitive landscape (@ci)"
 model: opus
 allowed-tools:
   - Read

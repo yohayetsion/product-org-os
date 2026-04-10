@@ -1,10 +1,7 @@
 ---
 name: vision-statement
-description: |
-  Draft a product vision statement articulating aspirational product direction.
-  Activate when: "write a vision", "product vision", "define the vision", articulate product direction, north star
-  Do NOT activate for: roadmap planning (/product-roadmap), strategy communication packages (/strategy-communication), strategic intent with priorities (/strategic-intent)
-argument-hint: [product name] or [update path/to/vision.md]
+description: "Draft a product vision statement articulating aspirational product direction. Activate when: \"write a vision\", \"product vision\", \"define the vision\", articulate product direction, north star Do NOT activate for: roadmap planning (/product-roadmap), strategy communication packages (/strategy-communication), strategic intent with priorities (/strategic-intent)"
+argument-hint: "[product name] or [update path/to/vision.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

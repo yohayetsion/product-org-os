@@ -1,10 +1,7 @@
 ---
 name: swot-analysis
-description: |
-  Conduct a SWOT analysis with TOWS strategy matrix to assess internal strengths/weaknesses and external opportunities/threats.
-  Activate when: "SWOT", "strengths weaknesses", "opportunities threats", "TOWS", "internal external analysis", "strategic assessment"
-  Do NOT activate for: competitive landscape (/competitive-landscape), market analysis (/market-analysis)
-argument-hint: [product, business, or initiative] or [update path/to/swot-analysis.md]
+description: "Conduct a SWOT analysis with TOWS strategy matrix to assess internal strengths/weaknesses and external opportunities/threats. Activate when: \"SWOT\", \"strengths weaknesses\", \"opportunities threats\", \"TOWS\", \"internal external analysis\", \"strategic assessment\" Do NOT activate for: competitive landscape (/competitive-landscape), market analysis (/market-analysis)"
+argument-hint: "[product, business, or initiative] or [update path/to/swot-analysis.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

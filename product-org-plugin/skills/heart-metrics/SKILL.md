@@ -1,10 +1,7 @@
 ---
 name: heart-metrics
-description: |
-  Apply Google's HEART framework (Happiness, Engagement, Adoption, Retention, Task Success) with the Goals-Signals-Metrics process to measure UX quality at scale.
-  Activate when: "HEART metrics", "HEART framework", "UX metrics", "happiness engagement adoption retention task success", "Google UX", "GSM", "goals signals metrics"
-  Do NOT activate for: pirate metrics (/pirate-metrics), north star metric (/north-star-metric), customer health scorecard (/customer-health-scorecard)
-argument-hint: [product or feature name] or [update path/to/heart-metrics.md]
+description: "Apply Google's HEART framework (Happiness, Engagement, Adoption, Retention, Task Success) with the Goals-Signals-Metrics process to measure UX quality at scale. Activate when: \"HEART metrics\", \"HEART framework\", \"UX metrics\", \"happiness engagement adoption retention task success\", \"Google UX\", \"GSM\", \"goals signals metrics\" Do NOT activate for: pirate metrics (/pirate-metrics), north star metric (/north-star-metric), customer health scorecard (/customer-health-scorecard)"
+argument-hint: "[product or feature name] or [update path/to/heart-metrics.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

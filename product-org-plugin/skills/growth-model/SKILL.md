@@ -1,10 +1,7 @@
 ---
 name: growth-model
-description: |
-  Map growth loops, assess Racecar components, and identify the next growth lever for your product.
-  Activate when: "growth model", "growth loops", "growth strategy", "viral loop", "PLG", "product-led growth", "Racecar framework", "growth engine"
-  Do NOT activate for: go-to-market strategy (/gtm-strategy), market sizing or analysis (/market-analysis)
-argument-hint: [product or initiative name] or [update path/to/growth-model.md]
+description: "Map growth loops, assess Racecar components, and identify the next growth lever for your product. Activate when: \"growth model\", \"growth loops\", \"growth strategy\", \"viral loop\", \"PLG\", \"product-led growth\", \"Racecar framework\", \"growth engine\" Do NOT activate for: go-to-market strategy (/gtm-strategy), market sizing or analysis (/market-analysis)"
+argument-hint: "[product or initiative name] or [update path/to/growth-model.md]"
 user-invocable: true
 metadata:
   author: Product Org OS
