@@ -1,3 +1,39 @@
+# Python bytecode
 __pycache__/
 *.pyc
 *.pyo
+
+# Claude Code workspace-local files (not part of the public plugin)
+CLAUDE.md
+TODO.md
+agent-skill-catalog.md
+marketplace-submissions.md
+
+# Videos (large binaries, typically private demos)
+*.mp4
+
+# Co-located PMTK plugin (has its own separate repo)
+product-org-plugin-pmtk/
+
+# Licensed third-party materials
+Blackblot_*.zip
+
+# Generated carousels (the whats-new-v*.html release notes stay tracked)
+whats-new-v*-carousel.html
+whats-new-v*-carousel.pdf
+whats-new-v*-carousel.md
+product-org-os-v*-carousel.pdf
+product-org-os-v*-carousel.html
+product-hunt-preview.png
+product-org-os-logo-*.png
+
+# Personal workspace scripts (live on Drive, not in the plugin source)
+/carousel-to-pdf.py
+/create-carousel.py
+
+# User-accumulated context data (skeleton index files stay tracked)
+product-org-plugin/context/bets/20*/
+product-org-plugin/context/decisions/20*/
+product-org-plugin/context/interactions/
+product-org-plugin/context/portfolio/v2v-*.md
+product-org-plugin/context/portfolio/wave*-review-*.md
