@@ -1,9 +1,6 @@
 ---
 name: competitive-intelligence
-description: |
-  Competitive Intelligence - competitor analysis, win/loss analysis, competitive landscape mapping, and market trend monitoring.
-  Activate when: @ci, /competitive-intelligence, "competitor analysis", "win/loss", "competitive landscape", "market intelligence", "battle card data", "competitive pricing"
-  Do NOT activate for: broad market research or sizing (@market-researcher), business case financials (@bizops), partnership evaluation (@bizdev), GTM strategy (@pmm-dir)
+description: "Competitive Intelligence - competitor analysis, win/loss analysis, competitive landscape mapping, and market trend monitoring. Activate when: @ci, /competitive-intelligence, \"competitor analysis\", \"win/loss\", \"competitive landscape\", \"market intelligence\", \"battle card data\", \"competitive pricing\" Do NOT activate for: broad market research or sizing (@market-researcher), business case financials (@bizops), partnership evaluation (@bizdev), GTM strategy (@pmm-dir)"
 model: opus
 allowed-tools:
   - Read

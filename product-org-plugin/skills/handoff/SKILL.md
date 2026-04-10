@@ -1,10 +1,7 @@
 ---
 name: handoff
-description: |
-  Capture and transfer session context for agent-to-agent delegation.
-  Activate when: "hand off to", "create briefing", "delegate this", passing work between agents, agent delegation, cross-agent handoff
-  Do NOT activate for: saving context to registry (/context-save), recalling context (/context-recall), interaction logging (/interaction-recall)
-argument-hint: [@receiving-agent] [task description]
+description: "Capture and transfer session context for agent-to-agent delegation. Activate when: \"hand off to\", \"create briefing\", \"delegate this\", passing work between agents, agent delegation, cross-agent handoff Do NOT activate for: saving context to registry (/context-save), recalling context (/context-recall), interaction logging (/interaction-recall)"
+argument-hint: "[@receiving-agent] [task description]"
 user-invocable: true
 metadata:
   author: Product Org OS

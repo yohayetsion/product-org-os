@@ -1,10 +1,7 @@
 ---
 name: seven-powers
-description: |
-  Analyze competitive moats and strategic power using Hamilton Helmer's 7 Powers framework.
-  Activate when: "seven powers", "7 powers", "moat analysis", "competitive moat", "Helmer", "power dynamics", "strategic power", "defensibility analysis"
-  Do NOT activate for: Porter's Five Forces (/porter-five-forces), competitive analysis (/competitive-analysis), SWOT (/swot-analysis)
-argument-hint: [company or product] or [update path/to/seven-powers.md]
+description: "Analyze competitive moats and strategic power using Hamilton Helmer's 7 Powers framework. Activate when: \"seven powers\", \"7 powers\", \"moat analysis\", \"competitive moat\", \"Helmer\", \"power dynamics\", \"strategic power\", \"defensibility analysis\" Do NOT activate for: Porter's Five Forces (/porter-five-forces), competitive analysis (/competitive-analysis), SWOT (/swot-analysis)"
+argument-hint: "[company or product] or [update path/to/seven-powers.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

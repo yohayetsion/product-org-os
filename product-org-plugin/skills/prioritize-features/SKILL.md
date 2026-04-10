@@ -1,10 +1,7 @@
 ---
 name: prioritize-features
-description: |
-  Prioritize a list of features or initiatives using proven frameworks (RICE, ICE, Kano, MoSCoW, WSJF, Value vs Effort). Produces scored, ranked output with rationale.
-  Activate when: "prioritize", "rank features", "RICE score", "ICE score", "Kano", "MoSCoW", "feature scoring", "what to build first", "priority matrix", "WSJF", "which features first", "stack rank", "value effort matrix", "impact effort", "quick wins"
-  Do NOT activate for: roadmap planning (/product-roadmap), commitment checks (/commitment-check), strategic bet formulation (/strategic-bet)
-argument-hint: [list of features/initiatives] or [update path/to/prioritization.md]
+description: "Prioritize a list of features or initiatives using proven frameworks (RICE, ICE, Kano, MoSCoW, WSJF, Value vs Effort). Produces scored, ranked output with rationale. Activate when: \"prioritize\", \"rank features\", \"RICE score\", \"ICE score\", \"Kano\", \"MoSCoW\", \"feature scoring\", \"what to build first\", \"priority matrix\", \"WSJF\", \"which features first\", \"stack rank\", \"value effort matrix\", \"impact effort\", \"quick wins\" Do NOT activate for: roadmap planning (/product-roadmap), commitment checks (/commitment-check), strategic bet formulation (/strategic-bet)"
+argument-hint: "[list of features/initiatives] or [update path/to/prioritization.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

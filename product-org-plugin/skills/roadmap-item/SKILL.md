@@ -1,10 +1,7 @@
 ---
 name: roadmap-item
-description: |
-  Define a specific roadmap item with scope, dependencies, and success criteria.
-  Activate when: "add to the roadmap", "roadmap item", "plan this initiative", single initiative detail, roadmap entry
-  Do NOT activate for: defining a theme grouping (/roadmap-theme), full roadmap document (/product-roadmap), PRD-level requirements (/prd)
-argument-hint: [item name] or [update path/to/item.md]
+description: "Define a specific roadmap item with scope, dependencies, and success criteria. Activate when: \"add to the roadmap\", \"roadmap item\", \"plan this initiative\", single initiative detail, roadmap entry Do NOT activate for: defining a theme grouping (/roadmap-theme), full roadmap document (/product-roadmap), PRD-level requirements (/prd)"
+argument-hint: "[item name] or [update path/to/item.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

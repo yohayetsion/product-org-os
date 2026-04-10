@@ -1,10 +1,7 @@
 ---
 name: launch-readiness
-description: |
-  Assess launch readiness with a go/no-go decision checklist across all functions.
-  Activate when: "are we ready to launch", "launch checklist", "go/no-go for launch", pre-launch validation, launch gate
-  Do NOT activate for: creating the launch plan (/launch-plan), GTM strategy (/gtm-strategy), commitment check before resource lock (/commitment-check)
-argument-hint: [product/feature name] or [update path/to/readiness.md]
+description: "Assess launch readiness with a go/no-go decision checklist across all functions. Activate when: \"are we ready to launch\", \"launch checklist\", \"go/no-go for launch\", pre-launch validation, launch gate Do NOT activate for: creating the launch plan (/launch-plan), GTM strategy (/gtm-strategy), commitment check before resource lock (/commitment-check)"
+argument-hint: "[product/feature name] or [update path/to/readiness.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

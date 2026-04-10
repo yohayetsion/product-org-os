@@ -1,10 +1,7 @@
 ---
 name: context-recall
-description: |
-  Query past decisions, bets, learnings, and documents by topic from the context registry.
-  Activate when: "what did we decide about", "find past decisions", "recall context on", historical context, prior decisions
-  Do NOT activate for: saving new context (/context-save), recalling feedback (/feedback-recall), recalling past interactions (/interaction-recall)
-argument-hint: [topic or keyword]
+description: "Query past decisions, bets, learnings, and documents by topic from the context registry. Activate when: \"what did we decide about\", \"find past decisions\", \"recall context on\", historical context, prior decisions Do NOT activate for: saving new context (/context-save), recalling feedback (/feedback-recall), recalling past interactions (/interaction-recall)"
+argument-hint: "[topic or keyword]"
 user-invocable: true
 metadata:
   author: Product Org OS

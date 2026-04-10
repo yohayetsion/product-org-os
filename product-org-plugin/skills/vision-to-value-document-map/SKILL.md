@@ -1,10 +1,7 @@
 ---
 name: vision-to-value-document-map
-description: |
-  Generate a branded Vision to Value Document Map for a product — a visual index of all strategic assets organized by the 6 Vision to Value phases, with links to both MD source and HTML presentation for each asset.
-  Activate when: "document map", "vision to value map", "strategic asset map", "show all documents for [product]", "what documents do we have"
-  Do NOT activate for: creating individual documents (/prd, /strategic-bet, etc.), portfolio status (/portfolio-status), phase check (/phase-check)
-argument-hint: [product name] — e.g., "AXIA", "Legionis"
+description: "Generate a branded Vision to Value Document Map for a product — a visual index of all strategic assets organized by the 6 Vision to Value phases, with links to both MD source and HTML presentation for each asset. Activate when: \"document map\", \"vision to value map\", \"strategic asset map\", \"show all documents for [product]\", \"what documents do we have\" Do NOT activate for: creating individual documents (/prd, /strategic-bet, etc.), portfolio status (/portfolio-status), phase check (/phase-check)"
+argument-hint: "[product name] — e.g., \"AXIA\", \"Legionis\""
 user-invocable: true
 metadata:
   author: Product Org OS

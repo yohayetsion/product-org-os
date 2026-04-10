@@ -1,9 +1,6 @@
 ---
 name: demo
-description: |
-  Alias for /tour - Interactive walkthrough of Product Org OS.
-  Activate when: "show me a demo", "demo the system", "run the demo", demonstrate Product Org OS
-  Do NOT activate for: resetting demo data (/reset-demo), clearing demo data (/clear-demo), plugin setup (/setup)
+description: "Alias for /tour - Interactive walkthrough of Product Org OS. Activate when: \"show me a demo\", \"demo the system\", \"run the demo\", demonstrate Product Org OS Do NOT activate for: resetting demo data (/reset-demo), clearing demo data (/clear-demo), plugin setup (/setup)"
 argument-hint: (no arguments needed)
 model: haiku
 allowed-tools:

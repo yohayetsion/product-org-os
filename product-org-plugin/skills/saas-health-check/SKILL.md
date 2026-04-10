@@ -1,10 +1,7 @@
 ---
 name: saas-health-check
-description: |
-  Diagnostic framework for assessing the health of a SaaS business across key metric categories.
-  Activate when: "SaaS health", "SaaS metrics", "SaaS diagnostic", "health check", "MRR analysis", "churn analysis", "unit economics", "SaaS scorecard", "business health"
-  Do NOT activate for: pirate metrics (/pirate-metrics), north star metric (/north-star-metric), growth model (/growth-model), customer health scorecard (/customer-health-scorecard — that's per-customer, this is business-level)
-argument-hint: [product name or stage] or [update path/to/saas-health-check.md]
+description: "Diagnostic framework for assessing the health of a SaaS business across key metric categories. Activate when: \"SaaS health\", \"SaaS metrics\", \"SaaS diagnostic\", \"health check\", \"MRR analysis\", \"churn analysis\", \"unit economics\", \"SaaS scorecard\", \"business health\" Do NOT activate for: pirate metrics (/pirate-metrics), north star metric (/north-star-metric), growth model (/growth-model), customer health scorecard (/customer-health-scorecard — that's per-customer, this is business-level)"
+argument-hint: "[product name or stage] or [update path/to/saas-health-check.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

@@ -1,9 +1,6 @@
 ---
 name: tour
-description: |
-  Interactive walkthrough of Product Org OS showing agents, gateways, skills, and context.
-  Activate when: "show me around", "how does this work", "give me a tour", new to Product Org OS, learn the system
-  Do NOT activate for: plugin initialization (/setup), demo data management (/reset-demo, /clear-demo), specific skill execution
+description: "Interactive walkthrough of Product Org OS showing agents, gateways, skills, and context. Activate when: \"show me around\", \"how does this work\", \"give me a tour\", new to Product Org OS, learn the system Do NOT activate for: plugin initialization (/setup), demo data management (/reset-demo, /clear-demo), specific skill execution"
 argument-hint: (no arguments needed)
 model: haiku
 allowed-tools:

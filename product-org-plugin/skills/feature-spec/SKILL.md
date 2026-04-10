@@ -1,10 +1,7 @@
 ---
 name: feature-spec
-description: |
-  Create a detailed feature specification with implementation-ready requirements and edge cases.
-  Activate when: "feature spec", "specify this feature", "detailed requirements", implementation-ready specs, technical specification
-  Do NOT activate for: full PRD covering multiple features (/prd), individual user stories (/user-story), PRD outline for scoping (/prd-outline)
-argument-hint: [feature name] or [update path/to/spec.md]
+description: "Create a detailed feature specification with implementation-ready requirements and edge cases. Activate when: \"feature spec\", \"specify this feature\", \"detailed requirements\", implementation-ready specs, technical specification Do NOT activate for: full PRD covering multiple features (/prd), individual user stories (/user-story), PRD outline for scoping (/prd-outline)"
+argument-hint: "[feature name] or [update path/to/spec.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

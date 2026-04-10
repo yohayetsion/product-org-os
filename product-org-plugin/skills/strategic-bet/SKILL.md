@@ -1,10 +1,7 @@
 ---
 name: strategic-bet
-description: |
-  Formulate a strategic bet with explicit assumptions, success criteria, and re-decision triggers.
-  Activate when: "place a bet on", "strategic bet", "we believe that", strategic hypothesis, testable assumption, SB
-  Do NOT activate for: investment business cases (/business-case), individual decision records (/decision-record), portfolio tradeoff analysis (/portfolio-tradeoff)
-argument-hint: [bet name or area] or [update SB-2026-001]
+description: "Formulate a strategic bet with explicit assumptions, success criteria, and re-decision triggers. Activate when: \"place a bet on\", \"strategic bet\", \"we believe that\", strategic hypothesis, testable assumption, SB Do NOT activate for: investment business cases (/business-case), individual decision records (/decision-record), portfolio tradeoff analysis (/portfolio-tradeoff)"
+argument-hint: "[bet name or area] or [update SB-2026-001]"
 user-invocable: true
 metadata:
   author: Product Org OS

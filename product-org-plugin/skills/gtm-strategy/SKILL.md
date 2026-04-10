@@ -1,10 +1,7 @@
 ---
 name: gtm-strategy
-description: |
-  Create comprehensive go-to-market strategy covering positioning, channels, pricing, and launch approach.
-  Activate when: "GTM strategy", "go-to-market plan", "how do we launch", full GTM planning, market entry strategy
-  Do NOT activate for: focused GTM brief for a single initiative (/gtm-brief), launch execution plan (/launch-plan), campaign briefs (/campaign-brief)
-argument-hint: [product or feature name] or [update path/to/gtm.md]
+description: "Create comprehensive go-to-market strategy covering positioning, channels, pricing, and launch approach. Activate when: \"GTM strategy\", \"go-to-market plan\", \"how do we launch\", full GTM planning, market entry strategy Do NOT activate for: focused GTM brief for a single initiative (/gtm-brief), launch execution plan (/launch-plan), campaign briefs (/campaign-brief)"
+argument-hint: "[product or feature name] or [update path/to/gtm.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

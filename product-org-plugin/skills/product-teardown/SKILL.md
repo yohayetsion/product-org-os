@@ -1,10 +1,7 @@
 ---
 name: product-teardown
-description: |
-  Reverse-engineer an existing product to understand its strategy, business model, UX decisions, and growth mechanics. A learning exercise that builds PM judgment.
-  Activate when: "teardown", "product teardown", "reverse engineer", "analyze this product", "how does [product] work", "product deep dive"
-  Do NOT activate for: competitive analysis (/competitive-analysis), competitive landscape (/competitive-landscape)
-argument-hint: [product name or URL] — e.g., "Notion", "Linear", "https://cal.com"
+description: "Reverse-engineer an existing product to understand its strategy, business model, UX decisions, and growth mechanics. A learning exercise that builds PM judgment. Activate when: \"teardown\", \"product teardown\", \"reverse engineer\", \"analyze this product\", \"how does [product] work\", \"product deep dive\" Do NOT activate for: competitive analysis (/competitive-analysis), competitive landscape (/competitive-landscape)"
+argument-hint: "[product name or URL] — e.g., \"Notion\", \"Linear\", \"https://cal.com\""
 user-invocable: true
 metadata:
   author: Product Org OS

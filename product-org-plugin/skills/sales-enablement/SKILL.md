@@ -1,10 +1,7 @@
 ---
 name: sales-enablement
-description: |
-  Create sales enablement package with battle cards, objection handling, and talk tracks.
-  Activate when: "sales enablement", "arm the sales team", "sales collateral", sales support materials, battle cards, objection handling
-  Do NOT activate for: marketing campaign briefs (/campaign-brief), GTM strategy (/gtm-strategy), stakeholder communication (/stakeholder-brief)
-argument-hint: [product or feature name] or [update path/to/enablement.md]
+description: "Create sales enablement package with battle cards, objection handling, and talk tracks. Activate when: \"sales enablement\", \"arm the sales team\", \"sales collateral\", sales support materials, battle cards, objection handling Do NOT activate for: marketing campaign briefs (/campaign-brief), GTM strategy (/gtm-strategy), stakeholder communication (/stakeholder-brief)"
+argument-hint: "[product or feature name] or [update path/to/enablement.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

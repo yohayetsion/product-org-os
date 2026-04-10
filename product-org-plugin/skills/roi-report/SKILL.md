@@ -1,9 +1,6 @@
 ---
 name: roi-report
-description: |
-  View ROI dashboard showing cumulative time saved across sessions.
-  Activate when: "show ROI", "time saved", "productivity report", cumulative value, plugin ROI, savings dashboard
-  Do NOT activate for: portfolio status overview (/portfolio-status), business case ROI analysis (/business-case), value realization for customers (/value-realization-report)
+description: "View ROI dashboard showing cumulative time saved across sessions. Activate when: \"show ROI\", \"time saved\", \"productivity report\", cumulative value, plugin ROI, savings dashboard Do NOT activate for: portfolio status overview (/portfolio-status), business case ROI analysis (/business-case), value realization for customers (/value-realization-report)"
 model: haiku
 allowed-tools:
   - Read
