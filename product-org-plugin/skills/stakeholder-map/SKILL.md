@@ -1,10 +1,7 @@
 ---
 name: stakeholder-map
-description: |
-  Map stakeholder power, interest, and influence for a product initiative or decision.
-  Activate when: "stakeholder map", "stakeholder analysis", "power interest matrix", "who to involve", "stakeholder engagement", "influence grid", "RACI"
-  Do NOT activate for: ownership mapping for accountability (/ownership-map), collaboration quality checks (/collaboration-check)
-argument-hint: [initiative or decision name] or [update path/to/stakeholder-map.md]
+description: "Map stakeholder power, interest, and influence for a product initiative or decision using the Mendelow Power/Interest Matrix and RACI framework. Use when user says 'stakeholder map', 'stakeholder analysis', 'power interest matrix', 'who to involve', 'stakeholder engagement', 'influence grid', or 'RACI'. Do NOT activate for ownership mapping for accountability (/ownership-map) or collaboration quality checks (/collaboration-check)."
+argument-hint: "[initiative or decision name] or [update path/to/stakeholder-map.md]"
 user-invocable: true
 metadata:
   author: Product Org OS
