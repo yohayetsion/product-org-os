@@ -1,10 +1,7 @@
 ---
 name: prd
-description: |
-  Create or update a full Product Requirements Document with problem, solution, and acceptance criteria.
-  Activate when: "write a PRD", "product requirements", "document the feature", formal requirements, product spec
-  Do NOT activate for: lightweight PRD outline (/prd-outline), implementation-ready feature spec (/feature-spec), individual user stories (/user-story)
-argument-hint: [product/feature name] or [update path/to/prd.md]
+description: "Create or update a full Product Requirements Document with problem statement, solution design, and acceptance criteria. Use when user says 'write a PRD', 'product requirements', 'document the feature', 'formal requirements', or 'product spec'. Do NOT activate for lightweight PRD outline (/prd-outline), implementation-ready feature spec (/feature-spec), or individual user stories (/user-story)."
+argument-hint: "[product/feature name] or [update path/to/prd.md]"
 user-invocable: true
 metadata:
   author: Product Org OS
