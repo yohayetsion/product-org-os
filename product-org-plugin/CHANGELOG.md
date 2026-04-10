@@ -5,6 +5,16 @@ All notable changes to Product Org OS will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.2.1] - 2026-04-10
+
+### Fixed
+- **YAML frontmatter normalization across 117 skill definitions** — Fixed parse-breaking frontmatter for strict parser compatibility and improved cross-host routing.
+  - Unquoted `argument-hint: [...]` values were causing YAML type mismatches (flow-sequence list vs string) and hard parse errors from bracket-internal slashes and colons. All bracketed `argument-hint` values are now double-quoted.
+  - Block-scalar `description: |` fields were flattened to single-line double-quoted strings. Content preserved verbatim (no rewording — LLM-assisted description polishing is deferred to a future release).
+  - No content changes beyond YAML frontmatter structure. Skill bodies, templates, and metadata are byte-identical.
+  - 16 skill files were already clean and left untouched (including Rohan's 5 from PR #1 and 3 files using `# heading` style with no YAML frontmatter).
+  - Thanks to @rohan-tessl for the initial report and [PR #1](https://github.com/yohayetsion/product-org-os/pull/1) covering 5 skills.
+
 ## [3.1.0] - 2026-03-07
 
 ### Added

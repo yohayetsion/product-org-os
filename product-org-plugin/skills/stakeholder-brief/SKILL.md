@@ -1,10 +1,7 @@
 ---
 name: stakeholder-brief
-description: |
-  Create stakeholder communication brief with tailored messaging for specific audiences.
-  Activate when: "stakeholder update", "brief the stakeholders", "executive summary", stakeholder communication, status update
-  Do NOT activate for: strategy communication packages (/strategy-communication), QBR presentations (/qbr-deck), campaign briefs (/campaign-brief)
-argument-hint: [topic or update] or [update path/to/brief.md]
+description: "Create stakeholder communication brief with tailored messaging for specific audiences. Activate when: \"stakeholder update\", \"brief the stakeholders\", \"executive summary\", stakeholder communication, status update Do NOT activate for: strategy communication packages (/strategy-communication), QBR presentations (/qbr-deck), campaign briefs (/campaign-brief)"
+argument-hint: "[topic or update] or [update path/to/brief.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

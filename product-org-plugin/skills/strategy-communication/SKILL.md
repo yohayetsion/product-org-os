@@ -1,10 +1,7 @@
 ---
 name: strategy-communication
-description: |
-  Create strategy communication package for aligning stakeholders on strategic direction.
-  Activate when: "communicate the strategy", "strategy deck", "share our direction", stakeholder alignment on strategy, strategy narrative
-  Do NOT activate for: stakeholder update briefs (/stakeholder-brief), vision statements (/vision-statement), QBR decks (/qbr-deck)
-argument-hint: [strategy or initiative name] or [update path/to/communication.md]
+description: "Create strategy communication package for aligning stakeholders on strategic direction. Activate when: \"communicate the strategy\", \"strategy deck\", \"share our direction\", stakeholder alignment on strategy, strategy narrative Do NOT activate for: stakeholder update briefs (/stakeholder-brief), vision statements (/vision-statement), QBR decks (/qbr-deck)"
+argument-hint: "[strategy or initiative name] or [update path/to/communication.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

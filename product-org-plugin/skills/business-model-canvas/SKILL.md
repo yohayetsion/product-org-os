@@ -1,10 +1,7 @@
 ---
 name: business-model-canvas
-description: |
-  Map a complete business model using the 9-block Business Model Canvas framework. Visualizes how a business creates, delivers, and captures value.
-  Activate when: "business model canvas", "BMC", "Osterwalder", "business model", "nine blocks", "canvas", "value proposition canvas"
-  Do NOT activate for: lean canvas (/lean-canvas), business cases (/business-case), business plans (/business-plan)
-argument-hint: [product or business name] or [update path/to/bmc.md]
+description: "Map a complete business model using the 9-block Business Model Canvas framework. Visualizes how a business creates, delivers, and captures value. Activate when: \"business model canvas\", \"BMC\", \"Osterwalder\", \"business model\", \"nine blocks\", \"canvas\", \"value proposition canvas\" Do NOT activate for: lean canvas (/lean-canvas), business cases (/business-case), business plans (/business-plan)"
+argument-hint: "[product or business name] or [update path/to/bmc.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

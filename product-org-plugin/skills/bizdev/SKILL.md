@@ -1,9 +1,6 @@
 ---
 name: bizdev
-description: |
-  Business Development - partnership strategy, market expansion, deal structuring, and ecosystem development.
-  Activate when: @bizdev, /bizdev, "partnership", "market expansion", "deal structure", "channel partners", "ecosystem", "integration partner", "alliance"
-  Do NOT activate for: financial analysis or business cases (@bizops), GTM strategy (@pmm-dir), competitive analysis (@ci), pricing strategy (@vp-product)
+description: "Business Development - partnership strategy, market expansion, deal structuring, and ecosystem development. Activate when: @bizdev, /bizdev, \"partnership\", \"market expansion\", \"deal structure\", \"channel partners\", \"ecosystem\", \"integration partner\", \"alliance\" Do NOT activate for: financial analysis or business cases (@bizops), GTM strategy (@pmm-dir), competitive analysis (@ci), pricing strategy (@vp-product)"
 model: opus
 allowed-tools:
   - Read

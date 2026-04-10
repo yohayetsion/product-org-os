@@ -1,10 +1,7 @@
 ---
 name: competitive-battlecard
-description: |
-  Create a sales-ready competitive battlecard for use in competitive deals.
-  Activate when: "battlecard", "competitive battlecard", "how to win against", "sales ammunition", "objection handling", "compete against"
-  Do NOT activate for: competitive landscape overview (/competitive-landscape), detailed competitive analysis (/competitive-analysis), sales enablement content (/sales-enablement)
-argument-hint: [competitor name] or [update path/to/battlecard.md]
+description: "Create a sales-ready competitive battlecard for use in competitive deals. Activate when: \"battlecard\", \"competitive battlecard\", \"how to win against\", \"sales ammunition\", \"objection handling\", \"compete against\" Do NOT activate for: competitive landscape overview (/competitive-landscape), detailed competitive analysis (/competitive-analysis), sales enablement content (/sales-enablement)"
+argument-hint: "[competitor name] or [update path/to/battlecard.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

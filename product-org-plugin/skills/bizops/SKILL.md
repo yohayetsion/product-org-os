@@ -1,9 +1,6 @@
 ---
 name: bizops
-description: |
-  Business Operations - business cases, financial analysis, KPI tracking, and data-driven decision support.
-  Activate when: @bizops, /bizops, "business case", "financial analysis", "KPI tracking", "revenue model", "unit economics", "QBR", "pricing model analysis"
-  Do NOT activate for: pricing strategy ownership (@vp-product), partnerships (@bizdev), GTM strategy (@pmm-dir), customer outcomes tracking (@value-realization)
+description: "Business Operations - business cases, financial analysis, KPI tracking, and data-driven decision support. Activate when: @bizops, /bizops, \"business case\", \"financial analysis\", \"KPI tracking\", \"revenue model\", \"unit economics\", \"QBR\", \"pricing model analysis\" Do NOT activate for: pricing strategy ownership (@vp-product), partnerships (@bizdev), GTM strategy (@pmm-dir), customer outcomes tracking (@value-realization)"
 model: opus
 allowed-tools:
   - Read

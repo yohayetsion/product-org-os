@@ -1,10 +1,7 @@
 ---
 name: theory-of-constraints
-description: |
-  Apply Goldratt's Theory of Constraints (TOC) to identify and eliminate the system's bottleneck using the 5 Focusing Steps.
-  Activate when: "theory of constraints", "TOC", "bottleneck analysis", "constraint", "Goldratt", "five focusing steps", "throughput", "drum buffer rope", "system constraint"
-  Do NOT activate for: general process optimization, product operations (/prodops agent), lean methodology, six sigma
-argument-hint: [system, process, or workflow to analyze] or [update path/to/toc-analysis.md]
+description: "Apply Goldratt's Theory of Constraints (TOC) to identify and eliminate the system's bottleneck using the 5 Focusing Steps. Activate when: \"theory of constraints\", \"TOC\", \"bottleneck analysis\", \"constraint\", \"Goldratt\", \"five focusing steps\", \"throughput\", \"drum buffer rope\", \"system constraint\" Do NOT activate for: general process optimization, product operations (/prodops agent), lean methodology, six sigma"
+argument-hint: "[system, process, or workflow to analyze] or [update path/to/toc-analysis.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

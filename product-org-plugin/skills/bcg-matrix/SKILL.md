@@ -1,10 +1,7 @@
 ---
 name: bcg-matrix
-description: |
-  Analyze product or feature portfolio using the BCG Growth-Share Matrix for investment allocation decisions.
-  Activate when: "BCG matrix", "growth share", "stars cash cows", "portfolio matrix", "Boston matrix", "question marks dogs", "portfolio allocation"
-  Do NOT activate for: portfolio tradeoffs (/portfolio-tradeoff), portfolio status (/portfolio-status)
-argument-hint: [product portfolio or business unit set] or [update path/to/bcg-matrix.md]
+description: "Analyze product or feature portfolio using the BCG Growth-Share Matrix for investment allocation decisions. Activate when: \"BCG matrix\", \"growth share\", \"stars cash cows\", \"portfolio matrix\", \"Boston matrix\", \"question marks dogs\", \"portfolio allocation\" Do NOT activate for: portfolio tradeoffs (/portfolio-tradeoff), portfolio status (/portfolio-status)"
+argument-hint: "[product portfolio or business unit set] or [update path/to/bcg-matrix.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

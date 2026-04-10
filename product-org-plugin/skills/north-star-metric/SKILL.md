@@ -1,10 +1,7 @@
 ---
 name: north-star-metric
-description: |
-  Define the North Star Metric and its input metrics tree for a product.
-  Activate when: "north star metric", "NSM", "key metric", "core metric", "what to measure", "product metric", "success metric"
-  Do NOT activate for: customer health scorecards (/customer-health-scorecard), OKR definition, analytics tracking implementation
-argument-hint: [product name] or [update path/to/north-star-metric.md]
+description: "Define the North Star Metric and its input metrics tree for a product. Activate when: \"north star metric\", \"NSM\", \"key metric\", \"core metric\", \"what to measure\", \"product metric\", \"success metric\" Do NOT activate for: customer health scorecards (/customer-health-scorecard), OKR definition, analytics tracking implementation"
+argument-hint: "[product name] or [update path/to/north-star-metric.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

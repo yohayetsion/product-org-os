@@ -1,10 +1,7 @@
 ---
 name: ooda-loop
-description: |
-  Apply Boyd's OODA Loop (Observe-Orient-Decide-Act) for rapid decision-making cycles and competitive tempo analysis.
-  Activate when: "OODA", "OODA loop", "observe orient decide act", "Boyd", "decision cycle", "rapid decision", "competitive tempo", "decision speed"
-  Do NOT activate for: decision records (/decision-record), DACI (/daci), pre-mortem (/pre-mortem)
-argument-hint: [situation or decision context] or [update path/to/ooda-loop.md]
+description: "Apply Boyd's OODA Loop (Observe-Orient-Decide-Act) for rapid decision-making cycles and competitive tempo analysis. Activate when: \"OODA\", \"OODA loop\", \"observe orient decide act\", \"Boyd\", \"decision cycle\", \"rapid decision\", \"competitive tempo\", \"decision speed\" Do NOT activate for: decision records (/decision-record), DACI (/daci), pre-mortem (/pre-mortem)"
+argument-hint: "[situation or decision context] or [update path/to/ooda-loop.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

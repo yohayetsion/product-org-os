@@ -1,10 +1,7 @@
 ---
 name: pretotype
-description: |
-  Design a pretotype to validate whether you're building the right product before investing in building it right. Cheaper and faster than an MVP.
-  Activate when: "pretotype", "pretotyping", "validate before building", "fake door test", "test demand", "the right it", "mechanical turk test", "validate idea cheaply"
-  Do NOT activate for: experiment design (/experiment-design), MVP definition
-argument-hint: [idea, hypothesis, or product concept to pretotype] or [update path/to/pretotype.md]
+description: "Design a pretotype to validate whether you're building the right product before investing in building it right. Cheaper and faster than an MVP. Activate when: \"pretotype\", \"pretotyping\", \"validate before building\", \"fake door test\", \"test demand\", \"the right it\", \"mechanical turk test\", \"validate idea cheaply\" Do NOT activate for: experiment design (/experiment-design), MVP definition"
+argument-hint: "[idea, hypothesis, or product concept to pretotype] or [update path/to/pretotype.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

@@ -1,10 +1,7 @@
 ---
 name: relevant-learnings
-description: |
-  Find past learnings and lessons applicable to current work from the learnings index.
-  Activate when: "what did we learn about", "past lessons on", before starting work in a familiar area, prior learnings, lessons learned
-  Do NOT activate for: recalling decisions and bets (/context-recall), recalling feedback (/feedback-recall), running a retrospective (/retrospective)
-argument-hint: [topic or situation]
+description: "Find past learnings and lessons applicable to current work from the learnings index. Activate when: \"what did we learn about\", \"past lessons on\", before starting work in a familiar area, prior learnings, lessons learned Do NOT activate for: recalling decisions and bets (/context-recall), recalling feedback (/feedback-recall), running a retrospective (/retrospective)"
+argument-hint: "[topic or situation]"
 user-invocable: true
 metadata:
   author: Product Org OS

@@ -1,10 +1,7 @@
 ---
 name: product-roadmap
-description: |
-  Create complete product roadmap document with themes, initiatives, and sequencing.
-  Activate when: "build a roadmap", "product roadmap", "what should we build next", strategic planning of initiatives, quarterly planning
-  Do NOT activate for: defining a single roadmap theme (/roadmap-theme), detailing a single roadmap item (/roadmap-item), strategy communication (/strategy-communication)
-argument-hint: [timeframe or product area] or [update path/to/roadmap.md]
+description: "Create complete product roadmap document with themes, initiatives, and sequencing. Activate when: \"build a roadmap\", \"product roadmap\", \"what should we build next\", strategic planning of initiatives, quarterly planning Do NOT activate for: defining a single roadmap theme (/roadmap-theme), detailing a single roadmap item (/roadmap-item), strategy communication (/strategy-communication)"
+argument-hint: "[timeframe or product area] or [update path/to/roadmap.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

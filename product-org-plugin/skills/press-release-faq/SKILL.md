@@ -1,10 +1,7 @@
 ---
 name: press-release-faq
-description: |
-  Write a Working Backwards PRFAQ document — a press release announcing the finished product as if it already shipped, plus internal and external FAQs, and optionally tenets for guiding tradeoff decisions. Forces clarity on customer value before building.
-  Activate when: "press release", "PRFAQ", "working backwards", "Amazon PR FAQ", "announce the product", "vision press release", "write the press release first", "PR/FAQ"
-  Do NOT activate for: strategy communications (/strategy-communication), stakeholder briefs (/stakeholder-brief), launch plans (/launch-plan), actual media press releases (@pr-comms-specialist)
-argument-hint: [product or feature name] or [update path/to/prfaq.md]
+description: "Write a Working Backwards PRFAQ document — a press release announcing the finished product as if it already shipped, plus internal and external FAQs, and optionally tenets for guiding tradeoff decisions. Forces clarity on customer value before building. Activate when: \"press release\", \"PRFAQ\", \"working backwards\", \"Amazon PR FAQ\", \"announce the product\", \"vision press release\", \"write the press release first\", \"PR/FAQ\" Do NOT activate for: strategy communications (/strategy-communication), stakeholder briefs (/stakeholder-brief), launch plans (/launch-plan), actual media press releases (@pr-comms-specialist)"
+argument-hint: "[product or feature name] or [update path/to/prfaq.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

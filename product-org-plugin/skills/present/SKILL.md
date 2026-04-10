@@ -1,10 +1,7 @@
 ---
 name: present
-description: |
-  Convert an existing deliverable document to an HTML slide presentation.
-  Activate when: "make a presentation", "create slides", "convert to slides", document as presentation, present this
-  Do NOT activate for: creating new content or documents (use domain skills), QBR deck creation (/qbr-deck), strategy communication (/strategy-communication)
-argument-hint: [document-path]
+description: "Convert an existing deliverable document to an HTML slide presentation. Activate when: \"make a presentation\", \"create slides\", \"convert to slides\", document as presentation, present this Do NOT activate for: creating new content or documents (use domain skills), QBR deck creation (/qbr-deck), strategy communication (/strategy-communication)"
+argument-hint: "[document-path]"
 user-invocable: true
 metadata:
   author: Product Org OS

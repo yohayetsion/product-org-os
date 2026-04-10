@@ -1,10 +1,7 @@
 ---
 name: experiment-design
-description: |
-  Design a lean experiment to validate a specific assumption or hypothesis. Includes discovery maturity scoring.
-  Activate when: "experiment", "test hypothesis", "validate assumption", "lean experiment", "experiment design", "discovery maturity", "A/B test design", "hypothesis testing"
-  Do NOT activate for: A/B test implementation (/ab-test-setup), assumption mapping (/assumption-map), pre-mortem (/pre-mortem)
-argument-hint: [hypothesis or assumption to test] or [update path/to/experiment.md]
+description: "Design a lean experiment to validate a specific assumption or hypothesis. Includes discovery maturity scoring. Activate when: \"experiment\", \"test hypothesis\", \"validate assumption\", \"lean experiment\", \"experiment design\", \"discovery maturity\", \"A/B test design\", \"hypothesis testing\" Do NOT activate for: A/B test implementation (/ab-test-setup), assumption mapping (/assumption-map), pre-mortem (/pre-mortem)"
+argument-hint: "[hypothesis or assumption to test] or [update path/to/experiment.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

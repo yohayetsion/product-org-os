@@ -1,10 +1,7 @@
 ---
 name: wardley-map
-description: |
-  Create a Wardley Map to visualize value chains and component evolution for strategic decision-making.
-  Activate when: "wardley map", "value chain map", "component evolution", "strategic landscape", "wardley", "evolution stages", "map the landscape"
-  Do NOT activate for: competitive landscape (/competitive-landscape), market analysis (/market-analysis), business model (/business-model-canvas)
-argument-hint: [user need or business domain] or [update path/to/wardley-map.md]
+description: "Create a Wardley Map to visualize value chains and component evolution for strategic decision-making. Activate when: \"wardley map\", \"value chain map\", \"component evolution\", \"strategic landscape\", \"wardley\", \"evolution stages\", \"map the landscape\" Do NOT activate for: competitive landscape (/competitive-landscape), market analysis (/market-analysis), business model (/business-model-canvas)"
+argument-hint: "[user need or business domain] or [update path/to/wardley-map.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

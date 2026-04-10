@@ -1,10 +1,7 @@
 ---
 name: ansoff-matrix
-description: |
-  Analyze growth direction options using the Ansoff Product/Market Expansion Grid.
-  Activate when: "Ansoff", "growth matrix", "market penetration", "diversification", "product market expansion", "growth direction", "where to grow"
-  Do NOT activate for: market analysis (/market-analysis), strategic intent (/strategic-intent)
-argument-hint: [product or business unit] or [update path/to/ansoff-matrix.md]
+description: "Analyze growth direction options using the Ansoff Product/Market Expansion Grid. Activate when: \"Ansoff\", \"growth matrix\", \"market penetration\", \"diversification\", \"product market expansion\", \"growth direction\", \"where to grow\" Do NOT activate for: market analysis (/market-analysis), strategic intent (/strategic-intent)"
+argument-hint: "[product or business unit] or [update path/to/ansoff-matrix.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

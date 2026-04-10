@@ -1,10 +1,7 @@
 ---
 name: porter-five-forces
-description: |
-  Analyze industry structure and competitive dynamics using Porter's Five Forces framework.
-  Activate when: "Porter", "five forces", "industry analysis", "competitive forces", "industry attractiveness", "barriers to entry", "supplier power", "buyer power"
-  Do NOT activate for: competitive landscape (/competitive-landscape), competitive analysis (/competitive-analysis)
-argument-hint: [industry or market] or [update path/to/porter-five-forces.md]
+description: "Analyze industry structure and competitive dynamics using Porter's Five Forces framework. Activate when: \"Porter\", \"five forces\", \"industry analysis\", \"competitive forces\", \"industry attractiveness\", \"barriers to entry\", \"supplier power\", \"buyer power\" Do NOT activate for: competitive landscape (/competitive-landscape), competitive analysis (/competitive-analysis)"
+argument-hint: "[industry or market] or [update path/to/porter-five-forces.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

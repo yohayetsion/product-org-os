@@ -1,9 +1,6 @@
 ---
 name: portfolio-status
-description: |
-  View current state of all active strategic bets and portfolio health.
-  Activate when: "show portfolio", "bet status", "active bets", portfolio overview, portfolio dashboard
-  Do NOT activate for: portfolio tradeoff analysis between bets (/portfolio-tradeoff), ROI report (/roi-report), context recall of specific decisions (/context-recall)
+description: "View current state of all active strategic bets and portfolio health. Activate when: \"show portfolio\", \"bet status\", \"active bets\", portfolio overview, portfolio dashboard Do NOT activate for: portfolio tradeoff analysis between bets (/portfolio-tradeoff), ROI report (/roi-report), context recall of specific decisions (/context-recall)"
 argument-hint:
 user-invocable: true
 metadata:

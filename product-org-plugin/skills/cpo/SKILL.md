@@ -1,9 +1,6 @@
 ---
 name: cpo
-description: |
-  Chief Product Officer - executive product strategy, organization design, decision system quality, and portfolio governance.
-  Activate when: @cpo, /cpo, "org design", "product org structure", "decision system", "portfolio governance", "PLT effectiveness", "executive product strategy"
-  Do NOT activate for: PM-level requirements (@pm), roadmap execution (@pm-dir), GTM execution (@pmm-dir), financial modeling (@bizops), individual feature work
+description: "Chief Product Officer - executive product strategy, organization design, decision system quality, and portfolio governance. Activate when: @cpo, /cpo, \"org design\", \"product org structure\", \"decision system\", \"portfolio governance\", \"PLT effectiveness\", \"executive product strategy\" Do NOT activate for: PM-level requirements (@pm), roadmap execution (@pm-dir), GTM execution (@pmm-dir), financial modeling (@bizops), individual feature work"
 model: opus
 allowed-tools:
   - Read

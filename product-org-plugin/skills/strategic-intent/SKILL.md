@@ -1,10 +1,7 @@
 ---
 name: strategic-intent
-description: |
-  Document strategic intent and direction for an initiative or planning period.
-  Activate when: "define our strategy", "strategic direction", "where are we heading", strategic priorities, where-to-play decisions
-  Do NOT activate for: detailed business cases (/business-case), roadmaps (/product-roadmap), strategy communication to stakeholders (/strategy-communication)
-argument-hint: [initiative or planning period] or [update path/to/intent.md]
+description: "Document strategic intent and direction for an initiative or planning period. Activate when: \"define our strategy\", \"strategic direction\", \"where are we heading\", strategic priorities, where-to-play decisions Do NOT activate for: detailed business cases (/business-case), roadmaps (/product-roadmap), strategy communication to stakeholders (/strategy-communication)"
+argument-hint: "[initiative or planning period] or [update path/to/intent.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

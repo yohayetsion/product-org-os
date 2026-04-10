@@ -1,9 +1,6 @@
 ---
 name: prodops
-description: |
-  Product Operations (shortcut for /product-operations) - process optimization, launch coordination, tooling, and cross-team facilitation.
-  Activate when: /prodops, @prodops, "launch coordination", "process optimization", "tooling", "retrospective", "launch readiness", "cross-team facilitation"
-  Do NOT activate for: product strategy (@vp-product), feature requirements (@pm), GTM strategy (@pmm-dir), marketing campaigns (@pmm)
+description: "Product Operations (shortcut for /product-operations) - process optimization, launch coordination, tooling, and cross-team facilitation. Activate when: /prodops, @prodops, \"launch coordination\", \"process optimization\", \"tooling\", \"retrospective\", \"launch readiness\", \"cross-team facilitation\" Do NOT activate for: product strategy (@vp-product), feature requirements (@pm), GTM strategy (@pmm-dir), marketing campaigns (@pmm)"
 model: opus
 alias: product-operations
 user-invocable: true

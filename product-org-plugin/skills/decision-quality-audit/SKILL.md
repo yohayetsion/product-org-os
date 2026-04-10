@@ -1,10 +1,7 @@
 ---
 name: decision-quality-audit
-description: |
-  Audit a set of recent decisions for quality, process adherence, and systemic patterns.
-  Activate when: "review our decisions", "decision quality check", "audit decision process", improve decision-making, decision patterns
-  Do NOT activate for: documenting individual decisions (/decision-record), decision ownership charters (/decision-charter), outcome reviews (/outcome-review)
-argument-hint: [team, time period, or decision type] or [update path/to/audit.md]
+description: "Audit a set of recent decisions for quality, process adherence, and systemic patterns. Activate when: \"review our decisions\", \"decision quality check\", \"audit decision process\", improve decision-making, decision patterns Do NOT activate for: documenting individual decisions (/decision-record), decision ownership charters (/decision-charter), outcome reviews (/outcome-review)"
+argument-hint: "[team, time period, or decision type] or [update path/to/audit.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

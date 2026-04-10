@@ -1,9 +1,6 @@
 ---
 name: value-realization
-description: |
-  Value Realization - success metrics, adoption tracking, customer outcomes, and post-launch value measurement.
-  Activate when: @value-realization, /value-realization, "customer outcomes", "adoption tracking", "customer health", "churn analysis", "time-to-value", "onboarding metrics", "outcome review"
-  Do NOT activate for: financial modeling or business cases (@bizops), pricing strategy (@vp-product), competitive analysis (@ci), feature requirements (@pm)
+description: "Value Realization - success metrics, adoption tracking, customer outcomes, and post-launch value measurement. Activate when: @value-realization, /value-realization, \"customer outcomes\", \"adoption tracking\", \"customer health\", \"churn analysis\", \"time-to-value\", \"onboarding metrics\", \"outcome review\" Do NOT activate for: financial modeling or business cases (@bizops), pricing strategy (@vp-product), competitive analysis (@ci), feature requirements (@pm)"
 model: opus
 allowed-tools:
   - Read

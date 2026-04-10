@@ -1,10 +1,7 @@
 ---
 name: bias-check
-description: |
-  Scan a decision, plan, or document for cognitive biases and provide debiasing recommendations. Improves decision quality by surfacing blind spots.
-  Activate when: "bias check", "cognitive bias", "am I biased", "decision bias", "blind spots", "reality check", "thinking errors"
-  Do NOT activate for: decision quality audits (/decision-quality-audit), retrospectives (/retrospective)
-argument-hint: [decision, plan, or document to check] or [update path/to/bias-check.md]
+description: "Scan a decision, plan, or document for cognitive biases and provide debiasing recommendations. Improves decision quality by surfacing blind spots. Activate when: \"bias check\", \"cognitive bias\", \"am I biased\", \"decision bias\", \"blind spots\", \"reality check\", \"thinking errors\" Do NOT activate for: decision quality audits (/decision-quality-audit), retrospectives (/retrospective)"
+argument-hint: "[decision, plan, or document to check] or [update path/to/bias-check.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

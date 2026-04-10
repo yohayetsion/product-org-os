@@ -1,10 +1,7 @@
 ---
 name: outcome-review
-description: |
-  Structure an outcome review evaluating whether an initiative delivered its promised results.
-  Activate when: "review outcomes", "did it work", "outcome review", post-launch evaluation, results assessment, outputs vs outcomes
-  Do NOT activate for: team process retrospective (/retrospective), decision quality audit (/decision-quality-audit), QBR deck (/qbr-deck)
-argument-hint: [initiative or launch name] or [update path/to/review.md]
+description: "Structure an outcome review evaluating whether an initiative delivered its promised results. Activate when: \"review outcomes\", \"did it work\", \"outcome review\", post-launch evaluation, results assessment, outputs vs outcomes Do NOT activate for: team process retrospective (/retrospective), decision quality audit (/decision-quality-audit), QBR deck (/qbr-deck)"
+argument-hint: "[initiative or launch name] or [update path/to/review.md]"
 user-invocable: true
 metadata:
   author: Product Org OS

@@ -1,10 +1,7 @@
 ---
 name: customer-journey-map
-description: |
-  Map the end-to-end customer journey across lifecycle stages, identifying touchpoints, emotions, pain points, and opportunities for improvement.
-  Activate when: "journey map", "customer journey", "user journey", "touchpoints", "experience map", "pain points along the journey", "map the experience", "lifecycle stages"
-  Do NOT activate for: onboarding playbooks (/onboarding-playbook), customer health scorecards (/customer-health-scorecard), user stories (/user-story)
-argument-hint: [product or persona name] or [update path/to/journey-map.md]
+description: "Map the end-to-end customer journey across lifecycle stages, identifying touchpoints, emotions, pain points, and opportunities for improvement. Activate when: \"journey map\", \"customer journey\", \"user journey\", \"touchpoints\", \"experience map\", \"pain points along the journey\", \"map the experience\", \"lifecycle stages\" Do NOT activate for: onboarding playbooks (/onboarding-playbook), customer health scorecards (/customer-health-scorecard), user stories (/user-story)"
+argument-hint: "[product or persona name] or [update path/to/journey-map.md]"
 user-invocable: true
 metadata:
   author: Product Org OS
