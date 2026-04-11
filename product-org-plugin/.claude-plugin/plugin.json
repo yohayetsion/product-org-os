@@ -1,7 +1,7 @@
 {
   "name": "product-org",
   "version": "3.2.1",
-  "description": "AI product organization plugin with 103 skills, 13 agents, 5 gateways, 9 knowledge packs, automatic context tracking, and MCP integrations. Cross-platform via Agent Skills standard.",
+  "description": "AI product organization plugin with 133 skills, 13 agents, 2 gateways, and 10 knowledge packs. Cross-platform via Agent Skills standard.",
   "standard": "agent-skills",
   "author": {
     "name": "Yohay Etsion",
