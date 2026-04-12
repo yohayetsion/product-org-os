@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's New in v4.0 | Product Org OS</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='hexGradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23E94560'/%3E%3Cstop offset='100%25' stop-color='%234ECCA3'/%3E%3C/linearGradient%3E%3Cfilter id='glow'%3E%3CfeGaussianBlur stdDeviation='3' result='coloredBlur'/%3E%3CfeMerge%3E%3CfeMergeNode in='coloredBlur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Cpolygon points='100,10 178,55 178,145 100,190 22,145 22,55' fill='none' stroke='url(%23hexGradient)' stroke-width='2' filter='url(%23glow)'/%3E%3Cline x1='100' y1='10' x2='100' y2='100' stroke='url(%23hexGradient)' stroke-width='1' opacity='0.5'/%3E%3Cline x1='178' y1='55' x2='100' y2='100' stroke='url(%23hexGradient)' stroke-width='1' opacity='0.5'/%3E%3Cline x1='178' y1='145' x2='100' y2='100' stroke='url(%23hexGradient)' stroke-width='1' opacity='0.5'/%3E%3Cline x1='100' y1='190' x2='100' y2='100' stroke='url(%23hexGradient)' stroke-width='1' opacity='0.5'/%3E%3Cline x1='22' y1='145' x2='100' y2='100' stroke='url(%23hexGradient)' stroke-width='1' opacity='0.5'/%3E%3Cline x1='22' y1='55' x2='100' y2='100' stroke='url(%23hexGradient)' stroke-width='1' opacity='0.5'/%3E%3Ccircle cx='100' cy='10' r='8' fill='%234A90D9' filter='url(%23glow)'/%3E%3Ccircle cx='178' cy='55' r='8' fill='%239B59B6' filter='url(%23glow)'/%3E%3Ccircle cx='178' cy='145' r='8' fill='%234ECCA3' filter='url(%23glow)'/%3E%3Ccircle cx='100' cy='190' r='8' fill='%23FFC93C' filter='url(%23glow)'/%3E%3Ccircle cx='22' cy='145' r='8' fill='%2327AE60' filter='url(%23glow)'/%3E%3Ccircle cx='22' cy='55' r='8' fill='%23E94560' filter='url(%23glow)'/%3E%3Ccircle cx='100' cy='100' r='12' fill='url(%23hexGradient)' filter='url(%23glow)'/%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #e94560;
+            --primary-dark: #c73e54;
+            --secondary: #4ecca3;
+            --accent: #0f3460;
+            --bg: #1a1a2e;
+            --bg-card: #16213e;
+            --bg-elevated: #0f3460;
+            --text: #eaeaea;
+            --text-muted: #a0a0a0;
+            --text-dim: #707070;
+            --border: #2a2a4e;
+            --gradient-1: linear-gradient(135deg, #e94560 0%, #c73e54 100%);
+            --gradient-2: linear-gradient(135deg, #4ecca3 0%, #38b593 100%);
+            --gradient-3: linear-gradient(135deg, #ffc93c 0%, #f5a623 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 1rem;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .nav-logo-text {
+            background: linear-gradient(90deg, #E94560, #4ECCA3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-logo-icon { width: 28px; height: 28px; }
+
+        .nav-back {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 0.4rem 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .nav-back:hover {
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 10rem 1.5rem 5rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .version-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(78, 204, 163, 0.08);
+            border: 1px solid rgba(78, 204, 163, 0.2);
+            border-radius: 999px;
+            padding: 0.4rem 1.25rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+        }
+
+        .version-badge .dot {
+            width: 8px; height: 8px;
+            background: var(--secondary);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #E94560, #4ECCA3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 1rem;
+            line-height: 1.7;
+        }
+
+        .hero-tagline {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            font-weight: 500;
+        }
+
+        /* Stats */
+        .stats-bar {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 2rem 1.5rem;
+        }
+
+        .stats-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 120px;
+            padding: 0.75rem 1rem;
+        }
+
+        .stat-value {
+            font-size: 2.25rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-top: 0.25rem;
+        }
+
+        /* Feature Sections */
+        .feature-section {
+            padding: 6rem 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .feature-inner {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .feature-section:nth-child(even) .feature-inner {
+            direction: rtl;
+        }
+
+        .feature-section:nth-child(even) .feature-inner > * {
+            direction: ltr;
+        }
+
+        .feature-icon-area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .feature-icon-box {
+            width: 280px;
+            height: 280px;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-icon-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            padding: 1px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        .feature-icon-box .icon-emoji {
+            font-size: 4rem;
+            margin-bottom: 0.75rem;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+        }
+
+        .feature-icon-box .icon-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+        }
+
+        .feature-content h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.15;
+        }
+
+        .feature-content h2 .highlight {
+            background: linear-gradient(90deg, #E94560, #4ECCA3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .feature-content .lead {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .feature-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .bullet {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-top: 2px;
+        }
+
+        .bullet-primary { background: rgba(233, 69, 96, 0.15); color: var(--primary); }
+        .bullet-secondary { background: rgba(78, 204, 163, 0.15); color: var(--secondary); }
+
+        .feature-tag {
+            display: inline-block;
+            margin-top: 1.25rem;
+            padding: 0.3rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            background: rgba(78, 204, 163, 0.1);
+            color: var(--secondary);
+            border: 1px solid rgba(78, 204, 163, 0.2);
+        }
+
+        /* Code Examples */
+        .code-example {
+            background: #0d0d1a;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            color: var(--secondary);
+            line-height: 1.6;
+            margin-top: 1rem;
+        }
+
+        .code-example .code-comment {
+            color: var(--text-dim);
+        }
+
+        .code-example .code-key {
+            color: var(--primary);
+        }
+
+        .code-example .code-value {
+            color: var(--secondary);
+        }
+
+        /* Gradient Dividers */
+        .gradient-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        /* CTA */
+        .cta-section {
+            padding: 6rem 1.5rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg) 50%, var(--bg-card) 100%);
+            position: relative;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), transparent);
+        }
+
+        .cta-section h2 {
+            font-size: clamp(1.75rem, 4vw, 2.75rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .cta-subtitle {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 2.5rem;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-install {
+            background: #0d0d1a;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        .cta-install .prompt {
+            color: var(--secondary);
+            font-weight: 600;
+            font-family: 'Courier New', monospace;
+            white-space: nowrap;
+        }
+
+        .cta-install code {
+            color: var(--text);
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+
+        .cta-install .copy-btn {
+            background: rgba(78, 204, 163, 0.12);
+            border: 1px solid rgba(78, 204, 163, 0.3);
+            color: var(--secondary);
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .cta-install .copy-btn:hover {
+            background: rgba(78, 204, 163, 0.2);
+        }
+
+        .cta-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .cta-btn-primary {
+            background: var(--gradient-1);
+            color: white;
+        }
+
+        .cta-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(233, 69, 96, 0.3);
+        }
+
+        .cta-btn-secondary {
+            border: 1px solid var(--border);
+            color: var(--text);
+            background: transparent;
+        }
+
+        .cta-btn-secondary:hover {
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+
+        /* Changelog Details */
+        .changelog-details {
+            max-width: 600px;
+            margin: 2rem auto 0;
+            text-align: left;
+        }
+
+        .changelog-details summary {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: all 0.2s;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .changelog-details summary::-webkit-details-marker { display: none; }
+
+        .changelog-details summary::before {
+            content: '\25B6';
+            font-size: 0.65rem;
+            transition: transform 0.2s;
+        }
+
+        .changelog-details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .changelog-details summary:hover {
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+
+        .changelog-details .changelog-content {
+            padding: 1rem 1rem 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .changelog-details .changelog-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* Version history link */
+        .version-history {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+        }
+
+        .version-history a {
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid var(--text-dim);
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .version-history a:hover {
+            color: var(--secondary);
+            border-color: var(--secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .feature-inner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .feature-section:nth-child(even) .feature-inner {
+                direction: ltr;
+            }
+
+            .feature-icon-box {
+                width: 200px;
+                height: 200px;
+            }
+
+            .feature-icon-box .icon-emoji {
+                font-size: 3rem;
+            }
+
+            .feature-list li {
+                justify-content: center;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .stats-grid { gap: 0.75rem; }
+            .stat-item { min-width: 100px; padding: 0.6rem 0.75rem; }
+            .stat-value { font-size: 1.5rem; }
+            .stat-label { font-size: 0.7rem; }
+            .feature-section { padding: 4rem 1rem; }
+            .cta-install { padding: 1rem 1.25rem; }
+            .cta-install code { font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <svg class="nav-logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="navHexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#E94560"/>
+                            <stop offset="100%" stop-color="#4ECCA3"/>
+                        </linearGradient>
+                        <filter id="navGlow">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <polygon points="100,10 178,55 178,145 100,190 22,145 22,55" fill="none" stroke="url(#navHexGradient)" stroke-width="2" filter="url(#navGlow)"/>
+                    <line x1="100" y1="10" x2="100" y2="100" stroke="url(#navHexGradient)" stroke-width="1" opacity="0.5"/>
+                    <line x1="178" y1="55" x2="100" y2="100" stroke="url(#navHexGradient)" stroke-width="1" opacity="0.5"/>
+                    <line x1="178" y1="145" x2="100" y2="100" stroke="url(#navHexGradient)" stroke-width="1" opacity="0.5"/>
+                    <line x1="100" y1="190" x2="100" y2="100" stroke="url(#navHexGradient)" stroke-width="1" opacity="0.5"/>
+                    <line x1="22" y1="145" x2="100" y2="100" stroke="url(#navHexGradient)" stroke-width="1" opacity="0.5"/>
+                    <line x1="22" y1="55" x2="100" y2="100" stroke="url(#navHexGradient)" stroke-width="1" opacity="0.5"/>
+                    <circle cx="100" cy="10" r="8" fill="#4A90D9" filter="url(#navGlow)"/>
+                    <circle cx="178" cy="55" r="8" fill="#9B59B6" filter="url(#navGlow)"/>
+                    <circle cx="178" cy="145" r="8" fill="#4ECCA3" filter="url(#navGlow)"/>
+                    <circle cx="100" cy="190" r="8" fill="#FFC93C" filter="url(#navGlow)"/>
+                    <circle cx="22" cy="145" r="8" fill="#27AE60" filter="url(#navGlow)"/>
+                    <circle cx="22" cy="55" r="8" fill="#E94560" filter="url(#navGlow)"/>
+                    <circle cx="100" cy="100" r="12" fill="url(#navHexGradient)" filter="url(#navGlow)"/>
+                </svg>
+                <span class="nav-logo-text">Product Org OS</span>
+            </a>
+            <a href="index.html" class="nav-back">&larr; Back to Main</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="version-badge reveal">
+            <span class="dot"></span>
+            v4.0 Release
+        </div>
+        <h1 class="reveal reveal-delay-1">
+            Agents That Know<br><span class="gradient-text">Their Own Job</span>
+        </h1>
+        <p class="hero-subtitle reveal reveal-delay-2">
+            Every agent declares what skills it uses, what knowledge it reads, and when.
+            Mandatory enforcement sections ground every response in authoritative sources.
+            No more agents winging it from training data.
+        </p>
+        <p class="hero-tagline reveal reveal-delay-3">12 agents &middot; 130+ skills &middot; 100% metadata coverage &middot; Enforcement-first runtime</p>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stats-grid">
+            <div class="stat-item reveal">
+                <div class="stat-value">12</div>
+                <div class="stat-label">Agents</div>
+            </div>
+            <div class="stat-item reveal reveal-delay-1">
+                <div class="stat-value">130+</div>
+                <div class="stat-label">Skills</div>
+            </div>
+            <div class="stat-item reveal reveal-delay-2">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Metadata Coverage</div>
+            </div>
+            <div class="stat-item reveal reveal-delay-3">
+                <div class="stat-value">3</div>
+                <div class="stat-label">Knowledge Tiers</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feature 1: The v4 Model -->
+    <section class="feature-section" id="architecture">
+        <div class="feature-inner">
+            <div class="feature-icon-area reveal">
+                <div class="feature-icon-box">
+                    <div class="icon-emoji">&#x1F9E0;</div>
+                    <div class="icon-label">Architecture</div>
+                </div>
+            </div>
+            <div class="feature-content reveal reveal-delay-1">
+                <h2>Agents That<br><span class="highlight">Declare</span></h2>
+                <p class="lead">
+                    v4 restructures every agent as a self-describing skill under the Agent Skills
+                    Specification standard. Agents declare their core skills, supporting skills,
+                    mandatory invocations, knowledge packs, delegation patterns, and collaboration
+                    maps &mdash; all in structured metadata that tools can read.
+                </p>
+                <ul class="feature-list">
+                    <li>
+                        <span class="bullet bullet-primary">&#x2713;</span>
+                        Structured metadata (core_skills, supporting_skills, raci, deliverables)
+                    </li>
+                    <li>
+                        <span class="bullet bullet-secondary">&#x2713;</span>
+                        Primary/secondary consumer lists across teams
+                    </li>
+                    <li>
+                        <span class="bullet bullet-primary">&#x2713;</span>
+                        Single PRINCIPLES.md inheritance per subsystem
+                    </li>
+                    <li>
+                        <span class="bullet bullet-secondary">&#x2713;</span>
+                        Agent Skills Specification compliance (cross-tool portable)
+                    </li>
+                </ul>
+                <span class="feature-tag">v4.0 Architecture</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="gradient-divider"></div>
+
+    <!-- Feature 2: Three Tiers of Knowledge -->
+    <section class="feature-section" id="knowledge-tiers">
+        <div class="feature-inner">
+            <div class="feature-icon-area reveal">
+                <div class="feature-icon-box">
+                    <div class="icon-emoji">&#x1F3D7;&#xFE0F;</div>
+                    <div class="icon-label">Three Tiers</div>
+                </div>
+            </div>
+            <div class="feature-content reveal reveal-delay-1">
+                <h2>Three Tiers of<br><span class="highlight">Knowledge</span></h2>
+                <p class="lead">
+                    Agents consult authoritative sources before producing output. Three levels
+                    of knowledge &mdash; always-loaded, conditional, on-demand &mdash; replace the old
+                    "reference as needed" pattern that LLMs regularly ignored.
+                </p>
+                <ul class="feature-list">
+                    <li>
+                        <span class="bullet bullet-primary">&#x2713;</span>
+                        <strong>Tier 1 (Always-loaded)</strong>: PRINCIPLES.md + preload packs read before every response
+                    </li>
+                    <li>
+                        <span class="bullet bullet-secondary">&#x2713;</span>
+                        <strong>Tier 2 (Conditional)</strong>: Trigger keywords activate blocking reads (e.g., "M&amp;A" triggers ma-value-stack.md)
+                    </li>
+                    <li>
+                        <span class="bullet bullet-primary">&#x2713;</span>
+                        <strong>Tier 3 (On-demand)</strong>: Supporting packs available when the agent needs depth
+                    </li>
+                    <li>
+                        <span class="bullet bullet-secondary">&#x2713;</span>
+                        <strong>MANDATORY FIRST ACTIONS</strong> + Self-Check enforce compliance
+                    </li>
+                </ul>
+                <span class="feature-tag">Enforcement-First</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="gradient-divider"></div>
+
+    <!-- Feature 3: Capability Depth -->
+    <section class="feature-section" id="capability-depth">
+        <div class="feature-inner">
+            <div class="feature-icon-area reveal">
+                <div class="feature-icon-box">
+                    <div class="icon-emoji">&#x1F4CA;</div>
+                    <div class="icon-label">Depth</div>
+                </div>
+            </div>
+            <div class="feature-content reveal reveal-delay-1">
+                <h2>40+ Skills Per Agent.<br><span class="highlight">Declared.</span></h2>
+                <p class="lead">
+                    v4 agents ship with 40+ declared skills, 10 knowledge packs, and 100%
+                    metadata coverage. Every skill table includes meaningful trigger descriptions
+                    &mdash; not generic labels. Every agent knows exactly when to use each skill and why.
+                </p>
+                <ul class="feature-list">
+                    <li>
+                        <span class="bullet bullet-primary">&#x2713;</span>
+                        <strong>Core Skills table</strong>: what the agent uses daily, with per-skill triggers
+                    </li>
+                    <li>
+                        <span class="bullet bullet-secondary">&#x2713;</span>
+                        <strong>Supporting Skills table</strong>: what the agent reaches for in specific scenarios
+                    </li>
+                    <li>
+                        <span class="bullet bullet-primary">&#x2713;</span>
+                        <strong>Mandatory Skill Invocations</strong>: task types that MUST trigger a skill (with escape valves)
+                    </li>
+                    <li>
+                        <span class="bullet bullet-secondary">&#x2713;</span>
+                        <strong>Sub-agent delegation</strong>: who to spawn and when
+                    </li>
+                </ul>
+                <span class="feature-tag">100% Coverage</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="gradient-divider"></div>
+
+    <!-- Feature 4: See It In Action -->
+    <section class="feature-section" id="in-action">
+        <div class="feature-inner">
+            <div class="feature-icon-area reveal">
+                <div class="feature-icon-box">
+                    <div class="icon-emoji">&#x1F4BB;</div>
+                    <div class="icon-label">Concrete</div>
+                </div>
+            </div>
+            <div class="feature-content reveal reveal-delay-1">
+                <h2>See It<br><span class="highlight">In Action</span></h2>
+                <p class="lead">
+                    Here's what a v4 agent looks like. This is the Product Manager's metadata
+                    and enforcement sections &mdash; every one of the 12 agents follows the same structure.
+                </p>
+                <div class="code-example">
+<span class="code-key">metadata:</span>
+  <span class="code-key">core_skills:</span> <span class="code-value">[prd, feature-spec, user-story, ...]</span>
+  <span class="code-key">mandatory_skill_invocations:</span>
+    - <span class="code-key">skill:</span> <span class="code-value">prd</span>
+      <span class="code-key">triggers:</span> <span class="code-value">Any PRD authoring</span>
+      <span class="code-key">escape:</span> <span class="code-value">quick scoping &rarr; /prd-outline</span>
+  <span class="code-key">conditional_knowledge_packs:</span>
+    - <span class="code-key">pack:</span> <span class="code-value">user-research.md</span>
+      <span class="code-key">trigger_keywords:</span> <span class="code-value">user research synthesis</span></div>
+                <div class="code-example" style="margin-top: 0.75rem;">
+<span class="code-comment">## MANDATORY FIRST ACTIONS</span>
+1. If matter involves user research &rarr; Read user-research.md
+2. For Any PRD authoring &rarr; MUST invoke /prd
+3. For Feature touching personal data &rarr; MUST invoke /privacy-policy-audit
+
+<span class="code-comment">## Self-Check Before Output</span>
+- [ ] Did I read required packs?
+- [ ] Did I invoke mandatory skills?</div>
+                <span class="feature-tag">@pm Example</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="reveal">5-Minute Install. <span class="gradient-text">Full System.</span></h2>
+            <p class="cta-subtitle reveal reveal-delay-1">
+                Install command unchanged from v3. Works in Claude Code, Cursor, Gemini CLI,
+                GitHub Copilot, and other Agent Skills-compatible tools.
+            </p>
+            <div class="cta-install reveal reveal-delay-2">
+                <span class="prompt">$</span>
+                <code>claude plugins install github:yohayetsion/product-org-os</code>
+                <button class="copy-btn" onclick="copyInstall()">Copy</button>
+            </div>
+            <div class="cta-links reveal reveal-delay-3">
+                <a href="https://github.com/yohayetsion/product-org-os" class="cta-btn cta-btn-primary" target="_blank" rel="noopener">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    GitHub
+                </a>
+                <a href="index.html" class="cta-btn cta-btn-secondary">
+                    &larr; Product Org OS Home
+                </a>
+            </div>
+            <div class="version-history reveal reveal-delay-4">
+                <a href="whats-new-v3.2.html">What was new in v3.2</a>
+                <span style="color: var(--text-dim); margin: 0 0.5rem;">|</span>
+                <a href="whats-new-v3.html">What was new in v3.0</a>
+            </div>
+            <details class="changelog-details reveal reveal-delay-4">
+                <summary>What changed from v3.2</summary>
+                <div class="changelog-content">
+                    <ul>
+                        <li>No breaking invocation changes &mdash; <code style="color: var(--secondary); font-family: 'Courier New', monospace; font-size: 0.8rem;">@pm</code>, <code style="color: var(--secondary); font-family: 'Courier New', monospace; font-size: 0.8rem;">/prd</code>, <code style="color: var(--secondary); font-family: 'Courier New', monospace; font-size: 0.8rem;">@product</code> all work exactly the same</li>
+                        <li>Deprecated frontmatter fields migrated automatically to <code style="color: var(--secondary); font-family: 'Courier New', monospace; font-size: 0.8rem;">metadata:</code></li>
+                        <li>UX Lead retired &mdash; use <code style="color: var(--secondary); font-family: 'Courier New', monospace; font-size: 0.8rem;">@design-dir</code> or the Design Extension Team</li>
+                        <li>PRINCIPLES.md is now the single source of V2V methodology</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Built by <a href="https://github.com/yohayetsion" target="_blank" rel="noopener">Yohay Etsion</a> &middot; 2025-2026</p>
+    </footer>
+
+    <!-- Scroll Reveal -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        function copyInstall() {
+            const cmd = 'claude plugins install github:yohayetsion/product-org-os';
+            navigator.clipboard.writeText(cmd).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = 'Copied!';
+                setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+            });
+        }
+    </script>
+
+</body>
+</html>
