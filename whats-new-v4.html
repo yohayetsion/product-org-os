@@ -663,27 +663,59 @@
             Mandatory enforcement sections ground every response in authoritative sources.
             No more agents winging it from training data.
         </p>
-        <p class="hero-tagline reveal reveal-delay-3">12 agents &middot; 130+ skills &middot; 100% metadata coverage &middot; Enforcement-first runtime</p>
+        <p class="hero-tagline reveal reveal-delay-3">150+ skills &middot; 38 knowledge packs &middot; 40+ skills per agent &middot; 100% metadata coverage</p>
     </section>
 
-    <!-- Stats Bar -->
+    <!-- Before / After Stats Bar -->
     <div class="stats-bar">
-        <div class="stats-grid">
-            <div class="stat-item reveal">
-                <div class="stat-value">12</div>
-                <div class="stat-label">Agents</div>
-            </div>
-            <div class="stat-item reveal reveal-delay-1">
-                <div class="stat-value">150+</div>
-                <div class="stat-label">Skills</div>
-            </div>
-            <div class="stat-item reveal reveal-delay-2">
-                <div class="stat-value">38</div>
-                <div class="stat-label">Knowledge Packs</div>
-            </div>
-            <div class="stat-item reveal reveal-delay-3">
-                <div class="stat-value">100%</div>
-                <div class="stat-label">Metadata Coverage</div>
+        <div style="max-width: 900px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; align-items: center;">
+                <!-- v3 Column -->
+                <div style="text-align: center;">
+                    <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); font-weight: 600; margin-bottom: 1rem;">v3.2</div>
+                    <div class="stats-grid" style="flex-direction: column; gap: 0.5rem;">
+                        <div class="stat-item reveal" style="padding: 0.4rem 0;">
+                            <div class="stat-value" style="font-size: 1.5rem; opacity: 0.5;">13</div>
+                            <div class="stat-label">Agents</div>
+                        </div>
+                        <div class="stat-item reveal reveal-delay-1" style="padding: 0.4rem 0;">
+                            <div class="stat-value" style="font-size: 1.5rem; opacity: 0.5;">133</div>
+                            <div class="stat-label">Skills</div>
+                        </div>
+                        <div class="stat-item reveal reveal-delay-2" style="padding: 0.4rem 0;">
+                            <div class="stat-value" style="font-size: 1.5rem; opacity: 0.5;">10</div>
+                            <div class="stat-label">Knowledge Packs</div>
+                        </div>
+                        <div class="stat-item reveal reveal-delay-3" style="padding: 0.4rem 0;">
+                            <div class="stat-value" style="font-size: 1.5rem; opacity: 0.5;">3&ndash;5</div>
+                            <div class="stat-label">Skills / Agent</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Arrow -->
+                <div style="font-size: 2.5rem; color: var(--secondary); align-self: center; padding-top: 1.5rem;">&rarr;</div>
+                <!-- v4 Column -->
+                <div style="text-align: center;">
+                    <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--secondary); font-weight: 600; margin-bottom: 1rem;">v4.0</div>
+                    <div class="stats-grid" style="flex-direction: column; gap: 0.5rem;">
+                        <div class="stat-item reveal" style="padding: 0.4rem 0;">
+                            <div class="stat-value" style="font-size: 1.5rem;">12</div>
+                            <div class="stat-label">Agents</div>
+                        </div>
+                        <div class="stat-item reveal reveal-delay-1" style="padding: 0.4rem 0;">
+                            <div class="stat-value" style="font-size: 1.5rem;">150+</div>
+                            <div class="stat-label">Skills</div>
+                        </div>
+                        <div class="stat-item reveal reveal-delay-2" style="padding: 0.4rem 0;">
+                            <div class="stat-value" style="font-size: 1.5rem;">38</div>
+                            <div class="stat-label">Knowledge Packs</div>
+                        </div>
+                        <div class="stat-item reveal reveal-delay-3" style="padding: 0.4rem 0;">
+                            <div class="stat-value" style="font-size: 1.5rem;">40+</div>
+                            <div class="stat-label">Skills / Agent</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -706,22 +738,10 @@
                     maps &mdash; all in structured metadata that tools can read.
                 </p>
                 <ul class="feature-list">
-                    <li>
-                        <span class="bullet bullet-primary">&#x2713;</span>
-                        Structured metadata (core_skills, supporting_skills, raci, deliverables)
-                    </li>
-                    <li>
-                        <span class="bullet bullet-secondary">&#x2713;</span>
-                        Primary/secondary consumer lists across teams
-                    </li>
-                    <li>
-                        <span class="bullet bullet-primary">&#x2713;</span>
-                        Single PRINCIPLES.md inheritance per subsystem
-                    </li>
-                    <li>
-                        <span class="bullet bullet-secondary">&#x2713;</span>
-                        Agent Skills Specification compliance (cross-tool portable)
-                    </li>
+                    <li><span class="bullet bullet-primary">&#x2713;</span> Every agent lists its core skills, supporting skills, and RACI in metadata</li>
+                    <li><span class="bullet bullet-secondary">&#x2713;</span> Every skill declares its owner and which agents consume it</li>
+                    <li><span class="bullet bullet-primary">&#x2713;</span> One PRINCIPLES.md per subsystem, inherited by all its agents</li>
+                    <li><span class="bullet bullet-secondary">&#x2713;</span> Agent Skills Specification compliant &mdash; works across tools</li>
                 </ul>
                 <span class="feature-tag">v4.0 Architecture</span>
             </div>
@@ -747,22 +767,10 @@
                     "reference as needed" pattern that LLMs regularly ignored.
                 </p>
                 <ul class="feature-list">
-                    <li>
-                        <span class="bullet bullet-primary">&#x2713;</span>
-                        <strong>Tier 1 (Always-loaded)</strong>: PRINCIPLES.md + preload packs read before every response
-                    </li>
-                    <li>
-                        <span class="bullet bullet-secondary">&#x2713;</span>
-                        <strong>Tier 2 (Conditional)</strong>: Trigger keywords activate blocking reads (e.g., "M&amp;A" triggers ma-value-stack.md)
-                    </li>
-                    <li>
-                        <span class="bullet bullet-primary">&#x2713;</span>
-                        <strong>Tier 3 (On-demand)</strong>: Supporting packs available when the agent needs depth
-                    </li>
-                    <li>
-                        <span class="bullet bullet-secondary">&#x2713;</span>
-                        <strong>MANDATORY FIRST ACTIONS</strong> + Self-Check enforce compliance
-                    </li>
+                    <li><span class="bullet bullet-primary">&#x2713;</span> <strong>Tier 1</strong> &mdash; Always loaded. PRINCIPLES.md + preload packs read before every response</li>
+                    <li><span class="bullet bullet-secondary">&#x2713;</span> <strong>Tier 2</strong> &mdash; Conditional. Keywords like "M&amp;A" trigger blocking reads automatically</li>
+                    <li><span class="bullet bullet-primary">&#x2713;</span> <strong>Tier 3</strong> &mdash; On-demand. 38 packs available when the agent needs domain depth</li>
+                    <li><span class="bullet bullet-secondary">&#x2713;</span> <strong>Self-Check</strong> &mdash; Every response verified before output. Non-compliant = invalid</li>
                 </ul>
                 <span class="feature-tag">Enforcement-First</span>
             </div>
@@ -789,28 +797,13 @@
                     &mdash; not generic labels.
                 </p>
                 <ul class="feature-list">
-                    <li>
-                        <span class="bullet bullet-primary">&#x2713;</span>
-                        <strong>130+ OS skills</strong> with per-skill trigger descriptions in every agent table
-                    </li>
-                    <li>
-                        <span class="bullet bullet-secondary">&#x2713;</span>
-                        <strong>20 cross-domain skills</strong>: /risk-analysis, /contract-review, /compliance-audit, /ai-control-audit, /figma-agent-brief, and 15 more across legal, HR, design, CS, and architecture
-                    </li>
-                    <li>
-                        <span class="bullet bullet-primary">&#x2713;</span>
-                        <strong>28 specialist knowledge packs</strong>: legal frameworks, HR governance, M&A playbooks, architecture patterns, marketing strategy, and more
-                    </li>
-                    <li>
-                        <span class="bullet bullet-secondary">&#x2713;</span>
-                        <strong>Skill ownership</strong>: every skill declares its owner and primary/secondary consumer agents
-                    </li>
-                    <li>
-                        <span class="bullet bullet-primary">&#x2713;</span>
-                        <strong>Mandatory invocations</strong>: task types that MUST trigger a skill (with escape valves)
-                    </li>
+                    <li><span class="bullet bullet-primary">&#x2713;</span> <strong>150+ skills</strong> &mdash; up from 133 in v3. Each with trigger descriptions, not generic labels</li>
+                    <li><span class="bullet bullet-secondary">&#x2713;</span> <strong>38 knowledge packs</strong> &mdash; up from 10 in v3. Legal, HR, architecture, marketing, finance, ops</li>
+                    <li><span class="bullet bullet-primary">&#x2713;</span> <strong>40+ skills per agent</strong> &mdash; up from 3&ndash;5 in v3. Every agent has a full declared toolkit</li>
+                    <li><span class="bullet bullet-secondary">&#x2713;</span> <strong>20 cross-domain skills</strong> &mdash; risk analysis, contract review, compliance, AI audit, design briefs</li>
+                    <li><span class="bullet bullet-primary">&#x2713;</span> <strong>Mandatory invocations</strong> &mdash; specific task types that MUST trigger a skill before output</li>
                 </ul>
-                <span class="feature-tag">130+ Skills, 38 KPs, 100% Coverage</span>
+                <span class="feature-tag">10x More Depth Per Agent</span>
             </div>
         </div>
     </section>
