@@ -10,6 +10,26 @@ metadata:
   version: 1.1.0
   category: discovery
   skill_type: task-capability
+  owner: cro-specialist
+  primary_consumers:
+  - pm
+  - data-lead
+  - data-analyst
+  - ml-engineer
+  - experimentation-analyst
+  - people-analyst
+  - cro-specialist
+  - growth-marketer
+  - paid-media-manager
+  secondary_consumers:
+  - ai-architect
+  - bi-engineer
+  - interaction-designer
+  - user-researcher
+  - email-marketer
+  - seo-specialist
+  - social-media-manager
+  - sales-ops
 ---
 <!-- Source: Experiment Design — consolidated from Alberto Savoia "The Right It" (2019, HarperOne) pretotyping methodology, Lean Experiment Canvas, and Strategyzer's Test Card + Learning Card (Alex Osterwalder). -->
 

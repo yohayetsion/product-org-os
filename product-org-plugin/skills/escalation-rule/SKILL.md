@@ -9,6 +9,26 @@ metadata:
   version: 3.0.0
   category: decisions
   skill_type: task-capability
+  owner: compliance-officer
+  primary_consumers:
+  - pm-dir
+  - prodops
+  - legal-dir
+  - compliance-officer
+  - support-lead
+  - coo
+  - finance-dir
+  - financial-controller
+  - hr-dir
+  - it-dir
+  - it-security-policy
+  - operations-dir
+  - program-manager
+  - risk-manager
+  - sales-dir
+  secondary_consumers:
+  - cs-dir
+  - cs-ops
 ---
 ## Document Intelligence
 

@@ -9,6 +9,19 @@ metadata:
   version: 3.0.0
   category: assessment
   skill_type: task-capability
+  owner: chro
+  primary_consumers:
+  - pm-dir
+  - product-mentor
+  - chro
+  - performance-specialist
+  - coach
+  secondary_consumers:
+  - cpo
+  - legal-dir
+  - hr-dir
+  - recruiter
+  - onboarding-specialist
 ---
 Assess **PM Competency Level** against the PM Career Blueprint.
 

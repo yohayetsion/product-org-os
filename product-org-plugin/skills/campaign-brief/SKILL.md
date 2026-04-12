@@ -9,6 +9,24 @@ metadata:
   version: 3.0.0
   category: execution
   skill_type: task-capability
+  owner: content-strategist
+  primary_consumers:
+  - pmm-dir
+  - pmm
+  - marketing-dir
+  - content-strategist
+  - copywriter
+  - email-marketer
+  - growth-marketer
+  - infographic-designer
+  - paid-media-manager
+  - pr-comms-specialist
+  - presentation-designer
+  - social-media-manager
+  - video-producer
+  secondary_consumers:
+  - cmo
+  - seo-specialist
 ---
 ## Document Intelligence
 

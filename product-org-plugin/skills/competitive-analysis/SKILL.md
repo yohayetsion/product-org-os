@@ -10,6 +10,20 @@ metadata:
   version: 3.0.0
   category: market-analysis
   skill_type: task-capability
+  owner: analyst
+  primary_consumers:
+  - pmm
+  - ci
+  - ma-analyst
+  - market-researcher
+  - analyst
+  secondary_consumers:
+  - pmm-dir
+  - marketing-dir
+  - seo-specialist
+  - sales-dir
+  - sales-engineer
+  - proposal-writer
 ---
 ## Document Intelligence
 

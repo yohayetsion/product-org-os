@@ -10,6 +10,20 @@ metadata:
   version: 1.1.0
   category: strategy
   skill_type: task-capability
+  owner: investor-relations
+  primary_consumers:
+  - pmm-dir
+  - pmm
+  - investor-relations
+  - pr-comms-specialist
+  - proposal-writer
+  secondary_consumers:
+  - ceo
+  - cmo
+  - marketing-dir
+  - content-strategist
+  - copywriter
+  - presentation-designer
 ---
 ## Document Intelligence
 

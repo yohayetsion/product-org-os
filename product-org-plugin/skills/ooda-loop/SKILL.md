@@ -9,6 +9,12 @@ metadata:
   version: 1.0.0
   category: decision-making
   skill_type: task-capability
+  secondary_consumers:
+  - cpo
+  - vp-product
+  - chief-architect
+  - ceo
+  - growth-marketer
 ---
 ## Document Intelligence
 

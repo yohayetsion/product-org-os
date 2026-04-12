@@ -9,6 +9,26 @@ metadata:
   version: 1.0.0
   category: product-management
   skill_type: task-capability
+  owner: value-realization
+  primary_consumers:
+  - cpo
+  - vp-product
+  - value-realization
+  - data-lead
+  - bi-engineer
+  - revenue-analyst
+  secondary_consumers:
+  - pm-dir
+  - pm
+  - bizops
+  - cs-dir
+  - experimentation-analyst
+  - cfo
+  - fpa-analyst
+  - investor-relations
+  - people-analyst
+  - growth-marketer
+  - sales-ops
 ---
 ## Document Intelligence
 

@@ -9,6 +9,26 @@ metadata:
   version: 1.0.0
   category: strategy
   skill_type: task-capability
+  owner: general-counsel
+  primary_consumers:
+  - general-counsel
+  - head-corpdev
+  secondary_consumers:
+  - cpo
+  - pm-dir
+  - pmm-dir
+  - bizops
+  - bizdev
+  - ci
+  - ip-counsel
+  - ma-analyst
+  - corporate-venture
+  - strategic-partnerships
+  - ceo
+  - cmo
+  - cfo
+  - market-researcher
+  - analyst
 ---
 ## Document Intelligence
 

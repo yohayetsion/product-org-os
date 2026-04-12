@@ -113,19 +113,19 @@ If I proceed without completing applicable steps, my response is non-compliant.
 
 | Skill | When I Invoke |
 |-------|---------------|
-| `/gtm-strategy` | Daily workflow |
-| `/gtm-brief` | Daily workflow |
-| `/launch-strategy` | Daily workflow |
-| `/launch-plan` | Daily workflow |
-| `/positioning-statement` | Daily workflow |
-| `/market-analysis` | Daily workflow |
-| `/market-segment` | Daily workflow |
-| `/pricing-strategy` | Daily workflow |
-| `/sales-enablement` | Daily workflow |
-| `/competitive-landscape` | Daily workflow |
-| `/strategy-communication` | Daily workflow |
-| `/press-release-faq` | Daily workflow |
-| `/campaign-brief` | Daily workflow |
+| `/gtm-strategy` | Any GTM strategy publication |
+| `/gtm-brief` | Focused go-to-market briefs for initiatives |
+| `/launch-strategy` | Product launch strategy |
+| `/launch-plan` | Launch plan approval |
+| `/positioning-statement` | Pre-launch positioning check |
+| `/market-analysis` | Comprehensive market analysis with sizing |
+| `/market-segment` | Target market segment definition |
+| `/pricing-strategy` | Pricing strategy decision |
+| `/sales-enablement` | Sales enablement packages with battle cards |
+| `/competitive-landscape` | Broad competitive landscape mapping |
+| `/strategy-communication` | Strategy communication packages |
+| `/press-release-faq` | Working Backwards PRFAQ documents |
+| `/campaign-brief` | Marketing campaign briefs |
 
 ---
 
@@ -133,23 +133,23 @@ If I proceed without completing applicable steps, my response is non-compliant.
 
 | Skill | When I Invoke |
 |-------|---------------|
-| `/seven-powers` | Specific scenarios |
-| `/dhm-analysis` | Specific scenarios |
-| `/blue-ocean` | Specific scenarios |
-| `/porter-five-forces` | Specific scenarios |
-| `/swot-analysis` | Specific scenarios |
-| `/pirate-metrics` | Specific scenarios |
-| `/business-model-canvas` | Specific scenarios |
-| `/competitive-analysis` | Specific scenarios |
-| `/competitive-battlecard` | Specific scenarios |
-| `/competitor-alternatives` | Specific scenarios |
-| `/product-teardown` | Specific scenarios |
-| `/marketing-psychology` | Specific scenarios |
-| `/llm-seo` | Specific scenarios |
-| `/subject-line` | Specific scenarios |
-| `/outcome-review` | Specific scenarios |
-| `/stakeholder-brief` | Specific scenarios |
-| `/decision-record` | Specific scenarios |
+| `/seven-powers` | Competitive moat analysis using Helmer's 7 Powers |
+| `/dhm-analysis` | Delight/Hard-to-Copy/Margin assessment |
+| `/blue-ocean` | Blue Ocean Strategy for uncontested market space |
+| `/porter-five-forces` | Industry structure analysis via Porter's Five Forces |
+| `/swot-analysis` | SWOT analysis with TOWS strategy matrix |
+| `/pirate-metrics` | AARRR funnel mapping |
+| `/business-model-canvas` | Business Model Canvas for full model mapping |
+| `/competitive-analysis` | Focused competitive comparison |
+| `/competitive-battlecard` | Sales-ready competitive battlecards |
+| `/competitor-alternatives` | Competitor comparison pages |
+| `/product-teardown` | Reverse-engineering existing products |
+| `/marketing-psychology` | Applying psychological principles to marketing |
+| `/llm-seo` | LLM SEO / Generative Engine Optimization |
+| `/subject-line` | Email subject line optimization |
+| `/outcome-review` | Outcome reviews evaluating initiative delivery |
+| `/stakeholder-brief` | Stakeholder communication briefs |
+| `/decision-record` | Structured decision records with rationale |
 
 ---
 
@@ -157,12 +157,12 @@ If I proceed without completing applicable steps, my response is non-compliant.
 
 | Agent | When I Spawn |
 |-------|--------------|
-| @pmm | Domain delegation |
-| @ci | Domain delegation |
-| @marketing-dir | Domain delegation |
-| @cmo | Domain delegation |
-| @content-strategist | Domain delegation |
-| @pr-comms-specialist | Domain delegation |
+| @pmm | Campaign execution |
+| @ci | Competitive intelligence |
+| @marketing-dir | Marketing execution |
+| @cmo | Marketing strategy escalation |
+| @content-strategist | Content strategy |
+| @pr-comms-specialist | PR and communications |
 
 ---
 

@@ -9,6 +9,30 @@ metadata:
   version: 3.0.0
   category: validation
   skill_type: task-capability
+  owner: ai-architect
+  primary_consumers:
+  - prodops
+  - chief-architect
+  - ai-architect
+  - api-architect
+  - cloud-architect
+  - data-architect
+  - tech-lead
+  - backend-dev
+  - devops
+  - coo
+  - cio
+  - it-dir
+  - enterprise-systems
+  - operations-dir
+  - process-engineer
+  secondary_consumers:
+  - security-architect
+  - bi-engineer
+  - ml-engineer
+  - frontend-dev
+  - program-manager
+  - risk-manager
 ---
 ## Document Intelligence
 

@@ -9,6 +9,9 @@ metadata:
   version: 3.0.0
   category: roadmap
   skill_type: task-capability
+  owner: pm
+  primary_consumers:
+  - pm
 ---
 ## Document Intelligence
 

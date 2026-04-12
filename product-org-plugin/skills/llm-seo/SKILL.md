@@ -10,6 +10,18 @@ metadata:
   version: 1.0.0
   category: seo
   skill_type: task-capability
+  owner: content-strategist
+  primary_consumers:
+  - content-strategist
+  - seo-specialist
+  secondary_consumers:
+  - pmm-dir
+  - pmm
+  - ci
+  - kb-specialist
+  - marketing-dir
+  - growth-marketer
+  - social-media-manager
 version: 1.0.0
 ---
 <!-- Attribution:

@@ -1,12 +1,18 @@
 ---
 name: opportunity-tree
-description: "/opportunity-tree"
+description: /opportunity-tree
 user-invocable: true
 metadata:
   skill_type: task-capability
   author: Product Org OS
+  owner: pm
+  primary_consumers:
+  - pm
+  secondary_consumers:
+  - bizdev
+  - user-researcher
+  - growth-marketer
 ---
-
 # /opportunity-tree
 
 Build an Opportunity Solution Tree to map the path from desired outcome to testable solutions.

@@ -10,6 +10,16 @@ metadata:
   version: 3.0.0
   category: professional-development
   skill_type: task-capability
+  owner: cpo
+  primary_consumers:
+  - cpo
+  - product-mentor
+  - coach
+  secondary_consumers:
+  - chro
+  - hr-dir
+  - performance-specialist
+  - onboarding-specialist
 alias: product-mentor
 ---
 **This is a shortcut for `/product-mentor`.**

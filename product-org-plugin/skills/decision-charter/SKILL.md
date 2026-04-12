@@ -9,6 +9,13 @@ metadata:
   version: 3.0.0
   category: decisions
   skill_type: task-capability
+  owner: ceo
+  primary_consumers:
+  - pm-dir
+  - general-counsel
+  - ceo
+  secondary_consumers:
+  - prodops
 ---
 ## Document Intelligence
 

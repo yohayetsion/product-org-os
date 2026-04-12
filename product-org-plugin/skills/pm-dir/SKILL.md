@@ -126,26 +126,26 @@ If I proceed without completing applicable steps, my response is non-compliant.
 
 | Skill | When I Invoke |
 |-------|---------------|
-| `/product-roadmap` | Daily workflow |
-| `/roadmap-theme` | Daily workflow |
-| `/prioritize-features` | Daily workflow |
-| `/decision-record` | Daily workflow |
-| `/decision-charter` | Daily workflow |
-| `/decision-quality-audit` | Daily workflow |
-| `/commitment-check` | Daily workflow |
-| `/phase-check` | Daily workflow |
-| `/pm-level-check` | Daily workflow |
-| `/maturity-check` | Daily workflow |
-| `/ownership-map` | Daily workflow |
-| `/customer-value-trace` | Daily workflow |
-| `/collaboration-check` | Daily workflow |
-| `/bias-check` | Daily workflow |
-| `/retrospective` | Daily workflow |
-| `/outcome-review` | Daily workflow |
-| `/okr-writer` | Daily workflow |
-| `/daci` | Daily workflow |
-| `/escalation-rule` | Daily workflow |
-| `/dispatching-parallel-agents` | Daily workflow |
+| `/product-roadmap` | Any roadmap publication |
+| `/roadmap-theme` | Roadmap themes grouping related initiatives |
+| `/prioritize-features` | Roadmap prioritization decision |
+| `/decision-record` | Roadmap prioritization decision |
+| `/decision-charter` | Decision interface charters defining ownership |
+| `/decision-quality-audit` | Material quality audit |
+| `/commitment-check` | Pre-commitment check |
+| `/phase-check` | Phase transition |
+| `/pm-level-check` | PM competency level assessment |
+| `/maturity-check` | Organizational maturity level assessment |
+| `/ownership-map` | Accountability chain mapping |
+| `/customer-value-trace` | Tracing work to measurable customer value |
+| `/collaboration-check` | RACI and stakeholder consultation validation |
+| `/bias-check` | Scanning for cognitive biases in decisions |
+| `/retrospective` | Structured retrospectives |
+| `/outcome-review` | Outcome reviews evaluating initiative delivery |
+| `/okr-writer` | Writing and reviewing OKRs |
+| `/daci` | DACI decision-making framework |
+| `/escalation-rule` | Escalation rules and triggers for decision areas |
+| `/dispatching-parallel-agents` | Deploying multiple agents in parallel |
 
 ---
 
@@ -153,26 +153,26 @@ If I proceed without completing applicable steps, my response is non-compliant.
 
 | Skill | When I Invoke |
 |-------|---------------|
-| `/strategic-bet` | Specific scenarios |
-| `/portfolio-status` | Specific scenarios |
-| `/north-star-metric` | Specific scenarios |
-| `/pre-mortem` | Specific scenarios |
-| `/four-risks-check` | Specific scenarios |
-| `/shape-up` | Specific scenarios |
-| `/stakeholder-map` | Specific scenarios |
-| `/porter-five-forces` | Specific scenarios |
-| `/swot-analysis` | Specific scenarios |
-| `/pestle-analysis` | Specific scenarios |
-| `/ansoff-matrix` | Specific scenarios |
-| `/blue-ocean` | Specific scenarios |
-| `/kano-analysis` | Specific scenarios |
-| `/dhm-analysis` | Specific scenarios |
-| `/risk-analysis` | Specific scenarios |
-| `/compliance-audit` | Specific scenarios |
-| `/ai-control-audit` | Specific scenarios |
-| `/contract-review` | Specific scenarios |
-| `/interview-guide` | Specific scenarios |
-| `/comp-benchmark` | Specific scenarios |
+| `/strategic-bet` | Strategic bets with assumptions and success criteria |
+| `/portfolio-status` | Portfolio health and status reviews |
+| `/north-star-metric` | North Star metric and input metrics tree |
+| `/pre-mortem` | Pre-Mortem prospective hindsight analysis |
+| `/four-risks-check` | Cagan's Four Big Risks assessment |
+| `/shape-up` | Shape Up methodology for fixed-time, variable-scope work |
+| `/stakeholder-map` | Stakeholder power/interest mapping |
+| `/porter-five-forces` | Industry structure analysis via Porter's Five Forces |
+| `/swot-analysis` | SWOT analysis with TOWS strategy matrix |
+| `/pestle-analysis` | PESTLE macro-environment analysis |
+| `/ansoff-matrix` | Ansoff growth direction analysis |
+| `/blue-ocean` | Blue Ocean Strategy for uncontested market space |
+| `/kano-analysis` | Kano analysis for feature classification |
+| `/dhm-analysis` | Delight/Hard-to-Copy/Margin assessment |
+| `/risk-analysis` | Structured multi-domain risk analysis |
+| `/compliance-audit` | Control-level compliance readiness assessment |
+| `/ai-control-audit` | Per-release AI system control audit |
+| `/contract-review` | Clause-by-clause contract triage |
+| `/interview-guide` | Structured interview guides |
+| `/comp-benchmark` | Compensation benchmarking |
 
 ---
 
@@ -180,10 +180,10 @@ If I proceed without completing applicable steps, my response is non-compliant.
 
 | Agent | When I Spawn |
 |-------|--------------|
-| @pm | Domain delegation |
-| @prodops | Domain delegation |
-| @ci | Domain delegation |
-| @vp-product | Domain delegation |
+| @pm | Feature-level specs |
+| @prodops | Process and readiness |
+| @ci | Competitive intelligence |
+| @vp-product | Strategic alignment |
 
 ---
 

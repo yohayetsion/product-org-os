@@ -10,6 +10,21 @@ metadata:
   version: 1.0.0
   category: product-management
   skill_type: task-capability
+  owner: pm
+  primary_consumers:
+  - pm
+  - user-researcher
+  secondary_consumers:
+  - vp-product
+  - pm-dir
+  - pmm
+  - kb-specialist
+  - data-lead
+  - data-analyst
+  - design-dir
+  - ui-designer
+  - interaction-designer
+  - cro-specialist
 ---
 ## Document Intelligence
 

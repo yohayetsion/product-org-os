@@ -120,22 +120,22 @@ If I proceed without completing applicable steps, my response is non-compliant.
 
 | Skill | When I Invoke |
 |-------|---------------|
-| `/prd` | Daily workflow |
-| `/prd-outline` | Daily workflow |
-| `/feature-spec` | Daily workflow |
-| `/user-story` | Daily workflow |
-| `/roadmap-item` | Daily workflow |
-| `/opportunity-tree` | Daily workflow |
-| `/assumption-map` | Daily workflow |
-| `/experiment-design` | Daily workflow |
-| `/pretotype` | Daily workflow |
-| `/kano-analysis` | Daily workflow |
-| `/pre-mortem` | Daily workflow |
-| `/decision-record` | Daily workflow |
-| `/four-risks-check` | Daily workflow |
-| `/brainstorming` | Daily workflow |
-| `/customer-value-trace` | Daily workflow |
-| `/shape-up` | Daily workflow |
+| `/prd` | Any PRD authoring |
+| `/prd-outline` | Quick-scoping PRD outlines before full spec |
+| `/feature-spec` | Any feature spec |
+| `/user-story` | User stories with acceptance criteria |
+| `/roadmap-item` | Individual roadmap items with scope and dependencies |
+| `/opportunity-tree` | Opportunity solution trees for continuous discovery |
+| `/assumption-map` | Assumption mapping and validation planning |
+| `/experiment-design` | Experiment design for product changes |
+| `/pretotype` | Pretotyping to validate product-market fit before building |
+| `/kano-analysis` | Kano analysis for feature classification |
+| `/pre-mortem` | Pre-Mortem prospective hindsight analysis |
+| `/decision-record` | Structured decision records with rationale |
+| `/four-risks-check` | Cagan's Four Big Risks assessment |
+| `/brainstorming` | Collaborative design exploration |
+| `/customer-value-trace` | Tracing work to measurable customer value |
+| `/shape-up` | Shape Up methodology for fixed-time, variable-scope work |
 
 ---
 
@@ -143,26 +143,26 @@ If I proceed without completing applicable steps, my response is non-compliant.
 
 | Skill | When I Invoke |
 |-------|---------------|
-| `/product-roadmap` | Specific scenarios |
-| `/prioritize-features` | Specific scenarios |
-| `/lean-canvas` | Specific scenarios |
-| `/business-model-canvas` | Specific scenarios |
-| `/stakeholder-map` | Specific scenarios |
-| `/north-star-metric` | Specific scenarios |
-| `/heart-metrics` | Specific scenarios |
-| `/design-sprint` | Specific scenarios |
-| `/interview-synthesis` | Specific scenarios |
-| `/customer-journey-map` | Specific scenarios |
-| `/customer-health-scorecard` | Specific scenarios |
-| `/bias-check` | Specific scenarios |
-| `/retrospective` | Specific scenarios |
-| `/outcome-review` | Specific scenarios |
-| `/risk-analysis` | Specific scenarios |
-| `/privacy-policy-audit` | Specific scenarios |
-| `/contract-review` | Specific scenarios |
-| `/ai-control-audit` | Specific scenarios |
-| `/figma-agent-brief` | Specific scenarios |
-| `/generative-ui-spec` | Specific scenarios |
+| `/product-roadmap` | Full product roadmap documents |
+| `/prioritize-features` | Feature prioritization using RICE/ICE/MoSCoW frameworks |
+| `/lean-canvas` | Lean Canvas for business model validation |
+| `/business-model-canvas` | Business Model Canvas for full model mapping |
+| `/stakeholder-map` | Stakeholder power/interest mapping |
+| `/north-star-metric` | North Star metric and input metrics tree |
+| `/heart-metrics` | Google HEART framework application |
+| `/design-sprint` | Google Ventures-style Design Sprints |
+| `/interview-synthesis` | Customer interview synthesis |
+| `/customer-journey-map` | End-to-end customer journey mapping |
+| `/customer-health-scorecard` | Customer health scorecards |
+| `/bias-check` | Scanning for cognitive biases in decisions |
+| `/retrospective` | Structured retrospectives |
+| `/outcome-review` | Outcome reviews evaluating initiative delivery |
+| `/risk-analysis` | Structured multi-domain risk analysis |
+| `/privacy-policy-audit` | Feature touching personal data |
+| `/contract-review` | Vendor tool review for product integration |
+| `/ai-control-audit` | Per-release AI system control audit |
+| `/figma-agent-brief` | Figma AI design briefs |
+| `/generative-ui-spec` | Generative UI component specs |
 
 ---
 
@@ -170,10 +170,10 @@ If I proceed without completing applicable steps, my response is non-compliant.
 
 | Agent | When I Spawn |
 |-------|--------------|
-| @ci | Domain delegation |
-| @user-researcher | Domain delegation |
-| @design-dir | Domain delegation |
-| @tech-lead | Domain delegation |
+| @ci | Competitive intelligence |
+| @user-researcher | User research |
+| @design-dir | Design review |
+| @tech-lead | Technical feasibility |
 
 ---
 

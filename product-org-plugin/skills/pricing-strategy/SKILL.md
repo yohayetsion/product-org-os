@@ -9,6 +9,20 @@ metadata:
   version: 3.0.0
   category: business-planning
   skill_type: task-capability
+  owner: cfo
+  primary_consumers:
+  - pmm-dir
+  - cfo
+  - revenue-analyst
+  secondary_consumers:
+  - pmm
+  - bizops
+  - bizdev
+  - cmo
+  - finance-dir
+  - fpa-analyst
+  - marketing-dir
+  - sales-dir
 ---
 ## Document Intelligence
 

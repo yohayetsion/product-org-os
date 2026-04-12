@@ -8,6 +8,12 @@ metadata:
   version: 3.0.0
   category: go-to-market
   skill_type: task-capability
+  owner: cmo
+  primary_consumers:
+  - pmm-dir
+  - pmm
+  - cmo
+  - marketing-dir
 ---
 # Launch Strategy
 

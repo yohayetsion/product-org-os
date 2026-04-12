@@ -10,6 +10,24 @@ metadata:
   version: 1.0.0
   category: product-management
   skill_type: task-capability
+  owner: vp-product
+  primary_consumers:
+  - vp-product
+  - pm
+  - general-counsel
+  - chief-architect
+  - security-architect
+  - risk-manager
+  secondary_consumers:
+  - cpo
+  - pm-dir
+  - bizdev
+  - contracts-counsel
+  - ai-architect
+  - ma-analyst
+  - corporate-venture
+  - ml-engineer
+  - cfo
 ---
 ## Document Intelligence
 

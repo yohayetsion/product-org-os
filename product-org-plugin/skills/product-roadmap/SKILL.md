@@ -9,6 +9,14 @@ metadata:
   version: 3.0.0
   category: roadmap
   skill_type: task-capability
+  owner: vp-product
+  primary_consumers:
+  - cpo
+  - vp-product
+  - pm-dir
+  secondary_consumers:
+  - pm
+  - cmo
 ---
 ## Document Intelligence
 

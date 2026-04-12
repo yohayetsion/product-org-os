@@ -9,6 +9,14 @@ metadata:
   version: 3.0.0
   category: go-to-market
   skill_type: task-capability
+  owner: marketing-dir
+  primary_consumers:
+  - pmm-dir
+  - pmm
+  - marketing-dir
+  secondary_consumers:
+  - cmo
+  - sales-dir
 ---
 ## Document Intelligence
 

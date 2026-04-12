@@ -8,6 +8,11 @@ metadata:
   version: 3.0.0
   category: developer-workflow
   skill_type: task-capability
+  owner: pm-dir
+  primary_consumers:
+  - pm-dir
+  - prodops
+  - program-manager
 ---
 # Dispatching Parallel Agents
 

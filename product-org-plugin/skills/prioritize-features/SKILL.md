@@ -10,6 +10,12 @@ metadata:
   version: 1.1.0
   category: product-management
   skill_type: task-capability
+  owner: vp-product
+  primary_consumers:
+  - vp-product
+  - pm-dir
+  secondary_consumers:
+  - pm
 ---
 ## Document Intelligence
 

@@ -10,6 +10,16 @@ metadata:
   version: 1.0.0
   category: learning
   skill_type: task-capability
+  owner: ci
+  primary_consumers:
+  - ci
+  - market-researcher
+  secondary_consumers:
+  - pmm-dir
+  - pmm
+  - marketing-dir
+  - sales-engineer
+  - analyst
 ---
 ## Document Intelligence
 

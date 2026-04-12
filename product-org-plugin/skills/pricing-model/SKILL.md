@@ -9,6 +9,18 @@ metadata:
   version: 3.0.0
   category: business-planning
   skill_type: task-capability
+  owner: bizops
+  primary_consumers:
+  - bizops
+  - cfo
+  - fpa-analyst
+  - revenue-analyst
+  secondary_consumers:
+  - finance-dir
+  - sales-dir
+  - sales-engineer
+  - sales-ops
+  - proposal-writer
 ---
 ## Document Intelligence
 

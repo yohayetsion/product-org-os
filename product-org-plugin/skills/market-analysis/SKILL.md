@@ -9,6 +9,23 @@ metadata:
   version: 3.0.0
   category: market-analysis
   skill_type: task-capability
+  owner: bizdev
+  primary_consumers:
+  - pmm-dir
+  - pmm
+  - bizdev
+  - ma-analyst
+  - corporate-venture
+  - cmo
+  - market-researcher
+  - analyst
+  secondary_consumers:
+  - bizops
+  - ci
+  - head-corpdev
+  - strategic-partnerships
+  - cfo
+  - marketing-dir
 ---
 ## Document Intelligence
 

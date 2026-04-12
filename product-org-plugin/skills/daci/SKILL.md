@@ -10,6 +10,22 @@ metadata:
   version: 1.0.0
   category: decision-making
   skill_type: task-capability
+  owner: coo
+  primary_consumers:
+  - pm-dir
+  - prodops
+  - legal-dir
+  - coo
+  - finance-dir
+  - hr-dir
+  - it-dir
+  - operations-dir
+  - program-manager
+  secondary_consumers:
+  - cs-dir
+  - cs-ops
+  - support-lead
+  - project-manager
 ---
 ## Document Intelligence
 

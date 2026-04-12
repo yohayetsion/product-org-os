@@ -9,6 +9,14 @@ metadata:
   version: 3.0.0
   category: validation
   skill_type: task-capability
+  owner: value-realization
+  primary_consumers:
+  - pm-dir
+  - pm
+  - value-realization
+  - csm
+  secondary_consumers:
+  - vp-product
 ---
 ## Document Intelligence
 
