@@ -2,7 +2,7 @@
 
 This plugin provides AI-powered product organization capabilities based on the **Vision to Value (Vision to Value) System** framework.
 
-> For Claude Code and Agent Skills-compatible tools (Cursor, Copilot, Gemini CLI, Windsurf)
+> For Claude Code and Agent Skills-compatible tools (Cursor, Copilot, Gemini CLI)
 
 > **Start here**: [`agent-guide.md`](./agent-guide.md) — complete system overview for any coding agent. For context tracking setup specifically, see [`AGENT-INTEGRATION.md`](./AGENT-INTEGRATION.md).
 
@@ -77,7 +77,7 @@ Delegate work to specialized agents that reason autonomously.
 | `@competitive-intelligence` | `@ci` | Competitive Intelligence - competitor analysis, market research |
 | `@product-operations` | `@prod-ops` | Product Ops - process optimization, launch coordination |
 | `@value-realization` | — | Value Realization - success metrics, customer outcomes |
-| `@ux-lead` | — | UX Lead - user research, design specs |
+| `@product-mentor` | `@mentor` | Product Mentor - career coaching, PM development |
 
 ### Delegating to Agents
 
@@ -581,7 +581,7 @@ Control how verbose responses are with simple modifiers:
 → Routes to: @cpo (strategic check), @competitive-intelligence (market analysis), @bizops (sizing)
 
 /product Create a PRD for the new reporting feature
-→ Routes to: @product-manager (PRD), @ux-lead (design input)
+→ Routes to: @product-manager (PRD), @director-product-management (review)
 
 /product What's the status of the v2.0 launch?
 → Routes to: @product-operations, @product-manager, @product-marketing-manager (status from each)
@@ -673,7 +673,7 @@ Spawn in parallel: @product-manager, @product-marketing-manager, @product-operat
 Spawn in parallel: @competitive-intelligence, @bizops, @director-product-management, @director-product-marketing
 ```
 
-All 13 agents have access to all 61 skills and can invoke any skill based on their role's needs.
+All 12 agents declare their core and supporting skills in structured metadata, with mandatory invocations for specific task types.
 
 ---
 
