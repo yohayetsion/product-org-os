@@ -6,11 +6,11 @@
 
 ## What This Is
 
-Product Org OS gives you 13 role-based product agents, 103 skills, 2 gateways, 9 knowledge packs, and a persistent context layer. It turns a coding agent into an entire product organization — from strategic intent through execution to learning.
+Product Org OS gives you 12 role-based product agents, 150+ skills, 2 gateways, 38 knowledge packs, and a persistent context layer. It turns a coding agent into an entire product organization — from strategic intent through execution to learning. Every agent declares what skills it uses, what knowledge it reads, and when — with mandatory enforcement.
 
 Built on the **Vision to Value** framework: a 6-phase system that flows from strategy to outcomes to learning loops.
 
-**Works with**: Claude Code (primary), Cursor, GitHub Copilot, Gemini CLI, Windsurf, and other Agent Skills-standard tools.
+**Works with**: Claude Code (primary), Cursor, GitHub Copilot, Gemini CLI, and other Agent Skills-standard tools.
 
 ---
 
@@ -76,7 +76,7 @@ your-project/
 
 Both access the same capabilities. `@agent` spawns an independent agent that returns when done. `/skill` executes inline in the current conversation.
 
-### The 13 Agents
+### The 12 Agents
 
 | Agent | Shortcut | Domain |
 |-------|----------|--------|
@@ -86,13 +86,13 @@ Both access the same capabilities. `@agent` spawns an independent agent that ret
 | `@director-product-marketing` | `@pmm-dir` | GTM strategy, positioning, launches |
 | `@product-manager` | `@pm` | Feature specs, user stories, delivery |
 | `@product-marketing-manager` | `@pmm` | Campaigns, collateral, enablement |
+| `@product-mentor` | `@mentor` | Career coaching, PM development |
 | `@product-leadership-team` | `@plt` | Portfolio tradeoffs, strategic alignment |
 | `@bizops` | — | Business cases, financial analysis, KPIs |
 | `@bizdev` | — | Partnerships, market expansion |
 | `@competitive-intelligence` | `@ci` | Competitor analysis, market research |
 | `@product-operations` | `@prod-ops` | Process optimization, launch coordination |
 | `@value-realization` | — | Success metrics, customer outcomes |
-| `@ux-lead` | — | User research, design specs |
 
 ### The 2 Gateways
 
@@ -406,7 +406,7 @@ Every skill completion shows estimated time saved vs. manual equivalent:
 - Automatic display after deliverables
 - Session totals tracked in `context/roi/session-log.md`
 - Historical trends via `/roi-report`
-- Baselines for all 103 skills in `hooks/baselines.json`
+- Baselines for all 150+ skills in `hooks/baselines.json`
 
 ---
 
