@@ -7,6 +7,19 @@ metadata:
   version: 3.0.0
   category: creative-process
   skill_type: task-capability
+  owner: pm
+  primary_consumers:
+  - pm
+  secondary_consumers:
+  - product-mentor
+  - design-dir
+  - ui-designer
+  - interaction-designer
+  - visual-designer
+  - user-researcher
+  - motion-designer
+  - pa
+  - coach
 ---
 # Brainstorming
 

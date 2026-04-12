@@ -9,6 +9,11 @@ metadata:
   version: 3.0.0
   category: go-to-market
   skill_type: task-capability
+  owner: prodops
+  primary_consumers:
+  - prodops
+  secondary_consumers:
+  - sales-dir
 ---
 ## Document Intelligence
 

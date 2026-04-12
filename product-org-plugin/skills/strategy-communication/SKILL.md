@@ -9,6 +9,26 @@ metadata:
   version: 3.0.0
   category: strategy
   skill_type: task-capability
+  owner: ceo
+  primary_consumers:
+  - pmm-dir
+  - general-counsel
+  - data-lead
+  - ceo
+  - cmo
+  - cfo
+  - chro
+  - coo
+  - cio
+  - investor-relations
+  - marketing-dir
+  - pr-comms-specialist
+  - presentation-designer
+  secondary_consumers:
+  - pmm
+  - cs-dir
+  - design-dir
+  - content-strategist
 ---
 ## Document Intelligence
 

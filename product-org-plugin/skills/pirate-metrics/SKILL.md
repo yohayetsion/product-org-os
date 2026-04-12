@@ -9,6 +9,33 @@ metadata:
   version: 1.0.0
   category: metrics
   skill_type: task-capability
+  owner: bi-engineer
+  primary_consumers:
+  - data-lead
+  - data-analyst
+  - bi-engineer
+  - revenue-analyst
+  - cro-specialist
+  - growth-marketer
+  - sales-ops
+  secondary_consumers:
+  - vp-product
+  - pmm-dir
+  - pmm
+  - bizops
+  - value-realization
+  - cs-dir
+  - cs-ops
+  - csm
+  - experimentation-analyst
+  - cmo
+  - cfo
+  - fpa-analyst
+  - investor-relations
+  - people-analyst
+  - marketing-dir
+  - email-marketer
+  - paid-media-manager
 ---
 ## Document Intelligence
 

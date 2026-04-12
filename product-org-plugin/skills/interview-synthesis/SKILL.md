@@ -10,6 +10,26 @@ metadata:
   version: 1.0.0
   category: research
   skill_type: task-capability
+  owner: analyst
+  primary_consumers:
+  - design-dir
+  - user-researcher
+  - recruiter
+  - performance-specialist
+  - onboarding-specialist
+  - market-researcher
+  - analyst
+  - coach
+  secondary_consumers:
+  - pm
+  - csm
+  - onboarding-csm
+  - kb-specialist
+  - data-analyst
+  - ui-designer
+  - interaction-designer
+  - content-strategist
+  - pa
 ---
 ## Document Intelligence
 

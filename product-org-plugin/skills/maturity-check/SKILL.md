@@ -9,6 +9,20 @@ metadata:
   version: 3.0.0
   category: assessment
   skill_type: task-capability
+  owner: chro
+  primary_consumers:
+  - pm-dir
+  - product-mentor
+  - chro
+  secondary_consumers:
+  - cpo
+  - coo
+  - hr-dir
+  - performance-specialist
+  - it-dir
+  - operations-dir
+  - process-engineer
+  - coach
 ---
 Assess **Organizational Maturity** for a specific dimension.
 

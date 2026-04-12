@@ -9,6 +9,13 @@ metadata:
   version: 1.0.0
   category: product-management
   skill_type: task-capability
+  owner: interaction-designer
+  primary_consumers:
+  - pm
+  - ui-designer
+  - interaction-designer
+  - visual-designer
+  - motion-designer
 ---
 ## Document Intelligence
 

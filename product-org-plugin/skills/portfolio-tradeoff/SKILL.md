@@ -9,6 +9,16 @@ metadata:
   version: 3.0.0
   category: decisions
   skill_type: task-capability
+  owner: bizops
+  primary_consumers:
+  - cpo
+  - vp-product
+  - bizops
+  - ceo
+  - cfo
+  secondary_consumers:
+  - head-corpdev
+  - fpa-analyst
 ---
 ## Document Intelligence
 

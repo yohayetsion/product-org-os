@@ -11,6 +11,8 @@ metadata:
   category: cross-phase
   owner: product-operations
   skill_type: task-capability
+  primary_consumers:
+  - vp-product
 ---
 ## Purpose
 

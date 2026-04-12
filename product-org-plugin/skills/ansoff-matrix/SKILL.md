@@ -9,6 +9,17 @@ metadata:
   version: 1.0.0
   category: strategy
   skill_type: task-capability
+  owner: bizdev
+  primary_consumers:
+  - bizdev
+  - head-corpdev
+  secondary_consumers:
+  - cpo
+  - pm-dir
+  - corporate-venture
+  - strategic-partnerships
+  - ceo
+  - market-researcher
 ---
 ## Document Intelligence
 

@@ -9,6 +9,15 @@ metadata:
   version: 3.0.0
   category: validation
   skill_type: task-capability
+  owner: coo
+  primary_consumers:
+  - pm-dir
+  - prodops
+  - coo
+  - operations-dir
+  secondary_consumers:
+  - program-manager
+  - process-engineer
 ---
 ## Document Intelligence
 

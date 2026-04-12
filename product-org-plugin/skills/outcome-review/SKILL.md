@@ -9,6 +9,56 @@ metadata:
   version: 3.0.0
   category: learning
   skill_type: task-capability
+  owner: value-realization
+  primary_consumers:
+  - vp-product
+  - pm-dir
+  - value-realization
+  secondary_consumers:
+  - pmm-dir
+  - pm
+  - prodops
+  - legal-dir
+  - chief-architect
+  - cs-dir
+  - support-lead
+  - data-lead
+  - bi-engineer
+  - experimentation-analyst
+  - design-dir
+  - tech-lead
+  - ceo
+  - cfo
+  - chro
+  - coo
+  - finance-dir
+  - fpa-analyst
+  - revenue-analyst
+  - financial-controller
+  - investor-relations
+  - hr-dir
+  - compensation-analyst
+  - performance-specialist
+  - people-analyst
+  - onboarding-specialist
+  - enterprise-systems
+  - content-strategist
+  - cro-specialist
+  - email-marketer
+  - growth-marketer
+  - paid-media-manager
+  - pr-comms-specialist
+  - seo-specialist
+  - social-media-manager
+  - video-producer
+  - operations-dir
+  - program-manager
+  - project-manager
+  - process-engineer
+  - procurement-specialist
+  - risk-manager
+  - sales-dir
+  - sales-ops
 ---
 ## Document Intelligence
 

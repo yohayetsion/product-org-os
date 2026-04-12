@@ -9,6 +9,33 @@ metadata:
   version: 1.0.0
   category: strategy
   skill_type: task-capability
+  owner: bizops
+  primary_consumers:
+  - cpo
+  - pm-dir
+  - bizops
+  - general-counsel
+  - cs-dir
+  - data-lead
+  - design-dir
+  - ceo
+  - cmo
+  - cfo
+  - chro
+  - coo
+  - cio
+  - finance-dir
+  - hr-dir
+  - it-dir
+  - marketing-dir
+  - operations-dir
+  - sales-dir
+  secondary_consumers:
+  - prodops
+  - legal-dir
+  - onboarding-specialist
+  - program-manager
+  - sales-ops
 ---
 ## Document Intelligence
 

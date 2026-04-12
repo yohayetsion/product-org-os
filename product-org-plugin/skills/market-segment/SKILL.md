@@ -9,6 +9,22 @@ metadata:
   version: 3.0.0
   category: market-analysis
   skill_type: task-capability
+  owner: cmo
+  primary_consumers:
+  - pmm-dir
+  - pmm
+  - cmo
+  - market-researcher
+  secondary_consumers:
+  - bizops
+  - ci
+  - cs-dir
+  - revenue-analyst
+  - marketing-dir
+  - content-strategist
+  - seo-specialist
+  - sales-dir
+  - analyst
 ---
 ## Document Intelligence
 

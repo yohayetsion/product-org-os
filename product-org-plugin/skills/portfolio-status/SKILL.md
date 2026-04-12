@@ -9,6 +9,23 @@ metadata:
   version: 3.0.0
   category: context-layer
   skill_type: task-capability
+  owner: bizops
+  primary_consumers:
+  - cpo
+  - vp-product
+  - bizops
+  - ceo
+  - cfo
+  secondary_consumers:
+  - pm-dir
+  - head-corpdev
+  - coo
+  - cio
+  - finance-dir
+  - fpa-analyst
+  - investor-relations
+  - marketing-dir
+  - sales-dir
 ---
 View the **current state** of the strategic portfolio — all active bets, their health, and upcoming checkpoints.
 

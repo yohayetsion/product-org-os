@@ -14,6 +14,13 @@ metadata:
   version: 3.0.0
   category: context-layer
   skill_type: task-capability
+  owner: analyst
+  primary_consumers:
+  - prodops
+  - pa
+  - analyst
+  secondary_consumers:
+  - cs-ops
 ---
 # Index Folder
 

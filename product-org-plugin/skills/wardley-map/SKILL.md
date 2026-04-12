@@ -9,6 +9,16 @@ metadata:
   version: 1.0.0
   category: strategy
   skill_type: task-capability
+  owner: chief-architect
+  primary_consumers:
+  - chief-architect
+  secondary_consumers:
+  - cpo
+  - vp-product
+  - ci
+  - head-corpdev
+  - corporate-venture
+  - ceo
 ---
 ## Document Intelligence
 

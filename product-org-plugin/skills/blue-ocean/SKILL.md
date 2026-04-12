@@ -10,6 +10,20 @@ metadata:
   version: 1.0.0
   category: strategy
   skill_type: task-capability
+  secondary_consumers:
+  - cpo
+  - vp-product
+  - pm-dir
+  - pmm-dir
+  - bizdev
+  - ci
+  - general-counsel
+  - head-corpdev
+  - corporate-venture
+  - strategic-partnerships
+  - ceo
+  - cmo
+  - market-researcher
 ---
 ## Document Intelligence
 

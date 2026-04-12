@@ -99,18 +99,18 @@ If I proceed without completing applicable steps, my response is non-compliant.
 
 | Skill | When I Invoke |
 |-------|---------------|
-| `/gtm-brief` | Daily workflow |
-| `/positioning-statement` | Daily workflow |
-| `/campaign-brief` | Daily workflow |
-| `/press-release-faq` | Daily workflow |
-| `/market-segment` | Daily workflow |
-| `/market-analysis` | Daily workflow |
-| `/sales-enablement` | Daily workflow |
-| `/product-marketing-context` | Daily workflow |
-| `/competitive-analysis` | Daily workflow |
-| `/competitive-battlecard` | Daily workflow |
-| `/launch-plan` | Daily workflow |
-| `/launch-strategy` | Daily workflow |
+| `/gtm-brief` | Any launch brief |
+| `/positioning-statement` | Any positioning output |
+| `/campaign-brief` | Any campaign brief |
+| `/press-release-faq` | Working Backwards PRFAQ documents |
+| `/market-segment` | Target market segment definition |
+| `/market-analysis` | Comprehensive market analysis with sizing |
+| `/sales-enablement` | Sales enablement packages with battle cards |
+| `/product-marketing-context` | Product marketing context documents |
+| `/competitive-analysis` | Focused competitive comparison |
+| `/competitive-battlecard` | Sales-ready competitive battlecards |
+| `/launch-plan` | Complete launch plans with timelines and owners |
+| `/launch-strategy` | Product launch strategy |
 
 ---
 
@@ -118,21 +118,21 @@ If I proceed without completing applicable steps, my response is non-compliant.
 
 | Skill | When I Invoke |
 |-------|---------------|
-| `/gtm-strategy` | Specific scenarios |
-| `/competitive-landscape` | Specific scenarios |
-| `/competitor-alternatives` | Specific scenarios |
-| `/product-teardown` | Specific scenarios |
-| `/llm-seo` | Specific scenarios |
-| `/marketing-psychology` | Specific scenarios |
-| `/subject-line` | Specific scenarios |
-| `/pricing-strategy` | Specific scenarios |
-| `/kano-analysis` | Specific scenarios |
-| `/pirate-metrics` | Specific scenarios |
-| `/stakeholder-brief` | Specific scenarios |
-| `/strategy-communication` | Specific scenarios |
-| `/decision-record` | Specific scenarios |
-| `/geo-monitoring-setup` | Specific scenarios |
-| `/job-description-generator` | Specific scenarios |
+| `/gtm-strategy` | Comprehensive go-to-market strategy |
+| `/competitive-landscape` | Broad competitive landscape mapping |
+| `/competitor-alternatives` | Competitor comparison pages |
+| `/product-teardown` | Reverse-engineering existing products |
+| `/llm-seo` | LLM SEO / Generative Engine Optimization |
+| `/marketing-psychology` | Applying psychological principles to marketing |
+| `/subject-line` | Email subject line optimization |
+| `/pricing-strategy` | Pricing strategy with monetization approach |
+| `/kano-analysis` | Kano analysis for feature classification |
+| `/pirate-metrics` | AARRR funnel mapping |
+| `/stakeholder-brief` | Stakeholder communication briefs |
+| `/strategy-communication` | Strategy communication packages |
+| `/decision-record` | Structured decision records with rationale |
+| `/geo-monitoring-setup` | Generative Engine Optimization monitoring |
+| `/job-description-generator` | Job description generation |
 
 ---
 
@@ -140,10 +140,10 @@ If I proceed without completing applicable steps, my response is non-compliant.
 
 | Agent | When I Spawn |
 |-------|--------------|
-| @ci | Domain delegation |
-| @market-researcher | Domain delegation |
-| @content-strategist | Domain delegation |
-| @copywriter | Domain delegation |
+| @ci | Competitive intelligence |
+| @market-researcher | Market research |
+| @content-strategist | Content strategy |
+| @copywriter | Copy creation |
 
 ---
 

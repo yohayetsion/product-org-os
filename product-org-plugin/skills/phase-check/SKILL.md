@@ -9,6 +9,13 @@ metadata:
   version: 3.0.0
   category: assessment
   skill_type: task-capability
+  owner: pm-dir
+  primary_consumers:
+  - pm-dir
+  - prodops
+  secondary_consumers:
+  - vp-product
+  - value-realization
 ---
 ## Gotchas
 

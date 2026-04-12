@@ -9,6 +9,26 @@ metadata:
   version: 3.0.0
   category: strategy
   skill_type: task-capability
+  owner: vp-product
+  primary_consumers:
+  - cpo
+  - vp-product
+  - head-corpdev
+  - corporate-venture
+  - ceo
+  secondary_consumers:
+  - pm-dir
+  - bizops
+  - bizdev
+  - general-counsel
+  - ip-counsel
+  - chief-architect
+  - ma-analyst
+  - cmo
+  - cfo
+  - finance-dir
+  - fpa-analyst
+  - revenue-analyst
 ---
 ## Document Intelligence
 

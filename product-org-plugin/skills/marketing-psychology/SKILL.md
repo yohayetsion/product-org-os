@@ -8,6 +8,22 @@ metadata:
   version: 3.0.0
   category: marketing-growth
   skill_type: task-capability
+  owner: email-marketer
+  primary_consumers:
+  - email-marketer
+  - growth-marketer
+  secondary_consumers:
+  - pmm-dir
+  - pmm
+  - kb-specialist
+  - marketing-dir
+  - content-strategist
+  - copywriter
+  - cro-specialist
+  - paid-media-manager
+  - seo-specialist
+  - social-media-manager
+  - sdr
 ---
 # Marketing Psychology & Mental Models
 

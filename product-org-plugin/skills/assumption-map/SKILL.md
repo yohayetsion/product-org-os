@@ -1,12 +1,22 @@
 ---
 name: assumption-map
-description: "/assumption-map"
+description: /assumption-map
 user-invocable: true
 metadata:
   skill_type: task-capability
   author: Product Org OS
+  owner: experimentation-analyst
+  primary_consumers:
+  - pm
+  - experimentation-analyst
+  - user-researcher
+  secondary_consumers:
+  - data-lead
+  - data-analyst
+  - people-analyst
+  - cro-specialist
+  - growth-marketer
 ---
-
 # /assumption-map
 
 Map and prioritize assumptions underlying a product decision, strategy, or bet.

@@ -9,6 +9,70 @@ metadata:
   version: 3.0.0
   category: learning
   skill_type: task-capability
+  owner: onboarding-specialist
+  primary_consumers:
+  - pm-dir
+  - prodops
+  - qa-engineer
+  - onboarding-specialist
+  - project-manager
+  secondary_consumers:
+  - pm
+  - value-realization
+  - product-mentor
+  - legal-dir
+  - cs-dir
+  - csm
+  - onboarding-csm
+  - support-lead
+  - kb-specialist
+  - data-lead
+  - data-analyst
+  - experimentation-analyst
+  - design-dir
+  - visual-designer
+  - user-researcher
+  - tech-lead
+  - frontend-dev
+  - backend-dev
+  - devops
+  - ceo
+  - chro
+  - coo
+  - finance-dir
+  - fpa-analyst
+  - revenue-analyst
+  - financial-controller
+  - hr-dir
+  - recruiter
+  - compensation-analyst
+  - performance-specialist
+  - people-analyst
+  - it-dir
+  - content-strategist
+  - copywriter
+  - cro-specialist
+  - email-marketer
+  - growth-marketer
+  - infographic-designer
+  - paid-media-manager
+  - pr-comms-specialist
+  - presentation-designer
+  - seo-specialist
+  - social-media-manager
+  - video-producer
+  - operations-dir
+  - program-manager
+  - process-engineer
+  - procurement-specialist
+  - risk-manager
+  - sales-dir
+  - sdr
+  - account-exec
+  - sales-ops
+  - proposal-writer
+  - pa
+  - coach
 ---
 ## Document Intelligence
 

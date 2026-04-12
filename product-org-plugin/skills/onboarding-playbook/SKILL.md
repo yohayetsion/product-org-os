@@ -9,6 +9,16 @@ metadata:
   version: 3.0.0
   category: customer-success
   skill_type: task-capability
+  owner: value-realization
+  primary_consumers:
+  - value-realization
+  - cs-dir
+  - onboarding-csm
+  - kb-specialist
+  secondary_consumers:
+  - cs-ops
+  - csm
+  - support-lead
 ---
 ## Document Intelligence
 

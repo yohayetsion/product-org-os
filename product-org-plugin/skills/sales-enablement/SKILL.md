@@ -9,6 +9,17 @@ metadata:
   version: 3.0.0
   category: execution
   skill_type: task-capability
+  owner: account-exec
+  primary_consumers:
+  - pmm-dir
+  - pmm
+  - marketing-dir
+  - sales-dir
+  - sales-engineer
+  - account-exec
+  secondary_consumers:
+  - sdr
+  - proposal-writer
 ---
 ## Document Intelligence
 

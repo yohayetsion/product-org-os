@@ -8,6 +8,16 @@ metadata:
   version: 3.0.0
   category: market-analysis
   skill_type: task-capability
+  owner: ci
+  primary_consumers:
+  - ci
+  - content-strategist
+  - market-researcher
+  - seo-specialist
+  secondary_consumers:
+  - pmm-dir
+  - pmm
+  - social-media-manager
 ---
 # Competitor & Alternative Pages
 

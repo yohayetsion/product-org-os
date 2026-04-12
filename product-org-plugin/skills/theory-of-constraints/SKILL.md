@@ -10,6 +10,14 @@ metadata:
   version: 1.0.0
   category: operations
   skill_type: task-capability
+  owner: coo
+  primary_consumers:
+  - prodops
+  - coo
+  - operations-dir
+  - process-engineer
+  secondary_consumers:
+  - program-manager
 ---
 ## Document Intelligence
 

@@ -9,6 +9,13 @@ metadata:
   version: 3.0.0
   category: strategy
   skill_type: task-capability
+  owner: vp-product
+  primary_consumers:
+  - cpo
+  - vp-product
+  - ceo
+  secondary_consumers:
+  - product-mentor
 ---
 ## Document Intelligence
 

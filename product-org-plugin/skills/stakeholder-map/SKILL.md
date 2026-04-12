@@ -9,6 +9,25 @@ metadata:
   version: 1.0.0
   category: product-management
   skill_type: task-capability
+  owner: bizdev
+  primary_consumers:
+  - bizdev
+  - prodops
+  - general-counsel
+  - strategic-partnerships
+  - ceo
+  - program-manager
+  secondary_consumers:
+  - vp-product
+  - pm-dir
+  - pm
+  - chief-architect
+  - api-architect
+  - cloud-architect
+  - data-architect
+  - chro
+  - coo
+  - risk-manager
 ---
 ## Document Intelligence
 

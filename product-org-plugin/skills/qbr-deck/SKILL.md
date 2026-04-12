@@ -9,6 +9,13 @@ metadata:
   version: 3.0.0
   category: learning
   skill_type: task-capability
+  owner: value-realization
+  primary_consumers:
+  - value-realization
+  - cs-dir
+  - csm
+  - presentation-designer
+  - account-exec
 ---
 ## Document Intelligence
 

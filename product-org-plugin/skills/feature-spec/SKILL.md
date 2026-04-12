@@ -9,6 +9,17 @@ metadata:
   version: 3.0.0
   category: requirements
   skill_type: task-capability
+  owner: api-architect
+  primary_consumers:
+  - pm
+  - api-architect
+  - ui-designer
+  - visual-designer
+  - tech-lead
+  - frontend-dev
+  - backend-dev
+  - qa-engineer
+  - sales-engineer
 ---
 ## Document Intelligence
 

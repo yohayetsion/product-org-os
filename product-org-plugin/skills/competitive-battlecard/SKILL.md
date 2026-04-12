@@ -9,6 +9,18 @@ metadata:
   version: 1.0.0
   category: market-analysis
   skill_type: task-capability
+  owner: account-exec
+  primary_consumers:
+  - pmm
+  - ci
+  - sales-engineer
+  - sdr
+  - account-exec
+  - proposal-writer
+  secondary_consumers:
+  - pmm-dir
+  - market-researcher
+  - sales-dir
 ---
 ## Document Intelligence
 

@@ -10,6 +10,72 @@ metadata:
   version: 1.0.0
   category: risk-management
   skill_type: task-capability
+  owner: ai-architect
+  primary_consumers:
+  - pm
+  - ai-architect
+  - cloud-architect
+  - security-architect
+  - ma-analyst
+  - ml-engineer
+  - tech-lead
+  - devops
+  - qa-engineer
+  - it-security-policy
+  - risk-manager
+  secondary_consumers:
+  - cpo
+  - vp-product
+  - pm-dir
+  - bizdev
+  - prodops
+  - general-counsel
+  - legal-dir
+  - contracts-counsel
+  - privacy-counsel
+  - ip-counsel
+  - compliance-officer
+  - employment-counsel
+  - chief-architect
+  - api-architect
+  - data-architect
+  - head-corpdev
+  - corporate-venture
+  - cs-dir
+  - csm
+  - onboarding-csm
+  - support-lead
+  - data-lead
+  - experimentation-analyst
+  - design-dir
+  - user-researcher
+  - frontend-dev
+  - backend-dev
+  - ceo
+  - cfo
+  - chro
+  - coo
+  - cio
+  - finance-dir
+  - fpa-analyst
+  - financial-controller
+  - treasury-analyst
+  - tax-planning
+  - hr-dir
+  - recruiter
+  - compensation-analyst
+  - performance-specialist
+  - it-dir
+  - enterprise-systems
+  - data-governance
+  - pr-comms-specialist
+  - operations-dir
+  - program-manager
+  - project-manager
+  - process-engineer
+  - procurement-specialist
+  - sales-engineer
+  - account-exec
 ---
 ## Document Intelligence
 

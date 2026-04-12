@@ -9,6 +9,18 @@ metadata:
   version: 3.0.0
   category: strategy
   skill_type: task-capability
+  owner: coo
+  primary_consumers:
+  - pm-dir
+  - prodops
+  - legal-dir
+  - coo
+  - operations-dir
+  - program-manager
+  - project-manager
+  secondary_consumers:
+  - ceo
+  - finance-dir
 ---
 ## Document Intelligence
 

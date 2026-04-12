@@ -9,6 +9,44 @@ metadata:
   version: 3.0.0
   category: execution
   skill_type: task-capability
+  owner: ceo
+  primary_consumers:
+  - prodops
+  - ceo
+  - cmo
+  - chro
+  - coo
+  - cio
+  - investor-relations
+  - hr-dir
+  - pr-comms-specialist
+  - project-manager
+  - pa
+  secondary_consumers:
+  - pmm-dir
+  - pmm
+  - bizops
+  - general-counsel
+  - legal-dir
+  - contracts-counsel
+  - privacy-counsel
+  - ip-counsel
+  - compliance-officer
+  - employment-counsel
+  - head-corpdev
+  - cs-dir
+  - data-lead
+  - design-dir
+  - cfo
+  - finance-dir
+  - data-governance
+  - it-security-policy
+  - marketing-dir
+  - presentation-designer
+  - operations-dir
+  - risk-manager
+  - sales-dir
+  - analyst
 ---
 ## Document Intelligence
 

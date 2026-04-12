@@ -10,6 +10,23 @@ metadata:
   version: 1.0.0
   category: metrics
   skill_type: task-capability
+  owner: bizops
+  primary_consumers:
+  - bizops
+  - cfo
+  - finance-dir
+  - fpa-analyst
+  - revenue-analyst
+  - sales-ops
+  secondary_consumers:
+  - value-realization
+  - cs-dir
+  - cs-ops
+  - csm
+  - bi-engineer
+  - ceo
+  - treasury-analyst
+  - investor-relations
 ---
 ## Document Intelligence
 

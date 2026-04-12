@@ -9,6 +9,19 @@ metadata:
   version: 1.0.0
   category: marketing
   skill_type: task-capability
+  owner: copywriter
+  primary_consumers:
+  - copywriter
+  - email-marketer
+  - social-media-manager
+  - sdr
+  - pa
+  secondary_consumers:
+  - pmm-dir
+  - pmm
+  - content-strategist
+  - growth-marketer
+  - paid-media-manager
 ---
 ## Document Intelligence
 

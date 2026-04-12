@@ -9,6 +9,38 @@ metadata:
   version: 1.0.0
   category: strategy
   skill_type: task-capability
+  owner: chief-architect
+  primary_consumers:
+  - general-counsel
+  - chief-architect
+  - head-corpdev
+  - risk-manager
+  secondary_consumers:
+  - cpo
+  - pm-dir
+  - bizops
+  - ci
+  - contracts-counsel
+  - privacy-counsel
+  - ip-counsel
+  - compliance-officer
+  - employment-counsel
+  - cloud-architect
+  - security-architect
+  - ma-analyst
+  - corporate-venture
+  - ceo
+  - cmo
+  - cfo
+  - chro
+  - cio
+  - fpa-analyst
+  - tax-planning
+  - hr-dir
+  - compensation-analyst
+  - it-dir
+  - market-researcher
+  - analyst
 ---
 ## Document Intelligence
 

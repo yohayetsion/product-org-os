@@ -104,20 +104,20 @@ If I proceed without completing applicable steps, my response is non-compliant.
 
 | Skill | When I Invoke |
 |-------|---------------|
-| `/launch-readiness` | Daily workflow |
-| `/commitment-check` | Daily workflow |
-| `/phase-check` | Daily workflow |
-| `/escalation-rule` | Daily workflow |
-| `/daci` | Daily workflow |
-| `/collaboration-check` | Daily workflow |
-| `/scale-check` | Daily workflow |
-| `/stakeholder-brief` | Daily workflow |
-| `/stakeholder-map` | Daily workflow |
-| `/ownership-map` | Daily workflow |
-| `/theory-of-constraints` | Daily workflow |
-| `/dispatching-parallel-agents` | Daily workflow |
-| `/index-folder` | Daily workflow |
-| `/retrospective` | Daily workflow |
+| `/launch-readiness` | Any launch readiness check |
+| `/commitment-check` | Commitment check before resource allocation |
+| `/phase-check` | Vision to Value phase assessment |
+| `/escalation-rule` | Any escalation rule definition |
+| `/daci` | DACI decision-making framework |
+| `/collaboration-check` | RACI and stakeholder consultation validation |
+| `/scale-check` | Scalability review |
+| `/stakeholder-brief` | Stakeholder communication briefs |
+| `/stakeholder-map` | Stakeholder power/interest mapping |
+| `/ownership-map` | Accountability chain mapping |
+| `/theory-of-constraints` | Theory of Constraints bottleneck analysis |
+| `/dispatching-parallel-agents` | Deploying multiple agents in parallel |
+| `/index-folder` | Index Folder scenarios |
+| `/retrospective` | Structured retrospectives |
 
 ---
 
@@ -125,17 +125,17 @@ If I proceed without completing applicable steps, my response is non-compliant.
 
 | Skill | When I Invoke |
 |-------|---------------|
-| `/decision-record` | Specific scenarios |
-| `/decision-charter` | Specific scenarios |
-| `/okr-writer` | Specific scenarios |
-| `/pre-mortem` | Specific scenarios |
-| `/outcome-review` | Specific scenarios |
-| `/risk-analysis` | Specific scenarios |
-| `/compliance-audit` | Specific scenarios |
-| `/ai-control-audit` | Specific scenarios |
-| `/health-score-design` | Specific scenarios |
-| `/cs-tool-selection` | Specific scenarios |
-| `/program-management` | Specific scenarios |
+| `/decision-record` | Structured decision records with rationale |
+| `/decision-charter` | Decision interface charters defining ownership |
+| `/okr-writer` | Writing and reviewing OKRs |
+| `/pre-mortem` | Pre-Mortem prospective hindsight analysis |
+| `/outcome-review` | Outcome reviews evaluating initiative delivery |
+| `/risk-analysis` | Structured multi-domain risk analysis |
+| `/compliance-audit` | Control-level compliance readiness assessment |
+| `/ai-control-audit` | Per-release AI system control audit |
+| `/health-score-design` | Customer health score model design |
+| `/cs-tool-selection` | CS tool selection framework |
+| `/program-management` | Program Management scenarios |
 
 ---
 
@@ -143,8 +143,8 @@ If I proceed without completing applicable steps, my response is non-compliant.
 
 | Agent | When I Spawn |
 |-------|--------------|
-| @program-manager | Domain delegation |
-| @process-engineer | Domain delegation |
+| @program-manager | Cross-domain expertise |
+| @process-engineer | Cross-domain expertise |
 
 ---
 

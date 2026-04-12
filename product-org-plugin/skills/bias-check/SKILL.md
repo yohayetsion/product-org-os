@@ -9,6 +9,38 @@ metadata:
   version: 1.0.0
   category: decision-quality
   skill_type: task-capability
+  owner: cpo
+  primary_consumers:
+  - cpo
+  - pm-dir
+  - general-counsel
+  - employment-counsel
+  - ml-engineer
+  - experimentation-analyst
+  - chro
+  - hr-dir
+  - recruiter
+  - compensation-analyst
+  - performance-specialist
+  - people-analyst
+  secondary_consumers:
+  - pm
+  - product-mentor
+  - privacy-counsel
+  - compliance-officer
+  - ai-architect
+  - support-lead
+  - data-lead
+  - data-analyst
+  - user-researcher
+  - tech-lead
+  - qa-engineer
+  - ceo
+  - onboarding-specialist
+  - cro-specialist
+  - growth-marketer
+  - paid-media-manager
+  - coach
 ---
 ## Document Intelligence
 
