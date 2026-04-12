@@ -1,15 +1,15 @@
 ---
 name: seven-powers
-description: "Analyze competitive moats and strategic power using Hamilton Helmer's 7 Powers framework. Activate when: \"seven powers\", \"7 powers\", \"moat analysis\", \"competitive moat\", \"Helmer\", \"power dynamics\", \"strategic power\", \"defensibility analysis\" Do NOT activate for: Porter's Five Forces (/porter-five-forces), competitive analysis (/competitive-analysis), SWOT (/swot-analysis)"
-argument-hint: "[company or product] or [update path/to/seven-powers.md]"
+description: 'Analyze competitive moats and strategic power using Hamilton Helmer''s 7 Powers framework. Activate when: "seven powers", "7 powers", "moat analysis", "competitive moat", "Helmer", "power
+  dynamics", "strategic power", "defensibility analysis" Do NOT activate for: Porter''s Five Forces (/porter-five-forces), competitive analysis (/competitive-analysis), SWOT (/swot-analysis)'
+argument-hint: '[company or product] or [update path/to/seven-powers.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 1.0.0
   category: strategy
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

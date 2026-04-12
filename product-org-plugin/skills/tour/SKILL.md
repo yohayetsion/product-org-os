@@ -1,19 +1,19 @@
 ---
 name: tour
-description: "Interactive walkthrough of Product Org OS showing agents, gateways, skills, and context. Activate when: \"show me around\", \"how does this work\", \"give me a tour\", new to Product Org OS, learn the system Do NOT activate for: plugin initialization (/setup), demo data management (/reset-demo, /clear-demo), specific skill execution"
+description: 'Interactive walkthrough of Product Org OS showing agents, gateways, skills, and context. Activate when: "show me around", "how does this work", "give me a tour", new to Product Org OS, learn
+  the system Do NOT activate for: plugin initialization (/setup), demo data management (/reset-demo, /clear-demo), specific skill execution'
 argument-hint: (no arguments needed)
 model: haiku
 allowed-tools:
-  - Read
-  - Glob
+- Read
+- Glob
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: utility
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 # Product Org OS Tour
 
 Interactive 5-step walkthrough that teaches the system through hands-on exploration with demo data. Shows the real patterns you'll use daily.

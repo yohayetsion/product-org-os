@@ -1,91 +1,82 @@
 ---
 name: product-leadership-team
-description: "Product Leadership Team (PLT) - multi-stakeholder meeting mode for portfolio tradeoffs, cross-functional decisions, and strategic alignment. Activate when: @plt, /product-leadership-team, \"portfolio tradeoff\", \"leadership team decision\", \"cross-functional alignment\", \"go/no-go\", \"stop or continue\", \"strategic pivot\", \"resource allocation\" Do NOT activate for: single-domain questions (route to the specific agent instead), individual feature specs (@pm), routine status updates, simple lookups"
+description: 'Product Leadership Team (PLT) - multi-stakeholder meeting mode for portfolio tradeoffs, cross-functional decisions, and strategic alignment. Activate when: @plt, /product-leadership-team,
+  "portfolio tradeoff", "leadership team decision", "cross-functional alignment", "go/no-go", "stop or continue", "strategic pivot", "resource allocation" Do NOT activate for: single-domain questions (route
+  to the specific agent instead), individual feature specs (@pm), routine status updates, simple lookups'
 model: opus
 allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Glob
-  - Grep
-  - Bash
-  - WebSearch
-  - Task
-skills:
-  # All skills available - use based on your R&R
-  # Context Layer
-  - context-save
-  - context-recall
-  - portfolio-status
-  - handoff
-  - relevant-learnings
-  - feedback-capture
-  - feedback-recall
-  # Principle Validators
-  - ownership-map
-  - customer-value-trace
-  - collaboration-check
-  - scale-check
-  - phase-check
-  # Decisions
-  - decision-record
-  - decision-charter
-  - escalation-rule
-  - decision-quality-audit
-  # Strategy
-  - strategic-intent
-  - strategic-bet
-  - commitment-check
-  - portfolio-tradeoff
-  - vision-statement
-  # Documents
-  - prd
-  - prd-outline
-  - product-roadmap
-  - roadmap-theme
-  - roadmap-item
-  - business-case
-  - business-plan
-  - gtm-strategy
-  - gtm-brief
-  - pricing-strategy
-  - pricing-model
-  - competitive-landscape
-  - competitive-analysis
-  - market-analysis
-  - market-segment
-  - positioning-statement
-  - launch-plan
-  - qbr-deck
-  # Requirements
-  - feature-spec
-  - user-story
-  # Operations
-  - launch-readiness
-  - stakeholder-brief
-  - outcome-review
-  - retrospective
-  # Vision to Value Framework
-  - strategy-communication
-  - campaign-brief
-  - sales-enablement
-  - onboarding-playbook
-  - value-realization-report
-  - customer-health-scorecard
-  # Assessment
-  - maturity-check
-  - pm-level-check
-  # Utility
-  - setup
-  - present
+- Read
+- Write
+- Edit
+- Glob
+- Grep
+- Bash
+- WebSearch
+- Task
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: gateway
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: agent
+  team: product-org-os
+skills:
+- context-save
+- context-recall
+- portfolio-status
+- handoff
+- relevant-learnings
+- feedback-capture
+- feedback-recall
+- ownership-map
+- customer-value-trace
+- collaboration-check
+- scale-check
+- phase-check
+- decision-record
+- decision-charter
+- escalation-rule
+- decision-quality-audit
+- strategic-intent
+- strategic-bet
+- commitment-check
+- portfolio-tradeoff
+- vision-statement
+- prd
+- prd-outline
+- product-roadmap
+- roadmap-theme
+- roadmap-item
+- business-case
+- business-plan
+- gtm-strategy
+- gtm-brief
+- pricing-strategy
+- pricing-model
+- competitive-landscape
+- competitive-analysis
+- market-analysis
+- market-segment
+- positioning-statement
+- launch-plan
+- qbr-deck
+- feature-spec
+- user-story
+- launch-readiness
+- stakeholder-brief
+- outcome-review
+- retrospective
+- strategy-communication
+- campaign-brief
+- sales-enablement
+- onboarding-playbook
+- value-realization-report
+- customer-health-scorecard
+- maturity-check
+- pm-level-check
+- setup
+- present
 ---
-
 The PLT Gateway is a **distribution list** — a routing mechanism that determines which leadership agents respond to a request. It has NO collective persona, NO voice, and NO identity of its own. Only named leadership agents speak.
 
 When someone sends a message to `@plt`, treat it like posting to the leadership team's group channel. Route silently to the relevant leaders.

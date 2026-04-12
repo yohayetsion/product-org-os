@@ -1,15 +1,15 @@
 ---
 name: gtm-brief
-description: "Create a focused go-to-market brief for a specific initiative or feature launch. Activate when: \"GTM brief\", \"launch brief\", \"market entry plan\", focused GTM document, initiative-level GTM Do NOT activate for: comprehensive GTM strategy (/gtm-strategy), launch execution timeline (/launch-plan), marketing campaign planning (/campaign-brief)"
-argument-hint: "[product/feature name] or [update path/to/gtm-brief.md]"
+description: 'Create a focused go-to-market brief for a specific initiative or feature launch. Activate when: "GTM brief", "launch brief", "market entry plan", focused GTM document, initiative-level GTM
+  Do NOT activate for: comprehensive GTM strategy (/gtm-strategy), launch execution timeline (/launch-plan), marketing campaign planning (/campaign-brief)'
+argument-hint: '[product/feature name] or [update path/to/gtm-brief.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: go-to-market
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

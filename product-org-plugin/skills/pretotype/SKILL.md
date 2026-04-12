@@ -1,15 +1,15 @@
 ---
 name: pretotype
-description: "Design a pretotype to validate whether you're building the right product before investing in building it right. Cheaper and faster than an MVP. Activate when: \"pretotype\", \"pretotyping\", \"validate before building\", \"fake door test\", \"test demand\", \"the right it\", \"mechanical turk test\", \"validate idea cheaply\" Do NOT activate for: experiment design (/experiment-design), MVP definition"
-argument-hint: "[idea, hypothesis, or product concept to pretotype] or [update path/to/pretotype.md]"
+description: 'Design a pretotype to validate whether you''re building the right product before investing in building it right. Cheaper and faster than an MVP. Activate when: "pretotype", "pretotyping",
+  "validate before building", "fake door test", "test demand", "the right it", "mechanical turk test", "validate idea cheaply" Do NOT activate for: experiment design (/experiment-design), MVP definition'
+argument-hint: '[idea, hypothesis, or product concept to pretotype] or [update path/to/pretotype.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 1.0.0
   category: product-management
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

@@ -1,15 +1,15 @@
 ---
 name: feedback-capture
-description: "Capture and analyze product feedback with full metadata, sentiment, and theme classification. Activate when: \"log this feedback\", \"capture customer input\", \"record this complaint\", user feedback, market feedback, feature request Do NOT activate for: recalling past feedback (/feedback-recall), saving decisions (/context-save), customer health assessment (/customer-health-scorecard)"
-argument-hint: "[paste feedback or describe source]"
+description: 'Capture and analyze product feedback with full metadata, sentiment, and theme classification. Activate when: "log this feedback", "capture customer input", "record this complaint", user feedback,
+  market feedback, feature request Do NOT activate for: recalling past feedback (/feedback-recall), saving decisions (/context-save), customer health assessment (/customer-health-scorecard)'
+argument-hint: '[paste feedback or describe source]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: context-layer
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 Capture, document, and analyze **product feedback** with complete metadata and structured analysis.
 
 ## Vision to Value Phase

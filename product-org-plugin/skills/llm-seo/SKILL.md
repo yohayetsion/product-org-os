@@ -1,15 +1,16 @@
 ---
 name: llm-seo
-version: 1.0.0
-description: "LLM SEO / Generative Engine Optimization - optimize brand visibility across AI search engines (ChatGPT, Claude, Gemini, Google AI Overviews). Activate when: \"LLM SEO\", \"GEO\", \"generative engine optimization\", \"AI search visibility\", \"AI overviews optimization\", \"how do we show up in ChatGPT\", \"Claude brand mentions\", \"Gemini citations\", \"AI search audit\", \"passage optimization for AI\" Do NOT activate for: traditional SEO audits (/seo-audit), schema markup (/schema-markup), programmatic page generation (/programmatic-seo)"
-argument-hint: "[audit|optimize|strategy] [brand/url]"
+description: 'LLM SEO / Generative Engine Optimization - optimize brand visibility across AI search engines (ChatGPT, Claude, Gemini, Google AI Overviews). Activate when: "LLM SEO", "GEO", "generative engine
+  optimization", "AI search visibility", "AI overviews optimization", "how do we show up in ChatGPT", "Claude brand mentions", "Gemini citations", "AI search audit", "passage optimization for AI" Do NOT
+  activate for: traditional SEO audits (/seo-audit), schema markup (/schema-markup), programmatic page generation (/programmatic-seo)'
+argument-hint: '[audit|optimize|strategy] [brand/url]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 1.0.0
   category: seo
-compatibility: Requires Product Org OS v3+ with Marketing Extension Team
-context: fork
+  skill_type: task-capability
+version: 1.0.0
 ---
 <!-- Attribution:
   Frameworks and patterns in this skill were informed by:

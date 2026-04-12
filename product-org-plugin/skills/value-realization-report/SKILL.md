@@ -1,15 +1,15 @@
 ---
 name: value-realization-report
-description: "Create value realization report tracking whether customers are achieving promised outcomes. Activate when: \"value report\", \"customer outcomes\", \"are customers getting value\", outcome tracking, value delivery, ROI for customers Do NOT activate for: customer health scoring (/customer-health-scorecard), onboarding playbooks (/onboarding-playbook), outcome reviews of initiatives (/outcome-review)"
-argument-hint: "[customer, cohort, or product] or [update path/to/report.md]"
+description: 'Create value realization report tracking whether customers are achieving promised outcomes. Activate when: "value report", "customer outcomes", "are customers getting value", outcome tracking,
+  value delivery, ROI for customers Do NOT activate for: customer health scoring (/customer-health-scorecard), onboarding playbooks (/onboarding-playbook), outcome reviews of initiatives (/outcome-review)'
+argument-hint: '[customer, cohort, or product] or [update path/to/report.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: customer-success
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

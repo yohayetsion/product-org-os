@@ -1,15 +1,16 @@
 ---
 name: interview-synthesis
-description: "Synthesize customer interview notes or transcripts into themes, patterns, key quotes, and actionable insights. Turns raw research into structured findings. Activate when: \"interview synthesis\", \"synthesize interviews\", \"research findings\", \"customer interviews\", \"user research synthesis\", \"interview notes\", \"what did we learn\" Do NOT activate for: feedback capture (/feedback-capture), feedback recall (/feedback-recall)"
-argument-hint: "[interview notes, transcript, or path] or [update path/to/synthesis.md]"
+description: 'Synthesize customer interview notes or transcripts into themes, patterns, key quotes, and actionable insights. Turns raw research into structured findings. Activate when: "interview synthesis",
+  "synthesize interviews", "research findings", "customer interviews", "user research synthesis", "interview notes", "what did we learn" Do NOT activate for: feedback capture (/feedback-capture), feedback
+  recall (/feedback-recall)'
+argument-hint: '[interview notes, transcript, or path] or [update path/to/synthesis.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 1.0.0
   category: research
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

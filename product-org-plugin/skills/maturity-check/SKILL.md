@@ -1,15 +1,15 @@
 ---
 name: maturity-check
-description: "Assess organizational maturity level (1-4) for a specific capability dimension. Activate when: \"maturity assessment\", \"how mature are we\", \"org maturity\", capability evaluation, maturity level, process maturity Do NOT activate for: PM individual competency check (/pm-level-check), scalability assessment (/scale-check), Vision to Value phase check (/phase-check)"
-argument-hint: "[dimension or area]"
+description: 'Assess organizational maturity level (1-4) for a specific capability dimension. Activate when: "maturity assessment", "how mature are we", "org maturity", capability evaluation, maturity level,
+  process maturity Do NOT activate for: PM individual competency check (/pm-level-check), scalability assessment (/scale-check), Vision to Value phase check (/phase-check)'
+argument-hint: '[dimension or area]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: assessment
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 Assess **Organizational Maturity** for a specific dimension.
 
 ## Vision to Value Phase

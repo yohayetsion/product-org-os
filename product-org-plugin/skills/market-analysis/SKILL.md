@@ -1,16 +1,15 @@
 ---
 name: market-analysis
-description: "Create comprehensive market analysis with sizing, dynamics, and opportunity assessment. Activate when: \"analyze the market\", \"market sizing\", \"TAM SAM SOM\", \"market opportunity\", market understanding, market dynamics Do NOT activate for: competitive landscape mapping (/competitive-landscape), focused competitor comparison (/competitive-analysis), business case justification (/business-case)"
-argument-hint: "[market or segment name] or [update path/to/market-analysis.md]"
+description: 'Create comprehensive market analysis with sizing, dynamics, and opportunity assessment. Activate when: "analyze the market", "market sizing", "TAM SAM SOM", "market opportunity", market understanding,
+  market dynamics Do NOT activate for: competitive landscape mapping (/competitive-landscape), focused competitor comparison (/competitive-analysis), business case justification (/business-case)'
+argument-hint: '[market or segment name] or [update path/to/market-analysis.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: market-analysis
-compatibility: Requires Product Org OS v3+ context layer and rules
-context: fork
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

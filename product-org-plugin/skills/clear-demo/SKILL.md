@@ -1,19 +1,19 @@
 ---
 name: clear-demo
-description: "Remove demo content to start with a clean production context. Activate when: \"clear demo data\", \"remove examples\", clean context, remove demo, production-ready context Do NOT activate for: restoring demo data (/reset-demo), plugin initialization (/setup), interactive tour (/tour)"
+description: 'Remove demo content to start with a clean production context. Activate when: "clear demo data", "remove examples", clean context, remove demo, production-ready context Do NOT activate for:
+  restoring demo data (/reset-demo), plugin initialization (/setup), interactive tour (/tour)'
 model: haiku
 allowed-tools:
-  - Read
-  - Bash
-  - Glob
+- Read
+- Bash
+- Glob
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: utility
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 # Clear Demo Content (Optional)
 
 Remove demo content from the context layer for a clean folder structure.

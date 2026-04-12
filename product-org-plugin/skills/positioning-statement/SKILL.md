@@ -1,15 +1,15 @@
 ---
 name: positioning-statement
-description: "Create a positioning statement defining market category, differentiation, and target audience framing. Activate when: \"define our positioning\", \"how should we position\", \"positioning statement\", differentiation, category creation, messaging framework Do NOT activate for: GTM execution strategy (/gtm-strategy), campaign briefs (/campaign-brief), competitive analysis (/competitive-analysis)"
-argument-hint: "[product name] or [update path/to/positioning.md]"
+description: 'Create a positioning statement defining market category, differentiation, and target audience framing. Activate when: "define our positioning", "how should we position", "positioning statement",
+  differentiation, category creation, messaging framework Do NOT activate for: GTM execution strategy (/gtm-strategy), campaign briefs (/campaign-brief), competitive analysis (/competitive-analysis)'
+argument-hint: '[product name] or [update path/to/positioning.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: market-analysis
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

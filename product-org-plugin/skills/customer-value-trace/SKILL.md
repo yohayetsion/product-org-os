@@ -1,15 +1,15 @@
 ---
 name: customer-value-trace
-description: "Validate that planned work traces back to measurable customer value. Activate when: \"does this help customers\", \"customer value\", \"trace to value\", customer impact validation, value chain Do NOT activate for: customer health scoring (/customer-health-scorecard), value realization reporting (/value-realization-report), business case ROI (/business-case)"
-argument-hint: "[decision, feature, or initiative] or [update path/to/trace.md]"
+description: 'Validate that planned work traces back to measurable customer value. Activate when: "does this help customers", "customer value", "trace to value", customer impact validation, value chain
+  Do NOT activate for: customer health scoring (/customer-health-scorecard), value realization reporting (/value-realization-report), business case ROI (/business-case)'
+argument-hint: '[decision, feature, or initiative] or [update path/to/trace.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: validation
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

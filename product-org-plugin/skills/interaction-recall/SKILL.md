@@ -1,15 +1,15 @@
 ---
 name: interaction-recall
-description: "Query past agent conversations and session history by topic, agent, or date. Activate when: \"what did we discuss about\", \"past conversations on\", session history, previous agent work, interaction log Do NOT activate for: recalling decisions and bets (/context-recall), recalling feedback (/feedback-recall), recalling learnings (/relevant-learnings)"
-argument-hint: "[topic or keyword] [agent:name] [date:YYYY-MM] [product:name] [type:agent|gateway|skill]"
+description: 'Query past agent conversations and session history by topic, agent, or date. Activate when: "what did we discuss about", "past conversations on", session history, previous agent work, interaction
+  log Do NOT activate for: recalling decisions and bets (/context-recall), recalling feedback (/feedback-recall), recalling learnings (/relevant-learnings)'
+argument-hint: '[topic or keyword] [agent:name] [date:YYYY-MM] [product:name] [type:agent|gateway|skill]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: context-layer
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 Query **past interactions** — agent conversations, gateway sessions, and skill invocations — to understand what was discussed, who contributed, and what conclusions were reached.
 
 ## Vision to Value Phase

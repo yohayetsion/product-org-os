@@ -1,15 +1,15 @@
 ---
 name: pirate-metrics
-description: "Map your product's AARRR funnel (Acquisition, Activation, Retention, Revenue, Referral) and identify the One Metric That Matters. Activate when: \"pirate metrics\", \"AARRR\", \"acquisition activation retention\", \"funnel metrics\", \"growth funnel\", \"McClure\", \"startup metrics\", \"RARRA\" Do NOT activate for: north star metric (/north-star-metric), growth model (/growth-model), SaaS health check (/saas-health-check)"
-argument-hint: "[product name] or [update path/to/pirate-metrics.md]"
+description: 'Map your product''s AARRR funnel (Acquisition, Activation, Retention, Revenue, Referral) and identify the One Metric That Matters. Activate when: "pirate metrics", "AARRR", "acquisition activation
+  retention", "funnel metrics", "growth funnel", "McClure", "startup metrics", "RARRA" Do NOT activate for: north star metric (/north-star-metric), growth model (/growth-model), SaaS health check (/saas-health-check)'
+argument-hint: '[product name] or [update path/to/pirate-metrics.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 1.0.0
   category: metrics
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

@@ -1,15 +1,15 @@
 ---
 name: context-save
-description: "Save a decision, bet, or learning to the persistent context registry. Activate when: \"save this decision\", \"record this learning\", \"add to context\", after creating decisions and bets, persist to registry Do NOT activate for: recalling past context (/context-recall), capturing feedback (/feedback-capture), agent handoff briefings (/handoff)"
-argument-hint: "[decision-record | strategic-bet | learning]"
+description: 'Save a decision, bet, or learning to the persistent context registry. Activate when: "save this decision", "record this learning", "add to context", after creating decisions and bets, persist
+  to registry Do NOT activate for: recalling past context (/context-recall), capturing feedback (/feedback-capture), agent handoff briefings (/handoff)'
+argument-hint: '[decision-record | strategic-bet | learning]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: context-layer
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 Save a **decision record**, **strategic bet**, or **learning** to the persistent context registry.
 
 ## Vision to Value Phase

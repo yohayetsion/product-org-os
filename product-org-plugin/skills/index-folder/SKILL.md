@@ -1,20 +1,20 @@
 ---
 name: index-folder
-description: "Index a folder's contents into the context system for fast retrieval and discovery. Activate when: \"index this folder\", \"catalog these files\", folder contents indexed, build file index, scan folder Do NOT activate for: saving decisions to context (/context-save), recalling context (/context-recall), plugin setup (/setup)"
+description: 'Index a folder''s contents into the context system for fast retrieval and discovery. Activate when: "index this folder", "catalog these files", folder contents indexed, build file index, scan
+  folder Do NOT activate for: saving decisions to context (/context-save), recalling context (/context-recall), plugin setup (/setup)'
 model: haiku
 allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Glob
+- Read
+- Write
+- Edit
+- Glob
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: context-layer
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 # Index Folder
 
 Scan a folder and add its contents to `context/index.json` for fast topic-based retrieval.

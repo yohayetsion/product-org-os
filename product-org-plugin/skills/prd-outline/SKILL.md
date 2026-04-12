@@ -1,15 +1,15 @@
 ---
 name: prd-outline
-description: "Create a lightweight PRD outline for initial scoping before committing to a full PRD. Activate when: \"PRD outline\", \"scope this feature\", \"rough requirements\", lightweight requirements, initial scoping, quick PRD Do NOT activate for: full PRD with detailed requirements (/prd), feature-level spec (/feature-spec), user story writing (/user-story)"
-argument-hint: "[product/feature name] or [update path/to/outline.md]"
+description: 'Create a lightweight PRD outline for initial scoping before committing to a full PRD. Activate when: "PRD outline", "scope this feature", "rough requirements", lightweight requirements, initial
+  scoping, quick PRD Do NOT activate for: full PRD with detailed requirements (/prd), feature-level spec (/feature-spec), user story writing (/user-story)'
+argument-hint: '[product/feature name] or [update path/to/outline.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: requirements
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

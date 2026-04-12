@@ -1,15 +1,15 @@
 ---
 name: qbr-deck
-description: "Create Quarterly Business Review presentation summarizing performance, learnings, and next-quarter plans. Activate when: \"QBR deck\", \"quarterly review\", \"business review\", quarterly performance summary, executive review Do NOT activate for: stakeholder update briefs (/stakeholder-brief), strategy communication (/strategy-communication), portfolio status check (/portfolio-status)"
-argument-hint: "[quarter, e.g., Q1 2025] or [update path/to/qbr.md]"
+description: 'Create Quarterly Business Review presentation summarizing performance, learnings, and next-quarter plans. Activate when: "QBR deck", "quarterly review", "business review", quarterly performance
+  summary, executive review Do NOT activate for: stakeholder update briefs (/stakeholder-brief), strategy communication (/strategy-communication), portfolio status check (/portfolio-status)'
+argument-hint: '[quarter, e.g., Q1 2025] or [update path/to/qbr.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: learning
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

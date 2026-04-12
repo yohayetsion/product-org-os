@@ -1,15 +1,15 @@
 ---
 name: decision-record
-description: "Create or update a structured record for a specific individual decision. Activate when: \"document this decision\", \"create decision record\", \"record the choice we made\", formal decision documentation, DR Do NOT activate for: recurring decision type charters (/decision-charter), decision quality audits (/decision-quality-audit), escalation rules (/escalation-rule)"
-argument-hint: "[decision topic] or [update DR-2026-001]"
+description: 'Create or update a structured record for a specific individual decision. Activate when: "document this decision", "create decision record", "record the choice we made", formal decision documentation,
+  DR Do NOT activate for: recurring decision type charters (/decision-charter), decision quality audits (/decision-quality-audit), escalation rules (/escalation-rule)'
+argument-hint: '[decision topic] or [update DR-2026-001]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: decisions
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

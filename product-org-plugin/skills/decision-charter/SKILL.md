@@ -1,15 +1,15 @@
 ---
 name: decision-charter
-description: "Create a Decision Interface Charter defining ownership and process for recurring decision types. Activate when: \"who decides what\", \"decision rights\", \"decision charter\", decision ownership, RACI for decisions, recurring decision governance Do NOT activate for: documenting individual decisions (/decision-record), escalation triggers (/escalation-rule), decision quality audits (/decision-quality-audit)"
-argument-hint: "[decision type] or [update path/to/charter.md]"
+description: 'Create a Decision Interface Charter defining ownership and process for recurring decision types. Activate when: "who decides what", "decision rights", "decision charter", decision ownership,
+  RACI for decisions, recurring decision governance Do NOT activate for: documenting individual decisions (/decision-record), escalation triggers (/escalation-rule), decision quality audits (/decision-quality-audit)'
+argument-hint: '[decision type] or [update path/to/charter.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: decisions
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

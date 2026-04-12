@@ -1,15 +1,16 @@
 ---
 name: shape-up
-description: "Apply Basecamp's Shape Up methodology — fixed time, variable scope product development with pitches, bets, and 6-week cycles. Activate when: \"shape up\", \"pitch\", \"bet table\", \"6-week cycle\", \"hill chart\", \"appetite\", \"fixed time variable scope\", \"cool down period\", \"circuit breaker\" Do NOT activate for: prioritization (/prioritize-features), roadmap planning (/product-roadmap), sprint planning (use Scrum), strategic bets (/strategic-bet)"
-argument-hint: "[feature or initiative] or [update path/to/shape-up.md]"
+description: 'Apply Basecamp''s Shape Up methodology — fixed time, variable scope product development with pitches, bets, and 6-week cycles. Activate when: "shape up", "pitch", "bet table", "6-week cycle",
+  "hill chart", "appetite", "fixed time variable scope", "cool down period", "circuit breaker" Do NOT activate for: prioritization (/prioritize-features), roadmap planning (/product-roadmap), sprint planning
+  (use Scrum), strategic bets (/strategic-bet)'
+argument-hint: '[feature or initiative] or [update path/to/shape-up.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 1.0.0
   category: product-management
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

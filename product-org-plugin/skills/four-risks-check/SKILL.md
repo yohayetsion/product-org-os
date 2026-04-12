@@ -1,15 +1,16 @@
 ---
 name: four-risks-check
-description: "Assess a feature or initiative against Marty Cagan's Four Big Risks (Value, Usability, Feasibility, Business Viability) to determine readiness for commitment. Activate when: \"four risks\", \"risk check\", \"value risk\", \"usability risk\", \"feasibility risk\", \"viability risk\", \"should we build\", \"Cagan\", \"discovery risks\", \"VUFE check\", \"product risk assessment\" Do NOT activate for: assumption mapping (/assumption-map), experiment design (/experiment-design), enterprise risk management (@risk-manager)"
-argument-hint: "[feature or initiative name] or [update path/to/risk-check.md]"
+description: 'Assess a feature or initiative against Marty Cagan''s Four Big Risks (Value, Usability, Feasibility, Business Viability) to determine readiness for commitment. Activate when: "four risks",
+  "risk check", "value risk", "usability risk", "feasibility risk", "viability risk", "should we build", "Cagan", "discovery risks", "VUFE check", "product risk assessment" Do NOT activate for: assumption
+  mapping (/assumption-map), experiment design (/experiment-design), enterprise risk management (@risk-manager)'
+argument-hint: '[feature or initiative name] or [update path/to/risk-check.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 1.0.0
   category: product-management
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

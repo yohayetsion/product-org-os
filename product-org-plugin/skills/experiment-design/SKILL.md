@@ -1,15 +1,16 @@
 ---
 name: experiment-design
-description: "Design a lean experiment to validate a specific assumption or hypothesis. Includes discovery maturity scoring. Activate when: \"experiment\", \"test hypothesis\", \"validate assumption\", \"lean experiment\", \"experiment design\", \"discovery maturity\", \"A/B test design\", \"hypothesis testing\" Do NOT activate for: A/B test implementation (/ab-test-setup), assumption mapping (/assumption-map), pre-mortem (/pre-mortem)"
-argument-hint: "[hypothesis or assumption to test] or [update path/to/experiment.md]"
+description: 'Design a lean experiment to validate a specific assumption or hypothesis. Includes discovery maturity scoring. Activate when: "experiment", "test hypothesis", "validate assumption", "lean
+  experiment", "experiment design", "discovery maturity", "A/B test design", "hypothesis testing" Do NOT activate for: A/B test implementation (/ab-test-setup), assumption mapping (/assumption-map), pre-mortem
+  (/pre-mortem)'
+argument-hint: '[hypothesis or assumption to test] or [update path/to/experiment.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 1.1.0
   category: discovery
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 <!-- Source: Experiment Design — consolidated from Alberto Savoia "The Right It" (2019, HarperOne) pretotyping methodology, Lean Experiment Canvas, and Strategyzer's Test Card + Learning Card (Alex Osterwalder). -->
 
 # /experiment-design

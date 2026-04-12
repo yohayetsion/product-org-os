@@ -1,15 +1,15 @@
 ---
 name: pricing-strategy
-description: "Create pricing strategy document with monetization approach, value metrics, and competitive pricing analysis. Activate when: \"pricing strategy\", \"how should we price\", \"monetization model\", pricing decisions, value-based pricing Do NOT activate for: pricing tiers and packaging design (/pricing-model), business case financials (/business-case), positioning (/positioning-statement)"
-argument-hint: "[product or feature name] or [update path/to/pricing.md]"
+description: 'Create pricing strategy document with monetization approach, value metrics, and competitive pricing analysis. Activate when: "pricing strategy", "how should we price", "monetization model",
+  pricing decisions, value-based pricing Do NOT activate for: pricing tiers and packaging design (/pricing-model), business case financials (/business-case), positioning (/positioning-statement)'
+argument-hint: '[product or feature name] or [update path/to/pricing.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: business-planning
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

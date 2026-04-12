@@ -1,14 +1,14 @@
 ---
 name: dispatching-parallel-agents
-description: "Deploy multiple agents simultaneously for parallel execution. Use when facing 2+ independent tasks, 'run in parallel', 'dispatch agents', or needs concurrent task processing without shared state."
+description: Deploy multiple agents simultaneously for parallel execution. Use when facing 2+ independent tasks, 'run in parallel', 'dispatch agents', or needs concurrent task processing without shared
+  state.
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: developer-workflow
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 # Dispatching Parallel Agents
 
 Use this skill when you have multiple independent tasks that can be solved concurrently rather than sequentially.

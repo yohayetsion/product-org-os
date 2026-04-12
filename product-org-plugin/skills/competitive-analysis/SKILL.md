@@ -1,16 +1,16 @@
 ---
 name: competitive-analysis
-description: "Structure a focused competitive comparison against specific competitors with feature-level detail, pricing analysis, and win/loss patterns. Use when user says 'compare us to [competitor]', 'competitive analysis', 'how do we stack up', 'head-to-head analysis', or 'win/loss'. Do NOT activate for broad market-wide competitive landscape (/competitive-landscape), market sizing (/market-analysis), or positioning strategy (/positioning-statement)."
-argument-hint: "[competitor name or market] or [update path/to/analysis.md]"
+description: 'Structure a focused competitive comparison against specific competitors with feature-level detail. Activate when: "compare us to [competitor]", "competitive analysis", "how do we stack up",
+  feature-level comparison, head-to-head analysis, win/loss Do NOT activate for: broad market-wide competitive landscape (/competitive-landscape), market sizing (/market-analysis), positioning strategy
+  (/positioning-statement)'
+argument-hint: '[competitor name or market] or [update path/to/analysis.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: market-analysis
-compatibility: Requires Product Org OS v3+ context layer and rules
-context: fork
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

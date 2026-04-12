@@ -1,15 +1,15 @@
 ---
 name: collaboration-check
-description: "Validate RACI assignments and stakeholder consultation for a decision or initiative. Activate when: \"who was consulted\", \"RACI check\", \"stakeholder alignment\", collaboration validation, cross-functional alignment Do NOT activate for: ownership and accountability mapping (/ownership-map), decision ownership charters (/decision-charter), stakeholder communication (/stakeholder-brief)"
-argument-hint: "[decision or initiative] or [update path/to/check.md]"
+description: 'Validate RACI assignments and stakeholder consultation for a decision or initiative. Activate when: "who was consulted", "RACI check", "stakeholder alignment", collaboration validation, cross-functional
+  alignment Do NOT activate for: ownership and accountability mapping (/ownership-map), decision ownership charters (/decision-charter), stakeholder communication (/stakeholder-brief)'
+argument-hint: '[decision or initiative] or [update path/to/check.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: validation
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

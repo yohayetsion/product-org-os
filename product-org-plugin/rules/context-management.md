@@ -43,7 +43,7 @@ For manual setups, see `AGENT-INTEGRATION.md` or run:
 python hooks/os-tracker.py --agent [agent-id] --context-dir ./context
 ```
 
-**Registrable skills**: All Phase 1-6 document-producing skills (see `rules/v2v-flow.md` for skill lists).
+**Registrable skills**: All Phase 1-6 document-producing skills (see `PRINCIPLES.md` Vision to Value Flow section for skill lists).
 
 **Exclusions**: Assessments/checks, context operations, utility skills.
 

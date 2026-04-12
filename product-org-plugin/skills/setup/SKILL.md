@@ -1,15 +1,15 @@
 ---
 name: setup
-description: "Initialize the Product Org plugin by creating context folders and index files. Activate when: \"set up the plugin\", \"initialize\", starting fresh with Product Org OS, first-time setup Do NOT activate for: configuration changes mid-session, resetting demo data (/reset-demo), interactive walkthrough (/tour)"
+description: 'Initialize the Product Org plugin by creating context folders and index files. Activate when: "set up the plugin", "initialize", starting fresh with Product Org OS, first-time setup Do NOT
+  activate for: configuration changes mid-session, resetting demo data (/reset-demo), interactive walkthrough (/tour)'
 argument-hint: (no arguments needed)
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: utility
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 Initialize the **Product Org Plugin** for first-time use. This creates the context folder structure and all necessary index files in your current working directory.
 
 ## Vision to Value Phase

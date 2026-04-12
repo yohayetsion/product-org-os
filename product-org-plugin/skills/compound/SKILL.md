@@ -1,3 +1,12 @@
+---
+name: compound
+description: "/compound"
+user-invocable: true
+metadata:
+  skill_type: task-capability
+  author: Product Org OS
+---
+
 # /compound
 
 Extract and save learnings from completed tasks to build compound organizational intelligence.

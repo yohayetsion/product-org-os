@@ -1,15 +1,15 @@
 ---
 name: stakeholder-brief
-description: "Create stakeholder communication brief with tailored messaging for specific audiences. Activate when: \"stakeholder update\", \"brief the stakeholders\", \"executive summary\", stakeholder communication, status update Do NOT activate for: strategy communication packages (/strategy-communication), QBR presentations (/qbr-deck), campaign briefs (/campaign-brief)"
-argument-hint: "[topic or update] or [update path/to/brief.md]"
+description: 'Create stakeholder communication brief with tailored messaging for specific audiences. Activate when: "stakeholder update", "brief the stakeholders", "executive summary", stakeholder communication,
+  status update Do NOT activate for: strategy communication packages (/strategy-communication), QBR presentations (/qbr-deck), campaign briefs (/campaign-brief)'
+argument-hint: '[topic or update] or [update path/to/brief.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: execution
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

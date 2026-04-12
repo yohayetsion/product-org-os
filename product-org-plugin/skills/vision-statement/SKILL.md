@@ -1,15 +1,15 @@
 ---
 name: vision-statement
-description: "Draft a product vision statement articulating aspirational product direction. Activate when: \"write a vision\", \"product vision\", \"define the vision\", articulate product direction, north star Do NOT activate for: roadmap planning (/product-roadmap), strategy communication packages (/strategy-communication), strategic intent with priorities (/strategic-intent)"
-argument-hint: "[product name] or [update path/to/vision.md]"
+description: 'Draft a product vision statement articulating aspirational product direction. Activate when: "write a vision", "product vision", "define the vision", articulate product direction, north star
+  Do NOT activate for: roadmap planning (/product-roadmap), strategy communication packages (/strategy-communication), strategic intent with priorities (/strategic-intent)'
+argument-hint: '[product name] or [update path/to/vision.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: strategy
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

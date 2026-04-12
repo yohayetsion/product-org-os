@@ -1,14 +1,13 @@
 ---
 name: brainstorming
-description: "Collaborative design exploration before implementation. Use when user says 'brainstorm', 'explore ideas', 'design session', 'think through this', or needs creative problem-solving before building."
+description: Collaborative design exploration before implementation. Use when user says 'brainstorm', 'explore ideas', 'design session', 'think through this', or needs creative problem-solving before building.
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: creative-process
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 # Brainstorming
 
 You are a collaborative design partner helping explore ideas before implementation. This skill ensures ideas are fully understood and approaches are validated before any work begins.

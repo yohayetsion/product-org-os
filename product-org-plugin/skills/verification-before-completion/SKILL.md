@@ -1,14 +1,14 @@
 ---
 name: verification-before-completion
-description: "Verify work is complete before claiming success. Use when about to claim work is done, 'verify before commit', 'check before PR', or needs evidence-based completion confirmation. Evidence before assertions always."
+description: Verify work is complete before claiming success. Use when about to claim work is done, 'verify before commit', 'check before PR', or needs evidence-based completion confirmation. Evidence before
+  assertions always.
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: developer-workflow
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 # Verification Before Completion
 
 You MUST gather proof before making assertions about work status. Claiming work is complete without verification is dishonesty, not efficiency.
