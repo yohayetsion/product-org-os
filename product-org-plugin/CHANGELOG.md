@@ -5,6 +5,34 @@ All notable changes to Product Org OS will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.0.0] - 2026-04-12
+
+v4.0 restructures every agent as a self-describing skill under the Agent Skills Specification standard. Every agent now declares what skills it uses, what knowledge it reads, and when — with mandatory enforcement sections that ground output in authoritative sources. Install command unchanged; no breaking changes to invocation syntax.
+
+### Added
+- **Structured Agent Metadata** — every agent declares `core_skills`, `supporting_skills`, `mandatory_skill_invocations`, `conditional_knowledge_packs`, `spawns_subagents`, `parallel_patterns`, `raci`, `key_deliverables`, `v2v_phases`, `anti_patterns`, `guarded_principle`, and `collaboration_map` under the standard `metadata:` extension slot
+- **Three-Tier Knowledge Pack Enforcement** — always-loaded (Tier 1), conditional with trigger keywords (Tier 2), and on-demand reference (Tier 3)
+- **MANDATORY FIRST ACTIONS** — every agent includes blocking reads and skill invocations before substantive work
+- **Self-Check Before Output** — every agent verifies context loading, mandatory skill invocations, and response format before returning results
+- **Mandatory Skill Invocations** — task-type triggers with escape valves (e.g., "Any PRD authoring -> MUST invoke `/prd`")
+- **Rich Body Prose Tables** — Core Skills and Supporting Skills tables with meaningful trigger descriptions
+- **Cross-Repo Skill Mirrors** — 20 Extension Teams skills + 28 knowledge packs mirrored for standalone distribution
+- **Skill Ownership** — every task-capability skill declares `metadata.owner` and `metadata.primary_consumers`
+- **Adversarial Review** — fifth delegation pattern for high-stakes stress-testing
+- **Agent Metadata Schema Rule** — `agent-metadata-schema.md` defines the canonical v4 schema
+
+### Changed
+- **PRINCIPLES.md Consolidation** — Vision to Value methodology merged from `rules/v2v-flow.md` into single PRINCIPLES.md (265 -> 309 lines)
+- **Agent Count** — 13 -> 12 (UX Lead retired; Design Extension Team provides full coverage)
+- 109 agents enriched with v4 metadata, 114 agents received v4 body sections, 102 agents received rich trigger descriptions, 107 agents had structured data extracted into metadata, 82+ skills received ownership metadata
+
+### Removed
+- **UX Lead agent** — redundant with Design Extension Team
+- **`rules/v2v-flow.md`** — content merged into PRINCIPLES.md
+
+### Migration
+Deprecated frontmatter fields (`supporting-skills:`, `knowledge-packs:`, `primary-skills:`, `validator-skills:`, `compatibility`, `context`) have been migrated to `metadata:`. No action required — the migration is automatic.
+
 ## [3.2.1] - 2026-04-10
 
 ### Fixed
