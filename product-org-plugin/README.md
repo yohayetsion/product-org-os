@@ -4,7 +4,7 @@
 
 > Intent → Decisions → Commitments → Execution → Outcomes → Learning
 
-13 agents • 133 skills • 2 gateways • 10 knowledge packs • Typed skill relationships • Automatic context tracking • MCP integrations
+12 agents • 130+ skills • 20 mirror skills • 28 knowledge packs • Structured metadata • Enforcement-first runtime • MCP integrations
 
 [**View the Interactive Presentation →**](https://yohayetsion.github.io/product-org-os)
 
@@ -101,14 +101,14 @@ Combine agents and skills naturally.
 
 ## What's Included
 
-### 13 Role-Based Agents
-CPO, VP Product, Director PM, Director PMM, Product Manager, PMM, Product Mentor, BizOps, BizDev, Competitive Intelligence, Product Operations, Value Realization, UX Lead
+### 12 Role-Based Agents
+CPO, VP Product, Director PM, Director PMM, Product Manager, PMM, Product Mentor, BizOps, BizDev, Competitive Intelligence, Product Operations, Value Realization
 
 ### 2 Gateways
 Product and Product Leadership Team — route to relevant agents automatically
 
-### 133 Skills
-PRDs, roadmaps, business cases, GTM strategies, pricing models, launch plans, QBR decks, competitive analyses, decision records, ROI tracking, plus 31 strategy frameworks including Porter's Five Forces, Blue Ocean, SWOT, PESTLE, Business Model Canvas, Lean Canvas, Shape Up, Wardley Maps, Seven Powers, Kano Analysis, OKR Writer, and more. Plus CRO skills, marketing psychology, programmatic SEO, email sequences, and GEO/LLM SEO.
+### 130+ Skills
+PRDs, roadmaps, business cases, GTM strategies, pricing models, launch plans, QBR decks, competitive analyses, decision records, ROI tracking, plus 31 strategy frameworks including Porter's Five Forces, Blue Ocean, SWOT, PESTLE, Business Model Canvas, Lean Canvas, Shape Up, Wardley Maps, Seven Powers, Kano Analysis, OKR Writer, and more. Plus CRO skills, marketing psychology, programmatic SEO, email sequences, and GEO/LLM SEO. Includes 20 mirror skills from Extension Teams for standalone coverage.
 
 ### 10 Knowledge Packs
 Prioritization, Pricing, Discovery, Metrics, Competitive, GTM, Stakeholder Management, User Research, Financial Modeling, GEO Playbook
@@ -146,47 +146,30 @@ Six phases from strategic intent to learning loop, with skills mapped to each ph
 
 ---
 
-## What's New in v3.2
+## What's New in v4.0
 
-### 30 New Skills (103 → 133)
+**Agents that know their own job.** v4.0 restructures every agent as a self-describing skill under the Agent Skills Specification standard. Every agent declares what skills it uses, what knowledge it reads, and when — with mandatory enforcement that grounds every response in authoritative sources.
 
-The biggest skill expansion since launch, adding strategy frameworks, CRO optimization, marketing psychology, and GEO.
+- Every agent declares core and supporting skills with structured `metadata:`
+- Three-tier knowledge pack enforcement: always-loaded, conditional, on-demand
+- MANDATORY FIRST ACTIONS + Self-Check enforcement sections on all agents
+- Mandatory skill invocations with task-type triggers and escape valves
+- Vision to Value methodology consolidated into single PRINCIPLES.md
+- UX Lead agent retired (Design Extension Team provides full coverage)
+- Cross-repo skill mirrors for standalone distribution
+- 100% metadata coverage across all 12 agents
 
-### 10 New Strategy Frameworks
-Shape Up, Wardley Maps, Seven Powers, AARRR/Pirate Metrics, HEART Metrics, OKR Writer, Kano Analysis, Design Sprint, DACI, Pre-mortem — each with full source attribution.
+[**What's New in v4.0 →**](../whats-new-v4.html)
 
-### GEO: AI Search Visibility
-New `/llm-seo` skill for Generative Engine Optimization — optimize brand presence across ChatGPT, Claude, Gemini, and Google AI Overviews. Comes with a dedicated GEO Playbook knowledge pack.
+### Structured Agent Architecture (v4.0)
+Every agent declares what skills it uses, what knowledge it reads, and when — with mandatory enforcement. No more agents winging it from training data.
 
-### New CRO & Marketing Skills
-A/B Test Setup, Analytics Tracking, Competitor Alternatives, Content Strategy, Copywriting, Copy Editing, Email Sequences, Form CRO, Signup Flow CRO, Paywall/Upgrade CRO, Popup CRO, Free Tool Strategy, Launch Strategy, Marketing Psychology, Programmatic SEO, Referral Programs, Social Content, and more.
+- **`metadata:` schema**: core_skills, supporting_skills, mandatory_skill_invocations, knowledge packs, RACI, delegation patterns — all under the Agent Skills Specification standard
+- **Three-tier knowledge enforcement**: always-loaded (Tier 1), conditional (Tier 2), on-demand (Tier 3) — agents consult authoritative sources before producing output
+- **MANDATORY FIRST ACTIONS**: blocking reads and skill invocations before substantive work
+- **Self-check before output**: every response verified against context loading and skill invocation requirements
 
-### 31 Strategy Frameworks (Total)
-The frameworks product leaders reach for daily:
-
-| Skill | Framework | Creator |
-|-------|-----------|---------|
-| `/porter-five-forces` | Five Forces | Michael Porter (HBR, 1979) |
-| `/blue-ocean` | Blue Ocean Strategy | W. Chan Kim & Renée Mauborgne (2005) |
-| `/swot-analysis` | SWOT | Albert Humphrey (Stanford Research Institute, 1960s) |
-| `/business-model-canvas` | Business Model Canvas | Alexander Osterwalder & Yves Pigneur (2010) |
-| `/lean-canvas` | Lean Canvas | Ash Maurya (2012) |
-| `/wardley-map` | Wardley Maps | Simon Wardley (2005) |
-| `/seven-powers` | Seven Powers | Hamilton Helmer (2016) |
-| `/shape-up` | Shape Up | Ryan Singer / Basecamp (2019) |
-| `/kano-analysis` | Kano Model | Noriaki Kano (1984) |
-| `/okr-writer` | OKRs | Andy Grove / John Doerr |
-| `/design-sprint` | Design Sprint | Jake Knapp / Google Ventures (2016) |
-| `/daci` | DACI | Intuit decision framework |
-| `/pre-mortem` | Pre-mortem | Gary Klein (2007) |
-| `/pirate-metrics` | AARRR | Dave McClure (2007) |
-| `/heart-metrics` | HEART | Kerry Rodden / Google (2010) |
-| `/saas-health-check` | SaaS Metrics | David Skok, Jason Lemkin |
-| `/theory-of-constraints` | TOC | Eliyahu Goldratt (1984) |
-| ...and 14 more | | |
-
-### Typed Skill Relationships
-Agents declare `primary-skills`, `supporting-skills`, `validator-skills`, and `knowledge-packs`. They know exactly which tools to use.
+> **Upgrading from v3?** No breaking changes to invocation syntax. Deprecated frontmatter fields (`supporting-skills:`, `knowledge-packs:`, `primary-skills:`, `validator-skills:`) migrated automatically to `metadata:`. Install and go.
 
 ### Automatic Context Tracking
 Decisions, deliverables, ROI, conventions — all tracked automatically across sessions.
@@ -196,13 +179,11 @@ Decisions, deliverables, ROI, conventions — all tracked automatically across s
 - Self-diagnosis + repair when indexes drift
 - See [`agent-guide.md`](./agent-guide.md) for full setup across all platforms
 
-## What's in v3.0
-
 ### MCP Integrations
 Agents auto-detect connected tools (Jira, Slack, Analytics) and use them when available. Graceful fallback to text output.
 
 ### Agent Delegation Patterns
-Four structured collaboration patterns: Consultation, Delegation, Review, and Structured Debate.
+Five structured collaboration patterns: Consultation, Delegation, Review, Structured Debate, and Adversarial Review.
 
 ### Cross-Platform via Agent Skills Standard
 Works in Claude Code, Cursor, Copilot, Gemini CLI, and expanding.
