@@ -4,7 +4,7 @@
 
 > Intent → Decisions → Commitments → Execution → Outcomes → Learning
 
-12 agents • 130+ skills • 20 mirror skills • 28 knowledge packs • Structured metadata • Enforcement-first runtime • MCP integrations
+12 agents • 150+ skills • 38 knowledge packs • Structured metadata • Enforcement-first runtime • MCP integrations
 
 [**View the Interactive Presentation →**](https://yohayetsion.github.io/product-org-os)
 
@@ -108,7 +108,7 @@ CPO, VP Product, Director PM, Director PMM, Product Manager, PMM, Product Mentor
 Product and Product Leadership Team — route to relevant agents automatically
 
 ### 130+ Skills
-PRDs, roadmaps, business cases, GTM strategies, pricing models, launch plans, QBR decks, competitive analyses, decision records, ROI tracking, plus 31 strategy frameworks including Porter's Five Forces, Blue Ocean, SWOT, PESTLE, Business Model Canvas, Lean Canvas, Shape Up, Wardley Maps, Seven Powers, Kano Analysis, OKR Writer, and more. Plus CRO skills, marketing psychology, programmatic SEO, email sequences, and GEO/LLM SEO. Includes 20 mirror skills from Extension Teams for standalone coverage.
+PRDs, roadmaps, business cases, GTM strategies, pricing models, launch plans, QBR decks, competitive analyses, decision records, ROI tracking, plus 31 strategy frameworks including Porter's Five Forces, Blue Ocean, SWOT, PESTLE, Business Model Canvas, Lean Canvas, Shape Up, Wardley Maps, Seven Powers, Kano Analysis, OKR Writer, and more. Plus CRO skills, marketing psychology, programmatic SEO, email sequences, and GEO/LLM SEO. Includes 20 cross-domain specialist skills in legal, HR, design, CS, and architecture.
 
 ### 10 Knowledge Packs
 Prioritization, Pricing, Discovery, Metrics, Competitive, GTM, Stakeholder Management, User Research, Financial Modeling, GEO Playbook
@@ -155,8 +155,8 @@ Six phases from strategic intent to learning loop, with skills mapped to each ph
 - MANDATORY FIRST ACTIONS + Self-Check enforcement sections on all agents
 - Mandatory skill invocations with task-type triggers and escape valves
 - Vision to Value methodology consolidated into single PRINCIPLES.md
-- UX Lead agent retired (Design Extension Team provides full coverage)
-- Cross-repo skill mirrors for standalone distribution
+- UX Lead agent retired (full design coverage via @design-dir)
+- 20 cross-domain specialist skills added (legal, HR, design, CS, architecture)
 - 100% metadata coverage across all 12 agents
 
 [**What's New in v4.0 →**](../whats-new-v4.html)
