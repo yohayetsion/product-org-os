@@ -107,11 +107,11 @@ CPO, VP Product, Director PM, Director PMM, Product Manager, PMM, Product Mentor
 ### 2 Gateways
 Product and Product Leadership Team — route to relevant agents automatically
 
-### 130+ Skills
+### 150+ Skills
 PRDs, roadmaps, business cases, GTM strategies, pricing models, launch plans, QBR decks, competitive analyses, decision records, ROI tracking, plus 31 strategy frameworks including Porter's Five Forces, Blue Ocean, SWOT, PESTLE, Business Model Canvas, Lean Canvas, Shape Up, Wardley Maps, Seven Powers, Kano Analysis, OKR Writer, and more. Plus CRO skills, marketing psychology, programmatic SEO, email sequences, and GEO/LLM SEO. Includes 20 cross-domain specialist skills in legal, HR, design, CS, and architecture.
 
-### 10 Knowledge Packs
-Prioritization, Pricing, Discovery, Metrics, Competitive, GTM, Stakeholder Management, User Research, Financial Modeling, GEO Playbook
+### 38 Knowledge Packs
+10 core packs (Prioritization, Pricing, Discovery, Metrics, Competitive, GTM, Stakeholder Management, User Research, Financial Modeling, GEO Playbook) plus 28 specialist domain packs covering legal frameworks, HR governance, M&A playbooks, architecture patterns, marketing strategy, operations, and more. Agents load the right packs automatically based on task context.
 
 ### Context Layer
 Organizational memory that persists across sessions:
