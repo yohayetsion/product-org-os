@@ -12,12 +12,12 @@
             --primary-dark: #c73e54;
             --secondary: #4ecca3;
             --accent: #0f3460;
-            --bg: #1a1a2e;
+            --bg: #0f0f1a;
             --bg-card: #16213e;
             --bg-elevated: #0f3460;
-            --text: #eaeaea;
-            --text-muted: #a0a0a0;
-            --text-dim: #707070;
+            --text: #ffffff;
+            --text-muted: #c8c8d0;
+            --text-dim: #8a8a9a;
             --border: #2a2a4e;
             --gradient-1: linear-gradient(135deg, #e94560 0%, #c73e54 100%);
             --gradient-2: linear-gradient(135deg, #4ecca3 0%, #38b593 100%);
@@ -151,10 +151,10 @@
 
         /* Stats */
         .stats-bar {
-            background: var(--bg-card);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            padding: 2rem 1.5rem;
+            background: linear-gradient(135deg, rgba(15, 52, 96, 0.6), rgba(22, 33, 62, 0.8));
+            border-top: 1px solid rgba(78, 204, 163, 0.2);
+            border-bottom: 1px solid rgba(78, 204, 163, 0.2);
+            padding: 2.5rem 1.5rem;
         }
 
         .stats-grid {
@@ -185,16 +185,23 @@
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            color: var(--text-muted);
+            color: var(--text);
             font-weight: 600;
             margin-top: 0.25rem;
         }
 
         /* Feature Sections */
         .feature-section {
-            padding: 6rem 1.5rem;
+            padding: 4rem 1.5rem;
             max-width: 1100px;
             margin: 0 auto;
+        }
+
+        .feature-section .feature-inner {
+            background: linear-gradient(135deg, rgba(30, 45, 80, 0.8), rgba(20, 60, 100, 0.4));
+            border: 1px solid rgba(78, 204, 163, 0.15);
+            border-radius: 20px;
+            padding: 3rem;
         }
 
         .feature-inner {
@@ -228,6 +235,7 @@
             align-items: center;
             position: relative;
             overflow: hidden;
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.08), rgba(78, 204, 163, 0.08));
         }
 
         .feature-icon-box::before {
@@ -261,6 +269,7 @@
             font-weight: 800;
             margin-bottom: 1rem;
             line-height: 1.15;
+            color: #ffffff;
         }
 
         .feature-content h2 .highlight {
@@ -272,7 +281,7 @@
 
         .feature-content .lead {
             font-size: 1.05rem;
-            color: var(--text-muted);
+            color: #e0e0e8;
             margin-bottom: 1.5rem;
             line-height: 1.7;
         }
@@ -290,6 +299,7 @@
             gap: 0.75rem;
             font-size: 0.95rem;
             line-height: 1.5;
+            color: #d8d8e0;
         }
 
         .bullet {
@@ -668,52 +678,39 @@
 
     <!-- Before / After Stats Bar -->
     <div class="stats-bar">
-        <div style="max-width: 900px; margin: 0 auto;">
-            <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; align-items: center;">
-                <!-- v3 Column -->
-                <div style="text-align: center;">
-                    <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); font-weight: 600; margin-bottom: 1rem;">v3.2</div>
-                    <div class="stats-grid" style="flex-direction: column; gap: 0.5rem;">
-                        <div class="stat-item reveal" style="padding: 0.4rem 0;">
-                            <div class="stat-value" style="font-size: 1.5rem; opacity: 0.5;">13</div>
-                            <div class="stat-label">Agents</div>
-                        </div>
-                        <div class="stat-item reveal reveal-delay-1" style="padding: 0.4rem 0;">
-                            <div class="stat-value" style="font-size: 1.5rem; opacity: 0.5;">133</div>
-                            <div class="stat-label">Skills</div>
-                        </div>
-                        <div class="stat-item reveal reveal-delay-2" style="padding: 0.4rem 0;">
-                            <div class="stat-value" style="font-size: 1.5rem; opacity: 0.5;">10</div>
-                            <div class="stat-label">Knowledge Packs</div>
-                        </div>
-                        <div class="stat-item reveal reveal-delay-3" style="padding: 0.4rem 0;">
-                            <div class="stat-value" style="font-size: 1.5rem; opacity: 0.5;">3&ndash;5</div>
-                            <div class="stat-label">Skills / Agent</div>
-                        </div>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <!-- Row of 4 comparison blocks -->
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; text-align: center;">
+                <div class="reveal">
+                    <div class="stat-label" style="margin-bottom: 0.75rem;">Agents</div>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                        <span style="font-size: 1.3rem; font-weight: 700; color: var(--text-dim);">13</span>
+                        <span style="color: var(--secondary); font-size: 1rem;">&rarr;</span>
+                        <span class="stat-value" style="font-size: 1.3rem;">12</span>
                     </div>
                 </div>
-                <!-- Arrow -->
-                <div style="font-size: 2.5rem; color: var(--secondary); align-self: center; padding-top: 1.5rem;">&rarr;</div>
-                <!-- v4 Column -->
-                <div style="text-align: center;">
-                    <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--secondary); font-weight: 600; margin-bottom: 1rem;">v4.0</div>
-                    <div class="stats-grid" style="flex-direction: column; gap: 0.5rem;">
-                        <div class="stat-item reveal" style="padding: 0.4rem 0;">
-                            <div class="stat-value" style="font-size: 1.5rem;">12</div>
-                            <div class="stat-label">Agents</div>
-                        </div>
-                        <div class="stat-item reveal reveal-delay-1" style="padding: 0.4rem 0;">
-                            <div class="stat-value" style="font-size: 1.5rem;">150+</div>
-                            <div class="stat-label">Skills</div>
-                        </div>
-                        <div class="stat-item reveal reveal-delay-2" style="padding: 0.4rem 0;">
-                            <div class="stat-value" style="font-size: 1.5rem;">38</div>
-                            <div class="stat-label">Knowledge Packs</div>
-                        </div>
-                        <div class="stat-item reveal reveal-delay-3" style="padding: 0.4rem 0;">
-                            <div class="stat-value" style="font-size: 1.5rem;">40+</div>
-                            <div class="stat-label">Skills / Agent</div>
-                        </div>
+                <div class="reveal reveal-delay-1">
+                    <div class="stat-label" style="margin-bottom: 0.75rem;">Skills</div>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                        <span style="font-size: 1.3rem; font-weight: 700; color: var(--text-dim);">133</span>
+                        <span style="color: var(--secondary); font-size: 1rem;">&rarr;</span>
+                        <span class="stat-value" style="font-size: 1.3rem;">150+</span>
+                    </div>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <div class="stat-label" style="margin-bottom: 0.75rem;">Knowledge Packs</div>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                        <span style="font-size: 1.3rem; font-weight: 700; color: var(--text-dim);">10</span>
+                        <span style="color: var(--secondary); font-size: 1rem;">&rarr;</span>
+                        <span class="stat-value" style="font-size: 1.3rem;">38</span>
+                    </div>
+                </div>
+                <div class="reveal reveal-delay-3">
+                    <div class="stat-label" style="margin-bottom: 0.75rem;">Skills / Agent</div>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                        <span style="font-size: 1.3rem; font-weight: 700; color: var(--text-dim);">3&ndash;5</span>
+                        <span style="color: var(--secondary); font-size: 1rem;">&rarr;</span>
+                        <span class="stat-value" style="font-size: 1.3rem;">40+</span>
                     </div>
                 </div>
             </div>
@@ -738,10 +735,10 @@
                     maps &mdash; all in structured metadata that tools can read.
                 </p>
                 <ul class="feature-list">
-                    <li><span class="bullet bullet-primary">&#x2713;</span> Every agent lists its core skills, supporting skills, and RACI in metadata</li>
-                    <li><span class="bullet bullet-secondary">&#x2713;</span> Every skill declares its owner and which agents consume it</li>
-                    <li><span class="bullet bullet-primary">&#x2713;</span> One PRINCIPLES.md per subsystem, inherited by all its agents</li>
-                    <li><span class="bullet bullet-secondary">&#x2713;</span> Agent Skills Specification compliant &mdash; works across tools</li>
+                    <li><span class="bullet bullet-primary">&#x2713;</span><span>Every agent lists its core skills, supporting skills, and RACI in metadata</span></li>
+                    <li><span class="bullet bullet-secondary">&#x2713;</span><span>Every skill declares its owner and which agents consume it</span></li>
+                    <li><span class="bullet bullet-primary">&#x2713;</span><span>One PRINCIPLES.md per subsystem, inherited by all its agents</span></li>
+                    <li><span class="bullet bullet-secondary">&#x2713;</span><span>Agent Skills Specification compliant — works across tools</span></li>
                 </ul>
                 <span class="feature-tag">v4.0 Architecture</span>
             </div>
@@ -767,10 +764,10 @@
                     "reference as needed" pattern that LLMs regularly ignored.
                 </p>
                 <ul class="feature-list">
-                    <li><span class="bullet bullet-primary">&#x2713;</span> <strong>Tier 1</strong> &mdash; Always loaded. PRINCIPLES.md + preload packs read before every response</li>
-                    <li><span class="bullet bullet-secondary">&#x2713;</span> <strong>Tier 2</strong> &mdash; Conditional. Keywords like "M&amp;A" trigger blocking reads automatically</li>
-                    <li><span class="bullet bullet-primary">&#x2713;</span> <strong>Tier 3</strong> &mdash; On-demand. 38 packs available when the agent needs domain depth</li>
-                    <li><span class="bullet bullet-secondary">&#x2713;</span> <strong>Self-Check</strong> &mdash; Every response verified before output. Non-compliant = invalid</li>
+                    <li><span class="bullet bullet-primary">&#x2713;</span><span><strong>Tier 1</strong> — Always loaded. PRINCIPLES.md + preload packs read before every response</span></li>
+                    <li><span class="bullet bullet-secondary">&#x2713;</span><span><strong>Tier 2</strong> — Conditional. Keywords like "M&amp;A" trigger blocking reads automatically</span></li>
+                    <li><span class="bullet bullet-primary">&#x2713;</span><span><strong>Tier 3</strong> — On-demand. 38 packs available when the agent needs domain depth</span></li>
+                    <li><span class="bullet bullet-secondary">&#x2713;</span><span><strong>Self-Check</strong> — Every response verified before output. Non-compliant = invalid</span></li>
                 </ul>
                 <span class="feature-tag">Enforcement-First</span>
             </div>
@@ -797,11 +794,11 @@
                     &mdash; not generic labels.
                 </p>
                 <ul class="feature-list">
-                    <li><span class="bullet bullet-primary">&#x2713;</span> <strong>150+ skills</strong> &mdash; up from 133 in v3. Each with trigger descriptions, not generic labels</li>
-                    <li><span class="bullet bullet-secondary">&#x2713;</span> <strong>38 knowledge packs</strong> &mdash; up from 10 in v3. Legal, HR, architecture, marketing, finance, ops</li>
-                    <li><span class="bullet bullet-primary">&#x2713;</span> <strong>40+ skills per agent</strong> &mdash; up from 3&ndash;5 in v3. Every agent has a full declared toolkit</li>
-                    <li><span class="bullet bullet-secondary">&#x2713;</span> <strong>20 cross-domain skills</strong> &mdash; risk analysis, contract review, compliance, AI audit, design briefs</li>
-                    <li><span class="bullet bullet-primary">&#x2713;</span> <strong>Mandatory invocations</strong> &mdash; specific task types that MUST trigger a skill before output</li>
+                    <li><span class="bullet bullet-primary">&#x2713;</span><span><strong>150+ skills</strong> — up from 133 in v3. Each with trigger descriptions, not generic labels</span></li>
+                    <li><span class="bullet bullet-secondary">&#x2713;</span><span><strong>38 knowledge packs</strong> — up from 10 in v3. Legal, HR, architecture, marketing, finance, ops</span></li>
+                    <li><span class="bullet bullet-primary">&#x2713;</span><span><strong>40+ skills per agent</strong> — up from 3–5 in v3. Every agent has a full declared toolkit</span></li>
+                    <li><span class="bullet bullet-secondary">&#x2713;</span><span><strong>20 cross-domain skills</strong> — risk analysis, contract review, compliance, AI audit, design briefs</span></li>
+                    <li><span class="bullet bullet-primary">&#x2713;</span><span><strong>Mandatory invocations</strong> — specific task types that MUST trigger a skill before output</span></li>
                 </ul>
                 <span class="feature-tag">10x More Depth Per Agent</span>
             </div>
