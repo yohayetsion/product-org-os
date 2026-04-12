@@ -1,16 +1,15 @@
 ---
 name: porter-five-forces
-description: "Analyze industry structure and competitive dynamics using Porter's Five Forces framework. Activate when: \"Porter\", \"five forces\", \"industry analysis\", \"competitive forces\", \"industry attractiveness\", \"barriers to entry\", \"supplier power\", \"buyer power\" Do NOT activate for: competitive landscape (/competitive-landscape), competitive analysis (/competitive-analysis)"
-argument-hint: "[industry or market] or [update path/to/porter-five-forces.md]"
+description: 'Analyze industry structure and competitive dynamics using Porter''s Five Forces framework. Activate when: "Porter", "five forces", "industry analysis", "competitive forces", "industry attractiveness",
+  "barriers to entry", "supplier power", "buyer power" Do NOT activate for: competitive landscape (/competitive-landscape), competitive analysis (/competitive-analysis)'
+argument-hint: '[industry or market] or [update path/to/porter-five-forces.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 1.0.0
   category: strategy
-compatibility: Requires Product Org OS v3+ context layer and rules
-context: fork
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

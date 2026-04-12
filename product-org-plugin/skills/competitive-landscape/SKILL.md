@@ -1,16 +1,15 @@
 ---
 name: competitive-landscape
-description: "Create broad competitive landscape mapping across an entire market or product area. Activate when: \"competitive landscape\", \"market map\", \"who are our competitors\", broad competitive understanding, competitive overview Do NOT activate for: focused head-to-head competitor comparison (/competitive-analysis), market sizing or dynamics (/market-analysis), positioning decisions (/positioning-statement)"
-argument-hint: "[market or product area] or [update path/to/competitive.md]"
+description: 'Create broad competitive landscape mapping across an entire market or product area. Activate when: "competitive landscape", "market map", "who are our competitors", broad competitive understanding,
+  competitive overview Do NOT activate for: focused head-to-head competitor comparison (/competitive-analysis), market sizing or dynamics (/market-analysis), positioning decisions (/positioning-statement)'
+argument-hint: '[market or product area] or [update path/to/competitive.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: market-analysis
-compatibility: Requires Product Org OS v3+ context layer and rules
-context: fork
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

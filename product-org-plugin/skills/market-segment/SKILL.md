@@ -1,15 +1,15 @@
 ---
 name: market-segment
-description: "Define a target market segment with buyer personas, needs, and characteristics. Activate when: \"define our segment\", \"target audience\", \"ideal customer profile\", ICP, segment definition, buyer persona Do NOT activate for: full market analysis with sizing (/market-analysis), user research and usability personas (@ux-lead), positioning for a segment (/positioning-statement)"
-argument-hint: "[segment name] or [update path/to/segment.md]"
+description: 'Define a target market segment with buyer personas, needs, and characteristics. Activate when: "define our segment", "target audience", "ideal customer profile", ICP, segment definition, buyer
+  persona Do NOT activate for: full market analysis with sizing (/market-analysis), user research and usability personas (@user-researcher), positioning for a segment (/positioning-statement)'
+argument-hint: '[segment name] or [update path/to/segment.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: market-analysis
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

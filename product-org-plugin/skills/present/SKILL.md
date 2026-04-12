@@ -1,15 +1,15 @@
 ---
 name: present
-description: "Convert an existing deliverable document to an HTML slide presentation. Activate when: \"make a presentation\", \"create slides\", \"convert to slides\", document as presentation, present this Do NOT activate for: creating new content or documents (use domain skills), QBR deck creation (/qbr-deck), strategy communication (/strategy-communication)"
-argument-hint: "[document-path]"
+description: 'Convert an existing deliverable document to an HTML slide presentation. Activate when: "make a presentation", "create slides", "convert to slides", document as presentation, present this Do
+  NOT activate for: creating new content or documents (use domain skills), QBR deck creation (/qbr-deck), strategy communication (/strategy-communication)'
+argument-hint: '[document-path]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 5.0.0
   category: utility
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 Convert a markdown deliverable into a **self-contained, brand-adaptive HTML presentation** with inline commenting.
 
 ## Vision to Value Phase

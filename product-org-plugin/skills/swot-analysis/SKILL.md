@@ -1,15 +1,15 @@
 ---
 name: swot-analysis
-description: "Conduct a SWOT analysis with TOWS strategy matrix to assess internal strengths/weaknesses and external opportunities/threats. Activate when: \"SWOT\", \"strengths weaknesses\", \"opportunities threats\", \"TOWS\", \"internal external analysis\", \"strategic assessment\" Do NOT activate for: competitive landscape (/competitive-landscape), market analysis (/market-analysis)"
-argument-hint: "[product, business, or initiative] or [update path/to/swot-analysis.md]"
+description: 'Conduct a SWOT analysis with TOWS strategy matrix to assess internal strengths/weaknesses and external opportunities/threats. Activate when: "SWOT", "strengths weaknesses", "opportunities
+  threats", "TOWS", "internal external analysis", "strategic assessment" Do NOT activate for: competitive landscape (/competitive-landscape), market analysis (/market-analysis)'
+argument-hint: '[product, business, or initiative] or [update path/to/swot-analysis.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 1.0.0
   category: strategy
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

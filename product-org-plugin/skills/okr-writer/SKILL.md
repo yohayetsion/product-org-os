@@ -1,15 +1,15 @@
 ---
 name: okr-writer
-description: "Write and review OKRs (Objectives and Key Results) with quality checks, anti-pattern detection, and alignment mapping. Activate when: \"OKR\", \"objectives and key results\", \"write OKRs\", \"review OKRs\", \"quarterly objectives\", \"key results\", \"OKR review\", \"goal setting\" Do NOT activate for: north star metric (/north-star-metric), commitment check (/commitment-check), roadmap planning (/product-roadmap)"
-argument-hint: "[team or initiative name] or [update path/to/okrs.md]"
+description: 'Write and review OKRs (Objectives and Key Results) with quality checks, anti-pattern detection, and alignment mapping. Activate when: "OKR", "objectives and key results", "write OKRs", "review
+  OKRs", "quarterly objectives", "key results", "OKR review", "goal setting" Do NOT activate for: north star metric (/north-star-metric), commitment check (/commitment-check), roadmap planning (/product-roadmap)'
+argument-hint: '[team or initiative name] or [update path/to/okrs.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 1.0.0
   category: strategy
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

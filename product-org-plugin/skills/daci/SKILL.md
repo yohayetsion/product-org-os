@@ -1,15 +1,16 @@
 ---
 name: daci
-description: "Create a DACI decision-making framework to clarify decision roles: Driver, Approver, Contributors, and Informed. Prevents decision paralysis by explicitly assigning accountability. Activate when: \"DACI\", \"decision framework\", \"who decides\", \"decision roles\", \"driver approver\", \"RACI\", \"decision accountability\", \"decision rights\", \"decision ownership\", \"who has the call\" Do NOT activate for: decision records (/decision-record), decision quality audits (/decision-quality-audit), escalation rules (/escalation-rule)"
-argument-hint: "[decision or set of decisions to assign roles for] or [update path/to/daci.md]"
+description: 'Create a DACI decision-making framework to clarify decision roles: Driver, Approver, Contributors, and Informed. Prevents decision paralysis by explicitly assigning accountability. Activate
+  when: "DACI", "decision framework", "who decides", "decision roles", "driver approver", "RACI", "decision accountability", "decision rights", "decision ownership", "who has the call" Do NOT activate for:
+  decision records (/decision-record), decision quality audits (/decision-quality-audit), escalation rules (/escalation-rule)'
+argument-hint: '[decision or set of decisions to assign roles for] or [update path/to/daci.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 1.0.0
   category: decision-making
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

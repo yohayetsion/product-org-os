@@ -1,16 +1,16 @@
 ---
 name: product
-description: "Gateway to the Product Organization - routes requests to the relevant agent(s) and executes silently. Activate when: @product, /product, \"ask the product org\", cross-functional product requests, ambiguous product domain questions Do NOT activate for: requests clearly targeting a specific agent (@pm, @vp-product, @pmm-dir, etc.) - route directly to that agent instead"
-argument-hint: "[request or question for the product org]"
+description: 'Gateway to the Product Organization - routes requests to the relevant agent(s) and executes silently. Activate when: @product, /product, "ask the product org", cross-functional product requests,
+  ambiguous product domain questions Do NOT activate for: requests clearly targeting a specific agent (@pm, @vp-product, @pmm-dir, etc.) - route directly to that agent instead'
+argument-hint: '[request or question for the product org]'
 model: opus
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: gateway
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 The Product Gateway is a **distribution list** — a routing mechanism that determines which agents respond to a request. It has NO persona, NO voice, and NO identity. Only named agents speak.
 
 When someone sends a message to `@product`, treat it like posting to the product org's shared channel. Route silently to the right agents.

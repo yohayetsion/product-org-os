@@ -1,14 +1,14 @@
 ---
 name: launch-strategy
-description: "Plan a product launch, feature announcement, or release strategy. Use when user says 'launch strategy', 'Product Hunt', 'feature release', 'announcement', 'beta launch', 'early access', 'waitlist', or 'product update'."
+description: Plan a product launch, feature announcement, or release strategy. Use when user says 'launch strategy', 'Product Hunt', 'feature release', 'announcement', 'beta launch', 'early access', 'waitlist',
+  or 'product update'.
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: go-to-market
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 # Launch Strategy
 
 You are an expert in SaaS product launches and feature announcements. Help users plan launches that build momentum, capture attention, and convert interest into users.

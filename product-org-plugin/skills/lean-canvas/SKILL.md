@@ -1,15 +1,15 @@
 ---
 name: lean-canvas
-description: "Create a one-page Lean Canvas to capture and validate a business model for a new product, feature, or venture. Activate when: \"lean canvas\", \"one-page business model\", \"startup canvas\", \"validate idea\", \"9-box model\", \"business model canvas for startups\" Do NOT activate for: full business cases with ROI (/business-case), full business plans with operations (/business-plan), pricing decisions (/pricing-strategy)"
-argument-hint: "[product or venture name] or [update path/to/lean-canvas.md]"
+description: 'Create a one-page Lean Canvas to capture and validate a business model for a new product, feature, or venture. Activate when: "lean canvas", "one-page business model", "startup canvas", "validate
+  idea", "9-box model", "business model canvas for startups" Do NOT activate for: full business cases with ROI (/business-case), full business plans with operations (/business-plan), pricing decisions (/pricing-strategy)'
+argument-hint: '[product or venture name] or [update path/to/lean-canvas.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 1.0.0
   category: strategy
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

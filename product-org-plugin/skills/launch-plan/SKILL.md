@@ -1,15 +1,15 @@
 ---
 name: launch-plan
-description: "Create a complete product launch plan with timeline, owners, RACI matrix, and cross-functional coordination across marketing, sales, support, and engineering. Use when user says 'launch plan', 'plan the launch', 'release plan', 'launch coordination', 'launch timeline', or 'launch checklist'. Do NOT activate for launch readiness assessment (/launch-readiness), GTM strategy (/gtm-strategy), or campaign execution (/campaign-brief)."
-argument-hint: "[product or feature name] or [update path/to/launch-plan.md]"
+description: 'Create complete product launch plan with timeline, owners, and cross-functional coordination. Activate when: "launch plan", "plan the launch", "release plan", launch coordination, launch timeline,
+  launch checklist Do NOT activate for: launch readiness assessment (/launch-readiness), GTM strategy (/gtm-strategy), campaign execution (/campaign-brief)'
+argument-hint: '[product or feature name] or [update path/to/launch-plan.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: go-to-market
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

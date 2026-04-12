@@ -1,15 +1,15 @@
 ---
 name: portfolio-tradeoff
-description: "Structure portfolio-level tradeoff decisions between competing investments or bets. Activate when: \"prioritize between\", \"portfolio tradeoff\", \"which bet to fund\", competing investment choices, resource allocation tradeoff Do NOT activate for: portfolio status overview (/portfolio-status), individual decision records (/decision-record), strategic bet formulation (/strategic-bet)"
-argument-hint: "[tradeoff description] or [update path/to/tradeoff.md]"
+description: 'Structure portfolio-level tradeoff decisions between competing investments or bets. Activate when: "prioritize between", "portfolio tradeoff", "which bet to fund", competing investment choices,
+  resource allocation tradeoff Do NOT activate for: portfolio status overview (/portfolio-status), individual decision records (/decision-record), strategic bet formulation (/strategic-bet)'
+argument-hint: '[tradeoff description] or [update path/to/tradeoff.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: decisions
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

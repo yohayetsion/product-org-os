@@ -1,15 +1,15 @@
 ---
 name: scale-check
-description: "Assess scalability of a process, system, or initiative at 2x, 10x, and 100x growth. Activate when: \"will this scale\", \"scalability check\", \"what breaks at scale\", growth readiness, scaling bottlenecks Do NOT activate for: organizational maturity assessment (/maturity-check), commitment readiness (/commitment-check), architecture review (@chief-architect)"
-argument-hint: "[process, system, or initiative] or [update path/to/check.md]"
+description: 'Assess scalability of a process, system, or initiative at 2x, 10x, and 100x growth. Activate when: "will this scale", "scalability check", "what breaks at scale", growth readiness, scaling
+  bottlenecks Do NOT activate for: organizational maturity assessment (/maturity-check), commitment readiness (/commitment-check), architecture review (@chief-architect)'
+argument-hint: '[process, system, or initiative] or [update path/to/check.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: validation
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

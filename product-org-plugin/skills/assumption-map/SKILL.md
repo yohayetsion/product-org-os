@@ -1,3 +1,12 @@
+---
+name: assumption-map
+description: "/assumption-map"
+user-invocable: true
+metadata:
+  skill_type: task-capability
+  author: Product Org OS
+---
+
 # /assumption-map
 
 Map and prioritize assumptions underlying a product decision, strategy, or bet.

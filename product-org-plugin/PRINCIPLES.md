@@ -238,6 +238,51 @@ Additional Vision to Value enforcement:
 
 ---
 
+## Vision to Value Flow
+
+The Vision to Value Operating System defines how product work flows from strategic intent to customer outcomes.
+
+**Flow**: Phase 1 → 2 → 3 → 4 → 5 → 6 → (feeds back to Phase 1)
+
+### The Six Phases
+
+| Phase | Name | Purpose | Key Skills | Exit Criteria |
+|-------|------|---------|------------|---------------|
+| **1** | Strategic Foundation | Establish strategic context and market understanding | `/strategic-intent`, `/market-analysis`, `/competitive-landscape`, `/vision-statement`, `/market-segment`, `/assumption-map`, `/opportunity-tree`, `/experiment-design`, `/lean-canvas`, `/business-model-canvas`, `/customer-journey-map`, `/interview-synthesis`, `/pretotype`, `/press-release-faq`, `/ansoff-matrix`, `/pestle-analysis`, `/porter-five-forces`, `/swot-analysis`, `/blue-ocean` | Clear where-to-play and why |
+| **2** | Strategic Decisions | Critical business decisions for commercial viability | `/business-case`, `/pricing-strategy`, `/positioning-statement`, `/decision-record`, `/strategic-bet`, `/four-risks-check`, `/dhm-analysis`, `/growth-model`, `/bcg-matrix`, `/stakeholder-map` | Viability validated, decisions documented |
+| **3** | Strategic Commitments | Convert decisions into executable commitments | `/product-roadmap`, `/gtm-strategy`, `/launch-plan`, `/prd`, `/feature-spec`, `/user-story`, `/commitment-check`, `/prioritize-features` | Organization aligned, resources committed |
+| **4** | Coordinated Execution | Execute plan with cross-functional coordination | `/campaign-brief`, `/sales-enablement`, `/launch-readiness`, `/stakeholder-brief`, `/competitive-battlecard` | Product launched, GTM executing |
+| **5** | Business & Customer Outcomes | Realize promised value and track outcomes | `/onboarding-playbook`, `/value-realization-report`, `/customer-health-scorecard`, `/north-star-metric` | Outcomes measurable, success evaluable |
+| **6** | Learning & Adaptation | Extract learnings, validate assumptions, feed back | `/outcome-review`, `/retrospective`, `/decision-quality-audit`, `/context-save`, `/feedback-capture`, `/compound`, `/product-teardown`, `/bias-check` | Learning loop complete |
+
+### Cross-Phase Skills
+
+`/context-recall`, `/feedback-recall`, `/interaction-recall`, `/portfolio-status`, `/portfolio-tradeoff`, `/handoff`, `/present`, `/qbr-deck`, `/maturity-check`, `/pm-level-check`, `/phase-check`
+
+### Phase Transitions
+
+| Transition | Trigger | CRITICAL |
+|------------|---------|----------|
+| 1→2 | Strategic foundation complete; can articulate target market and vision | |
+| 2→3 | Commercial decisions made; business case approved, pricing defined | **Commercial Filter** — not all pass |
+| 3→4 | Commitments locked; run `/commitment-check` | **Point of No Return** — resources committed |
+| 4→5 | Product launched; customers can access | |
+| 5→6 | Outcomes measurable; sufficient data for evaluation | |
+| 6→1 | Learning cycle complete; insights fed back | |
+
+Before Phase N work, verify Phase N-1 is complete. Track progress in `context/portfolio/active-bets.md`.
+
+### Document Intelligence
+
+Documents evolve across phases. Skills support **Create/Update/Find** modes:
+- Same initiative, later phase → **UPDATE**
+- New initiative → **CREATE**
+- Significant pivot → New document with link to predecessor
+
+> "The Vision to Value flow is not bureaucracy — it's a thinking framework that ensures we do the right things in the right order. Skip phases at your peril."
+
+---
+
 ## Agent Inheritance
 
 **Executive Leaders** (CPO, VP Product):
@@ -259,7 +304,6 @@ Additional Vision to Value enforcement:
 
 ## Cross-Reference
 
-This document formalizes the Vision to Value Operating Principles. For detailed reference:
+This document is the single authoritative source for Vision to Value Operating Principles and the V2V Flow. For detailed reference:
 - **Detailed Principles**: `reference/operating-principles.md`
-- **Vision to Value Flow**: `rules/v2v-flow.md`
 - **Enforcement Rules**: Merged into `rules/context-management.md`

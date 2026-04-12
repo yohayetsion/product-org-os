@@ -1,15 +1,15 @@
 ---
 name: ownership-map
-description: "Map the accountability chain for an initiative across Vision to Value phases. Activate when: \"who owns this\", \"ownership map\", \"accountability chain\", end-to-end ownership, single accountable owner Do NOT activate for: RACI and collaboration validation (/collaboration-check), decision ownership charters (/decision-charter), stakeholder briefs (/stakeholder-brief)"
-argument-hint: "[initiative or deliverable] or [update path/to/map.md]"
+description: 'Map the accountability chain for an initiative across Vision to Value phases. Activate when: "who owns this", "ownership map", "accountability chain", end-to-end ownership, single accountable
+  owner Do NOT activate for: RACI and collaboration validation (/collaboration-check), decision ownership charters (/decision-charter), stakeholder briefs (/stakeholder-brief)'
+argument-hint: '[initiative or deliverable] or [update path/to/map.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: validation
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

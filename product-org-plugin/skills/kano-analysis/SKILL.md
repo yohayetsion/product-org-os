@@ -1,15 +1,16 @@
 ---
 name: kano-analysis
-description: "Conduct a full Kano analysis to classify customer preferences into Must-Be, Performance, Attractive, Indifferent, and Reverse categories. Includes survey design, classification methodology, satisfaction coefficients, and strategic implications. Activate when: \"Kano analysis\", \"Kano model\", \"customer satisfaction model\", \"delighters\", \"must-be features\", \"attractive quality\", \"feature classification\", \"Kano survey\", \"Kano questionnaire\", \"satisfaction coefficients\" Do NOT activate for: feature prioritization (/prioritize-features), user research (/ux-lead agent), customer journey (/customer-journey-map)"
-argument-hint: "[list of features to classify] or [update path/to/kano-analysis.md]"
+description: 'Conduct a full Kano analysis to classify customer preferences into Must-Be, Performance, Attractive, Indifferent, and Reverse categories. Includes survey design, classification methodology,
+  satisfaction coefficients, and strategic implications. Activate when: "Kano analysis", "Kano model", "customer satisfaction model", "delighters", "must-be features", "attractive quality", "feature classification",
+  "Kano survey", "Kano questionnaire", "satisfaction coefficients" Do NOT activate for: feature prioritization (/prioritize-features), user research (/ux-lead agent), customer journey (/customer-journey-map)'
+argument-hint: '[list of features to classify] or [update path/to/kano-analysis.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 1.0.0
   category: product-management
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

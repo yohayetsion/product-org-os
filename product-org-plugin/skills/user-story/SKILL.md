@@ -1,15 +1,15 @@
 ---
 name: user-story
-description: "Write a user story with acceptance criteria in Given/When/Then format. Activate when: \"write a user story\", \"as a user I want\", \"acceptance criteria\", story-level requirements, sprint-ready stories Do NOT activate for: feature-level specification (/feature-spec), full PRD (/prd), roadmap item planning (/roadmap-item)"
-argument-hint: "[story description] or [update path/to/story.md]"
+description: 'Write a user story with acceptance criteria in Given/When/Then format. Activate when: "write a user story", "as a user I want", "acceptance criteria", story-level requirements, sprint-ready
+  stories Do NOT activate for: feature-level specification (/feature-spec), full PRD (/prd), roadmap item planning (/roadmap-item)'
+argument-hint: '[story description] or [update path/to/story.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: requirements
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

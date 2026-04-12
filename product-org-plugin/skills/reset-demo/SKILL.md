@@ -1,19 +1,19 @@
 ---
 name: reset-demo
-description: "Restore demo content for testing, demonstration, or learning purposes. Activate when: \"reset demo\", \"restore examples\", demo data for learning, bring back demo content Do NOT activate for: removing demo content (/clear-demo), plugin setup (/setup), interactive tour (/tour)"
+description: 'Restore demo content for testing, demonstration, or learning purposes. Activate when: "reset demo", "restore examples", demo data for learning, bring back demo content Do NOT activate for:
+  removing demo content (/clear-demo), plugin setup (/setup), interactive tour (/tour)'
 model: haiku
 allowed-tools:
-  - Read
-  - Write
-  - Bash
+- Read
+- Write
+- Bash
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: utility
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 # Reset Demo Content
 
 Restore all demo content to the context layer. Useful for demonstrations, testing, or re-exploring capabilities.

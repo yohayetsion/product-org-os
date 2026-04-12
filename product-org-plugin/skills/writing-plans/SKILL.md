@@ -1,14 +1,14 @@
 ---
 name: writing-plans
-description: "Create comprehensive implementation plans from specs or requirements. Use when user says 'write a plan', 'implementation plan', 'create a plan before coding', or has multi-step tasks needing structured planning."
+description: Create comprehensive implementation plans from specs or requirements. Use when user says 'write a plan', 'implementation plan', 'create a plan before coding', or has multi-step tasks needing
+  structured planning.
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: developer-workflow
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 # Writing Plans
 
 You are an expert at creating detailed, actionable implementation plans. Plans should enable any skilled engineer to execute the work, even without prior codebase knowledge.

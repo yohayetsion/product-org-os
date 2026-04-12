@@ -1,16 +1,15 @@
 ---
 name: pestle-analysis
-description: "Conduct a PESTLE macro-environment analysis across Political, Economic, Social, Technological, Legal, and Environmental dimensions. Activate when: \"PESTLE\", \"PEST\", \"macro environment\", \"political economic social\", \"external factors\", \"environment scan\", \"macro analysis\" Do NOT activate for: market analysis (/market-analysis), competitive landscape (/competitive-landscape)"
-argument-hint: "[market, industry, or geography] or [update path/to/pestle-analysis.md]"
+description: 'Conduct a PESTLE macro-environment analysis across Political, Economic, Social, Technological, Legal, and Environmental dimensions. Activate when: "PESTLE", "PEST", "macro environment", "political
+  economic social", "external factors", "environment scan", "macro analysis" Do NOT activate for: market analysis (/market-analysis), competitive landscape (/competitive-landscape)'
+argument-hint: '[market, industry, or geography] or [update path/to/pestle-analysis.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 1.0.0
   category: strategy
-compatibility: Requires Product Org OS v3+ context layer and rules
-context: fork
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

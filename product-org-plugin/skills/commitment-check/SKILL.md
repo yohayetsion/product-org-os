@@ -1,15 +1,15 @@
 ---
 name: commitment-check
-description: "Validate commitment readiness before the point of no return on resources. Activate when: \"are we ready to commit\", \"commitment check\", \"go/no-go\", before locking resources, Phase 3 gate Do NOT activate for: Vision to Value phase assessment (/phase-check), launch readiness check (/launch-readiness), decision records (/decision-record)"
-argument-hint: "[commitment or initiative name] or [update path/to/check.md]"
+description: 'Validate commitment readiness before the point of no return on resources. Activate when: "are we ready to commit", "commitment check", "go/no-go", before locking resources, Phase 3 gate Do
+  NOT activate for: Vision to Value phase assessment (/phase-check), launch readiness check (/launch-readiness), decision records (/decision-record)'
+argument-hint: '[commitment or initiative name] or [update path/to/check.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: strategy
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

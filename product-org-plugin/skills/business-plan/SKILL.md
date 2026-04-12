@@ -1,16 +1,15 @@
 ---
 name: business-plan
-description: "Create complete business plan covering strategy, operations, financials, and go-to-market. Activate when: \"write a business plan\", \"business model\", \"end-to-end business planning\", comprehensive plan, business model canvas Do NOT activate for: single investment business case (/business-case), GTM-only strategy (/gtm-strategy), pricing decisions (/pricing-strategy)"
-argument-hint: "[product or business area] or [update path/to/business-plan.md]"
+description: 'Create complete business plan covering strategy, operations, financials, and go-to-market. Activate when: "write a business plan", "business model", "end-to-end business planning", comprehensive
+  plan, business model canvas Do NOT activate for: single investment business case (/business-case), GTM-only strategy (/gtm-strategy), pricing decisions (/pricing-strategy)'
+argument-hint: '[product or business area] or [update path/to/business-plan.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: business-planning
-compatibility: Requires Product Org OS v3+ context layer and rules
-context: fork
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

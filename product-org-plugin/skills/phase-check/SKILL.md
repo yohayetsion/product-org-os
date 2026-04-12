@@ -1,15 +1,15 @@
 ---
 name: phase-check
-description: "Assess which Vision to Value phase an initiative is in and identify gaps for progression. Activate when: \"what phase are we in\", \"phase check\", \"Vision to Value progress\", initiative maturity, phase gate, Vision to Value assessment Do NOT activate for: commitment readiness validation (/commitment-check), organizational maturity (/maturity-check), portfolio status (/portfolio-status)"
-argument-hint: "[initiative name]"
+description: 'Assess which Vision to Value phase an initiative is in and identify gaps for progression. Activate when: "what phase are we in", "phase check", "Vision to Value progress", initiative maturity,
+  phase gate, Vision to Value assessment Do NOT activate for: commitment readiness validation (/commitment-check), organizational maturity (/maturity-check), portfolio status (/portfolio-status)'
+argument-hint: '[initiative name]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: assessment
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Gotchas
 
 - Phase transitions require exit criteria from previous phase — don't skip phases without acknowledging it

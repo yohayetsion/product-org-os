@@ -1,15 +1,15 @@
 ---
 name: onboarding-playbook
-description: "Create customer onboarding playbook with milestones, success metrics, and engagement sequences. Activate when: \"onboarding playbook\", \"customer onboarding\", \"first-run experience\", onboarding design, time-to-value, activation Do NOT activate for: value realization tracking (/value-realization-report), customer health scoring (/customer-health-scorecard), launch planning (/launch-plan)"
-argument-hint: "[product or customer segment] or [update path/to/playbook.md]"
+description: 'Create customer onboarding playbook with milestones, success metrics, and engagement sequences. Activate when: "onboarding playbook", "customer onboarding", "first-run experience", onboarding
+  design, time-to-value, activation Do NOT activate for: value realization tracking (/value-realization-report), customer health scoring (/customer-health-scorecard), launch planning (/launch-plan)'
+argument-hint: '[product or customer segment] or [update path/to/playbook.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: customer-success
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

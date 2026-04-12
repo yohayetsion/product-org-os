@@ -1,15 +1,15 @@
 ---
 name: subject-line
-description: "Context-driven email subject line generator optimized for cold outreach and product communication. Activate when: \"subject line\", \"email subject\", \"cold email subject\", \"subject line ideas\", \"email open rate\", \"subject line optimization\" Do NOT activate for: email sequences (/email-sequence), copywriting (/copywriting), campaign briefs (/campaign-brief)"
-argument-hint: "[recipient/company + purpose] or [update path/to/subject-lines.md]"
+description: 'Context-driven email subject line generator optimized for cold outreach and product communication. Activate when: "subject line", "email subject", "cold email subject", "subject line ideas",
+  "email open rate", "subject line optimization" Do NOT activate for: email sequences (/email-sequence), copywriting (/copywriting), campaign briefs (/campaign-brief)'
+argument-hint: '[recipient/company + purpose] or [update path/to/subject-lines.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 1.0.0
   category: marketing
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

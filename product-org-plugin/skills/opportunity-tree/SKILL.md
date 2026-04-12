@@ -1,3 +1,12 @@
+---
+name: opportunity-tree
+description: "/opportunity-tree"
+user-invocable: true
+metadata:
+  skill_type: task-capability
+  author: Product Org OS
+---
+
 # /opportunity-tree
 
 Build an Opportunity Solution Tree to map the path from desired outcome to testable solutions.

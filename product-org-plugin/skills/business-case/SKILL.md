@@ -1,16 +1,15 @@
 ---
 name: business-case
-description: "Create a comprehensive business case with ROI analysis, financial projections, and investment justification. Use when user says 'build a business case', 'justify this investment', 'ROI analysis', 'cost-benefit', or 'investment justification'. Do NOT activate for full business plan with operations (/business-plan), pricing decisions (/pricing-strategy), or strategic bet formulation (/strategic-bet)."
-argument-hint: "[initiative or investment name] or [update path/to/business-case.md]"
+description: 'Create comprehensive business case with ROI analysis and investment justification. Activate when: "build a business case", "justify this investment", "ROI analysis", investment justification,
+  cost-benefit Do NOT activate for: full business plan with operations (/business-plan), pricing decisions (/pricing-strategy), strategic bet formulation (/strategic-bet)'
+argument-hint: '[initiative or investment name] or [update path/to/business-case.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: business-planning
-compatibility: Requires Product Org OS v3+ context layer and rules
-context: fork
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

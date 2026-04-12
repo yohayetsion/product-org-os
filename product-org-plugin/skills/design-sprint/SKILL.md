@@ -1,15 +1,16 @@
 ---
 name: design-sprint
-description: "Plan and facilitate a Google Ventures-style 5-day Design Sprint to answer critical business questions through design, prototyping, and customer testing. Activate when: \"design sprint\", \"GV sprint\", \"5-day sprint\", \"sprint week\", \"Google Ventures sprint\", \"rapid prototyping sprint\", \"Jake Knapp\", \"sprint plan\", \"design sprint planning\" Do NOT activate for: Scrum sprint planning, agile sprint (/pmtk-scrum-backlog), brainstorming (/brainstorming), experiment design (/experiment-design)"
-argument-hint: "[challenge or problem to sprint on] or [update path/to/design-sprint.md]"
+description: 'Plan and facilitate a Google Ventures-style 5-day Design Sprint to answer critical business questions through design, prototyping, and customer testing. Activate when: "design sprint", "GV
+  sprint", "5-day sprint", "sprint week", "Google Ventures sprint", "rapid prototyping sprint", "Jake Knapp", "sprint plan", "design sprint planning" Do NOT activate for: Scrum sprint planning, agile sprint
+  (/pmtk-scrum-backlog), brainstorming (/brainstorming), experiment design (/experiment-design)'
+argument-hint: '[challenge or problem to sprint on] or [update path/to/design-sprint.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 1.0.0
   category: product-management
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

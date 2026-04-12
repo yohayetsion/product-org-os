@@ -1,15 +1,16 @@
 ---
 name: blue-ocean
-description: "Apply Blue Ocean Strategy to identify uncontested market space using the Strategy Canvas, ERRC Grid, and Six Paths Framework. Activate when: \"blue ocean\", \"strategy canvas\", \"ERRC\", \"eliminate reduce raise create\", \"uncontested market\", \"value innovation\", \"red ocean blue ocean\" Do NOT activate for: competitive landscape (/competitive-landscape), market segment (/market-segment), positioning statement (/positioning-statement)"
-argument-hint: "[product or market] or [update path/to/blue-ocean.md]"
+description: 'Apply Blue Ocean Strategy to identify uncontested market space using the Strategy Canvas, ERRC Grid, and Six Paths Framework. Activate when: "blue ocean", "strategy canvas", "ERRC", "eliminate
+  reduce raise create", "uncontested market", "value innovation", "red ocean blue ocean" Do NOT activate for: competitive landscape (/competitive-landscape), market segment (/market-segment), positioning
+  statement (/positioning-statement)'
+argument-hint: '[product or market] or [update path/to/blue-ocean.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 1.0.0
   category: strategy
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

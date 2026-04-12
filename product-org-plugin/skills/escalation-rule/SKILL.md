@@ -1,15 +1,15 @@
 ---
 name: escalation-rule
-description: "Define escalation rules and triggers for a specific decision area. Activate when: \"when to escalate\", \"escalation path\", \"create escalation rule\", escalation triggers, escalation criteria, when to involve leadership Do NOT activate for: documenting individual decisions (/decision-record), decision ownership charters (/decision-charter), decision audits (/decision-quality-audit)"
-argument-hint: "[decision area] or [update path/to/rule.md]"
+description: 'Define escalation rules and triggers for a specific decision area. Activate when: "when to escalate", "escalation path", "create escalation rule", escalation triggers, escalation criteria,
+  when to involve leadership Do NOT activate for: documenting individual decisions (/decision-record), decision ownership charters (/decision-charter), decision audits (/decision-quality-audit)'
+argument-hint: '[decision area] or [update path/to/rule.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: decisions
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

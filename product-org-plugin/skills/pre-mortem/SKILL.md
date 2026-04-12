@@ -1,15 +1,16 @@
 ---
 name: pre-mortem
-description: "Facilitate a Pre-Mortem analysis using Gary Klein's prospective hindsight technique. Imagine the project has FAILED, then work backwards to identify failure modes and create mitigation plans. Activate when: \"pre-mortem\", \"premortem\", \"pre mortem\", \"imagine failure\", \"prospective hindsight\", \"what could go wrong\", \"risk anticipation\", \"failure mode\", \"failure analysis\", \"project risks\" Do NOT activate for: four risks check (/four-risks-check), retrospective (/retrospective), risk management (general), assumption mapping (/assumption-map)"
-argument-hint: "[project, plan, or initiative to pre-mortem] or [update path/to/pre-mortem.md]"
+description: 'Facilitate a Pre-Mortem analysis using Gary Klein''s prospective hindsight technique. Imagine the project has FAILED, then work backwards to identify failure modes and create mitigation plans.
+  Activate when: "pre-mortem", "premortem", "pre mortem", "imagine failure", "prospective hindsight", "what could go wrong", "risk anticipation", "failure mode", "failure analysis", "project risks" Do NOT
+  activate for: four risks check (/four-risks-check), retrospective (/retrospective), risk management (general), assumption mapping (/assumption-map)'
+argument-hint: '[project, plan, or initiative to pre-mortem] or [update path/to/pre-mortem.md]'
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 1.0.0
   category: risk-management
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 ## Document Intelligence
 
 This skill supports three modes: **Create**, **Update**, and **Find**.

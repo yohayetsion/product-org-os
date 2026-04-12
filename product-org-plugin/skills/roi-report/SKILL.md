@@ -1,18 +1,18 @@
 ---
 name: roi-report
-description: "View ROI dashboard showing cumulative time saved across sessions. Activate when: \"show ROI\", \"time saved\", \"productivity report\", cumulative value, plugin ROI, savings dashboard Do NOT activate for: portfolio status overview (/portfolio-status), business case ROI analysis (/business-case), value realization for customers (/value-realization-report)"
+description: 'View ROI dashboard showing cumulative time saved across sessions. Activate when: "show ROI", "time saved", "productivity report", cumulative value, plugin ROI, savings dashboard Do NOT activate
+  for: portfolio status overview (/portfolio-status), business case ROI analysis (/business-case), value realization for customers (/value-realization-report)'
 model: haiku
 allowed-tools:
-  - Read
-  - Glob
+- Read
+- Glob
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: context-layer
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 # ROI Report
 
 Generate a report showing time savings from using the Product Org OS.

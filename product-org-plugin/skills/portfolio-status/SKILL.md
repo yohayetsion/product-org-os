@@ -1,15 +1,15 @@
 ---
 name: portfolio-status
-description: "View current state of all active strategic bets and portfolio health. Activate when: \"show portfolio\", \"bet status\", \"active bets\", portfolio overview, portfolio dashboard Do NOT activate for: portfolio tradeoff analysis between bets (/portfolio-tradeoff), ROI report (/roi-report), context recall of specific decisions (/context-recall)"
-argument-hint:
+description: 'View current state of all active strategic bets and portfolio health. Activate when: "show portfolio", "bet status", "active bets", portfolio overview, portfolio dashboard Do NOT activate
+  for: portfolio tradeoff analysis between bets (/portfolio-tradeoff), ROI report (/roi-report), context recall of specific decisions (/context-recall)'
+argument-hint: null
 user-invocable: true
 metadata:
   author: Product Org OS
   version: 3.0.0
   category: context-layer
-compatibility: Requires Product Org OS v3+ context layer and rules
+  skill_type: task-capability
 ---
-
 View the **current state** of the strategic portfolio — all active bets, their health, and upcoming checkpoints.
 
 ## Vision to Value Phase
