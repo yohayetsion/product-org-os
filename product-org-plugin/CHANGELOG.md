@@ -16,18 +16,18 @@ v4.0 restructures every agent as a self-describing skill under the Agent Skills 
 - **Self-Check Before Output** — every agent verifies context loading, mandatory skill invocations, and response format before returning results
 - **Mandatory Skill Invocations** — task-type triggers with escape valves (e.g., "Any PRD authoring -> MUST invoke `/prd`")
 - **Rich Body Prose Tables** — Core Skills and Supporting Skills tables with meaningful trigger descriptions
-- **Cross-Repo Skill Mirrors** — 20 Extension Teams skills + 28 knowledge packs mirrored for standalone distribution
+- **Cross-Domain Specialist Skills** — 20 new skills across legal, HR, design, CS, and architecture domains + 28 specialist knowledge packs
 - **Skill Ownership** — every task-capability skill declares `metadata.owner` and `metadata.primary_consumers`
 - **Adversarial Review** — fifth delegation pattern for high-stakes stress-testing
 - **Agent Metadata Schema Rule** — `agent-metadata-schema.md` defines the canonical v4 schema
 
 ### Changed
 - **PRINCIPLES.md Consolidation** — Vision to Value methodology merged from `rules/v2v-flow.md` into single PRINCIPLES.md (265 -> 309 lines)
-- **Agent Count** — 13 -> 12 (UX Lead retired; Design Extension Team provides full coverage)
+- **Agent Count** — 13 -> 12 (UX Lead retired; full design coverage via @design-dir)
 - 109 agents enriched with v4 metadata, 114 agents received v4 body sections, 102 agents received rich trigger descriptions, 107 agents had structured data extracted into metadata, 82+ skills received ownership metadata
 
 ### Removed
-- **UX Lead agent** — redundant with Design Extension Team
+- **UX Lead agent** — retired; design work handled by @design-dir
 - **`rules/v2v-flow.md`** — content merged into PRINCIPLES.md
 
 ### Migration
