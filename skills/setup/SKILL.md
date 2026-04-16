@@ -1,6 +1,6 @@
 ---
 name: setup
-description: 'Initialize the Product Org plugin by creating context folders and index files. Activate when: "set up the plugin", "initialize", starting fresh with Product Org OS, first-time setup Do NOT
+description: 'Initialize Product Org OS by creating context folders and index files. Activate when: "set up the framework", "initialize", starting fresh with Product Org OS, first-time setup Do NOT
   activate for: configuration changes mid-session, resetting demo data (/reset-demo), interactive walkthrough (/tour)'
 argument-hint: (no arguments needed)
 user-invocable: true
@@ -10,7 +10,7 @@ metadata:
   category: utility
   skill_type: task-capability
 ---
-Initialize the **Product Org Plugin** for first-time use. This creates the context folder structure and all necessary index files in your current working directory.
+Initialize **Product Org OS** for first-time use. This creates the context folder structure and all necessary index files in your current working directory.
 
 ## Vision to Value Phase
 
@@ -664,7 +664,7 @@ Use these markers to distinguish what happened:
 - `·` — Already existed (skipped)
 
 ```
-Product Org Plugin initialized successfully!
+Product Org OS initialized successfully!
 
 Context structure:
 [✓/·] .claude/rules/agent-spawn-protocol.md
@@ -695,7 +695,7 @@ Created: X new | Skipped: Y existing
 
 If everything already existed, show:
 ```
-Product Org Plugin — already fully initialized.
+Product Org OS — already fully initialized.
 All 34 items present. No changes made.
 ```
 
