@@ -5,6 +5,10 @@ All notable changes to Product Org OS will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.0.1] — 2026-04-16
+
+- Repositioned as a framework. Dropped the Claude Code plugin wrapper; install is now `git clone` + `python install.py`. See README for full instructions.
+
 ## [4.0.0] - 2026-04-12
 
 v4.0 restructures every agent as a self-describing skill under the Agent Skills Specification standard. Every agent now declares what skills it uses, what knowledge it reads, and when — with mandatory enforcement sections that ground output in authoritative sources. Install command unchanged; no breaking changes to invocation syntax.

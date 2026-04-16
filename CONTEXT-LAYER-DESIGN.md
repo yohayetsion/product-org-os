@@ -30,7 +30,7 @@ The context layer embodies the Vision to Value learning loop: decisions lead to 
 ## Folder Structure
 
 ```
-product-org-plugin/
+product-org-os/
 ├── context/                          # Persistent state folder
 │   ├── README.md                     # How to use context layer
 │   ├── documents/                    # Strategic documents registry (AUTO-POPULATED)

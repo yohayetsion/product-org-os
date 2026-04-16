@@ -1,25 +1,23 @@
 # Product Org OS — Agent Guide
 
-**A complete AI product organization as a plugin.** This guide tells any coding agent everything it needs to install, configure, and operate the system.
+This guide tells any coding agent everything it needs to install, configure, and operate the system.
 
 ---
 
 ## What This Is
 
-Product Org OS gives you 12 role-based product agents, 150+ skills, 2 gateways, 38 knowledge packs, and a persistent context layer. It turns a coding agent into an entire product organization — from strategic intent through execution to learning. Every agent declares what skills it uses, what knowledge it reads, and when — with mandatory enforcement.
+Product Org OS ships a full product team — Chief Product Officer, VP Product, PMs, PMMs, BizOps, specialists — as Claude Code agents, skills, and knowledge packs. 12 role-based product agents, 133 skills in the OS layer (~400 across all three systems), 2 gateways, 38 knowledge packs, and a persistent context layer. Every agent declares what skills it uses, what knowledge it reads, and when — with mandatory enforcement.
 
 Built on the **Vision to Value** framework: a 6-phase system that flows from strategy to outcomes to learning loops.
-
-**Works with**: Claude Code (primary), Cursor, GitHub Copilot, Gemini CLI, and other Agent Skills-standard tools.
 
 ---
 
 ## Installation
 
-### Claude Code (Primary)
-
 ```bash
-claude plugins install github:yohayetsion/product-org-os
+git clone https://github.com/yohayetsion/product-org-os.git
+cd product-org-os
+python install.py
 ```
 
 Then initialize in your project:
@@ -30,17 +28,9 @@ Then initialize in your project:
 
 This creates the `context/` directory structure in your current working directory for organizational memory.
 
-### Cursor
+## Compatibility
 
-1. Clone or download the plugin to your project
-2. Add to `.cursorrules`: point to the plugin's `PRODUCT-ORG-CLAUDE.md` and `agent-guide.md`
-3. Run `/setup` to initialize the context layer
-
-### Copilot / Gemini CLI / Other
-
-1. Clone or download the plugin
-2. Point your agent's system prompt or rules file to `PRODUCT-ORG-CLAUDE.md`
-3. Run `/setup` to initialize context
+Product Org OS runs natively in Claude Code. The skills follow the Agent Skills spec, so they technically work in any tool that reads SKILL.md files — but only Claude Code is validated end-to-end. If you want to try it in Cursor, Copilot, or Gemini CLI, the skills will load; the rules and context layer require Claude Code conventions.
 
 ### Post-Setup
 
@@ -306,14 +296,6 @@ Post-agent processing (ROI logging, interaction logging, document registration) 
 
 **Claude Code**: Automatic — `/setup` configures PostToolUse hooks. Zero manual steps.
 
-**Cursor**: Add to `.cursorrules`:
-```
-After agent work that produces deliverables, run:
-python hooks/os-tracker.py --agent [agent-id] --context-dir ./context
-```
-
-**Other agents**: Add equivalent instructions to your system prompt or rules file.
-
 ### Organizational Conventions
 
 Define how your org works in `context/preferences/conventions.md`:
@@ -459,7 +441,7 @@ Ships with sample data so you can explore immediately:
 
 | File | Purpose |
 |------|---------|
-| `PRODUCT-ORG-CLAUDE.md` | Complete skill reference and plugin documentation |
+| `PRODUCT-ORG-CLAUDE.md` | Complete skill reference and framework documentation |
 | `AGENT-INTEGRATION.md` | Context tracking setup (hooks, CLI, platform wiring) |
 | `agent-guide.md` | This file — top-to-bottom system overview |
 | `README.md` | GitHub landing page |
@@ -472,23 +454,6 @@ Ships with sample data so you can explore immediately:
 
 ---
 
-## Cross-Platform Compatibility
-
-| Feature | Claude Code | Cursor | Copilot | Gemini CLI |
-|---------|-------------|--------|---------|------------|
-| Skills (`/prd`, etc.) | Full | Via Agent Skills | Via Agent Skills | Via Agent Skills |
-| Agents (`@pm`, etc.) | Full (Task tool) | Partial | Partial | Partial |
-| Gateways (`@product`) | Full (Skill tool) | Limited | Limited | Limited |
-| MCP integrations | Full | Full | Expanding | Expanding |
-| Context layer | Full | Full | Full | Full |
-| Automatic tracking | Full (hooks) | Manual trigger | Manual trigger | Manual trigger |
-
-**Progressive enhancement**: Base features work everywhere. Claude Code gets the fullest experience with automatic hooks and Meeting Mode.
-
----
-
 ## License
 
-MIT — Free and open source. World-class product capabilities shouldn't be locked behind enterprise software.
-
-Based on the Vision to Value Executive Manifesto by Yohay Etsion.
+MIT. Based on the Vision to Value Executive Manifesto by Yohay Etsion.

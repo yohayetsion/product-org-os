@@ -1,16 +1,20 @@
-# Product Organization Plugin
+# Product Org OS — Reference
 
-This plugin provides AI-powered product organization capabilities based on the **Vision to Value (Vision to Value) System** framework.
-
-> For Claude Code and Agent Skills-compatible tools (Cursor, Copilot, Gemini CLI)
+Reference documentation for the Product Org OS framework, based on the **Vision to Value System**.
 
 > **Start here**: [`agent-guide.md`](./agent-guide.md) — complete system overview for any coding agent. For context tracking setup specifically, see [`AGENT-INTEGRATION.md`](./AGENT-INTEGRATION.md).
 
-## Quick Start
+## Install
+
+```bash
+git clone https://github.com/yohayetsion/product-org-os.git
+cd product-org-os
+python install.py
+```
 
 ### First-Time Setup
 
-After installing the plugin, run the setup skill to initialize the context layer:
+After installing, run the setup skill to initialize the context layer:
 
 ```
 /setup
@@ -178,7 +182,7 @@ Single agent responds when:
 
 | Skill | Purpose | Usage |
 |-------|---------|-------|
-| `/setup` | Initialize plugin - creates context folders | Run once per project |
+| `/setup` | Initialize Product Org OS - creates context folders | Run once per project |
 | `/present` | Generate HTML presentation from markdown | `/present path/to/doc.md` |
 
 ### Context Layer (7 skills)
@@ -498,16 +502,16 @@ User: Here's feedback from Acme Corp: "Your API rate limits are killing us."
 
 ---
 
-## Plugin Statistics
+## Statistics
 
 | Component | Count |
 |-----------|-------|
-| Skills | 61 |
-| Agents | 13 |
+| Skills | 133 (OS layer) |
+| Agents | 12 |
 | Gateways | 2 (`@product`, `@plt`) |
-| Knowledge Packs | 9 |
+| Knowledge Packs | 38 |
 | Integration Templates | 6 |
-| Delegation Patterns | 4 |
+| Delegation Patterns | 5 |
 | Principle Validators | 5 |
 | Context Indexes | 7 (topic, product, phase, status, source, sentiment, cross-ref) |
 
@@ -755,19 +759,6 @@ See `rules/auto-context.md` and `rules/context-graph.md`.
 
 ---
 
-## Cross-Platform Compatibility
+## Compatibility
 
-This plugin follows the **Agent Skills** open standard:
-
-| Feature | Claude Code | Cursor | Copilot | Gemini CLI |
-|---------|-------------|--------|---------|------------|
-| Skills (`/prd`, `/decision-record`) | Full support | Via Agent Skills | Via Agent Skills | Via Agent Skills |
-| Agents (`@pm`, `@vp-product`) | Full support (Task tool) | Partial | Partial | Partial |
-| Gateways (`@product`, `@plt`) | Full support (Skill tool) | Limited | Limited | Limited |
-| MCP integrations | Full support | Full support | Expanding | Expanding |
-| Context layer | Full support | Full support | Full support | Full support |
-
-**Progressive enhancement**: The plugin works at multiple levels:
-- **Base** (all platforms): SKILL.md personas, markdown rules, context layer
-- **Enhanced** (Claude Code + Cursor): MCP integrations, Task tool for agents
-- **Full** (Claude Code): Skill tool for gateways, full Meeting Mode
+Product Org OS runs natively in Claude Code. The skills follow the Agent Skills spec, so they technically work in any tool that reads SKILL.md files — but only Claude Code is validated end-to-end. If you want to try it in Cursor, Copilot, or Gemini CLI, the skills will load; the rules and context layer require Claude Code conventions.
