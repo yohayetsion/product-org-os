@@ -109,33 +109,20 @@ The hook receives `tool_input` and `tool_response` on stdin as JSON. It extracts
 
 **Agent identity convention**: When spawning agents, include the agent ID in the description field: `[product-manager] Review the PRD for authentication`. This gives the hook a structured way to identify the agent. Falls back to parsing the prompt body for the `You are **{emoji} {Display Name}**` pattern.
 
-### Cursor
+### Other Tools
 
-Add to `.cursorrules`:
-
-```
-Before delegating complex work or starting a new product deliverable, run:
-python hooks/os-tracker.py --pre-inject "[topic keywords]" --context-dir ./context
-Include the output (if any) as context for the task.
-
-After completing agent work that produces a deliverable, run:
-python hooks/os-tracker.py --agent [agent-id] --context-dir ./context
-```
-
-### Windsurf / Copilot / Other Agents
-
-Add to your agent's system prompt or rules file:
+Product Org OS runs natively in Claude Code. If you're running it in another tool that reads SKILL.md files, add equivalent tracker invocations to your agent's system prompt or rules file:
 
 ```
 Before producing product deliverables, query organizational context:
-python [path-to-plugin]/hooks/os-tracker.py --pre-inject "[topic]" --context-dir ./context
+python [path-to-os]/hooks/os-tracker.py --pre-inject "[topic]" --context-dir ./context
 If results are returned, honor existing decisions and incorporate feedback.
 
 After agent tasks that produce documents, run:
-python [path-to-plugin]/hooks/os-tracker.py --agent [agent-id] --context-dir ./context
+python [path-to-os]/hooks/os-tracker.py --agent [agent-id] --context-dir ./context
 ```
 
-Replace `[path-to-plugin]` with the actual path to the Product Org OS plugin directory.
+Replace `[path-to-os]` with the actual path to the Product Org OS directory.
 
 ---
 
@@ -236,7 +223,7 @@ Organizational norms stored in `context/preferences/conventions.md` are always i
 
 ---
 
-## For Plugin Developers
+## For Framework Contributors
 
 ### Adding a new skill/agent to baselines
 

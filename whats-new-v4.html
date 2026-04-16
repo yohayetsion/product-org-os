@@ -851,10 +851,10 @@
         <div class="container">
             <h2 class="reveal">One Link. <span class="gradient-text">Full System.</span></h2>
             <p class="cta-subtitle reveal reveal-delay-1">
-                Point your Claude Code, Cursor, Copilot, or Gemini CLI agent at the guide. It handles the rest.
+                Point Claude Code at the guide. It handles the rest.
             </p>
             <div class="reveal reveal-delay-2" style="margin-bottom: 2rem;">
-                <a href="https://github.com/yohayetsion/product-org-os/blob/main/product-org-plugin/agent-guide.md" target="_blank" rel="noopener" style="display: inline-block; background: #0d0d1a; border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 2rem; text-decoration: none; transition: border-color 0.3s; max-width: 100%;">
+                <a href="https://github.com/yohayetsion/product-org-os/blob/main/agent-guide.md" target="_blank" rel="noopener" style="display: inline-block; background: #0d0d1a; border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 2rem; text-decoration: none; transition: border-color 0.3s; max-width: 100%;">
                     <code style="color: var(--secondary); font-family: 'Courier New', monospace; font-size: 0.95rem; word-break: break-all;">github.com/yohayetsion/product-org-os/.../agent-guide.md</code>
                 </a>
             </div>
@@ -882,7 +882,7 @@
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
         function copyInstall() {
-            const cmd = 'claude plugins install github:yohayetsion/product-org-os';
+            const cmd = 'git clone https://github.com/yohayetsion/product-org-os.git && cd product-org-os && python install.py';
             navigator.clipboard.writeText(cmd).then(() => {
                 const btn = document.querySelector('.copy-btn');
                 btn.textContent = 'Copied!';

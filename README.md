@@ -1,95 +1,115 @@
 # Product Org OS
 
-**An entire product organization that becomes your superpower.**
+A product organization as code. Product Org OS ships a full product team — Chief Product Officer, VP Product, PMs, PMMs, BizOps, specialists — as Claude Code agents, skills, and knowledge packs. Clone it, run `install.py`, invoke `@pm` or `/prd` in any project.
 
-> Intent → Decisions → Commitments → Execution → Outcomes → Learning
-
-13 agents • 65 skills • 11 strategic documents • Context layer
-
-[**View the Interactive Presentation →**](https://yohayetsion.github.io/product-org-os)
+Built on the Vision to Value methodology. ~400 skills across three systems (Product Org OS, Extension Teams, PMTK). Runs in Claude Code.
 
 ---
 
 ## Quick Start
 
 ```bash
-# Install in Claude Code
-claude plugins install github:yohayetsion/product-org-os
-
-# Initialize in your project
-/setup
-
-# Start using
-/product Launch freemium tier for SMBs. Context: pricing-research.md
+git clone https://github.com/yohayetsion/product-org-os.git
+cd product-org-os
+python install.py
 ```
+
+New to Claude Code skills? See [Anthropic's skills docs](https://docs.claude.com/en/docs/claude-code/skills).
 
 ---
 
-## Three Ways to Work
+## What's in this repo
 
-### /product Gateway (Recommended)
-Route any request to the right owners. Best for cross-functional work.
-```
-/product Respond to Acme RFP due Friday. See: rfp-acme.pdf, our-capabilities.md
-```
-
-### Direct to Agents
-Delegate to a specific role when you know who should handle it.
-```
-/cpo Portfolio tradeoff: mobile app vs API expansion
-/product-manager Break down checkout redesign into user stories
-/bizops Build financial model for enterprise tier
-```
-
-### Direct to Skills
-Get a specific deliverable when you know exactly what you need.
-```
-/prd SSO integration for enterprise. Requirements in slack-thread.md
-/competitive-analysis Deep dive on Competitor X
-/decision-record Document our build vs buy choice
-```
+| Path | Purpose |
+|------|---------|
+| `agent-guide.md` | Invocation patterns (`@agent`, `/skill`, gateways) |
+| `PRINCIPLES.md` | Vision to Value methodology principles |
+| `skills/` | 133 skills — the product-org workflows |
+| `rules/` | 20 behavioral rules injected into Claude Code sessions |
+| `reference/` | Knowledge packs and templates |
+| `install.py` | Portable installer — copies skills into `~/.claude/skills/` |
+| `CHANGELOG.md` | Release history |
 
 ---
 
-## What's Included
+## Two Invocation Patterns
 
-### 13 Role-Based Agents
-CPO, VP Product, Director PM, Director PMM, Product Manager, PMM, BizOps, BizDev, Competitive Intelligence, Product Operations, Value Realization, UX Lead, Product Leadership Team
+| Syntax | Purpose | Example |
+|--------|---------|---------|
+| `@agent` | **Delegate** — spawn autonomous agent | `@pm create a PRD for auth` |
+| `/skill` | **Inline** — use template/workflow directly | `/prd` `/decision-record` |
 
-### 65 Production Skills
-PRDs, roadmaps, business cases, GTM strategies, pricing models, launch plans, QBR decks, competitive analyses, decision records, launch strategies, competitor alternatives, analytics tracking, marketing psychology, and more
+### @product Gateway
 
-### Context Layer
-Organizational memory that persists decisions, feedback, learnings, and strategic bets across sessions.
-**New: Interaction history** — full conversation logging with `/interaction-recall` for cross-session continuity.
+The single entry point. Routes requests to the right agents automatically.
 
-### V2V Framework
-Six phases from strategic intent to learning loop, with skills mapped to each phase
-
-### Optional: Memory MCP Integration
-Supercharge your context layer with a **persistent knowledge graph**. Memory MCP enables Claude to remember entities, relationships, and observations across all sessions.
-
-```json
-// Add to your .mcp.json
-{
-  "mcpServers": {
-    "memory": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-memory"],
-      "env": {
-        "MEMORY_FILE_PATH": "./context/memory/knowledge-graph.json"
-      }
-    }
-  }
-}
+```
+@product Launch freemium for SMBs. Context: @pricing-research.md
+@product Q2 planning. Inputs: @customer-interviews/ @eng-capacity.md
 ```
 
-**What it adds:**
-- **Entities**: Track people, products, competitors, decisions as graph nodes
-- **Relations**: Map connections ("owns", "decided", "competes_with")
-- **Observations**: Store facts that persist across sessions
+**Response Depth** (`+`/`-` modifiers):
 
-Works alongside the file-based context layer — use both for maximum organizational memory.
+| Modifier | Effect | Example |
+|----------|--------|---------|
+| `-` | Brief — executive summary | `@product What's launch status? -` |
+| *(none)* | Standard — balanced depth | `@product What's launch status?` |
+| `+` | Deep — full analysis | `@product What's launch status? +` |
+
+**Meeting Mode**: `@product` and `@plt` return responses from individual agents speaking in their own voice, with attribution, points of agreement, tension, and synthesis. Not a monolithic AI response — a product org thinking together.
+
+**Multi-Product Organizations**: Filter context by product.
+
+```
+/context-recall pricing product:AXIA
+/feedback-recall onboarding product:SKYMOD
+/portfolio-status product:AXIA
+```
+
+### Delegate to Agents (`@agent`)
+
+Spawn autonomous agents to handle tasks. Each agent reasons independently and returns results.
+
+```
+@cpo review @board-feedback.pdf and update strategic intent
+@pm break down @epic.md into user stories
+@plt review @portfolio-health.md - should we pivot?
+@bizops analyze @pricing-data.xlsx and create pricing model
+```
+
+**Agent Shortcuts:**
+
+| Shortcut | Full Agent | Domain |
+|----------|------------|--------|
+| `@pm` | `@product-manager` | PRDs, specs, user stories |
+| `@plt` | `@product-leadership-team` | Portfolio decisions |
+| `@pm-dir` | `@director-product-management` | Roadmap governance |
+| `@pmm-dir` | `@director-product-marketing` | GTM strategy |
+| `@pmm` | `@product-marketing-manager` | Campaigns, enablement |
+| `@ci` | `@competitive-intelligence` | Market analysis |
+| `@prod-ops` | `@product-operations` | Launch, process |
+| `@mentor` | `@product-mentor` | Career coaching, PM development |
+
+### Use Skills Directly (`/skill`)
+
+Create, update, or find specific deliverables inline.
+
+```
+Create a /prd for SSO integration - see @slack-thread.md
+Run /competitive-analysis on Acme - @their-demo-notes.md
+Update the /roadmap-theme for Growth with mobile initiatives
+Find all authentication PRDs using /prd find
+```
+
+### Mix Both Patterns
+
+Combine agents and skills naturally.
+
+```
+@pm-dir review @launch-data.xlsx and update the /gtm-strategy
+@cpo review @board-feedback.pdf and update /strategic-intent
+@vp-product review @sales-feedback.md and run /pricing-strategy
+```
 
 ---
 
@@ -105,8 +125,10 @@ Works alongside the file-based context layer — use both for maximum organizati
 
 ## Documentation
 
-- [Interactive Presentation](https://yohayetsion.github.io/product-org-os) - Visual overview
-- [Full Documentation](./PRODUCT-ORG-CLAUDE.md) - Complete skill reference
+- [**Agent Guide**](./agent-guide.md) — complete system overview for any coding agent
+- [Interactive Presentation](https://yohayetsion.github.io/product-org-os) — visual overview
+- [Full Documentation](./PRODUCT-ORG-CLAUDE.md) — skill reference
+- [Context Tracking Setup](./AGENT-INTEGRATION.md) — hooks, CLI, platform wiring
 
 ---
 
@@ -114,8 +136,8 @@ Works alongside the file-based context layer — use both for maximum organizati
 
 MIT
 
+Based on the Vision to Value Executive Manifesto by Yohay Etsion.
+
 ---
 
-**Free & Open Source.** World-class product capabilities shouldn't be locked behind enterprise software.
-
-Based on the Vision to Value Executive Manifesto by Yohay Etsion.
+> *Previously installed as a Claude Code plugin. v4.0.1 repositions as a framework with a portable installer. Previous `claude plugins install` commands no longer apply — use `git clone` + `python install.py` above.*
