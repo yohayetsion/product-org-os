@@ -505,7 +505,7 @@ User: Here's feedback from Acme Corp: "Your API rate limits are killing us."
 
 | Component | Count |
 |-----------|-------|
-| Skills | 132 |
+| Skills | 133 |
 | Agents | 12 |
 | Gateways | 2 (`@product`, `@plt`) |
 | Knowledge Packs | 28 |

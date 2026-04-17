@@ -4,7 +4,7 @@
 
 > Intent → Decisions → Commitments → Execution → Outcomes → Learning
 
-12 agents · 132 skills · 28 knowledge packs · Structured metadata · Enforcement-first runtime · MCP integrations
+12 agents · 133 skills · 28 knowledge packs · Structured metadata · Enforcement-first runtime · MCP integrations
 
 [**View the Interactive Presentation →**](https://yohayetsion.github.io/product-org-os)
 
@@ -30,7 +30,7 @@ New to Claude Code skills? See [Anthropic's skills docs](https://docs.claude.com
 |------|---------|
 | `agent-guide.md` | Invocation patterns (`@agent`, `/skill`, gateways) |
 | `PRINCIPLES.md` | Vision to Value methodology principles |
-| `skills/` | 132 skills — the product-org workflows |
+| `skills/` | 133 skills — the product-org workflows |
 | `rules/` | 20 behavioral rules injected into Claude Code sessions |
 | `reference/` | Knowledge packs and templates |
 | `install.py` | Portable installer — copies skills into `~/.claude/skills/` |
