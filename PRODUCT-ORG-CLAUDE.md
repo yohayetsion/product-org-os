@@ -1,6 +1,6 @@
-# Product Org OS — Reference
+# Product Organization — Reference
 
-Reference documentation for the Product Org OS framework, based on the **Vision to Value System**.
+This provides AI-powered product organization capabilities based on the **Vision to Value System** framework.
 
 > **Start here**: [`agent-guide.md`](./agent-guide.md) — complete system overview for any coding agent. For context tracking setup specifically, see [`AGENT-INTEGRATION.md`](./AGENT-INTEGRATION.md).
 
@@ -63,7 +63,7 @@ Both patterns access the same agent capabilities - choose based on your workflow
 
 ---
 
-## 13 Role-Based Agents
+## 12 Role-Based Agents
 
 Delegate work to specialized agents that reason autonomously.
 
@@ -75,7 +75,6 @@ Delegate work to specialized agents that reason autonomously.
 | `@director-product-marketing` | `@pmm-dir` | Director PMM - GTM strategy, positioning, launches |
 | `@product-manager` | `@pm` | Product Manager - feature specs, user stories, delivery |
 | `@product-marketing-manager` | `@pmm` | PMM - campaigns, collateral, sales enablement |
-| `@product-leadership-team` | `@plt` | PLT - portfolio tradeoffs, strategic alignment |
 | `@bizops` | — | Business Operations - business cases, financial analysis |
 | `@bizdev` | — | Business Development - partnerships, market expansion |
 | `@competitive-intelligence` | `@ci` | Competitive Intelligence - competitor analysis, market research |
@@ -182,7 +181,7 @@ Single agent responds when:
 
 | Skill | Purpose | Usage |
 |-------|---------|-------|
-| `/setup` | Initialize Product Org OS - creates context folders | Run once per project |
+| `/setup` | Initialize Product Org OS — creates context folders | Run once per project |
 | `/present` | Generate HTML presentation from markdown | `/present path/to/doc.md` |
 
 ### Context Layer (7 skills)
@@ -506,10 +505,10 @@ User: Here's feedback from Acme Corp: "Your API rate limits are killing us."
 
 | Component | Count |
 |-----------|-------|
-| Skills | 133 (OS layer) |
+| Skills | 132 |
 | Agents | 12 |
 | Gateways | 2 (`@product`, `@plt`) |
-| Knowledge Packs | 38 |
+| Knowledge Packs | 28 |
 | Integration Templates | 6 |
 | Delegation Patterns | 5 |
 | Principle Validators | 5 |

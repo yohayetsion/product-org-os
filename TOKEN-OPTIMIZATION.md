@@ -4,7 +4,7 @@
 
 - **Date**: February 2026
 - **Goal**: Reduce context window burden from OS rules and agent SKILL.md files
-- **Result**: 59% reduction in rules (128 KB to 53 KB), shared protocol deduplication across 13 OS agents + 26 Extension Team agents
+- **Result**: 59% reduction in rules (128 KB to 53 KB), shared protocol deduplication across 12 OS agents
 
 ---
 
@@ -13,7 +13,7 @@
 - 22 rule files totaling ~128 KB loaded at every session start
 - Combined with CLAUDE.md, personal rules, MEMORY.md: ~180-200 KB (~45-50K tokens) baseline
 - ~25% of 200K context window consumed before first message
-- Agent SKILL.md files contained ~70% identical shared protocol sections across 13 agents
+- Agent SKILL.md files contained ~70% identical shared protocol sections across 12 agents
 - Heavy baseline triggers context compression sooner in long sessions
 
 ---
@@ -65,7 +65,7 @@
 
 - Updated cross-references for deleted `principles-enforcement.md`
 - Canonical Vision to Value Operating Principles: 8 principles with enforcement mapping
-- Referenced by all 13 agents via `../PRINCIPLES.md`
+- Referenced by all 12 agents via `../PRINCIPLES.md`
 
 #### 2b. shared-agent-protocol.md (new, 2.5 KB)
 
@@ -108,7 +108,7 @@ These compensate for the removed SKILL.md sections, ensuring agents still follow
 
 ### Result
 
-- **~2 KB saved per agent** (~26 KB total across 13 agents)
+- **~2 KB saved per agent** (~26 KB total across 12 agents)
 - **4 compile markers per agent** for future SaaS build scripts
 - **0 shared protocol sections** remaining in any agent file
 - **All unique content preserved**: no behavioral changes
@@ -141,68 +141,32 @@ These are invisible to Claude Code (zero behavioral impact) but enable the plann
 |--------|--------|-------|---------|
 | Rules total | ~128 KB (22 files) | 53 KB (19 files) | 75 KB (59%) |
 | Rules tokens at session start | ~32K | ~13K | ~19K tokens |
-| Agent shared protocol duplication | ~156 KB across 13 agents | 0 (moved to injection template) | ~26 KB total |
+| Agent shared protocol duplication | ~156 KB across 12 agents | 0 (moved to injection template) | ~26 KB total |
 | Agent compile markers | 0 | 52 (4 x 13) | SaaS-ready |
 | New maintenance files | 0 | 1 (shared-agent-protocol.md, 2.5 KB, not loaded) | n/a |
 
 ---
 
-## Phase 3: Extension Teams Deduplication
-
-### Scope
-
-26 Extension Team agents across 3 teams, all with the same 4 shared sections as OS agents.
-
-| Team | Agents | Before | After | Saved |
-|------|--------|--------|-------|-------|
-| Design | 6 | 89 KB | 78 KB | 11 KB |
-| Architecture | 6 | 96 KB | 86 KB | 10 KB |
-| Marketing | 14 | 171 KB | 144 KB | 27 KB |
-| **Total** | **26** | **357 KB** | **308 KB** | **49 KB** |
-
-### What Changed
-
-Same 4 edits as OS agents applied to all 26 files:
-1. Added `<!-- IDENTITY START -->` before heading
-2. Added `<!-- IDENTITY END -->` + `<!-- SKILLS START -->` between Anti-Patterns and Sub-Agent Spawning
-3. Removed shared protocol sections (Context Awareness, Feedback Capture, Integration Awareness)
-4. Replaced Operating Principles at bottom with `<!-- SKILLS END -->`
-
-All 26 agents had all 3 shared sections + Operating Principles (no variations like the OS agents).
-
-Extension Teams already had per-team PRINCIPLES.md files (design: 5.3 KB, architecture: 5.2 KB, marketing: 5.3 KB), so no new files were needed.
-
-### Result
-
-- **49 KB removed** across 26 agents (~1.9 KB/agent average)
-- **104 compile markers** added (4 x 26)
-- **0 shared protocol sections** remaining
-- **All unique content preserved** (Delegation Patterns, Skills, Vision to Value Phase Context, Knowledge Sources, Parallel Execution)
-
----
-
-## Combined Final Metrics
+## Final Metrics
 
 | Metric | Before | After | Savings |
 |--------|--------|-------|---------|
 | Rules total | ~128 KB (22 files) | 53 KB (19 files) | 75 KB (59%) |
 | Rules tokens at session start | ~32K | ~13K | ~19K tokens |
-| OS agent shared protocol | ~156 KB across 13 agents | 0 | ~26 KB |
-| Extension Team shared protocol | ~104 sections across 26 agents | 0 | ~49 KB |
-| Total compile markers | 0 | 156 (4 x 39 agents) | SaaS-ready |
+| OS agent shared protocol | ~156 KB across 12 agents | 0 | ~26 KB |
+| Total compile markers | 0 | 48 (4 x 12) | SaaS-ready |
 | New maintenance files | 0 | 1 (shared-agent-protocol.md, 2.5 KB, not loaded) | n/a |
-| **Total deduplication** | | | **~150 KB** |
+| **Total deduplication** | | | **~101 KB** |
 
 ---
 
 ## What Was NOT Changed
 
 - YAML frontmatter in agent SKILL.md (kept as-is for routing safety)
-- Knowledge packs (126 KB OS + Extension Team packs, loaded on-demand)
+- Knowledge packs (loaded on-demand)
 - Skill template SKILL.md files (80+ files, already lean)
 - Context layer files (data, not prompts)
 - CLAUDE.md / personal rules (outside OS scope)
-- GATEWAY.md files (3 Extension Team gateways, already lean)
 
 ---
 
@@ -210,19 +174,13 @@ Extension Teams already had per-team PRINCIPLES.md files (design: 5.3 KB, archit
 
 ### OS Agents (Phase 1-2)
 - [x] All 19 rules load cleanly
-- [x] All 13 OS agents have 4 compile markers
-- [x] All 13 OS agents have 0 shared protocol sections
+- [x] All 12 OS agents have 4 compile markers
+- [x] All 12 OS agents have 0 shared protocol sections
 - [x] All unique agent content preserved
 - [x] Injection template compensates for removed sections
 - [x] PRINCIPLES.md cross-references updated
 - [x] shared-agent-protocol.md created as maintenance reference
 
-### Extension Teams (Phase 3)
-- [x] All 26 Extension Team agents have 4 compile markers
-- [x] All 26 Extension Team agents have 0 shared protocol sections
-- [x] All unique agent content preserved (Delegation Patterns, etc.)
-- [x] Per-team PRINCIPLES.md files already existed (no changes needed)
-
 ### Overall
 - [x] No behavioral changes across any agent — same rules, fewer duplicate words
-- [x] 39 agents total optimized, 156 compile markers added
+- [x] 12 agents optimized, 48 compile markers added

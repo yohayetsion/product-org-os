@@ -1,12 +1,12 @@
 # Product Org OS — Agent Guide
 
-This guide tells any coding agent everything it needs to install, configure, and operate the system.
+**A complete AI product organization.** This guide tells any coding agent everything it needs to install, configure, and operate the system.
 
 ---
 
 ## What This Is
 
-Product Org OS ships a full product team — Chief Product Officer, VP Product, PMs, PMMs, BizOps, specialists — as Claude Code agents, skills, and knowledge packs. 12 role-based product agents, 133 skills in the OS layer (~400 across all three systems), 2 gateways, 38 knowledge packs, and a persistent context layer. Every agent declares what skills it uses, what knowledge it reads, and when — with mandatory enforcement.
+Product Org OS gives you 12 role-based product agents, 132 skills, 2 gateways, 28 knowledge packs, and a persistent context layer. It turns a coding agent into an entire product organization — from strategic intent through execution to learning. Every agent declares what skills it uses, what knowledge it reads, and when — with mandatory enforcement.
 
 Built on the **Vision to Value** framework: a 6-phase system that flows from strategy to outcomes to learning loops.
 
@@ -68,28 +68,27 @@ Both access the same capabilities. `@agent` spawns an independent agent that ret
 
 ### The 12 Agents
 
-| Agent | Shortcut | Domain |
-|-------|----------|--------|
-| `@cpo` | — | Executive strategy, portfolio decisions |
-| `@vp-product` | `@vpp` | Vision, roadmap accountability, pricing |
-| `@director-product-management` | `@pm-dir` | Roadmap governance, team coordination |
-| `@director-product-marketing` | `@pmm-dir` | GTM strategy, positioning, launches |
-| `@product-manager` | `@pm` | Feature specs, user stories, delivery |
-| `@product-marketing-manager` | `@pmm` | Campaigns, collateral, enablement |
-| `@product-mentor` | `@mentor` | Career coaching, PM development |
-| `@product-leadership-team` | `@plt` | Portfolio tradeoffs, strategic alignment |
-| `@bizops` | — | Business cases, financial analysis, KPIs |
-| `@bizdev` | — | Partnerships, market expansion |
-| `@competitive-intelligence` | `@ci` | Competitor analysis, market research |
-| `@product-operations` | `@prod-ops` | Process optimization, launch coordination |
-| `@value-realization` | — | Success metrics, customer outcomes |
+| Agent | Full Name | Shortcut | Domain |
+|-------|-----------|----------|--------|
+| `@cpo` | Chief Product Officer | — | Executive strategy, portfolio decisions |
+| `@vp-product` | VP of Product | `@vpp` | Vision, roadmap accountability, pricing |
+| `@director-product-management` | Director of Product Management | `@pm-dir` | Roadmap governance, team coordination |
+| `@director-product-marketing` | Director of Product Marketing | `@pmm-dir` | GTM strategy, positioning, launches |
+| `@product-manager` | Product Manager | `@pm` | Feature specs, user stories, delivery |
+| `@product-marketing-manager` | Product Marketing Manager | `@pmm` | Campaigns, collateral, enablement |
+| `@product-mentor` | Product Mentor | `@mentor` | Career coaching, PM development |
+| `@bizops` | Business Operations | — | Business cases, financial analysis, KPIs |
+| `@bizdev` | Business Development | — | Partnerships, market expansion |
+| `@competitive-intelligence` | Competitive Intelligence | `@ci` | Competitor analysis, market research |
+| `@product-operations` | Product Operations | `@prod-ops` | Process optimization, launch coordination |
+| `@value-realization` | Value Realization | — | Success metrics, customer outcomes |
 
 ### The 2 Gateways
 
-| Gateway | What It Does |
-|---------|-------------|
-| `@product` | **Main entry point.** Routes your request to the right agents automatically. Use when you're unsure who should handle something, or when it's cross-functional. |
-| `@plt` | **Product Leadership Team.** Convenes senior agents for portfolio tradeoffs and strategic decisions. |
+| Gateway | Shortcuts | What It Does |
+|---------|-----------|-------------|
+| `@product` | `/product` | **Main entry point.** Routes your request to the right agents automatically. Use when you're unsure who should handle something, or when it's cross-functional. |
+| `@product-leadership-team` | `@plt`, `/plt` | **Product Leadership Team.** Convenes senior agents for portfolio tradeoffs and strategic decisions. |
 
 ### Meeting Mode
 
@@ -107,7 +106,7 @@ Add `+` or `-` to control verbosity:
 
 ---
 
-## The 103 Skills
+## Skills
 
 ### By Vision to Value Phase
 
@@ -320,7 +319,7 @@ These are automatically included in every agent's context — no keyword matchin
 
 ---
 
-## 9 Knowledge Packs
+## 28 Knowledge Packs
 
 Professional frameworks that agents reference when producing deliverables:
 
@@ -388,7 +387,7 @@ Every skill completion shows estimated time saved vs. manual equivalent:
 - Automatic display after deliverables
 - Session totals tracked in `context/roi/session-log.md`
 - Historical trends via `/roi-report`
-- Baselines for all 150+ skills in `hooks/baselines.json`
+- Baselines for all skills in `hooks/baselines.json`
 
 ---
 
