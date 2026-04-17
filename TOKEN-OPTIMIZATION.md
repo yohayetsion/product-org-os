@@ -67,11 +67,12 @@
 - Canonical Vision to Value Operating Principles: 8 principles with enforcement mapping
 - Referenced by all 12 agents via `../PRINCIPLES.md`
 
-#### 2b. shared-agent-protocol.md (new, 2.5 KB)
+#### 2b. docs/shared-agent-protocol.md (new, 2.5 KB)
 
 - Maintenance reference only, NOT loaded as a rule (zero token cost)
 - Single source of truth for shared protocol text
 - Contains: Context Awareness, Feedback Capture, Integration Awareness
+- Lives in `docs/`, not `skills/` — it is not a skill
 
 #### 2c. Agent SKILL.md Updates (13 files)
 
@@ -143,7 +144,7 @@ These are invisible to Claude Code (zero behavioral impact) but enable the plann
 | Rules tokens at session start | ~32K | ~13K | ~19K tokens |
 | Agent shared protocol duplication | ~156 KB across 12 agents | 0 (moved to injection template) | ~26 KB total |
 | Agent compile markers | 0 | 52 (4 x 13) | SaaS-ready |
-| New maintenance files | 0 | 1 (shared-agent-protocol.md, 2.5 KB, not loaded) | n/a |
+| New maintenance files | 0 | 1 (docs/shared-agent-protocol.md, 2.5 KB, not loaded) | n/a |
 
 ---
 
@@ -155,7 +156,7 @@ These are invisible to Claude Code (zero behavioral impact) but enable the plann
 | Rules tokens at session start | ~32K | ~13K | ~19K tokens |
 | OS agent shared protocol | ~156 KB across 12 agents | 0 | ~26 KB |
 | Total compile markers | 0 | 48 (4 x 12) | SaaS-ready |
-| New maintenance files | 0 | 1 (shared-agent-protocol.md, 2.5 KB, not loaded) | n/a |
+| New maintenance files | 0 | 1 (docs/shared-agent-protocol.md, 2.5 KB, not loaded) | n/a |
 | **Total deduplication** | | | **~101 KB** |
 
 ---
@@ -179,7 +180,7 @@ These are invisible to Claude Code (zero behavioral impact) but enable the plann
 - [x] All unique agent content preserved
 - [x] Injection template compensates for removed sections
 - [x] PRINCIPLES.md cross-references updated
-- [x] shared-agent-protocol.md created as maintenance reference
+- [x] docs/shared-agent-protocol.md created as maintenance reference
 
 ### Overall
 - [x] No behavioral changes across any agent — same rules, fewer duplicate words

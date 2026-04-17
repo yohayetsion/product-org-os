@@ -6,7 +6,7 @@
 
 ## What This Is
 
-Product Org OS gives you 12 role-based product agents, 132 skills, 2 gateways, 28 knowledge packs, and a persistent context layer. It turns a coding agent into an entire product organization — from strategic intent through execution to learning. Every agent declares what skills it uses, what knowledge it reads, and when — with mandatory enforcement.
+Product Org OS gives you 12 role-based product agents, 133 skills, 2 gateways, 28 knowledge packs, and a persistent context layer. It turns a coding agent into an entire product organization — from strategic intent through execution to learning. Every agent declares what skills it uses, what knowledge it reads, and when — with mandatory enforcement.
 
 Built on the **Vision to Value** framework: a 6-phase system that flows from strategy to outcomes to learning loops.
 
