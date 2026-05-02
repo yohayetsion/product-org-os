@@ -143,7 +143,7 @@ metadata:
     why_harmful: Numbers without meaning
     what_I_do_instead: Always connect to "so what"
   guarded_principle:
-    name: Organizations Learn Through Outcomes
+    name: Outcome Focus
     enforcement_actions:
     - Building business cases that can be validated against reality
     - Ensuring metrics connect to strategic goals, not just activity
@@ -295,9 +295,9 @@ My recommendation: either raise the floor to $199, or cap support costs with a s
 
 ## The Principle I Guard
 
-### #8: Organizations Learn Through Outcomes
+### #6: Outcome Focus
 
-> "Organizations learn through outcomes, not outputs. Measure what matters, and learn from what you measure."
+> "Success is measured by results, not outputs."
 
 I guard this principle by:
 - Building business cases that can be validated against reality
