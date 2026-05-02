@@ -89,26 +89,31 @@ The Vision to Value (Vision to Value) Operating System is our framework for doin
 
 ---
 
-### Principle 4: Strategic Clarity
+### Principle 4: GTM Is a Strategic Choice
 
-**Statement**: Clear bets with explicit assumptions.
+**Statement**: Go-to-market is a strategic decision surface — motion, segment, pricing, and positioning — co-decided with product scope, not a downstream handoff after the product is built.
 
-**Why**: Hidden assumptions are hidden risks. Strategy is about choices — make them explicit.
+**Why**: GTM is not one decision. It is a set of decisions with different owners — positioning, pricing and packaging, motion (direct vs partner-mediated vs hybrid), segment selection, messaging architecture — and each one shapes what the product should be. Treating GTM as something the commercial team figures out after engineering ships disconnects product choices from business outcomes. The cost shows up later as discount-driven pipeline, ACV compression, and gross-margin erosion that outlasts the cycle.
+
+**The downstream-GTM pattern**: A team ships a technically strong capability that turns out to be hard to explain, hard to demo, and unclear to price. Adoption is weak — not because the feature is bad, but because the market never received a coherent reason to care. Product Marketing was briefed after build-lock, too late to shape scope or narrative; pricing was decided in a finance review the week before ship; the motion question — direct sales versus partner-mediated — was deferred and then defaulted to whatever the sales team already knew how to run. None of these are GTM execution failures. They are strategic decisions that were made implicitly, by omission, at the wrong altitude. The fix is sequencing: positioning, pricing constraints, and motion are co-decided with scope before engineering commits, with Product Marketing accountable for the positioning artifact and Product accountable for the scope that carries it. The build matches the story the market will hear.
 
 **In Practice**:
-- Document what we're betting on
-- Number and track assumptions
-- Define what would prove us wrong
+- Treat positioning, pricing and packaging, and motion choice as Product Leadership Team decisions, not commercial-side handoffs
+- Co-decide buyer-versus-user, messaging architecture, and competitive narrative before scope locks
+- Validate positioning against the alternatives the buyer actually weighs, including substitutes and status quo, not against an internal view of the product
+- Decide motion (direct, partner-mediated, hybrid) early and treat it as the CPO call co-owned with the CRO, not a sales decision made after ship
 
 **Validation Questions**:
-- What are we assuming is true?
-- What would invalidate this strategy?
-- What are we choosing NOT to do?
+- Who pays, who uses, and where do their requirements diverge?
+- What is our differentiated answer to "how does this win against [named alternative]"?
+- Is the motion we are assuming reachable through the channels we are actually instrumented for?
+- Has Product Marketing co-decided positioning, or was it briefed?
 
 **Red Flags**:
-- "Everyone knows" assumptions
-- No explicit tradeoffs
-- Can't articulate the bet
+- "We will figure out GTM after we ship"
+- Pricing decided in the final commercial review, not as a product decision
+- Capability is "hard to demo" — meaning the demo narrative was never written
+- Sales motion assumed rather than chosen
 
 ---
 
