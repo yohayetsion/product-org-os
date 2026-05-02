@@ -89,28 +89,36 @@ The Vision to Value (Vision to Value) Operating System is our framework for doin
 
 ---
 
-### Principle 4: Collaborative Excellence
+### Principle 4: Alignment Beats Consensus
 
-**Statement**: Right people, right inputs, right time.
+**Statement**: High-performing product organizations optimize for alignment, not universal agreement. Alignment means shared understanding of direction, priorities, and success criteria — and commitment to the call once it has been made.
 
-**Why**: Collaboration is a feature, not overhead. But input doesn't mean consensus.
+**Why**: Seeking consensus on every decision slows execution and masks accountability. Input is not the same as ownership, and shared agreement is not the same as shared understanding. Alignment lets the organization move at the speed of the decision, not the speed of the most reluctant voice in the room.
+
+**The consensus trap**: Broad agreement looks like alignment in the meeting and behaves like ambiguity in the quarter. When everyone nods and no one owns the call, unresolved tradeoffs leak into planning as commitment drift, duplicated scope, and re-litigated priorities. The signal of a healthy decision is not that everyone would have chosen it; it is that everyone leaves the room with the same understanding of the direction, the constraints, and the success criteria, and commits to executing on that understanding even where they would have argued the other way.
+
+**Emotional cost**: Every no you make in alignment is explained once and defended many times. The peer you said no to in Q1 will ask again in Q2, and again at the all-hands in Q3, in the window before the outcome has materialized to settle the argument for you. Some of them will ask you to defend the direction to their own customers because they will not. Some of them will defend it badly on purpose. The cost of alignment is not the no itself. It is the months of carrying the no in rooms where consensus would have ended the conversation. Leaders should expect this resistance, because clarity removes hiding places. Scaling a decision system requires emotional discipline alongside structural design.
 
 **In Practice**:
-- Use RACI for accountability clarity
-- Gather input before decisions are made
-- Communicate decisions to affected parties
+- Separate input from ownership — every decision has a single accountable owner, and gathered input is consulted, not voted
+- Clarify what must be aligned: direction, constraints, and success criteria, not preferences or paths
+- Normalize "disagree and commit" — once the call is made, the team carries it even where individual voices would have chosen differently
+- Use RACI to make accountability legible before the decision, not to assign blame after it
+- Communicate decisions and their reasoning to affected parties so the call can be defended in the rooms the owner is not in
 
 **Validation Questions**:
-- Who should have input on this?
-- Have we consulted them?
-- Who needs to be informed?
+- Who is the single accountable owner of this call?
+- What are we asking the team to align on — direction, constraints, success criteria — and what are we leaving open?
+- Have we consulted the inputs that should shape the decision, without conflating input with veto?
+- Are we confusing "everyone agrees" with "everyone understands and will commit"?
 
 **Red Flags**:
-- Surprised stakeholders
-- Last-minute rework requests
-- "We didn't know about this"
+- Decision deferred because not everyone agrees
+- Stakeholders surprised by a call they were not consulted on
+- Same decision relitigated in successive forums
+- "We need consensus before we move" used as a stall
 
-**Enforcement**: `/collaboration-check` skill validates stakeholder consultation
+**Enforcement**: `/collaboration-check` skill validates that input was gathered before the call and that the call has a single accountable owner
 
 ---
 
@@ -219,12 +227,12 @@ These principles are enforced throughout the Vision to Value phases:
 
 | Phase | Key Principles |
 |-------|---------------|
-| 1. Strategic Foundation | #3 Customer Obsession, #4 Strategic Clarity |
-| 2. Strategic Decisions | #2 Decision Quality, #6 Collaborative Excellence |
-| 3. Strategic Commitments | #1 End-to-End Ownership, #4 Strategic Clarity |
-| 4. Coordinated Execution | #6 Collaborative Excellence |
-| 5. Business & Customer Outcomes | #5 Outcome Focus |
-| 6. Learning & Adaptation | #7 Continuous Learning |
+| 1. Strategic Foundation | #2 Strategy Precedes Structure, #5 GTM Is a Strategic Choice |
+| 2. Strategic Decisions | #3 Decision Quality, #4 Alignment Beats Consensus |
+| 3. Strategic Commitments | #1 End-to-End Ownership, #2 Strategy Precedes Structure |
+| 4. Coordinated Execution | #4 Alignment Beats Consensus |
+| 5. Business & Customer Outcomes | #6 Outcome Focus |
+| 6. Learning & Adaptation | #8 Continuous Learning |
 
 ---
 
@@ -233,9 +241,9 @@ These principles are enforced throughout the Vision to Value phases:
 | Principle | Validator Skill | When to Use |
 |-----------|----------------|-------------|
 | #1 End-to-End Ownership | `/ownership-map` | Before Phase 3 commitments |
-| #3 Customer Obsession | `/customer-value-trace` | When decisions affect customers |
-| #6 Collaborative Excellence | `/collaboration-check` | For cross-functional work |
-| #8 Scalable Systems | `/scale-check` | Before resource commitments |
+| #3 Decision Quality | `/customer-value-trace` | When decisions affect customers |
+| #4 Alignment Beats Consensus | `/collaboration-check` | For cross-functional work |
+| #7 Scalable Systems | `/scale-check` | Before resource commitments |
 
 Additional Vision to Value enforcement:
 - `/phase-check` — Assess Vision to Value phase readiness
