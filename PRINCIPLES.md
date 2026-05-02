@@ -64,28 +64,28 @@ The Vision to Value (Vision to Value) Operating System is our framework for doin
 
 ---
 
-### Principle 3: Customer Obsession
+### Principle 3: Strategy Precedes Structure
 
-**Statement**: Every decision should trace to customer value.
+**Statement**: Structure is an execution tool, not a starting point. Roles, teams, and reporting lines must reflect strategic intent, not the other way around.
 
-**Why**: Internal convenience is not customer value. Stakeholder preferences are not customer needs.
+**Why**: When structure leads strategy, organizations become efficient at delivering the wrong things. Reorganizing looks like leadership and naming strategic ambiguity does not — that asymmetry is why the failure mode repeats.
+
+**The reorg-failure pattern**: A company reorganizes into "platform teams" because it sounds modern, but cannot articulate the strategic advantage the platform is meant to create. Morale briefly improves, then priorities drift again. Six months later the strategy is still unclear — only now the org chart makes change harder. The leader who would have named the strategic ambiguity instead becomes the person who slowed things down to ask a question the room had agreed to stop asking. So the reorg gets shipped and the strategy never does.
 
 **In Practice**:
-- Start every document with the customer problem
-- Include customer evidence (quotes, data)
-- Measure customer outcomes, not adoption
+- Require a written strategic intent before changing structure
+- Design teams around the decisions they must own, not the deliverables they ship
+- Treat reorganizations as high-cost moves that require clear payback
 
 **Validation Questions**:
-- What customer problem does this solve?
-- What evidence supports this need?
-- How will customers benefit?
+- What strategic choice is this structure expressing?
+- Which decisions does each team own end-to-end?
+- If we kept the current structure, what specifically would fail?
 
 **Red Flags**:
-- No customer mentioned in requirements
-- Internal justification only
-- Measuring features shipped, not problems solved
-
-**Enforcement**: `/customer-value-trace` skill validates customer connection
+- Reorg announced before strategic intent is written down
+- Team names borrowed from another company's org chart
+- "We'll figure out priorities once the structure settles"
 
 ---
 
