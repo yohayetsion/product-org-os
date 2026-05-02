@@ -41,30 +41,7 @@ The Vision to Value (Vision to Value) Operating System is our framework for doin
 
 ---
 
-### Principle 2: Decision Quality
-
-**Statement**: Decision quality is the core metric for product leadership effectiveness.
-
-**Why**: Good process leads to better outcomes over time. Speed without quality is expensive.
-
-**In Practice**:
-- Single accountable owner for every decision
-- Clear success criteria and re-decision triggers
-- Document decisions for learning
-
-**Validation Questions**:
-- Is there one person who can say yes/no?
-- How will we know if this decision was right?
-- What would make us revisit this?
-
-**Red Flags**:
-- Decision by committee
-- No success criteria
-- Same decision made repeatedly
-
----
-
-### Principle 3: Strategy Precedes Structure
+### Principle 2: Strategy Precedes Structure
 
 **Statement**: Structure is an execution tool, not a starting point. Roles, teams, and reporting lines must reflect strategic intent, not the other way around.
 
@@ -89,7 +66,55 @@ The Vision to Value (Vision to Value) Operating System is our framework for doin
 
 ---
 
-### Principle 4: GTM Is a Strategic Choice
+### Principle 3: Decision Quality
+
+**Statement**: Decision quality is the core metric for product leadership effectiveness.
+
+**Why**: Good process leads to better outcomes over time. Speed without quality is expensive.
+
+**In Practice**:
+- Single accountable owner for every decision
+- Clear success criteria and re-decision triggers
+- Document decisions for learning
+
+**Validation Questions**:
+- Is there one person who can say yes/no?
+- How will we know if this decision was right?
+- What would make us revisit this?
+
+**Red Flags**:
+- Decision by committee
+- No success criteria
+- Same decision made repeatedly
+
+---
+
+### Principle 4: Collaborative Excellence
+
+**Statement**: Right people, right inputs, right time.
+
+**Why**: Collaboration is a feature, not overhead. But input doesn't mean consensus.
+
+**In Practice**:
+- Use RACI for accountability clarity
+- Gather input before decisions are made
+- Communicate decisions to affected parties
+
+**Validation Questions**:
+- Who should have input on this?
+- Have we consulted them?
+- Who needs to be informed?
+
+**Red Flags**:
+- Surprised stakeholders
+- Last-minute rework requests
+- "We didn't know about this"
+
+**Enforcement**: `/collaboration-check` skill validates stakeholder consultation
+
+---
+
+### Principle 5: GTM Is a Strategic Choice
 
 **Statement**: Go-to-market is a strategic decision surface — motion, segment, pricing, and positioning — co-decided with product scope, not a downstream handoff after the product is built.
 
@@ -117,7 +142,7 @@ The Vision to Value (Vision to Value) Operating System is our framework for doin
 
 ---
 
-### Principle 5: Outcome Focus
+### Principle 6: Outcome Focus
 
 **Statement**: Success is measured by results, not outputs.
 
@@ -140,55 +165,7 @@ The Vision to Value (Vision to Value) Operating System is our framework for doin
 
 ---
 
-### Principle 6: Collaborative Excellence
-
-**Statement**: Right people, right inputs, right time.
-
-**Why**: Collaboration is a feature, not overhead. But input doesn't mean consensus.
-
-**In Practice**:
-- Use RACI for accountability clarity
-- Gather input before decisions are made
-- Communicate decisions to affected parties
-
-**Validation Questions**:
-- Who should have input on this?
-- Have we consulted them?
-- Who needs to be informed?
-
-**Red Flags**:
-- Surprised stakeholders
-- Last-minute rework requests
-- "We didn't know about this"
-
-**Enforcement**: `/collaboration-check` skill validates stakeholder consultation
-
----
-
-### Principle 7: Continuous Learning
-
-**Statement**: Systematic capture and application of learnings.
-
-**Why**: Mistakes are valuable if we learn from them. The same mistake twice is negligence.
-
-**In Practice**:
-- Conduct retrospectives regularly
-- Document learnings in searchable form
-- Update processes based on learnings
-
-**Validation Questions**:
-- What did we learn from this?
-- Is it documented where others can find it?
-- Have we applied past learnings here?
-
-**Red Flags**:
-- No retrospectives
-- Learnings not written down
-- Same mistakes repeated
-
----
-
-### Principle 8: Scalable Systems
+### Principle 7: Scalable Systems
 
 **Statement**: Processes that work as the organization grows.
 
@@ -210,6 +187,29 @@ The Vision to Value (Vision to Value) Operating System is our framework for doin
 - Over-engineered for current scale
 
 **Enforcement**: `/scale-check` skill assesses scalability
+
+---
+
+### Principle 8: Continuous Learning
+
+**Statement**: Systematic capture and application of learnings.
+
+**Why**: Mistakes are valuable if we learn from them. The same mistake twice is negligence.
+
+**In Practice**:
+- Conduct retrospectives regularly
+- Document learnings in searchable form
+- Update processes based on learnings
+
+**Validation Questions**:
+- What did we learn from this?
+- Is it documented where others can find it?
+- Have we applied past learnings here?
+
+**Red Flags**:
+- No retrospectives
+- Learnings not written down
+- Same mistakes repeated
 
 ---
 
