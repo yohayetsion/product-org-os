@@ -1,4 +1,16 @@
 ---
+# Alias-author pattern (V5.1-11):
+# This file is a thin alias that forwards to its canonical agent skill via the
+# `alias:` field at the bottom of this frontmatter. setup-skills.py uses
+# shutil.copy2 (pure byte-copy, no YAML parsing), so anything in this file is
+# what ships -- nothing is silently inherited at install time.
+# Aliases intentionally do NOT carry `collaboration_map`, RACI tables,
+# `key_deliverables`, or other agent-identity metadata fields. Those live on
+# the canonical agent skill only (see skills/<canonical>/SKILL.md). When the
+# alias is invoked, the runtime resolves to the canonical via the `alias:`
+# field, and the canonical's metadata is what governs collaboration interfaces
+# and agent identity.
+# Edit the canonical, not the alias, for any agent-identity change.
 name: pm
 description: 'Product Manager (shortcut for /product-manager) - feature specs, user stories, delivery planning, and requirements. Activate when: /pm, @pm, "write a PRD", "create user stories", "feature
   spec", "acceptance criteria", "requirements", "delivery plan", "backlog" Do NOT activate for: pricing strategy (@vp-product), GTM or positioning (@pmm-dir), business case (@bizops), partnerships (@bizdev),
