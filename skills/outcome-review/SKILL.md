@@ -118,7 +118,7 @@ Structure an **Outcome Review** to capture learnings from an initiative.
 **Original Goal**: [What we set out to achieve]
 **Investment**: [Resources/time/money invested]
 
-## Outputs vs. Outcomes (Principle #5)
+## Outputs vs. Outcomes (Principle #6)
 
 **Important**: Distinguish what we SHIPPED (outputs) from what we ACHIEVED (outcomes).
 
