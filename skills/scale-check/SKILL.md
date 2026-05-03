@@ -183,6 +183,34 @@ Define what "scale" means for this subject:
 | [Bottleneck 1] | [Capacity] | [2x/10x/100x] | [How to address] |
 | [Bottleneck 2] | [Capacity] | [Scale] | [Mitigation] |
 
+## Director-Span Constraint
+
+When the subject of a scale check is an organizational structure (a team, a function, a Director's reporting line), apply the Director-span sanity check before approving the structure for the next scale level. The constraint is a managerial-leverage band on direct reports per Director. Outside the band, the Director role becomes structurally compromised even when individual performance is strong.
+
+| Direct Reports per Director | Verdict | Failure Mode |
+|---|---|---|
+| < 6 | **Concern** | Overhead. The Director's calendar gets eaten by 1:1s with too few people; managerial leverage is low; the Director drifts back into IC work to feel useful. |
+| 6 to 10 | **Pass** | Real coaching and calibration time per report; Director can hold quality without compressing into ratification. |
+| 11 to 12 | **Pass with watch** | Still workable, but coaching time per report is compressing. Watch for signs the Director is moving from coaching to ratification. |
+| > 12 | **Fail** | Calibration only. The Director cannot do real coaching at this span; reviews compress into ratify-the-recommendation; growth of individual reports stalls. Restructure or add a layer. |
+
+### How to apply
+
+1. For each Director-level role inside the subject (existing or planned at the target scale level), record the count of direct reports.
+2. Compare to the band above and produce a per-Director verdict.
+3. For Directors below 6 reports: name the IC-creep risk and propose either consolidation (merge two thin reporting lines) or expansion of scope (give the Director more reports or more functions).
+4. For Directors above 12 reports: name the coaching-collapse risk and propose either an additional management layer (promote a senior IC to manager) or a split (carve the function into two Director-level reporting lines).
+5. Cross-reference to the relevant RACI artefact when one exists. The Director-span verdict is a precondition for the structure passing the broader scale check at the assessed level.
+
+| Director / Role | Direct Reports (Current) | Direct Reports (at Target Scale) | Band | Verdict | Action |
+|---|---|---|---|---|---|
+| [Director name/role 1] | [N] | [N] | [< 6 / 6-10 / 11-12 / > 12] | [Concern/Pass/Pass with watch/Fail] | [Action] |
+| [Director name/role 2] | [N] | [N] | [Band] | [Verdict] | [Action] |
+
+**Why this constraint sits inside `/scale-check`**: a process or system that "scales" on paper but routes through a Director with 18 reports does not actually scale — it just moves the breaking point from process to person. Director span is a structural bottleneck, identical in shape to the bottlenecks tracked in the analysis above.
+
+
+
 ## Complexity vs. Maturity Match
 
 | Org Maturity Level | Appropriate Complexity | Current Complexity | Match? |
@@ -246,8 +274,9 @@ Define what "scale" means for this subject:
 4. Assess what works and what breaks at 10x
 5. Envision what 100x looks like
 6. Identify hero dependencies and bottlenecks
-7. Match complexity to maturity level
-8. Provide investment roadmap and recommendations
+7. If the subject includes organizational structure or Director-level reporting lines, run the Director-Span Constraint check
+8. Match complexity to maturity level
+9. Provide investment roadmap and recommendations
 
 ## Validation Questions
 
@@ -264,6 +293,7 @@ Immediately flag if:
 - No path to automation exists
 - Complexity exceeds current maturity level
 - Breaking point is before 2x scale
+- Any Director in the structure has fewer than 6 direct reports (overhead / IC-creep risk) or more than 12 direct reports (coaching collapse / calibration-only management)
 
 ## When to Use
 
@@ -278,6 +308,7 @@ Immediately flag if:
 - `/maturity-check` - Assess current maturity level
 - `/commitment-check` - Includes scalability consideration
 - `/strategic-bet` - Should consider scale implications
+- `/raci-builder` - Pair the Director-Span Constraint with explicit RACI assignments when restructuring reporting lines (when this skill is available; expected as a v5.2 pairing)
 
 ## Operating Principle
 
