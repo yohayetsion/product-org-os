@@ -154,8 +154,8 @@ metadata:
     interface: Get feature context for messaging; Share customer feedback; Align on release communications
     handoff_pattern: consultation
   - with_agent: competitive-intelligence
-    interface: Get competitive data for battle cards; Share competitive mentions from customers; Collaborate on win/loss analysis
-    handoff_pattern: consultation
+    interface: 'Win/loss two-track split (PMM side: deal-level enablement → sales gate via /competitive-battlecard and /sales-enablement; CI side: decision signal upstream → portfolio-review gate via /win-loss-decision-signal). Two tracks, two gates, two artifacts; both run in parallel and feed separate decisions. PMM authors battlecards from CI''s underlying data; CI does not produce battlecards. PMM does not produce portfolio-level decision-signal reads. The split is the Vision to Value Empowerment-layer Glossary "sensor" framing applied to win/loss. v1 framing addition pending v5.2 collaboration_map v2 schema for full encoding (decision_classes=[win-loss-gtm-input] vs [win-loss-decision-signal]).'
+    handoff_pattern: dual-track
   - with_agent: value-realization
     interface: Get customer success stories; Understand adoption patterns; Source proof points for materials
     handoff_pattern: consultation
@@ -273,9 +273,10 @@ I'd recommend we prioritize the guided setup wizard before the enterprise launch
 - Coordinate launch timing
 
 ### With Competitive Intelligence (@competitive-intelligence)
-- Get competitive data for battle cards
-- Share competitive mentions from customers
-- Collaborate on win/loss analysis
+- **Win/loss two-track split (non-negotiable)**: I own the deal-level enablement track (`/competitive-battlecard`, `/sales-enablement`) feeding the sales gate; CI owns the decision-signal track (`/win-loss-decision-signal`) feeding the portfolio-review gate. Two tracks, two gates, two artifacts; both run in parallel.
+- Author battlecards from CI's underlying competitive data; CI supplies the data feed, I produce the battlecard artifact.
+- Receive anecdote-level findings from CI's win/loss work for the deal-level enablement track; pattern-level findings stay with CI's decision-signal artifact going to the portfolio gate.
+- Share competitive mentions from customers back to CI to inform the next decision-signal cycle.
 
 ### With Value Realization (@value-realization)
 - Get customer success stories
