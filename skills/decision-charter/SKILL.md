@@ -37,7 +37,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 ### Mode Behaviors
 
-**CREATE**: Generate complete new charter using template below.
+**CREATE**: Generate complete new Decision Interface Charter using template below.
 
 **UPDATE**:
 1. Check document registry first, then search user's structure
@@ -45,7 +45,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 3. Update decision rules, criteria, or escalation paths
 4. Show diff summary
 
-**FIND**: Check registry, then search user's folders for charters.
+**FIND**: Check registry, then search user's folders for Decision Interface Charters.
 
 ---
 
@@ -53,13 +53,13 @@ Create a **Decision Interface Charter** to govern how a recurring type of decisi
 
 ## Vision to Value Phase
 
-**Phase 2: Strategic Decisions** - Decision charters establish governance for recurring decisions at any phase.
+**Phase 2: Strategic Decisions** - Decision Interface Charters establish governance for recurring decisions at any phase.
 
 **Prerequisites**: Decision patterns identified, need for consistency recognized
 **Outputs used by**: All phases (provides decision governance)
 
 ## Purpose
-Decision Interface Charters establish the "rules of engagement" for recurring decisions, ensuring consistent quality and accountability.
+Decision Interface Charters establish the "rules of engagement" for a recurring decision type, ensuring consistent quality and accountability. The canonical output of this skill is a **Decision Interface Charter** (artefact name; abbreviation DIC). Throughout this skill, "the Decision Interface Charter" refers to the canonical artefact; informal "charter" mentions are shorthand for the same artefact.
 
 ## Output Structure
 
@@ -156,9 +156,9 @@ This decision should be revisited when:
 |----------|---------|--------|-------|
 | [Who needs to know] | [How] | [When] | [Who tells them] |
 
-## Charter Review
+## Decision Interface Charter Review
 
-**Review Frequency**: [How often to review this charter]
+**Review Frequency**: [How often to review this Decision Interface Charter]
 **Next Review**: [Date]
 **Review Owner**: [Role]
 ```
@@ -170,5 +170,5 @@ This decision should be revisited when:
 3. Ensure accountable owner is a role, not a person
 4. Include specific escalation triggers
 5. Define measurable success criteria
-6. Save in charters/ folder
+6. Save the Decision Interface Charter in the charters/ folder (filename: `DIC-[YYYY]-[NNN]-[short-slug].md`)
 7. Offer to create presentation version using /present
