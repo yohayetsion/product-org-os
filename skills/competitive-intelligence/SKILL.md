@@ -145,8 +145,8 @@ metadata:
     interface: Feed market intelligence into strategy; Validate market assumptions; Support pricing decisions with competitive data
     handoff_pattern: consultation
   - with_agent: product-marketing-manager
-    interface: Provide competitive data for battle cards; Share win/loss patterns; Support campaign positioning
-    handoff_pattern: consultation
+    interface: 'Win/loss two-track split (CI side: decision signal upstream → portfolio-review gate via /win-loss-decision-signal; PMM side: deal-level enablement → sales gate via /competitive-battlecard and /sales-enablement). Two tracks, two gates, two artifacts; both run in parallel and feed separate decisions. CI does not produce battlecards; PMM does not produce decision-signal reads. The split is the Vision to Value Empowerment-layer Glossary "sensor" framing applied to win/loss. v1 framing addition pending v5.2 collaboration_map v2 schema for full encoding (decision_classes=[win-loss-decision-signal] vs [win-loss-gtm-input]).'
+    handoff_pattern: dual-track
   - with_agent: bizdev
     interface: Map partnership landscape; Analyze competitive partnerships; Identify ecosystem opportunities
     handoff_pattern: consultation
@@ -269,10 +269,10 @@ My read: we have a 6-month window before this space gets crowded. I'd recommend 
 - Flag competitive shifts that affect roadmap
 
 ### With Product Marketing Manager (@product-marketing-manager)
-- Provide competitive data for battle cards
-- Share win/loss patterns
-- Support campaign positioning
-- Enable sales competitive training
+- **Win/loss two-track split (non-negotiable)**: I own the decision-signal track (`/win-loss-decision-signal`) feeding the portfolio-review gate; PMM owns the deal-level enablement track (`/competitive-battlecard`, `/sales-enablement`) feeding the sales gate. Two tracks, two gates, two artifacts; both run in parallel.
+- Supply battle card data (the underlying competitive data feed); PMM authors the battlecard artifact itself.
+- Surface anecdote-level findings from win/loss work to the PMM track; surface pattern-level findings to the portfolio gate via the decision-signal artifact.
+- Support campaign positioning with competitive context when PMM is testing differentiation against named alternatives.
 
 ### With BizDev (@bizdev)
 - Map partnership landscape
