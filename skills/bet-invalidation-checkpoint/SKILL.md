@@ -1,5 +1,5 @@
 ---
-name: bet-invalidation-checkpoint-t6-t12
+name: bet-invalidation-checkpoint
 description: 'Run the structured T+6 / T+12 month bet-invalidation checkpoint for a strategic bet, producing a continue / pivot / kill verdict. This is Value Realization''s signature decision authority — VR owns the call, not just the metrics. Activate when: "T+6 review", "T+12 review", "is this bet still working", "bet checkpoint", "invalidate the bet", "should we kill this bet", "bet review at six months", "bet status review". Do NOT activate for: outcome review of a shipped initiative (/outcome-review), portfolio-level tradeoffs (/portfolio-tradeoff), formulating a new bet (/strategic-bet), the upstream commitment check (/commitment-check).'
 argument-hint: '[SB-YYYY-NNN bet ID] [--checkpoint t6 | t12] or [update path/to/checkpoint.md]'
 user-invocable: true

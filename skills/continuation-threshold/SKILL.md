@@ -1,6 +1,6 @@
 ---
 name: continuation-threshold
-description: 'Evaluate a strategic bet against its Continuation Threshold — the affirmative, signal-driven gate that a bet must clear before committing more capital at the next major checkpoint. Produces a structured pass / fail / reopen verdict with reasoning. Activate when: "continuation threshold", "should we keep funding this bet", "does this bet still hold", "evaluate the bet at the gate", "next-stage commitment check", "is the threshold met". Do NOT activate for: T+6 / T+12 invalidation review (/bet-invalidation-checkpoint-t6-t12), commitment readiness before initial commit (/commitment-check), portfolio-level tradeoffs (/portfolio-tradeoff), formulating a new bet (/strategic-bet), the upstream business case that DEFINES the threshold (/business-case).'
+description: 'Evaluate a strategic bet against its Continuation Threshold — the affirmative, signal-driven gate that a bet must clear before committing more capital at the next major checkpoint. Produces a structured pass / fail / reopen verdict with reasoning. Activate when: "continuation threshold", "should we keep funding this bet", "does this bet still hold", "evaluate the bet at the gate", "next-stage commitment check", "is the threshold met". Do NOT activate for: T+6 / T+12 invalidation review (/bet-invalidation-checkpoint), commitment readiness before initial commit (/commitment-check), portfolio-level tradeoffs (/portfolio-tradeoff), formulating a new bet (/strategic-bet), the upstream business case that DEFINES the threshold (/business-case).'
 argument-hint: '[SB-YYYY-NNN bet ID] or [update path/to/threshold-evaluation.md]'
 user-invocable: true
 metadata:
@@ -35,7 +35,7 @@ This skill walks the user through evaluating a specific strategic bet against it
 
 **Prerequisites**: A formulated strategic bet (`/strategic-bet`) with named re-decision triggers; a business case (`/business-case`) that defines the bet's continuation_threshold field with specific, signal-driven criteria; the bet has reached a major checkpoint where additional capital commitment is being considered.
 
-**Consumed by**: `/phase-check` (uses the verdict to hard-gate Phase 2 → Phase 3); `/portfolio-status` (rolls up threshold-evaluation outcomes across the portfolio); `/bet-invalidation-checkpoint-t6-t12` (is informed by, but distinct from, threshold evaluation — invalidation tests "should this bet die?"; threshold tests "should this bet advance?").
+**Consumed by**: `/phase-check` (uses the verdict to hard-gate Phase 2 → Phase 3); `/portfolio-status` (rolls up threshold-evaluation outcomes across the portfolio); `/bet-invalidation-checkpoint` (is informed by, but distinct from, threshold evaluation — invalidation tests "should this bet die?"; threshold tests "should this bet advance?").
 
 ## Document Intelligence
 
@@ -92,7 +92,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 - Never invent metric values. If the data is not in `context/`, in a referenced source, or supplied by the user, mark it `[TBD]` and flag the missing-data risk in the verdict.
 - The default verdict when the threshold is not clearly met is **reopen**, not **continue**. Silent continuation under the original commitment is a process failure — the bet must be reopened and routed back to portfolio review.
 - The re-decision triggers minimum is a hard floor. If too many of the bet's named re-decision triggers have fired, the threshold is NOT met regardless of how the headline criteria look — too many fired triggers mean the bet's underlying assumptions have shifted enough that the original commitment is no longer the same commitment.
-- This skill does NOT replace the T+6 / T+12 invalidation checkpoint (`/bet-invalidation-checkpoint-t6-t12`). Invalidation tests "should this bet die?" — Continuation Threshold tests "should this bet advance to a larger capital commitment?" Both can fire on the same bet at different gates and produce different verdicts.
+- This skill does NOT replace the T+6 / T+12 invalidation checkpoint (`/bet-invalidation-checkpoint`). Invalidation tests "should this bet die?" — Continuation Threshold tests "should this bet advance to a larger capital commitment?" Both can fire on the same bet at different gates and produce different verdicts.
 
 ---
 
@@ -164,7 +164,7 @@ For each criterion named in the Continuation Threshold, evaluate:
 
 If verdict is **Pass**: The pending capital commitment is authorized to proceed. Document the new commitment level, the next gate firing date, and the threshold criteria for the next evaluation.
 
-If verdict is **Fail**: The pending capital commitment is NOT authorized. Route the bet to `/bet-invalidation-checkpoint-t6-t12` for a continue / pivot / kill verdict. Do not proceed with the capital commitment under the current bet structure.
+If verdict is **Fail**: The pending capital commitment is NOT authorized. Route the bet to `/bet-invalidation-checkpoint` for a continue / pivot / kill verdict. Do not proceed with the capital commitment under the current bet structure.
 
 If verdict is **Reopen**: The pending capital commitment is paused. Route the bet back to portfolio review (`/portfolio-tradeoff` or `/strategic-bet` update). The original commitment is not the same commitment — the bet must be re-formulated against the new evidence base before any capital decision proceeds.
 
@@ -172,7 +172,7 @@ If verdict is **Reopen**: The pending capital commitment is paused. Route the be
 
 - Source business case: [Path to the /business-case record that defined this threshold]
 - Source strategic bet: [Path to the /strategic-bet record with named re-decision triggers]
-- Most recent invalidation checkpoint (if any): [Path to /bet-invalidation-checkpoint-t6-t12 record]
+- Most recent invalidation checkpoint (if any): [Path to /bet-invalidation-checkpoint record]
 - Phase check consuming this verdict (if any): [Path to /phase-check record]
 - Prior threshold evaluation (if any): [Path to predecessor]
 
@@ -201,5 +201,5 @@ After generating the threshold evaluation:
 
 1. **Save to context registry**: Log the verdict as a Continuation Threshold event on the bet's record in `context/bets/[YYYY]/[SB-ID].md`. The verdict is part of the bet's audit trail.
 2. **Update assumption status**: If criterion findings invalidate or strengthen an assumption, update its status in `context/assumptions/registry.md`.
-3. **Route on Reopen / Fail**: If the verdict is Reopen, create a portfolio-review queue entry. If Fail, create a `/bet-invalidation-checkpoint-t6-t12` invocation.
+3. **Route on Reopen / Fail**: If the verdict is Reopen, create a portfolio-review queue entry. If Fail, create a `/bet-invalidation-checkpoint` invocation.
 4. **Cross-reference for /phase-check**: If a Phase 2 → Phase 3 advance is pending, the consuming `/phase-check` record references this evaluation by ID; a Pass verdict from this skill is the structural prerequisite for that phase advance to be authorized.
