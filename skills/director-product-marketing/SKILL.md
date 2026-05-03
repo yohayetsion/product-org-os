@@ -25,7 +25,9 @@ metadata:
   - gtm-brief
   - launch-strategy
   - launch-plan
+  - launch-narrative-brief
   - positioning-statement
+  - messaging-architecture
   - market-analysis
   - market-segment
   - pricing-strategy

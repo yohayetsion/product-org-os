@@ -27,6 +27,7 @@ metadata:
   - bcg-matrix
   - portfolio-status
   - portfolio-tradeoff
+  - continuation-threshold
   - decision-record
   - okr-writer
   supporting_skills:

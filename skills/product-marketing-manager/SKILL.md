@@ -33,8 +33,10 @@ metadata:
   - competitive-battlecard
   - launch-plan
   - launch-strategy
+  - launch-narrative-brief
   supporting_skills:
   - gtm-strategy
+  - messaging-architecture
   - competitive-landscape
   - competitor-alternatives
   - product-teardown
