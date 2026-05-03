@@ -317,7 +317,7 @@ Steps:
 3. **Read the `continuation_threshold_declared` conformance signal** from the business case's §13. If FALSE, the gate FIRES with `Blocker: continuation_threshold_declared signal is FALSE — the business case is incomplete and cannot be consumed at the gate`.
 4. **Read the `re_decision_triggers_minimum_met` signal** (computed at audit time per §13 of `/business-case`). If FALSE, the gate FIRES with `Blocker: too many of the bet's named re-decision triggers have fired — the original commitment is no longer the same commitment; route to /continuation-threshold for a Reopen verdict and back to portfolio review`.
 5. **Look for a current `/continuation-threshold` evaluation** in `reviews/threshold-evaluations/` or the bet's folder. If absent, the gate FIRES with `Blocker: no current /continuation-threshold evaluation on file — invoke /continuation-threshold to produce a pass / fail / reopen verdict against the threshold defined in the business case`.
-6. **Read the verdict from the most recent evaluation**. If verdict is `Pass` AND the evaluation's `re_decision_triggers_minimum_met` is TRUE → gate OPENS. If verdict is `Fail` → gate FIRES with `Blocker: /continuation-threshold returned Fail — bet thesis disproven at this gate; route to /bet-invalidation-checkpoint-t6-t12 for continue / pivot / kill verdict, do not advance Phase 3`. If verdict is `Reopen` → gate FIRES with `Blocker: /continuation-threshold returned Reopen — original commitment no longer the same commitment; route back to portfolio review (/portfolio-tradeoff or /strategic-bet update) before any Phase 3 advance`.
+6. **Read the verdict from the most recent evaluation**. If verdict is `Pass` AND the evaluation's `re_decision_triggers_minimum_met` is TRUE → gate OPENS. If verdict is `Fail` → gate FIRES with `Blocker: /continuation-threshold returned Fail — bet thesis disproven at this gate; route to /bet-invalidation-checkpoint for continue / pivot / kill verdict, do not advance Phase 3`. If verdict is `Reopen` → gate FIRES with `Blocker: /continuation-threshold returned Reopen — original commitment no longer the same commitment; route back to portfolio review (/portfolio-tradeoff or /strategic-bet update) before any Phase 3 advance`.
 
 ### Output structure (Phase 2 → 3)
 
@@ -337,7 +337,7 @@ Append this section to the v5.0 output verbatim:
 
 **Specific Gap (only if BLOCKED)**: [Name the exact missing artifact / field / signal / verdict]
 
-**Required action**: [Route to /business-case UPDATE, /continuation-threshold CREATE, /portfolio-tradeoff, or /bet-invalidation-checkpoint-t6-t12 — pick the correct routing per the gap above]
+**Required action**: [Route to /business-case UPDATE, /continuation-threshold CREATE, /portfolio-tradeoff, or /bet-invalidation-checkpoint — pick the correct routing per the gap above]
 ```
 
 ## Phase 3 → Phase 4 Hard-Gate (V5.1-24)
