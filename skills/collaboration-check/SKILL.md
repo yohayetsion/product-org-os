@@ -56,7 +56,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 
 
-Validate **stakeholder consultation and RACI clarity** for a decision or initiative, enforcing Principle #6 (Collaborative Excellence).
+Validate **stakeholder consultation and RACI clarity** for a decision or initiative, enforcing Principle #4 (Alignment Beats Consensus).
 
 ## Vision to Value Phase
 
@@ -64,7 +64,7 @@ Validate **stakeholder consultation and RACI clarity** for a decision or initiat
 
 ## Purpose
 
-Collaborative Excellence means the right people provide input at the right time. This skill validates that stakeholders were properly consulted, RACI is clear, and no one will be surprised by the decision.
+Alignment Beats Consensus means the right people provide input at the right time, then a single owner decides. This skill validates that stakeholders were properly consulted, RACI is clear, and no one will be surprised by the decision.
 
 ## Output Structure
 

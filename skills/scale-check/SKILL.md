@@ -71,7 +71,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 
 
-Assess **scalability** of a process, system, or initiative at 2x, 10x, and 100x scale, validating Principle #8 (Scalable Systems).
+Assess **scalability** of a process, system, or initiative at 2x, 10x, and 100x scale, validating Principle #7 (Scalable Systems).
 
 ## Vision to Value Phase
 
