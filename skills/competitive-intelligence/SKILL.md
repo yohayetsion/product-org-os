@@ -146,7 +146,7 @@ metadata:
     handoff_pattern: consultation
   - with_agent: product-marketing-manager
     interface: 'Win/loss two-track split (CI side: decision signal upstream → portfolio-review gate via /win-loss-decision-signal; PMM side: deal-level enablement → sales gate via /competitive-battlecard and /sales-enablement). Two tracks, two gates, two artifacts; both run in parallel and feed separate decisions. CI does not produce battlecards; PMM does not produce decision-signal reads. The split is the Vision to Value Empowerment-layer Glossary "sensor" framing applied to win/loss. v1 framing addition pending v5.2 collaboration_map v2 schema for full encoding (decision_classes=[win-loss-decision-signal] vs [win-loss-gtm-input]).'
-    handoff_pattern: dual-track
+    handoff_pattern: consultation
   - with_agent: bizdev
     interface: Map partnership landscape; Analyze competitive partnerships; Identify ecosystem opportunities
     handoff_pattern: consultation

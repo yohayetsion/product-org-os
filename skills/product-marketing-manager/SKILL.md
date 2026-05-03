@@ -155,7 +155,7 @@ metadata:
     handoff_pattern: consultation
   - with_agent: competitive-intelligence
     interface: 'Win/loss two-track split (PMM side: deal-level enablement → sales gate via /competitive-battlecard and /sales-enablement; CI side: decision signal upstream → portfolio-review gate via /win-loss-decision-signal). Two tracks, two gates, two artifacts; both run in parallel and feed separate decisions. PMM authors battlecards from CI''s underlying data; CI does not produce battlecards. PMM does not produce portfolio-level decision-signal reads. The split is the Vision to Value Empowerment-layer Glossary "sensor" framing applied to win/loss. v1 framing addition pending v5.2 collaboration_map v2 schema for full encoding (decision_classes=[win-loss-gtm-input] vs [win-loss-decision-signal]).'
-    handoff_pattern: dual-track
+    handoff_pattern: consultation
   - with_agent: value-realization
     interface: Get customer success stories; Understand adoption patterns; Source proof points for materials
     handoff_pattern: consultation
