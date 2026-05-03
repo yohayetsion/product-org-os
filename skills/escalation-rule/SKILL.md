@@ -164,6 +164,70 @@ Before escalating, prepare:
 
 **Format**: [Template or document to use]
 
+## Decision Frame Requirement (Mandatory)
+
+An escalation that arrives as a problem statement turns the senior reviewer into an analyst. An escalation that arrives as a decision frame turns the senior reviewer into a decider. The escalation rule enforces the second shape.
+
+Every escalation routed through this rule MUST present a **Decision Frame** with three named elements before the escalation is accepted by the receiver. The receiver should refuse to engage substantively with an escalation that is missing any of the three.
+
+### The three required elements
+
+| Element | What it answers | Failure mode if missing |
+|---|---|---|
+| **The Decision** | What specific decision is being asked of the escalation owner. Stated as a single sentence with a verb and an object. | The receiver cannot tell what they are deciding. The conversation defaults to "let me understand the situation" — i.e. analysis, not decision-making. |
+| **The Alternatives** | At least two named, mutually exclusive options the receiver is choosing between. Each named option carries its own pros, cons, and rough cost. A "do nothing" or "defer" option is allowed and often correct. | The receiver is presented with one path and asked to bless it, which is rubber-stamping, not deciding. Alternatives force the tradeoff into the open. |
+| **The Criteria** | The named criteria the receiver should use to choose between the alternatives, ordered by weight. Examples: "minimize regulatory exposure first, then cost," or "preserve customer trust first, then speed." | The receiver and the escalator may agree on the chosen alternative for different reasons, and the next similar escalation will not benefit from the precedent. |
+
+### Decision Frame template
+
+The escalating party fills out this block and includes it at the top of the escalation:
+
+```markdown
+## Decision Frame
+
+**The Decision**: [One sentence. Verb + object. e.g., "Whether to grant Vendor X a six-month extension on the data-processing addendum."]
+
+**The Alternatives**:
+1. **[Option A name]** — [1-2 sentence description]
+   - Pros: [list]
+   - Cons: [list]
+   - Rough cost: [time, money, or risk]
+2. **[Option B name]** — [1-2 sentence description]
+   - Pros: [list]
+   - Cons: [list]
+   - Rough cost: [time, money, or risk]
+3. **[Option C name, e.g., "Defer / Do Nothing"]** — [1-2 sentence description]
+   - Pros: [list]
+   - Cons: [list]
+   - Rough cost: [time, money, or risk]
+
+**The Criteria** (ordered by weight):
+1. [Criterion 1 — e.g., "Minimize regulatory exposure"]
+2. [Criterion 2 — e.g., "Preserve the customer relationship"]
+3. [Criterion 3 — e.g., "Limit cost to under $50k"]
+
+**Recommended Alternative**: [Option name] — [one sentence rationale tying recommendation to the named criteria]
+```
+
+### Skill behavior — validation step
+
+When this skill runs an escalation flow (creating a rule, validating an incoming escalation, or coaching a team through an escalation), the skill performs a **Decision Frame validation step** before allowing the escalation to proceed:
+
+1. Inspect the escalation input. Does it include all three elements (The Decision, The Alternatives, The Criteria)?
+2. If YES → proceed with the rule's normal escalation flow (matrix, resolution expectations, follow-up).
+3. If NO → the skill DOES NOT escalate. Instead, the skill walks the user back through framing:
+   - "I can see the problem you're describing. Before this can be escalated, we need to convert it into a decision frame. Let's work through three questions."
+   - Ask: "What specific decision are you asking [escalation owner] to make? State it as one sentence with a verb and an object."
+   - Ask: "What are the alternatives [escalation owner] is choosing between? At least two, ideally three. Each with rough pros, cons, and cost."
+   - Ask: "What criteria should [escalation owner] use to choose? Ordered by weight."
+   - Once all three are answered, populate the Decision Frame template, then proceed with the escalation.
+
+### Why this is mandatory, not optional
+
+A problem statement that lands on a senior reviewer's desk consumes the reviewer's time twice: once to understand the situation, once to formulate the decision. A decision frame consumes it once. Across an organization with hundreds of escalations per quarter, the second pattern is structurally cheaper and produces better decisions because the alternatives are surfaced before the reviewer's anchor bias kicks in.
+
+The rule is also a coaching mechanism. Teams that escalate decision frames, not problem statements, learn the discipline of framing — which is the same discipline that produces good `/decision-record` entries, good `/business-case` documents, and good `/strategic-bet` formulations. Enforcing the frame at escalation time pays compound returns.
+
 ## Resolution Expectations
 
 | Priority | Response Time | Resolution Time |
@@ -175,6 +239,7 @@ Before escalating, prepare:
 
 ## Anti-Patterns (Don't Do This)
 
+- **Escalating a problem statement, not a decision frame**: The problem-statement shape ("X is broken, please advise") forces the reviewer to do the analyst's job. The decision-frame shape ("Choose between A, B, C using criteria 1, 2, 3 — I recommend B") forces the reviewer to do the decider's job. The skill rejects problem-statement escalations and walks the user back through framing.
 - **Escalating without preparation**: Always come with options
 - **Skipping levels**: Follow the escalation path
 - **Waiting too long**: Escalate early when triggers hit
@@ -193,4 +258,5 @@ Before escalating, prepare:
 3. Be specific about trigger conditions
 4. Include clear escalation paths
 5. Define expected resolution times
-6. Save in rules/ or governance/ folder
+6. Validate every escalation against the Decision Frame Requirement before allowing the escalation to proceed. If The Decision, The Alternatives, or The Criteria are missing, walk the user back through framing instead of escalating.
+7. Save in rules/ or governance/ folder
