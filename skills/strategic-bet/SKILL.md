@@ -103,7 +103,7 @@ Strategic bets articulate what we believe will create value, why we believe it, 
 
 > "We bet that [doing X] for [customer segment] will result in [outcome] because [rationale]."
 
-## Customer Insight (Principle #3)
+## Customer Insight (Principle #1)
 
 **Who**: [Target customer segment]
 **Pain**: [What problem they have]
@@ -177,7 +177,7 @@ Strategic bets articulate what we believe will create value, why we believe it, 
 - [Dependency 1]
 - [Dependency 2]
 
-## Scalability Consideration (Principle #8)
+## Scalability Consideration (Principle #7)
 
 | Scale Level | Works? | What Changes | Investment Needed |
 |-------------|--------|--------------|-------------------|

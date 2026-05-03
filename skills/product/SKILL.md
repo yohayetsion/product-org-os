@@ -256,11 +256,10 @@ If the request references existing initiatives:
 
 This gateway embodies the Vision to Value Operating Principles:
 
-- **#1 End-to-End Ownership**: Clear accountability for every request
-- **#2 Decision Quality**: Structured analysis before action
-- **#3 Customer Obsession**: Routes to roles closest to customer value
-- **#6 Collaborative Excellence**: Right people, right inputs, right time
-- **#8 Scalable Systems**: Parallel execution for efficiency
+- **#1 End-to-End Ownership**: Clear accountability for every request; routes to roles closest to customer value
+- **#3 Decision Quality**: Structured analysis before action
+- **#4 Alignment Beats Consensus**: Right people, right inputs, right time
+- **#7 Scalable Systems**: Parallel execution for efficiency
 
 After execution, always consider:
 - Should we run `/context-save` to preserve decisions?

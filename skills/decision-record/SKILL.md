@@ -240,7 +240,7 @@ Decision records capture the context, options, and rationale for important decis
 
 **Rationale**: [Why this option was chosen over others. What were the key factors that tipped the decision?]
 
-## Customer Value Link (Principle #3)
+## Customer Value Link (Principle #1)
 
 **Customer Problem**: [What customer problem does this decision address?]
 **Customer Benefit**: [How will customers benefit from this decision?]
@@ -248,7 +248,7 @@ Decision records capture the context, options, and rationale for important decis
 
 *If this decision has no customer value link, document why (internal efficiency, technical debt, etc.)*
 
-## Stakeholders Consulted (Principle #6)
+## Stakeholders Consulted (Principle #4)
 
 | Stakeholder | Role | Input Provided | Input Incorporated? |
 |-------------|------|----------------|---------------------|
