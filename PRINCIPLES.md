@@ -198,26 +198,45 @@ The Vision to Value (Vision to Value) Operating System is our framework for doin
 
 ---
 
-### Principle 8: Continuous Learning
+### Principle 8: Organizations Learn Through Outcomes
 
-**Statement**: Systematic capture and application of learnings.
+**Statement**: Organizations learn from realized customer and business outcomes, not from activity. Learning is a cadenced sensing discipline — the org publishes a stack of review rhythms that compare what was decided against what actually happened, and feeds the deltas back into the next decision.
 
-**Why**: Mistakes are valuable if we learn from them. The same mistake twice is negligence.
+**Why**: Mistakes are valuable if we learn from them, but only if the organization is structurally listening for them. Without a published cadence stack, "continuous learning" collapses into ad-hoc retrospectives that fire when someone remembers, against decisions no one indexed, with findings no one routes back. The same mistake twice is negligence; the same mistake at portfolio scale because no one was sensing the system is a leadership failure.
+
+**The four-layer cadence stack**: A Vision to Value learning loop runs on a sensor stack with four cadences. Each layer has a fixed window, a named artifact it inspects, and a consumer downstream. Together they convert the org's accumulated decision record into a continuous sensing surface.
+
+| Layer | Cadence | What it senses | Source artifact |
+|-------|---------|----------------|-----------------|
+| 1. Quarterly portfolio review | 90 days | Portfolio-level renew/revise/kill calls vs. last quarter's commitments | `context/portfolio/portfolio-review-*.md` |
+| 2. Monthly bet review | 30 days per active bet | Bet-level performance vs. continuation threshold | `context/bets/[YYYY]/SB-*.md` |
+| 3. T+30 decision review and T+60 outcome review | Per-decision (30 / 60 days from acceptance) | Whether each accepted decision produced its expected outcome | `context/decisions/[YYYY]/DR-*.md` cross-referenced against `context/index.json` `learningToDecision` links |
+| 4. Weekly handoff freshness | 7 days | Whether the working session is alive enough to carry next week's decisions | `context/handoffs/current-session.md` |
+
+This stack is the cadence Principle 8 expects of any organization running the OS. It is encoded operationally in `/operating-calendar` (the four cadence layers as published rituals) and sensed mechanically by `/cadence-adherence-telemetry` (the file-system scan that flags which layer's named artifact has gone stale beyond threshold).
 
 **In Practice**:
-- Conduct retrospectives regularly
-- Document learnings in searchable form
-- Update processes based on learnings
+- Publish the four-layer cadence stack as a versioned artifact (use `/operating-calendar`); a calendar living only in leaders' heads is a learning-loop failure
+- Run the quarterly portfolio review on its 90-day cadence, with renew/revise/kill decisions written down per bet — never let it drift into a status readout
+- Keep monthly bet reviews mechanical: each active bet gets its `Status:` field updated against the continuation threshold every 30 days
+- Schedule T+30 decision reviews and T+60 outcome reviews against every accepted decision; missing T+60 outcome links are the highest-value learning leak in the system
+- Keep `context/handoffs/current-session.md` refreshed weekly; a handoff stale beyond 7 days signals the project has gone dark and downstream cadences will run on dead context
+- Use `/cadence-adherence-telemetry` (V5.1-31) to surface which layer is overdue, with severity tied to how far past threshold the artifact has drifted
 
 **Validation Questions**:
-- What did we learn from this?
-- Is it documented where others can find it?
-- Have we applied past learnings here?
+- Have we published our cadence stack as a versioned artifact, or is it implicit in individual leaders' calendars?
+- For each layer, can we point at the named source artifact and confirm it was updated within its cadence window?
+- For accepted decisions older than 30 days, can we trace each to a learning entry — or are they sitting un-reviewed?
+- When telemetry surfaces an overdue cadence, do we treat it as a sensor reading and act, or do we explain it away?
 
 **Red Flags**:
-- No retrospectives
-- Learnings not written down
-- Same mistakes repeated
+- "We do retros" with no published cadence and no traceable artifact trail
+- Portfolio review skipped or postponed; the 90-day window slipping silently
+- Decisions accepted, shipped, and never revisited at T+30 or T+60
+- `context/handoffs/current-session.md` weeks stale; team has stopped sensing its own context
+- Cadence-adherence telemetry surfaces P0 findings and the org reasons each one away rather than fixing the missing artifact
+
+**Enforcement**: `/operating-calendar` publishes the four-layer cadence stack as the canonical artifact. `/cadence-adherence-telemetry` (V5.1-31, consuming the V5.1-30 sensor) is the mechanical observer that reports which layer's named artifact has gone stale beyond its threshold.
 
 ---
 
@@ -232,7 +251,7 @@ These principles are enforced throughout the Vision to Value phases:
 | 3. Strategic Commitments | #1 End-to-End Ownership, #2 Strategy Precedes Structure |
 | 4. Coordinated Execution | #4 Alignment Beats Consensus |
 | 5. Business & Customer Outcomes | #6 Outcome Focus |
-| 6. Learning & Adaptation | #8 Continuous Learning |
+| 6. Learning & Adaptation | #8 Organizations Learn Through Outcomes |
 
 ---
 
