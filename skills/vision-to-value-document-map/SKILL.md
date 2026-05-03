@@ -167,7 +167,7 @@ This is the single source of truth. The skill MUST surface this order when recon
 | 5 | GTM Is a Strategic Choice | Go-to-market is a strategic decision surface co-decided with product scope, not a downstream handoff. | Vision to Value, Part III — Commercial Architecture |
 | 6 | Outcome Focus | Success is measured by results, not outputs. | Vision to Value, Part IV — Outcomes |
 | 7 | Scalable Systems | Processes that work as the organization grows. | Vision to Value, Part V — Scaling |
-| 8 | Continuous Learning | Systematic capture and application of learnings. | Vision to Value, Part V — Scaling |
+| 8 | Organizations Learn Through Outcomes | Systematic capture and application of learnings. | Vision to Value, Part V — Scaling |
 
 ### Resolution Behavior
 

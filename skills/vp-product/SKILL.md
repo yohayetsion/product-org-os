@@ -35,6 +35,7 @@ metadata:
   - four-risks-check
   - vision-to-value-document-map
   - vision-statement
+  - v2v-install-90-day
   supporting_skills:
   - bcg-matrix
   - pirate-metrics

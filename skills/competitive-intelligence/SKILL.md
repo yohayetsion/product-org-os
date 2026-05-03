@@ -27,6 +27,7 @@ metadata:
   - competitor-alternatives
   - product-teardown
   - competitive-intelligence
+  - win-loss-decision-signal
   supporting_skills:
   - porter-five-forces
   - swot-analysis

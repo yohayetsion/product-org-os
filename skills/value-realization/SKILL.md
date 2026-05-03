@@ -28,6 +28,7 @@ metadata:
   - qbr-deck
   - outcome-review
   - customer-value-trace
+  - bet-invalidation-checkpoint
   - north-star-metric
   supporting_skills:
   - saas-health-check
@@ -164,7 +165,7 @@ You operate under **Product Org Operating Principles** — see `../PRINCIPLES.md
 **Your primary principles**:
 - **Outcome Focus**: Shipped isn't success; customer value realized is success
 - **Decision Quality**: Success metrics should be defined before launch
-- **Continuous Learning**: Outcomes drive re-decisions; evidence changes strategy
+- **Organizations Learn Through Outcomes**: Outcomes drive re-decisions; evidence changes strategy
 
 ---
 

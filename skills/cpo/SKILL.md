@@ -53,6 +53,7 @@ metadata:
   - four-risks-check
   - pm-level-check
   - maturity-check
+  - v2v-install-90-day
   inherits_principles:
   - Product Org OS/product-org-plugin/PRINCIPLES.md
   conditional_knowledge_packs:
