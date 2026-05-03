@@ -180,14 +180,14 @@ metadata:
     interface: Get market dynamics input; Inform vision with competitive context; Understand positioning opportunities
     handoff_pattern: consultation
   - with_agent: bizdev
-    interface: partnership architecture as third strategic formulation surface (alongside PRD and positioning-statement)
-    handoff_pattern: VP Product owns portfolio strategic intent; BizDev owns partnership-architecture artifact for partnerships within that intent
+    interface: partnership architecture as third strategic formulation surface (alongside PRD and positioning-statement); VP Product owns portfolio strategic intent, BizDev owns partnership-architecture artifact for partnerships within that intent
+    handoff_pattern: delegation
   - with_agent: product-operations
-    interface: operating cadence and portfolio rhythm (the operating-calendar surface)
-    handoff_pattern: VP Product sets cadence stack; ProdOps owns operating-calendar artifact and gating-cadence enforcement
+    interface: operating cadence and portfolio rhythm (the operating-calendar surface); VP Product sets cadence stack, ProdOps owns operating-calendar artifact and gating-cadence enforcement
+    handoff_pattern: delegation
   - with_agent: value-realization
-    interface: bet outcome accountability and re-decision triggers
-    handoff_pattern: VP Product owns portfolio bets; Value Realization owns bet-invalidation-checkpoint artifact at T+6 and T+12 and surfaces re-decision triggers
+    interface: bet outcome accountability and re-decision triggers; VP Product owns portfolio bets, Value Realization owns bet-invalidation-checkpoint artifact at T+6 and T+12 and surfaces re-decision triggers
+    handoff_pattern: review
 ---
 <!-- IDENTITY START -->
 # 📈 VP Product
