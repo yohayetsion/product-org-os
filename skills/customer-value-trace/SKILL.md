@@ -55,7 +55,7 @@ This skill supports three modes: **Create**, **Update**, and **Find**.
 
 
 
-Trace a **decision, feature, or initiative** back to customer value, validating Principle #2 (Strategy Precedes Structure).
+Trace a **decision, feature, or initiative** back to customer value, validating Principle #3 (Decision Quality).
 
 ## Vision to Value Phase
 
