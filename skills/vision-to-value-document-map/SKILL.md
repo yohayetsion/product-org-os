@@ -189,6 +189,72 @@ The redirect should be a short, navigable answer — not a defense of the rename
 
 ---
 
+## Phase-Count Reconciliation (6-phase OS ↔ 5-phase pipeline ↔ 3-phase strategic process)
+
+The Vision to Value world uses three different phase counts at three different altitudes. A user who learned the book's 5-phase pipeline shape may search the OS for the wrong surface and not find what they expect; a user who learned the 3-phase strategic process may look for sub-divisions that do not exist at the highest altitude. This section maps the three counts to each other so navigation is unambiguous.
+
+### Why three counts exist
+
+The three phase counts are not contradictions — they are the same shape viewed at different altitudes. The 6-phase OS terminology is the operational surface (the level at which a Product Org executes day-to-day). The 5-phase pipeline is the executable backbone described in the Vision to Value book (the level at which the methodology is taught). The 3-phase strategic process is the highest altitude (the level at which executive sponsors think about a bet from intent to commitment). Each altitude is correct for its scope; the OS chose the 6-phase operational surface because that is the level a Product Org actually runs at.
+
+### Canonical 6-phase OS surface (this is the live OS)
+
+This is the single source of truth for the OS today. All `/phase-check`, `/portfolio-status`, and gate-firing logic in v5.0 and v5.1 use this 6-phase surface.
+
+| Phase | Name | Key Question |
+|-------|------|--------------|
+| 1 | Strategic Foundation | "Where should we play?" |
+| 2 | Strategic Decisions | "Is this viable?" |
+| 3 | Strategic Commitments | "Are we committed?" |
+| 4 | Coordinated Execution | "Are we ready to execute?" |
+| 5 | Business & Customer Outcomes | "Did it work?" |
+| 6 | Learning Loop | "What did we learn?" |
+
+### 5-phase pipeline ↔ 6-phase OS mapping
+
+The Vision to Value book describes an executable 5-phase pipeline that integrates the Learning Loop cross-phase rather than as a discrete terminal phase. Mapping the 5 to the 6:
+
+| 5-phase Pipeline | 6-phase OS | Notes |
+|------------------|------------|-------|
+| Strategy | Phase 1: Strategic Foundation | Direct map. Where should we play? — vision, market analysis, competitive landscape, target segments. |
+| Decisions | Phase 2: Strategic Decisions | Direct map. Is this viable? — business case, pricing, positioning, decision records, the commercial filter. |
+| Commitments | Phase 3: Strategic Commitments | Direct map. Are we committed? — roadmap, GTM, PRDs, commitment-check, the point of no return. |
+| Execution | Phase 4: Coordinated Execution | Direct map. Are we ready to execute? — campaign brief, sales enablement, readiness check, stakeholder briefs. |
+| Realization | Phase 5: Business & Customer Outcomes | Direct map. Did it work? — onboarding, value-realization tracking, customer health, success metrics. |
+| (cross-phase Learning Loop) | Phase 6: Learning Loop | The pipeline integrates learning continuously across all five phases; the OS surfaces it as an explicit Phase 6 (outcome reviews, retrospectives, context-save) so the loop has a named home for assets. |
+
+The 5-phase pipeline reader looking for "Realization" should land on Phase 5 in the OS. The 5-phase reader looking for the Learning Loop should land on Phase 6 (the OS surfaces it discretely; the book describes it cross-phase — both are correct).
+
+### 3-phase strategic process ↔ 6-phase OS mapping
+
+The 3-phase strategic process is the executive-altitude shape of the same flow — the level at which a sponsor thinks "from strategic intent through bets through commitments." Mapping the 3 to the 6:
+
+| 3-phase Strategic Process | 6-phase OS Coverage | Notes |
+|---------------------------|----------------------|-------|
+| Strategic Intent | Phase 1: Strategic Foundation | The "where should we play" altitude. Vision, market shape, target segments. |
+| Strategic Bets | Phase 2: Strategic Decisions | The "is this viable" altitude. Business case, strategic-bet formulation, named re-decision triggers, continuation threshold declaration. |
+| Strategic Commitments | Phase 3: Strategic Commitments | The "are we committed" altitude. Five Signals checklist, point-of-no-return commitment-check, capital envelope locked. |
+
+The 3-phase reader looking for the executive altitude lands at Phases 1-3 of the OS. Phases 4-6 (Execution, Outcomes, Learning Loop) are below the 3-phase strategic process altitude — they are the operational follow-through that the executive process commits to but does not directly own at the strategic level.
+
+### Quick-reference cross-walk
+
+| If you learned … | Look in OS Phase … |
+|------------------|--------------------|
+| "Realization" (5-phase) | Phase 5: Business & Customer Outcomes |
+| "Strategic Bets" (3-phase) | Phase 2: Strategic Decisions |
+| "Strategic Commitments" (3-phase) | Phase 3: Strategic Commitments |
+| "Learning Loop" (5-phase or 3-phase) | Phase 6: Learning Loop (operational home) — also surfaced cross-phase in feedback / context skills |
+| "Decisions" (5-phase) | Phase 2: Strategic Decisions |
+
+### v6.0 revisit note
+
+The 6-phase OS terminology may be revisited in v6.0 based on production usage. Specifically: if v5.2 production data shows the 6-phase schema is creating navigation friction (users searching for the book's 5-phase terms not finding the right OS surfaces, or searching for the executive 3-phase shape not landing at Phases 1-3 cleanly), v6.0 could collapse the OS to the 5-phase pipeline shape with the Learning Loop integrated cross-phase rather than as a discrete Phase 6. For now (v5.x), the 6-phase apparatus is canonical and the 5-phase / 3-phase mappings live here for navigation only.
+
+The reason this question is parked rather than resolved in v5.1 is that the cost of changing the operational phase count is high (every `/phase-check`, every gate, every audit reference re-anchors) and the evidence base is currently thin — production usage of v5.0 and v5.1 will tell us whether the friction is real. If v5.2 ships and the mapping table above is the destination users keep landing on, the 6-phase shape is doing its job and the question stays parked. If users keep getting lost between the surfaces, v6.0 reopens the schema.
+
+---
+
 ## Vision to Value Operating Principle
 
 > "A product without a document map is navigating without a compass. The map doesn't create the territory — but it makes the territory navigable."
