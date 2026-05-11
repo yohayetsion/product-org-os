@@ -1,4 +1,4 @@
-# Product Org OS
+# Product Org OS — Vision to Value Reference Implementation
 
 **An entire product organization that becomes your superpower.**
 
