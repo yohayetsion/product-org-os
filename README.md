@@ -231,7 +231,7 @@ MIT
 
 **Free & Open Source.** World-class product capabilities shouldn't be locked behind enterprise software.
 
-Based on the Vision to Value Executive Manifesto by Yohay Etsion.
+Product Org OS is one of three independently usable artifacts in the Vision to Value body of work by Yohay Etsion. The companions are the book *Vision to Value: Your Executive Manifesto and Operating System for World-Class Product Organizations* (the reasoning behind the methodology) and the Decision Provenance Standard (the canonical specification for decision-record schema, seal-and-chain mechanics, and erasure handling). Each artifact stands on its own; this repository does not depend on either to install or operate.
 
 ---
 
