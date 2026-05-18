@@ -5,6 +5,28 @@ All notable changes to Product Org OS will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.1.0] - 2026-05-18
+
+Spawn protocol rewritten: agents now load their declared skills and knowledge packs before producing output (with per-spawn telemetry block + lightweight_spawn exception for high-frequency routine agents).
+
+Section 2 of `rules/agent-spawn-protocol.md` now instructs every spawned agent to Read its own SKILL.md, all preload knowledge packs, and task-matching core/supporting skills, conditional packs, and mandatory invocations before executing. Closes the gap where declared metadata had no runtime effect — a pre-fix audit found 0 of 790 historical agent runs invoked any declared skill, and only ~5% read any skill file at all. Platform-agnostic (no hooks required); the protocol is enforced at prompt-construction time.
+
+### Added
+- **Phase 1 — Self-Orientation (mandatory)**: every spawned agent reads its own SKILL.md and every entry in `metadata.preload_knowledge_packs` before producing output.
+- **Phase 2 — Task-Specific Loading (mandatory unless lightweight_spawn)**: agents inspect `core_skills`, `supporting_skills`, `conditional_knowledge_packs`, and `mandatory_skill_invocations` against the user's task and Read matches.
+- **Phase 2.5 — Telemetry block**: every spawned agent emits a `📋 Pre-Execution Self-Check` block declaring what it loaded (SKILL.md path, preload packs N, task-matched skills M, conditional triggers K, mandatory invocations J, fallbacks taken). Per-spawn auditable proof that the protocol fired.
+- **`lightweight_spawn` exception**: high-frequency routine agents (e.g., `@pa`, `@analyst`, `@coach`) can declare `metadata.lightweight_spawn: true` to skip Phase 2 task-specific loading. Phase 1 (self-orientation + preload packs) remains mandatory.
+- **Three-shape path resolver**: handles bare-name pack references, paths-with-extensions, and absolute-from-workspace-root paths uniformly, with documented fallback chains and honest telemetry reporting.
+- **Alias resolution (M23)**: at spawn-construction time, alias handles (`@pm`, `@vp`, `@plt`, `@pmm`, `@pm-dir`, `@pmm-dir`) substitute the canonical agent slug from the alias SKILL.md's `metadata.alias` field, so agents read their operating manual rather than an empty router file.
+- **`{agent-slug}` placeholder**: third substitution in the prompt injection template, alongside `{emoji}` and `{Display Name}`.
+
+### Changed
+- Protocol heading renamed from "Agent Identity & Response Protocol" to "Agent Identity & Operating Protocol" to reflect that it now governs operation, not just response style.
+- Response Rules, Response Length, No Fabricated Numbers, Context Awareness, Feedback Capture, ROI display, Tool Integration, and Agent Identity for Tracking sections are preserved verbatim.
+
+### Migration
+No SKILL.md changes required to consume the new protocol — agents adopt the new behavior automatically on next spawn. To enable `lightweight_spawn` for an agent, add `metadata.lightweight_spawn: true` to its SKILL.md frontmatter. To declare an alias, set `metadata.alias: <canonical-slug>` on the alias SKILL.md.
+
 ## [4.0.1] — 2026-04-16
 
 - Repositioned as a framework. Dropped the Claude Code plugin wrapper; install is now `git clone` + `python install.py`. See README for full instructions.
