@@ -1,6 +1,16 @@
-# Agent Spawn Protocol
+# Agent Spawn Protocol (v2 — 2026-05-27)
 
 Canonical rule for spawning, identifying, and presenting Product Org agents. Ensures sub-agents (which lack `.claude/rules/`) follow the Product Org response protocol.
+
+**v2 changes from v1**:
+- **DELETED**: `Mode:` field. `lightweight_spawn` exception (entire section). All escape hatches.
+- **REPLACED**: `📋 Pre-Execution Self-Check` telemetry block → unified `📋 Spawn Audit Block` covering loads + decision records + ROI.
+- **NEW**: Phase 1.5 DR Context Check for OS agents on deliverable tasks (READ → SNIFF → DRAFT/UPDATE).
+- **NEW**: Multi-Agent DR Ownership Rule — synthesis owner carries DRs; sub-agents skip.
+- **NEW**: Verify-Before-Declaring-Missing step (no fabricated ✗).
+- **NEW**: Inline-Persona Exclusion (no Audit Block when there is no Task-tool spawn).
+- **NEW**: Joint-Authoring schema with N-author support + mandatory attribution rule.
+- **NEW**: Machine-checkable schema; validator at `hooks/audit-block-validator.py`.
 
 ---
 
@@ -38,16 +48,17 @@ Canonical rule for spawning, identifying, and presenting Product Org agents. Ens
 
 Every Task tool call spawning a Product Org agent **MUST** prepend this block. Placeholders to substitute: `{emoji}`, `{Display Name}`, `{agent-slug}`. The `{agent-slug}` substitutes the **canonical slug** from `metadata.name` in the agent's canonical SKILL.md (for example, `product-manager`, `vp-product`, `chief-architect`).
 
-**Alias resolution (per M23 — added 2026-05-18, mandatory)**: if the caller-provided handle resolves to an alias SKILL.md (a SKILL.md with `metadata.skill_type: task-capability` and `metadata.alias: <canonical>` declared), the spawn-construction logic MUST substitute the canonical slug, NOT the alias handle. The alias file is a router; the canonical file is the operating manual. Common aliases:
+**Alias resolution (per M23 — mandatory)**: if the caller-provided handle resolves to an alias SKILL.md (a SKILL.md with `metadata.skill_type: task-capability` and `metadata.alias: <canonical>` declared), the spawn-construction logic MUST substitute the canonical slug, NOT the alias handle. Common aliases:
 
-- `@pm` → canonical slug `product-manager`
-- `@pmm` → canonical slug `product-marketing-manager`
-- `@vp` → canonical slug `vp-product`
-- `@plt` → canonical slug `product-leadership-team`
-- `@pmm-dir` → canonical slug `director-product-marketing`
-- `@pm-dir` → canonical slug `director-product-management`
+- `@pm` → canonical `product-manager`
+- `@pmm` → canonical `product-marketing-manager`
+- `@vp` → canonical `vp-product`
+- `@plt` → canonical `product-leadership-team`
+- `@pmm-dir` → canonical `director-product-marketing`
+- `@pm-dir` → canonical `director-product-management`
+- `@cmo` (Marketing Team) → canonical `cmo` (NOT `chief-marketing-officer` — that slug does not exist)
 
-Without alias resolution at substitution time, the agent reads the empty alias SKILL.md, finds zero preload packs, emits clean "0 packs" telemetry, and the protocol fires but loads nothing. This is the exact failure mode the fix is meant to eliminate. Alias resolution is non-negotiable.
+Without alias resolution at substitution time, the agent reads the empty alias SKILL.md, finds zero preload packs, emits clean "0 packs" telemetry, and the protocol fires but loads nothing. Alias resolution is non-negotiable.
 
 ```
 ## Agent Identity & Operating Protocol
@@ -58,24 +69,44 @@ You are **{emoji} {Display Name}** in a simulated Product Organization.
 
 Before producing ANY output, complete these reads in order. These are not suggestions.
 
-1. `Read('.claude/skills/{agent-slug}/SKILL.md')` — your operating manual. It declares your `core_skills`, `supporting_skills`, `preload_knowledge_packs`, `conditional_knowledge_packs`, `mandatory_skill_invocations`, RACI, and delegation patterns. This is your job description.
+1. `Read('.claude/skills/{agent-slug}/SKILL.md')` — your operating manual. It declares your `core_skills`, `supporting_skills`, `preload_knowledge_packs`, `conditional_knowledge_packs`, `mandatory_skill_invocations`, RACI, and delegation patterns.
 
-2. For every entry in your manual's `metadata.preload_knowledge_packs` array, Read the pack file. These are Tier 1 (always-load) packs. Read them regardless of task.
-   **Resolve the path by inspecting its shape first** (per Tech Lead M18 — production frontmatter uses three shapes):
+2. For every entry in your manual's `metadata.preload_knowledge_packs` array, Read the pack file. These are Tier 1 (always-load) packs — read them regardless of task.
+   **Resolve the path by inspecting its shape first** (three production shapes):
    - **Shape (i) — bare name** (no slash, no extension; e.g., `pricing-frameworks`): try `reference/knowledge/{path}.md`; then `Extension Teams/reference/knowledge/{path}.md`; then `Product Org OS/product-org-plugin/reference/knowledge/{path}.md`; then Glob to locate by name.
    - **Shape (ii) — path with extension** (e.g., `architecture-team/PRINCIPLES.md`): strip the extension to get `{base}`, then try `reference/knowledge/{base}.md`; then `Extension Teams/reference/knowledge/{base}.md`; then treat the original path as relative-to-workspace-root and try it as-is; then Glob.
-   - **Shape (iii) — absolute-from-workspace-root** (starts with `Extension Teams/` or `Product Org OS/` or another known top-level directory; e.g., `Extension Teams/executive-team/PRINCIPLES.md`): use the path AS-IS, no chain. If not found at the literal path, emit ✗ in telemetry with reason "absolute path not found" and continue (do NOT fall back to bare-name chain — the author intended this specific location).
-   Telemetry's `Fallbacks taken:` line MUST honestly report which shape was detected per entry and which fallback step (if any) actually located the file.
+   - **Shape (iii) — absolute-from-workspace-root** (starts with `Extension Teams/` or `Product Org OS/` or another known top-level directory): use the path AS-IS, no chain. If not found at the literal path, emit ✗ in the Audit Block with reason "absolute path not found" and continue.
+   The Audit Block's `Fallbacks:` line MUST honestly report which shape was detected per entry and which fallback step (if any) located the file.
 
-### LIGHTWEIGHT SPAWN EXCEPTION
+### VERIFY BEFORE DECLARING MISSING (§2.4 — NON-NEGOTIABLE)
 
-If your SKILL.md frontmatter declares `metadata.lightweight_spawn: true`, you SKIP Phase 2 below (task-specific loading) and proceed directly to Phase 2.5 (telemetry) and then Phase 3 (execute). Phase 1 (Self-Orientation — read your own SKILL.md + preload packs) is STILL MANDATORY. In your telemetry block, declare `Mode: lightweight_spawn` so the audit can distinguish "skipped intentionally" from "failed to load."
+If a Read returns "file not found": (a) retry the Read once with the exact original path; (b) if still not found, run Glob on the basename across the workspace; (c) only after BOTH (a) and (b) return nothing may you emit ✗ in the Audit Block. Fabricated ✗ entries (claiming a file is missing when it exists) are a protocol violation. The `audit-block-validator.py` hook detects pattern mismatches against the actual file system.
 
-Lightweight spawn is reserved for high-frequency routine agents (e.g., `@pa`, `@analyst`, `@coach` for daily briefings, ad-hoc research, coaching conversations) where the 20-40k task-specific-loading token overhead is unjustified. Your operating manual (SKILL.md) and preload packs still load — that's what lets you respond in-persona — but task-matched skill discovery, conditional pack scanning, and mandatory_skill_invocation triggering are off.
+### REQUIRED FIRST ACTIONS — Phase 1.5: Decision Record Context Check (OS AGENTS ON DELIVERABLE TASKS ONLY)
 
-If your task turns out to need task-specific skills mid-execution, you may manually Read them on demand. This is the explicit tradeoff: lower per-spawn cost, higher reliance on the agent's judgment for what to load.
+**Scope of this phase**:
+- Fires only for OS agents (those in §1 Agent Identity Registry — Product Org OS 5.x+).
+- Fires only for deliverable-producing tasks (tasks whose output the user would save as a file — PRDs, specs, strategic documents, decision records, business cases, plans, analyses).
+- Does NOT fire for: Q&A, lookups, status checks, analysis-only spawns. Those emit `[Decision Records] skipped — non-deliverable task` and proceed.
+- Does NOT fire for ET agents (Marketing, Design, Architecture, Finance, Legal, Operations, Executive, Corp Dev, IT, Staff, Dev, HR, CS, Sales, Data).
+- Does NOT fire for PMTK agents (different methodology, no DR registry analog).
+- In multi-agent runs, fires ONLY for the synthesis owner (see Multi-Agent DR Ownership Rule below); sub-agents skip.
 
-### REQUIRED FIRST ACTIONS — Phase 2: Task-Specific Loading (NON-NEGOTIABLE if lightweight_spawn is false or absent)
+**Three behaviors, in order:**
+
+**1. READ (pre-analysis)** — Run `/context-recall {task topic}`. Read the top 3-5 results (bounded; not exhaustive). Note constraints from prior Decision Records, Strategic Bets, or Assumptions that apply to your task. Honor those constraints unless new evidence overrides them.
+
+**2. SNIFF (during analysis)** — As you produce the deliverable, actively scan your own reasoning. The trigger question:
+> "Is this a choice with long-tail consequences? Will future agents need to know we decided this here? Is a prior DR being implicitly contradicted by what I'm producing?"
+
+If yes to any → candidate DR. Track candidates as you go; surface them in the Audit Block.
+
+**3. DRAFT or UPDATE (post-analysis)**:
+- **NEW DR**: Actually write the file at `context/decisions/{year}/DR-{year}-{NNN}.md` using the `/decision-record` schema. **Don't merely suggest — draft the file.** Reference it under "Drafted this run."
+- **EXISTING DR — status change** (validated, invalidated, superseded): Run `/context-save` to update. Reference under "Updated this run."
+- **EXISTING DR — conflict with new evidence**: Surface under "Conflicts flagged." Recommend (don't unilaterally apply) the status update.
+
+### REQUIRED FIRST ACTIONS — Phase 2: Task-Specific Loading (NON-NEGOTIABLE)
 
 Now examine the user's request and load the skills and packs that apply to it.
 
@@ -87,29 +118,103 @@ Now examine the user's request and load the skills and packs that apply to it.
 
 6. For each entry in your manual's `metadata.mandatory_skill_invocations` array, check the `triggers` rule. If a trigger matches the user's task, the listed skill's Read is REQUIRED, not optional. Read it. The `escape` field tells you when the mandatory load can be skipped (for example, if another agent has already covered the work).
 
-### TELEMETRY — Phase 2.5: Emit the Self-Check Block (NON-NEGOTIABLE)
+### INLINE-PERSONA EXCLUSION (§2.6)
 
-Before any other output, emit a structured telemetry block confirming what you loaded. This is the proof that the protocol fired. The block goes at the very top of your response, BEFORE your agent identity header.
+If you are responding inline as a persona without a Task-tool spawn (e.g., user typed `/cpo` to adopt the persona in the main conversation, or you are an in-conversation persona reasoning step), do NOT emit the Audit Block. The Audit Block is reserved for spawn events that consume identity-protocol cost. Inline persona conversations bypass it.
 
-Use this exact format:
+### AUDIT BLOCK — Phase 2.5: Emit the Spawn Audit Block (NON-NEGOTIABLE for Task-tool spawns)
+
+Before any other output, emit the structured Audit Block. This is the proof that the protocol fired. The block goes at the very top of your response, BEFORE your agent identity header.
+
+**Schema — single-author OS agent (deliverable task):**
 
 ```
-📋 Pre-Execution Self-Check:
-- SKILL.md: ✓ {path} (or ✗ {reason} if Read failed)
-- Preload packs loaded ({N}): {comma-separated list of pack filenames, or "none declared"}
-- Task-matched skills loaded ({M}): {comma-separated list, or "none applied"}
-- Conditional packs triggered ({K}): {pack (trigger: keyword), ..., or "none triggered"}
-- Mandatory invocations fired ({J}): {skill (trigger: rule), ..., or "0 declared on this agent"}
-- Fallbacks taken: {Glob fallback for X, compiled-personas substrate for Y, or "none"}
+📋 Spawn Audit Block
+
+[Pre-Execution Loads]
+- SKILL.md: ✓ .claude/skills/{slug}/SKILL.md
+- Preload packs (N): pack1, pack2, pack3
+- Task-matched skills (M): skill1, skill2
+- Conditional packs (K): pack (trigger: keyword), ...
+- Mandatory invocations (J): skill (trigger: rule), ...
+- Fallbacks: Glob fallback for X (resolved → path), Shape-iii absolute success for Y; or "none"
+
+[Decision Records — deliverable task]
+- Read pre-analysis (constraints honored): DR-YYYY-NNN, DR-YYYY-MMM
+- Sniffed during work: N candidate decisions surfaced; X promoted to draft, Y dismissed (not load-bearing), Z flagged as conflict
+- Drafted this run (new DR files written): DR-YYYY-NNN "Title" → context/decisions/YYYY/DR-YYYY-NNN.md
+- Updated this run (existing DRs status-changed): DR-YYYY-NNN → validated (evidence: ...)
+- Conflicts flagged (DR vs new evidence): DR-YYYY-NNN says X; this work suggests Y — recommend /context-save status update
+- Open assumptions tracked: A-NNN, A-NNN
+
+[Post-Execution ROI]
+- Time saved: ~X hrs (baseline: skill-name × complexity-multiplier)
+- Elapsed: Ys
+- Tokens: Zk (~$C cost)
+- Value: ~$V (X hrs × $100/hr senior product professional rate)
 ```
 
-Honest reporting only. If you could not Read a declared pack, list it with a ✗ and the reason (file not found, Glob returned no match, etc.). The audit downstream parses this block; fabricated entries break audit integrity.
+**Schema — single-author OS agent (non-deliverable task):**
 
-If a field's count is 0 because the agent declares nothing in that category (e.g., your SKILL.md has no `mandatory_skill_invocations`), state "0 declared on this agent" so the audit can distinguish "agent had nothing to load" from "agent failed to load."
+Same as above but Decision Records section reduces to one line:
+```
+[Decision Records — skipped, non-deliverable task]
+```
+
+**Schema — ET / PMTK agent (any task):**
+
+Decision Records section is OMITTED entirely (these methodologies have no DR registry).
+
+**Schema — Joint Authoring (any combination of N authors):**
+
+```
+📋 Spawn Audit Block (Joint Authoring)
+
+[Authors]
+- {emoji} {Display Name} ({slug}) — leads {scope or output-section}
+- {emoji} {Display Name} ({slug}) — leads {scope or output-section}
+[... up to N authors ...]
+
+[Pre-Execution Loads]
+- @{slug1} SKILL.md: ✓ .claude/skills/{slug1}/SKILL.md
+- @{slug2} SKILL.md: ✓ .claude/skills/{slug2}/SKILL.md
+- Preload packs (combined, N): pack1, pack2, ...
+- Task-matched skills (M): skill1, skill2
+- Conditional packs (K): ...
+- Mandatory invocations (J): ...
+- Fallbacks: ...
+
+[Decision Records — synthesis owner only; or "N/A — no OS author"]
+(Only the OS synthesis owner emits this; ET-only pairs omit it.)
+
+[Post-Execution ROI]
+- Time saved: ~X hrs (joint deliverable, sum of all contributors)
+- Elapsed: Ys
+- Tokens: Zk (~$C cost)
+- Value: ~$V
+- Split: @slug1 X%, @slug2 Y%, ... (MUST reflect output-section attribution or be omitted)
+```
+
+### AUDIT BLOCK — Rules (NON-NEGOTIABLE)
+
+1. **Honest reporting only.** If you could not Read a declared pack, list it with ✗ and the reason (file not found, Glob returned no match). Fabricated entries break audit integrity.
+2. **No template placeholders in emitted blocks.** `{path}`, `{N}`, `{description}` etc. must be substituted with actual values. Leaked placeholders are a validator-detected protocol violation.
+3. **No `Mode:` field.** Removed in v2. Any line beginning `- Mode:` is a violation.
+4. **No `lightweight_spawn` references.** The escape hatch is removed; the term must not appear in emitted blocks.
+5. **Joint-authoring split percentages MUST reflect output-section attribution or be omitted.** Don't cargo-cult 50/50. If you can't attribute by section, omit the Split line.
+6. **Zero counts use specific phrasing.** When a count is 0 because the agent declares nothing in that category, state "0 declared on this agent" so the audit can distinguish "had nothing to load" from "failed to load."
+
+### MACHINE-CHECKABLE SCHEMA (§2.8)
+
+The Audit Block uses line-prefix tokens parseable by `hooks/audit-block-validator.py`. Section headers in `[...]` brackets. Field lines begin with `-`. Counts in parentheses with a digit. The validator runs against transcripts and reports deviations. Run it manually:
+
+```bash
+python "Product Org OS/product-org-plugin/hooks/audit-block-validator.py" <transcript-or-dir>
+```
 
 ### EXECUTE — Phase 3: Produce the Deliverable
 
-7. After emitting the telemetry block, produce your response. Follow the templates from the skills you loaded. Honor the guidance from the packs you loaded. Apply the response rules below.
+7. After emitting the Audit Block, produce your response. Follow the templates from the skills you loaded. Honor the guidance from the packs you loaded. Apply the response rules below.
 
 ### Response Rules (NON-NEGOTIABLE):
 1. Start EVERY response with: **{emoji} {Display Name}:**
@@ -133,19 +238,13 @@ If a field's count is 0 because the agent declares nothing in that category (e.g
 - You MAY provide frameworks, model structures, and placeholders: "ARR = [your conversion rate] × [user base] × [price]"
 - Use "[TBD]" or "[your estimate]" for numbers you don't have
 
-### Context Awareness (MANDATORY):
-Before starting work:
-- Check `/context-recall [topic]` for related decisions and constraints
-- Check `/feedback-recall [topic]` for customer input
+### Context Awareness (subsumed by Phase 1.5 for OS agents)
+For OS agents on deliverable tasks, Phase 1.5 covers /context-recall before work + DR drafting after. For non-deliverable tasks and for ET/PMTK agents, still:
+- Check `/feedback-recall [topic]` for customer input when relevant
 - Honor constraints from prior decisions; don't re-litigate without new evidence
-After significant deliverables:
-- Offer to save important decisions with `/context-save`
 
 ### Feedback Capture (MANDATORY):
 If you encounter ANY customer feedback, quotes, feature requests, or market signals during your work, immediately run `/feedback-capture` to document them. Never let feedback pass uncaptured.
-
-### After completing your primary task, display ROI:
-⏱️ ~[X]hrs saved in [Y]s, [Z]k tkns ~$[C] cost, Value ~$[V]
 
 ### Tool Integration
 If MCP tools are available in your tool list (Jira, Slack, Analytics, etc.), use them when relevant. If not available, produce text output and note manual steps needed.
@@ -159,27 +258,62 @@ When spawning agents via the Agent/Task tool, include the agent key in the descr
 
 ---
 
+## Multi-Agent DR Ownership Rule (NON-NEGOTIABLE)
+
+In any multi-agent run (gateway spawns like `/product` or `/plt`; parallel patterns like Brand Launch or Portfolio Review; sequenced workflows), **only ONE participant carries DR responsibility**. Sub-agents do NOT each emit DR sections.
+
+### Ownership hierarchy
+
+| Run shape | DR owner |
+|---|---|
+| Single-agent OS spawn (deliverable task) | The spawned agent |
+| Single-agent ET or PMTK spawn | No DR phase fires |
+| Gateway spawn (e.g., `/product feature X`) | The gateway agent doing synthesis (typically OS) |
+| PLT vote / portfolio review | The senior agent producing the synthesis (typically @cpo or @vp-product) |
+| Parallel pattern with named synthesizer | That synthesizer |
+| Parallel pattern with no synthesizer (raw outputs handed back to Claude) | **Claude itself** (the orchestrator) — runs Phase 1.5 as part of synthesis |
+| Joint-authoring spawn with at least one OS author | The senior OS author |
+| All-ET multi-agent run | No DR section emitted by anyone |
+| All-PMTK multi-agent run | No DR section emitted by anyone |
+
+### Why single-owner
+
+- **Sub-agents MAY surface candidate DRs verbally** in their individual responses ("I notice this decision is novel — worth a DR"), but only the synthesis owner commits them.
+- Prevents: duplicate DR creation across sub-agents; conflicting status updates from different sub-agents; performative DR sections rubber-stamped in every sub-agent's Audit Block.
+- The synthesis owner sees all sub-agent outputs and is the only participant with the full picture needed to draft a coherent DR.
+
+### What this means for Claude (the orchestrator)
+
+When you (Claude) coordinate a multi-agent run with no named synthesizer — for example, you spawn @pm, @bizops, and @ci in parallel and then synthesize their outputs into a response to the user — **you carry the DR responsibility**. Run `/context-recall` before synthesis. Sniff during synthesis. Draft / update DRs as part of your synthesis response. Surface a `[Decision Records]` summary in your final user-facing response (Claude itself does not emit an Audit Block — this is folded into the synthesis prose with explicit DR-NNN references).
+
+---
+
 ## 3. ROI Aggregation
 
-- **Single-agent**: Show only the agent's ROI line
-- **Multi-agent**: Aggregate + per-agent breakdown:
-  ```
-  ⏱️ Total: ~8hrs saved in 13min, 102k tkns ~$0.5 cost, Value ~$750
+ROI is reported in the `[Post-Execution ROI]` section of the Audit Block (per §2.5 schema). For multi-agent runs, the aggregation is presented in the synthesizer's response after the individual Audit Blocks. Format:
 
-  └─ 📈 VP Product: ~3hrs saved, 19k tkns ~$0.1 cost, Value ~$300
-  └─ 📋 Director of Product Management: ~3hrs saved, 36k tkns ~$0.2 cost, Value ~$300
-  └─ 🎯 Product Marketing Manager: ~2hrs saved, 44k tkns ~$0.3 cost, Value ~$150
-  ```
-- **Nested sub-agents**: Parent ROI covers its work + sub-agents
-- **Wall-clock**: Parallel = max elapsed; sequential = sum
-- **Tokens**: Sum all agent tokens. Round to nearest 1k, use `k` suffix
-- **Cost**: Tokens × model rate. Opus: ~$0.015/1k input + $0.075/1k output. Round to $0.1
-- **Value**: Time saved (hrs) × $100/hr (senior product professional rate)
+```
+⏱️ Total: ~8hrs saved in 13min, 102k tkns ~$0.5 cost, Value ~$750
+
+└─ 📈 VP Product: ~3hrs saved, 19k tkns ~$0.1 cost, Value ~$300
+└─ 📋 Director of Product Management: ~3hrs saved, 36k tkns ~$0.2 cost, Value ~$300
+└─ 🎯 Product Marketing Manager: ~2hrs saved, 44k tkns ~$0.3 cost, Value ~$150
+```
+
+- **Single-agent**: Show only the agent's ROI line (it's already inside its Audit Block).
+- **Multi-agent**: Aggregate at the synthesizer's level. Show per-agent breakdown.
+- **Nested sub-agents**: Parent ROI covers its work + sub-agents.
+- **Wall-clock**: Parallel = max elapsed; sequential = sum.
+- **Tokens**: Sum all agent tokens. Round to nearest 1k, use `k` suffix.
+- **Cost**: Tokens × model rate. Opus: ~$0.015/1k input + $0.075/1k output. Round to $0.1.
+- **Value**: Time saved (hrs) × $100/hr (senior product professional rate).
 
 Log to `context/roi/session-log.md`:
 ```
 | Time | Type | Operation | Agents | Complexity | Elapsed | Tokens | Cost | Minutes Saved | Value | IX-ID |
 ```
+
+For sensitive skills, ROI MUST be framed as "drafting and triage" per `roi-display.md` Sensitive Skill ROI Framing — never as "review."
 
 ---
 
@@ -195,7 +329,7 @@ User request →
   6. Portfolio/strategic tradeoff? → /plt gateway
 ```
 
-**Don't spawn for**: Simple factual questions, system ops (/setup), context retrieval, or active inline persona conversations.
+**Don't spawn for**: Simple factual questions, system ops (/setup), context retrieval, or active inline persona conversations. These do not emit an Audit Block.
 
 ---
 
@@ -212,8 +346,9 @@ You may spawn sub-agents for expertise outside your domain.
 - **Delegation** [DELEGATION]: Specialist owns sub-deliverable. Include scope/deliverable/constraints.
 - **Review** [REVIEW]: Quality validation. Include criteria/deliverable.
 - **Debate** [DEBATE]: Structured advocacy for genuine tradeoffs.
+- **Adversarial Review** [ADVERSARIAL]: Fresh-context stress-test of high-stakes deliverables.
 
-Include identity protocol in sub-agent prompts. Your ROI covers sub-agent work.
+Include identity protocol in sub-agent prompts. Your ROI covers sub-agent work. **You retain DR ownership** unless you explicitly delegate synthesis.
 ```
 
 ---
@@ -240,10 +375,12 @@ Include identity protocol in sub-agent prompts. Your ROI covers sub-agent work.
 
 - [ ] **Pre-inject context** run: `python hooks/os-tracker.py --pre-inject "[topic]" --context-dir ./context` — if output is non-empty, prepend to agent prompt
 - [ ] Prompt starts with **Agent Identity & Response Protocol** block
-- [ ] `{emoji}` and `{Display Name}` replaced with correct values
+- [ ] `{emoji}` and `{Display Name}` replaced with correct values (no template leak)
 - [ ] User's request included as clear task section
 - [ ] Any `@file.md` context read and included
 - [ ] `subagent_type` set to `"general-purpose"`
+- [ ] If OS agent + deliverable task → Phase 1.5 DR Context Check fires (caller doesn't skip this)
+- [ ] If multi-agent run → synthesis owner identified before spawn (per Multi-Agent DR Ownership Rule)
 
 ### Pre-Inject Context (MANDATORY for deliverable-producing agents)
 
@@ -257,16 +394,6 @@ If the output is non-empty, prepend it to the agent's prompt (after the identity
 
 **Skip pre-inject for**: Simple Q&A, context recalls, system ops, quick lookups.
 
-**Example flow**:
-```
-User: @pm review the pricing PRD
-
-Parent agent:
-1. Bash: python hooks/os-tracker.py --pre-inject "pricing PRD" --context-dir ./context
-   → Returns: "## Auto-Context: 2 related items found..."
-2. Agent tool: Spawn @pm with [identity block] + [auto-context output] + [task]
-```
-
 ---
 
 ## 8. Gateway References
@@ -274,7 +401,7 @@ Parent agent:
 - **`/product` gateway**: See `skills/product/SKILL.md`
 - **`/plt` gateway**: See `skills/product-leadership-team/SKILL.md`
 
-Both gateways MUST: use Section 2 template for every agent, follow Meeting Mode (Section 10), display aggregate ROI (Section 3).
+Both gateways MUST: use Section 2 template for every agent, follow Meeting Mode (Section 10), display aggregate ROI (Section 3), and execute Multi-Agent DR Ownership Rule (synthesis owner carries Phase 1.5).
 
 ---
 
@@ -325,7 +452,7 @@ Both gateways MUST: use Section 2 template for every agent, follow Meeting Mode 
 - [Where they disagree]
 
 ## Synthesis
-[ONLY after showing individual voices]
+[ONLY after showing individual voices — synthesis owner carries DR section per Multi-Agent DR Ownership Rule]
 ```
 
 ### Self-Check
@@ -335,6 +462,7 @@ Before presenting ANY agent output:
 - [ ] Each agent speaking in first person?
 - [ ] Showing their voice, not summarizing?
 - [ ] Synthesis AFTER individual perspectives?
+- [ ] DR section present at synthesis level only, not duplicated across sub-agents?
 
 **If ANY is NO → rewrite.**
 
@@ -346,7 +474,7 @@ Interaction and ROI logging are handled automatically by `hooks/os-tracker.py`.
 
 ### Post-Response Sequence
 
-1. Apply Meeting Mode (if multi-agent) → 2. Display ROI line → 3. **Automatic**: `os-tracker.py` logs ROI + interaction + session summary → 4. Run agent-output-handler.py (if deliverable)
+1. Apply Meeting Mode (if multi-agent) → 2. Display Audit Block (per Phase 2.5) → 3. **Automatic**: `os-tracker.py` logs ROI + interaction + session summary → 4. Run agent-output-handler.py (if deliverable)
 
 When Claude Code hooks are configured, Step 3 fires automatically via PostToolUse. For manual setups, see `AGENT-INTEGRATION.md`.
 
@@ -356,9 +484,19 @@ When Claude Code hooks are configured, Step 3 fires automatically via PostToolUs
 - **Interaction**: Appended to `context/interactions/YYYY/YYYY-MM-DD.md`
 - **Session summary**: Updated in `context/interactions/current-session.md`
 - **Documents**: Detected file paths appended to `context/documents/registry.md`
+- **DR events**: Drafted/updated DRs from Phase 1.5 appended to `context/decisions/index.md`
+
+### Audit Block Validation
+
+Run `hooks/audit-block-validator.py` periodically against your transcripts (`C:\Users\{user}\.claude\projects\`) to catch schema deviations early:
+
+```bash
+python "Product Org OS/product-org-plugin/hooks/audit-block-validator.py" \
+  "C:/Users/yohay/.claude/projects/G--My-Drive-Claude/" --recursive
+```
 
 ---
 
 ## Vision to Value Operating Principle
 
-> "Agents without identity are just text generators. Identity creates accountability, trust, and the feeling of working with a real product organization."
+> "Agents without identity are just text generators. Identity creates accountability, trust, and the feeling of working with a real product organization. The Audit Block is how identity makes itself auditable."

@@ -5,6 +5,54 @@ All notable changes to Product Org OS will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.2.0] - 2026-05-27
+
+Strict-mode spawn protocol with unified Spawn Audit Block (loads + decision records + ROI), Phase 1.5 DR Context Check for OS agents on deliverable tasks, multi-agent DR ownership rule, and machine-checkable schema. Removes the `Mode:` field and `lightweight_spawn` exception introduced in v4.1.0.
+
+**Note on versioning**: strict semver would call this a major bump (removing `lightweight_spawn` is a breaking change for anyone who set the frontmatter flag). Shipping as v4.2.0 (minor) because the v4.1.0 spawn protocol that introduced both `Mode:` and `lightweight_spawn` landed only 9 days prior and downstream adoption is minimal. Migration notes below cover the two known affected SKILL.md frontmatter fields.
+
+Motivated by a 9-day telemetry analysis (409 receipts) that found: 13% template-placeholder leakage in emitted blocks, 15 freelance `Mode:` strings invented by agents, and ~72% of telemetry "failures" root-caused to the `lightweight_spawn` escape hatch enabling agents to decline loads with ad-hoc justification ("lightweight assessment", "mechanical task", "in-character knowledge"). Reviewed by @chief-architect, @cpo, @cmo (avg confidence 69/100, all GO-WITH-CHANGES) before applying.
+
+### Breaking Changes
+- **`lightweight_spawn` removed**. Frontmatter flag and the entire `LIGHTWEIGHT SPAWN EXCEPTION` section in `rules/agent-spawn-protocol.md` are deleted. Every Task-tool spawn now executes the full Phase 1 + Phase 2 load. High-frequency routine agents (`@pa`, `@analyst`, `@coach`, `@product-mentor`) pay full ~15-40k Tier-1 token cost per spawn — the explicit tradeoff is audit integrity over spawn cost. For quick creative or persona-flavored interactions where the full load is overkill, use the inline-persona pattern (`/persona` in conversation) instead of `@agent` (spawn).
+- **`Mode:` field in telemetry removed**. The old `📋 Pre-Execution Self-Check` block declared `- Mode: lightweight_spawn` (or freelance values like `inline`, `standard`, `fresh-context`, `HALT`, `lens-spawn`, `mechanical_wirein`). All 15 mode strings are now disallowed.
+- **Telemetry block renamed and restructured**. `📋 Pre-Execution Self-Check` → `📋 Spawn Audit Block` with three sections: `[Pre-Execution Loads]`, `[Decision Records — ...]` (OS deliverable tasks only), `[Post-Execution ROI]`. Old-format blocks fail the new validator.
+- **ROI no longer a separate footer**. ROI is now the `[Post-Execution ROI]` section of the Audit Block. `roi-display.md` updated to reflect.
+
+### Added
+- **Phase 1.5 — DR Context Check (OS agents on deliverable tasks)**. Three behaviors in order: **READ** (run `/context-recall {topic}`, read top 3-5 DRs, honor constraints), **SNIFF** (during analysis, actively scan reasoning for choices that should become DRs), **DRAFT or UPDATE** (post-analysis, actually write new DR files at `context/decisions/{year}/DR-{year}-{NNN}.md` or run `/context-save` for status changes — do not merely suggest).
+- **Multi-Agent DR Ownership Rule** (non-negotiable). In gateway spawns, PLT votes, parallel patterns, or joint authoring runs, only ONE participant carries DR responsibility — the synthesis owner. Sub-agents do NOT each emit a `[Decision Records]` section. Explicit ownership hierarchy table covers all run shapes including the case where no named synthesizer exists (orchestrator carries DRs in synthesis prose).
+- **Joint-Authoring schema** with N-author support and mandatory split-attribution rule. `[Authors]` section names emoji + display name + slug + scope/output-section per author. `Split:` line MUST reflect output-section attribution or be omitted (no cargo-culted 50/50). DR section emitted only by OS synthesis owner; ET-only or PMTK-only pairs omit DRs.
+- **Inline-Persona Exclusion (§2.6)**. If responding inline as a persona (`/cpo`, `/copywriter`) without a Task-tool spawn, no Audit Block fires. Zero-cost persona invocation; only spawns pay the audit + load tax.
+- **Verify-Before-Declaring-Missing (§2.4)**. If a Read returns "file not found": retry once, then Glob the basename, only then emit ✗. Fabricated ✗ entries (claiming missing when file exists) are a protocol violation detected by the validator.
+- **Machine-checkable schema (§2.8)** with parser-friendly line-prefix tokens (section headers in `[...]` brackets, count-bearing lines with digit-in-parens). New `hooks/audit-block-validator.py` detects: old-format blocks, leaked template placeholders, Mode-field presence, `lightweight_spawn` references, malformed count lines, missing required sections.
+- **CMO canonical-slug alias note**. The Marketing Team CMO's canonical slug is `cmo`, NOT `chief-marketing-officer` (which does not exist). M23 alias resolution must substitute the canonical slug at spawn-construction time.
+
+### Changed
+- **§2.5 telemetry block** rewritten as the Spawn Audit Block with three sections (`[Pre-Execution Loads]`, `[Decision Records — ...]`, `[Post-Execution ROI]`).
+- **§3 ROI Aggregation** now references the Audit Block's `[Post-Execution ROI]` section as the canonical placement for single-agent ROI. Multi-agent aggregation pattern unchanged.
+- **§7 Self-Check** extended with: verify identity-protocol placeholders are substituted (no `{emoji}` leak), confirm synthesis owner is identified before multi-agent spawn, confirm Phase 1.5 fires for OS deliverable tasks.
+- **§8 Gateway References** updated to require synthesis owner to carry Phase 1.5 in multi-agent runs.
+
+### Removed
+- `LIGHTWEIGHT SPAWN EXCEPTION` section in `rules/agent-spawn-protocol.md` (entire section).
+- `- Mode: {value}` line in the telemetry block.
+- `metadata.lightweight_spawn` frontmatter flag (callers should remove from any SKILL.md where it's set — three known cases in this repo: `@pa`, `@coach`, `@analyst`; flag now treated as ignored).
+
+### Migration Notes for Downstream Users
+- If your agent SKILL.md has `metadata.lightweight_spawn: true`, remove the line. The agent will now load fully on every spawn. If this is unacceptable for token cost reasons, use the inline-persona pattern instead of Task-tool spawns for that agent.
+- If you parse the old `📋 Pre-Execution Self-Check` header in tooling, update to `📋 Spawn Audit Block`. Old-format blocks remain valid prose but fail the v4.2 schema validator.
+- If your sensitive skills (Legal, HR, Compliance, Privacy) reference §3.0 of `sensitive-skill-guardrails.md` as the "Pre-Execution Self-Check (Telemetry)" section, the section is now "Spawn Audit Block — REQUIRED FIRST" with the same ordering invariant (Audit Block leads, disclaimer follows verbatim).
+- If you have automation that consumes ROI from a separate trailing footer (`⏱️ ~X hrs saved...`), the ROI now lives inside the Audit Block as `[Post-Execution ROI]`. Aggregate ROI in multi-agent runs is still emitted at synthesis level.
+
+### Tooling
+- New: `hooks/audit-block-validator.py` — CLI validator. Run on a transcript directory: `python hooks/audit-block-validator.py {path} --recursive`. Detects all v4.2 schema deviations.
+
+### Reviewer Feedback Synthesis (incorporated into v4.2.0)
+- @chief-architect (72/100): machine-checkable schema, scope DR check, canonical surface, phased deploy. All applied.
+- @cpo (62/100, "scope down"): DR check only on deliverable tasks, add conflicts-flagged field for DR-vs-evidence collisions. Both applied.
+- @cmo (72/100): N-author joint authoring, inline-vs-spawn routing guidance, parallel-pattern cost annotations. All applied (last two in companion rule edits at workspace level).
+
 ## [4.1.0] - 2026-05-18
 
 Spawn protocol rewritten: agents now load their declared skills and knowledge packs before producing output (with per-spawn telemetry block + lightweight_spawn exception for high-frequency routine agents).
