@@ -10,7 +10,7 @@ Design: Fail-open (never blocks the coding agent), append-only writes,
         idempotent (dedup by tool_use_id).
 
 Usage:
-  python os-tracker.py --hook                           # Claude Code PostToolUse (stdin JSON)
+  python os-tracker.py --hook                           # DEPRECATED warn+no-op (telemetry v4.3/D1)
   python os-tracker.py --agent pm --context-dir ./ctx   # Manual invocation
   python os-tracker.py --pre-inject "pricing" --context-dir ./ctx  # Context injection
   python os-tracker.py --rollup --context-dir ./ctx     # Session-end summary
@@ -460,33 +460,32 @@ def mark_processed(context_dir: Path, tool_use_id: str) -> None:
 # ---------------------------------------------------------------------------
 
 def run_hook_mode(verbose: bool = False) -> None:
-    """Process Claude Code PostToolUse stdin JSON."""
+    """DEPRECATED (telemetry v4.3 / D1): warn + no-op shim.
+
+    Under locked decision D1 (`cache/telemetry-portable-capture-plan-2026-05-30.md`)
+    there is no Claude Code PostToolUse wiring — capture is a manual/on-demand run
+    of the portable reader (`hooks/telemetry-extract.py`). The lossy re-derivation
+    this hook performed (regex identity, length-based ROI, regex DRs) is replaced
+    by parsing the agent's in-band Spawn Audit Block verbatim (D2).
+
+    This shim drains stdin (so a piping PostToolUse caller doesn't get EPIPE),
+    prints a one-line deprecation note to stderr, and exits 0 (fail-open). It does
+    NOT process anything. `--pre-inject`, `--diagnose`, `--rollup` are unchanged.
+    """
     try:
-        raw = sys.stdin.read()
-        if not raw.strip():
-            return
-
-        data = json.loads(raw)
-    except (json.JSONDecodeError, Exception):
-        return  # fail-open
-
-    tool_name = data.get("tool_name", "")
-    tool_input = data.get("tool_input", {})
-    tool_response = data.get("tool_response", "")
-    tool_use_id = data.get("tool_use_id", "")
-
-    # Only process Agent tool calls
-    if tool_name != "Agent":
-        return
-
-    # Find context dir — search upward from cwd
-    context_dir = find_context_dir()
-    if not context_dir:
-        if verbose:
-            print("No context/ dir found", file=sys.stderr)
-        return
-
-    run_tracking(tool_input, tool_response, tool_use_id, context_dir, verbose)
+        # Drain stdin so an upstream pipe writer doesn't block / error.
+        if not sys.stdin.isatty():
+            sys.stdin.read()
+    except Exception:
+        pass
+    print(
+        "os-tracker --hook is DEPRECATED and no longer captures telemetry "
+        "(telemetry v4.3 / decision D1: no PostToolUse hook). Run the portable "
+        "reader instead: python hooks/telemetry-extract.py --from dir --path "
+        "<transcripts> --context-dir <ctx>. This invocation did nothing.",
+        file=sys.stderr,
+    )
+    return
 
 
 def run_manual_mode(agent_id: str, skill_id: str, context_dir: Path,
@@ -968,8 +967,11 @@ def rebuild_directory_index(context_dir: Path, subdir: str, id_prefix: str,
         return 0
 
     entries = []
-    # Pattern to match entry files by name: DR-2026-001.md, SB-2026-002.md, etc.
-    file_id_pattern = re.compile(rf"^({id_prefix}-[\d-]+)\.md$")
+    # Pattern to match entry files by name. Captures the numeric ID and tolerates
+    # an optional `-slug` suffix: DR-2026-001.md AND DR-2026-010-pb-synthesis.md
+    # both yield DR-2026-010. (Fix 2026-05-30: the old `-[\d-]+\.md$` dropped every
+    # slug-suffixed file, which is why decisions/index.md was stale to DR-006.)
+    file_id_pattern = re.compile(rf"^({id_prefix}-[\d]+(?:-[\d]+)*)(?:-[a-zA-Z].*)?\.md$")
 
     for md_file in sorted(source_dir.rglob("*.md")):
         if md_file.name in ("index.md", "registry.md", "themes.md", "README.md"):
@@ -1150,7 +1152,8 @@ def main():
 
     mode_group = parser.add_mutually_exclusive_group(required=True)
     mode_group.add_argument("--hook", action="store_true",
-                            help="Claude Code PostToolUse mode (reads stdin JSON)")
+                            help="DEPRECATED: warn+no-op shim (telemetry v4.3/D1; no PostToolUse). "
+                                 "Use hooks/telemetry-extract.py instead.")
     mode_group.add_argument("--agent", type=str,
                             help="Manual mode: specify agent ID")
     mode_group.add_argument("--pre-inject", type=str, metavar="TOPIC",

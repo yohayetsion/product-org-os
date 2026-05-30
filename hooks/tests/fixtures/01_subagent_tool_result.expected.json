@@ -1,0 +1,70 @@
+{
+  "ts": "2026-05-30T09:18:00Z",
+  "source_file": "01_subagent_tool_result.jsonl",
+  "tool_use_id": "toolu_0001",
+  "block_hash": "65f116c742cd0ab03ae059ce4254dabaabaa2b865bdca89a2abe419d9024b501",
+  "agent_slug": "chief-architect",
+  "format": "v2",
+  "authors": [
+    "chief-architect"
+  ],
+  "loads": {
+    "skill_md": {
+      "ok": true,
+      "path": ".claude/skills/chief-architect/SKILL.md"
+    },
+    "preload_packs": {
+      "count": 3,
+      "items": [
+        "architecture-team/PRINCIPLES.md",
+        "system-patterns",
+        "code-review"
+      ]
+    },
+    "task_skills": {
+      "count": 2,
+      "items": [
+        "risk-analysis",
+        "decision-record"
+      ]
+    },
+    "conditional": {
+      "count": 0,
+      "items": []
+    },
+    "mandatory": {
+      "count": 0,
+      "items": []
+    },
+    "fallbacks": "none"
+  },
+  "decision_records": {
+    "present": true,
+    "skipped_reason": null,
+    "read_pre_analysis": [
+      "DR-2026-007",
+      "DR-2026-009"
+    ],
+    "drafted": [
+      "DR-2026-011"
+    ],
+    "updated": [
+      "DR-2026-007"
+    ],
+    "conflicts": [],
+    "assumptions": [
+      "A-014",
+      "A-015"
+    ]
+  },
+  "roi": {
+    "reported_raw": "- Time saved: ~3 hrs (baseline: decision-record x complex)\n- Elapsed: 240s\n- Tokens: 58k (~$0.5 cost)\n- Value: ~$300 (3 hrs x $100/hr senior product professional rate)",
+    "minutes": 180,
+    "tokens": 58000,
+    "value_usd": 300,
+    "measured_tokens": 58000,
+    "drift": 1.0
+  },
+  "parse_warnings": [],
+  "source": "tool_result"
+}

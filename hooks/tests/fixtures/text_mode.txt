@@ -1,0 +1,20 @@
+intro prose
+📋 Spawn Audit Block
+
+[Pre-Execution Loads]
+- SKILL.md: ✓ .claude/skills/vp-product/SKILL.md
+- Preload packs (2): pm-team/PRINCIPLES.md, pricing-frameworks
+- Task-matched skills (1): strategic-bet
+- Conditional packs (0): none
+- Mandatory invocations (0): none
+- Fallbacks: none
+
+[Decision Records — skipped, non-deliverable task]
+
+[Post-Execution ROI]
+- Time saved: ~1 hrs (baseline: lookup x simple)
+- Elapsed: 60s
+- Tokens: 20k (~$0.1 cost)
+- Value: ~$100
+
+trailer
