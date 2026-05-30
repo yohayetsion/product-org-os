@@ -20,8 +20,8 @@ Usage examples:
     # Install skills + rules into a custom rules directory, skip context
     python install.py --rules-target ./project/.claude/rules --no-context
 
-    # Windows
-    python install.py --target C:/Users/me/.claude/skills
+    # Windows (replace <You> with your username)
+    python install.py --target C:/Users/<You>/.claude/skills
 
 Flags:
     --target PATH         Where skills install (default: ~/.claude/skills/)
@@ -193,6 +193,8 @@ def print_next_steps(skills_target: Path) -> None:
     print("    6-phase model.")
     print("  - Invocation patterns: see agent-guide.md in this repo (@agent vs /skill,")
     print("    gateways, multi-agent meetings).")
+    print("  - Telemetry (optional): run it from this cloned repo on demand via")
+    print("    `hooks/run-telemetry.sh` (or `hooks\\run-telemetry.cmd`). See AGENT-INTEGRATION.md.")
     print("  - Update later: `cd <this repo> && git pull && python install.py`")
 
 

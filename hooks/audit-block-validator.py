@@ -59,19 +59,19 @@ import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 
+# Block extraction + header/section/count-line regexes are defined ONCE in the
+# portable core (audit_parse.py); the validator imports them back (the "lift").
+# audit_parse.py uses an underscore so it imports cleanly as a sibling module.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from audit_parse import (  # noqa: E402
+    extract_blocks,
+    NEW_HEADER_RE,
+    OLD_HEADER_RE,
+    SECTION_RE,
+    COUNT_LINE_RES,
+)
+
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
-
-NEW_HEADER_RE = re.compile(r"📋\s*Spawn Audit Block(\s*\(Joint Authoring\))?", re.IGNORECASE)
-OLD_HEADER_RE = re.compile(r"📋\s*Pre-Execution Self-Check", re.IGNORECASE)
-SECTION_RE = re.compile(r"^\[([^\]]+)\]\s*$")
-
-# Count-bearing lines — must have (digit) before the colon
-COUNT_LINE_RES = {
-    "preload": re.compile(r"-\s*Preload packs\s*(?:\(combined,\s*)?\((\d+)\)\s*:\s*(.+)$"),
-    "task_skills": re.compile(r"-\s*Task-matched skills\s*\((\d+)\)\s*:\s*(.+)$"),
-    "conditional": re.compile(r"-\s*Conditional packs\s*(?:triggered\s*)?\((\d+)\)\s*:\s*(.+)$"),
-    "mandatory": re.compile(r"-\s*Mandatory invocations\s*(?:fired\s*)?\((\d+)\)\s*:\s*(.+)$"),
-}
 
 SKILL_LINE_RE = re.compile(r"-\s*(@\S+\s+)?SKILL\.md:\s*([✓✗])\s*(.+)")
 FALLBACKS_LINE_RE = re.compile(r"-\s*Fallbacks(?:\s*taken)?:\s*(.+)")
@@ -120,58 +120,6 @@ class BlockReport:
     @property
     def ok(self) -> bool:
         return not any(d.severity == "error" for d in self.deviations)
-
-
-def extract_blocks(text: str) -> list[tuple[int, str, bool]]:
-    """Return list of (start_line, block_text, is_old_format)."""
-    blocks = []
-    lines = text.split("\n")
-    i = 0
-    while i < len(lines):
-        if NEW_HEADER_RE.search(lines[i]):
-            start = i
-            j = i + 1
-            # Capture until 2 consecutive blank lines OR until next major header
-            blank_count = 0
-            while j < len(lines):
-                line = lines[j]
-                if not line.strip():
-                    blank_count += 1
-                    if blank_count >= 2:
-                        break
-                else:
-                    blank_count = 0
-                # Stop at typical "end of audit block" markers
-                if line.startswith("**") and j > start + 3:
-                    break
-                if line.startswith("---") and j > start + 3:
-                    break
-                j += 1
-            block = "\n".join(lines[start:j])
-            blocks.append((start + 1, block, False))
-            i = j
-        elif OLD_HEADER_RE.search(lines[i]):
-            start = i
-            j = i + 1
-            blank_count = 0
-            while j < len(lines):
-                if not lines[j].strip():
-                    blank_count += 1
-                    if blank_count >= 2:
-                        break
-                else:
-                    blank_count = 0
-                if lines[j].startswith("**") and j > start + 3:
-                    break
-                if lines[j].startswith("---") and j > start + 3:
-                    break
-                j += 1
-            block = "\n".join(lines[start:j])
-            blocks.append((start + 1, block, True))
-            i = j
-        else:
-            i += 1
-    return blocks
 
 
 def validate_block(block_text: str, source: str, block_index: int,
@@ -296,6 +244,31 @@ def scan_jsonl(path: Path) -> list[BlockReport]:
     return reports
 
 
+def scan_jsonl_role_aware(path: Path) -> list[BlockReport]:
+    """Role-aware scan: candidate selection delegated to the structural join in
+    telemetry-extract.iter_receipts_from_jsonl (the tool_use->tool_result join),
+    then validate_block runs on the joined candidates only. Excludes decoys (audit
+    blocks inside Read/Bash tool_results, prose narration) by construction.
+
+    Import is lazy + guarded so the validator still runs if the extractor module
+    is somehow absent (fail-open to the blind scan)."""
+    reports = []
+    try:
+        import importlib.util
+        ext_path = Path(__file__).resolve().parent / "telemetry-extract.py"
+        spec = importlib.util.spec_from_file_location("telemetry_extract", ext_path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        for i, cand in enumerate(mod.iter_receipts_from_jsonl(path), 1):
+            reports.append(validate_block(cand.text, str(path.name), i,
+                                          cand.start_line, cand.is_old))
+    except Exception as e:
+        print(f"  warn: role-aware scan fell back to blind for {path.name}: {e}",
+              file=sys.stderr)
+        return scan_jsonl(path)
+    return reports
+
+
 def scan_text(text: str, source: str) -> list[BlockReport]:
     reports = []
     for i, (start_line, block, is_old) in enumerate(extract_blocks(text), 1):
@@ -307,6 +280,10 @@ def main():
     args = sys.argv[1:]
     recursive = "--recursive" in args
     args = [a for a in args if a != "--recursive"]
+    # --role-aware is DEFAULT ON; --no-role-aware reproduces the legacy blind scan.
+    role_aware = "--no-role-aware" not in args
+    args = [a for a in args if a not in ("--role-aware", "--no-role-aware")]
+    _scan = scan_jsonl_role_aware if role_aware else scan_jsonl
     if not args:
         print(__doc__)
         sys.exit(2)
@@ -321,13 +298,13 @@ def main():
         p = Path(target)
         if p.is_file():
             if p.suffix == ".jsonl":
-                all_reports = scan_jsonl(p)
+                all_reports = _scan(p)
             else:
                 all_reports = scan_text(p.read_text(encoding="utf-8", errors="replace"), p.name)
         elif p.is_dir():
             pattern = "**/*.jsonl" if recursive else "*.jsonl"
             for jsonl in sorted(p.glob(pattern)):
-                all_reports.extend(scan_jsonl(jsonl))
+                all_reports.extend(_scan(jsonl))
         else:
             print(f"error: {target} not found", file=sys.stderr)
             sys.exit(1)
