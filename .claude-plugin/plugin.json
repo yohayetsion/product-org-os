@@ -1,0 +1,10 @@
+{
+  "name": "product-org-os",
+  "description": "A full product organization on Claude Code: 12 role-based agents (CPO, VP Product, PMs, BizOps, Competitive Intelligence, and a Product Leadership Team) plus 130+ skills for PRDs, roadmaps, business cases, GTM, pricing, and competitive analysis. MIT-licensed, built on the Agent Skills open standard.",
+  "version": "4.3.0",
+  "author": {
+    "name": "Yohay Etsion"
+  },
+  "repository": "https://github.com/yohayetsion/product-org-os",
+  "license": "MIT"
+}
