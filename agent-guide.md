@@ -34,6 +34,17 @@ This creates the `context/` directory structure in your current working director
 
 Product Org OS runs natively in Claude Code. The skills follow the Agent Skills spec, so they technically work in any tool that reads SKILL.md files — but only Claude Code is validated end-to-end. If you want to try it in Cursor, Copilot, or Gemini CLI, the skills will load; the rules and context layer require Claude Code conventions.
 
+### ▶ Agent action: detect your environment and adapt
+
+Before operating the system, determine which tool you are running in — the invocation mechanics differ, and the rest of this guide assumes Claude Code.
+
+| You are… | How you invoke the system |
+|----------|---------------------------|
+| **Claude Code** (validated end-to-end) | Use the guide as written: `/skill` runs inline, `@agent` spawns autonomous agents, `.claude/rules/` (incl. the spawn protocol) auto-loads, and the CLAUDE.md front-door block is honored. Nothing extra to do. |
+| **Any other tool** (Cursor, Copilot, Gemini CLI, …) | There are **no** slash commands, **no** agent spawning, and **no** auto-loaded rules/context. Operate by **reading files directly**: to use a skill, open `skills/<name>/SKILL.md` and follow it; to act as a role, open `skills/<agent>/SKILL.md`, adopt it, and read the knowledge packs it names under `reference/knowledge/` or `knowledge-mirror/`; read `rules/agent-spawn-protocol.md` yourself before role work (it won't be injected). The CLAUDE.md front-door is Claude-Code-specific — put the equivalent pointer in your tool's own context file (e.g. Cursor `.cursorrules`). |
+
+If you are not Claude Code, mentally translate every `/skill` and `@agent` in this guide into "read and follow the matching `SKILL.md`."
+
 ### Post-Setup
 
 After `/setup`, your project will have:
@@ -513,6 +524,8 @@ Invocation:
 - `/skill …` — run a workflow inline: `/prd` `/decision-record` `/roadmap-theme` `/pricing-strategy` …
 - `/product …` / `/plt …` — gateways that route to the right agents and run a meeting
 - `/context-recall [topic]` — query organizational memory
+
+Source: github.com/yohayetsion/product-org-os — update with `git pull && python install.py`.
 ````
 
 > Note: the front-door block points the agent to read `.claude/rules/agent-spawn-protocol.md`, so make sure the rules were installed (answer **yes** to the installer's rules prompt). Power users who want the protocol loaded every session — not just on first spawn — can add a Claude Code import line `@.claude/rules/agent-spawn-protocol.md` to CLAUDE.md, at the cost of roughly 7k tokens per session.
