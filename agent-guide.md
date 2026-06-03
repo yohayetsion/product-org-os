@@ -2,11 +2,13 @@
 
 **A complete AI product organization.** This guide tells any coding agent everything it needs to install, configure, and operate the system.
 
+> **▶ If you are the coding agent reading this:** your job is not only to run the installer. It is to **(1)** install the system, **(2)** verify it, **(3)** show the user what they now have, and **(4)** offer to wire it into their `CLAUDE.md` so it stays visible across sessions — then **operate it on their behalf**. When the user asks for product work in plain language ("draft a PRD", "have the VP Product review this"), spawn the relevant agent. Steps marked **▶ Agent action** below tell you exactly what to do.
+
 ---
 
 ## What This Is
 
-Product Org OS gives you 12 role-based product agents, 133 skills, 2 gateways, 28 knowledge packs, and a persistent context layer. It turns a coding agent into an entire product organization — from strategic intent through execution to learning. Every agent declares what skills it uses, what knowledge it reads, and when — with mandatory enforcement.
+Product Org OS gives you 12 role-based product agents, 130+ skills, 2 gateways, 30+ knowledge packs, and a persistent context layer. It turns a coding agent into an entire product organization — from strategic intent through execution to learning. Every agent declares what skills it uses, what knowledge it reads, and when — with mandatory enforcement.
 
 Built on the **Vision to Value** framework: a 6-phase system that flows from strategy to outcomes to learning loops.
 
@@ -103,6 +105,39 @@ Add `+` or `-` to control verbosity:
 | `-` | Brief — executive summary | `@product What's launch status? -` |
 | *(none)* | Standard — balanced depth | `@product What's launch status?` |
 | `+` | Deep — full analysis | `@product What's launch status? +` |
+
+---
+
+## Operating the System on the User's Behalf
+
+Once installed, **you are the user's product organization.** The user will talk to you the way they'd talk to a chief of staff — and you spawn the right specialist.
+
+### ▶ Agent action: treat these as spawn requests
+
+The user does **not** have to type the `@`. All of these mean "spawn an agent":
+
+| The user says… | You do |
+|----------------|--------|
+| `@pm draft a PRD for SSO` | Spawn the Product Manager agent |
+| "have the VP Product review this roadmap" | Spawn `@vp-product` to review it (Review delegation pattern) |
+| "get the PLT's take on the portfolio" | Convene `@plt` (multi-agent meeting) |
+| "what would competitive intel say about Acme?" | Spawn `@ci` |
+| "run this past the product org" | Use the `@product` gateway to route |
+
+### ▶ Agent action: read the spawn protocol before your first spawn
+
+Before you spawn **any** agent in a session, read **`.claude/rules/agent-spawn-protocol.md`** (installed with the rules; also at `rules/agent-spawn-protocol.md` in the cloned repo). It is mandatory reading and defines:
+
+- **Agent identity** — the emoji, display name, and canonical slug for each agent.
+- **The prompt-injection template** — the block you MUST prepend to every agent spawn so the sub-agent loads its own SKILL.md, knowledge packs, and operating rules (sub-agents do not inherit `.claude/rules/`, so you carry the protocol to them).
+- **The Spawn Audit Block** — the structured receipt the agent emits proving what it loaded, plus ROI.
+- **Meeting Mode & presentation** — present each agent in **first person** with its emoji + name; for multi-agent runs show individual voices first, then alignment, tension, and synthesis.
+
+If you spawn an agent without reading this, the agent will improvise from training data instead of operating as its defined role — which defeats the system. Read it once per session, then apply it to every spawn.
+
+### ▶ Agent action: inline skills need no spawn
+
+`/skill` invocations (e.g. `/prd`, `/decision-record`) run **inline** in your current context — read the skill's `SKILL.md` from `~/.claude/skills/<skill>/` and follow it. No sub-agent, no Audit Block.
 
 ---
 
@@ -319,7 +354,7 @@ These are automatically included in every agent's context — no keyword matchin
 
 ---
 
-## 28 Knowledge Packs
+## Knowledge Packs
 
 Professional frameworks that agents reference when producing deliverables:
 
@@ -433,6 +468,64 @@ Ships with sample data so you can explore immediately:
 - Run `/tour` for a 5-step interactive walkthrough
 - Demo data auto-hides once you add your own content
 - `/clear-demo` removes demo data when ready
+
+---
+
+## After Install: Onboard the User
+
+Installing is step one. A good install ends with the user understanding what they have and how to drive it.
+
+### ▶ Agent action 1 — Show off the inventory (live, not hardcoded)
+
+Run this from the cloned repo root and present the real numbers (counts drift between releases — always read them live):
+
+```bash
+python -c "from pathlib import Path; print('Run this from the product-org-os clone root (skills/ not found).') if not Path('skills').is_dir() else print('Skills installed:', len([p for p in Path('skills').glob('*') if p.is_dir()]), '| Knowledge packs:', len([p for p in Path('reference/knowledge').glob('*.md') if p.stem.lower()!='readme']) + len([p for p in Path('knowledge-mirror').glob('*.md') if p.stem.lower()!='readme']))"
+```
+
+Then present the user with:
+- **12 agents** — the roster from "The 12 Agents" above (name + one-line domain).
+- **Skills** — the live count, grouped by Vision to Value phase (see the Skills section).
+- **Knowledge packs** — the live count; list a few names so it's concrete.
+- **2 gateways** — `@product` (routing) and `@plt` (portfolio).
+
+Keep it to a short, scannable summary — you're giving a tour, not dumping the catalog.
+
+### ▶ Agent action 2 — Offer the CLAUDE.md front door
+
+The skills are discoverable, but the **invocation conventions and the spawn protocol are invisible** to future sessions unless they're referenced from the project's `CLAUDE.md` (the one file Claude Code auto-loads). **Offer** to add the block below — ask first, and **append** it (never overwrite an existing `CLAUDE.md`):
+
+````markdown
+## Product Org OS (installed)
+
+This project has **Product Org OS** installed — a product organization as AI agents:
+12 role-based agents, plus skills, knowledge packs, 2 gateways, and a persistent context
+layer. Skills are in `~/.claude/skills/`; behavioral rules in `.claude/rules/`.
+
+**You (the coding agent) may spawn these agents when I ask.** Natural requests count —
+"draft a PRD", "have the VP Product review this", "get the PLT's take". **Before your first
+agent spawn in a session, read `.claude/rules/agent-spawn-protocol.md`** — it defines agent
+identity, the prompt-injection template you must prepend, and the Spawn Audit Block you must
+emit. Present each agent in first person; use Meeting Mode for multi-agent runs.
+
+Invocation:
+- `@agent …` — spawn an agent: `@pm @vp-product @vpp @cpo @pm-dir @pmm-dir @pmm @ci @bizops @bizdev @prod-ops @value-realization @mentor`
+- `/skill …` — run a workflow inline: `/prd` `/decision-record` `/roadmap-theme` `/pricing-strategy` …
+- `/product …` / `/plt …` — gateways that route to the right agents and run a meeting
+- `/context-recall [topic]` — query organizational memory
+````
+
+> Note: the front-door block points the agent to read `.claude/rules/agent-spawn-protocol.md`, so make sure the rules were installed (answer **yes** to the installer's rules prompt). Power users who want the protocol loaded every session — not just on first spawn — can add a Claude Code import line `@.claude/rules/agent-spawn-protocol.md` to CLAUDE.md, at the cost of roughly 7k tokens per session.
+
+### ▶ Agent action 3 — Walk through a first request
+
+Offer the user a concrete first move and run it with them:
+
+```
+@pm draft a one-page PRD for <the user's real feature>
+/context-recall <a topic the user cares about>
+@product <a cross-functional question the user has>
+```
 
 ---
 

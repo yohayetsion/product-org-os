@@ -195,6 +195,10 @@ def print_next_steps(skills_target: Path) -> None:
     print("    gateways, multi-agent meetings).")
     print("  - Telemetry (optional): run it from this cloned repo on demand via")
     print("    `hooks/run-telemetry.sh` (or `hooks\\run-telemetry.cmd`). See AGENT-INTEGRATION.md.")
+    print("  - Onboard the user: read agent-guide.md sections 'Operating the System on")
+    print("    the User's Behalf' and 'After Install: Onboard the User': show the live")
+    print("    inventory and offer to add the Product Org OS block to the project CLAUDE.md.")
+    print("  - Before your first agent spawn, read rules/agent-spawn-protocol.md.")
     print("  - Update later: `cd <this repo> && git pull && python install.py`")
 
 
