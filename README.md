@@ -231,7 +231,7 @@ MIT
 
 **Free & Open Source.** World-class product capabilities shouldn't be locked behind enterprise software.
 
-Based on the Vision to Value Executive Manifesto by Yohay Etsion.
+Based on *Vision to Value: A Blueprint for Product Organizations* by Yohay Etsion.
 
 ---
 

@@ -561,4 +561,4 @@ Offer the user a concrete first move and run it with them:
 
 ## License
 
-MIT. Based on the Vision to Value Executive Manifesto by Yohay Etsion.
+MIT. Based on *Vision to Value: A Blueprint for Product Organizations* by Yohay Etsion.
