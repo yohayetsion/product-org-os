@@ -2603,45 +2603,19 @@
                     Point your Claude Code, Codex, Cursor, Copilot, Gemini CLI, or Windsurf agent at the guide. It handles the rest.
                 </p>
             </div>
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <a href="https://github.com/yohayetsion/product-org-os/blob/main/agent-guide.md" target="_blank" rel="noopener" style="display: inline-block; background: #0d0d1a; border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 2rem; text-decoration: none; transition: border-color 0.3s; max-width: 100%;">
-                    <code style="color: var(--secondary); font-family: 'Courier New', monospace; font-size: 0.95rem; word-break: break-all;">github.com/yohayetsion/product-org-os/.../agent-guide.md</code>
-                </a>
-            </div>
-            <p style="text-align: center; color: var(--text-dim); font-size: 0.85rem; margin-bottom: 3rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">Or follow the 3 steps below</p>
-            <div class="getting-started">
-                <div class="steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h4>Install Product Org OS</h4>
-                            <p>Clone the repo and run the portable installer. Skills land in <code style="color: var(--secondary);">~/.claude/skills/</code>.</p>
-                            <div class="code-block">git clone https://github.com/yohayetsion/product-org-os.git</div>
-                            <div class="code-block" style="margin-top: 0.5rem;">cd product-org-os</div>
-                            <div class="code-block" style="margin-top: 0.5rem;">python install.py</div>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h4>Initialize Your Project</h4>
-                            <p>Run setup to create the context layer folder structure in your project.</p>
-                            <div class="code-block">/setup</div>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h4>Start Creating</h4>
-                            <p>Natural language with gateway, agents, or skills — create, update, or find.</p>
-                            <div class="code-block">@product Launch freemium tier. Context: pricing-research.md</div>
-                            <div class="code-block" style="margin-top: 0.5rem;">Create a /prd for the new checkout feature</div>
-                            <div class="code-block" style="margin-top: 0.5rem;">Run /decision-record for the build vs buy decision</div>
-                            <div class="code-block" style="margin-top: 0.5rem;">@pm review notes.md and update the /prd</div>
-                            <div class="code-block" style="margin-top: 0.5rem;">Run /competitive-analysis on Competitor X - see their-launch.md</div>
-                        </div>
+            <div style="max-width: 840px; margin: 0 auto;">
+                <div style="background: #0d0d1a; border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem;">
+                    <code id="agentPrompt" style="color: var(--secondary); font-family: 'Courier New', monospace; font-size: 0.95rem; line-height: 1.7; word-break: break-word; display: block; text-align: left;">Read https://raw.githubusercontent.com/yohayetsion/product-org-os/main/agent-guide.md and follow it to install and run Product Org OS for me.</code>
+                    <div style="text-align: center; margin-top: 1.5rem;">
+                        <button id="copyPromptBtn" onclick="copyAgentPrompt(this)" style="background: linear-gradient(90deg, #E94560, #4ECCA3); color: #0d0d1a; border: none; border-radius: 8px; padding: 0.7rem 1.6rem; font-weight: 700; font-size: 0.9rem; cursor: pointer; font-family: inherit;">Copy prompt</button>
                     </div>
                 </div>
+                <p style="text-align: center; margin-top: 1.25rem; color: var(--text-dim); font-size: 0.9rem;">
+                    Point any coding agent at it: Claude Code, Codex, Cursor, Copilot, Gemini CLI, or Windsurf. The guide handles install, setup, and operation.
+                </p>
+                <p style="text-align: center; margin-top: 0.75rem;">
+                    <a href="https://github.com/yohayetsion/product-org-os/blob/main/agent-guide.md" target="_blank" rel="noopener" style="color: var(--text-dim); font-size: 0.85rem; text-decoration: none;">Prefer to read it first? View the guide &rarr;</a>
+                </p>
             </div>
         </div>
     </section>
@@ -2666,6 +2640,24 @@
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('active');
+        }
+
+        // Copy the agent prompt to clipboard
+        function copyAgentPrompt(btn) {
+            const text = document.getElementById('agentPrompt').innerText.trim();
+            const done = () => { const o = btn.textContent; btn.textContent = 'Copied!'; setTimeout(() => { btn.textContent = o; }, 2000); };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done));
+            } else {
+                fallbackCopy(text, done);
+            }
+        }
+        function fallbackCopy(text, done) {
+            const ta = document.createElement('textarea');
+            ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+            document.body.appendChild(ta); ta.select();
+            try { document.execCommand('copy'); done(); } catch (e) {}
+            document.body.removeChild(ta);
         }
 
         // Smooth scroll for navigation
