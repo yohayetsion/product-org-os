@@ -5,7 +5,7 @@
 **Date**: 2026-05-30
 **Status**: RATIFIED — buildable spec for backend-dev
 **Builds on**: plan §2, §5 (two-pass join + module-boundary rule), §5.1 (R1–R9)
-**Locked (do not relitigate)**: D1 manual-run (no Claude Code hooks); D2 self-reported numbers authoritative; D3 local Drive + `C:/dev/product-org-os` clone → public GitHub only, NOT PMTK.
+**Locked (do not relitigate)**: D1 manual-run (no Claude Code hooks); D2 self-reported numbers authoritative; D3 local Drive + `<clone>` clone → public GitHub only, NOT PMTK.
 
 This is an engineering spec. It defines module boundaries, the join algorithm, data contracts, build order, and the portability assertion. backend-dev builds Phase 1 then Phase 2 from this note; qa-engineer's 11 fixtures gate each phase.
 
@@ -25,7 +25,7 @@ This is an engineering spec. It defines module boundaries, the join algorithm, d
 
 ## 1. Module Map
 
-Three Python files in `Product Org OS/product-org-plugin/hooks/` (Drive) and mirrored to `C:/dev/product-org-os/hooks/` (clone, flat). Stdlib only, Python 3.8+.
+Three Python files in the plugin source's hooks/ (Drive) and mirrored to `<clone>/hooks/` (clone, flat). Stdlib only, Python 3.8+.
 
 ### 1.1 `audit_parse.py` — shared, PORTABLE core (T2) — NEW + one lift
 

@@ -492,14 +492,14 @@ Run `hooks/audit-block-validator.py` periodically against your transcripts (`C:\
 
 ```bash
 python "Product Org OS/product-org-plugin/hooks/audit-block-validator.py" \
-  "C:/Users/yohay/.claude/projects/G--My-Drive-Claude/" --recursive
+  "<path-to-your-claude-projects>/" --recursive
 ```
 
 The validator checks schema conformance. To additionally **capture** Audit Block telemetry (loads, DR events, ROI) from transcripts into durable receipts, run the manual telemetry extractor alongside it — `hooks/run-telemetry.sh` / `hooks/run-telemetry.cmd` (thin wrappers over `hooks/telemetry-extract.py`):
 
 ```bash
 # extract receipts from your transcript directory into context/roi/audit-receipts.jsonl
-hooks/run-telemetry.sh --from "C:/Users/yohay/.claude/projects/G--My-Drive-Claude/" --context-dir ./context
+hooks/run-telemetry.sh --from "<path-to-your-claude-projects>/" --context-dir ./context
 # or call the extractor directly with --summary for an aggregate report
 python hooks/telemetry-extract.py --from <transcript-or-dir> --summary
 ```

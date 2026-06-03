@@ -108,7 +108,7 @@ The skill MUST collect the following before producing output. If any are missing
 
 | Input | Required | Example |
 |---|---|---|
-| Privacy policy document (path, URL, or pasted text) | Yes | `C:/dev/legionis/src/app/(legal)/privacy/page.tsx` |
+| Privacy policy document (path, URL, or pasted text) | Yes | `./src/app/privacy/page.tsx` |
 | **Processing context paragraph** | **Yes — skill refuses without it** | See below |
 | Jurisdiction(s) in scope | Yes (may be multi) | "EEA/UK + US + Israel" |
 | Stage | Yes | "Pre-launch" / "Live, beta" / "GA" |
@@ -557,10 +557,10 @@ New consumers require a frontmatter update and a one-line note in the consuming 
 ## Example Invocation
 
 ```
-User: /privacy-policy-audit C:/dev/legionis/src/app/(legal)/privacy/page.tsx
+User: /privacy-policy-audit ./src/app/privacy/page.tsx
 
 /privacy-policy-audit v1.0.0 — reading:
-  - C:/dev/legionis/src/app/(legal)/privacy/page.tsx (Next.js JSX source)
+  - ./src/app/privacy/page.tsx (Next.js JSX source)
   - Last updated: March 3, 2026
   - 11 sections, approx 1,200 words rendered text
 

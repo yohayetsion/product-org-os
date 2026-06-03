@@ -193,7 +193,7 @@ Set `MEMORY_FILE_PATH` to control where the knowledge graph is stored:
 
 ### Permission Errors
 - Ensure write access to the storage directory
-- On Windows, use double backslashes in paths: `"G:\\My Drive\\..."`
+- On Windows, use double backslashes in paths: `"C:\\Users\\you\\project\\..."`
 
 ### Graph Not Persisting
 - Check `MEMORY_FILE_PATH` is set correctly

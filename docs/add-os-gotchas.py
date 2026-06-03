@@ -12,7 +12,7 @@ import glob
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-SKILLS_DIR = r"G:\My Drive\Claude\Product Org OS\product-org-plugin\skills"
+SKILLS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir, "skills")
 
 # Gotchas for top 30+ skills, grouped by category
 SKILL_GOTCHAS = {

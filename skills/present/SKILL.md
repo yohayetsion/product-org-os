@@ -18,12 +18,12 @@ Convert a markdown deliverable into a **self-contained, brand-adaptive HTML pres
 
 ## Process
 
-1. **Run `agent-output-handler.py`** — this is the canonical generator:
+1. **Run your presentation handler** (a local/optional presentation tool; not bundled with this repo) — this is the canonical generator:
    ```bash
-   python "G:\My Drive\Claude\agent-output-handler.py" "<path-to-md-file>" --no-telegram
+   python "<path-to-your-presentation-handler>" "<path-to-md-file>" --no-telegram
    ```
 2. The script handles everything: markdown parsing, slide splitting (by `## ` headers), brand detection, HTML generation, commenting engine, and browser auto-open.
-3. Output saved to `C:\dev\presentations\` with a slugified filename.
+3. Output saved to `./presentations/` with a slugified filename.
 
 That's it. Do NOT manually generate HTML presentations — always use the handler script.
 

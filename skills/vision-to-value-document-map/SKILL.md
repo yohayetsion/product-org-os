@@ -51,8 +51,8 @@ For the target product, scan for documents across the Vision to Value phases:
 ### Step 2: Verify HTML Presentations Exist
 
 For each strategic asset found:
-1. Check if a corresponding HTML presentation exists (in the product folder or `C:\dev\presentations\`)
-2. If missing, generate it: `python "G:\My Drive\Claude\agent-output-handler.py" "<md-path>" --no-telegram --no-browser`
+1. Check if a corresponding HTML presentation exists (in the product folder or `./presentations/`)
+2. If missing, generate it: `python "<path-to-your-presentation-handler>" "<md-path>" --no-telegram --no-browser`
 3. Record the HTML path for linking
 
 ### Step 3: Generate Markdown Registry
@@ -65,7 +65,7 @@ Create `{Product}/Product/vision-to-value-document-map.md` with:
 
 Use the Vision to Value document map generator script at:
 ```
-G:\My Drive\Claude\vision-to-value-document-map-generator.py
+<path-to-your-document-map-generator>
 ```
 
 The HTML must include:
