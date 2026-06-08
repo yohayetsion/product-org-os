@@ -58,6 +58,9 @@ CONTEXT_SUBDIRS = [
     "assumptions",
     "portfolio",
     "roi",
+    "interactions",
+    "handoffs",
+    "preferences",
 ]
 
 

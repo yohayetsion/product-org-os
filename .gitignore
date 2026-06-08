@@ -57,6 +57,6 @@ context/.tracker-dedup
 
 # Organizational memory is created locally on install (install.py scaffolds it).
 # The repo ships NO populated context/ — only the demo fixtures used by /tour, /reset-demo, /clear-demo.
-context/
+context/*
 !context/demo/
 !context/demo/**
