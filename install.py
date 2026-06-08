@@ -57,7 +57,8 @@ CONTEXT_SUBDIRS = [
     "documents",
     "assumptions",
     "portfolio",
-    "roi",
+    
+    "roi/history",
     "interactions",
     "handoffs",
     "preferences",
