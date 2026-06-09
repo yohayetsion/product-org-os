@@ -61,8 +61,8 @@ The skill deliberately sits UPSTREAM of the more specialized legal skills. Use i
 Run the full analytical pass on a named initiative, decision, or deal. Produces a new risk-analysis output file following the structure in the Output section.
 
 ```
-/risk-analysis Bank Discount Deal
-/risk-analysis Legionis GTM launch
+/risk-analysis Meridian Bank Deal
+/risk-analysis Atlas GTM launch
 /risk-analysis Acquire CompanyX
 ```
 
@@ -71,7 +71,7 @@ Run the full analytical pass on a named initiative, decision, or deal. Produces 
 Revise an existing risk analysis against new information (new counterparty response, new document, changed deal structure). Pass the path to the existing file.
 
 ```
-/risk-analysis update AXIA/Product/risk-analysis-bank-discount-deal-2026-04-11.md
+/risk-analysis update Northwind/Product/risk-analysis-meridian-bank-deal-2026-04-11.md
 ```
 
 Update mode preserves the finding numbering (adds 8a, 8b rather than renumbering), marks superseded findings with `~~strikethrough~~` + a one-line reason, and keeps a changelog at the bottom of the file.
@@ -90,7 +90,7 @@ Use adversarial mode ONLY when:
 For early-stage drafts and lower-stakes triage, use default Create mode with Pattern 1 Consultation for specialist input instead.
 
 ```
-/risk-analysis Bank Discount Deal --mode adversarial --tiebreaker "Yohay Etsion"
+/risk-analysis Meridian Bank Deal --mode adversarial --tiebreaker "Sam Rivera"
 ```
 
 ---
@@ -101,13 +101,13 @@ The skill MUST collect the following before producing output. If any are missing
 
 | Input | Required | Example |
 |---|---|---|
-| Initiative or decision name | Yes | "AXIA Bank Discount Deal" |
+| Initiative or decision name | Yes | "Northwind Meridian Bank Deal" |
 | Jurisdiction (or authorization to assume + flag) | Yes | "Israel + U.S. Delaware" |
-| Counterparty / stakeholders | Yes | "Bank Discount (Israel), AXIA (Delaware parent + Israeli sub)" |
+| Counterparty / stakeholders | Yes | "Meridian Bank (Israel), Northwind (Delaware parent + Israeli sub)" |
 | Relevant documents | At least one | Proposal, master plan, EULA, term sheet |
 | Deal / initiative stage | Yes | "Pre-signature, proposal sent, awaiting technical deep-dive" |
 | Known constraints or red lines | If known | "SOC 2 not yet certified; bridge letter required" |
-| Tiebreaker (adversarial mode only) | Yes if adversarial | "Yohay Etsion" |
+| Tiebreaker (adversarial mode only) | Yes if adversarial | "Sam Rivera" |
 
 If jurisdiction is unknown, the skill makes a defensible assumption based on the documents and flags the assumption explicitly in the output — it does NOT silently pick.
 
@@ -311,21 +311,21 @@ New consumers require a frontmatter update and a one-line note in the consuming 
 ## Example Invocation
 
 ```
-User: /risk-analysis Bank Discount Deal
+User: /risk-analysis Meridian Bank Deal
 
 /risk-analysis v1.0.0 — reading:
-  - AXIA/Product/bank-discount-proposal-v3.md
-  - AXIA/Product/bank-discount-master-plan.md
+  - Northwind/Product/meridian-bank-proposal-v3.md
+  - Northwind/Product/meridian-bank-master-plan.md
 
 Collecting inputs:
-  - Initiative: AXIA Bank Discount Deal
-  - Jurisdiction: Assumed Israel (governing law) + Delaware (AXIA parent entity). Flagged as assumption — confirm in Order Form governing-law clause.
-  - Counterparty: Bank Discount (Israel Discount Bank), Top-5 Israeli bank, regulated by Bank of Israel Directive 361
+  - Initiative: Northwind Meridian Bank Deal
+  - Jurisdiction: Assumed Israel (governing law) + Delaware (Northwind parent entity). Flagged as assumption — confirm in Order Form governing-law clause.
+  - Counterparty: Meridian Bank (Israel Discount Bank), Top-5 Israeli bank, regulated by Bank of Israel Directive 361
   - Stage: Pre-signature, proposal v3 drafted, awaiting technical deep-dive
-  - Known constraints: SOC 2 not yet certified, bridge letter required; 4-person startup delivery capacity; AXIA Israeli entity not yet formed
+  - Known constraints: SOC 2 not yet certified, bridge letter required; 4-person startup delivery capacity; Northwind Israeli entity not yet formed
 
 Producing output at:
-  AXIA/Product/risk-analysis-bank-discount-deal-2026-04-11.md
+  Northwind/Product/risk-analysis-meridian-bank-deal-2026-04-11.md
 
 [output follows standard structure: disclaimer → jurisdiction → findings →
  reviewer checklist → cannot assess without]

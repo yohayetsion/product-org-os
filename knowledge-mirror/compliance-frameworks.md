@@ -239,7 +239,7 @@ Each framework below is cited by its stable structural elements (article numbers
 - **PPL core obligations**: Database registration, consent for processing, data subject access rights, breach notification (via the 2025 amendment, pending full effect).
 - **PPL Privacy Protection Authority (PPA)**: The Israeli data protection supervisory authority.
 - **Directive 361 scope**: Applies to Israeli banking institutions; covers information security, technology risk management, cloud adoption, third-party risk, and (per 2024 amendments) AI-related risk management.
-- **Relationship to compliance-audit A4 birth test**: Directive 361 was used as a custom framework in the A4 `/compliance-audit` skill's birth test for Bank Discount. It is cited here because downstream skills may reference Israeli banking-sector obligations as a structural input.
+- **Relationship to compliance-audit A4 birth test**: Directive 361 was used as a custom framework in the A4 `/compliance-audit` skill's birth test for Meridian Bank. It is cited here because downstream skills may reference Israeli banking-sector obligations as a structural input.
 
 **Pointer discipline**: PPL text is available via the PPA; Directive 361 is published by the Bank of Israel. Both are in Hebrew with unofficial English translations circulating; the pack does not cite unofficial translations as authoritative. See `sources.md` for URLs (canonical paths flagged for verification).
 

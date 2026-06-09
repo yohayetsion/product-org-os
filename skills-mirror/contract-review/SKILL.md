@@ -61,9 +61,9 @@ The skill deliberately sits DOWNSTREAM of `/risk-analysis` and UPSTREAM of speci
 Run a full clause-by-clause pass on a specific contract. Produces a new contract-review output file following the structure in the Output section.
 
 ```
-/contract-review AXIA-Enterprise-License-Agreement-v2.pdf
-/contract-review "SKYMOD watch vendor SOW"
-/contract-review "Legionis reseller agreement - draft from Acme"
+/contract-review Northwind-Enterprise-License-Agreement-v2.pdf
+/contract-review "Brightwear watch vendor SOW"
+/contract-review "Atlas reseller agreement - draft from Acme"
 ```
 
 ### Update
@@ -71,7 +71,7 @@ Run a full clause-by-clause pass on a specific contract. Produces a new contract
 Re-review an existing contract after counterparty redlines or an internal revision. Pass the path to the existing contract-review output.
 
 ```
-/contract-review update AXIA/Product/contract-review-eula-v2-2026-04-11.md
+/contract-review update Northwind/Product/contract-review-eula-v2-2026-04-11.md
 ```
 
 Update mode preserves the finding numbering (adds 7a, 7b rather than renumbering), marks resolved findings with `~~strikethrough~~` plus a one-line reason, and keeps a `## Changelog` at the bottom of the file noting what clauses the counterparty moved on.
@@ -88,7 +88,7 @@ Use adversarial sub-mode ONLY when:
 - The contract draft is near-final, not still evolving in shape
 
 ```
-/contract-review AXIA-EULA-v2 --mode adversarial --tiebreaker "Yohay Etsion"
+/contract-review Northwind-EULA-v2 --mode adversarial --tiebreaker "Sam Rivera"
 ```
 
 For early-stage drafts, routine contracts, and low-stakes triage, use default Create mode with Pattern 1 Consultation to pull in specialists (Privacy Counsel, IP Counsel, Tax Planning) for the clauses that need their view.
@@ -101,16 +101,16 @@ The skill MUST collect the following before producing output. If any are missing
 
 | Input | Required | Example |
 |---|---|---|
-| Contract document (path or content) | Yes | `AXIA/Marketing/Collaterals/AXIA-EULA-v2.pdf` |
+| Contract document (path or content) | Yes | `Northwind/Marketing/Collaterals/Northwind-EULA-v2.pdf` |
 | Deal type | Yes | Vendor / Customer / Partnership / IP licensing / SaaS / NDA / Employment |
 | Our stance | Yes | "Paper on paper" (we authored), "Theirs with redlines" (counterparty authored), "Joint draft" |
 | Counterparty context | Yes | "Top-5 Israeli bank, regulated by Bank of Israel" / "US SaaS vendor, mid-market" |
 | Jurisdiction (or authorization to assume + flag) | Yes | "Israel + U.S. Delaware" |
 | Known red lines | If known | "No uncapped indemnity", "No assignment without consent", "Data residency must be Israel" |
 | Specific clauses of concern | If any | "Section 8.2 LoL cap" / "Schedule D Order Form" |
-| Tiebreaker (adversarial mode only) | Yes if adversarial | "Yohay Etsion" |
+| Tiebreaker (adversarial mode only) | Yes if adversarial | "Sam Rivera" |
 
-If jurisdiction is unknown, the skill reads the governing-law clause of the contract itself and reports what IT says, rather than silently picking a default. If the contract is multi-jurisdictional (as AXIA EULA v2 is — Israel for Israeli customers, Delaware for Americas customers), the skill names both and flags which one applies to the deal under review.
+If jurisdiction is unknown, the skill reads the governing-law clause of the contract itself and reports what IT says, rather than silently picking a default. If the contract is multi-jurisdictional (as Northwind EULA v2 is — Israel for Israeli customers, Delaware for Americas customers), the skill names both and flags which one applies to the deal under review.
 
 ---
 
@@ -333,24 +333,24 @@ New consumers require a frontmatter update and a one-line note in the consuming 
 ## Example Invocation
 
 ```
-User: /contract-review AXIA-Enterprise-License-Agreement-v2.pdf
+User: /contract-review Northwind-Enterprise-License-Agreement-v2.pdf
 
 /contract-review v1.0.0 — reading:
-  - AXIA/Marketing/Collaterals/AXIA-Enterprise-License-Agreement-v2.pdf
+  - Northwind/Marketing/Collaterals/Northwind-Enterprise-License-Agreement-v2.pdf
     (core EULA + Schedules A-D inline, approx 30 pages)
 
 Collecting inputs:
-  - Contract: AXIA Enterprise License Agreement v2.0
-  - Parties: Axia Security Ltd. (Israel) + [Customer]
+  - Contract: Northwind Enterprise License Agreement v2.0
+  - Parties: Northwind Corp. (Israel) + [Customer]
   - Deal Type: SaaS / enterprise license
   - Our Stance: Paper on paper (we authored)
-  - Counterparty Context: First use against Bank Discount (regulated Israeli bank)
+  - Counterparty Context: First use against Meridian Bank (regulated Israeli bank)
   - Jurisdiction: Section 14.1 — Israel for Israeli customers, Delaware for Americas.
-    Bank Discount is Israeli → Section 14.1(a) applies.
+    Meridian Bank is Israeli → Section 14.1(a) applies.
   - Clause library version: 2026-04-11 (seed corpus; this review is part of the bootstrap)
 
 Producing output at:
-  AXIA/Product/contract-review-eula-v2-2026-04-11.md
+  Northwind/Product/contract-review-eula-v2-2026-04-11.md
 
 [output follows standard structure: disclaimer → contract metadata → findings →
  reviewer checklist → cannot assess without]
@@ -362,4 +362,4 @@ Producing output at:
 
 ## Changelog
 
-- **1.0.0 (2026-04-11)** — Initial authoring. First-principles during Phase 3 Sub-phase 3.0. First contract-specific skill. Birth-tested against AXIA Enterprise License Agreement v2.0 with 14 clause-level findings; bootstrapped the initial `clause-patterns.md` library from the review. Substantive review passed by ⚖️ General Counsel on the 72-hour subsequent-similar SLA (A5 `/risk-analysis` validated the template pattern earlier today); scaffolding review passed by 📋 Director of Legal Affairs.
+- **1.0.0 (2026-04-11)** — Initial authoring. First-principles during Phase 3 Sub-phase 3.0. First contract-specific skill. Birth-tested against Northwind Enterprise License Agreement v2.0 with 14 clause-level findings; bootstrapped the initial `clause-patterns.md` library from the review. Substantive review passed by ⚖️ General Counsel on the 72-hour subsequent-similar SLA (A5 `/risk-analysis` validated the template pattern earlier today); scaffolding review passed by 📋 Director of Legal Affairs.

@@ -44,7 +44,7 @@ Accept various query types, with optional filters:
 - **Source**: `/feedback-recall Acme Corp` → feedback from specific customer
 - **Sentiment**: `/feedback-recall negative pricing` → negative pricing feedback
 - **Theme**: `/feedback-recall TH-005` → feedback linked to a specific theme
-- **Product**: `/feedback-recall onboarding product:AXIA` → filtered to AXIA product
+- **Product**: `/feedback-recall onboarding product:Northwind` → filtered to Northwind product
 - **Demo**: `/feedback-recall onboarding --include-demo` → include demo data
 
 **Filters**:
@@ -210,11 +210,11 @@ Call out:
 /feedback-recall feature requests
 → All feature request type feedback
 
-/feedback-recall pricing product:AXIA
-→ Pricing feedback for AXIA product only
+/feedback-recall pricing product:Northwind
+→ Pricing feedback for Northwind product only
 
-/feedback-recall product:SKYMOD
-→ All feedback for SKYMOD product
+/feedback-recall product:Brightwear
+→ All feedback for Brightwear product
 ```
 
 ## If No Feedback Found

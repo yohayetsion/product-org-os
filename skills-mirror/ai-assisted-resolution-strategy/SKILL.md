@@ -288,19 +288,19 @@ Pattern 5 Adversarial Review is NOT required for this skill. The design constrai
 
 ## Birth Test
 
-Every new skill must be birth-tested against a real or synthetic context before it is declared v1.0.0 ready. For `/ai-assisted-resolution-strategy`, the birth test was run against the **Legionis** context:
+Every new skill must be birth-tested against a real or synthetic context before it is declared v1.0.0 ready. For `/ai-assisted-resolution-strategy`, the birth test was run against the **Atlas** context:
 
 - 4-tier segmentation from the `/cs-segmentation-model` birth test (High-Touch Enterprise, Mid-Touch, Tech-Touch Pooled, PLG Self-Serve)
 - Early-stage product with no human-handled CSAT baseline yet → fallback to 90% absolute floor across all segments
 - 3 languages: English, Hebrew, German
 - 2 timezones: Europe/Jerusalem, America/New_York
-- Particular attention to the safety / vulnerable-customer category because Legionis is an AI product and users may project distress onto the tool itself
+- Particular attention to the safety / vulnerable-customer category because Atlas is an AI product and users may project distress onto the tool itself
 
-The birth test output lives at: `Legionis/Product/ai-assisted-resolution-strategy-birth-test-2026-04-11.md`
+The birth test output lives at: `Atlas/Product/ai-assisted-resolution-strategy-birth-test-2026-04-11.md`
 
 The birth test validates:
 - Per-segment floor table (with fallback to 90% absolute where baselines were missing)
-- Never-deflect list with Legionis-specific framing
+- Never-deflect list with Atlas-specific framing
 - Per-language escape-hatch vocabulary for English, Hebrew, German
 - Segment-specific timeout differentiation (enterprise 6m/8t, PLG 3m/5t)
 - Rollback plan with N=3 and the S2 incident path

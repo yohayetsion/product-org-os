@@ -73,7 +73,7 @@ Generate a fresh JD from scratch given role, jurisdiction, essential functions, 
 Refresh an existing JD. Pass the path to the current JD file.
 
 ```
-/job-description-generator update Legionis/Product/jd-customer-success-lead.md --jurisdiction US-NYC
+/job-description-generator update Atlas/Product/jd-customer-success-lead.md --jurisdiction US-NYC
 ```
 
 Update mode re-runs all scanners against the current JD, preserves section structure where possible, and produces a diff-aware findings list (new findings marked `[NEW]`, previously-surfaced-and-now-resolved findings marked `~~strikethrough~~`).
@@ -100,7 +100,7 @@ The skill MUST collect the following before producing output. If any required in
 | Seniority level | Yes | IC2 / IC3 / IC4 / IC5 / Manager / Senior Manager / Director |
 | Team context | If known | "5-person customer success org, reports to VP Customer Success, cross-functional with sales and product" |
 | Comp band (min / mid / max) | Required if jurisdiction requires pay transparency | `$130,000–$170,000 base + equity` |
-| Prior JD (for Update/Check) | Yes in Update/Check mode | `Legionis/Product/jd-customer-success-lead.md` |
+| Prior JD (for Update/Check) | Yes in Update/Check mode | `Atlas/Product/jd-customer-success-lead.md` |
 | Work arrangement | Yes | Remote / Hybrid / On-site + timezone expectations |
 | Visa sponsorship policy | If known | "Sponsorship available for H-1B transfers only" — surfaces a "Cannot Assess Without" item |
 
@@ -421,7 +421,7 @@ Minor edits (typos, formatting, scanner wordlist additions sourced from the pack
 ## Example Invocation
 
 ```
-User: /job-description-generator --role "Customer Success Lead" --jurisdiction US-DE --comp-band "$130-170k base + equity" --essential-functions legionis/cs-lead-essential.md
+User: /job-description-generator --role "Customer Success Lead" --jurisdiction US-DE --comp-band "$130-170k base + equity" --essential-functions atlas/cs-lead-essential.md
 
 /job-description-generator v1.0.0 — loading:
   - Jurisdiction: US-DE (no pay-transparency rule; comp band supplied voluntarily)
@@ -441,7 +441,7 @@ Running pipeline:
   Step 7: Pay transparency compliance (US-DE: not-applicable; comp band displayed as optional)
 
 Producing output at:
-  Legionis/Product/job-description-generator-birth-test-2026-04-11.md
+  Atlas/Product/job-description-generator-birth-test-2026-04-11.md
 
 10/10 quality gates passed (after title-band-mismatch finding surfaced for hiring manager decision).
 
@@ -452,4 +452,4 @@ Producing output at:
 
 ## Changelog
 
-- **1.0.0 (2026-04-11)** — Initial authoring. First-principles during Phase 4A as the first HR skill under the `hr-ai-governance` pack. Co-owned by 🎯 Recruiter (primary) and 💵 Compensation Analyst (comp band alignment). Scanner wordlists from Gaucher et al. 2011 (public academic source) + `hr-ai-governance` Section 3.2 proxy register. Subsequent-similar 72-hour Pass 2 review under Employment Counsel SLA (the pack carries first-of-type status). Scaffolding review by 📋 Director of HR. Birth-tested against a Legionis Customer Success Lead role (see `Legionis/Product/job-description-generator-birth-test-2026-04-11.md`).
+- **1.0.0 (2026-04-11)** — Initial authoring. First-principles during Phase 4A as the first HR skill under the `hr-ai-governance` pack. Co-owned by 🎯 Recruiter (primary) and 💵 Compensation Analyst (comp band alignment). Scanner wordlists from Gaucher et al. 2011 (public academic source) + `hr-ai-governance` Section 3.2 proxy register. Subsequent-similar 72-hour Pass 2 review under Employment Counsel SLA (the pack carries first-of-type status). Scaffolding review by 📋 Director of HR. Birth-tested against a Atlas Customer Success Lead role (see `Atlas/Product/job-description-generator-birth-test-2026-04-11.md`).

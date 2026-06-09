@@ -64,7 +64,7 @@ The skill deliberately sits DOWNSTREAM of `/job-description-generator` (the JD d
 Generate a fresh interview guide from a JD, jurisdiction, and panel roles.
 
 ```
-/interview-guide --jd Legionis/Product/jd-customer-success-lead.md --jurisdiction US-DE --panel-roles "hiring-manager,peer,cross-functional,hr"
+/interview-guide --jd Atlas/Product/jd-customer-success-lead.md --jurisdiction US-DE --panel-roles "hiring-manager,peer,cross-functional,hr"
 /interview-guide --jd jds/senior-backend-engineer.md --jurisdiction US-IL --panel-roles "hiring-manager,peer,skip-level,hr" --video
 ```
 
@@ -73,7 +73,7 @@ Generate a fresh interview guide from a JD, jurisdiction, and panel roles.
 Refresh an existing guide. Pass the path to the current guide file.
 
 ```
-/interview-guide update Legionis/Product/interview-guide-customer-success-lead.md --jurisdiction US-NYC
+/interview-guide update Atlas/Product/interview-guide-customer-success-lead.md --jurisdiction US-NYC
 ```
 
 Update mode re-runs the forbidden-question register (jurisdiction-specific), re-runs the proxy-laden rapport scanner, re-checks panel-role distribution balance, and produces a diff-aware findings list (new findings marked `[NEW]`, previously-surfaced-and-now-resolved findings marked `~~strikethrough~~`).
@@ -94,11 +94,11 @@ The skill MUST collect the following before producing output. If any required in
 
 | Input | Required | Example |
 |---|---|---|
-| JD file | Yes | `Legionis/Product/jd-customer-success-lead.md` (ideally output of `/job-description-generator`) |
+| JD file | Yes | `Atlas/Product/jd-customer-success-lead.md` (ideally output of `/job-description-generator`) |
 | Jurisdiction | Yes | `US-DE`, `US-NYC`, `US-CA`, `US-CO`, `US-WA`, `US-IL`, `US-MA`, `EU-DE`, `UK`, `IL` |
 | Panel roles | Yes | Comma-separated list from the canonical set: `hiring-manager`, `peer`, `cross-functional`, `skip-level`, `hr` |
 | Video-interview flag | If applicable | `--video` — triggers Illinois Video Interview Act flow if jurisdiction is `US-IL` or any IL-resident candidates |
-| Prior guide (Update/Check) | Yes in Update/Check mode | `Legionis/Product/interview-guide-customer-success-lead.md` |
+| Prior guide (Update/Check) | Yes in Update/Check mode | `Atlas/Product/interview-guide-customer-success-lead.md` |
 
 **Jurisdiction is never defaulted.** If the user does not supply it, the skill asks. The jurisdiction determines which forbidden-question rules apply (salary history ban, Ban-the-Box, Illinois Video Interview Act, Colorado AI Act, EU AI Act, etc.), the applicable framework under `hr-ai-governance` Section 8.1, and which specific runtime warnings the output must carry.
 
@@ -485,10 +485,10 @@ Minor edits (typos, formatting, proxy-list additions sourced from the pack's Sec
 ## Example Invocation
 
 ```
-User: /interview-guide --jd Legionis/Product/jd-customer-success-lead.md --jurisdiction US-DE --panel-roles "hiring-manager,peer,cross-functional,hr"
+User: /interview-guide --jd Atlas/Product/jd-customer-success-lead.md --jurisdiction US-DE --panel-roles "hiring-manager,peer,cross-functional,hr"
 
 /interview-guide v1.0.0 — loading:
-  - JD: Legionis/Product/jd-customer-success-lead.md (6 essential functions; source: /job-description-generator output)
+  - JD: Atlas/Product/jd-customer-success-lead.md (6 essential functions; source: /job-description-generator output)
   - Jurisdiction: US-DE (no salary-history ban, no Ban-the-Box complication, standard federal baseline)
   - Panel roles: hiring-manager, peer, cross-functional, hr
   - Video flag: no
@@ -504,7 +504,7 @@ Running pipeline:
   Step 7: Calibration + scoring + debrief structure generated
 
 Producing output at:
-  Legionis/Product/interview-guide-birth-test-2026-04-11.md
+  Atlas/Product/interview-guide-birth-test-2026-04-11.md
 
 10/10 quality gates passed.
 
@@ -515,4 +515,4 @@ Producing output at:
 
 ## Changelog
 
-- **1.0.0 (2026-04-11)** — Initial authoring. First-principles during Phase 4A as the third HR skill under the `hr-ai-governance` pack (after `/comp-benchmark` and `/job-description-generator`). Authored by 🎯 Recruiter. Methodology grounded in Schmidt & Hunter 1998 meta-analysis, Levashina et al. 2014 structured-interview review, and EEOC structured-interview technical assistance (all public). Question-bank taxonomy, rubric-anchor pattern, panel-assignment boundaries, forbidden-question register, and proxy-laden rapport scanner derived first-principles. Subsequent-similar 72-hour Pass 2 review under Employment Counsel SLA. Scaffolding review by 📋 Director of HR. Birth-tested against a Legionis Customer Success Lead role (see `Legionis/Product/interview-guide-birth-test-2026-04-11.md`).
+- **1.0.0 (2026-04-11)** — Initial authoring. First-principles during Phase 4A as the third HR skill under the `hr-ai-governance` pack (after `/comp-benchmark` and `/job-description-generator`). Authored by 🎯 Recruiter. Methodology grounded in Schmidt & Hunter 1998 meta-analysis, Levashina et al. 2014 structured-interview review, and EEOC structured-interview technical assistance (all public). Question-bank taxonomy, rubric-anchor pattern, panel-assignment boundaries, forbidden-question register, and proxy-laden rapport scanner derived first-principles. Subsequent-similar 72-hour Pass 2 review under Employment Counsel SLA. Scaffolding review by 📋 Director of HR. Birth-tested against a Atlas Customer Success Lead role (see `Atlas/Product/interview-guide-birth-test-2026-04-11.md`).

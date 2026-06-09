@@ -50,7 +50,7 @@ Invoke `/portfolio-status` when:
 - PLT needs an overview of current strategic state
 
 **Filters**:
-- `product:[name]` - Filter to specific product (e.g., `/portfolio-status product:AXIA`)
+- `product:[name]` - Filter to specific product (e.g., `/portfolio-status product:Northwind`)
 - `--include-demo` - Include demo bets (marked with `[DEMO]`)
 - `--demo-only` - Show only demo bets (for testing/learning)
 

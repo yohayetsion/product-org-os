@@ -90,9 +90,9 @@ When a user asks A4 to do something in the adjacent territory, the skill refuses
 Run a full framework-scoped audit on an organization, initiative, or product. Produces a new compliance-audit output file following the structure in the Output section.
 
 ```
-/compliance-audit Legionis --framework soc2
-/compliance-audit "AXIA Bank Discount deployment" --framework israeli-ppl-bank-discount
-/compliance-audit SKYMOD --framework gdpr
+/compliance-audit Atlas --framework soc2
+/compliance-audit "Northwind Meridian Bank deployment" --framework israeli-ppl-meridian-bank
+/compliance-audit Brightwear --framework gdpr
 /compliance-audit "acquisition target X" --framework custom-diligence-pack
 ```
 
@@ -101,7 +101,7 @@ Run a full framework-scoped audit on an organization, initiative, or product. Pr
 Re-audit after a material change — new control evidence documented, a control remediated, a new jurisdiction or sub-processor added, or a framework revision. Pass the path to the existing audit output.
 
 ```
-/compliance-audit update AXIA/Product/compliance-audit-israeli-ppl-bank-discount-2026-04-11.md
+/compliance-audit update Northwind/Product/compliance-audit-israeli-ppl-meridian-bank-2026-04-11.md
 ```
 
 Update mode preserves the finding numbering (adds 7a, 7b rather than renumbering), marks resolved findings with `~~strikethrough~~` plus a one-line reason, and keeps a `## Changelog` at the bottom of the file noting what the org moved on.
@@ -119,7 +119,7 @@ Use adversarial sub-mode ONLY when:
 - The audit is near-final, not still evolving in scope
 
 ```
-/compliance-audit "AXIA Bank Discount deployment" --framework israeli-ppl-bank-discount --mode adversarial --tiebreaker "Yohay Etsion"
+/compliance-audit "Northwind Meridian Bank deployment" --framework israeli-ppl-meridian-bank --mode adversarial --tiebreaker "Sam Rivera"
 ```
 
 For early-stage readiness assessments, routine annual maintenance, and low-stakes triage, use default Create mode with Pattern 1 Consultation for specialist input instead.
@@ -133,14 +133,14 @@ The skill MUST collect the following before producing output. If any are missing
 | Input | Required | Example |
 |---|---|---|
 | **`--framework`** | Yes | `soc2` / `gdpr` / `iso27001` / `hipaa` / `israeli-ppl` / `nist-csf` / `pci-dss` / `custom-{name}` |
-| Organization or initiative name | Yes | "AXIA Bank Discount deployment" |
+| Organization or initiative name | Yes | "Northwind Meridian Bank deployment" |
 | Scope statement | Yes | "Employee-monitoring SaaS deployed at a Bank of Israel-regulated bank for an 8,600-employee workforce; cloud LLM inference; Israeli data residency" |
 | Source documents | At least one | Plans, policies, prior audits, control matrices, contracts, architecture diagrams, prior risk analyses |
 | Jurisdictions of operation | Yes (may be multi) | "Israel primary; cross-border considerations with EU residue and U.S. Delaware parent" |
 | Stage | Yes | "preparing for first audit" / "pre-certification" / "annual maintenance" / "breach response" / "acquisition diligence" / "pre-deployment readiness" |
-| Stakeholder list | If known | "Asaf Massuri (AXIA CTO), Yohay Etsion (Fractional CPO), Dan (Bank Discount sponsor)" |
+| Stakeholder list | If known | "Jordan Lee (Northwind CTO), Sam Rivera (Fractional CPO), Dan (Meridian Bank sponsor)" |
 | Known gaps the user wants examined | If any | "We know SOC 2 is not started; we want to know what can ship before a bridge letter is in place" |
-| Tiebreaker (adversarial mode only) | Yes if adversarial | "Yohay Etsion" |
+| Tiebreaker (adversarial mode only) | Yes if adversarial | "Sam Rivera" |
 
 If jurisdiction is unknown, the skill makes a defensible assumption based on the documents and flags it explicitly in the output — it does NOT silently pick.
 
@@ -164,7 +164,7 @@ At v1.0.0, the skill ships BEFORE the `compliance-frameworks` knowledge pack exi
 
 - **Canonical named frameworks** (soc2, gdpr, iso27001, hipaa, israeli-ppl, nist-csf, pci-dss): the skill relies on Compliance Officer's domain knowledge of the framework as of the skill's authoring date. This is adequate for gap-assessment work but is NOT a substitute for an up-to-date adapter in the knowledge pack.
 - **Custom frameworks** (`--framework custom-{name}`): the user provides the control catalog inline as part of the input. The skill uses the user-provided catalog verbatim. The user is responsible for the catalog's accuracy.
-- **Hybrid frameworks** (e.g., `israeli-ppl-bank-discount` bundling PPL + Directive 361 + labor law): the user defines the bundle in the input, listing which underlying frameworks are in scope. The skill treats the bundle as a custom framework and runs the audit against the bundled scope.
+- **Hybrid frameworks** (e.g., `israeli-ppl-meridian-bank` bundling PPL + Directive 361 + labor law): the user defines the bundle in the input, listing which underlying frameworks are in scope. The skill treats the bundle as a custom framework and runs the audit against the bundled scope.
 
 ### Adding a framework is a data update, not a skill rewrite
 
@@ -183,9 +183,9 @@ Regulatory frameworks evolve. EU AI Act milestones, Israeli PPL amendments (Amen
 The skill uses a **sidecar pattern** for date-sensitive content: when an audit output references a regulatory status that may change (e.g., "EU AI Act Article 10 applies from Q3 2026 per the staged commencement schedule"), the reference points at a sidecar file stored next to the audit output:
 
 ```
-AXIA/Product/
-  compliance-audit-israeli-ppl-bank-discount-2026-04-11.md          ← audit output
-  compliance-audit-israeli-ppl-bank-discount-2026-04-11-status.md   ← sidecar
+Northwind/Product/
+  compliance-audit-israeli-ppl-meridian-bank-2026-04-11.md          ← audit output
+  compliance-audit-israeli-ppl-meridian-bank-2026-04-11-status.md   ← sidecar
 ```
 
 The sidecar holds: (1) current status of each referenced regulatory instrument with date and source, (2) known upcoming changes with effective dates, (3) citations that must be refreshed at next audit. When the audit is re-run in Update mode, the skill updates the sidecar first, then updates the audit findings against the refreshed status. This keeps the audit findings from drifting when the underlying regs move.
@@ -210,7 +210,7 @@ Verbatim block from `sensitive-skill-guardrails.md` Section 3.1, with `{jurisdic
 
 A small labeled block under the disclaimer with:
 
-- **Framework**: the `--framework` value (e.g., `israeli-ppl-bank-discount`)
+- **Framework**: the `--framework` value (e.g., `israeli-ppl-meridian-bank`)
 - **Framework Adapter Version**: date or version of the adapter used. At v1.0.0 with no knowledge pack, this is "inline definition, 2026-04-11" or "canonical name, Compliance Officer domain knowledge 2026-04-11"
 - **Organization / Initiative**: what is being audited
 - **Scope Statement**: the user-supplied scope
@@ -234,7 +234,7 @@ Numbered list. Each finding is at the **control level** (not the deal level like
 - **Control reference**: the specific framework citation (e.g., "SOC 2 CC6.1", "GDPR Art. 32", "ISO 27001 A.5.15", "HIPAA 164.308(a)(1)(i)", "Bank of Israel Directive 361 §4.2", "PPL Section 17B", "Data Security Reg 5777-2017 §5(b)(3)"). For bundled frameworks, the citation names the underlying regime and its specific clause.
 - **Control family**: one of the framework's control families (e.g., "Access Control", "Audit Logging", "Outsourcing Management", "Employee Monitoring Notice")
 - **What the control requires**: a grounded paraphrase of the control statement, not a fabrication. If the skill cannot state the control requirement precisely, it says so and flags the control for human verification.
-- **What the org has in place**: grounded in the source documents with specific citation (e.g., "bank-discount-israeli-regulatory-compliance-plan.md Section 2.3"). If nothing is in place, say `[ABSENT]` and name where it would normally live.
+- **What the org has in place**: grounded in the source documents with specific citation (e.g., "meridian-bank-israeli-regulatory-compliance-plan.md Section 2.3"). If nothing is in place, say `[ABSENT]` and name where it would normally live.
 - **Evidence available vs missing**: what artifacts exist (documents, logs, config snapshots, attestations) vs what is missing. Evidence gaps are often as important as control gaps.
 - **Severity**: `P0` (material gap — must be addressed before the audit, certification, or deployment proceeds), `P1` (important — should be addressed or explicitly accepted with written rationale), `P2` (nice-to-have — track but does not block)
 - **Suggested remediation**: specific next step. Acceptable forms: `Verify {X} against {Y}`, `Document {process}`, `Engage {specialist counsel} on {control}`, `Produce evidence artifact: {name}`, `Escalate to {role} for accept-with-risk decision`.
@@ -243,7 +243,7 @@ Findings are tagged by control family. Missing-control findings (controls the fr
 
 **Framing rule (non-negotiable)**: Findings are framed as **"control gap vs {framework} {control reference} requirements"** — never as **"the org is non-compliant with {framework}."** The former is a drafting-and-triage observation; the latter is a legal/auditor conclusion the skill is not authorized to make. Example:
 
-- CORRECT: "Control gap vs Bank of Israel Directive 361 §4.2 (Outsourcing Material Classification): the source documents do not indicate whether Bank Discount's compliance team has classified AXIA as a material outsourcing arrangement. Suggest confirming the classification with the Bank Discount compliance contact before the technical deep-dive. If material, heightened requirements apply (pre-notification to regulator, enhanced oversight, exit plan). Engage @compliance-officer for the classification process and @general-counsel if the classification is contested."
+- CORRECT: "Control gap vs Bank of Israel Directive 361 §4.2 (Outsourcing Material Classification): the source documents do not indicate whether Meridian Bank's compliance team has classified Northwind as a material outsourcing arrangement. Suggest confirming the classification with the Meridian Bank compliance contact before the technical deep-dive. If material, heightened requirements apply (pre-notification to regulator, enhanced oversight, exit plan). Engage @compliance-officer for the classification process and @general-counsel if the classification is contested."
 - INCORRECT: "The org is non-compliant with Bank of Israel Directive 361 because the material outsourcing classification has not been completed."
 
 **Cross-reference rule**: If an A5 or A1 finding already surfaced the same underlying issue, the A4 finding MUST name the prior finding explicitly (e.g., "A5 Finding 8 surfaced this at the deal level; the A4 control-level remediation builds on that prior work"). A4 does not duplicate — it reframes at the control level and extends with control-specific remediation and evidence requirements.
@@ -349,7 +349,7 @@ Cross-reference findings with A5 (risk analysis) and A1 (contract review) if tho
 
 Sequence the findings by P0 → P1 → P2 and by dependency. For each action, name the owner, the effort bucket (S/M/L), and the dependencies. The roadmap is a prioritized action list, not a project plan.
 
-Actions must be specific and actionable. "Improve access control" is not a roadmap action. "Document the quarterly access review process for the M365 AXIA connector (Directive 361 §5.3 evidence requirement); owner Asaf Massuri; effort S; depends on the architecture diagram (pending)" is a roadmap action.
+Actions must be specific and actionable. "Improve access control" is not a roadmap action. "Document the quarterly access review process for the M365 Northwind connector (Directive 361 §5.3 evidence requirement); owner Jordan Lee; effort S; depends on the architecture diagram (pending)" is a roadmap action.
 
 ### Step 5 — Evidence Inventory
 
@@ -449,14 +449,14 @@ New consumers require a frontmatter update and a one-line note in the consuming 
 ## Example Invocation
 
 ```
-User: /compliance-audit "AXIA Bank Discount deployment" --framework israeli-ppl-bank-discount
+User: /compliance-audit "Northwind Meridian Bank deployment" --framework israeli-ppl-meridian-bank
 
 /compliance-audit v1.0.0 — reading:
-  - AXIA/Product/bank-discount-israeli-regulatory-compliance-plan.md (329 lines)
-  - AXIA/Product/bank-discount-master-plan.md
-  - AXIA/Product/risk-analysis-bank-discount-deal-2026-04-11.md (prior A5)
-  - AXIA/Product/contract-review-eula-v2-2026-04-11.md (prior A1)
-  - AXIA/Marketing/Collaterals/AXIA-Enterprise-License-Agreement-v2.pdf (Schedules A-D)
+  - Northwind/Product/meridian-bank-israeli-regulatory-compliance-plan.md (329 lines)
+  - Northwind/Product/meridian-bank-master-plan.md
+  - Northwind/Product/risk-analysis-meridian-bank-deal-2026-04-11.md (prior A5)
+  - Northwind/Product/contract-review-eula-v2-2026-04-11.md (prior A1)
+  - Northwind/Marketing/Collaterals/Northwind-Enterprise-License-Agreement-v2.pdf (Schedules A-D)
 
 Framework adapter: inline bundle definition
   Bundled regimes:
@@ -468,18 +468,18 @@ Framework adapter: inline bundle definition
     - Israeli labor court precedent on workplace monitoring (proportionality test)
 
 Collecting inputs:
-  - Organization: AXIA (Axia Security Ltd., Israel) deploying at Bank Discount
+  - Organization: Northwind (Northwind Corp., Israel) deploying at Meridian Bank
   - Scope: Employee-monitoring SaaS at 8,600-employee regulated bank; cloud/on-prem
     TBD; Israeli data residency required
-  - Jurisdictions in scope: Israel primary; Delaware residue (AXIA parent)
+  - Jurisdictions in scope: Israel primary; Delaware residue (Northwind parent)
   - Stage: Pre-deployment readiness, pre-signature
   - Source documents: 5 files enumerated above
-  - Stakeholders: Asaf Massuri (AXIA CTO), Yohay Etsion (Fractional CPO), Dan (Bank
-    Discount sponsor), TBD Bank Discount compliance contact
+  - Stakeholders: Jordan Lee (Northwind CTO), Sam Rivera (Fractional CPO), Dan (Bank
+    Discount sponsor), TBD Meridian Bank compliance contact
 
 Producing output at:
-  AXIA/Product/compliance-audit-israeli-ppl-bank-discount-2026-04-11.md
-  AXIA/Product/compliance-audit-israeli-ppl-bank-discount-2026-04-11-status.md (sidecar)
+  Northwind/Product/compliance-audit-israeli-ppl-meridian-bank-2026-04-11.md
+  Northwind/Product/compliance-audit-israeli-ppl-meridian-bank-2026-04-11-status.md (sidecar)
 
 [output follows standard structure: disclaimer → audit metadata → control mapping →
  findings → remediation roadmap → evidence inventory → reviewer checklist →
@@ -492,4 +492,4 @@ Producing output at:
 
 ## Changelog
 
-- **1.0.0 (2026-04-11)** — Initial authoring. First-principles during Phase 3 Sub-phase 3.0. Inherits structural pattern from A5 `/risk-analysis`, A1 `/contract-review`, and A3 `/privacy-policy-audit`. Introduces the framework adapter pattern (parameterized by `--framework`) and the `current-status.md` sidecar pattern for date-sensitive regulatory content. Boundary statement vs A1, A3, A5, and C1.2b made explicit. Birth-tested against AXIA Bank Discount Israeli regulatory readiness with 14 control-level findings across 6 control families. Substantive review passed by ⚖️ General Counsel on the 72-hour subsequent-similar SLA; scaffolding review passed by 📋 Director of Legal Affairs.
+- **1.0.0 (2026-04-11)** — Initial authoring. First-principles during Phase 3 Sub-phase 3.0. Inherits structural pattern from A5 `/risk-analysis`, A1 `/contract-review`, and A3 `/privacy-policy-audit`. Introduces the framework adapter pattern (parameterized by `--framework`) and the `current-status.md` sidecar pattern for date-sensitive regulatory content. Boundary statement vs A1, A3, A5, and C1.2b made explicit. Birth-tested against Northwind Meridian Bank Israeli regulatory readiness with 14 control-level findings across 6 control families. Substantive review passed by ⚖️ General Counsel on the 72-hour subsequent-similar SLA; scaffolding review passed by 📋 Director of Legal Affairs.

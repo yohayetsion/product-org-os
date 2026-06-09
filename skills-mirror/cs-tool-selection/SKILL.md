@@ -309,21 +309,21 @@ Pattern 5 Adversarial Review is NOT required for this skill. Tool selection is a
 
 ## Birth Test
 
-Every new skill must be birth-tested against a real or synthetic portfolio before v1.0.0. For `/cs-tool-selection`, the birth test runs against the **Legionis** context — consistent with the `/cs-segmentation-model` and `/health-score-design` birth tests that preceded it, so the full triad chains cleanly against one buyer.
+Every new skill must be birth-tested against a real or synthetic portfolio before v1.0.0. For `/cs-tool-selection`, the birth test runs against the **Atlas** context — consistent with the `/cs-segmentation-model` and `/health-score-design` birth tests that preceded it, so the full triad chains cleanly against one buyer.
 
-Legionis is a first-CS-hire case: 1 CS Lead, $50k/year year-1 budget ceiling, a 4-tier segmentation (Low / Mid / High / Enterprise), and a Tier 3 cold-start health score model. It exercises:
+Atlas is a first-CS-hire case: 1 CS Lead, $50k/year year-1 budget ceiling, a 4-tier segmentation (Low / Mid / High / Enterprise), and a Tier 3 cold-start health score model. It exercises:
 
 - Tool-need classification (mixed-book → hybrid archetype)
 - Segment-to-archetype mapping across 4 tiers
 - Health-score consumption requirements (score originates in BI layer / product analytics given no CSP)
 - Evaluation criteria with weights calibrated for a 1-person CS function
 - RFP question template (vendor-neutral, 20 questions)
-- Shortlist rubric (blank — Legionis will fill vendor columns during actual procurement)
-- Decision framework with Legionis-specific non-scoreable factors
+- Shortlist rubric (blank — Atlas will fill vendor columns during actual procurement)
+- Decision framework with Atlas-specific non-scoreable factors
 
-The birth test output lives at: `Legionis/Product/cs-tool-selection-birth-test-2026-04-11.md`
+The birth test output lives at: `Atlas/Product/cs-tool-selection-birth-test-2026-04-11.md`
 
-See the birth test file for the full tier-to-archetype mapping, the Legionis-tuned weight calibration, and the framework confidence gaps specific to a pre-PMF first-CS-hire buyer.
+See the birth test file for the full tier-to-archetype mapping, the Atlas-tuned weight calibration, and the framework confidence gaps specific to a pre-PMF first-CS-hire buyer.
 
 ---
 

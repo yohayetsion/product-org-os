@@ -515,7 +515,7 @@ Running pipeline:
   Step 7: Grid + methodology worksheet + jurisdiction report + data quality flags assembled
 
 Producing output at:
-  Legionis/Product/comp-benchmark-birth-test-2026-04-11.md
+  Atlas/Product/comp-benchmark-birth-test-2026-04-11.md
 
 9/9 quality gates passed (with SOC-ambiguity flag surfaced for reviewer decision).
 
@@ -526,4 +526,4 @@ Producing output at:
 
 ## Changelog
 
-- **1.0.0 (2026-04-11)** — Initial authoring. First-principles during Phase 4A as the second HR skill under the `hr-ai-governance` pack (after `/job-description-generator`). Owned by 💵 Compensation Analyst. Source whitelist constructed directly from the execution plan's Round 2 constraints following the Employment Counsel near-block on vendor-data sourcing. SOC mapping methodology sourced from BLS SOC system + O*NET OnLine public crosswalk; no vendor taxonomy used. Pay equity analysis hard-scoped out with mandatory rejection routine. Subsequent-similar 72-hour Pass 2 review under Employment Counsel SLA (the pack carries first-of-type status; `/resume-summarizer` carries first-of-type for skills; `/job-description-generator` established subsequent-similar precedent). Scaffolding review by 📋 Director of HR. Birth-tested against the same Legionis Customer Success Lead role used for `/job-description-generator` birth test, with explicit SOC ambiguity documented (see `Legionis/Product/comp-benchmark-birth-test-2026-04-11.md`).
+- **1.0.0 (2026-04-11)** — Initial authoring. First-principles during Phase 4A as the second HR skill under the `hr-ai-governance` pack (after `/job-description-generator`). Owned by 💵 Compensation Analyst. Source whitelist constructed directly from the execution plan's Round 2 constraints following the Employment Counsel near-block on vendor-data sourcing. SOC mapping methodology sourced from BLS SOC system + O*NET OnLine public crosswalk; no vendor taxonomy used. Pay equity analysis hard-scoped out with mandatory rejection routine. Subsequent-similar 72-hour Pass 2 review under Employment Counsel SLA (the pack carries first-of-type status; `/resume-summarizer` carries first-of-type for skills; `/job-description-generator` established subsequent-similar precedent). Scaffolding review by 📋 Director of HR. Birth-tested against the same Atlas Customer Success Lead role used for `/job-description-generator` birth test, with explicit SOC ambiguity documented (see `Atlas/Product/comp-benchmark-birth-test-2026-04-11.md`).

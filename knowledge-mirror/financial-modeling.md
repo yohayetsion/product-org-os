@@ -154,16 +154,16 @@ What the rubric does NOT do: it does not replace substantive model review by a q
 
 ---
 
-## 4. Worked Example — AXIA Bank Discount Deal Model (Synthetic Scoring)
+## 4. Worked Example — Northwind Meridian Bank Deal Model (Synthetic Scoring)
 
-**Context**: AXIA is negotiating an enterprise deal with Bank Discount. The deal is under active negotiation as of 2026-04. The finance team has a deal model covering license revenue, implementation fees, ongoing services, and the discount structure. The model informs the pricing committee's walk-away point.
+**Context**: Northwind is negotiating an enterprise deal with Meridian Bank. The deal is under active negotiation as of 2026-04. The finance team has a deal model covering license revenue, implementation fees, ongoing services, and the discount structure. The model informs the pricing committee's walk-away point.
 
-**Caveat**: I do not have access to the real model. The scoring below is a synthetic exercise that reflects the common patterns of a deal model built under time pressure by a mid-stage company. It is intended to show how the rubric reads a typical financial model, not to make any claim about AXIA's actual model. All numbers in the rationales are qualitative or `[TBD]`.
+**Caveat**: I do not have access to the real model. The scoring below is a synthetic exercise that reflects the common patterns of a deal model built under time pressure by a mid-stage company. It is intended to show how the rubric reads a typical financial model, not to make any claim about Northwind's actual model. All numbers in the rationales are qualitative or `[TBD]`.
 
 ### Per-dimension scoring
 
 **1. Driver transparency — 4/5**
-Deal models at this stage typically have a clean driver sheet (seats, ACV per seat, discount percentage, implementation effort, services rates). AXIA's model probably names these drivers clearly because the deal has been socialized across commercial and finance. Likely gap: one or two hardcoded "override" cells where the commercial team plugged a negotiated number that doesn't flow from a driver. Rationale for 4, not 5: the override cells are an easy slip under negotiation pressure.
+Deal models at this stage typically have a clean driver sheet (seats, ACV per seat, discount percentage, implementation effort, services rates). Northwind's model probably names these drivers clearly because the deal has been socialized across commercial and finance. Likely gap: one or two hardcoded "override" cells where the commercial team plugged a negotiated number that doesn't flow from a driver. Rationale for 4, not 5: the override cells are an easy slip under negotiation pressure.
 
 **2. Scenario flex — 3/5**
 The model almost certainly has base/upside/downside on revenue but may have only a single case on implementation cost. Adding a "what if the bank extends the discount to a second bank" scenario probably requires restructure, not a switch. Rationale for 3: scenarios exist for the commercially visible axis (price) but not for the cost axis.
@@ -172,7 +172,7 @@ The model almost certainly has base/upside/downside on revenue but may have only
 File-level versioning exists (Drive history or Git, depending on the team). A change log at the model level probably doesn't. When the discount percentage changed three times during negotiation, the reasons are in Slack threads and emails, not in the model. Rationale for 3: versioning yes, cell-level attribution no.
 
 **4. Source linking — 4/5**
-Contract-driven inputs (seats, term, discount) have sources in the draft contract. Benchmarks (market pricing for this segment) probably cite a CI report or a competitive-analysis doc. Rationale for 4, not 5: the implementation-effort estimate is probably "per Asaf," without the methodology that produced it.
+Contract-driven inputs (seats, term, discount) have sources in the draft contract. Benchmarks (market pricing for this segment) probably cite a CI report or a competitive-analysis doc. Rationale for 4, not 5: the implementation-effort estimate is probably "per Jordan," without the methodology that produced it.
 
 **5. Assumption documentation — 3/5**
 The major assumptions (discount percentage is acceptable because of reference-customer value, services rates are at standard) are probably captured in commentary in the deal memo, not in a structured assumptions registry inside the model. Rationale for 3: assumptions exist and are visible in the deal memo, but not structured inside the model and not tagged with confidence level.

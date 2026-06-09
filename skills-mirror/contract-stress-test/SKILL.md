@@ -41,9 +41,9 @@ Invoke `/contract-stress-test` ONLY when ALL of the following are true:
 
 Typical triggers:
 
-- AXIA EULA v2 before first enterprise signature
+- Northwind EULA v2 before first enterprise signature
 - M&A term sheet before the LOI lock date
-- IP licensing agreement where AXIA is licensing a Frontier Model from a third party
+- IP licensing agreement where Northwind is licensing a Frontier Model from a third party
 - Multi-year SLA with uptime-credit structure facing a Fortune-500 buyer
 - Regulatory filing where the legal position is argued in the submission itself
 - Any contract where the drafter believes they have converged and wants a structured "break it" pass before handing to General Counsel
@@ -71,7 +71,7 @@ A7 deliberately sits DOWNSTREAM of A1 `/contract-review`. A1 is the clause-by-cl
 Run a Pattern 5 Adversarial Review iteration 1 against a near-final contract. The skill spawns a fresh-context adversarial agent and produces a findings list with the Pattern 5 output format.
 
 ```
-/contract-stress-test AXIA-Enterprise-License-Agreement-v2.pdf --tiebreaker "Yohay Etsion"
+/contract-stress-test Northwind-Enterprise-License-Agreement-v2.pdf --tiebreaker "Sam Rivera"
 /contract-stress-test "Acme Reseller Agreement" --tiebreaker "@general-counsel"
 ```
 
@@ -82,7 +82,7 @@ There is NO `--mode adversarial` flag — the whole skill IS adversarial mode by
 Re-stress-test after a counterparty round or after the drafter has resolved iteration 1's findings and wants iteration 2. Pass the path to the existing stress-test output. The adversarial agent for iteration 2 MUST be a fresh-context spawn (distinct agent identity if possible), not the same agent that produced iteration 1.
 
 ```
-/contract-stress-test update AXIA/Product/contract-stress-test-eula-v2-2026-04-11.md
+/contract-stress-test update Northwind/Product/contract-stress-test-eula-v2-2026-04-11.md
 ```
 
 Update mode enforces the two-iteration cap. If the existing output is already iteration 2, the skill refuses to produce iteration 3 and directs the user to the named human tiebreaker for final resolution.
@@ -95,15 +95,15 @@ The skill MUST collect the following before producing output. If any are missing
 
 | Input | Required | Example |
 |---|---|---|
-| Contract document (path or content) | Yes | `AXIA/Marketing/Collaterals/AXIA-EULA-v2.pdf` |
-| **Named human tiebreaker** | **Yes — skill refuses output without it** | "Yohay Etsion" / "@general-counsel" / "Asaf Massuri" |
+| Contract document (path or content) | Yes | `Northwind/Marketing/Collaterals/Northwind-EULA-v2.pdf` |
+| **Named human tiebreaker** | **Yes — skill refuses output without it** | "Sam Rivera" / "@general-counsel" / "Jordan Lee" |
 | Counterparty context | Yes | "Top-5 Israeli bank, regulated by Bank of Israel" |
 | Iteration number | Yes (defaults to 1) | 1 or 2 — **cap at 2** |
 | Stake assessment | Yes | "First enterprise deal with regulated bank counterparty; cost of missed clause is multi-year reputational and contractual exposure" |
-| Prior review output | Optional but recommended | `AXIA/Product/contract-review-eula-v2-2026-04-11.md` |
+| Prior review output | Optional but recommended | `Northwind/Product/contract-review-eula-v2-2026-04-11.md` |
 | Jurisdiction | Yes | "Israel + U.S. Delaware (multi-jurisdictional EULA)" |
 
-**Named tiebreaker is NON-NEGOTIABLE.** If no tiebreaker is named, the skill asks the user rather than producing output. This is enforced because Pattern 5's stop criteria include "hand off contested findings to named human" — without a named human, contested findings have nowhere to go and the pattern deadlocks. Default tiebreaker for legal deliverables in this workspace: **Yohay Etsion**.
+**Named tiebreaker is NON-NEGOTIABLE.** If no tiebreaker is named, the skill asks the user rather than producing output. This is enforced because Pattern 5's stop criteria include "hand off contested findings to named human" — without a named human, contested findings have nowhere to go and the pattern deadlocks. Default tiebreaker for legal deliverables in this workspace: **Sam Rivera**.
 
 **Prior review awareness.** If the user provides a prior `/contract-review` output, the skill's adversarial pass MUST NOT re-litigate findings already surfaced in the prior review. Findings that overlap with the prior review are tagged `OVERLAP` and noted briefly; the substantive work targets NEW findings the prior review missed, and CONTRADICT findings where the adversarial agent scores a prior finding differently. If no prior review is provided, the skill still runs, but notes in its metadata that it is running as both A1 and A7 collapsed (which is a weaker application of Pattern 5 and is flagged in the output).
 
@@ -359,7 +359,7 @@ Example ROI line for a standard enterprise contract stress-test:
 
 **Relationship to Phase 3 A6**: A6 is the delegation-protocol.md Pattern 5 Adversarial Review definition itself. A7 is the first full skill that directly invokes Pattern 5 as its core method. The relationship is: A6 defines the pattern; A7 applies it to contracts. If Pattern 5 evolves (e.g., the two-iteration cap changes, the fresh-context requirement is relaxed, the scope boundary is tightened), A7 updates to match.
 
-**Pattern 5 birth test**: A7 was birth-tested against the AXIA EULA v1→v2 diff document, with A1's prior review of the EULA v2 as the prior-review reference. Birth test output: `AXIA/Product/contract-stress-test-eula-v1-v2-diff-2026-04-11.md`. The birth test demonstrated that Pattern 5 can surface NEW findings A1 did not catch on the same contract. If the birth test had produced zero NEW findings, the honesty mechanism would have reported it and the team would have reconsidered whether Pattern 5 earns its overhead on this class of contract.
+**Pattern 5 birth test**: A7 was birth-tested against the Northwind EULA v1→v2 diff document, with A1's prior review of the EULA v2 as the prior-review reference. Birth test output: `Northwind/Product/contract-stress-test-eula-v1-v2-diff-2026-04-11.md`. The birth test demonstrated that Pattern 5 can surface NEW findings A1 did not catch on the same contract. If the birth test had produced zero NEW findings, the honesty mechanism would have reported it and the team would have reconsidered whether Pattern 5 earns its overhead on this class of contract.
 
 **Updates**: Via the two-pass publication gate. Minor edits (typos, formatting) can bypass Pass 2. Any edit touching Pattern 5 operationalization (fresh-context rules, iteration cap, stop criteria, tiebreaker section, scope boundary) requires a full Pass 2 substantive review by General Counsel AND a cross-check against `delegation-protocol.md` to ensure the skill and the pattern definition stay aligned.
 
@@ -370,23 +370,23 @@ Example ROI line for a standard enterprise contract stress-test:
 ## Example Invocation
 
 ```
-User: /contract-stress-test AXIA-EULA-v1-vs-v2-Comparison.docx --tiebreaker "Yohay Etsion"
+User: /contract-stress-test Northwind-EULA-v1-vs-v2-Comparison.docx --tiebreaker "Sam Rivera"
 
 /contract-stress-test v1.0.0 — reading:
-  - AXIA/Marketing/Collaterals/AXIA-EULA-v1-vs-v2-Comparison.docx (12-row comparison table)
-  - AXIA/Marketing/Collaterals/AXIA-Enterprise-License-Agreement-v2.pdf (near-final draft)
-  - AXIA/Product/contract-review-eula-v2-2026-04-11.md (prior review, 14 findings)
+  - Northwind/Marketing/Collaterals/Northwind-EULA-v1-vs-v2-Comparison.docx (12-row comparison table)
+  - Northwind/Marketing/Collaterals/Northwind-Enterprise-License-Agreement-v2.pdf (near-final draft)
+  - Northwind/Product/contract-review-eula-v2-2026-04-11.md (prior review, 14 findings)
 
 Collecting inputs:
-  - Contract: AXIA EULA v1→v2 diff (stress-testing the v2 as near-final draft)
-  - Counterparty: First enterprise deal — Bank Discount (regulated Israeli bank)
-  - Drafter: Asaf Massuri / AXIA Legal
+  - Contract: Northwind EULA v1→v2 diff (stress-testing the v2 as near-final draft)
+  - Counterparty: First enterprise deal — Meridian Bank (regulated Israeli bank)
+  - Drafter: Jordan Lee / Northwind Legal
   - Adversarial agent: 📄 Contracts Counsel (fresh-context spawn, simulated)
   - Iteration: 1 of 2
-  - Tiebreaker: Yohay Etsion (confirmed before review started)
+  - Tiebreaker: Sam Rivera (confirmed before review started)
   - Stake: First enterprise deal with regulated bank; cost of missed clause is
     multi-year reputational and contractual exposure
-  - Prior review: AXIA/Product/contract-review-eula-v2-2026-04-11.md (14 findings)
+  - Prior review: Northwind/Product/contract-review-eula-v2-2026-04-11.md (14 findings)
   - Jurisdiction: Israel + U.S. Delaware
 
 Iteration check: 1 of 2 ✓
@@ -394,7 +394,7 @@ Fresh-context spawn: confirmed (simulated — single-agent deployment)
 Clause library loaded: reference/clause-patterns.md @ 2026-04-11
 
 Producing output at:
-  AXIA/Product/contract-stress-test-eula-v1-v2-diff-2026-04-11.md
+  Northwind/Product/contract-stress-test-eula-v1-v2-diff-2026-04-11.md
 
 [output follows standard structure: disclaimer → adversarial review metadata →
  findings with Pattern 5 format → reviewer checklist → cannot assess without →
@@ -407,4 +407,4 @@ Producing output at:
 
 ## Changelog
 
-- **1.0.0 (2026-04-11)** — Initial authoring. First-principles during Phase 3 Sub-phase 3.0. First skill to directly invoke Pattern 5 Adversarial Review from `delegation-protocol.md` as its core method. Birth-tested against AXIA EULA v1→v2 diff with A1's prior review as the prior-review reference. Closes Phase 3. Substantive review on the 72-hour subsequent-similar SLA inherited from A5/A1/A2/A3/A4.
+- **1.0.0 (2026-04-11)** — Initial authoring. First-principles during Phase 3 Sub-phase 3.0. First skill to directly invoke Pattern 5 Adversarial Review from `delegation-protocol.md` as its core method. Birth-tested against Northwind EULA v1→v2 diff with A1's prior review as the prior-review reference. Closes Phase 3. Substantive review on the 72-hour subsequent-similar SLA inherited from A5/A1/A2/A3/A4.

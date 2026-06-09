@@ -71,8 +71,8 @@ Meta: [Action verb] [what the page offers]. [Specific benefit]. [CTA or unique v
 
 **Example:**
 ```
-Title: Insider Risk Management: AI-Powered Threat Detection | AXIA
-Meta: Detect insider threats before they become breaches. AXIA's AI understands intent, not just actions. See how it works.
+Title: Insider Risk Management: AI-Powered Threat Detection | Northwind
+Meta: Detect insider threats before they become breaches. Northwind's AI understands intent, not just actions. See how it works.
 ```
 
 **Limitations**: Google increasingly rewrites meta descriptions. Focus on accuracy over persuasion — Google prefers descriptions that match page content.
@@ -500,7 +500,7 @@ GEO requires a different testing paradigm than traditional SEO (which relies on 
 |-------------|---------|---------------|
 | **Definition query** | "What is insider risk management?" | Topical association |
 | **Comparison query** | "What are the best IRM platforms?" | Brand citation eligibility |
-| **Brand knowledge query** | "Tell me about AXIA Security" | Entity knowledge state |
+| **Brand knowledge query** | "Tell me about Northwind Security" | Entity knowledge state |
 | **Problem-first query** | "How do I detect insider threats before a breach?" | DAF extraction quality |
 | **Opinion/recommendation** | "Which IRM vendor should I consider?" | Trust and endorsement signals |
 

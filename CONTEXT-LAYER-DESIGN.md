@@ -543,7 +543,7 @@ These skills do NOT trigger auto-registration:
 Documents can be found via:
 - `/context-recall [topic]` - Searches documents as well as decisions/bets
 - Reading `context/documents/index.md` directly
-- Filtering by product: `/context-recall [topic] product:AXIA`
+- Filtering by product: `/context-recall [topic] product:Northwind`
 
 ---
 

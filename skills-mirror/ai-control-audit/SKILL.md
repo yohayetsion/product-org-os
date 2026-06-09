@@ -94,7 +94,7 @@ Do NOT use `/ai-control-audit` when:
 
 ## Required Inputs
 
-- **System name** — canonical name of the AI system being audited (e.g., "Legionis", "AXIA Insider Risk Engine", "Spring AI ALGINT").
+- **System name** — canonical name of the AI system being audited (e.g., "Atlas", "Northwind Insider Risk Engine", "Helios").
 - **Release version** — specific release identifier (semver, date, or build tag).
 - **Pointer to architecture docs** — current (not stale) architecture documentation, release notes, deployment topology diagram.
 - **Runtime access OR observability telemetry** — at least one of: direct runtime access for inspection, observability dashboards/logs, or a written telemetry summary from the on-call team. Without this, Category 4 (Observability) and Category 5 (Incident response) cannot be audited meaningfully and must be marked "cannot assess."

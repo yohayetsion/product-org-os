@@ -73,7 +73,7 @@ If drafting is hard because the category is unfamiliar, consult @content-strateg
 Run each query through three criteria:
 
 1. **Brand-plausible** — could the brand genuinely appear in a high-quality answer to this query? If the brand sells microbrand watches and the query is about enterprise ERP systems, delete the query.
-2. **User-intent-aligned** — does the query represent a real user need? Or is it an SEO vanity metric phrased as a question? "What is the best microbrand watch" is a real user need. "Is SKYMOD the best microbrand watch" is a vanity query that no real user types.
+2. **User-intent-aligned** — does the query represent a real user need? Or is it an SEO vanity metric phrased as a question? "What is the best microbrand watch" is a real user need. "Is Brightwear the best microbrand watch" is a vanity query that no real user types.
 3. **Diverse coverage** — collectively, do the 10 queries cover at least 3 distinct user intents? If all 10 are variants of "what is the best X", you are measuring one thing with ten probes. Rewrite until you cover at least 3 of: purchase intent, research intent, comparison intent, gift intent, task intent, troubleshooting intent, technical intent.
 
 If a query fails any of the three checks, rewrite or replace it. The 10-query list is the single most important artifact the skill produces. Everything downstream is mechanical.
@@ -108,7 +108,7 @@ Do not retry on failure during the sample run. If an engine fails, log the failu
 
 For each of the forty responses, determine the four classification values:
 
-- **Brand Mentioned** — did the response name the brand? `yes` if the brand name appears literally. `no` if it does not appear. `partial` if the response describes the brand without naming it (e.g., "a popular microbrand watch company from Hungary" is `partial` for SKYMOD).
+- **Brand Mentioned** — did the response name the brand? `yes` if the brand name appears literally. `no` if it does not appear. `partial` if the response describes the brand without naming it (e.g., "a popular microbrand watch company from Hungary" is `partial` for Brightwear).
 - **Mention Position** — if the brand is mentioned, where does it appear in an ordered list (if any)? Rank 1 is first, rank 2 is second, and so on. If the mention is in prose rather than a list, use `prose` in the Position column. If not mentioned, `null`.
 - **Sentiment** — `positive` (response recommends the brand or speaks favorably), `neutral` (response names the brand factually without judgment), `negative` (response warns against or criticizes the brand), `mixed` (response includes both positive and negative framing).
 - **Citation URL** — if the engine provided a citation URL for the brand mention, capture it. Otherwise `null`.

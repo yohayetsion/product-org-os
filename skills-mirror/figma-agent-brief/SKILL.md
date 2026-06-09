@@ -268,7 +268,7 @@ This skill does NOT use Pattern 4 Debate or Pattern 5 Adversarial Review. There 
 
 ## Birth test
 
-This skill's first real output is a brief for the **AXIA risk-dashboard alert detail card**, saved at `AXIA/Product/figma-agent-brief-birth-test-alert-detail-card-2026-04-11.md`. The birth test exercises:
+This skill's first real output is a brief for the **Northwind risk-dashboard alert detail card**, saved at `Northwind/Product/figma-agent-brief-birth-test-alert-detail-card-2026-04-11.md`. The birth test exercises:
 
 - Surface classification (component, not screen)
 - Library component inventory (with exact names where known)

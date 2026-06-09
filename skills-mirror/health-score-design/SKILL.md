@@ -264,16 +264,16 @@ Pattern 5 Adversarial Review is NOT required for this skill. Health scoring is a
 
 ## Birth Test
 
-Every new skill must be birth-tested against a real or synthetic portfolio before v1.0.0. For `/health-score-design`, the birth test runs against the **Legionis** context — consistent with the `/cs-segmentation-model` birth test that preceded it, so the two skills chain cleanly.
+Every new skill must be birth-tested against a real or synthetic portfolio before v1.0.0. For `/health-score-design`, the birth test runs against the **Atlas** context — consistent with the `/cs-segmentation-model` birth test that preceded it, so the two skills chain cleanly.
 
-Legionis is a Tier 3 case by construction: a pre-PMF product with no churn history and a mandatory 2-quarter recalibration gate. It exercises:
+Atlas is a Tier 3 case by construction: a pre-PMF product with no churn history and a mandatory 2-quarter recalibration gate. It exercises:
 
 - Tier 3 benchmark defaults (60 / 25 / 15)
 - Per-segment differentiation across 4 segments (High-Touch Enterprise, Mid-Touch, Tech-Touch Pooled, PLG Self-Serve — the same 4 that emerged from the segmentation birth test)
-- Cold-start variant (Legionis will have many <90-day customers in year 1)
+- Cold-start variant (Atlas will have many <90-day customers in year 1)
 - Recalibration plan scheduled for Q3 2026
 
-The birth test output lives at: `Legionis/Product/health-score-design-birth-test-2026-04-11.md`
+The birth test output lives at: `Atlas/Product/health-score-design-birth-test-2026-04-11.md`
 
 See the birth test file for the full segment weight matrix, the cold-start variant instantiation, the calibration confidence gaps, and the specific Q3 2026 recalibration triggers.
 

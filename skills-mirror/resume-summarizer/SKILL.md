@@ -601,12 +601,12 @@ Minor edits (typos, formatting, documentation links) can bypass Pass 2. Any edit
 ## Example Invocation (standard path)
 
 ```
-User: /resume-summarizer --batch ./candidate-batch-2026-Q2/ --jurisdiction US-NYC --role "Senior Backend Engineer" --deployer-attestation ./attestations/legionis-2026.json
+User: /resume-summarizer --batch ./candidate-batch-2026-Q2/ --jurisdiction US-NYC --role "Senior Backend Engineer" --deployer-attestation ./attestations/atlas-2026.json
 
 /resume-summarizer v1.0.0 — loading:
   - Batch: 25 resumes from ./candidate-batch-2026-Q2/
   - Jurisdiction: US-NYC (AEDT deployer warning active; 1-year retention)
-  - Deployer attestation: legionis-2026.json
+  - Deployer attestation: atlas-2026.json
     - acknowledgment_date: 2026-01-15
     - re_attestation_due_date: 2027-01-15
     - STATUS: current (as of 2026-04-11)
@@ -649,4 +649,4 @@ Producing batch output at:
 
 ## Changelog
 
-- **1.0.0 (2026-04-11)** — Initial authoring. First-of-type HR skill under `hr-ai-governance` pack for full substantive review. Fourth and final Phase 4A HR skill. Authored from first principles by 🎯 Recruiter (primary) and 📊 People Analyst (co-owner for proxy register, counterfactual harness, and audit log emission layers). No vendor tool lifts. Academic citations: Schmidt & Hunter (1998) for volume-extraction value framing; Bertrand & Mullainathan (2004) for proxy-bias empirical grounding. AEDT non-classification memo embedded verbatim from `hr-ai-governance` Section 6.2. Banned field list extends `hr-ai-governance` Section 6.3 with Phase 4A additions (culture_fit, team_fit, values_fit, qualitative_evaluation, overall_quality, candidate_quality, seniority_label, experience_level). Counterfactual harness tolerance per Section 5.3 F7 field-type spec. HITL throughput tripwire per Section 10.2.1. Birth test at `Legionis/Product/resume-summarizer-birth-test-2026-04-11.md` exercises GINA refusal, union refusal, IDF proxy normalization (no-country rule), Ban-the-Box criminal-history redaction, and semantic-intent validator catch of a planted `top_skills_ordered` bad field. Ready for @employment-counsel 5-business-day first-of-type substantive review. Scaffolding pass by 📋 Director of HR required before substantive review.
+- **1.0.0 (2026-04-11)** — Initial authoring. First-of-type HR skill under `hr-ai-governance` pack for full substantive review. Fourth and final Phase 4A HR skill. Authored from first principles by 🎯 Recruiter (primary) and 📊 People Analyst (co-owner for proxy register, counterfactual harness, and audit log emission layers). No vendor tool lifts. Academic citations: Schmidt & Hunter (1998) for volume-extraction value framing; Bertrand & Mullainathan (2004) for proxy-bias empirical grounding. AEDT non-classification memo embedded verbatim from `hr-ai-governance` Section 6.2. Banned field list extends `hr-ai-governance` Section 6.3 with Phase 4A additions (culture_fit, team_fit, values_fit, qualitative_evaluation, overall_quality, candidate_quality, seniority_label, experience_level). Counterfactual harness tolerance per Section 5.3 F7 field-type spec. HITL throughput tripwire per Section 10.2.1. Birth test at `Atlas/Product/resume-summarizer-birth-test-2026-04-11.md` exercises GINA refusal, union refusal, IDF proxy normalization (no-country rule), Ban-the-Box criminal-history redaction, and semantic-intent validator catch of a planted `top_skills_ordered` bad field. Ready for @employment-counsel 5-business-day first-of-type substantive review. Scaffolding pass by 📋 Director of HR required before substantive review.

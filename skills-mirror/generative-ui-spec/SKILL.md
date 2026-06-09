@@ -278,7 +278,7 @@ Any quality-gate failure blocks publication of the spec.
 
 ### Cross-team consultability
 
-- **`@frontend-dev`** — consumability gate. Can a frontend dev actually build the component from this spec without asking the PM for clarification? If no, the spec fails review. The birth test at `Legionis/Product/generative-ui-spec-birth-test-task-card-2026-04-11.md` is the reference point: a Frontend Developer should be able to implement that task card from the spec alone. If any spec this skill produces is less complete than the birth test, it is not ready.
+- **`@frontend-dev`** — consumability gate. Can a frontend dev actually build the component from this spec without asking the PM for clarification? If no, the spec fails review. The birth test at `Atlas/Product/generative-ui-spec-birth-test-task-card-2026-04-11.md` is the reference point: a Frontend Developer should be able to implement that task card from the spec alone. If any spec this skill produces is less complete than the birth test, it is not ready.
 - **`@interaction-designer`** — event-contract and interaction-state co-owner. Every spec routes event-contract sections through her. She is named as `co_owner` in the frontmatter; this is not a courtesy credit but a load-bearing collaboration. On borderline implementation-vs-principles cases, her event contracts become the deciding factor (see "Co-authoring model" below).
 - **`@ai-architect`** — runtime evaluation framing. When the PM asks "which runtime should we pick," that's her question, not this skill's. This skill assumes the runtime is chosen or defaults to principles mode. If a team wants to debate CopilotKit vs A2UI vs OpenAI Apps SDK vs MCP UI extensions, @ai-architect runs that evaluation and this skill produces specs for the chosen runtime after.
 - **`@visual-designer`** — when the component needs brand treatment beyond the Figma brief (icons, illustrations, specific brand applications). Not required for most card-sized components but load-bearing for brand-heavy surfaces.
@@ -366,7 +366,7 @@ Not a sensitive skill. `sensitive: false`.
 
 ## Birth Test
 
-One real spec produced under this skill: a **Legionis agent task card** in CopilotKit Presentational implementation mode. See `Legionis/Product/generative-ui-spec-birth-test-task-card-2026-04-11.md`. The birth test exercises every quality gate, including the Zod schema draft, the render-contract state matrix, the event return spec (with out-of-scope events named), the type-safety acknowledgment, and the test plan.
+One real spec produced under this skill: a **Atlas agent task card** in CopilotKit Presentational implementation mode. See `Atlas/Product/generative-ui-spec-birth-test-task-card-2026-04-11.md`. The birth test exercises every quality gate, including the Zod schema draft, the render-contract state matrix, the event return spec (with out-of-scope events named), the type-safety acknowledgment, and the test plan.
 
 ---
 

@@ -502,7 +502,7 @@ This skill deliberately does NOT opine on the following. Items below require eng
 
 ## 17. Birth Test Pointer
 
-A birth test for this skill was run on 2026-04-11 against a synthetic AI-first target ("SmallAgentLab," 12-person agent infrastructure startup). The test exercises the AI Target Addendum (most load-bearing module), the team capability gap check (triggering a P0 gap for missing `@ai-architect`), and the sector+jurisdiction modules (AI sector + US-DE + US-NY). Results: `AXIA/Product/deal-diligence-checklist-birth-test-smallagentlab-2026-04-11.md`.
+A birth test for this skill was run on 2026-04-11 against a synthetic AI-first target ("SmallAgentLab," 12-person agent infrastructure startup). The test exercises the AI Target Addendum (most load-bearing module), the team capability gap check (triggering a P0 gap for missing `@ai-architect`), and the sector+jurisdiction modules (AI sector + US-DE + US-NY). Results: `Northwind/Product/deal-diligence-checklist-birth-test-smallagentlab-2026-04-11.md`.
 
 ---
 

@@ -68,8 +68,8 @@ The three sibling skills that ship in a future Phase 3 sub-phase — `/data-mapp
 Run a full disclosure-sufficiency and regulatory-fit audit of a specific privacy policy. Produces a new audit output file following the structure in the Output section.
 
 ```
-/privacy-policy-audit legionis.ai/privacy
-/privacy-policy-audit "AXIA public privacy policy draft"
+/privacy-policy-audit atlas.example/privacy
+/privacy-policy-audit "Northwind public privacy policy draft"
 /privacy-policy-audit path/to/src/app/(legal)/privacy/page.tsx
 ```
 
@@ -78,7 +78,7 @@ Run a full disclosure-sufficiency and regulatory-fit audit of a specific privacy
 Re-audit an existing privacy policy after a drafter revision. Pass the path to the existing audit output.
 
 ```
-/privacy-policy-audit update Legionis/Product/privacy-policy-audit-2026-04-11.md
+/privacy-policy-audit update Atlas/Product/privacy-policy-audit-2026-04-11.md
 ```
 
 Update mode preserves the finding numbering (adds 7a, 7b rather than renumbering), marks resolved findings with `~~strikethrough~~` plus a one-line reason, and keeps a `## Changelog` at the bottom of the file noting what the drafter moved on.
@@ -95,7 +95,7 @@ Use adversarial sub-mode ONLY when:
 - The policy draft is near-final, not still evolving in shape
 
 ```
-/privacy-policy-audit legionis.ai/privacy --mode adversarial --tiebreaker "Yohay Etsion"
+/privacy-policy-audit atlas.example/privacy --mode adversarial --tiebreaker "Sam Rivera"
 ```
 
 For early-stage drafts, routine audits, and low-stakes triage, use default Create mode with Pattern 1 Consultation to pull in specialists (General Counsel for jurisdiction-specific enforceability, Compliance Officer for sector-specific regs like HIPAA/GLBA, IP Counsel for AI training data IP angles) for the dimensions that need their view.
@@ -113,7 +113,7 @@ The skill MUST collect the following before producing output. If any are missing
 | Jurisdiction(s) in scope | Yes (may be multi) | "EEA/UK + US + Israel" |
 | Stage | Yes | "Pre-launch" / "Live, beta" / "GA" |
 | Known issues the user wants examined | If any | "We recently added PostHog; does the policy cover it?" |
-| Tiebreaker (adversarial mode only) | Yes if adversarial | "Yohay Etsion" |
+| Tiebreaker (adversarial mode only) | Yes if adversarial | "Sam Rivera" |
 
 ### The Processing Context (mandatory, one paragraph)
 
@@ -565,17 +565,17 @@ User: /privacy-policy-audit ./src/app/privacy/page.tsx
   - 11 sections, approx 1,200 words rendered text
 
 Collecting inputs:
-  - Policy: Legionis Privacy Policy (v2026-03-03)
+  - Policy: Atlas Privacy Policy (v2026-03-03)
   - Source: Next.js JSX source file
   - Jurisdictions: EEA/UK + US (CCPA/CPRA) + Israel (PPL)
   - Stage: Pre-launch / B2C beta
   - Processing context: B2C AI workforce platform, global user base, BYOT AI model
     (user-supplied API keys), child users gated at 16+, third parties include Clerk/
     Stripe/Neon/Vercel/PostHog/People Data Labs/AI providers, data processed in
-    Israel + US, controller is Etsion Brands Ltd.
+    Israel + US, controller is Acme Holdings Ltd.
 
 Producing output at:
-  Legionis/Product/privacy-policy-audit-2026-04-11.md
+  Atlas/Product/privacy-policy-audit-2026-04-11.md
 
 [output follows standard structure: disclaimer → audit metadata → processing context →
  findings with regulatory anchors → mandatory escalate-to-counsel → reviewer checklist →
@@ -588,4 +588,4 @@ Producing output at:
 
 ## Changelog
 
-- **1.0.0 (2026-04-11)** — Initial authoring. First-principles during Phase 3 Sub-phase 3.0. First privacy-specific skill. Birth-tested against the Legionis public privacy policy (v2026-03-03) as a real pre-launch artifact; bootstrapped the initial 15-dimension audit pattern from the review. Substantive review passed by 🔒 Privacy Counsel on the 72-hour subsequent-similar SLA (A5 `/risk-analysis` and A1 `/contract-review` validated the template pattern earlier in the sub-phase); scaffolding review passed by 📋 Director of Legal Affairs.
+- **1.0.0 (2026-04-11)** — Initial authoring. First-principles during Phase 3 Sub-phase 3.0. First privacy-specific skill. Birth-tested against the Atlas public privacy policy (v2026-03-03) as a real pre-launch artifact; bootstrapped the initial 15-dimension audit pattern from the review. Substantive review passed by 🔒 Privacy Counsel on the 72-hour subsequent-similar SLA (A5 `/risk-analysis` and A1 `/contract-review` validated the template pattern earlier in the sub-phase); scaffolding review passed by 📋 Director of Legal Affairs.

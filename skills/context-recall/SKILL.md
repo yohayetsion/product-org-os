@@ -39,7 +39,7 @@ Invoke `/context-recall [topic]` when:
 Accept a topic or keyword from the user, with optional filters:
 - `/context-recall pricing` → Search for pricing-related context
 - `/context-recall enterprise` → Search for enterprise-related context
-- `/context-recall pricing product:AXIA` → Search filtered to AXIA product
+- `/context-recall pricing product:Northwind` → Search filtered to Northwind product
 - `/context-recall pricing --include-demo` → Include demo data even if production data exists
 - `/context-recall pricing --demo-only` → Show only demo data
 
@@ -217,10 +217,10 @@ Agent: Searches context/decisions/index.md, context/bets/index.md,
 ```
 
 ```
-User: /context-recall roadmap product:AXIA
+User: /context-recall roadmap product:Northwind
 
-Agent: Searches all context indexes filtered to AXIA product only.
-       Returns AXIA-specific roadmap documents, decisions, and bets.
+Agent: Searches all context indexes filtered to Northwind product only.
+       Returns Northwind-specific roadmap documents, decisions, and bets.
 ```
 
 ## Enhanced Recall (v3)

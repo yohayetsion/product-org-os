@@ -12,9 +12,9 @@ Memory MCP creates a **knowledge graph** with three components:
 
 | Component | Description | Example |
 |-----------|-------------|---------|
-| **Entities** | Nodes representing people, products, competitors, decisions | "AXIA" (product), "Competitor X" (company) |
-| **Relations** | Directed connections between entities | "AXIA" → "competes_with" → "Competitor X" |
-| **Observations** | Atomic facts attached to entities | "AXIA launched enterprise tier in Q2 2026" |
+| **Entities** | Nodes representing people, products, competitors, decisions | "Northwind" (product), "Competitor X" (company) |
+| **Relations** | Directed connections between entities | "Northwind" → "competes_with" → "Competitor X" |
+| **Observations** | Atomic facts attached to entities | "Northwind launched enterprise tier in Q2 2026" |
 
 ### Tools Provided
 
@@ -118,7 +118,7 @@ User: What do we know about Competitor X?
 
 Claude: [Uses search_nodes to find Competitor X entity]
 Found entity "Competitor X" with:
-- Relations: competes_with → AXIA, acquired → StartupY
+- Relations: competes_with → Northwind, acquired → StartupY
 - Observations:
   - "Launched enterprise tier at $199/seat (Q4 2025)"
   - "Raised Series C in January 2026"
@@ -165,7 +165,7 @@ Set `MEMORY_FILE_PATH` to control where the knowledge graph is stored:
 
 ### Entity Naming
 - Use consistent, unique names
-- Include type for clarity: "AXIA (product)", "John Smith (PM)"
+- Include type for clarity: "Northwind (product)", "John Smith (PM)"
 
 ### Relation Naming
 - Use active voice: "owns", "decided", "competes_with"

@@ -44,7 +44,7 @@ Invoke `/interaction-recall [topic]` when:
 /interaction-recall pricing                      → All pricing interactions
 /interaction-recall pricing agent:pm             → Only PM's pricing interactions
 /interaction-recall pricing date:2026-01         → January 2026 only
-/interaction-recall pricing product:AXIA         → Product-filtered
+/interaction-recall pricing product:Northwind         → Product-filtered
 /interaction-recall pricing type:gateway         → Only gateway sessions
 /interaction-recall agent:pm                     → All PM interactions (any topic)
 /interaction-recall date:2026-01-27              → All interactions on a specific date
@@ -56,10 +56,10 @@ Invoke `/interaction-recall [topic]` when:
 |--------|--------|---------|
 | `agent:` | Agent key | `agent:pm`, `agent:vp-product`, `agent:plt` |
 | `date:` | YYYY, YYYY-MM, or YYYY-MM-DD | `date:2026`, `date:2026-01`, `date:2026-01-27` |
-| `product:` | Product name | `product:AXIA` |
+| `product:` | Product name | `product:Northwind` |
 | `type:` | Interaction type | `type:agent`, `type:gateway`, `type:skill` |
 
-Multiple filters can be combined: `/interaction-recall pricing agent:pm product:AXIA`
+Multiple filters can be combined: `/interaction-recall pricing agent:pm product:Northwind`
 
 ## Process
 
@@ -104,7 +104,7 @@ For the top 5 matches:
 
 ### IX-2026-00042 | {emoji} @pm | 2026-01-27 14:23
 **Topics**: prd, authentication, requirements-gaps
-**Product**: AXIA
+**Product**: Northwind
 
 **Request**: Review authentication PRD for requirements gaps
 
@@ -181,8 +181,8 @@ Agent: Returns all PM interactions from January 2026
 ```
 
 ```
-User: /interaction-recall enterprise product:AXIA type:gateway
+User: /interaction-recall enterprise product:Northwind type:gateway
 
-Agent: Returns gateway sessions about enterprise topics for AXIA
+Agent: Returns gateway sessions about enterprise topics for Northwind
        Shows all agent perspectives from those sessions
 ```

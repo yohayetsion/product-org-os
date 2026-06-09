@@ -397,14 +397,14 @@ For organizations managing multiple products, the context layer supports product
 
 **Adding Product to Records:**
 ```markdown
-**Product**: AXIA
+**Product**: Northwind
 ```
 
 **Filtering by Product:**
 ```
-/context-recall pricing product:AXIA      # Pricing context for AXIA only
-/feedback-recall onboarding product:SKYMOD # Feedback for SKYMOD only
-/portfolio-status product:AXIA            # Portfolio for AXIA only
+/context-recall pricing product:Northwind      # Pricing context for Northwind only
+/feedback-recall onboarding product:Brightwear # Feedback for Brightwear only
+/portfolio-status product:Northwind            # Portfolio for Northwind only
 ```
 
 **Index File Format:**
@@ -566,7 +566,7 @@ Control how verbose responses are with simple modifiers:
 
 **Works with any command pattern:**
 ```
-/context-recall pricing product:AXIA -      # Brief context summary
+/context-recall pricing product:Northwind -      # Brief context summary
 /feedback-recall enterprise onboarding +    # Full feedback analysis with themes
 ```
 

@@ -41,7 +41,7 @@ Every agent-ready SOP has exactly these 7 fields. Not six. Not eight. The invari
 
 **Observable criterion.** A non-author can read the trigger and answer, in one sentence, WHAT they would need to watch in order to catch the SOP starting. If they can't, the trigger is hand-waved.
 
-**Example fragment (from AXIA MRR reconciliation SOP):**
+**Example fragment (from Northwind MRR reconciliation SOP):**
 ```
 trigger:
   type: schedule
@@ -71,7 +71,7 @@ trigger:
 
 **Observable criterion.** A non-author could package the full input set from the declared sources without asking the author a single clarifying question. If they'd need to ask "and what about X?", X is a hidden input and must be surfaced.
 
-**Example fragment (from SKYMOD fulfillment SOP):**
+**Example fragment (from Brightwear fulfillment SOP):**
 ```
 inputs:
   - name: order
@@ -84,7 +84,7 @@ inputs:
     required: true
   - name: shipping_config
     type: config.json
-    source: "SKYMOD/operations/shipping-config.json"
+    source: "Brightwear/operations/shipping-config.json"
     required: true
 ```
 
@@ -109,7 +109,7 @@ inputs:
 
 **Observable criterion.** For every decision step, a non-author can name the role that decides, the specific criterion, and the role that catches the decision if the primary is out. If any of the three is missing, decision rights are hand-waved.
 
-**Example fragment (from AXIA expense approval SOP):**
+**Example fragment (from Northwind expense approval SOP):**
 ```
 decision_rights:
   steps:
@@ -142,7 +142,7 @@ decision_rights:
 
 **Observable criterion.** For each step, a non-author could execute it (or watch an agent execute it) and know with certainty, within seconds of completion, whether it finished. If they'd have to "wait a bit and see," the completion signal is missing.
 
-**Example fragment (from SKYMOD fulfillment SOP):**
+**Example fragment (from Brightwear fulfillment SOP):**
 ```
 steps:
   - step_id: fetch-order
@@ -173,7 +173,7 @@ steps:
 
 **Observable criterion.** For every named exception, a non-author can trace what the SOP does next, who the SOP hands off to, and where the process resumes. If the branch ends with "escalate" and nothing more, the branch is missing a recovery path.
 
-**Example fragment (from AXIA MRR reconciliation SOP):**
+**Example fragment (from Northwind MRR reconciliation SOP):**
 ```
 exception_handling:
   - exception: stripe_api_unreachable
@@ -191,7 +191,7 @@ exception_handling:
 
 **What it contains:**
 - **log_schema**: the fields every run of the SOP writes — at minimum `run_id`, `sop_name`, `sop_version`, `started_at`, `completed_at`, `status`, `trigger_source`, and step-level events
-- **artifact_destination**: where the tangible outputs land — e.g., `gdrive://finance/recon/YYYY-MM/`, `s3://skymod-ops/fulfillment/{order_id}/`
+- **artifact_destination**: where the tangible outputs land — e.g., `gdrive://finance/recon/YYYY-MM/`, `s3://brightwear-ops/fulfillment/{order_id}/`
 - **retention**: how long the evidence is kept — driven by audit, legal, or business need; not "forever" by default
 - **access**: who can read the trail
 
@@ -203,12 +203,12 @@ exception_handling:
 
 **Observable criterion.** A non-author, three months later, can open the evidence trail for a specific run and reconstruct what happened step by step without asking the author. If they'd need the author's help to find it, the trail is not a trail.
 
-**Example fragment (from SKYMOD fulfillment SOP):**
+**Example fragment (from Brightwear fulfillment SOP):**
 ```
 evidence_trail:
   log_schema:
     - run_id
-    - sop_name: "skymod-fulfillment"
+    - sop_name: "brightwear-fulfillment"
     - sop_version: "1.0.0"
     - order_id
     - started_at
@@ -216,7 +216,7 @@ evidence_trail:
     - status: "success | partial | failed | blocked"
     - trigger_source: "webhook | manual_replay"
     - step_events[]: "{step_id, outcome, completed_at, duration_ms}"
-  artifact_destination: "gdrive://skymod/operations/fulfillment/YYYY/MM/{order_id}/"
+  artifact_destination: "gdrive://brightwear/operations/fulfillment/YYYY/MM/{order_id}/"
   retention: "7 years (DE/NL VAT requirement; longest-applicable market rule)"
   access: "read: @ops-team; write: @fulfillment-bot only"
 ```
@@ -242,7 +242,7 @@ evidence_trail:
 
 **Observable criterion.** A non-author can read the verification test, know what to look at, know the pass/fail line, and know who reports the result. If they can't, the test is decorative.
 
-**Example fragment (from AXIA MRR reconciliation SOP, foot-and-tie):**
+**Example fragment (from Northwind MRR reconciliation SOP, foot-and-tie):**
 ```
 verification_test:
   name: "mrr-recon-foot-and-tie"
@@ -265,7 +265,7 @@ This is the C2.5 hook: every financial control SOP MUST populate `verification_t
 Every agent-ready SOP authored in `operations-playbooks` uses this literal schema. YAML here for readability; the same structure serializes cleanly to JSON for agent consumption.
 
 ```yaml
-sop_name: [kebab-case identifier]          # e.g., skymod-fulfillment
+sop_name: [kebab-case identifier]          # e.g., brightwear-fulfillment
 version: [semver]                          # e.g., 1.2.0
 owner: [agent role OR human role]          # e.g., @process-engineer OR operations-dir
 last_reviewed: [YYYY-MM-DD]
@@ -325,12 +325,12 @@ All 7 fields are first-class top-level keys. An SOP missing any of these keys fa
 
 ---
 
-### Worked Example 1: SKYMOD Order Fulfillment SOP
+### Worked Example 1: Brightwear Order Fulfillment SOP
 
-**Context (dated: 2026-04-11).** SKYMOD is a microbrand watch e-commerce run on Shopify, shipping from a UK fulfillment partner to EN / DE / NL / UK markets. DHL Express is the primary carrier; orders with value under [TBD] threshold route to a lower-cost carrier. Judge.me review requests fire on delivery. This SOP covers the end-to-end flow from Shopify order creation to customer shipping notification. Values marked `[TBD]` are real placeholders — the operational values live in SKYMOD config, not in this reference doc.
+**Context (dated: 2026-04-11).** Brightwear is a microbrand watch e-commerce run on Shopify, shipping from a UK fulfillment partner to EN / DE / NL / UK markets. DHL Express is the primary carrier; orders with value under [TBD] threshold route to a lower-cost carrier. Judge.me review requests fire on delivery. This SOP covers the end-to-end flow from Shopify order creation to customer shipping notification. Values marked `[TBD]` are real placeholders — the operational values live in Brightwear config, not in this reference doc.
 
 ```yaml
-sop_name: skymod-order-fulfillment
+sop_name: brightwear-order-fulfillment
 version: 1.0.0
 owner: "@fulfillment-bot (primary); operations-dir (human accountable)"
 last_reviewed: 2026-04-11
@@ -353,7 +353,7 @@ inputs:
     required: true
   - name: shipping_config
     type: config.json
-    source: "SKYMOD/operations/shipping-config.json (carrier rules per market)"
+    source: "Brightwear/operations/shipping-config.json (carrier rules per market)"
     required: true
   - name: customer_locale
     type: string
@@ -372,9 +372,9 @@ decision_rights:
     - step_id: handle-stockout
       decider: "operations-dir"
       criterion: "partial-ship available items OR hold whole order pending restock"
-      escalation: "@ceo (Yohay)"
+      escalation: "@ceo (Sam)"
       escalation_trigger: "decision unresolved > 12 business hours"
-      acceptance_signal: "operations-dir posts decision in #skymod-ops with order_id"
+      acceptance_signal: "operations-dir posts decision in #brightwear-ops with order_id"
 
 steps:
   - step_id: fetch-order
@@ -416,7 +416,7 @@ exception_handling:
     idempotency_note: "safe — fulfillment record state guards against double processing"
   - exception: carrier_api_unreachable
     detection: "carrier API returns 5xx or times out > 3 retries with exponential backoff"
-    branch: "persist checkpoint, switch to manual label generation queue, notify operations-dir in #skymod-ops"
+    branch: "persist checkpoint, switch to manual label generation queue, notify operations-dir in #brightwear-ops"
     recovery_path: "operations-dir runs `resume-fulfillment.py --order={id}` after manual label issued"
     idempotency_note: "safe — tracking_number uniqueness enforced at evidence-trail write"
   - exception: address_validation_failed
@@ -428,7 +428,7 @@ exception_handling:
 evidence_trail:
   log_schema:
     - run_id
-    - sop_name: "skymod-order-fulfillment"
+    - sop_name: "brightwear-order-fulfillment"
     - sop_version: "1.0.0"
     - order_id
     - started_at
@@ -439,12 +439,12 @@ evidence_trail:
     - tracking_number
     - customer_locale
     - step_events[]: "{step_id, outcome, completed_at, duration_ms}"
-  artifact_destination: "gdrive://skymod/operations/fulfillment/YYYY/MM/{order_id}/"
+  artifact_destination: "gdrive://brightwear/operations/fulfillment/YYYY/MM/{order_id}/"
   retention: "7 years (longest-applicable market rule: DE/NL VAT records)"
   access: "read: @ops-team, operations-dir, @ceo; write: @fulfillment-bot only"
 
 verification_test:
-  name: "skymod-fulfillment-closeout-check"
+  name: "brightwear-fulfillment-closeout-check"
   criterion: |
     for each order where status == 'success':
       1) tracking_number is present AND validated by carrier status endpoint
@@ -454,19 +454,19 @@ verification_test:
     all four conditions must pass
   runner: "automated check `fulfillment-verify.py`; flagged fails reviewed by operations-dir"
   frequency: "every run"
-  failure_action: "mark run status=FAILED; open incident in #skymod-ops; block next run for same order_id until resolved"
+  failure_action: "mark run status=FAILED; open incident in #brightwear-ops; block next run for same order_id until resolved"
 ```
 
-**Audit note.** A process engineer auditing this SOP has all 7 fields populated concretely, with named roles, specific carriers, locales, and log schemas. Every step has a completion signal. Every exception has a recovery path. The only `[TBD]` values are operational numbers that live in SKYMOD's config, not in this reference.
+**Audit note.** A process engineer auditing this SOP has all 7 fields populated concretely, with named roles, specific carriers, locales, and log schemas. Every step has a completion signal. Every exception has a recovery path. The only `[TBD]` values are operational numbers that live in Brightwear's config, not in this reference.
 
 ---
 
-### Worked Example 2: AXIA Monthly MRR Reconciliation SOP
+### Worked Example 2: Northwind Monthly MRR Reconciliation SOP
 
-**Context (dated: 2026-04-11).** AXIA is on Stripe (test mode transitioning to production) and runs enterprise contracts including the in-flight Bank Discount deal. Monthly MRR reconciliation ties together three independent ledgers — Stripe recognized revenue, internal ledger MRR entries, and bank deposits from Stripe payouts. This SOP is the canonical C2.5 example because its verification test IS a foot-and-tie check. Values marked `[per deal]` and `[TBD]` are placeholders for deal-specific and org-specific numbers.
+**Context (dated: 2026-04-11).** Northwind is on Stripe (test mode transitioning to production) and runs enterprise contracts including the in-flight Meridian Bank deal. Monthly MRR reconciliation ties together three independent ledgers — Stripe recognized revenue, internal ledger MRR entries, and bank deposits from Stripe payouts. This SOP is the canonical C2.5 example because its verification test IS a foot-and-tie check. Values marked `[per deal]` and `[TBD]` are placeholders for deal-specific and org-specific numbers.
 
 ```yaml
-sop_name: axia-mrr-reconciliation-monthly
+sop_name: northwind-mrr-reconciliation-monthly
 version: 1.0.0
 owner: "@fpa-analyst (primary); cfo (human accountable)"
 last_reviewed: 2026-04-11
@@ -475,7 +475,7 @@ maturity_level: documented  # monthly cadence; semi-automated; finance human-in-
 trigger:
   type: schedule
   condition: "First business day of each calendar month, 08:00 Asia/Jerusalem"
-  detector: "cron job `axia-mrr-recon-monthly` on finance-runner instance"
+  detector: "cron job `northwind-mrr-recon-monthly` on finance-runner instance"
   debounce: "idempotency key = reconciliation_period (YYYY-MM); re-runs in the same month are no-ops unless --force is passed by @fpa-analyst"
 
 inputs:
@@ -512,7 +512,7 @@ decision_rights:
       acceptance_signal: "recon_status field set to 'accepted' with @fpa-analyst signature in the artifact"
     - step_id: apply-deal-specific-adjustment
       decider: "@fpa-analyst"
-      criterion: "Bank Discount deal uses [per deal] milestone-based billing; SOP applies milestone schedule from contract_register"
+      criterion: "Meridian Bank deal uses [per deal] milestone-based billing; SOP applies milestone schedule from contract_register"
       escalation: "cfo"
       escalation_trigger: "contract_register missing or ambiguous for an active deal"
       acceptance_signal: "adjustment row appears in reconciliation artifact with deal reference"
@@ -534,7 +534,7 @@ steps:
     expected_outcome: "CSV of bank deposits tagged with source = 'stripe' for the period"
     completion_signal: "log entry `bank_deposits_pulled` with row count and total amount"
   - step_id: apply-contract-adjustments
-    action: "Apply deal-specific adjustments per contract_register (e.g., Bank Discount milestone billing)"
+    action: "Apply deal-specific adjustments per contract_register (e.g., Meridian Bank milestone billing)"
     owner: "@fpa-analyst"
     expected_outcome: "Adjustment rows appended to each ledger for deals with non-flat MRR"
     completion_signal: "log entry `adjustments_applied` with row count"
@@ -574,7 +574,7 @@ exception_handling:
 evidence_trail:
   log_schema:
     - run_id
-    - sop_name: "axia-mrr-reconciliation-monthly"
+    - sop_name: "northwind-mrr-reconciliation-monthly"
     - sop_version: "1.0.0"
     - period: "YYYY-MM"
     - started_at
@@ -586,12 +586,12 @@ evidence_trail:
     - variance_usd
     - variance_pct
     - step_events[]: "{step_id, outcome, completed_at, duration_ms}"
-  artifact_destination: "gdrive://axia/finance/reconciliation/YYYY/{YYYY-MM}/"
-  retention: "7 years (Israeli corporate tax record retention; aligns with AXIA entity domicile)"
+  artifact_destination: "gdrive://northwind/finance/reconciliation/YYYY/{YYYY-MM}/"
+  retention: "7 years (Israeli corporate tax record retention; aligns with Northwind entity domicile)"
   access: "read: cfo, @fpa-analyst, @ceo; write: @fpa-analyst only"
 
 verification_test:
-  name: "axia-mrr-foot-and-tie"
+  name: "northwind-mrr-foot-and-tie"
   criterion: |
     |stripe_revenue_total - ledger_mrr_total| ≤ max($[TBD tolerance], 0.1% of ledger_mrr_total)
     AND
@@ -612,9 +612,9 @@ The 7 fields are invariant across maturity levels. What changes is how much is c
 
 ### Alignment with Financial Rubric (C2.5)
 
-Financial control SOPs (per @fpa-analyst's 7-dimension rubric in C2.5) MUST populate `verification_test` with a foot-and-tie check — a three-way (or more) internal consistency test across independent sources. The AXIA MRR reconciliation example above is the canonical pattern. When an FP&A analyst applies the C2.5 rubric to an SOP, the first dimension checked is **Internal Consistency**, and the evidence for that dimension lives in the `verification_test` field of this schema. If the verification test is not a foot-and-tie (or equivalent independent-source reconciliation), the SOP fails the C2.5 rubric regardless of how polished the rest of the SOP is.
+Financial control SOPs (per @fpa-analyst's 7-dimension rubric in C2.5) MUST populate `verification_test` with a foot-and-tie check — a three-way (or more) internal consistency test across independent sources. The Northwind MRR reconciliation example above is the canonical pattern. When an FP&A analyst applies the C2.5 rubric to an SOP, the first dimension checked is **Internal Consistency**, and the evidence for that dimension lives in the `verification_test` field of this schema. If the verification test is not a foot-and-tie (or equivalent independent-source reconciliation), the SOP fails the C2.5 rubric regardless of how polished the rest of the SOP is.
 
-Non-financial SOPs (like SKYMOD fulfillment above) are not held to the foot-and-tie bar — their verification tests can be carrier status checks, API response validation, state-transition assertions — but they still need a named, runnable test. The C2.5 rubric only governs the financial subset; the 7-field schema governs all SOPs.
+Non-financial SOPs (like Brightwear fulfillment above) are not held to the foot-and-tie bar — their verification tests can be carrier status checks, API response validation, state-transition assertions — but they still need a named, runnable test. The C2.5 rubric only governs the financial subset; the 7-field schema governs all SOPs.
 
 ---
 
@@ -927,7 +927,7 @@ The C2.5 rubric (authored by @fpa-analyst) scores financial-control SOPs across 
 - **Automated** financial-control SOPs pass dimension 6 more robustly because the foot-and-tie runs on every run without human prompting. The risk shifts from "did the human run the check" to "did the check catch the right thing."
 - **Agentic** financial-control SOPs add a named human tiebreaker for edge cases where the automated foot-and-tie verdict is ambiguous (e.g., variance within the tolerance band but with unexplained source breakdown). The tiebreaker is the escape valve that prevents the automation from silently approving bad runs.
 
-**Canonical pointer:** financial-control SOPs at Documented or higher can pass C2.5 dimension 6. Financial-control SOPs at Manual cannot. The AXIA MRR Reconciliation SOP above is a Documented-level financial-control SOP whose verification test is a three-way foot-and-tie; moving it to Automated means running the foot-and-tie on every cron fire without the @fpa-analyst prompting it; moving it to Agentic means an agent role investigates variances and escalates to the @cfo tiebreaker only when its confidence is below threshold.
+**Canonical pointer:** financial-control SOPs at Documented or higher can pass C2.5 dimension 6. Financial-control SOPs at Manual cannot. The Northwind MRR Reconciliation SOP above is a Documented-level financial-control SOP whose verification test is a three-way foot-and-tie; moving it to Automated means running the foot-and-tie on every cron fire without the @fpa-analyst prompting it; moving it to Agentic means an agent role investigates variances and escalates to the @cfo tiebreaker only when its confidence is below threshold.
 
 ### Integration with `/compliance-audit`
 

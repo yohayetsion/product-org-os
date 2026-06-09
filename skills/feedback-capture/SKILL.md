@@ -62,7 +62,7 @@ Gather all available context about the feedback:
 | **Source Type** | Customer / Prospect / Sales / Support / Research / Internal | Yes |
 | **Source Name** | Person, company, or study name | Yes |
 | **Source Role** | Title/role if known | If available |
-| **Product** | Which product (for multi-product orgs, e.g., AXIA, SKYMOD) | If applicable |
+| **Product** | Which product (for multi-product orgs, e.g., Northwind, Brightwear) | If applicable |
 | **Feature** | What feature/area the feedback relates to | Yes |
 | **Product Version** | Version number if applicable | If available |
 | **Channel** | How feedback was received | Yes |

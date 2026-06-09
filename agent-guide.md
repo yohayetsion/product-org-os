@@ -316,9 +316,9 @@ Context entries link to each other automatically. When you recall a decision, yo
 For organizations with multiple products, add `product:` filtering:
 
 ```
-/context-recall pricing product:AXIA
-/feedback-recall onboarding product:SKYMOD
-/portfolio-status product:AXIA
+/context-recall pricing product:Northwind
+/feedback-recall onboarding product:Brightwear
+/portfolio-status product:Northwind
 ```
 
 ---

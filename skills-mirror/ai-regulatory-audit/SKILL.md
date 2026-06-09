@@ -232,7 +232,7 @@ The applicability rules below are consumed at Step 1. They mirror `compliance-fr
 | **HIPAA** | US healthcare data (PHI) processing under a covered entity or business associate relationship. Healthcare-sector only. |
 | **Illinois HB 3773 / Colorado AI Act / NYC Local Law 144** | Jurisdiction-specific employment context (hiring, promotion, termination decisions). Pointer to sector-specific `hr-ai-governance` analysis — this skill flags the applicability but does not deep-dive; refers to HR-specific counsel. |
 | **Israeli Protection of Privacy Law (PPL) 5741-1981** | Personal data processing touching Israeli residents. 2025 amendment expanded obligations; check `current-status.md` for phased effective dates. |
-| **Bank of Israel Directive 361** | Israeli banking sector. Sector-specific, banking-only. Pointer to `/compliance-audit --framework israeli-ppl-bank-discount` for the deep dive. |
+| **Bank of Israel Directive 361** | Israeli banking sector. Sector-specific, banking-only. Pointer to `/compliance-audit --framework israeli-ppl-meridian-bank` for the deep dive. |
 | **OECD AI Principles** | Intergovernmental alignment signal. Non-binding. Applicability is always "voluntary alignment layer" unless the organization is explicitly pursuing OECD signaling. |
 | **SOC 2 (AICPA TSC)** | Voluntary customer-facing trust signal for B2B SaaS (US market). Applicability is business-driven. Relevant to AI posture via CC6/CC7/CC8 controls that satisfy AI control obligations. |
 
@@ -453,7 +453,7 @@ Any additional consumer gateway MUST be added by the Compliance Officer owner pe
 
 ## Version History
 
-- **v1.0.0** (2026-04-11) — Initial authoring. Phase 5A C1.2b. First real consumer of the `current-status.md` sidecar pattern. Consumes `compliance-frameworks` v1.1.0 Section 3 mapping table top-down. Four-sided boundary against `/compliance-audit`, `/ai-control-audit`, `/privacy-policy-audit`, `/risk-analysis`. Birth test: Legionis organizational regulatory posture.
+- **v1.0.0** (2026-04-11) — Initial authoring. Phase 5A C1.2b. First real consumer of the `current-status.md` sidecar pattern. Consumes `compliance-frameworks` v1.1.0 Section 3 mapping table top-down. Four-sided boundary against `/compliance-audit`, `/ai-control-audit`, `/privacy-policy-audit`, `/risk-analysis`. Birth test: Atlas organizational regulatory posture.
 
 ---
 

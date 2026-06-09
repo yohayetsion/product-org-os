@@ -242,12 +242,12 @@ Pattern 5 Adversarial Review is NOT required for this skill. Segmentation is a c
 
 ## Birth Test
 
-Every new skill must be birth-tested against a real or synthetic customer portfolio before it is declared v1.0.0 ready. For `/cs-segmentation-model`, the birth test was run against the **Legionis target customer profile** (builder-consumer split, $10/mo individual workspace + $25/mo all-teams bundle) as it exercises all four tiers cleanly — the AXIA portfolio is enterprise-only and does not test the PLG or Tech-Touch tiers.
+Every new skill must be birth-tested against a real or synthetic customer portfolio before it is declared v1.0.0 ready. For `/cs-segmentation-model`, the birth test was run against the **Atlas target customer profile** (builder-consumer split, $10/mo individual workspace + $25/mo all-teams bundle) as it exercises all four tiers cleanly — the Northwind portfolio is enterprise-only and does not test the PLG or Tech-Touch tiers.
 
-The birth test output lives at: `Legionis/Product/cs-segmentation-birth-test-2026-04-11.md`
+The birth test output lives at: `Atlas/Product/cs-segmentation-birth-test-2026-04-11.md`
 
 The birth test validates:
-- Axis definition (log-scale ARR bands work for Legionis's long-tail distribution)
+- Axis definition (log-scale ARR bands work for Atlas's long-tail distribution)
 - Tier collapse produces a non-degenerate 4-tier breakdown
 - Override flags catch the "design partner" and "strategic champion" cases the primary tier alone would miss
 - Capacity calibration surfaces the CSM headcount gap

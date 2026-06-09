@@ -67,9 +67,9 @@ The single entry point. Routes requests to the right agents automatically.
 **Multi-Product Organizations**: Filter context by product.
 
 ```
-/context-recall pricing product:AXIA
-/feedback-recall onboarding product:SKYMOD
-/portfolio-status product:AXIA
+/context-recall pricing product:Northwind
+/feedback-recall onboarding product:Brightwear
+/portfolio-status product:Northwind
 ```
 
 ### Delegate to Agents (`@agent`)

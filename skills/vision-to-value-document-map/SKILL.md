@@ -3,7 +3,7 @@ name: vision-to-value-document-map
 description: 'Generate a branded Vision to Value Document Map for a product — a visual index of all strategic assets organized by the 6 Vision to Value phases, with links to both MD source and HTML presentation
   for each asset. Activate when: "document map", "vision to value map", "strategic asset map", "show all documents for [product]", "what documents do we have" Do NOT activate for: creating individual documents
   (/prd, /strategic-bet, etc.), portfolio status (/portfolio-status), phase check (/phase-check)'
-argument-hint: '[product name] — e.g., "AXIA", "Legionis"'
+argument-hint: '[product name] — e.g., "Northwind", "Atlas"'
 user-invocable: true
 metadata:
   author: Product Org OS
@@ -87,15 +87,15 @@ Open the HTML for review. The map should be a clean, branded reference page.
 
 Each product needs a brand config:
 
-| Property | Description | Example (AXIA) | Example (Legionis) |
+| Property | Description | Example (Northwind) | Example (Atlas) |
 |----------|-------------|-----------------|---------------------|
 | `primary` | Main brand color | `#0D9488` (teal) | `#6366F1` (indigo) |
 | `primary_light` | Lighter variant | `#14B8A6` | `#818CF8` |
 | `accent` | Secondary color | `#22D3EE` (cyan) | `#d97706` (amber) |
 | `bg` | Page background | `#0D1117` | `#1c1917` |
 | `bg_card` | Card background | `#161B22` | `#292524` |
-| `favicon` | From live website | axiasecurity.io favicon | legionis.ai favicon |
-| `logo` | From live website | axiasecurity.io apple-touch-icon | legionis.ai SVG icon |
+| `favicon` | From live website | northwind.example favicon | atlas.example favicon |
+| `logo` | From live website | northwind.example apple-touch-icon | atlas.example SVG icon |
 
 **To extract brand assets from a live website:**
 ```bash

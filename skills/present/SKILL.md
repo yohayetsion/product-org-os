@@ -30,7 +30,7 @@ That's it. Do NOT manually generate HTML presentations — always use the handle
 ## What the Handler Produces
 
 - **Self-contained HTML** — no external JS/CSS (only Google Fonts link)
-- **Brand-adaptive** — auto-detects brand from title (AXIA, Legionis, SKYMOD, Maad House) and applies correct colors, favicon, and logo
+- **Brand-adaptive** — auto-detects brand from title (Northwind, Atlas, Brightwear, Pixel Studio) and applies correct colors, favicon, and logo
 - **Scrollable slides** — `min-height: 100vh; overflow: auto` (NEVER clips content)
 - **Nav bar** — CSS Grid bottom bar with section dots, slide counter, slide dots
 - **Keyboard + touch** — arrow keys, swipe, Home/End, slide jump overlay

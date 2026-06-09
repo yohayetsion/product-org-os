@@ -73,9 +73,9 @@ Before producing ANY output, complete these reads in order. These are not sugges
 
 2. For every entry in your manual's `metadata.preload_knowledge_packs` array, Read the pack file. These are Tier 1 (always-load) packs — read them regardless of task.
    **Resolve the path by inspecting its shape first** (three production shapes):
-   - **Shape (i) — bare name** (no slash, no extension; e.g., `pricing-frameworks`): try `reference/knowledge/{path}.md`; then `Extension Teams/reference/knowledge/{path}.md`; then `Product Org OS/product-org-plugin/reference/knowledge/{path}.md`; then Glob to locate by name.
-   - **Shape (ii) — path with extension** (e.g., `architecture-team/PRINCIPLES.md`): strip the extension to get `{base}`, then try `reference/knowledge/{base}.md`; then `Extension Teams/reference/knowledge/{base}.md`; then treat the original path as relative-to-workspace-root and try it as-is; then Glob.
-   - **Shape (iii) — absolute-from-workspace-root** (starts with `Extension Teams/` or `Product Org OS/` or another known top-level directory): use the path AS-IS, no chain. If not found at the literal path, emit ✗ in the Audit Block with reason "absolute path not found" and continue.
+   - **Shape (i) — bare name** (no slash, no extension; e.g., `pricing-frameworks`): try `reference/knowledge/{path}.md`; then `Product Org OS/product-org-plugin/reference/knowledge/{path}.md`; then Glob to locate by name.
+   - **Shape (ii) — path with extension** (e.g., `product-org-plugin/PRINCIPLES.md`): strip the extension to get `{base}`, then try `reference/knowledge/{base}.md`; then treat the original path as relative-to-workspace-root and try it as-is; then Glob.
+   - **Shape (iii) — absolute-from-workspace-root** (starts with `Product Org OS/` or another known top-level directory): use the path AS-IS, no chain. If not found at the literal path, emit ✗ in the Audit Block with reason "absolute path not found" and continue.
    The Audit Block's `Fallbacks:` line MUST honestly report which shape was detected per entry and which fallback step (if any) located the file.
 
 ### VERIFY BEFORE DECLARING MISSING (§2.4 — NON-NEGOTIABLE)
@@ -88,7 +88,7 @@ If a Read returns "file not found": (a) retry the Read once with the exact origi
 - Fires only for OS agents (those in §1 Agent Identity Registry — Product Org OS 5.x+).
 - Fires only for deliverable-producing tasks (tasks whose output the user would save as a file — PRDs, specs, strategic documents, decision records, business cases, plans, analyses).
 - Does NOT fire for: Q&A, lookups, status checks, analysis-only spawns. Those emit `[Decision Records] skipped — non-deliverable task` and proceed.
-- Does NOT fire for ET agents (Marketing, Design, Architecture, Finance, Legal, Operations, Executive, Corp Dev, IT, Staff, Dev, HR, CS, Sales, Data).
+- Does NOT fire for non-OS agents (different methodology — no DR/context registry).
 - Does NOT fire for PMTK agents (different methodology, no DR registry analog).
 - In multi-agent runs, fires ONLY for the synthesis owner (see Multi-Agent DR Ownership Rule below); sub-agents skip.
 
@@ -101,10 +101,20 @@ If a Read returns "file not found": (a) retry the Read once with the exact origi
 
 If yes to any → candidate DR. Track candidates as you go; surface them in the Audit Block.
 
+**2b. SNIFF other context types (NEW — same OS-deliverable scope):** while producing the deliverable, also scan for:
+- **Assumption candidate** — something the deliverable depends on that is not yet validated → draft via `/assumption-map` (`A-NNN`).
+- **Learning candidate** — a generalizable lesson worth carrying forward → record (`L-NNN`).
+
+Strategic Bets (`SB-`) and Documents (`DOC-`) are **report-only** here (DOC is auto-detected by os-tracker; create an SB only via explicit `/strategic-bet` when the work genuinely sets portfolio direction). In **multi-agent** runs, sub-agents MAY surface candidate Assumptions/Learnings verbally (like candidate DRs); only the **synthesis owner commits** them. Commit load-bearing A/L, then report all created/updated context ids in the Audit Block's `[Context Records]` section. The existing MANDATORY `/feedback-capture` rule is unchanged — `[Context Records]` reports the resulting `FB-` id, it does not re-mandate capture.
+
 **3. DRAFT or UPDATE (post-analysis)**:
-- **NEW DR**: Actually write the file at `context/decisions/{year}/DR-{year}-{NNN}.md` using the `/decision-record` schema. **Don't merely suggest — draft the file.** Reference it under "Drafted this run."
+- **NEW DR**: Actually write the file at `context/decisions/{year}/DR-{year}-{NNN}.md` using the `/decision-record` schema. **Don't merely suggest — draft the file.** Reference it under "Drafted this run." The DR is the unit the Decision Provenance Standard captures and attests on, so it MUST carry the DPS close-block fields by default: `Record State` (set to `drafted`, never `closed`), `Dispatch Mode` (mode-1 for human-led work; mode-2 if AI worker authored the substance), and the Layer-4 attestation + accountable-owner-signoff fields left as `[PENDING HUMAN AFFIRMATION]`. Per DPS, only a named human can affirm a record to `closed` — the agent drafts; the human closes.
 - **EXISTING DR — status change** (validated, invalidated, superseded): Run `/context-save` to update. Reference under "Updated this run."
 - **EXISTING DR — conflict with new evidence**: Surface under "Conflicts flagged." Recommend (don't unilaterally apply) the status update.
+
+**4. SURFACE FOR HUMAN AFFIRMATION (post-draft — MANDATORY when a NEW DR was drafted)**: A DR an agent drafts is at most DPS `drafted`; it is NOT a closed decision. After drafting, proactively surface it to the user and ask for the sign-off that closes it. State it plainly in your response prose (not only in the Audit Block), e.g.:
+> "I've recorded this as **DR-YYYY-NNN** at `context/decisions/YYYY/DR-YYYY-NNN.md`. Per the Decision Provenance Standard it's at `drafted` and needs your affirmation to close — you're the named accountable owner. Approve it as written, or want changes first?"
+Do NOT mark the DR `closed`, set Status to "Accepted," or populate the Layer-4 attestation / accountable-owner-signoff fields yourself. If the user approves, then populate the affirmation fields with the user's identity + the affirmation timestamp and update Record State to `closed`.
 
 ### REQUIRED FIRST ACTIONS — Phase 2: Task-Specific Loading (NON-NEGOTIABLE)
 
@@ -124,7 +134,7 @@ If you are responding inline as a persona without a Task-tool spawn (e.g., user 
 
 ### AUDIT BLOCK — Phase 2.5: Emit the Spawn Audit Block (NON-NEGOTIABLE for Task-tool spawns)
 
-Before any other output, emit the structured Audit Block. This is the proof that the protocol fired. The block goes at the very top of your response, BEFORE your agent identity header.
+Before any other output, emit the structured Audit Block. This is the proof that the protocol fired. The block goes at the very top of your response, BEFORE your agent identity header. **Always include an `[Outputs]` section** — `- MD: <path>` for a deliverable, or `- none — non-deliverable`; OS deliverable tasks also include `[Context Records]`.
 
 **Schema — single-author OS agent (deliverable task):**
 
@@ -142,10 +152,20 @@ Before any other output, emit the structured Audit Block. This is the proof that
 [Decision Records — deliverable task]
 - Read pre-analysis (constraints honored): DR-YYYY-NNN, DR-YYYY-MMM
 - Sniffed during work: N candidate decisions surfaced; X promoted to draft, Y dismissed (not load-bearing), Z flagged as conflict
-- Drafted this run (new DR files written): DR-YYYY-NNN "Title" → context/decisions/YYYY/DR-YYYY-NNN.md
+- Drafted this run (new DR files written): DR-YYYY-NNN "Title" → context/decisions/YYYY/DR-YYYY-NNN.md [DPS state: drafted — surfaced to user for affirmation to close]
 - Updated this run (existing DRs status-changed): DR-YYYY-NNN → validated (evidence: ...)
 - Conflicts flagged (DR vs new evidence): DR-YYYY-NNN says X; this work suggests Y — recommend /context-save status update
 - Open assumptions tracked: A-NNN, A-NNN
+
+[Context Records]
+- Created: A-NNN (assumption), L-NNN (learning)
+- Updated: FB-YYYY-NNN, SB-YYYY-NNN
+- Surfaced (report-only, not committed): SB-YYYY-NNN candidate; DOC auto-detected by os-tracker
+- DRs: see [Decision Records]
+
+[Outputs]
+- MD: context/<path>/<deliverable>.md
+- Presentation: orchestrator will generate
 
 [Post-Execution ROI]
 - Time saved: ~X hrs (baseline: skill-name × complexity-multiplier)
@@ -154,16 +174,21 @@ Before any other output, emit the structured Audit Block. This is the proof that
 - Value: ~$V (X hrs × $100/hr senior product professional rate)
 ```
 
+`[Context Records]` (NEW) reports the non-DR context types this spawn created/updated — Assumptions (`A-`), Learnings (`L-`), Feedback (`FB-`), Strategic Bets (`SB-`), Documents (`DOC-`). It fires on OS deliverable tasks only (same scope as `[Decision Records]`), is OMITTED on non-OS and non-deliverable blocks, and **cross-references DRs (`see [Decision Records]`) — never re-lists them**. Use `- none` when nothing was created/updated. `[Outputs]` (NEW) is **always present on every block** (see the Output Contract below); non-deliverable spawns use `- none — non-deliverable`.
+
 **Schema — single-author OS agent (non-deliverable task):**
 
-Same as above but Decision Records section reduces to one line:
+Decision Records and Context Records both reduce/omit; `[Outputs]` is still present with the empty token:
 ```
 [Decision Records — skipped, non-deliverable task]
+
+[Outputs]
+- none — non-deliverable
 ```
 
-**Schema — ET / PMTK agent (any task):**
+**Schema — non-OS agent (e.g. PMTK) (any task):**
 
-Decision Records section is OMITTED entirely (these methodologies have no DR registry).
+Decision Records AND Context Records sections are OMITTED entirely (these methodologies have no DR/context registry). `[Outputs]` is still REQUIRED (always-present): `- MD: <path>` for a deliverable, or `- none — non-deliverable`.
 
 **Schema — Joint Authoring (any combination of N authors):**
 
@@ -185,7 +210,16 @@ Decision Records section is OMITTED entirely (these methodologies have no DR reg
 - Fallbacks: ...
 
 [Decision Records — synthesis owner only; or "N/A — no OS author"]
-(Only the OS synthesis owner emits this; ET-only pairs omit it.)
+(Only the OS synthesis owner emits this; non-OS-only pairs omit it.)
+
+[Context Records — synthesis owner only; OS author required, else omit]
+- Created: A-NNN, L-NNN
+- Updated: FB-YYYY-NNN
+- DRs: see [Decision Records]
+
+[Outputs]
+- MD: <synthesis MD path>
+- Presentation: pending — orchestrator generates post-synthesis
 
 [Post-Execution ROI]
 - Time saved: ~X hrs (joint deliverable, sum of all contributors)
@@ -203,6 +237,19 @@ Decision Records section is OMITTED entirely (these methodologies have no DR reg
 4. **No `lightweight_spawn` references.** The escape hatch is removed; the term must not appear in emitted blocks.
 5. **Joint-authoring split percentages MUST reflect output-section attribution or be omitted.** Don't cargo-cult 50/50. If you can't attribute by section, omit the Split line.
 6. **Zero counts use specific phrasing.** When a count is 0 because the agent declares nothing in that category, state "0 declared on this agent" so the audit can distinguish "had nothing to load" from "failed to load."
+7. **`[Outputs]` is ALWAYS PRESENT.** Every emitted block carries an `[Outputs]` section. Deliverable spawns list at least one `- MD: <path>`; non-deliverable spawns use the blessed empty token `- none — non-deliverable`. A missing `[Outputs]` is a validator-detected deviation (`MISSING_OUTPUTS`). The presentation path appears ONLY in the synthesis owner's `[Outputs]` (sub-agents use `Presentation: orchestrator will generate`).
+8. **`[Context Records]` is OS-deliverable-only and never duplicates DRs.** It appears on OS deliverable blocks (omitted on non-OS / non-deliverable), reports created/updated `A-`/`L-`/`FB-`/`SB-`/`DOC-` ids, and points back to `[Decision Records]` for DRs rather than re-listing them.
+
+### OUTPUT & PRESENTATION CONTRACT (§2.7 — NEW)
+
+This is what `[Outputs]` makes auditable. The mechanics are referenced from `agent-output-automation.md` (the contract is portable; the generator is local/pluggable).
+
+1. **MD (per deliverable spawn).** If your task is deliverable-producing — output the user would save as a file (PRD, spec, analysis, plan, decision record, business case) — you MUST write the work product to a Markdown file at a declared path and list it as `- MD: <path>` in `[Outputs]`. Do not return a long deliverable only inline (this reinforces the Response-Length rule below). Non-deliverable spawns declare `- none — non-deliverable`.
+2. **Presentation (orchestrator-owned, exactly one).** Producing the HTML presentation is the ORCHESTRATOR's job, not the sub-agent's, and is NOT hooked:
+   - **Single-agent deliverable** → the orchestrator runs the configured presentation generator on the agent's MD → ONE branded, commentable HTML.
+   - **Multi-agent** → the orchestrator synthesizes ONE storytelling MD from the combined work → ONE HTML; optionally ONE slide per agent (agent-voice section, separated by a `---` hard slide-break). **Never N decks.** Sub-agents declare their own MD with `Presentation: orchestrator will generate`; only the synthesis owner's `[Outputs]` carries the real/`pending` presentation path.
+   - The presentation MUST use the current commentable template and the brand auto-selected by the project being worked on. The default generator path is already commentable (inline commenting always-on); the orchestrator passes `--brand <project-brand>` explicitly. (It does NOT pass `--commentable` — that flag selects a separate legacy unbranded renderer.)
+   - **Graceful fallback:** if no generator is configured, produce the MD and print the exact manual command (do not silently skip). First-run auto-provisioning of a default `agent-output-automation.md` via `/setup` is a planned enhancement; until then, the graceful fallback above applies and the mechanics live in `agent-output-automation.md`.
 
 ### MACHINE-CHECKABLE SCHEMA (§2.8)
 
@@ -239,7 +286,7 @@ python "Product Org OS/product-org-plugin/hooks/audit-block-validator.py" <trans
 - Use "[TBD]" or "[your estimate]" for numbers you don't have
 
 ### Context Awareness (subsumed by Phase 1.5 for OS agents)
-For OS agents on deliverable tasks, Phase 1.5 covers /context-recall before work + DR drafting after. For non-deliverable tasks and for ET/PMTK agents, still:
+For OS agents on deliverable tasks, Phase 1.5 covers /context-recall before work + DR drafting after. For non-deliverable tasks and for non-OS agents, still:
 - Check `/feedback-recall [topic]` for customer input when relevant
 - Honor constraints from prior decisions; don't re-litigate without new evidence
 
@@ -267,13 +314,13 @@ In any multi-agent run (gateway spawns like `/product` or `/plt`; parallel patte
 | Run shape | DR owner |
 |---|---|
 | Single-agent OS spawn (deliverable task) | The spawned agent |
-| Single-agent ET or PMTK spawn | No DR phase fires |
+| Single-agent non-OS spawn | No DR phase fires |
 | Gateway spawn (e.g., `/product feature X`) | The gateway agent doing synthesis (typically OS) |
 | PLT vote / portfolio review | The senior agent producing the synthesis (typically @cpo or @vp-product) |
 | Parallel pattern with named synthesizer | That synthesizer |
 | Parallel pattern with no synthesizer (raw outputs handed back to Claude) | **Claude itself** (the orchestrator) — runs Phase 1.5 as part of synthesis |
 | Joint-authoring spawn with at least one OS author | The senior OS author |
-| All-ET multi-agent run | No DR section emitted by anyone |
+| All-non-OS multi-agent run | No DR section emitted by anyone |
 | All-PMTK multi-agent run | No DR section emitted by anyone |
 
 ### Why single-owner
@@ -474,17 +521,18 @@ Interaction and ROI logging are handled automatically by `hooks/os-tracker.py`.
 
 ### Post-Response Sequence
 
-1. Apply Meeting Mode (if multi-agent) → 2. Display Audit Block (per Phase 2.5) → 3. **Automatic**: `os-tracker.py` logs ROI + interaction + session summary → 4. Run agent-output-handler.py (if deliverable)
+1. Apply Meeting Mode (if multi-agent) → 2. Display Audit Block (per Phase 2.5, incl. `[Outputs]` + `[Context Records]`) → 3. **Automatic**: `os-tracker.py` logs ROI + interaction + session summary + documents/context ids → 4. **Orchestrator-owned presentation step (per §2.7 Output & Presentation Contract):** run the configured presentation generator on the deliverable MD(s) → exactly ONE branded, commentable HTML (single-agent = the agent's MD; multi-agent = the synthesis MD, optional one slide/agent). Graceful fallback to MD + printed command if no generator is configured.
 
-When Claude Code hooks are configured, Step 3 fires automatically via PostToolUse. For manual setups, see `AGENT-INTEGRATION.md`.
+When Claude Code hooks are configured, Step 3 fires automatically via PostToolUse. Step 4 is orchestrator-owned and NOT hooked. For manual setups, see `AGENT-INTEGRATION.md`.
 
 ### What Gets Logged
 
 - **ROI**: Appended to `context/roi/session-log.md`
 - **Interaction**: Appended to `context/interactions/YYYY/YYYY-MM-DD.md`
 - **Session summary**: Updated in `context/interactions/current-session.md`
-- **Documents**: Detected file paths appended to `context/documents/registry.md`
+- **Documents**: Detected file paths (incl. `[Outputs]` MD + presentation) appended to `context/documents/registry.md`
 - **DR events**: Drafted/updated DRs from Phase 1.5 appended to `context/decisions/index.md`
+- **Context records**: Created/updated `A-`/`L-`/`FB-`/`SB-`/`DOC-` ids from the `[Outputs]`/`[Context Records]` sections (os-tracker prefers the structured sections over the blind scrape)
 
 ### Audit Block Validation
 

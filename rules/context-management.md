@@ -145,7 +145,7 @@ Documents: `DOC-[YYYY]-[NNN]` | Decisions: `DR-[YYYY]-[NNN]` | Bets: `SB-[YYYY]-
 
 ## Multi-Product Organizations
 
-Optional `product:` field for filtering. Single-product orgs ignore it. Use consistent product names. Filter with `product:AXIA` in recall commands. Records without product are cross-product.
+Optional `product:` field for filtering. Single-product orgs ignore it. Use consistent product names. Filter with `product:Northwind` in recall commands. Records without product are cross-product.
 
 ---
 

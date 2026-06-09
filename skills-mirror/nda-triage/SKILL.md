@@ -64,9 +64,9 @@ The skill deliberately sits DOWNSTREAM of `/risk-analysis` and UPSTREAM of speci
 Run a decision-tree triage on a specific NDA. Produces a new nda-triage output file.
 
 ```
-/nda-triage "SKYMOD vendor NDA from Acme Corp"
-/nda-triage AXIA/Marketing/nda-draft-mutual-2026.pdf
-/nda-triage "Legionis inbound NDA from enterprise prospect"
+/nda-triage "Brightwear vendor NDA from Acme Corp"
+/nda-triage Northwind/Marketing/nda-draft-mutual-2026.pdf
+/nda-triage "Atlas inbound NDA from enterprise prospect"
 ```
 
 ### Update
@@ -91,7 +91,7 @@ Use adversarial sub-mode ONLY when:
 - A named human tiebreaker is available
 
 ```
-/nda-triage nda-mna-target --mode adversarial --tiebreaker "Yohay Etsion"
+/nda-triage nda-mna-target --mode adversarial --tiebreaker "Sam Rivera"
 ```
 
 For routine vendor and sales NDAs, use default Create mode with Pattern 1 Consultation for specialist questions (IP Counsel, Privacy Counsel, Employment Counsel).
@@ -112,7 +112,7 @@ The skill MUST collect the following before producing output. If any are missing
 | Deal context | Yes | "Initial vendor qualification, no commitment" |
 | Jurisdiction (or authorization to read off document) | Yes | "Reads governing-law clause and reports what IT says" |
 | Known red lines | If known | "No non-solicit in any form", "Term capped at 3 years", "No assignment without consent" |
-| Tiebreaker (adversarial mode only) | Yes if adversarial | "Yohay Etsion" |
+| Tiebreaker (adversarial mode only) | Yes if adversarial | "Sam Rivera" |
 
 If jurisdiction is unknown, the skill reads the governing-law clause of the NDA itself and reports what IT says, rather than silently picking a default. If the NDA is silent on governing law, that is itself a P0 finding.
 
@@ -364,7 +364,7 @@ Do NOT use Pattern 5 for routine vendor or sales NDAs. The default Create mode w
 
 - **Pass 2 — Substantive Check** — ⚖️ General Counsel verifies the decision-tree logic, branch scoring, verdict rules, severity thresholds, delegation-pattern appropriateness, scope boundary correctness, jurisdiction handling, and edge cases. **72-hour SLA** for subsequent-similar Phase 3 legal skills; the template pattern was validated by A5 `/risk-analysis` and A1 `/contract-review` publication earlier in Phase 3.
 
-- **Birth Test — DEFERRED** — Per Yohay's Option E decision on 2026-04-11, A2 ships as v1.0.0 **without a birth test**. See the Attribution and Maintenance section for the full rationale.
+- **Birth Test — DEFERRED** — Per Sam's Option E decision on 2026-04-11, A2 ships as v1.0.0 **without a birth test**. See the Attribution and Maintenance section for the full rationale.
 
 On every invocation, the skill self-checks against Section 7 of `sensitive-skill-guardrails.md` BEFORE producing output. If the self-check fails on any non-deferred item, the output does not publish.
 
@@ -402,13 +402,13 @@ New consumers require a frontmatter update and a one-line note in the consuming 
 
 **Authoring**: First-principles. This skill was authored from scratch during Phase 3 Sub-phase 3.1 on 2026-04-11, inheriting the structural pattern from A1 `/contract-review` (the first contract-specific Phase 3 skill) but with entirely original content. The decision tree is the novel contribution unique to A2.
 
-**Clause library dependency**: `/nda-triage` reads primarily from the Confidentiality category of `reference/clause-patterns.md` (bootstrapped by A1's birth test against the AXIA EULA v2). Secondary references: Jurisdiction & Governing Law, Term/Termination, IP, and Data Protection categories. When the library is updated, `/nda-triage` picks up new patterns automatically. The library's version (date) is recorded in the NDA Metadata block of every output for traceability.
+**Clause library dependency**: `/nda-triage` reads primarily from the Confidentiality category of `reference/clause-patterns.md` (bootstrapped by A1's birth test against the Northwind EULA v2). Secondary references: Jurisdiction & Governing Law, Term/Termination, IP, and Data Protection categories. When the library is updated, `/nda-triage` picks up new patterns automatically. The library's version (date) is recorded in the NDA Metadata block of every output for traceability.
 
 ### Birth Test — DEFERRED per Option E
 
 **Status at v1.0.0**: No birth test. Shipping anyway.
 
-**Rationale**: The Phase 3 Sub-phase 3.1 plan named a completed SKYMOD vendor NDA as the birth-test target for A2. Yohay searched the workspace for a completed SKYMOD vendor NDA on 2026-04-11 and none exists as a file. Rather than fabricate a synthetic NDA or a fake birth-test output (which would violate first-principles authoring — no fabricated test fixtures), Yohay chose **Option E**: ship A2 without a birth test, explicitly flagged as "awaiting first real triage," and let the first real NDA that arrives through the Etsion Brands pipeline (SKYMOD corporate gifting, Maad House vendor work, ProductBeacon practice engagements, AXIA enterprise sales, or any other channel) become the natural v1.0.0 birth test.
+**Rationale**: The Phase 3 Sub-phase 3.1 plan named a completed Brightwear vendor NDA as the birth-test target for A2. Sam searched the workspace for a completed Brightwear vendor NDA on 2026-04-11 and none exists as a file. Rather than fabricate a synthetic NDA or a fake birth-test output (which would violate first-principles authoring — no fabricated test fixtures), Sam chose **Option E**: ship A2 without a birth test, explicitly flagged as "awaiting first real triage," and let the first real NDA that arrives through the Acme Holdings pipeline (Brightwear corporate gifting, Pixel Studio vendor work, ProductBeacon practice engagements, Northwind enterprise sales, or any other channel) become the natural v1.0.0 birth test.
 
 **When the first real NDA arrives**: Run `/nda-triage` on it, capture the verdict and the 3-5 driving findings, validate the decision-tree branches against the actual text, and feed the observed clause patterns back into the Confidentiality category of `clause-patterns.md`. The resulting triage output becomes the v1.0.0 birth test and gets noted in the Changelog as validating (or requiring correction to) the decision tree.
 
@@ -465,4 +465,4 @@ Producing output at:
 
 ## Changelog
 
-- **1.0.0 (2026-04-11)** — Initial authoring. First-principles during Phase 3 Sub-phase 3.1. Second contract-specific Phase 3 skill; inherits structural pattern from A1 `/contract-review`. Decision tree is the novel contribution unique to A2. **Birth test DEFERRED per Yohay's Option E decision**: the Phase 3 plan's named SKYMOD vendor NDA target does not exist as a file in the workspace; the skill ships awaiting first real NDA triage through the Etsion Brands pipeline as v1.0.0 validation. Substantive review passed by ⚖️ General Counsel on the 72-hour subsequent-similar SLA (A5 and A1 validated the template pattern earlier in Phase 3); scaffolding review passed by 📋 Director of Legal Affairs. All other `sensitive-skill-guardrails.md` Section 7 items pass at v1.0.0.
+- **1.0.0 (2026-04-11)** — Initial authoring. First-principles during Phase 3 Sub-phase 3.1. Second contract-specific Phase 3 skill; inherits structural pattern from A1 `/contract-review`. Decision tree is the novel contribution unique to A2. **Birth test DEFERRED per Sam's Option E decision**: the Phase 3 plan's named Brightwear vendor NDA target does not exist as a file in the workspace; the skill ships awaiting first real NDA triage through the Acme Holdings pipeline as v1.0.0 validation. Substantive review passed by ⚖️ General Counsel on the 72-hour subsequent-similar SLA (A5 and A1 validated the template pattern earlier in Phase 3); scaffolding review passed by 📋 Director of Legal Affairs. All other `sensitive-skill-guardrails.md` Section 7 items pass at v1.0.0.
