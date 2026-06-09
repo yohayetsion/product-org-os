@@ -320,7 +320,7 @@ User: /risk-analysis Meridian Bank Deal
 Collecting inputs:
   - Initiative: Northwind Meridian Bank Deal
   - Jurisdiction: Assumed Israel (governing law) + Delaware (Northwind parent entity). Flagged as assumption — confirm in Order Form governing-law clause.
-  - Counterparty: Meridian Bank (Israel Discount Bank), Top-5 Israeli bank, regulated by Bank of Israel Directive 361
+  - Counterparty: Meridian Bank, Top-5 Israeli bank, regulated by Bank of Israel Directive 361
   - Stage: Pre-signature, proposal v3 drafted, awaiting technical deep-dive
   - Known constraints: SOC 2 not yet certified, bridge letter required; 4-person startup delivery capacity; Northwind Israeli entity not yet formed
 
