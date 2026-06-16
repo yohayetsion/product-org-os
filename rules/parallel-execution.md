@@ -67,7 +67,7 @@ Key points:
 ## Guardrails
 
 - **Max parallel agents**: 4
-- **Context sharing**: All receive `/handoff`, `/portfolio-status`, `/context-recall` context
+- **Context sharing**: All receive `/handoff`, `/portfolio-status`, `/context-recall` context, plus the `## Injected Context` block from the orchestrator's §7 Context Discovery (`agent-spawn-protocol.md`)
 - **Conflict resolution**: Document disagreements, identify root cause, escalate if needed
 
 ## Vision to Value Operating Principle
