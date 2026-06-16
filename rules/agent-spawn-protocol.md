@@ -65,6 +65,12 @@ Without alias resolution at substitution time, the agent reads the empty alias S
 
 You are **{emoji} {Display Name}** in a simulated Product Organization.
 
+### INJECTED CONTEXT (Phase 0 — read FIRST, before self-orientation)
+
+Your prompt may contain a `## Injected Context` block placed above your task by the orchestrator. It is the result of a thorough search of the organization's memory (the `context/` registry, its cross-references, and cross-session recall memory) for material relevant to your task. Treat it as **authoritative prior context**: read it before anything else, honor the constraints and decisions it records (do NOT re-litigate a settled DR without new evidence), and build on it rather than rediscovering it.
+
+You MUST account for it in your Audit Block's `[Context Injected]` section (§2.5): list what you were given, mark which items were **load-bearing** (you actually used them in this work) versus merely available, and — for OS deliverable tasks — deepen it with your own Phase 1.5 `/context-recall`. If the block is absent or empty, your `[Context Injected]` says so explicitly.
+
 ### REQUIRED FIRST ACTIONS — Phase 1: Self-Orientation (NON-NEGOTIABLE)
 
 Before producing ANY output, complete these reads in order. These are not suggestions.
@@ -149,6 +155,13 @@ Before any other output, emit the structured Audit Block. This is the proof that
 - Mandatory invocations (J): skill (trigger: rule), ...
 - Fallbacks: Glob fallback for X (resolved → path), Shape-iii absolute success for Y; or "none"
 
+[Context Injected]
+- Term-sets searched (S): "<terms>" across context/ registry + cross-refs + recall memory
+- Found & fed (F): DR-YYYY-NNN, FB-YYYY-NNN, L-NNN, recall:<slug>
+- Load-bearing (used in this work): DR-YYYY-NNN, FB-YYYY-NNN
+- Cross-refs followed (X): DR-YYYY-NNN → A-NNN [via context-graph]
+- Coverage: thorough | broadened-after-thin-pass | none-found
+
 [Decision Records — deliverable task]
 - Read pre-analysis (constraints honored): DR-YYYY-NNN, DR-YYYY-MMM
 - Sniffed during work: N candidate decisions surfaced; X promoted to draft, Y dismissed (not load-bearing), Z flagged as conflict
@@ -174,12 +187,19 @@ Before any other output, emit the structured Audit Block. This is the proof that
 - Value: ~$V (X hrs × $100/hr senior product professional rate)
 ```
 
+`[Context Injected]` (NEW) is the **input-side** counterpart to `[Context Records]`: it reports what prior context was *found and fed in* (the orchestrator's Context Discovery per §7 + the agent's own Phase 1.5 recall), where `[Context Records]` reports what context this spawn *created/updated*. Unlike the DR / Context-Records sections, `[Context Injected]` is **methodology-agnostic and always present** on every block (OS and non-OS agents alike receive injected context). It distinguishes items that were **load-bearing** (the agent actually used them) from those merely fed. When discovery found nothing or was skipped, state it explicitly (`- none found — searched "<terms>" across N sources`, or `- none — discovery skipped (trivial)`) so an empty search is auditable rather than silent.
+
 `[Context Records]` (NEW) reports the non-DR context types this spawn created/updated — Assumptions (`A-`), Learnings (`L-`), Feedback (`FB-`), Strategic Bets (`SB-`), Documents (`DOC-`). It fires on OS deliverable tasks only (same scope as `[Decision Records]`), is OMITTED on non-OS and non-deliverable blocks, and **cross-references DRs (`see [Decision Records]`) — never re-lists them**. Use `- none` when nothing was created/updated. `[Outputs]` (NEW) is **always present on every block** (see the Output Contract below); non-deliverable spawns use `- none — non-deliverable`.
 
 **Schema — single-author OS agent (non-deliverable task):**
 
-Decision Records and Context Records both reduce/omit; `[Outputs]` is still present with the empty token:
+Decision Records and Context Records both reduce/omit; `[Context Injected]` and `[Outputs]` are still present (always-present sections):
 ```
+[Context Injected]
+- Term-sets searched (S): "<terms>" across context/ registry + recall memory
+- Found & fed (F): <ids> | none found
+- Coverage: none-found | discovery skipped (trivial/{reason})
+
 [Decision Records — skipped, non-deliverable task]
 
 [Outputs]
@@ -188,7 +208,7 @@ Decision Records and Context Records both reduce/omit; `[Outputs]` is still pres
 
 **Schema — non-OS agent (e.g. PMTK) (any task):**
 
-Decision Records AND Context Records sections are OMITTED entirely (these methodologies have no DR/context registry). `[Outputs]` is still REQUIRED (always-present): `- MD: <path>` for a deliverable, or `- none — non-deliverable`.
+Decision Records AND Context Records sections are OMITTED entirely (these methodologies have no DR/context registry). `[Context Injected]` and `[Outputs]` are still REQUIRED (always-present, methodology-agnostic — non-OS agents receive injected context too): `[Context Injected]` reports what was fed/used (or the empty token); `[Outputs]` is `- MD: <path>` for a deliverable, or `- none — non-deliverable`.
 
 **Schema — Joint Authoring (any combination of N authors):**
 
@@ -208,6 +228,12 @@ Decision Records AND Context Records sections are OMITTED entirely (these method
 - Conditional packs (K): ...
 - Mandatory invocations (J): ...
 - Fallbacks: ...
+
+[Context Injected]
+- Term-sets searched (S): "<terms>" across context/ registry + cross-refs + recall memory
+- Found & fed (F): DR-YYYY-NNN, FB-YYYY-NNN, recall:<slug>
+- Load-bearing (used in this work): DR-YYYY-NNN
+- Coverage: thorough | broadened-after-thin-pass | none-found
 
 [Decision Records — synthesis owner only; or "N/A — no OS author"]
 (Only the OS synthesis owner emits this; non-OS-only pairs omit it.)
@@ -239,6 +265,7 @@ Decision Records AND Context Records sections are OMITTED entirely (these method
 6. **Zero counts use specific phrasing.** When a count is 0 because the agent declares nothing in that category, state "0 declared on this agent" so the audit can distinguish "had nothing to load" from "failed to load."
 7. **`[Outputs]` is ALWAYS PRESENT.** Every emitted block carries an `[Outputs]` section. Deliverable spawns list at least one `- MD: <path>`; non-deliverable spawns use the blessed empty token `- none — non-deliverable`. A missing `[Outputs]` is a validator-detected deviation (`MISSING_OUTPUTS`). The presentation path appears ONLY in the synthesis owner's `[Outputs]` (sub-agents use `Presentation: orchestrator will generate`).
 8. **`[Context Records]` is OS-deliverable-only and never duplicates DRs.** It appears on OS deliverable blocks (omitted on non-OS / non-deliverable), reports created/updated `A-`/`L-`/`FB-`/`SB-`/`DOC-` ids, and points back to `[Decision Records]` for DRs rather than re-listing them.
+9. **`[Context Injected]` is ALWAYS PRESENT and methodology-agnostic.** Every emitted block carries it (OS and non-OS agents alike). It reports the prior context found and fed in (orchestrator Context Discovery §7 + Phase 1.5 recall), distinguishes **load-bearing** items (actually used) from merely fed, and uses an explicit empty token (`- none found — searched "<terms>"` / `- none — discovery skipped`) when there was nothing. A missing `[Context Injected]` is a **protocol violation**; the `MISSING_CONTEXT_INJECTED` validator check is **planned, not yet implemented** — `audit-block-validator.py` does not enforce it today (to add it, mirror the existing `MISSING_OUTPUTS` warn-check). A block that lists fed items but never marks which were load-bearing is incomplete.
 
 ### OUTPUT & PRESENTATION CONTRACT (§2.7 — NEW)
 
@@ -420,7 +447,7 @@ Include identity protocol in sub-agent prompts. Your ROI covers sub-agent work. 
 
 ## 7. Self-Check Before Every Spawn
 
-- [ ] **Pre-inject context** run: `python hooks/os-tracker.py --pre-inject "[topic]" --context-dir ./context` — if output is non-empty, prepend to agent prompt
+- [ ] **Context discovery** run (thorough, multi-path per below): OS registry via `os-tracker.py --pre-inject` (once per term set) + cross-references one level + recall memory; broaden if the first pass is thin; dedupe into one `## Injected Context` block and prepend it to the agent prompt
 - [ ] Prompt starts with **Agent Identity & Response Protocol** block
 - [ ] `{emoji}` and `{Display Name}` replaced with correct values (no template leak)
 - [ ] User's request included as clear task section
@@ -429,17 +456,24 @@ Include identity protocol in sub-agent prompts. Your ROI covers sub-agent work. 
 - [ ] If OS agent + deliverable task → Phase 1.5 DR Context Check fires (caller doesn't skip this)
 - [ ] If multi-agent run → synthesis owner identified before spawn (per Multi-Agent DR Ownership Rule)
 
-### Pre-Inject Context (MANDATORY for deliverable-producing agents)
+### Context Discovery & Injection (MANDATORY — every spawn that reasons over the domain)
 
-Before spawning any agent that will produce a deliverable, run:
+Before spawning any agent that will produce a deliverable OR reason substantively over a project/domain, the orchestrator runs a **thorough context search** and feeds the result into the agent. This is no longer a single keyword scan — a one-shot `--pre-inject` on one keyword string misses cross-referenced and recall-memory context, and leaves the agent to rediscover what the org already knows. Do a real search:
 
-```bash
-python hooks/os-tracker.py --pre-inject "[topic keywords from user request]" --context-dir ./context
-```
+1. **Extract multiple term sets** from the request — the entities/companies, the domain, the project/brand, named artifacts, and any IDs (`DR-`, `FB-`, `A-`, `L-`, `SB-`, `DOC-`) the user mentioned. One keyword string is not enough; build several.
+2. **Scan the OS registry** — run the workhorse once per distinct term set and merge results:
+   ```bash
+   python hooks/os-tracker.py --pre-inject "[term set]" --context-dir ./context
+   ```
+   It searches every `context/` source + `index.json` `topicIndex` + active portfolio bets + always-on conventions.
+3. **Follow cross-references one level** (`rules/context-graph.md`) on the top hits — a matched DR pulls its linked bets/assumptions/feedback. Attribute pulled items as `[via context-graph]`.
+4. **Scan recall memory (Layer B)** — check `MEMORY.md` pointers and the relevant topic files in the session memory dir for the same terms. These hold the cross-session gotchas the registry does not.
+5. **Broaden if thin** — if a non-trivial topic returns 0–1 hits, the search is NOT done: retry with synonyms, the parent project, and adjacent tags before concluding "none found." A thin first pass is a signal to widen, not to stop.
+6. **Assemble + prepend** — dedupe into one `## Injected Context` block (each item: `ID — one-line summary [source]`) and prepend it to the agent's prompt, after the identity block, before the task. The template's Phase 0 tells the agent to treat it as authoritative prior context, honor its constraints, use it, and report it in the `[Context Injected]` Audit Block section.
 
-If the output is non-empty, prepend it to the agent's prompt (after the identity block, before the task). This gives the agent awareness of related decisions, feedback, and active bets without relying on the agent to run `/context-recall` itself.
+This makes context-finding the **orchestrator's** job and removes the dependence on each agent remembering to self-recall. Phase 1.5 self-recall (OS deliverable tasks) still fires as a deepening backstop; the agent's `[Context Injected]` telemetry reports the union and marks which items were load-bearing.
 
-**Skip pre-inject for**: Simple Q&A, context recalls, system ops, quick lookups.
+**Skip discovery only for**: simple factual Q&A, context-recall operations (these ARE the query), system ops, and trivial lookups. When skipped, the agent's `[Context Injected]` reports `- none — discovery skipped (trivial/{reason})` so the skip is visible, never silent.
 
 ---
 
@@ -521,7 +555,7 @@ Interaction and ROI logging are handled automatically by `hooks/os-tracker.py`.
 
 ### Post-Response Sequence
 
-1. Apply Meeting Mode (if multi-agent) → 2. Display Audit Block (per Phase 2.5, incl. `[Outputs]` + `[Context Records]`) → 3. **Automatic**: `os-tracker.py` logs ROI + interaction + session summary + documents/context ids → 4. **Orchestrator-owned presentation step (per §2.7 Output & Presentation Contract):** run the configured presentation generator on the deliverable MD(s) → exactly ONE branded, commentable HTML (single-agent = the agent's MD; multi-agent = the synthesis MD, optional one slide/agent). Graceful fallback to MD + printed command if no generator is configured.
+1. Apply Meeting Mode (if multi-agent) → 2. Display Audit Block (per Phase 2.5, incl. `[Context Injected]` + `[Outputs]` + `[Context Records]`) → 3. **Automatic**: `os-tracker.py` logs ROI + interaction + session summary + documents/context ids → 4. **Orchestrator-owned presentation step (per §2.7 Output & Presentation Contract):** run the configured presentation generator on the deliverable MD(s) → exactly ONE branded, commentable HTML (single-agent = the agent's MD; multi-agent = the synthesis MD, optional one slide/agent). Graceful fallback to MD + printed command if no generator is configured.
 
 When Claude Code hooks are configured, Step 3 fires automatically via PostToolUse. Step 4 is orchestrator-owned and NOT hooked. For manual setups, see `AGENT-INTEGRATION.md`.
 
@@ -533,6 +567,7 @@ When Claude Code hooks are configured, Step 3 fires automatically via PostToolUs
 - **Documents**: Detected file paths (incl. `[Outputs]` MD + presentation) appended to `context/documents/registry.md`
 - **DR events**: Drafted/updated DRs from Phase 1.5 appended to `context/decisions/index.md`
 - **Context records**: Created/updated `A-`/`L-`/`FB-`/`SB-`/`DOC-` ids from the `[Outputs]`/`[Context Records]` sections (os-tracker prefers the structured sections over the blind scrape)
+- **Context injected** (PLANNED — not yet implemented in `os-tracker.py`): the `[Context Injected]` section's searched term-sets, fed ids, and load-bearing ids *should* be logged alongside the interaction so "was relevant context actually found and used by this spawn" is auditable per spawn. Until os-tracker parses `[Context Injected]` (it currently scrapes only `[Outputs]`/`[Context Records]`), this section is model-emitted telemetry only — present in the response, not yet machine-logged.
 
 ### Audit Block Validation
 
