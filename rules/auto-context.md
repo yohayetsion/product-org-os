@@ -1,89 +1,27 @@
 # Auto-Context Injection
 
-## Core Rule
+Before agents produce deliverables, automatically inject relevant context from `context/index.json`.
 
-Before agents produce deliverables, automatically inject relevant context from the index. This eliminates the need for manual `/context-recall` for common patterns while preserving the option for explicit queries.
+> **Superseded for spawn-time injection by `agent-spawn-protocol.md` §7 (Context Discovery & Injection).** This rule describes the minimal keyword-match injection. At agent-spawn time the orchestrator now runs the fuller §7 procedure — multiple term sets, cross-reference follow (`context-graph.md`), recall-memory (Layer B) scan, broaden-if-thin — and the spawned agent reports it in the `[Context Injected]` Audit Block section. Treat §7 as authoritative when spawning; this rule covers the non-spawn / inline auto-context case.
 
 ## How It Works
 
-Auto-context injection is handled by `hooks/os-tracker.py --pre-inject`:
+1. Parse user's request for topic keywords
+2. Query topic indexes in `context/index.json`
+3. If matches found, include up to 5 brief summaries as "Auto-Context" in the agent's working context
 
-```bash
-python hooks/os-tracker.py --pre-inject "[topic keywords]" --context-dir ./context
-```
+## When to Inject
 
-The parent agent runs this **before** spawning a sub-agent. If the output is non-empty, it is prepended to the agent's prompt. See `agent-spawn-protocol.md` Section 7 for the full spawn flow.
-
-1. **Parent extracts topic keywords** from the user's request
-2. **Tracker scans context/** markdown files for keyword matches (decisions, bets, feedback, learnings)
-3. **If matches found**, returns a markdown block on stdout
-4. **Parent prepends** the block to the agent's prompt
-5. **Agent sees**: An "Auto-Context" section with related items
-
-For coding agents without hooks, call `--pre-inject` manually before delegating work. See `AGENT-INTEGRATION.md` for platform-specific instructions.
-
-## Injection Triggers
-
-| Agent Task | What Gets Injected |
-|-----------|-------------------|
-| Creating a decision record | Related past decisions on the same topic, active bets in the area |
-| Writing a PRD or feature spec | Related feedback, existing decisions, active bets, past learnings |
-| Conducting an outcome review | Original bet assumptions, defined success criteria, related feedback |
-| Formulating a strategic bet | Related learnings, competitive context, existing decisions |
-| Capturing feedback | Related existing feedback themes, connected decisions |
-| Creating a roadmap | Active bets, portfolio state, related decisions |
-| GTM planning | Related positioning decisions, competitive landscape, pricing decisions |
-
-## Injection Format
-
-When auto-context finds relevant items, present them as:
-
-```
-## Auto-Context: [N] related items found
-
-### Related Decisions
-- **DR-2026-003**: API pricing model → Accepted (2026-01-15)
-  Topics: pricing, api, monetization
-
-### Related Feedback
-- **FB-2026-012**: Customer requested usage-based billing (2026-02-01)
-  Sentiment: Neutral | Impact: High
-
-### Active Bets
-- **SB-2026-001**: Enterprise pricing tier → In Progress
-  Key assumption: Enterprise customers need dedicated support
-
-> These were auto-injected based on topic matching. Use `/context-recall [topic]` for deeper queries.
-```
+Creating decision records, PRDs, specs, strategic bets, outcome reviews, roadmaps, GTM plans — any deliverable that should be informed by organizational memory.
 
 ## When NOT to Inject
 
-- Simple Q&A that doesn't produce deliverables
-- System operations (`/setup`, `/clear-demo`)
-- Context retrieval operations (`/context-recall`, `/feedback-recall`) — these ARE the query
-- When the user explicitly provides all context needed
+Simple Q&A, system ops, context retrieval operations (these ARE the query), or when user provides all context.
 
-## Relevance Matching
+## Matching Strategies
 
-Topic matching uses these strategies:
-1. **Exact ID match**: If request mentions DR-2026-003, inject that record
-2. **Keyword match**: Match request keywords against `topicIndex` in index.json
-3. **Product match**: If multi-product org, filter by product context
-4. **Phase match**: Match Vision to Value phase of the task to phase-indexed items
+1. **Exact ID match**: Request mentions DR-2026-003 → inject that record
+2. **Keyword match**: Match against `topicIndex` in index.json
+3. **Product match**: Filter by product context in multi-product orgs
 
-## Depth Control
-
-- **Default**: Inject up to 5 most relevant items (brief summaries)
-- **Deep mode**: When explicitly requested, inject full records
-- **Quiet mode**: Skip auto-injection (for speed or when context is known)
-
-## Integration with Context Layer
-
-Auto-context reads from but never writes to the context index. Writing happens through:
-- `/context-save` — explicit save
-- `/feedback-capture` — explicit capture
-- Auto-registration of strategic documents (per `context-management.md`)
-
-## Vision to Value Operating Principle
-
-> "The best context system is invisible. Agents should work with organizational memory naturally, not through manual lookups."
+> "The best context system is invisible."
