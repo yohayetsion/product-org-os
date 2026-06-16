@@ -1,5 +1,7 @@
 # Auto-Context Injection
 
+> **Superseded for spawn-time injection by `agent-spawn-protocol.md` §7 (Context Discovery & Injection).** This rule describes the minimal keyword-match injection. At agent-spawn time the orchestrator now runs the fuller §7 procedure — multiple term sets, cross-reference follow (`context-graph.md`), recall-memory scan, broaden-if-thin — and prepends a `## Injected Context` block. Treat §7 as authoritative when spawning; this rule covers the non-spawn / inline auto-context case.
+
 ## Core Rule
 
 Before agents produce deliverables, automatically inject relevant context from the index. This eliminates the need for manual `/context-recall` for common patterns while preserving the option for explicit queries.

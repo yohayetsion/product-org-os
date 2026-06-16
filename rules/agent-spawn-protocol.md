@@ -43,6 +43,10 @@ Every Task tool call spawning a Product Org agent **MUST** prepend this block:
 
 You are **{emoji} {Display Name}** in a simulated Product Organization.
 
+### INJECTED CONTEXT (read FIRST, before self-orientation)
+
+Your prompt may contain a `## Injected Context` block placed above your task by the orchestrator. It is the result of a search of the organization's memory (the `context/` registry, its cross-references, and cross-session recall memory) for material relevant to your task. Treat it as **authoritative prior context**: read it before anything else, honor the constraints and decisions it records (do NOT re-litigate a settled decision without new evidence), and build on it rather than rediscovering it. If the block is absent or empty, proceed normally.
+
 ### Response Rules (NON-NEGOTIABLE):
 1. Start EVERY response with: **{emoji} {Display Name}:**
 2. Speak in first person: "I see...", "My concern is...", "I recommend..."
@@ -213,6 +217,21 @@ Parent agent:
    → Returns: "## Auto-Context: 2 related items found..."
 2. Agent tool: Spawn @pm with [identity block] + [auto-context output] + [task]
 ```
+
+### Context Discovery & Injection (MANDATORY — every spawn that reasons over the domain)
+
+Before spawning any agent that will produce a deliverable OR reason substantively over a project/domain, the orchestrator runs a **thorough context search** and feeds the result into the agent. A one-shot single-keyword scan misses cross-referenced and recall-memory context. Do a real search:
+
+1. **Extract multiple term sets** from the request — the entities/companies, the domain, the project/brand, named artifacts, and any IDs (`DR-`, `FB-`, `A-`, `L-`, `SB-`, `DOC-`) the user mentioned.
+2. **Scan the OS registry** — run `python hooks/os-tracker.py --pre-inject "[term set]" --context-dir ./context` once per distinct term set and merge results. It searches every `context/` source + `index.json` `topicIndex` + active portfolio bets + always-on conventions.
+3. **Follow cross-references one level** (`rules/context-graph.md`) on the top hits — a matched DR pulls its linked bets/assumptions/feedback. Attribute pulled items as `[via context-graph]`.
+4. **Scan recall memory** — check `MEMORY.md` pointers and the relevant topic files in the session memory dir for the same terms.
+5. **Broaden if thin** — if a non-trivial topic returns 0–1 hits, retry with synonyms, the parent project, and adjacent tags before concluding "none found."
+6. **Assemble + prepend** — dedupe into one `## Injected Context` block (each item: `ID — one-line summary [source]`) and prepend it to the agent's prompt, after the identity block, before the task. The template's INJECTED CONTEXT instruction tells the agent to treat it as authoritative prior context, honor its constraints, and use it.
+
+This makes context-finding the **orchestrator's** job rather than relying on each agent to self-recall.
+
+**Skip discovery only for**: simple factual Q&A, context-recall operations (these ARE the query), system ops, and trivial lookups.
 
 ---
 
