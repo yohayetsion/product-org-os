@@ -141,6 +141,20 @@
             width: 100%;
         }
 
+        .setup-button {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: var(--bg); border: 0; border-radius: 8px;
+            padding: 0.9rem 1.6rem; font: inherit; font-weight: 700; cursor: pointer;
+        }
+        .setup-button:focus-visible { outline: 3px solid var(--secondary); outline-offset: 4px; }
+        .setup-button:disabled { cursor: wait; }
+        .setup-hosts, .setup-links { margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-muted); }
+        .setup-links a { color: var(--secondary); }
+        .copy-status { min-height: 1.5em; color: var(--secondary); font-size: 0.9rem; }
+        .hero .gateway-demo { margin: 1.5rem auto 2rem; }
+        #agentPrompt { white-space: pre-wrap; scroll-margin-top: 100px; }
+        .typed-text { min-width: 0; overflow-wrap: anywhere; }
+
         /* Hero Section */
         .hero {
             text-align: center;
@@ -325,7 +339,7 @@
         /* Usage Patterns */
         .usage-patterns {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
             gap: 1.5rem;
         }
 
@@ -607,7 +621,7 @@
 
         .agents-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
             gap: 1.25rem;
         }
 
@@ -1236,12 +1250,35 @@
                 Intent → Decisions → Commitments → Execution → Outcomes → Learning
             </p>
             <p class="hero-subtitle">Give your coding agent the product judgment, methods, and professional context behind serious product work.</p>
+            <div class="copy-action hero-setup">
+                <button type="button" id="heroCopyPromptBtn" class="setup-button" onclick="copyAgentPrompt(this)">Copy setup prompt</button>
+                <p class="setup-hosts">Paste into Claude Code, Codex or Cursor. Your agent will guide setup.</p>
+                <p class="copy-status" role="status" aria-live="polite"></p>
+            </div>
+            <p class="setup-links">
+                <a href="https://github.com/yohayetsion/product-org-os/archive/refs/tags/v6.2.0.zip">Download ZIP</a> &middot; <a href="INSTALL-AND-ONBOARD.md">Installation guide</a> &middot; <a href="https://github.com/yohayetsion/product-org-os">GitHub</a>
+            </p>
+            <!-- /pbaw demo -->
+            <div class="gateway-demo">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title">Your coding agent</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="typing-container">
+                            <span class="prompt">&gt;</span>
+                            <span class="typed-text" id="typed-text"></span>
+                            <span class="cursor">|</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
                 Product Org OS is the open-source edition of the licensed ProductBeacon AI Agentic Workforce. It includes the PBAW harness and product team. The harness selects roles, loads their methods and knowledge, and guides the work. PBAW's additional specialist teams are not included in this free edition.
-            </p>
-            <a href="https://github.com/yohayetsion/product-org-os/archive/refs/tags/v6.2.0.zip" class="hero-tagline" style="text-decoration: none;">Download Product Org OS v6.2.0</a>
-            <p style="margin-top: 0.75rem; color: var(--text-muted); font-size: 0.9rem;">
-                <a href="https://github.com/yohayetsion/product-org-os" style="color: var(--secondary);">View source on GitHub</a> &middot; <a href="INSTALL-AND-ONBOARD.md" style="color: var(--secondary);">Installation guide</a> &middot; <a href="LICENSE" style="color: var(--secondary);">MIT License</a>
             </p>
             <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 2rem;">
                 11 product roles • 125 methods and controls • 117 knowledge files • four governed workflows
@@ -1255,24 +1292,6 @@
                 <span style="color: var(--secondary); font-size: 0.9rem;">Uses the <a href="https://decisionprovenancestandard.org" target="_blank" rel="noopener" style="color: var(--secondary); text-decoration: none; border-bottom: 1px solid var(--secondary);">Decision Provenance Standard</a> to keep recommendations, evidence, ownership, and human acceptance distinct.</span>
             </p>
 
-            <!-- /pbaw demo -->
-            <div class="gateway-demo">
-                <div class="terminal-window">
-                    <div class="terminal-header">
-                        <span class="terminal-dot red"></span>
-                        <span class="terminal-dot yellow"></span>
-                        <span class="terminal-dot green"></span>
-                        <span class="terminal-title">Claude Code</span>
-                    </div>
-                    <div class="terminal-body">
-                        <div class="typing-container">
-                            <span class="prompt">&gt;</span>
-                            <span class="typed-text" id="typed-text"></span>
-                            <span class="cursor">|</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1343,10 +1362,10 @@
                     </div>
                     <div class="use-case-body">
                         <ul>
-                            <li>"/pbaw Turn epic.md into reviewable user stories"</li>
-                            <li>"/plan Shape the product work before execution"</li>
-                            <li>"/audit Check the PRD against research/ and its assumptions"</li>
-                            <li>"/context-harvest Preserve the accepted decision and learning"</li>
+                            <li>"I want /pbaw to turn this idea into a product brief."</li>
+                            <li>"/plan how we turn this vision into a roadmap."</li>
+                            <li>"Here's the PRD. /audit it against our customer research."</li>
+                            <li>"We've agreed the direction. /context-harvest the decisions and why."</li>
                             <li>The harness brings the right product judgment to the request</li>
                         </ul>
                     </div>
@@ -1360,10 +1379,10 @@
                     </div>
                     <div class="use-case-body">
                         <ul>
-                            <li>"/pbaw Synthesize customer-feedback/ into the next product choice"</li>
-                            <li>"/plan Expose scope, assumptions, and owner decisions"</li>
-                            <li>"/audit Verify the proposed result against the source evidence"</li>
-                            <li>"/context-harvest Preserve only accepted outcomes"</li>
+                            <li>"I want /pbaw to find the patterns in this customer feedback."</li>
+                            <li>"/plan how we validate the riskiest assumption."</li>
+                            <li>"/audit this recommendation against the research."</li>
+                            <li>"The review changed our direction. /context-harvest what we learned."</li>
                             <li>Shared local context keeps the team aligned across sessions</li>
                         </ul>
                     </div>
@@ -1377,10 +1396,10 @@
                     </div>
                     <div class="use-case-body">
                         <ul>
-                            <li>"/pbaw Review portfolio-health.md and frame the trade-off"</li>
-                            <li>"/plan Make commitments and verification explicit"</li>
-                            <li>"/audit Test execution against the approved plan"</li>
-                            <li>"/context-harvest Carry accepted decisions into local memory"</li>
+                            <li>"I want /pbaw to challenge our product strategy."</li>
+                            <li>"/plan our next quarter around these priorities."</li>
+                            <li>"/audit the finished roadmap against our plan."</li>
+                            <li>"We've made the trade-off. /context-harvest the decision and why."</li>
                             <li>Named human owners keep authority over material choices</li>
                         </ul>
                     </div>
@@ -1410,16 +1429,13 @@
                     </div>
                     <div class="pattern-examples">
                         <div class="example-item">
-                            <code>/pbaw</code>
-                            <span>Assess whether freemium fits our SMB strategy. Context: pricing-research.md, competitor-tiers.xlsx</span>
+                            <span>I want <code>/pbaw</code> to challenge our pricing. Would a free tier help the customers we want?</span>
                         </div>
                         <div class="example-item">
-                            <code>/pbaw</code>
-                            <span>Review portfolio-health.md and prepare a portfolio trade-off for my decision</span>
+                            <span>We can't do everything this quarter. I want <code>/pbaw</code> to help us choose what matters most.</span>
                         </div>
                         <div class="example-item">
-                            <code>/pbaw</code>
-                            <span>Planning review. Inputs: customer-interviews/, eng-capacity.md, goals.md</span>
+                            <span>I want <code>/pbaw</code> to sharpen who this is for and why they'd choose us.</span>
                         </div>
                     </div>
                 </div>
@@ -1432,16 +1448,13 @@
                     </div>
                     <div class="pattern-examples">
                         <div class="example-item">
-                            <code>/plan</code>
-                            <span>Plan the strategic-intent update using board-feedback.pdf</span>
+                            <span><code>/plan</code> the strategy update around this board feedback.</span>
                         </div>
                         <div class="example-item">
-                            <code>/plan</code>
-                            <span>Plan the path from epic.md to reviewable requirements and acceptance criteria</span>
+                            <span><code>/plan</code> how we turn this vision into a roadmap.</span>
                         </div>
                         <div class="example-item">
-                            <code>/plan</code>
-                            <span>Plan a decision-ready enterprise-tier analysis using pricing-data.xlsx</span>
+                            <span>Our pricing needs a rethink. <code>/plan</code> how we explore the options.</span>
                         </div>
                     </div>
                 </div>
@@ -1454,16 +1467,13 @@
                     </div>
                     <div class="pattern-examples">
                         <div class="example-item">
-                            <code>/audit</code>
-                            <span>Audit the SSO proposal against customer-notes.md and its stated acceptance criteria</span>
+                            <span><code>/audit</code> this proposal against what customers actually asked for.</span>
                         </div>
                         <div class="example-item">
-                            <code>/context-harvest</code>
-                            <span>Preserve the decision, assumptions, feedback, and learning the owner accepted</span>
+                            <span>We've agreed the direction. <code>/context-harvest</code> the decisions and why.</span>
                         </div>
                         <div class="example-item">
-                            <code>/audit</code>
-                            <span>Audit completed roadmap work against the approved plan and source evidence</span>
+                            <span>The roadmap is ready. <code>/audit</code> it against our plan and research.</span>
                         </div>
                     </div>
                 </div>
@@ -1473,38 +1483,38 @@
             <div class="meeting-demo">
                 <div class="meeting-header">
                     <h3>Your Product Org, Thinking Together</h3>
-                    <p>You invoke the harness. It assembles the right product perspectives and methods at runtime.</p>
+                    <p>An illustrative conversation: bring the context, ask for help, and hear the product perspectives together.</p>
                 </div>
                 <div class="meeting-conversation">
                     <div class="meeting-prompt">
-                        <code><span class="cmd">/pbaw</span> Review <span class="file">q3-strategy.md</span> and use <span class="cmd">/plan</span> to frame the evidence, trade-off, and owner decision: webhooks or SDK improvements?</code>
+                        <code>Our strategy is to grow with enterprise customers. They keep asking for webhooks, while developers want a better SDK. We can only prioritise one. I want <span class="cmd">/pbaw</span> to help me think it through.</code>
                     </div>
                     <div class="meeting-responses">
                         <div class="agent-response">
                             <span class="agent-badge vp">VP Product</span>
-                            <p><span class="highlight">q3-strategy.md</span> prioritizes enterprise expansion. The supplied customer evidence links webhooks to enterprise workflows. SDK improvements matter to developer experience, but the current evidence is less direct.</p>
+                            <p>I'd start with the enterprise goal. Webhooks sound closer to it, but I want to see which customer workflows are blocked before we call this a priority.</p>
                         </div>
                         <div class="agent-response">
                             <span class="agent-badge pm">Product Manager</span>
-                            <p>The evidence supports webhooks as the nearer customer need. The delivery comparison still needs engineering input. Recommend prioritizing webhooks only after the accountable owner reviews that dependency.</p>
+                            <p>I want to compare the customer evidence with the engineering work. If the SDK is blocking adoption, that could change the choice. Let's check both before committing.</p>
                         </div>
                         <div class="agent-response">
                             <span class="agent-badge pmm">Dir. Product Marketing</span>
-                            <p>Webhooks map to a clearer enterprise story. SDK improvements are more useful as developer-experience proof. For the <span class="highlight">/prd</span>, lead with the validated webhook use cases and label unsupported claims.</p>
+                            <p>I can see an enterprise story for webhooks. I'd test that story with the customers asking for them and keep the claims tied to what we can demonstrate.</p>
                         </div>
                     </div>
                     <div class="meeting-synthesis">
                         <div class="synthesis-item">
                             <span class="synthesis-label">Alignment</span>
-                            <span class="synthesis-value">Webhooks unlock enterprise deals faster</span>
+                            <span class="synthesis-value">Webhooks may fit the enterprise goal; validate the need</span>
                         </div>
                         <div class="synthesis-item">
                             <span class="synthesis-label">Decision</span>
-                            <span class="synthesis-value decision">Owner to affirm webhooks before the SDK work</span>
+                            <span class="synthesis-value decision">Compare the evidence before choosing</span>
                         </div>
                         <div class="synthesis-item">
                             <span class="synthesis-label">Next Steps</span>
-                            <span class="synthesis-value">/plan prepares the bounded follow-through after owner approval</span>
+                            <span class="synthesis-value">/plan how we test the customer need and compare the work</span>
                         </div>
                     </div>
                 </div>
@@ -2572,20 +2582,26 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-label">Get Started</div>
-                <h2 class="section-title">Download. Install. <span style="background: linear-gradient(90deg, #E94560, #4ECCA3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Start Your First Request.</span></h2>
+                <h2 class="section-title">Copy. Paste. <span style="background: linear-gradient(90deg, #E94560, #4ECCA3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Start Your First Request.</span></h2>
                 <p class="section-desc">
-                    Download <a href="https://github.com/yohayetsion/product-org-os/archive/refs/tags/v6.2.0.zip" style="color: var(--secondary);">Product Org OS v6.2.0</a> and extract the ZIP to a local folder. Open that folder in Claude Code or Codex, then copy the prompt below. The <a href="INSTALL-AND-ONBOARD.md" style="color: var(--secondary);">installation guide</a> walks your coding agent through choosing your project, previewing changes, installing, and verifying the result.
-                </p>
+                    Copy this prompt into Claude Code, Codex or Cursor. Your coding agent will help you choose a project, download Product Org OS, preview the changes, and verify setup. You can start before downloading anything.
             </div>
             <div style="max-width: 840px; margin: 0 auto;">
                 <div style="background: #0d0d1a; border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem;">
-                    <code id="agentPrompt" style="color: var(--secondary); font-family: 'Courier New', monospace; font-size: 0.95rem; line-height: 1.7; word-break: break-word; display: block; text-align: left;">Read INSTALL-AND-ONBOARD.md and agent-guide.md in this extracted Product Org OS folder. Help me choose the project where I want to use it, then follow the guide to preview, install, and verify the setup. After setup, help me start with: /pbaw Help me turn my product idea into a brief. Ask me for the idea and the people it should help.</code>
-                    <div style="text-align: center; margin-top: 1.5rem;">
-                        <button id="copyPromptBtn" onclick="copyAgentPrompt(this)" style="background: linear-gradient(90deg, #E94560, #4ECCA3); color: #0d0d1a; border: none; border-radius: 8px; padding: 0.7rem 1.6rem; font-weight: 700; font-size: 0.9rem; cursor: pointer; font-family: inherit;">Copy prompt</button>
+                    <code id="agentPrompt" tabindex="-1" style="color: var(--secondary); font-family: 'Courier New', monospace; font-size: 0.95rem; line-height: 1.7; word-break: break-word; display: block; text-align: left;">Help me set up Product Org OS in my project. Start by reading https://yohayetsion.github.io/product-org-os/INSTALL-AND-ONBOARD.md and https://yohayetsion.github.io/product-org-os/agent-guide.md.
+
+Ask which project folder I want to use and check my coding-agent environment and prerequisites. Download Product Org OS v6.2.0 from https://github.com/yohayetsion/product-org-os/archive/refs/tags/v6.2.0.zip and extract it into a separate local source folder.
+
+Follow the guide to preview installation, show me the proposed changes, and get my confirmation before installing with a backup. Preserve existing project instructions, skills and context. Verify the installed files and that I can access the four workflows in this environment, explaining any limitations.
+
+Then ask what product work I want help with and suggest a useful first /pbaw request.</code>
+                    <div class="copy-action" style="text-align: center; margin-top: 1.5rem;">
+                        <button type="button" id="copyPromptBtn" class="setup-button" onclick="copyAgentPrompt(this)">Copy setup prompt</button>
+                        <p class="copy-status" role="status" aria-live="polite"></p>
                     </div>
                 </div>
                 <p style="text-align: center; margin-top: 1.25rem; color: var(--text-dim); font-size: 0.9rem;">
-                    Supported instructions cover Claude Code and Codex directly, with a portable path for other repository-aware coding agents.
+                    The guide covers Claude Code and Codex directly. Cursor can discover the same installed workflows. Your agent will check the setup in your environment.
                 </p>
                 <p style="text-align: center; margin-top: 0.75rem;">
                     <a href="agent-guide.md" style="color: var(--text-dim); font-size: 0.85rem; text-decoration: none;">Prefer to read it first? View the guide &rarr;</a>
@@ -2616,22 +2632,44 @@
             menu.classList.toggle('active');
         }
 
-        // Copy the agent prompt to clipboard
-        function copyAgentPrompt(btn) {
-            const text = document.getElementById('agentPrompt').innerText.trim();
-            const done = () => { const o = btn.textContent; btn.textContent = 'Copied!'; setTimeout(() => { btn.textContent = o; }, 2000); };
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done));
+        // Both buttons copy the same visible setup prompt.
+        async function copyAgentPrompt(btn) {
+            const prompt = document.getElementById('agentPrompt');
+            const text = prompt.textContent.trim();
+            const status = btn.closest('.copy-action').querySelector('.copy-status');
+            btn.disabled = true;
+            status.textContent = '';
+            let copied = false;
+            try {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    await navigator.clipboard.writeText(text);
+                    copied = true;
+                }
+            } catch (e) { /* Try the browser's legacy copy action below. */ }
+            if (!copied) copied = fallbackCopy(text);
+            btn.disabled = false;
+            if (copied) {
+                status.textContent = 'Copied! Paste it into your coding agent.';
             } else {
-                fallbackCopy(text, done);
+                prompt.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                prompt.focus({ preventScroll: true });
+                const selection = window.getSelection();
+                const range = document.createRange();
+                range.selectNodeContents(prompt);
+                selection.removeAllRanges();
+                selection.addRange(range);
+                document.querySelectorAll('.copy-status').forEach(el => {
+                    el.textContent = "Automatic copying was blocked. The full prompt is selected; use your device's Copy command.";
+                });
             }
         }
-        function fallbackCopy(text, done) {
+        function fallbackCopy(text) {
             const ta = document.createElement('textarea');
             ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
             document.body.appendChild(ta); ta.select();
-            try { document.execCommand('copy'); done(); } catch (e) {}
-            document.body.removeChild(ta);
+            try { return document.execCommand('copy') === true; }
+            catch (e) { return false; }
+            finally { ta.remove(); }
         }
 
         // Smooth scroll for navigation
@@ -2677,18 +2715,15 @@
 
         // Typing animation - highlights @agents and /skills
         const examples = [
-            '/pbaw Assess freemium for SMBs. Context: pricing-research.md',
-            '/plan Shape checkout optimization work from user-research.md',
-            '/audit Review the strategic-intent update against board-feedback.pdf',
-            '/pbaw Frame the Q4 portfolio trade-off from q4-initiatives.md',
-            '/context-harvest Preserve the accepted checkout decision and learning',
-            '/plan Prepare a decision-ready mobile business case from market-size.xlsx',
-            '/audit Check launch readiness against launch-data.xlsx and the approved plan',
-            '/pbaw Review API v1 adoption using usage-data.xlsx',
-            '/plan Q3 planning. Inputs: customer-feedback/, capacity.md',
-            '/context-harvest Preserve the pricing decision and its assumptions',
-            '/audit Verify the pricing recommendation against pricing-data.xlsx'
-        ];
+            "I want /pbaw to challenge our product strategy.",
+            "/plan how we turn this vision into a roadmap.",
+            "Our pricing needs a rethink. Bring in /pbaw.",
+            "I want /pbaw to sharpen who this is for and why they'd choose us.",
+            "Turn this research into a market report with /pbaw.",
+            "Here's the PRD. I want /pbaw to find what we've missed.",
+            "/audit this plan before we start.",
+            "We've agreed the direction. /context-harvest the decisions and why."
+];
 
         let commandIndex = 0;
         let charIndex = 0;
