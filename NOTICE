@@ -1,0 +1,135 @@
+PRODUCT ORG OS — NOTICE
+
+This repository is the free and open Product Org OS, published under the MIT
+License. See LICENSE for the full terms.
+
+    Copyright (c) 2025 Yohay Etsion
+
+This NOTICE is informational. It grants nothing, restricts nothing, and adds no
+condition to the MIT License. Where anything below appears to conflict with
+LICENSE, LICENSE governs.
+
+
+1. DIRECTION OF DERIVATION
+--------------------------
+This repository is the UPSTREAM.
+
+A separate, proprietary bundle derives from this work and is not distributed
+here. That relationship runs one way: the proprietary bundle carries this
+repository's MIT copyright notice as a derivative-attribution duty, and nothing
+in that arrangement reaches back into this repository or qualifies the MIT
+grant you receive here.
+
+Every file in this repository is conveyed to you under the MIT License. There
+is no dual licence, no "open island" inside a larger proprietary work, and no
+acceptance step. Clone it, use it, modify it, redistribute it, sell it — MIT
+means what it says.
+
+Two things sit alongside that grant without qualifying it, and both are stated
+plainly rather than left to be inferred: trademarks (section 1a) and the
+upstream terms of adapted third-party material (section 2). Neither adds a
+condition to your MIT rights in the copyrighted work.
+
+
+1a. TRADEMARKS
+--------------
+The MIT License grants copyright rights. It does not grant trademark rights,
+and this section says so explicitly rather than relying on that default.
+
+"ProductBeacon", "Product Org OS", and the logo and icon files under
+`brand-assets/` are marks and brand assets of the author. They are included so
+the shipped tooling can render its own branding out of the box.
+
+    You may redistribute them verbatim as part of this repository, and you may
+    use them nominatively to refer to this project.
+
+    You may NOT use them as the mark for your own product, fork or service, or
+    in any way suggesting that the author endorses, sponsors or supports your
+    modified version.
+
+If you fork this repository and ship it under your own name, replace the brand
+assets with your own. Nothing here restricts your MIT rights in the code and
+content — remove the marks and the whole tree remains yours under MIT.
+
+
+2. THIRD-PARTY MATERIAL AND ATTRIBUTION
+---------------------------------------
+Parts of the knowledge packs and skills in this repository adapt publicly
+documented frameworks, specifications, standards and open-source projects.
+
+Attribution is carried IN THE FILE THAT DOES THE ADAPTING, not in a central
+list. The convention, which `rules/source-attribution.md` states in full, is
+that a pack adapting a named external source carries a block giving the source,
+the source's licence, and what was changed:
+
+    **Adapted from**: <source name + URL or citation>
+    **Source licence**: <the source's licence>
+    **V2V refinements**: <what this work added, changed or refined>
+
+The convention ships in this repository at `rules/source-attribution.md`; the installer
+also projects it to `.claude/rules/source-attribution.md` in the installed workspace.
+
+Why a list is not printed here instead: a central roster of sources is a second
+copy of information that already exists beside the content, and a second copy
+drifts. The attribution block travels with the material it describes, so a pack
+cannot be moved, forked or edited out of its own attribution.
+
+Coverage of that convention is not yet complete, and this notice will not claim
+otherwise. Some packs carry the block in full; some carry attribution in an
+HTML comment or a footer line; some are original work that correctly carries
+nothing. Before redistributing a modified pack, read the file itself rather
+than assuming a block is present — and if you find adapted material with no
+block, treat the in-body citations as the statement of source.
+
+Some adapted sources carry share-alike terms (for example CC-BY-SA). Those
+terms attach to the adapted material itself, not to this repository as a whole,
+and they are stated in that material's own attribution block or its in-body
+citation. Read the file before redistributing a modified pack.
+
+Concepts in common general use — RICE, MoSCoW, RACI, OKRs, SWOT, kanban, "user
+story", "stakeholder map" and the like — carry no attribution, being too widely
+used to have an owner.
+
+
+3. SENSITIVE SKILLS — A NOTICE, NOT A LICENCE CONDITION
+-------------------------------------------------------
+Some skills in this repository operate in liability-adjacent domains: legal,
+compliance, human resources, privacy, and finance.
+
+    Their output is a DRAFTING AND TRIAGE aid. It is not professional advice,
+    and it is not a substitute for review by a qualified human. Nothing these
+    skills produce creates an attorney-client relationship or any other
+    professional relationship.
+
+Read that as what it is: a statement about what the software does, so that no
+one mistakes a structured, confident-looking document for a professional
+opinion. It is NOT a term of the MIT License and imposes no obligation on you.
+The MIT License already disclaims all warranties and all liability; this
+paragraph adds nothing to that and takes nothing from your rights under it.
+
+The repository ships the structural scaffolding that makes the distinction hard
+to skip — every sensitive output carries Findings, a Reviewer Checklist, and a
+"Cannot Assess Without" section — specified in
+`.claude/rules/sensitive-skill-guardrails.md`. The scaffolding is a design
+choice you inherit and may change. It is not a condition of use.
+
+Jurisdiction: these agents were authored primarily against United States and
+European frameworks and name them explicitly. If you operate elsewhere, treat
+every jurisdiction-specific statement as a hypothesis to verify locally.
+
+
+4. WHAT IS NOT IN THIS REPOSITORY
+---------------------------------
+No customer data, no telemetry, no analytics, and no network calls to the
+author. The agents run locally in your own environment against your own model
+provider.
+
+The context memory the agents use is created on your machine at install time
+and never leaves it. No part of this repository transmits anything anywhere.
+
+
+5. COMPONENT INVENTORY
+----------------------
+COMPONENT-MANIFEST.md lists what ships, layer by layer, with counts. It is
+GENERATED from the build's own ship-set emitter rather than maintained by hand,
+so it cannot drift from the tree it describes.
