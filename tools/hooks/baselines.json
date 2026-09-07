@@ -1,0 +1,389 @@
+{
+  "version": "1.0",
+  "thresholdUnit": "characters",
+  "complexityMultipliers": {
+    "simple": 0.5,
+    "standard": 1.0,
+    "complex": 1.5,
+    "enterprise": 2.0
+  },
+  "complexityThresholds": {
+    "simple": 1000,
+    "standard": 3000,
+    "complex": 8000
+  },
+  "skills": {
+    "_default": {
+      "baseMinutes": 45,
+      "manualEquivalent": "general product work"
+    },
+    "strategic-intent": {
+      "baseMinutes": 180,
+      "manualEquivalent": "executive alignment + documentation"
+    },
+    "vision-statement": {
+      "baseMinutes": 120,
+      "manualEquivalent": "research + wordsmithing + iteration"
+    },
+    "strategic-bet": {
+      "baseMinutes": 180,
+      "manualEquivalent": "analysis + assumption mapping + validation criteria"
+    },
+    "decision-record": {
+      "baseMinutes": 60,
+      "manualEquivalent": "documentation + stakeholder alignment"
+    },
+    "decision-charter": {
+      "baseMinutes": 90,
+      "manualEquivalent": "governance design + RACI + approval flow"
+    },
+    "portfolio-tradeoff": {
+      "baseMinutes": 120,
+      "manualEquivalent": "options analysis + impact assessment"
+    },
+    "market-analysis": {
+      "baseMinutes": 240,
+      "manualEquivalent": "research + synthesis + segmentation"
+    },
+    "competitive-landscape": {
+      "baseMinutes": 180,
+      "manualEquivalent": "competitor research + positioning map"
+    },
+    "competitive-analysis": {
+      "baseMinutes": 120,
+      "manualEquivalent": "focused competitor comparison"
+    },
+    "market-segment": {
+      "baseMinutes": 90,
+      "manualEquivalent": "segment definition + sizing"
+    },
+    "positioning-statement": {
+      "baseMinutes": 60,
+      "manualEquivalent": "messaging framework + differentiation"
+    },
+    "business-case": {
+      "baseMinutes": 180,
+      "manualEquivalent": "financial modeling + justification"
+    },
+    "business-plan": {
+      "baseMinutes": 300,
+      "manualEquivalent": "comprehensive planning + projections"
+    },
+    "pricing-strategy": {
+      "baseMinutes": 180,
+      "manualEquivalent": "market analysis + model design"
+    },
+    "pricing-model": {
+      "baseMinutes": 90,
+      "manualEquivalent": "specific pricing structure"
+    },
+    "product-roadmap": {
+      "baseMinutes": 240,
+      "manualEquivalent": "prioritization + sequencing + visualization"
+    },
+    "roadmap-theme": {
+      "baseMinutes": 60,
+      "manualEquivalent": "theme definition + initiatives mapping"
+    },
+    "roadmap-item": {
+      "baseMinutes": 30,
+      "manualEquivalent": "item specification + dependencies"
+    },
+    "gtm-strategy": {
+      "baseMinutes": 240,
+      "manualEquivalent": "cross-functional GTM planning"
+    },
+    "gtm-brief": {
+      "baseMinutes": 60,
+      "manualEquivalent": "quick GTM summary"
+    },
+    "launch-plan": {
+      "baseMinutes": 180,
+      "manualEquivalent": "launch coordination + timeline"
+    },
+    "launch-readiness": {
+      "baseMinutes": 45,
+      "manualEquivalent": "checklist verification"
+    },
+    "campaign-brief": {
+      "baseMinutes": 60,
+      "manualEquivalent": "campaign specification"
+    },
+    "sales-enablement": {
+      "baseMinutes": 120,
+      "manualEquivalent": "sales materials + training content"
+    },
+    "prd": {
+      "baseMinutes": 240,
+      "manualEquivalent": "requirements gathering + writing + review"
+    },
+    "prd-outline": {
+      "baseMinutes": 45,
+      "manualEquivalent": "structure planning"
+    },
+    "feature-spec": {
+      "baseMinutes": 90,
+      "manualEquivalent": "feature documentation"
+    },
+    "user-story": {
+      "baseMinutes": 20,
+      "manualEquivalent": "story + acceptance criteria"
+    },
+    "stakeholder-brief": {
+      "baseMinutes": 45,
+      "manualEquivalent": "communication drafting"
+    },
+    "onboarding-playbook": {
+      "baseMinutes": 120,
+      "manualEquivalent": "process documentation"
+    },
+    "value-realization-report": {
+      "baseMinutes": 90,
+      "manualEquivalent": "metrics compilation + analysis"
+    },
+    "customer-health-scorecard": {
+      "baseMinutes": 60,
+      "manualEquivalent": "health assessment"
+    },
+    "outcome-review": {
+      "baseMinutes": 90,
+      "manualEquivalent": "outcome analysis + learning extraction"
+    },
+    "retrospective": {
+      "baseMinutes": 60,
+      "manualEquivalent": "team reflection + action items"
+    },
+    "decision-quality-audit": {
+      "baseMinutes": 60,
+      "manualEquivalent": "process review + recommendations"
+    },
+    "qbr-deck": {
+      "baseMinutes": 180,
+      "manualEquivalent": "quarterly compilation + presentation"
+    },
+    "context-save": {
+      "baseMinutes": 10,
+      "manualEquivalent": "documentation + indexing"
+    },
+    "context-recall": {
+      "baseMinutes": 15,
+      "manualEquivalent": "search + retrieval + synthesis"
+    },
+    "feedback-capture": {
+      "baseMinutes": 15,
+      "manualEquivalent": "documentation + categorization"
+    },
+    "feedback-recall": {
+      "baseMinutes": 15,
+      "manualEquivalent": "pattern retrieval"
+    },
+    "portfolio-status": {
+      "baseMinutes": 20,
+      "manualEquivalent": "status compilation"
+    },
+    "relevant-learnings": {
+      "baseMinutes": 15,
+      "manualEquivalent": "learning retrieval"
+    },
+    "handoff": {
+      "baseMinutes": 20,
+      "manualEquivalent": "context packaging"
+    },
+    "maturity-check": {
+      "baseMinutes": 45,
+      "manualEquivalent": "maturity assessment"
+    },
+    "pm-level-check": {
+      "baseMinutes": 30,
+      "manualEquivalent": "competency assessment"
+    },
+    "phase-check": {
+      "baseMinutes": 15,
+      "manualEquivalent": "phase verification"
+    },
+    "commitment-check": {
+      "baseMinutes": 30,
+      "manualEquivalent": "readiness validation"
+    },
+    "ownership-map": {
+      "baseMinutes": 30,
+      "manualEquivalent": "accountability tracing"
+    },
+    "customer-value-trace": {
+      "baseMinutes": 30,
+      "manualEquivalent": "value chain validation"
+    },
+    "collaboration-check": {
+      "baseMinutes": 20,
+      "manualEquivalent": "RACI verification"
+    },
+    "scale-check": {
+      "baseMinutes": 30,
+      "manualEquivalent": "scalability assessment"
+    },
+    "assumption-map": {
+      "baseMinutes": 60,
+      "manualEquivalent": "assumption identification + risk assessment"
+    },
+    "opportunity-tree": {
+      "baseMinutes": 90,
+      "manualEquivalent": "opportunity analysis + tree construction"
+    },
+    "experiment-design": {
+      "baseMinutes": 60,
+      "manualEquivalent": "experiment setup + hypothesis"
+    },
+    "lean-canvas": {
+      "baseMinutes": 90,
+      "manualEquivalent": "business model canvas creation"
+    },
+    "business-model-canvas": {
+      "baseMinutes": 120,
+      "manualEquivalent": "comprehensive business model design"
+    },
+    "customer-journey-map": {
+      "baseMinutes": 120,
+      "manualEquivalent": "journey mapping + touchpoint analysis"
+    },
+    "interview-synthesis": {
+      "baseMinutes": 90,
+      "manualEquivalent": "interview analysis + pattern extraction"
+    },
+    "pretotype": {
+      "baseMinutes": 60,
+      "manualEquivalent": "pretotype definition + test design"
+    },
+    "press-release-faq": {
+      "baseMinutes": 120,
+      "manualEquivalent": "press release + FAQ drafting"
+    },
+    "ansoff-matrix": {
+      "baseMinutes": 60,
+      "manualEquivalent": "growth strategy analysis"
+    },
+    "pestle-analysis": {
+      "baseMinutes": 90,
+      "manualEquivalent": "macro-environmental analysis"
+    },
+    "porter-five-forces": {
+      "baseMinutes": 90,
+      "manualEquivalent": "competitive forces analysis"
+    },
+    "swot-analysis": {
+      "baseMinutes": 60,
+      "manualEquivalent": "strengths/weaknesses/opportunities/threats"
+    },
+    "blue-ocean": {
+      "baseMinutes": 120,
+      "manualEquivalent": "blue ocean strategy canvas"
+    },
+    "dhm-analysis": {
+      "baseMinutes": 60,
+      "manualEquivalent": "delight/hard-to-copy/margin analysis"
+    },
+    "growth-model": {
+      "baseMinutes": 90,
+      "manualEquivalent": "growth loop design + modeling"
+    },
+    "bcg-matrix": {
+      "baseMinutes": 60,
+      "manualEquivalent": "portfolio matrix analysis"
+    },
+    "stakeholder-map": {
+      "baseMinutes": 60,
+      "manualEquivalent": "stakeholder analysis + influence mapping"
+    },
+    "four-risks-check": {
+      "baseMinutes": 45,
+      "manualEquivalent": "value/usability/feasibility/viability risk check"
+    },
+    "escalation-rule": {
+      "baseMinutes": 30,
+      "manualEquivalent": "escalation path definition"
+    },
+    "strategy-communication": {
+      "baseMinutes": 90,
+      "manualEquivalent": "strategy narrative + stakeholder deck"
+    },
+    "prioritize-features": {
+      "baseMinutes": 90,
+      "manualEquivalent": "feature scoring + prioritization framework"
+    },
+    "competitive-battlecard": {
+      "baseMinutes": 60,
+      "manualEquivalent": "competitive comparison + talking points"
+    },
+    "north-star-metric": {
+      "baseMinutes": 60,
+      "manualEquivalent": "metric definition + measurement plan"
+    },
+    "compound": {
+      "baseMinutes": 45,
+      "manualEquivalent": "compounding analysis + growth insights"
+    },
+    "product-teardown": {
+      "baseMinutes": 120,
+      "manualEquivalent": "product analysis + feature decomposition"
+    },
+    "bias-check": {
+      "baseMinutes": 30,
+      "manualEquivalent": "cognitive bias identification + mitigation"
+    },
+    "vision-to-value-document-map": {
+      "baseMinutes": 60,
+      "manualEquivalent": "strategic asset inventory + visualization"
+    }
+  },
+  "agents": {
+    "product-manager": {
+      "baseMinutes": 90,
+      "manualEquivalent": "PRD review, requirements analysis, user stories"
+    },
+    "vp-product": {
+      "baseMinutes": 120,
+      "manualEquivalent": "strategic direction, pricing decisions, portfolio"
+    },
+    "cpo": {
+      "baseMinutes": 150,
+      "manualEquivalent": "org design, portfolio decisions, system design"
+    },
+    "director-product-management": {
+      "baseMinutes": 90,
+      "manualEquivalent": "cross-team coordination, requirements governance"
+    },
+    "director-product-marketing": {
+      "baseMinutes": 90,
+      "manualEquivalent": "GTM strategy, positioning, competitive response"
+    },
+    "product-marketing-manager": {
+      "baseMinutes": 60,
+      "manualEquivalent": "campaign execution, collateral, research synthesis"
+    },
+    "bizops": {
+      "baseMinutes": 90,
+      "manualEquivalent": "business cases, financial analysis, KPI tracking"
+    },
+    "bizdev": {
+      "baseMinutes": 90,
+      "manualEquivalent": "partnership strategy, deal structuring"
+    },
+    "competitive-intelligence": {
+      "baseMinutes": 60,
+      "manualEquivalent": "competitive analysis, market research"
+    },
+    "product-operations": {
+      "baseMinutes": 60,
+      "manualEquivalent": "process optimization, launch coordination"
+    },
+    "value-realization": {
+      "baseMinutes": 60,
+      "manualEquivalent": "ROI analysis, adoption tracking"
+    }
+  },
+  "gateways": {
+    "_default": {
+      "baseMinutes": 120,
+      "manualEquivalent": "multi-agent coordination"
+    }
+  }
+}

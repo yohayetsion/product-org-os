@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yohayetsion.github.io/product-org-os/schemas/v5.0/layer-4-attestation.schema.json",
+  "title": "mode_classification_attestation — Layer 4 Named Human Attestation",
+  "description": "Structured object (NOT scalar — scalar invites copy-paste; object forces sub-fields to populate). Per Mode-Drift sub-spec FINAL Layer 4 + General Counsel refinement. Load-bearing for Day-3 binary scope-check criterion.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "attestor_full_name",
+    "attestor_role_title",
+    "attestor_employer",
+    "attestation_timestamp",
+    "jurisdiction",
+    "attestation_language_version",
+    "attestation_text_signed",
+    "attestor_capacity"
+  ],
+  "properties": {
+    "attestor_full_name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Legal name as on employment record."
+    },
+    "attestor_role_title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Role title at attestation moment."
+    },
+    "attestor_employer": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Legal entity employing the attestor. Capacity cabining language binds liability to the employer."
+    },
+    "attestation_timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 UTC. System-stamped, NOT user-editable."
+    },
+    "jurisdiction": {
+      "type": "string",
+      "enum": ["US-DE", "US-FED", "UK", "EU", "IL", "OTHER"],
+      "description": "Determines which jurisdictional variant of attestation_text_signed applies."
+    },
+    "attestation_language_version": {
+      "type": "string",
+      "pattern": "^v\\d+\\.\\d+(-[A-Z]{2,3})?$",
+      "description": "Captures which jurisdictional variant was in force at attestation time. e.g., 'v1.0-US', 'v1.0-EU'."
+    },
+    "attestation_text_signed": {
+      "type": "string",
+      "minLength": 200,
+      "description": "Verbatim language the attestor signed. Captures the version actually signed (preserves provenance even if attestation language is later revised)."
+    },
+    "attestor_capacity": {
+      "type": "string",
+      "enum": ["employee", "contractor", "officer", "director"],
+      "description": "Load-bearing for liability analysis. Officer/director capacity carries different indemnification surface than employee/contractor."
+    }
+  }
+}

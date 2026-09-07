@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yohayetsion.github.io/product-org-os/schemas/v5.0/charter.schema.json",
+  "title": "Vision to Value Decision Interface Charter",
+  "description": "Charter object schema per Standard §3 + 0.5.B Interface Contract §3.2. Required fields are conditional on charter_state per the state machine.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "charter_id",
+    "charter_name",
+    "decision_class",
+    "accountable_owner",
+    "charter_state",
+    "created_at"
+  ],
+  "properties": {
+    "charter_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{2,127}$",
+      "description": "Stable identifier; survives ownership and rename changes."
+    },
+    "charter_name": {"type": "string"},
+    "decision_class": {"type": "string"},
+    "accountable_owner": {
+      "type": "object",
+      "required": ["full_name", "role"],
+      "properties": {
+        "full_name": {"type": "string"},
+        "role": {"type": "string"},
+        "employer": {"type": "string"}
+      },
+      "description": "Single named human. One and only one."
+    },
+    "charter_state": {
+      "type": "string",
+      "enum": ["open", "mode-declared", "fields-required", "fields-completed", "closed"]
+    },
+    "mode_declaration": {
+      "type": "string",
+      "enum": ["mode-1", "mode-2", "mode-1-with-embedded-mode-2-summary"],
+      "description": "Required at any state past `open`. Enum is exhaustive — no fourth mode. Drift caught at state transition."
+    },
+    "inside_decisions": {"type": "array", "items": {"type": "string"}},
+    "outside_decisions": {"type": "array", "items": {"type": "string"}},
+    "cadence": {
+      "type": "object",
+      "properties": {
+        "frequency": {"type": "string"},
+        "trigger": {"type": "string"}
+      }
+    },
+    "record_location": {
+      "type": "string",
+      "description": "URL or path. Hygiene rule: 'findable in 30 seconds by someone not in the room.'"
+    },
+    "re_decision_triggers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["trigger_type", "trigger_description"],
+        "properties": {
+          "trigger_type": {"type": "string", "enum": ["outcome_evidence", "market_evidence"]},
+          "trigger_description": {"type": "string"}
+        }
+      },
+      "description": "Minimum: 1 outcome-evidence + 1 market-evidence trigger per Vision to Value Ch. 6."
+    },
+    "escalation_rule": {
+      "type": "string",
+      "description": "Pointer to the Charter's escalation rule (handled by /escalation-rule skill)."
+    },
+    "schedule_of_records": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Committed enumerated set of decision records this Charter will produce."
+    },
+    "conformance_level_declared": {
+      "type": "integer",
+      "enum": [1, 2, 3]
+    },
+    "disclosure_metadata_pointer": {
+      "type": "string",
+      "description": "Required when mode_declaration is mode-2 or mode-1-with-embedded-mode-2-summary. Points to the Article 50 disclosure metadata block."
+    },
+    "peer_reviewer_pool": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["full_name", "role"],
+        "properties": {
+          "full_name": {"type": "string"},
+          "role": {"type": "string"},
+          "employer": {"type": "string"}
+        }
+      },
+      "description": "Minimum 3 named individuals per Layer 3 designation rule (eligibility: substantive expertise + author exclusion + Charter-owner exclusion when author + recusal carve-out)."
+    },
+    "use_case_scope_limit_declaration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scope"],
+      "properties": {
+        "scope": {
+          "type": "string",
+          "enum": ["audit-readiness", "internal-optimization", "team-level-measurement", "individual-development-coaching"]
+        },
+        "affirmer_consent": {
+          "type": "object",
+          "properties": {
+            "coaching_consent_record_pointer": {"type": "string"}
+          },
+          "description": "Conditional sub-field required when scope is individual-development-coaching."
+        },
+        "excluded_downstream_uses": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "hr_of_record_charter_scope_confirmation": {"type": "string"}
+      },
+      "description": "Standard §3.1 (rev6 Wave 0d). Required at fields-completed where any record describes a natural person below executive altitude. Enumerated default-permitted scopes; individual-development-coaching carries conditional consent sub-fields. Load-bearing for §6.2.3.1 access-policy binding."
+    },
+    "works_council_consultation_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["consultation_jurisdiction", "outcome_class"],
+      "properties": {
+        "consultation_jurisdiction": {
+          "type": "string",
+          "enum": ["de-betriebsrat", "fr-cse", "nl-or", "eu-uk-other-with-free-text"]
+        },
+        "council_identity": {"type": "string"},
+        "consultation_completion_date": {"type": "string", "format": "date"},
+        "outcome_class": {
+          "type": "string",
+          "enum": ["agreement-reached", "consultation-completed-without-agreement", "consultation-completed-with-conditions", "consultation-pending-with-good-faith-progress"]
+        },
+        "outcome_document_pointer": {"type": "string"}
+      },
+      "description": "Standard §3.1 (rev6 Wave 0d). Required at fields-completed in EU/UK works-council jurisdictions where altitude is function-leader or below. Conditional, not top-level required."
+    },
+    "created_at": {"type": "string", "format": "date-time"},
+    "closed_at": {"type": ["string", "null"], "format": "date-time"}
+  }
+}

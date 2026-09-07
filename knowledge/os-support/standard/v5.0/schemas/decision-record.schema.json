@@ -1,0 +1,343 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yohayetsion.github.io/product-org-os/schemas/v5.0/decision-record.schema.json",
+  "title": "Vision to Value Decision Record",
+  "description": "Decision-record schema per Standard §5 (record lifecycle) + §6.2 (decision-record schema, including §6.2.3 lifecycle/altitude/redaction additions) + 0.5.B Interface Contract §5. NOTE on two state families: `record_state` carries the §6.2 schema dispatch states (dispatched/drafted/review-required/closed/re-opened-with-mode-migration). The §5.1 record lifecycle (draft/reviewed/affirmed) is tracked via population of `affirmation_record` + `seal_hash`. Per A5-bis the two families are deliberately distinct and must not be conflated or normalized.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "decision_id",
+    "charter_id",
+    "record_state",
+    "dispatch_mode",
+    "created_at"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string",
+      "pattern": "^DR-[0-9]{4}-[0-9]{3,}$",
+      "description": "Standard §6.2.1 binding identifier, format DR-YYYY-NNN. Renamed from record_id in v5.1.0 reconciliation for 1:1 binding with the Standard."
+    },
+    "charter_id": {"type": "string"},
+    "record_type": {
+      "type": "string",
+      "enum": ["decision", "re_decision", "escalation", "charter_amendment", "disclosure_review", "redaction_event"],
+      "default": "decision",
+      "description": "Standard §6.2.3 discriminator. Defaults to `decision`. When `redaction_event`, the redaction-event field family is required."
+    },
+    "record_state": {
+      "type": "string",
+      "enum": ["dispatched", "drafted", "review-required", "closed", "re-opened-with-mode-migration"],
+      "description": "Standard §6.2 schema dispatch states. Distinct from the §5.1 record lifecycle (draft/reviewed/affirmed), which is tracked via affirmation_record + seal_hash population. Do not conflate (A5-bis)."
+    },
+    "dispatch_mode": {
+      "type": "string",
+      "enum": ["mode-1", "mode-2", "mode-1-with-embedded-mode-2-summary"],
+      "description": "Inherited from Charter mode_declaration at dispatch; may differ post-migration with prior_state_archive. Exhaustive 3-value enum per Standard §4.4 + §6.2.1. The third value carries embedded-summary disclosure at the embed point."
+    },
+    "decision_statement": {
+      "type": "string",
+      "description": "Standard §6.2: the decision being made. Required from drafted onward."
+    },
+    "context_at_decision": {
+      "type": "string",
+      "description": "Standard §6.2: context known at decision time. Required from drafted onward."
+    },
+    "options_considered": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Standard §6.2: options weighed. Required from drafted onward."
+    },
+    "required_inputs_used": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Standard §6.2: inputs the decision relied on. Required from drafted onward."
+    },
+    "assumptions_depended_on": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Standard §6.2: assumptions the decision depends on. Required from drafted onward."
+    },
+    "success_criteria": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Standard §6.2: how success will be judged. Required from drafted onward."
+    },
+    "accountable_owner": {
+      "type": "object",
+      "required": ["full_name", "role"],
+      "properties": {
+        "full_name": {"type": "string"},
+        "role": {"type": "string"},
+        "employer": {"type": "string"}
+      },
+      "description": "Standard §6.2.1: single named human accountable for the decision. Required at dispatched."
+    },
+    "decision_class": {
+      "type": "string",
+      "description": "Standard §6.2.1: decision class inherited from Charter. Required at dispatched."
+    },
+    "dispatched_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Standard §6.2.1: dispatch timestamp. Required at dispatched."
+    },
+    "altitude": {
+      "type": "string",
+      "enum": ["executive", "function-leader", "team-leader", "individual-professional"],
+      "description": "Standard §6.2.3: organizational altitude of the subject. Required from draft onward. Load-bearing for §6.2.3.1 access-policy binding."
+    },
+    "consent_posture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["posture_class"],
+      "properties": {
+        "posture_class": {"type": "string"},
+        "consent_record_pointer": {"type": "string"},
+        "withdrawal_state": {"type": "string", "enum": ["active", "withdrawn-stream-stopped"]}
+      },
+      "description": "Standard §6.2.3: consent posture. Conditionally required when altitude is function-leader, team-leader, or individual-professional."
+    },
+    "drafting_authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["deployer_role_pointer"],
+      "properties": {
+        "deployer_role_pointer": {"type": "string"},
+        "system_name": {"type": "string"},
+        "version": {"type": "string"}
+      },
+      "description": "Standard §6.2.3: who/what drafted. Required when dispatch_mode is mode-2 or mode-1-with-embedded-mode-2-summary. Load-bearing for the every_mode_2_record_carries_drafting_authority signal."
+    },
+    "disclosure_metadata_pointer": {
+      "type": "string",
+      "description": "Required when dispatch_mode is mode-2, OR Mode 1 record carrying embedded-summary edge case."
+    },
+    "affirmation_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["timestamp", "actor_identity", "method"],
+      "properties": {
+        "timestamp": {"type": "string", "format": "date-time"},
+        "actor_identity": {"type": "string"},
+        "method": {"type": "string"}
+      },
+      "description": "Standard §5.1(3): the affirmative human act that promotes a record to the §5.1 `affirmed` lifecycle state. Populated at affirmation. Basis for every_affirmed_record_carries_affirmation_event + no_passive_promotion_to_affirmed_in_sample signals."
+    },
+    "seal_hash": {
+      "type": "string",
+      "description": "Standard §5.1(3): integrity seal over the affirmed record. Basis for every_affirmed_record_carries_seal_hash signal."
+    },
+    "seal_algorithm": {
+      "type": "string",
+      "enum": ["SHA-256"],
+      "description": "Standard §5.1(3): algorithm used to compute seal_hash."
+    },
+    "supersedes": {
+      "type": ["string", "null"],
+      "description": "Standard §5.1(3): reference to the decision_id this record supersedes; null if none. Superseded records remain in the schedule, immutable. Basis for superseded_records_retained_in_full signal."
+    },
+    "review_log": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "reviewer": {"type": "string"},
+          "reviewed_at": {"type": "string", "format": "date-time"},
+          "outcome": {"type": "string"}
+        }
+      },
+      "description": "Standard §6.2.3: structured review log across the §5.1 reviewed lifecycle state."
+    },
+    "revision_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "revised_at": {"type": "string", "format": "date-time"},
+          "revised_by": {"type": "string"},
+          "change_summary": {"type": "string"}
+        }
+      },
+      "description": "Standard §6.2.3: append-only revision history."
+    },
+    "target_record_hash": {
+      "type": "string",
+      "description": "Standard §6.2.3.2 redaction-event family: seal_hash of the record being redacted. Required when record_type is redaction_event."
+    },
+    "target_decision_id": {
+      "type": "string",
+      "description": "Standard §6.2.3.2 redaction-event family: decision_id of the record being redacted. Required when record_type is redaction_event."
+    },
+    "redacted_fields": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Standard §6.2.3.2: enumerated fields redacted. Required when record_type is redaction_event."
+    },
+    "redaction_basis": {
+      "type": "string",
+      "enum": [
+        "gdpr-art-17-erasure",
+        "gdpr-art-16-rectification",
+        "ccpa-deletion-request",
+        "legal-hold-release",
+        "retention-schedule-expiry",
+        "court-order",
+        "regulator-directive",
+        "data-minimization-policy",
+        "consent-withdrawal",
+        "security-incident-containment",
+        "inadvertent-disclosure-remediation",
+        "contractual-obligation",
+        "other"
+      ],
+      "description": "Standard §6.2.3.2: basis for redaction. Required when record_type is redaction_event."
+    },
+    "redaction_basis_detail": {
+      "type": "string",
+      "description": "Standard §6.2.3.2: free-text detail on the redaction basis. Required when record_type is redaction_event."
+    },
+    "redaction_authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["full_name", "role"],
+      "properties": {
+        "full_name": {"type": "string"},
+        "role": {"type": "string"},
+        "employer": {"type": "string"}
+      },
+      "description": "Standard §6.2.3.2: named human authorizing the redaction. Required when record_type is redaction_event."
+    },
+    "redaction_timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Standard §6.2.3.2: when the redaction occurred. Required when record_type is redaction_event."
+    },
+    "operational_store_deletion_attestation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["attested_by", "attested_at", "stores_covered", "deletion_method"],
+      "properties": {
+        "attested_by": {"type": "string"},
+        "attested_at": {"type": "string", "format": "date-time"},
+        "stores_covered": {"type": "array", "items": {"type": "string"}},
+        "deletion_method": {"type": "string"}
+      },
+      "description": "Standard §6.2.3.2(3): 4-sub-field attestation that the redacted content was deleted from operational stores. Field population is graded by the every_redaction_event_carries_operational_store_deletion_attestation signal; substantive correctness is the deployer's qualified personnel's territory. Required when record_type is redaction_event."
+    },
+    "archival_record_retention_basis": {
+      "type": "string",
+      "description": "Standard §6.2.3.2: basis for retaining the archival (sealed) record after operational-store deletion. Required when record_type is redaction_event."
+    },
+    "accountable_owner_signoff": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "signed_by": {"type": "string"},
+        "signed_at": {"type": "string", "format": "date-time"}
+      },
+      "description": "Standard §6.2.1: accountable owner sign-off at closure. Required at closed."
+    },
+    "re_decision_trigger": {
+      "type": "string",
+      "description": "Standard §6.2.1: the re-decision trigger condition recorded at closure. Required at closed."
+    },
+    "record_location": {
+      "type": "string",
+      "description": "Standard §6.2.1: resolvable location of the record. Required at closed."
+    },
+    "related_decisions": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Standard §6.2.1: related decision_ids. Required at closed."
+    },
+    "mode_classification_attestation": {
+      "$ref": "../mode-drift/layer-4-attestation.schema.json"
+    },
+    "layer_2_audit_trail": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_id", "declaring_authority", "challenge_prompt_version", "answers", "timestamp_presented", "timestamp_answered", "attestation_text", "routing_decision", "routing_rationale"],
+      "properties": {
+        "record_id": {"type": "string"},
+        "declaring_authority": {
+          "type": "object",
+          "required": ["name", "role", "organization"],
+          "properties": {
+            "name": {"type": "string"},
+            "role": {"type": "string"},
+            "organization": {"type": "string"}
+          }
+        },
+        "challenge_prompt_version": {"type": "string", "description": "Semver."},
+        "answers": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {"type": "string", "enum": ["Yes", "No", "Uncertain"]}
+        },
+        "timestamp_presented": {"type": "string", "format": "date-time"},
+        "timestamp_answered": {"type": "string", "format": "date-time"},
+        "attestation_text": {"type": "string", "description": "Verbatim attestation language presented."},
+        "routing_decision": {"type": "string", "enum": ["closed", "routed_to_layer_3"]},
+        "routing_rationale": {"type": "string"},
+        "layer_1_flag_state": {
+          "type": "object",
+          "properties": {
+            "flagged": {"type": "boolean"},
+            "classifier_version": {"type": "string"},
+            "corpus_version": {"type": "string"},
+            "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+          }
+        },
+        "subsequent_layer_3_outcome": {
+          "type": ["string", "null"],
+          "enum": ["mode_confirmed", "mode_migrated_1_to_2", "mode_demoted_2_to_1", null]
+        }
+      }
+    },
+    "peer_reviewer_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "reviewer_name": {"type": "string"},
+        "reviewer_role": {"type": "string"},
+        "disposition": {"type": "string", "enum": ["mode_confirmed", "request_mode_1_to_mode_2_migration", "invoke_mode_2_to_mode_1_demotion"]},
+        "reviewer_rationale": {"type": "string"},
+        "disposition_timestamp": {"type": "string", "format": "date-time"}
+      }
+    },
+    "prior_state_archive": {
+      "type": "object",
+      "properties": {
+        "prior_dispatch_mode": {"type": "string"},
+        "demotion_path": {"type": "string", "enum": ["review-driven", "audit-driven", "escalation-driven"]},
+        "migration_reference": {"type": "string"}
+      }
+    },
+    "created_at": {"type": "string", "format": "date-time"},
+    "closed_at": {"type": ["string", "null"], "format": "date-time"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"dispatch_mode": {"const": "mode-2"}}},
+      "then": {"required": ["disclosure_metadata_pointer", "drafting_authority"]}
+    },
+    {
+      "if": {"properties": {"dispatch_mode": {"const": "mode-1-with-embedded-mode-2-summary"}}},
+      "then": {"required": ["drafting_authority"]}
+    },
+    {
+      "if": {"properties": {"record_state": {"const": "closed"}}},
+      "then": {"required": ["mode_classification_attestation", "accountable_owner_signoff", "re_decision_trigger", "record_location"]}
+    },
+    {
+      "if": {"properties": {"record_type": {"const": "redaction_event"}}},
+      "then": {"required": ["target_record_hash", "target_decision_id", "redacted_fields", "redaction_basis", "redaction_basis_detail", "redaction_authority", "redaction_timestamp", "operational_store_deletion_attestation", "archival_record_retention_basis"]}
+    },
+    {
+      "if": {"properties": {"altitude": {"enum": ["function-leader", "team-leader", "individual-professional"]}}},
+      "then": {"required": ["consent_posture"]}
+    }
+  ]
+}

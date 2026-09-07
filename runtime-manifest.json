@@ -1,0 +1,4604 @@
+{
+  "discovery_order": [
+    ".pbaw/runtime-manifest.json"
+  ],
+  "entries": [
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "agents/bizdev/SKILL.md",
+      "requires": [
+        "07c169594a32e6f8",
+        "15a9e0b33b40eb40",
+        "1d6b3ac9c7b7377e",
+        "21f4e8883565841f",
+        "2e4f602f76441338",
+        "32d9484d16a27185",
+        "37cdd171f78aeaf8",
+        "6338a7690ac6294e",
+        "90a9f0847a69bbd0",
+        "9cbc4e30ff125a97",
+        "a001f6b70a2a6dbc",
+        "a5ec9351021d40a8",
+        "a700b6a708d681a7",
+        "aef7081833f6864b",
+        "b2996e6a7e88464f",
+        "b33e5d198a2035dc",
+        "c5320a680e28331d",
+        "c62964837d840b03",
+        "c7492ccdf0f4fdd3",
+        "cde868638c612022",
+        "d3831f281468bdac",
+        "d6e38667a8ddb982",
+        "e2312cda97970bb7",
+        "ebf251628972c40e",
+        "f8edb40217748271",
+        "ff0f3db9b852c492"
+      ],
+      "resource_class": "agent",
+      "sha256": "e2c7352c436e1be136d4f2952c759e68550c0e2a92d49f9aa28bb3e05e4b35bb",
+      "target_id": "2ef5885d0ae24758"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "agents/bizops/SKILL.md",
+      "requires": [
+        "0855ef874be8c8b7",
+        "0d5c64538ea48889",
+        "11a24cd2140719d8",
+        "155b7cddd7a14d7c",
+        "1d1ad958d9d69ccf",
+        "21f4e8883565841f",
+        "2d433e750b92e810",
+        "37cdd171f78aeaf8",
+        "38b9d50c1a6c6107",
+        "3ed16a9931f717c6",
+        "3f6d905d4fc15892",
+        "47257396f4a6d0cd",
+        "5eaaa350565e6dbe",
+        "619eb2fc53eef6c8",
+        "719701eecc142a46",
+        "93c046822c573178",
+        "9cbc4e30ff125a97",
+        "b02b2e92c22ea957",
+        "b04e95b4aad79944",
+        "b2996e6a7e88464f",
+        "b33e5d198a2035dc",
+        "c5320a680e28331d",
+        "c62964837d840b03",
+        "c7492ccdf0f4fdd3",
+        "cde868638c612022",
+        "cfe92e632bda5147",
+        "d3831f281468bdac",
+        "e44296ee6f4e9e52",
+        "e5317aea9e592295",
+        "eece5360b09dc2e9",
+        "f8a54e571c0bde2d",
+        "f8edb40217748271",
+        "f9ca7062799eb93c"
+      ],
+      "resource_class": "agent",
+      "sha256": "93a6fa64f4879b654238c4842ec445fb8c50f0ef77be261e2a8872b265ac2f09",
+      "target_id": "d5e43bd62bf48af2"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "agents/competitive-intelligence/SKILL.md",
+      "requires": [
+        "15a9e0b33b40eb40",
+        "32d9484d16a27185",
+        "37cdd171f78aeaf8",
+        "37e26db31fbc05b3",
+        "39dedb92e730d729",
+        "3e519efaeed19cd6",
+        "43f218191b0da63f",
+        "7089e656fef0cc2e",
+        "715b93fd3bd8a061",
+        "719701eecc142a46",
+        "89365b037b352f70",
+        "9cbc4e30ff125a97",
+        "a5ec9351021d40a8",
+        "b33e5d198a2035dc",
+        "bdce288a369ce9f0",
+        "c13b9d1b15c94d70",
+        "c7492ccdf0f4fdd3",
+        "cde868638c612022",
+        "e5317aea9e592295",
+        "ebb3f9a4df3c5a6b",
+        "efdc7d45859f4e48"
+      ],
+      "resource_class": "agent",
+      "sha256": "b3304956440105546d2992bbd2ea60e8aeda4fbd4644afcd4750ca4ddc5f9abb",
+      "target_id": "21f4e8883565841f"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "agents/cpo/SKILL.md",
+      "requires": [
+        "0fb17fa4be6b6dfb",
+        "15a9e0b33b40eb40",
+        "1d6b3ac9c7b7377e",
+        "1e79c47bbc7e5133",
+        "21f4e8883565841f",
+        "2703c9a100149fed",
+        "2d433e750b92e810",
+        "2e4f602f76441338",
+        "37cdd171f78aeaf8",
+        "3db36fcc458121cb",
+        "3ed16a9931f717c6",
+        "3f6d905d4fc15892",
+        "47257396f4a6d0cd",
+        "576d9b3fa35fee56",
+        "5eaaa350565e6dbe",
+        "6cb66b628d7640ca",
+        "6f668b0ab15f0708",
+        "719701eecc142a46",
+        "84140a42a113d15b",
+        "979fa12f9ce298fd",
+        "9cbc4e30ff125a97",
+        "9dadde4c14d86b88",
+        "9e22d6c2a7cbcfd5",
+        "a5ec9351021d40a8",
+        "a704b36db1b77137",
+        "aef7081833f6864b",
+        "b02b2e92c22ea957",
+        "b04e95b4aad79944",
+        "b2996e6a7e88464f",
+        "b33e5d198a2035dc",
+        "bb566381faf0f786",
+        "c13b9d1b15c94d70",
+        "c5df55d36e8405be",
+        "c62964837d840b03",
+        "c7492ccdf0f4fdd3",
+        "d3831f281468bdac",
+        "d5e43bd62bf48af2",
+        "ec3719f38b2ac800",
+        "eece5360b09dc2e9",
+        "f8edb40217748271",
+        "f9ca7062799eb93c"
+      ],
+      "resource_class": "agent",
+      "sha256": "434932091f81b99b2367d980942e00128756af0360c98b631f51488c5ed81527",
+      "target_id": "fb33f57dc67e6136"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "agents/director-product-management/SKILL.md",
+      "requires": [
+        "15a9e0b33b40eb40",
+        "1d6b3ac9c7b7377e",
+        "1e79c47bbc7e5133",
+        "21f4e8883565841f",
+        "2d433e750b92e810",
+        "2e4f602f76441338",
+        "2e6d02443a585d0b",
+        "327851ba094e9d4c",
+        "37cdd171f78aeaf8",
+        "3ed16a9931f717c6",
+        "40456191e6d13047",
+        "4ff6c2e5efe93809",
+        "53f7fcde1c58c976",
+        "576d9b3fa35fee56",
+        "5d602e1f7463fde6",
+        "5eaaa350565e6dbe",
+        "6338a7690ac6294e",
+        "70c15cd4f719040a",
+        "719701eecc142a46",
+        "72e4a0fa172bd557",
+        "85fd225329ffd3b4",
+        "87e0291cbbf4ee34",
+        "8c4bda96df47d776",
+        "8ef82fef226503cf",
+        "9795a770b59d34c4",
+        "98ab398452a70545",
+        "9cbc4e30ff125a97",
+        "9dadde4c14d86b88",
+        "9e22d6c2a7cbcfd5",
+        "a704b36db1b77137",
+        "a70e7b7b0b8e8202",
+        "ac297688d2230bbf",
+        "aef7081833f6864b",
+        "b02b2e92c22ea957",
+        "b04e95b4aad79944",
+        "b2996e6a7e88464f",
+        "b33e5d198a2035dc",
+        "b60540b53c4ce598",
+        "bb566381faf0f786",
+        "c5df55d36e8405be",
+        "c7492ccdf0f4fdd3",
+        "d0d4278c592ba8a5",
+        "d34d532e2bdd13aa",
+        "d6478aac50f5dee4",
+        "df13ab18de49c194",
+        "e2312cda97970bb7",
+        "ec3719f38b2ac800",
+        "eece5360b09dc2e9",
+        "f03cb0a94ea433d7",
+        "f8718ea8d9fa459d",
+        "f8edb40217748271"
+      ],
+      "resource_class": "agent",
+      "sha256": "559b56ae9b277a174806581af898d83a01abaa10527437138a913ad2ae10ac00",
+      "target_id": "2703c9a100149fed"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "agents/director-product-marketing/SKILL.md",
+      "requires": [
+        "0150dae35f620d6c",
+        "15a9e0b33b40eb40",
+        "171f7781c1297479",
+        "1bf48e02bb237599",
+        "1d1ad958d9d69ccf",
+        "21f4e8883565841f",
+        "27de1e08b18f19ee",
+        "2fd3216a47ad99b2",
+        "32d9484d16a27185",
+        "37cdd171f78aeaf8",
+        "37e26db31fbc05b3",
+        "39dedb92e730d729",
+        "3f6d905d4fc15892",
+        "43bf2445cb34ad46",
+        "4855cf34de129ed6",
+        "619eb2fc53eef6c8",
+        "6891dc17a3948bdc",
+        "7089e656fef0cc2e",
+        "715b93fd3bd8a061",
+        "762687f860e3b54f",
+        "89365b037b352f70",
+        "90a9f0847a69bbd0",
+        "9cbc4e30ff125a97",
+        "9f2aacb173ec9997",
+        "a5ec9351021d40a8",
+        "ac630249dbf29d2e",
+        "b04e95b4aad79944",
+        "b0d45a14ab31fe18",
+        "b33e5d198a2035dc",
+        "bdce288a369ce9f0",
+        "c5320a680e28331d",
+        "c62964837d840b03",
+        "c7492ccdf0f4fdd3",
+        "cde868638c612022",
+        "cfe92e632bda5147",
+        "d42a173bc70ca459",
+        "e5317aea9e592295",
+        "e87316b1662bfd54",
+        "f8718ea8d9fa459d",
+        "ff0f3db9b852c492"
+      ],
+      "resource_class": "agent",
+      "sha256": "141f5a014dc4f2e2ee682894c768d47be86bdd4ffba8f19c2a12282649b2a53f",
+      "target_id": "576d9b3fa35fee56"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "agents/product-manager/SKILL.md",
+      "requires": [
+        "03e0ad00bcfb980c",
+        "08b3f5e0749c3377",
+        "11a24cd2140719d8",
+        "1d6b3ac9c7b7377e",
+        "1d884b2817e0a823",
+        "1e79c47bbc7e5133",
+        "21f4e8883565841f",
+        "23018e9f815bb6ac",
+        "2d433e750b92e810",
+        "366b36347887ca47",
+        "4679e43fdaf99766",
+        "4ff6c2e5efe93809",
+        "554a80c2a7ee3b57",
+        "6338a7690ac6294e",
+        "665ba2207d0d00dc",
+        "6e65ad92b3595395",
+        "72e4a0fa172bd557",
+        "74414cdf945ea90b",
+        "767dd3f58db4273d",
+        "77da70865948de4b",
+        "7c9e8d51544ffdb0",
+        "814eccb5cb136474",
+        "85fd225329ffd3b4",
+        "8a772084e2af9a82",
+        "8c4bda96df47d776",
+        "8c9681e56c4e0587",
+        "9795a770b59d34c4",
+        "98ab398452a70545",
+        "9aa9fb4ae0ba35d2",
+        "a001f6b70a2a6dbc",
+        "a704b36db1b77137",
+        "ac297688d2230bbf",
+        "aef7081833f6864b",
+        "b2996e6a7e88464f",
+        "b33e5d198a2035dc",
+        "bb566381faf0f786",
+        "bb891dd0ea58eda2",
+        "c2f97a64148711f4",
+        "c62964837d840b03",
+        "c7492ccdf0f4fdd3",
+        "d3831f281468bdac",
+        "d3a3135608caf365",
+        "e2312cda97970bb7",
+        "e67f63ad780185d6",
+        "e8947e3ab16f7321",
+        "ef350f8ef1a7be68",
+        "f0613c613168795b",
+        "f8718ea8d9fa459d",
+        "f87f5956c89395b0",
+        "fe7e20433cfac49c"
+      ],
+      "resource_class": "agent",
+      "sha256": "004b4c961b3f8791c11394c8db7bf84903043bf6c55fda94a21e9fb5a8beb0c8",
+      "target_id": "40456191e6d13047"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "agents/product-marketing-manager/SKILL.md",
+      "requires": [
+        "171f7781c1297479",
+        "1bf48e02bb237599",
+        "21f4e8883565841f",
+        "27de1e08b18f19ee",
+        "32d9484d16a27185",
+        "37e26db31fbc05b3",
+        "39dedb92e730d729",
+        "401c8d511cf0f212",
+        "43bf2445cb34ad46",
+        "4855cf34de129ed6",
+        "619eb2fc53eef6c8",
+        "6891dc17a3948bdc",
+        "7089e656fef0cc2e",
+        "715b93fd3bd8a061",
+        "72e4a0fa172bd557",
+        "762687f860e3b54f",
+        "89365b037b352f70",
+        "9f2aacb173ec9997",
+        "ac630249dbf29d2e",
+        "b0d45a14ab31fe18",
+        "b33e5d198a2035dc",
+        "bdce288a369ce9f0",
+        "c5320a680e28331d",
+        "c7492ccdf0f4fdd3",
+        "cde868638c612022",
+        "cfe92e632bda5147",
+        "e5317aea9e592295",
+        "e87316b1662bfd54",
+        "ff0f3db9b852c492"
+      ],
+      "resource_class": "agent",
+      "sha256": "139f6a8607874f1719c2f5a29a09edec42e71b0ade7aca88c607cfea8f67400a",
+      "target_id": "d42a173bc70ca459"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "agents/product-operations/SKILL.md",
+      "requires": [
+        "0138408af599ec88",
+        "1d6b3ac9c7b7377e",
+        "1f8b4dbcf90f6167",
+        "2fd3216a47ad99b2",
+        "327851ba094e9d4c",
+        "38f711948bd46f2f",
+        "4ff6c2e5efe93809",
+        "53f7fcde1c58c976",
+        "58c57e8dc2bfee7a",
+        "5d602e1f7463fde6",
+        "619eb2fc53eef6c8",
+        "7c1c0d27f21c900e",
+        "87e0291cbbf4ee34",
+        "8ef82fef226503cf",
+        "a70e7b7b0b8e8202",
+        "b02b2e92c22ea957",
+        "b2996e6a7e88464f",
+        "b33e5d198a2035dc",
+        "b60540b53c4ce598",
+        "bb566381faf0f786",
+        "c5e48b165efc3a93",
+        "c7492ccdf0f4fdd3",
+        "d6478aac50f5dee4",
+        "df13ab18de49c194",
+        "e2312cda97970bb7",
+        "eafbcbc93b7727f5",
+        "eece5360b09dc2e9",
+        "f03cb0a94ea433d7",
+        "f8718ea8d9fa459d"
+      ],
+      "resource_class": "agent",
+      "sha256": "513895d6a2681fc28f81cc1493f2b81886d7b5e7e5b2bd5f6c9a5e387bb30d00",
+      "target_id": "9dadde4c14d86b88"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "agents/value-realization/SKILL.md",
+      "requires": [
+        "0138408af599ec88",
+        "0855ef874be8c8b7",
+        "0d5c64538ea48889",
+        "11a24cd2140719d8",
+        "22a1319bfb75551f",
+        "262094c9f6b48dcc",
+        "2d433e750b92e810",
+        "365dba9b2f143b00",
+        "37eb1b29e66139ac",
+        "4ff6c2e5efe93809",
+        "7c9e8d51544ffdb0",
+        "8a772084e2af9a82",
+        "8ef82fef226503cf",
+        "9795a770b59d34c4",
+        "a1bd3d03dbf8c77c",
+        "b33e5d198a2035dc",
+        "c7492ccdf0f4fdd3",
+        "cfe92e632bda5147",
+        "e44296ee6f4e9e52",
+        "e62912c5c6681185",
+        "edbd5a638e23738f",
+        "f8718ea8d9fa459d",
+        "fe7e20433cfac49c"
+      ],
+      "resource_class": "agent",
+      "sha256": "6f349b1ab84e9bfaaefe223a72f5c80f6f51069f91138c6c783729b37354135b",
+      "target_id": "6cb66b628d7640ca"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "agents/vp-product/SKILL.md",
+      "requires": [
+        "0138408af599ec88",
+        "102d4b76a4c8eb89",
+        "11a24cd2140719d8",
+        "15a9e0b33b40eb40",
+        "1d1ad958d9d69ccf",
+        "1d6b3ac9c7b7377e",
+        "1e79c47bbc7e5133",
+        "21f4e8883565841f",
+        "262094c9f6b48dcc",
+        "2703c9a100149fed",
+        "2d433e750b92e810",
+        "3087c086ce94e929",
+        "38b9d50c1a6c6107",
+        "3f6d905d4fc15892",
+        "40456191e6d13047",
+        "47257396f4a6d0cd",
+        "53f7fcde1c58c976",
+        "576d9b3fa35fee56",
+        "5eaaa350565e6dbe",
+        "6cb66b628d7640ca",
+        "6f668b0ab15f0708",
+        "72e4a0fa172bd557",
+        "84140a42a113d15b",
+        "85fd225329ffd3b4",
+        "8c4bda96df47d776",
+        "8ef82fef226503cf",
+        "9795a770b59d34c4",
+        "979fa12f9ce298fd",
+        "9dadde4c14d86b88",
+        "9e22d6c2a7cbcfd5",
+        "a5ec9351021d40a8",
+        "aef7081833f6864b",
+        "b04e95b4aad79944",
+        "b2996e6a7e88464f",
+        "b33e5d198a2035dc",
+        "bb566381faf0f786",
+        "c13b9d1b15c94d70",
+        "c62964837d840b03",
+        "c7492ccdf0f4fdd3",
+        "cfe92e632bda5147",
+        "d34d532e2bdd13aa",
+        "d3831f281468bdac",
+        "d5e43bd62bf48af2",
+        "d6478aac50f5dee4",
+        "e2312cda97970bb7",
+        "f8718ea8d9fa459d",
+        "f8edb40217748271",
+        "f9ca7062799eb93c",
+        "fe7e20433cfac49c"
+      ],
+      "resource_class": "agent",
+      "sha256": "e529b7f67e95a00d8488347bf893ce04d3959f15d19ee1e07ade27f980d0bcd2",
+      "target_id": "3ed16a9931f717c6"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/AGENT-INTEGRATION.md",
+      "requires": [
+        "0745ab67fcaebf96",
+        "8cf6886b24a3198f",
+        "da316773a2a64be1"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "5eabb7e83433c8bc094e10906379c77f73c0e6a60cb4fd6bdadcb2ad3e00cfd9",
+      "target_id": "d72a9c8c790c9aec"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/PRINCIPLES.md",
+      "requires": [
+        "926499d3f9465f3e",
+        "f8c72cc291b2ffb4"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "363f81099f0bb7423a3b4cf11758394cd89b476e4195577f6e95d0eb078e68be",
+      "target_id": "b33e5d198a2035dc"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/standard/v5.0/README.md",
+      "requires": [
+        "2074ac191d317834",
+        "22635c623884dcaf",
+        "40c4b93b1d7fb921",
+        "41b2c25e43d3a410",
+        "467cf052adce81ea",
+        "4680c045c1a21dba",
+        "535a2e031c6046f4",
+        "53f7fcde1c58c976",
+        "5d602e1f7463fde6",
+        "6782bc76f67501e1",
+        "6d96b2995b032cde",
+        "80598289fbf0d9d0",
+        "8576eb94d6fb524f",
+        "87e0291cbbf4ee34",
+        "8ef82fef226503cf",
+        "9795a770b59d34c4",
+        "997cdf5449ec5cdd",
+        "ae520ac3e524858b",
+        "b60540b53c4ce598",
+        "b686a94a11cece63",
+        "c7492ccdf0f4fdd3",
+        "dbe24c79037b7068",
+        "e5ba6aa08c0d1a0b",
+        "f03cb0a94ea433d7"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "3d6ff92d2653a1c0c98747e59b9d4917465232bb56f45f3e55702f7321baca22",
+      "target_id": "362ed8d4eb4e926a"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/standard/v5.0/conformance/reporter-api-spec.md",
+      "requires": [
+        "467cf052adce81ea",
+        "e5ba6aa08c0d1a0b"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "eb9b34db7e8d9901f5c55f1313b75a3e9c12b58059bcbd20b7b6dde01d3fdc02",
+      "target_id": "997cdf5449ec5cdd"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/standard/v5.0/conformance/reporter-api.openapi.yaml",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "ee366bf04f80c03c4d13b4e49fa98198555cbbe38cc8c1362d89146842fab59c",
+      "target_id": "e5ba6aa08c0d1a0b"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/standard/v5.0/conformance/signal-vocabulary.md",
+      "requires": [
+        "4680c045c1a21dba",
+        "997cdf5449ec5cdd",
+        "e5ba6aa08c0d1a0b"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "9e81d5718dd1b612841aa946616482a85e34d472a2633daa1367df365bf85899",
+      "target_id": "6d96b2995b032cde"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/standard/v5.0/mode-drift/layer-1-detection.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "1213e5822c8e267d92bd1a8f3282f932b8b5d07cb4de40b78ea876eef00a8e5a",
+      "target_id": "b686a94a11cece63"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/standard/v5.0/mode-drift/layer-2-audit-hook.md",
+      "requires": [
+        "535a2e031c6046f4"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "f0d7117664383f32e046f9699a3d4f7f7589f824a92c1f9d31dd619e4b016c99",
+      "target_id": "8576eb94d6fb524f"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/standard/v5.0/mode-drift/layer-3-mode-confirmation.md",
+      "requires": [
+        "997cdf5449ec5cdd"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "88d7f220c47741de2a12dc00a852df8adc7e7c94b3a58456e2bb350dbf7bd2c8",
+      "target_id": "467cf052adce81ea"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/standard/v5.0/mode-drift/layer-4-attestation.md",
+      "requires": [
+        "41b2c25e43d3a410"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "c0e8ec804b247f0317b6f63723c3550ce68fd80e65d58c538e7fe40baea4eb3c",
+      "target_id": "6782bc76f67501e1"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/standard/v5.0/mode-drift/layer-4-attestation.schema.json",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "725a5417521c77dead50d666c7a5ad73310a35b61acc9cbd2b73413394ec7d68",
+      "target_id": "41b2c25e43d3a410"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/standard/v5.0/release/CHANGELOG-ENTRY.md",
+      "requires": [
+        "2074ac191d317834",
+        "22635c623884dcaf",
+        "40c4b93b1d7fb921",
+        "41b2c25e43d3a410",
+        "467cf052adce81ea",
+        "4680c045c1a21dba",
+        "535a2e031c6046f4",
+        "6782bc76f67501e1",
+        "6d96b2995b032cde",
+        "80598289fbf0d9d0",
+        "8576eb94d6fb524f",
+        "997cdf5449ec5cdd",
+        "ae520ac3e524858b",
+        "b686a94a11cece63",
+        "dbe24c79037b7068",
+        "e5ba6aa08c0d1a0b"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "325e7f585f986603bb6c1608582efb4cf45e9dc6dfa1b48d155df0a1c636d4d4",
+      "target_id": "132f53579b717d2a"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/standard/v5.0/release/RELEASE-NOTES-v5.0.0.md",
+      "requires": [
+        "ae520ac3e524858b"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "a888344c325f022d912a5bc98735bf96d269279bc6d5303125630e0c5f050929",
+      "target_id": "1984076c92dab25d"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/standard/v5.0/release/RELEASE-NOTES-v5.1.0.md",
+      "requires": [
+        "22635c623884dcaf",
+        "40c4b93b1d7fb921",
+        "535a2e031c6046f4",
+        "6d96b2995b032cde",
+        "80598289fbf0d9d0",
+        "dbe24c79037b7068"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "08aa6e5525e8b1dcf776a27c91112b14e941eb592559b876cf756b5936b57cc3",
+      "target_id": "ae520ac3e524858b"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/standard/v5.0/schemas/article-50-disclosure-metadata.json",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "b02be2cae9511105b5eebd64dc68eb7818e11daf6b0047ced5b6fdaa4089f1f9",
+      "target_id": "22635c623884dcaf"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/standard/v5.0/schemas/charter.schema.json",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "ba78a2cc8264c4e779fda86821a8ccb3960a1647bed09d7e4dc042903871c5fe",
+      "target_id": "dbe24c79037b7068"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/standard/v5.0/schemas/decision-record.schema.json",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "1e510cd2c3c40291828867393e988f859a734ba7a09cc840b539adc3557abcc8",
+      "target_id": "535a2e031c6046f4"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/standard/v5.0/state-machines/charter-state-machine.md",
+      "requires": [
+        "6d96b2995b032cde",
+        "dbe24c79037b7068"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "9ef7b57ca90b347bb5b11261484aa178416468ac45bfa859445ce0ebb668b472",
+      "target_id": "40c4b93b1d7fb921"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/standard/v5.0/state-machines/decision-record-state-machine.md",
+      "requires": [
+        "41b2c25e43d3a410",
+        "535a2e031c6046f4",
+        "6d96b2995b032cde"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "8133653e24e69923e2762363342fb2c2cc72694606638cde7f7822ffa7165f0c",
+      "target_id": "80598289fbf0d9d0"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/standard/v5.0/tests/cross-stream-conformance-check.md",
+      "requires": [
+        "22635c623884dcaf",
+        "41b2c25e43d3a410",
+        "4680c045c1a21dba",
+        "535a2e031c6046f4",
+        "6d96b2995b032cde",
+        "dbe24c79037b7068"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "2b96e81ed39fe34f020f75523211e1e364e178fe11b61d4abc5618a715c80c8a",
+      "target_id": "2074ac191d317834"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/standard/v5.0/tests/synthetic-charter-library.md",
+      "requires": [
+        "2074ac191d317834"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "813d37c132965bb1db898d159337d2b3140ca0181c2ceebd87e1e76542292c3d",
+      "target_id": "4680c045c1a21dba"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/templates/decision-charters/customer-outcome-charter-template.md",
+      "requires": [
+        "b33e5d198a2035dc",
+        "dbe24c79037b7068"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "1827c4cc4bf41078f183ad96ef8c44149b4871743e3f759d33ea3db592a4d255",
+      "target_id": "c9d4c3bd6ead2be0"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/templates/decision-charters/data-charter-template.md",
+      "requires": [
+        "b33e5d198a2035dc",
+        "dbe24c79037b7068"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "da9959527c72399407952c245df31d6d07d0b6a061dbeb487070fd0c4df38985",
+      "target_id": "ce67ba90c05c4de8"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/templates/decision-charters/engineering-charter-template.md",
+      "requires": [
+        "b33e5d198a2035dc",
+        "dbe24c79037b7068"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "e20232bee04785fd3762d3202701a9ea3558aa210d37cb04adfeaa4384216e2f",
+      "target_id": "b192082ec1b3e5e6"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/templates/decision-charters/pmm-charter-template.md",
+      "requires": [
+        "b33e5d198a2035dc",
+        "dbe24c79037b7068"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "c5204e355d6daa2a383262aaadef4527b88bc744538286c7f92ac42ea669136e",
+      "target_id": "0cf1dbaa37496190"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/templates/document-intelligence.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "8949bc6cbb02a5786020cfcac5cc31404446a3e951f191738d14befb12ca82f9",
+      "target_id": "6227d9dec58964d7"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/templates/documents/decision-interface-charter.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "08e1e2dd99a64eed9716bd8a406b7255a0b94cee1d4a5f072eaf253509d8dc1c",
+      "target_id": "e9fab134011294eb"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/templates/documents/decision-record.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "0022aeadfc3418f5c707741a1ca216b90961e22e0162f118dd717fc4bc143b18",
+      "target_id": "08f73c5a0a4222d6"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/templates/documents/gtm-brief.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "b19099cdb034d3afdc199e2c886307feac52d3f48dbf6975147f22ad3f5d5b80",
+      "target_id": "56efbd85e6dcc070"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/templates/documents/launch-readiness-checklist.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "4346d446a66c1ab6cd45ff45038d8f672a8b00f9e518205331b94cd3dc66a7ad",
+      "target_id": "9536a1dac398511b"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/templates/documents/roadmap-theme.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "35d3c73a22c1465d894240e63773c137a0b0f7d1f6100576d0489421c9ff6e1d",
+      "target_id": "802001e6131e3306"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/templates/documents/strategic-bet.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "60de8983b3fe6a6d9b24dffd59b02babd1e424cde9e7b3fa621a6080f1c8d3f0",
+      "target_id": "690eff8394079961"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/templates/presentations/TEMPLATE-REFERENCE.md",
+      "requires": [
+        "0860c6a47764f3c7",
+        "8c5e490bbd05ad1e",
+        "90834a317f74da57"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "77a2ac86a79b6d3daeacb6b3d1648a959bc49aeb4fd17f47fc423c37fb13e200",
+      "target_id": "a1aa35b902a85408"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/templates/presentations/base-template.html",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "39209f6bfd2853ed982a0430831fba08d06745cd2770d8ecfe9a83baabbfc474",
+      "target_id": "fc84dd388a21199e"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/os-support/templates/presentations/styles/product-org-theme.css",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "9c55ebd3e7b40a99f03602c50831408d4e7fcaffff6ed3419c09f57b0ece8586",
+      "target_id": "5e1325f438a98516"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/a2a-architecture.md",
+      "requires": [
+        "03a72ccdbc641d1e",
+        "1302450983bcf2ad",
+        "366e10b5531a2965",
+        "547ea2d5901c3e13",
+        "6bb3ae22de22ac2d",
+        "6df7e7d318778947",
+        "74414cdf945ea90b",
+        "926499d3f9465f3e",
+        "bb891dd0ea58eda2",
+        "dd0c07a6f7b5f5af",
+        "e8a0710f93eb8084"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "04886f1a6c41496919f4ce9540836d6631e8b6f46a5869086db79967832b19c6",
+      "target_id": "e57d467c5e67ccd1"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/accessibility-audit.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "970e71b3a72312bb35367b0e07489caa3efeaf3da7b8ee7fb51321ee27f43f06",
+      "target_id": "ae54b26342a16608"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/agent-identity.md",
+      "requires": [
+        "03a72ccdbc641d1e",
+        "0fb17fa4be6b6dfb",
+        "366e10b5531a2965",
+        "4474ebc84a590571",
+        "6bb3ae22de22ac2d",
+        "6df7e7d318778947",
+        "74414cdf945ea90b",
+        "905cc0e6f8dfed4d",
+        "926499d3f9465f3e",
+        "bb891dd0ea58eda2",
+        "da316773a2a64be1",
+        "dd0c07a6f7b5f5af",
+        "e57d467c5e67ccd1",
+        "e8a0710f93eb8084"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "59b74958ecf2734c3bca9afce65655636fde2ab7218e4e0a466f7658cbddda58",
+      "target_id": "1302450983bcf2ad"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/agent-runtime-patterns.md",
+      "requires": [
+        "0600bd76cbe44ce4",
+        "a22b844b818631d6",
+        "bb891dd0ea58eda2",
+        "e57d467c5e67ccd1"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "a08f2b7b718f2a1fbd6d841d2f48452621e648a1057209c69150763eac01dc2b",
+      "target_id": "405daa9588276468"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/agentic-commerce.md",
+      "requires": [
+        "1302450983bcf2ad",
+        "1d1ad958d9d69ccf",
+        "3e519efaeed19cd6",
+        "74414cdf945ea90b",
+        "762687f860e3b54f",
+        "bb891dd0ea58eda2",
+        "d6e38667a8ddb982",
+        "e57d467c5e67ccd1"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "c9e17a0b5fb8e356a398d937213faf29a10f5f01e51b6e5f79cb474d2edf8c43",
+      "target_id": "90a9f0847a69bbd0"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/agentic-security.md",
+      "requires": [
+        "03a72ccdbc641d1e",
+        "1302450983bcf2ad",
+        "366e10b5531a2965",
+        "6bb3ae22de22ac2d",
+        "6df7e7d318778947",
+        "7c4c082692347f4c",
+        "926499d3f9465f3e",
+        "9e22d6c2a7cbcfd5",
+        "a231b931602c9da8",
+        "b54e5822b50add7d",
+        "bb891dd0ea58eda2",
+        "da316773a2a64be1",
+        "e57d467c5e67ccd1",
+        "e8a0710f93eb8084"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "5bf9446ed6dbda8c5c17d5956eb6701b9f59d84a02cd559f47862694e4d52796",
+      "target_id": "74414cdf945ea90b"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/ai-act-readiness.md",
+      "requires": [
+        "0fb17fa4be6b6dfb",
+        "7c4c082692347f4c",
+        "926499d3f9465f3e",
+        "9e22d6c2a7cbcfd5",
+        "a231b931602c9da8",
+        "cc240ccad9512f48"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "d2d97cd871774b88285f6a67eae923c7818081be721b642abda1531e9348e504",
+      "target_id": "4474ebc84a590571"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/ai-agent-readiness-rubric.md",
+      "requires": [
+        "03e0ad00bcfb980c"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "f6198b27026759083ec26cd09301432cdca0f51accff5c2b27cf27e57e4b0fa0",
+      "target_id": "4a2872ee22fb577b"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/ai-agent-supervisor.md",
+      "requires": [
+        "0fb17fa4be6b6dfb",
+        "11a24cd2140719d8",
+        "1302450983bcf2ad",
+        "1687dbbfa59730dd",
+        "37eb1b29e66139ac",
+        "4474ebc84a590571",
+        "6bb3ae22de22ac2d",
+        "74414cdf945ea90b",
+        "7c4c082692347f4c",
+        "926499d3f9465f3e",
+        "ac0ec582df316be8",
+        "bb891dd0ea58eda2",
+        "e8a0710f93eb8084"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "dd307d78e0d8b39f33ff46d67b15b3aa1aa1c5418f8f0103f7199a66db870417",
+      "target_id": "ef350f8ef1a7be68"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/ai-bom.md",
+      "requires": [
+        "0fb17fa4be6b6dfb",
+        "1302450983bcf2ad",
+        "3c9f80d97bcc8f0c",
+        "4474ebc84a590571",
+        "6bb3ae22de22ac2d",
+        "74414cdf945ea90b",
+        "7c4c082692347f4c",
+        "861f7cf914f0333c",
+        "926499d3f9465f3e",
+        "9e22d6c2a7cbcfd5",
+        "a231b931602c9da8",
+        "bb891dd0ea58eda2",
+        "cc240ccad9512f48",
+        "dd0c07a6f7b5f5af",
+        "e57d467c5e67ccd1",
+        "e8a0710f93eb8084"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "5f43f2c5fdaaa6e32e035af894d6ac0d4e570aead12af967173281be8fd1fab6",
+      "target_id": "366e10b5531a2965"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/ai-ml-patterns.md",
+      "requires": [
+        "405daa9588276468"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "ac00570895eeeb07df01f934e91c07cd844c94abcee9f309cd13371a81a0da82",
+      "target_id": "0600bd76cbe44ce4"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/ai-native-rfp.md",
+      "requires": [
+        "0fb17fa4be6b6dfb",
+        "37eb1b29e66139ac",
+        "3b93792dcaae332f",
+        "65a942119409d97a",
+        "73736179b05da443",
+        "926499d3f9465f3e",
+        "b6937563a9d11cc7",
+        "bda32bf474ad358a",
+        "dd0c07a6f7b5f5af",
+        "e8a0710f93eb8084"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "0ebf80fb9156dcf485e29113131a34337bbc60c241cd45afc411e120402d0585",
+      "target_id": "23bf9120b130aa64"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/ai-research-synthesis.md",
+      "requires": [
+        "08b3f5e0749c3377",
+        "11a24cd2140719d8",
+        "1302450983bcf2ad",
+        "1687dbbfa59730dd",
+        "37eb1b29e66139ac",
+        "74414cdf945ea90b",
+        "767dd3f58db4273d",
+        "7bf1924b071ffeb3",
+        "7c4c082692347f4c",
+        "926499d3f9465f3e",
+        "ae54b26342a16608",
+        "d3500d9bf2d62a9d",
+        "e8a0710f93eb8084",
+        "ef350f8ef1a7be68"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "8349eb386159214905723090ef15ca10a0364e0a290caef546cf1fe6c45430a8",
+      "target_id": "c2f97a64148711f4"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/analytics-methodology.md",
+      "requires": [
+        "797ecd8e665c9f19"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "850bff8c993e7081811cab7cead1b0a73561ce31bddbe2febcc537c05173b8d9",
+      "target_id": "7bf1924b071ffeb3"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/api-design.md",
+      "requires": [
+        "0600bd76cbe44ce4"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "a172d7298b5b436139f8587ad4c19d886948f442de9d7c3e7e1c8a31df6230fe",
+      "target_id": "547ea2d5901c3e13"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/change-management.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "9d68496c869bd690fa5ae189563fa51877ecd146385432f9eb8c90370620d214",
+      "target_id": "38f711948bd46f2f"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/cloud-patterns.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "7a6eae9eb8e6901a9cd03285aa13bc13004cab05d65a0a33cfe31dee44f019d5",
+      "target_id": "085a3fe54b8f7da6"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/code-review.md",
+      "requires": [
+        "03a72ccdbc641d1e"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "e8fa44482e0b58063b74d51a457e5a0e9e57126d4923fbaab2c0db3960dfc7c7",
+      "target_id": "10da79727b62675e"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/competitive-frameworks.md",
+      "requires": [
+        "90a9f0847a69bbd0"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "fca7ed215b1b97a077bcf9af13b992f6c69cd860aa97bfbd458b680104ea235e",
+      "target_id": "3e519efaeed19cd6"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/compliance-frameworks.md",
+      "requires": [
+        "8a84e2a5117d3783",
+        "926499d3f9465f3e",
+        "b33e5d198a2035dc"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "e56b039a33a4561db723fef3318bdfb70a9beca24b84b500d1175c4f31eb4e16",
+      "target_id": "0fb17fa4be6b6dfb"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/compliance-program.md",
+      "requires": [
+        "b33e5d198a2035dc"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "26a5c8509cbceafb12c6e58702aa9dae1be103a059afbad2b9314c4adba7c70f",
+      "target_id": "b6937563a9d11cc7"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/content-marketing.md",
+      "requires": [
+        "618d71d94c4cdcdd",
+        "65a942119409d97a"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "a3f25c969d53f363d908e91c941c0e72ce74d88b183fb769141f49afbae7da59",
+      "target_id": "e87316b1662bfd54"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/contract-templates.md",
+      "requires": [
+        "366e10b5531a2965",
+        "4474ebc84a590571"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "cc91a6314d411fc9d0790a786892e2957e532e9d9fbb537dd485e07644cf66e6",
+      "target_id": "366b36347887ca47"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/csa-ai-controls-matrix.md",
+      "requires": [
+        "0fb17fa4be6b6dfb",
+        "1302450983bcf2ad",
+        "366e10b5531a2965",
+        "3c9f80d97bcc8f0c",
+        "4474ebc84a590571",
+        "6bb3ae22de22ac2d",
+        "6df7e7d318778947",
+        "74414cdf945ea90b",
+        "7c4c082692347f4c",
+        "861f7cf914f0333c",
+        "926499d3f9465f3e",
+        "9e22d6c2a7cbcfd5",
+        "a231b931602c9da8",
+        "bb891dd0ea58eda2",
+        "e8a0710f93eb8084"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "2429bbd037f9e4f2c00efd84b4f0102c35aab24a616477abb06031cadab21ef6",
+      "target_id": "dd0c07a6f7b5f5af"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/customer-success-methodology.md",
+      "requires": [
+        "11a24cd2140719d8",
+        "1687dbbfa59730dd",
+        "1d1ad958d9d69ccf",
+        "23bf9120b130aa64",
+        "262094c9f6b48dcc",
+        "366e10b5531a2965",
+        "5103dbc8a379d264",
+        "65a942119409d97a",
+        "6bb3ae22de22ac2d",
+        "74414cdf945ea90b",
+        "bb891dd0ea58eda2",
+        "bda32bf474ad358a",
+        "dd0c07a6f7b5f5af",
+        "e8a0710f93eb8084",
+        "ef350f8ef1a7be68"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "d97bb76f64e59dd649a9dbffc0af15d435616d8c35c1cf48e385e81cbe97d353",
+      "target_id": "37eb1b29e66139ac"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/data-governance.md",
+      "requires": [
+        "1302450983bcf2ad",
+        "2dffd5a143d10896",
+        "74414cdf945ea90b",
+        "797ecd8e665c9f19"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "d8b8e7ba14bc94a4e9e5ad0896f97fb08b886f465765a8409dd8b597e8dad94e",
+      "target_id": "3c9f80d97bcc8f0c"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/data-modeling.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "0c63b7e616267db08dda65919c0c24a2f33b5fcc13bd5f71bd646ea2b64b9e0c",
+      "target_id": "797ecd8e665c9f19"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/data-visualization-bi.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "831b3bca10c206f6d91a63c950d9b42a9de9832c69aa1989801ba437345dad81",
+      "target_id": "44a5d1040ebbe6f9"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/deliverability-engineering.md",
+      "requires": [
+        "0fb17fa4be6b6dfb",
+        "1687dbbfa59730dd",
+        "23bf9120b130aa64",
+        "33f0b705d9b7c44d",
+        "37eb1b29e66139ac",
+        "5103dbc8a379d264",
+        "7c4c082692347f4c",
+        "926499d3f9465f3e",
+        "c410dddd1dbd0365",
+        "f8c72cc291b2ffb4"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "8528666df86536863983549a20950a7d1cdf5b376730db9542bdb0935007bf50",
+      "target_id": "bda32bf474ad358a"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/design-dev-handoff.md",
+      "requires": [
+        "08b3f5e0749c3377"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "c3c61d91ad888d7d4e9e37ff13ddea45b8154d883896be9753ecd2ba40c72679",
+      "target_id": "104f048ff29e0f9c"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/design-systems.md",
+      "requires": [
+        "4a2872ee22fb577b"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "cda57f5cf4776dea4225333ff932700fa6a2bed1d5bce425e10292c648c1415b",
+      "target_id": "03e0ad00bcfb980c"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/discovery-methods.md",
+      "requires": [
+        "1d1ad958d9d69ccf",
+        "767dd3f58db4273d",
+        "ac297688d2230bbf"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "67148361bc5ceb76ea7ae174c6f98d4669a75126c3ebeb7cbb757c30cff83d88",
+      "target_id": "9aa9fb4ae0ba35d2"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/email-marketing.md",
+      "requires": [
+        "bda32bf474ad358a"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "d78a43130b539a6ee3a15e2bcd362d1995e04562f41865e813ac1c9764853e1d",
+      "target_id": "c410dddd1dbd0365"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/employment-law.md",
+      "requires": [
+        "9e22d6c2a7cbcfd5"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "87762d04a3e2cd9dcd826c83b96dfe9cc50779ea1b26b7fe629ce2080cdcb9fa",
+      "target_id": "dbb3e2c08385302b"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/eu-ai-act-annex-iv.md",
+      "requires": [
+        "0fb17fa4be6b6dfb",
+        "1302450983bcf2ad",
+        "366e10b5531a2965",
+        "3c9f80d97bcc8f0c",
+        "4474ebc84a590571",
+        "6bb3ae22de22ac2d",
+        "74414cdf945ea90b",
+        "7c4c082692347f4c",
+        "926499d3f9465f3e",
+        "a231b931602c9da8",
+        "bb891dd0ea58eda2",
+        "dd0c07a6f7b5f5af"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "c54eaec4c7aac1fec50372cdd479e784332bee13aff48172b28612f24cf2355f",
+      "target_id": "e8a0710f93eb8084"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/experimentation-ml.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "49be561c531ae51c23bda28196e2b3a2b1994bca66aa3b047b46d75861e51e8b",
+      "target_id": "0243013954622f07"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/financial-modeling.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "50e2e5728cdc7bf60398747038e8d3ed6bed83aad4d083bc9738cf435b37bba6",
+      "target_id": "38b9d50c1a6c6107"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/generative-ui.md",
+      "requires": [
+        "03e0ad00bcfb980c",
+        "0966e913246e87e7",
+        "104f048ff29e0f9c",
+        "1302450983bcf2ad",
+        "65a942119409d97a",
+        "6bb3ae22de22ac2d",
+        "74414cdf945ea90b",
+        "ae54b26342a16608",
+        "bb891dd0ea58eda2",
+        "c2f97a64148711f4",
+        "e57d467c5e67ccd1"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "045b24a350fd948e758792cddf14a7b03205e41e78e364a297b88da78e9e1cdf",
+      "target_id": "08b3f5e0749c3377"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/geo-playbook.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "d14bf340f8b5fd2dc72df309613d1de5c7e0d7493670d32e268f4b7157718656",
+      "target_id": "618d71d94c4cdcdd"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/growth-frameworks.md",
+      "requires": [
+        "90a9f0847a69bbd0"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "02b82d2b21213a8de7814dc6280df6d35ff19b05c6b6c9e8e145d516b686f7e8",
+      "target_id": "401c8d511cf0f212"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/gtm-playbooks.md",
+      "requires": [
+        "1d1ad958d9d69ccf",
+        "33f0b705d9b7c44d",
+        "3e519efaeed19cd6",
+        "618d71d94c4cdcdd",
+        "73736179b05da443",
+        "bda32bf474ad358a"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "54e1feb8f573cad2119f5957aec11f30574d2f5e256fa277babb682364f875a7",
+      "target_id": "762687f860e3b54f"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/hr-ai-governance.md",
+      "requires": [
+        "4474ebc84a590571",
+        "7c4c082692347f4c",
+        "926499d3f9465f3e",
+        "a231b931602c9da8",
+        "cc240ccad9512f48",
+        "da316773a2a64be1",
+        "dbb3e2c08385302b",
+        "e740774990b8f623"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "ec426fc50dfc6e9628cd454dcec9b0fa089dbba76717f2e9fbbe21111f3ce5e2",
+      "target_id": "9e22d6c2a7cbcfd5"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/incident-response-dev.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "9fffe55b249f086928947ec16c7d65f4869fd1cdef19d9d5068e6093bcbff1e5",
+      "target_id": "b54e5822b50add7d"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/incident-response-playbook.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "ec3e196485af44586f981ce46487a34c79b1468abb1b7816cd17ad4e38b5940c",
+      "target_id": "7c1c0d27f21c900e"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/ip-law.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "719a047aa2d115263a391eb6de6d121ac679c7ad3752aad8fc2f7127e06f71e3",
+      "target_id": "2dffd5a143d10896"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/it-governance.md",
+      "requires": [
+        "b38a2b5ec4ddde35"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "922803f12b5b81eb26a7a92e67fb6635c0e55dc53603309459d94f8395e6ed7b",
+      "target_id": "905cc0e6f8dfed4d"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/llm-evaluation.md",
+      "requires": [
+        "0243013954622f07",
+        "0600bd76cbe44ce4",
+        "44a5d1040ebbe6f9",
+        "7bf1924b071ffeb3"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "09b0d2923572269c8e299c8e71e17ce31cac1dce134bc3daaeb893bf38574f66",
+      "target_id": "7bf456d1661825ae"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/llm-seo.md",
+      "requires": [
+        "0243013954622f07",
+        "08b3f5e0749c3377",
+        "1687dbbfa59730dd",
+        "23bf9120b130aa64",
+        "5103dbc8a379d264",
+        "7bf1924b071ffeb3",
+        "926499d3f9465f3e",
+        "e87316b1662bfd54",
+        "efdc7d45859f4e48"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "4de561bb2237e7c6a5d8e4184f9bff5184bd1cb9254b3c1ee40476d0413017f6",
+      "target_id": "65a942119409d97a"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/ma-value-stack.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "17dfe9cbb697456290bcd2cd6e2ec8a3ba4e8ffd993c155556321737b37fe8cc",
+      "target_id": "3f6d905d4fc15892"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/market-research.md",
+      "requires": [
+        "d3500d9bf2d62a9d"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "55549a7151453d3c98a750361ab0d0262ddd81b2907f64cbab65d302f2f95e19",
+      "target_id": "ebb3f9a4df3c5a6b"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/mcp-architecture.md",
+      "requires": [
+        "03a72ccdbc641d1e",
+        "0600bd76cbe44ce4",
+        "085a3fe54b8f7da6",
+        "08b3f5e0749c3377",
+        "1302450983bcf2ad",
+        "366e10b5531a2965",
+        "547ea2d5901c3e13",
+        "6bb3ae22de22ac2d",
+        "74414cdf945ea90b",
+        "926499d3f9465f3e",
+        "dd0c07a6f7b5f5af",
+        "e57d467c5e67ccd1",
+        "e8a0710f93eb8084"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "34e8a275f8595c309eb7ab7f763ebc3b8e8cb45259da49b56de76cb3b1e1bed7",
+      "target_id": "bb891dd0ea58eda2"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/mcp-governance.md",
+      "requires": [
+        "03a72ccdbc641d1e",
+        "0fb17fa4be6b6dfb",
+        "1302450983bcf2ad",
+        "366e10b5531a2965",
+        "4474ebc84a590571",
+        "6df7e7d318778947",
+        "74414cdf945ea90b",
+        "905cc0e6f8dfed4d",
+        "926499d3f9465f3e",
+        "9e22d6c2a7cbcfd5",
+        "a231b931602c9da8",
+        "bb891dd0ea58eda2",
+        "dd0c07a6f7b5f5af",
+        "e57d467c5e67ccd1",
+        "e8a0710f93eb8084",
+        "ee05c09ca5402dab"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "8cef5cfb5ad4e6c80f72e479503de16c6b51885c7126dd42b281bb3fa084d979",
+      "target_id": "6bb3ae22de22ac2d"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/metrics-frameworks.md",
+      "requires": [
+        "7bf456d1661825ae"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "eef2e3d4b60e15282e3c24892f89bb5cf9ebc4377f3f63dc1706573ec065b882",
+      "target_id": "262094c9f6b48dcc"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/mmm-modeling.md",
+      "requires": [
+        "0243013954622f07",
+        "1687dbbfa59730dd",
+        "1d1ad958d9d69ccf",
+        "262094c9f6b48dcc",
+        "401c8d511cf0f212",
+        "65a942119409d97a",
+        "7bf1924b071ffeb3",
+        "926499d3f9465f3e",
+        "bda32bf474ad358a",
+        "f16458da371828d1"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "04a282e213eb7f76b91fac62e85995f3f993b0a12279bb0f246af0fdff782d31",
+      "target_id": "5103dbc8a379d264"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/nda-review-playbook.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "8863d1f20d0d0df5107681efd51cc1d2f9f50a72ee2d4972b6131ffbc04b1ddf",
+      "target_id": "07c169594a32e6f8"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/operations-playbooks.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "f693ec7cef333f107529374ab70aad56e316c2fa446c9126dff15c729327b985",
+      "target_id": "327851ba094e9d4c"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/paid-media.md",
+      "requires": [
+        "5103dbc8a379d264",
+        "618d71d94c4cdcdd"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "9f72f7ba53450c32e219c9211f8e13e4f38483926256872ad1433944df9b600d",
+      "target_id": "f16458da371828d1"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/partnership-models.md",
+      "requires": [
+        "90a9f0847a69bbd0"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "3369bdedae07bf460e3899f5c00bfefa9e42cb15a1445ccf8299fdce4508a274",
+      "target_id": "d6e38667a8ddb982"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/pr-communications.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "6bc41ff10d82eae2220b4cf2a9f75feaef8500f303e7286b5097907af1262a88",
+      "target_id": "0150dae35f620d6c"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/pricing-frameworks.md",
+      "requires": [
+        "f549fd8fb68d916f"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "7ba673743f9cdcf31e00dc9652296dde77ab9fe30eab0c9781e2bc29994af260",
+      "target_id": "1d1ad958d9d69ccf"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/prioritization.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "e37b02099d1515413cca310e710b0ebb277ec720df1ec6c507519906cd47b118",
+      "target_id": "ac297688d2230bbf"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/privacy-frameworks.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "91cec11f9ce7465bd99db35200eeb8f54ba8718da9ad8d4fde9065e1df9183f4",
+      "target_id": "7c4c082692347f4c"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/program-management.md",
+      "requires": [
+        "0a411e28690b06bf"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "1a4b96015955fc1013d891fe2e5b67eb8a18c80eb9dd2226454347875011b2c1",
+      "target_id": "c5e48b165efc3a93"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/project-management.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "2423aaf5d73af82b0d5c68805cce21089b173d2a22ec2290bf6991beb8c2b2a7",
+      "target_id": "0a411e28690b06bf"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/research-methodology.md",
+      "requires": [
+        "9aa9fb4ae0ba35d2"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "8dff51bd6e99d7cce70924271ad681d8c981310a97305f6a6c06bf675a01f475",
+      "target_id": "d3500d9bf2d62a9d"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/retention-marketing.md",
+      "requires": [
+        "11a24cd2140719d8",
+        "1d1ad958d9d69ccf",
+        "262094c9f6b48dcc",
+        "37eb1b29e66139ac",
+        "401c8d511cf0f212",
+        "5103dbc8a379d264",
+        "65a942119409d97a",
+        "762687f860e3b54f",
+        "7bf1924b071ffeb3",
+        "c410dddd1dbd0365",
+        "ef350f8ef1a7be68"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "5ee96cd595241ffa40efad205c9486fbf0d1207b1f60612dd85b4ccb902ce189",
+      "target_id": "1687dbbfa59730dd"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/rfp-templates.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "47a25ff608e8b4bb6876cbc58650762edcdde2461d92b5bed74699323fcc8b4b",
+      "target_id": "3b93792dcaae332f"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/risk-management.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "67563a66c46d04e76861b0d5d48da347f580421b5caef73867dee57a1ae0acb9",
+      "target_id": "b38a2b5ec4ddde35"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/saas-metrics.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "006d329f52ac8ab9a640901f97d653e84dac2a6f2136ab24a465e640cb1c5661",
+      "target_id": "e44296ee6f4e9e52"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/sales-methodology.md",
+      "requires": [
+        "33f0b705d9b7c44d",
+        "762687f860e3b54f"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "095a9f91c9c0d9ebee58f9329710e2e7f1b07e7be3df5b8d6e12949fb87436a1",
+      "target_id": "73736179b05da443"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/sales-operations.md",
+      "requires": [
+        "73736179b05da443",
+        "762687f860e3b54f",
+        "90a9f0847a69bbd0"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "0b6119db45425bee08ffaf1147258f86e764518e9d13c0b5d45ecde905471af1",
+      "target_id": "33f0b705d9b7c44d"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/security-frameworks.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "a77f4e4b4c1ce1f577d900901b4ff70d1aa2fa25040c0095d1d5174e592463dd",
+      "target_id": "6df7e7d318778947"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/security-policy-templates.md",
+      "requires": [
+        "1302450983bcf2ad",
+        "74414cdf945ea90b"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "f392cb829f1cad0d6fa40a4f3a3d6f527944ddf2d516f6ab102ff161835dd81e",
+      "target_id": "ee05c09ca5402dab"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/seo-frameworks.md",
+      "requires": [
+        "65a942119409d97a"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "bb348953a40e1e0f3b724dce7e4ceaec7059685e9457ff9dea78e870c16b5e6d",
+      "target_id": "efdc7d45859f4e48"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/stakeholder-management.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "2662198583a6e47cf0fb60a35f1175e045217d497fe1f3e1cca10722a5a03cee",
+      "target_id": "85fd225329ffd3b4"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/state-ai-hiring-laws.md",
+      "requires": [
+        "4474ebc84a590571",
+        "926499d3f9465f3e",
+        "9e22d6c2a7cbcfd5",
+        "a231b931602c9da8"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "4a42f4d6fb449aefe6d5510cac109f87538c470f124b04515e9352adb10d5d4f",
+      "target_id": "861f7cf914f0333c"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/subagent-driven-development.md",
+      "requires": [
+        "10da79727b62675e",
+        "1302450983bcf2ad",
+        "547ea2d5901c3e13",
+        "6bb3ae22de22ac2d",
+        "74414cdf945ea90b",
+        "926499d3f9465f3e",
+        "bb891dd0ea58eda2",
+        "dd0c07a6f7b5f5af",
+        "e57d467c5e67ccd1"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "862d7f5fb083f84baab0b187c84758763238dfc6de92a8973186831264ff0a87",
+      "target_id": "03a72ccdbc641d1e"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/support-operations.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "8160073d384d72f182f3bbe05648dfb0d38f7de59942d61cdf561301756e6c89",
+      "target_id": "ac0ec582df316be8"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/ui-patterns.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "d19e9b96cd697709382294edc8d764b67478230f3223de476e697f8ebe6a30a9",
+      "target_id": "0966e913246e87e7"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/user-research.md",
+      "requires": [],
+      "resource_class": "knowledge",
+      "sha256": "43b7227eaccc5b9723aeda1905eb4737357c0a835ae25e5cec55652a3d1d7764",
+      "target_id": "767dd3f58db4273d"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/value-score-design.md",
+      "requires": [
+        "1687dbbfa59730dd",
+        "1d1ad958d9d69ccf",
+        "262094c9f6b48dcc",
+        "366e10b5531a2965",
+        "37eb1b29e66139ac",
+        "4474ebc84a590571",
+        "74414cdf945ea90b",
+        "7c4c082692347f4c",
+        "926499d3f9465f3e",
+        "9e22d6c2a7cbcfd5",
+        "a231b931602c9da8",
+        "dbb3e2c08385302b",
+        "dd0c07a6f7b5f5af",
+        "e44296ee6f4e9e52",
+        "e8a0710f93eb8084",
+        "ef350f8ef1a7be68"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "3787a39fc3a083b90dd20bc4ebdb96f3ff71ddac4a25090b1db8cdd2b44e1322",
+      "target_id": "11a24cd2140719d8"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "knowledge/shared/venture-innovation.md",
+      "requires": [
+        "74414cdf945ea90b",
+        "b33e5d198a2035dc"
+      ],
+      "resource_class": "knowledge",
+      "sha256": "b939548bd0984d553d591f11c338b62ffcd854ac112c841b2004b6c26d8453ca",
+      "target_id": "ebf251628972c40e"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "rules/agent-metadata-schema.md",
+      "requires": [
+        "327851ba094e9d4c",
+        "9a27fb97dd31e6c8",
+        "b33e5d198a2035dc",
+        "da316773a2a64be1"
+      ],
+      "resource_class": "rule",
+      "sha256": "a265e4e7ccfbd47f775514be2f0ea8ec01f7d781bb98e117a8a04487febeb26e",
+      "target_id": "a22b844b818631d6"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "rules/agent-output-automation.md",
+      "requires": [
+        "8c5e490bbd05ad1e",
+        "90834a317f74da57"
+      ],
+      "resource_class": "rule",
+      "sha256": "c1847a8dff6e50060466cc8a4457502e9c4c0ef28bc71f187f6ca51294fb0217",
+      "target_id": "0860c6a47764f3c7"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "rules/agent-spawn-protocol.md",
+      "requires": [
+        "252b2f687e3d4644",
+        "8cf6886b24a3198f",
+        "9a27fb97dd31e6c8",
+        "a231b931602c9da8",
+        "d72a9c8c790c9aec",
+        "d93c89d91e1e24ac",
+        "deccab7d76df82fc"
+      ],
+      "resource_class": "rule",
+      "sha256": "1778fe7d7114d1dddb6896611474a86a3b37273810daa5abab7bb41f212086e5",
+      "target_id": "da316773a2a64be1"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "rules/auto-context.md",
+      "requires": [
+        "252b2f687e3d4644",
+        "da316773a2a64be1"
+      ],
+      "resource_class": "rule",
+      "sha256": "9659e0152693772f7b15c221fc873001532f57461555b981a958c726bf9e217a",
+      "target_id": "dea664c711371690"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "rules/context-graph.md",
+      "requires": [],
+      "resource_class": "rule",
+      "sha256": "fb2c8a3b944d2aca411aa2c041876cf472299a0c3caf5c7f6f22bee5839afc86",
+      "target_id": "252b2f687e3d4644"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "rules/context-management.md",
+      "requires": [
+        "252b2f687e3d4644",
+        "8cf6886b24a3198f",
+        "a231b931602c9da8",
+        "dea664c711371690"
+      ],
+      "resource_class": "rule",
+      "sha256": "3fad4908e96f5db41438325d150a9c31bdb86708cd7b5d3aecdefbfc4c40a596",
+      "target_id": "f8c72cc291b2ffb4"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "rules/delegate-first.md",
+      "requires": [
+        "c4dd3c9ab0f20e51",
+        "da316773a2a64be1"
+      ],
+      "resource_class": "rule",
+      "sha256": "3c4f2d91d12ebcf5a20219b4803fd53f7f3969e4731ede1e83e93f47342c6132",
+      "target_id": "8a84e2a5117d3783"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "rules/delegation-protocol.md",
+      "requires": [
+        "da316773a2a64be1"
+      ],
+      "resource_class": "rule",
+      "sha256": "a705f89b3a37e794642257eb04fdddd708b19ebf0fd8510c082381cec0bd0c81",
+      "target_id": "e740774990b8f623"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "rules/dr-affirmation-presentation.md",
+      "requires": [
+        "0860c6a47764f3c7",
+        "80598289fbf0d9d0",
+        "90834a317f74da57"
+      ],
+      "resource_class": "rule",
+      "sha256": "dfeaa73a3ec48f0e3336efd466f3a502c4e916116f8bdf8e831c7a6f47d10f04",
+      "target_id": "605966afb1b1cc06"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "rules/no-estimates.md",
+      "requires": [],
+      "resource_class": "rule",
+      "sha256": "49987b6b90b342ad7a94f5463e4d00578b62b66dd50576a6affef29efefcec03",
+      "target_id": "f549fd8fb68d916f"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "rules/parallel-execution.md",
+      "requires": [
+        "da316773a2a64be1"
+      ],
+      "resource_class": "rule",
+      "sha256": "7f8ccd0cfb2c006db7e9080a0213dfc07c560f67c5cd6af6cb2a119c48d600fb",
+      "target_id": "7a1f28f03e73a717"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "rules/presentation-format.md",
+      "requires": [
+        "90834a317f74da57",
+        "a1aa35b902a85408"
+      ],
+      "resource_class": "rule",
+      "sha256": "511fc8ab7caa7ee783af54b5d673ffc7c771e99bcd33c28132618c7e2d35864c",
+      "target_id": "8c5e490bbd05ad1e"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "rules/reference/agent-metadata-schema.md",
+      "requires": [],
+      "resource_class": "rule",
+      "sha256": "60a35583bed1d4161a3b551a3b2477140ccbc2308cf01dcd874e10d26d49b9d2",
+      "target_id": "db0675b44dd9a163"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "rules/reference/agent-output-automation.md",
+      "requires": [],
+      "resource_class": "rule",
+      "sha256": "0cc4bfc4728abffc73d488d202b2275b16a257756cc2622cf3e990537d220f97",
+      "target_id": "9b677aaf97dbb6f7"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "rules/reference/agent-spawn-protocol.md",
+      "requires": [],
+      "resource_class": "rule",
+      "sha256": "f05a4d7c6e7f3c045eb651a96a7de629c05543d86ed73bcf4b25ba1b6c83a6c8",
+      "target_id": "391b1256a8836045"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "rules/reference/delegate-first.md",
+      "requires": [],
+      "resource_class": "rule",
+      "sha256": "c9d1578dd1d3710a8e35435405dacfc1f1be78d4dcfdba59d1ba6d20b09b57a5",
+      "target_id": "6db01da512fd5fd2"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "rules/reference/delegation-protocol.md",
+      "requires": [],
+      "resource_class": "rule",
+      "sha256": "400252ef1b1bb6f02f449d7352c92ea11b73f7ce35a768865f712004c28ed931",
+      "target_id": "91cb41022f1cd00d"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "rules/reference/roi-display.md",
+      "requires": [],
+      "resource_class": "rule",
+      "sha256": "e4ccd74138a122b167f4ffcc01f8003841fdd3dea095d3e9ba2c257e540ecd87",
+      "target_id": "cf3c1ad53f85e204"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "rules/reference/sensitive-skill-guardrails.md",
+      "requires": [],
+      "resource_class": "rule",
+      "sha256": "530901f0b67dff9e4f2db3a584788e0c68ee91b05ee299a14f178bea796c6c62",
+      "target_id": "4c743a702e91922a"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "rules/reference/source-attribution.md",
+      "requires": [],
+      "resource_class": "rule",
+      "sha256": "f59a28b8a132fa2b219a87a39a078fdd7b982069ebb2286ce890578af5bc30fc",
+      "target_id": "ac3979355e34e8e7"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "rules/roi-display.md",
+      "requires": [
+        "0745ab67fcaebf96",
+        "3e31ddaab3b54851",
+        "926499d3f9465f3e",
+        "da316773a2a64be1"
+      ],
+      "resource_class": "rule",
+      "sha256": "c6deec9d8bd0961796645b28c84a23936b4ea380463a2d618126b1df4b40917f",
+      "target_id": "a231b931602c9da8"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "rules/sensitive-skill-guardrails.md",
+      "requires": [
+        "362ed8d4eb4e926a",
+        "41b2c25e43d3a410",
+        "605966afb1b1cc06",
+        "a231b931602c9da8",
+        "da316773a2a64be1",
+        "e740774990b8f623"
+      ],
+      "resource_class": "rule",
+      "sha256": "0a861846e114309d08b472bccc706777593f8b822f140e92302fae09990d1384",
+      "target_id": "926499d3f9465f3e"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "rules/skill-awareness.md",
+      "requires": [
+        "8a84e2a5117d3783",
+        "b33e5d198a2035dc"
+      ],
+      "resource_class": "rule",
+      "sha256": "a694cc0acbccc4d8384b857dd83c86da8a14b9716faf0404d919a27f4fde74d1",
+      "target_id": "c4dd3c9ab0f20e51"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "rules/source-attribution.md",
+      "requires": [
+        "08b3f5e0749c3377",
+        "11a24cd2140719d8",
+        "4474ebc84a590571",
+        "74414cdf945ea90b",
+        "9e22d6c2a7cbcfd5",
+        "bb891dd0ea58eda2"
+      ],
+      "resource_class": "rule",
+      "sha256": "f96ebd5809697142c1eae98be82b26e31d90e72fcb58362ccc1db453abdcc212",
+      "target_id": "cc240ccad9512f48"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/ansoff-matrix/SKILL.md",
+      "requires": [
+        "6f668b0ab15f0708",
+        "8c9681e56c4e0587",
+        "93c046822c573178",
+        "a503925d234b1e92",
+        "cde868638c612022",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "bc6211205e8d93d2ee8a2546c5d19df421d6cc6d12c9fd2bdca7c0f5d476a918",
+      "target_id": "2e4f602f76441338"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/assumption-map/SKILL.md",
+      "requires": [
+        "4679e43fdaf99766",
+        "a503925d234b1e92",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "71fefa6f3517e0afe36a3d6eb7aefad0a5b66162adab1ff322725a7a38148d32",
+      "target_id": "8c9681e56c4e0587"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/bcg-matrix/SKILL.md",
+      "requires": [
+        "1e79c47bbc7e5133",
+        "2e4f602f76441338",
+        "47257396f4a6d0cd",
+        "5eaaa350565e6dbe",
+        "6f668b0ab15f0708",
+        "93c046822c573178",
+        "a503925d234b1e92",
+        "c7492ccdf0f4fdd3",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "1c9a4ae00b300c79589947b4590c266c2b76cd7fd5abb7fba06e92f8b0b26eb7",
+      "target_id": "f9ca7062799eb93c"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/bias-check/SKILL.md",
+      "requires": [
+        "4ff6c2e5efe93809",
+        "665ba2207d0d00dc",
+        "ae02df19f1b30b64",
+        "c7492ccdf0f4fdd3",
+        "c97d3e9a1744ed58",
+        "d0d4278c592ba8a5",
+        "d6478aac50f5dee4",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "a97ab45e835747e91e239f91201600dffbd84914a27a4c446ced89474a9bc157",
+      "target_id": "a704b36db1b77137"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/blue-ocean/SKILL.md",
+      "requires": [
+        "32d9484d16a27185",
+        "4679e43fdaf99766",
+        "6f668b0ab15f0708",
+        "715b93fd3bd8a061",
+        "8c9681e56c4e0587",
+        "a503925d234b1e92",
+        "e5317aea9e592295",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "b0a300083ffb22045ecf406ee3d6f1b816061abfab008e046e1564e25293b1e4",
+      "target_id": "15a9e0b33b40eb40"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/brainstorming/SKILL.md",
+      "requires": [
+        "665ba2207d0d00dc",
+        "814eccb5cb136474",
+        "c7492ccdf0f4fdd3",
+        "e74f83be66703480"
+      ],
+      "resource_class": "capability",
+      "sha256": "97f0f47d6126a5f691f97a73cd56727de58158e58890dc1e4ad997ee57ac280b",
+      "target_id": "77da70865948de4b"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/business-case/SKILL.md",
+      "requires": [
+        "590948f299738bc2",
+        "c5320a680e28331d",
+        "f8a54e571c0bde2d",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "04d988da4625fa02376af44839a5de723a6670baa8fe0b80d4db94c9d33a8ef4",
+      "target_id": "93c046822c573178"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/business-model-canvas/SKILL.md",
+      "requires": [
+        "32d9484d16a27185",
+        "715b93fd3bd8a061",
+        "8c9681e56c4e0587",
+        "93c046822c573178",
+        "c5320a680e28331d",
+        "c97d3e9a1744ed58",
+        "cde868638c612022",
+        "d3831f281468bdac",
+        "e67f63ad780185d6",
+        "f8a54e571c0bde2d",
+        "f8edb40217748271",
+        "ff0f3db9b852c492"
+      ],
+      "resource_class": "capability",
+      "sha256": "eed78a6e3587e9c88d31834d173a09a09cfa2a4c98c75b4a1238d2745b6f6738",
+      "target_id": "c62964837d840b03"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/business-plan/SKILL.md",
+      "requires": [
+        "590948f299738bc2",
+        "93c046822c573178",
+        "c5320a680e28331d",
+        "ff0f3db9b852c492"
+      ],
+      "resource_class": "capability",
+      "sha256": "44c71ba59bc70988743a21c6cc8bd909b4bd45e66ec55160f3fdca99c82f9de0",
+      "target_id": "f8a54e571c0bde2d"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/campaign-brief/SKILL.md",
+      "requires": [
+        "43bf2445cb34ad46",
+        "590948f299738bc2",
+        "715b93fd3bd8a061",
+        "ff0f3db9b852c492"
+      ],
+      "resource_class": "capability",
+      "sha256": "ab36cc14946beb1c3a80a807c9ccdc22ade77d5d71f5d3c5e8b6e6f4c9e18676",
+      "target_id": "ac630249dbf29d2e"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/collaboration-check/SKILL.md",
+      "requires": [
+        "53f7fcde1c58c976",
+        "5d602e1f7463fde6",
+        "619eb2fc53eef6c8",
+        "c7492ccdf0f4fdd3",
+        "d6478aac50f5dee4",
+        "ddad7ad923c650be"
+      ],
+      "resource_class": "capability",
+      "sha256": "6ac38d5206393636107bb74219032b6a4ce699c4d38d89df0b40d7d6a95f4217",
+      "target_id": "87e0291cbbf4ee34"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/commitment-check/SKILL.md",
+      "requires": [
+        "2fd3216a47ad99b2",
+        "8ef82fef226503cf",
+        "c7492ccdf0f4fdd3"
+      ],
+      "resource_class": "capability",
+      "sha256": "027e61b27d09e88c45a04f90cad3b538fe05371265b80ee6ab32719a8dba1f78",
+      "target_id": "d6478aac50f5dee4"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/competitive-analysis/SKILL.md",
+      "requires": [
+        "32d9484d16a27185",
+        "590948f299738bc2",
+        "715b93fd3bd8a061",
+        "cde868638c612022"
+      ],
+      "resource_class": "capability",
+      "sha256": "3b646c0d320964f1576dde2b9f43ed38e22346959d731dc9344b91c0d6ec3df0",
+      "target_id": "89365b037b352f70"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/competitive-battlecard/SKILL.md",
+      "requires": [
+        "32d9484d16a27185",
+        "43bf2445cb34ad46",
+        "590948f299738bc2",
+        "615b77c804cbcade",
+        "7089e656fef0cc2e",
+        "89365b037b352f70",
+        "a503925d234b1e92",
+        "c97d3e9a1744ed58"
+      ],
+      "resource_class": "capability",
+      "sha256": "542701465d9a1baf0fd6e1fdf96d9aac68066a9c9cfca8ca06395a23b214ea66",
+      "target_id": "37e26db31fbc05b3"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/competitive-landscape/SKILL.md",
+      "requires": [
+        "590948f299738bc2",
+        "715b93fd3bd8a061",
+        "89365b037b352f70",
+        "cde868638c612022"
+      ],
+      "resource_class": "capability",
+      "sha256": "765cbd25b53c013175bee2c2f3cd69d03ed8bc37ee27f815ca6321656369507e",
+      "target_id": "32d9484d16a27185"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/competitor-alternatives/SKILL.md",
+      "requires": [
+        "32d9484d16a27185",
+        "43bf2445cb34ad46",
+        "715b93fd3bd8a061",
+        "89365b037b352f70"
+      ],
+      "resource_class": "capability",
+      "sha256": "25ad846151423245482aa9f5ae105eba0b2ccf98f9b55272ca2da487fef9444c",
+      "target_id": "39dedb92e730d729"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/compound/SKILL.md",
+      "requires": [
+        "4ff6c2e5efe93809",
+        "a503925d234b1e92",
+        "c97d3e9a1744ed58",
+        "cfa7b01162681622",
+        "d0d4278c592ba8a5",
+        "f8718ea8d9fa459d"
+      ],
+      "resource_class": "capability",
+      "sha256": "b553264a8f13c3bf74bd584d1d92c71c9d04d006964cb0a1c7662ad737915a71",
+      "target_id": "ae02df19f1b30b64"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/context-recall/SKILL.md",
+      "requires": [
+        "252b2f687e3d4644",
+        "38abd728fc3d11f6",
+        "615b77c804cbcade",
+        "a503925d234b1e92",
+        "dea664c711371690"
+      ],
+      "resource_class": "capability",
+      "sha256": "c1ff6b07e663eff11df520df425c105f8a6b034a7aa9f45c900ea64032810dbc",
+      "target_id": "c97d3e9a1744ed58"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/context-save/SKILL.md",
+      "requires": [
+        "252b2f687e3d4644",
+        "4ff6c2e5efe93809",
+        "76aff6be1d79a6b7",
+        "c7492ccdf0f4fdd3",
+        "c97d3e9a1744ed58",
+        "d0d4278c592ba8a5",
+        "d4ddcc49330b42e0",
+        "ddad7ad923c650be",
+        "f8718ea8d9fa459d",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "9296f59d03e6cd4307a0e056fb03b6882bf304da532bb4d8cb424b4196107639",
+      "target_id": "a503925d234b1e92"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/customer-health-scorecard/SKILL.md",
+      "requires": [
+        "22a1319bfb75551f",
+        "590948f299738bc2",
+        "9795a770b59d34c4",
+        "a1bd3d03dbf8c77c"
+      ],
+      "resource_class": "capability",
+      "sha256": "7f01546a6f50fc161b81076878bc6ede77bada1347f0a7644ef93384984c4e05",
+      "target_id": "fe7e20433cfac49c"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/customer-journey-map/SKILL.md",
+      "requires": [
+        "22a1319bfb75551f",
+        "4679e43fdaf99766",
+        "615b77c804cbcade",
+        "665ba2207d0d00dc",
+        "814eccb5cb136474",
+        "8c4bda96df47d776",
+        "a503925d234b1e92",
+        "f87f5956c89395b0",
+        "fe7e20433cfac49c"
+      ],
+      "resource_class": "capability",
+      "sha256": "91bd378124cd33b7b5289467e4acb1ada625a20aba1b49c3800a7a9ba4e3b064",
+      "target_id": "8a772084e2af9a82"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/customer-value-trace/SKILL.md",
+      "requires": [
+        "615b77c804cbcade",
+        "93c046822c573178",
+        "a1bd3d03dbf8c77c",
+        "c7492ccdf0f4fdd3",
+        "f8718ea8d9fa459d",
+        "f8edb40217748271",
+        "fe7e20433cfac49c"
+      ],
+      "resource_class": "capability",
+      "sha256": "0cd7f67fc080d2d8856b5ac230fe8dce98ba394ef3498ab9a7cf508da99fb6f0",
+      "target_id": "9795a770b59d34c4"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/daci/SKILL.md",
+      "requires": [
+        "619eb2fc53eef6c8",
+        "77da70865948de4b",
+        "87e0291cbbf4ee34",
+        "a503925d234b1e92",
+        "b60540b53c4ce598",
+        "c7492ccdf0f4fdd3",
+        "d0d4278c592ba8a5",
+        "d6478aac50f5dee4",
+        "e2312cda97970bb7"
+      ],
+      "resource_class": "capability",
+      "sha256": "0a32687600021c962ba36512c5adfd968f7814c295e02c0c79d95e6755911d84",
+      "target_id": "df13ab18de49c194"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/decision-charter/SKILL.md",
+      "requires": [
+        "0cf1dbaa37496190",
+        "40c4b93b1d7fb921",
+        "590948f299738bc2",
+        "6d96b2995b032cde",
+        "b192082ec1b3e5e6",
+        "b33e5d198a2035dc",
+        "b60540b53c4ce598",
+        "c7492ccdf0f4fdd3",
+        "c9d4c3bd6ead2be0",
+        "ce67ba90c05c4de8",
+        "d0d4278c592ba8a5",
+        "dbe24c79037b7068"
+      ],
+      "resource_class": "capability",
+      "sha256": "567ee72cd4513244226e1bf5c1610f1b5dffdfd53396fe52b711692765c30959",
+      "target_id": "5d602e1f7463fde6"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/decision-quality-audit/SKILL.md",
+      "requires": [
+        "590948f299738bc2",
+        "5d602e1f7463fde6",
+        "c7492ccdf0f4fdd3",
+        "f8718ea8d9fa459d"
+      ],
+      "resource_class": "capability",
+      "sha256": "d565281b99c7d7ee7fe198864383d22cd2173c7e30a213126fd56ddebf82e322",
+      "target_id": "d0d4278c592ba8a5"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/decision-record/SKILL.md",
+      "requires": [
+        "535a2e031c6046f4",
+        "590948f299738bc2",
+        "5d602e1f7463fde6",
+        "80598289fbf0d9d0",
+        "a503925d234b1e92",
+        "b60540b53c4ce598",
+        "c97d3e9a1744ed58",
+        "d0d4278c592ba8a5",
+        "d4ddcc49330b42e0"
+      ],
+      "resource_class": "capability",
+      "sha256": "bfe435cd02c6431a1ff93e498824bf3475b48ac5c062200bf4edd83347b8578e",
+      "target_id": "c7492ccdf0f4fdd3"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/design-sprint/SKILL.md",
+      "requires": [
+        "4679e43fdaf99766",
+        "4ff6c2e5efe93809",
+        "665ba2207d0d00dc",
+        "77da70865948de4b",
+        "814eccb5cb136474",
+        "8c9681e56c4e0587",
+        "a503925d234b1e92",
+        "d6478aac50f5dee4",
+        "f87f5956c89395b0"
+      ],
+      "resource_class": "capability",
+      "sha256": "7b6c807f76f1b4de284140bbd596864136d7ec07e7a43b8176d2f95b69255a9b",
+      "target_id": "d3a3135608caf365"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/dhm-analysis/SKILL.md",
+      "requires": [
+        "32d9484d16a27185",
+        "590948f299738bc2",
+        "615b77c804cbcade",
+        "a503925d234b1e92",
+        "c97d3e9a1744ed58",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "1342441831328171c81cb0b9956edc8311b1b5c2abf795a41a8bbfc79d1e86a4",
+      "target_id": "b04e95b4aad79944"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/dispatching-parallel-agents/SKILL.md",
+      "requires": [
+        "77da70865948de4b",
+        "e74f83be66703480",
+        "f94cb039f7447edc"
+      ],
+      "resource_class": "capability",
+      "sha256": "e3a74fdb6fd6d823db129614a8c98ed5cfd1958c0defd228b028bb5b15eb1e75",
+      "target_id": "a70e7b7b0b8e8202"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/escalation-rule/SKILL.md",
+      "requires": [
+        "467cf052adce81ea",
+        "5d602e1f7463fde6",
+        "c7492ccdf0f4fdd3",
+        "d0d4278c592ba8a5"
+      ],
+      "resource_class": "capability",
+      "sha256": "94aec619f758a9e78d26a9956f5cabb652b1b069c548b158dac8d052e63ce6fa",
+      "target_id": "b60540b53c4ce598"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/et-ai-assisted-resolution-strategy/SKILL.md",
+      "requires": [
+        "0138408af599ec88",
+        "1f8b4dbcf90f6167",
+        "a231b931602c9da8",
+        "e62912c5c6681185",
+        "e740774990b8f623"
+      ],
+      "resource_class": "capability",
+      "sha256": "72f08bbfd3f3e0f338a706137a8ce828ca08cfb40abc1a0b8f470b50c95a732c",
+      "target_id": "365dba9b2f143b00"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/et-ai-control-audit/SKILL.md",
+      "requires": [
+        "0fb17fa4be6b6dfb",
+        "23018e9f815bb6ac",
+        "3087c086ce94e929",
+        "6338a7690ac6294e",
+        "926499d3f9465f3e",
+        "a231b931602c9da8",
+        "aef7081833f6864b",
+        "b02b2e92c22ea957",
+        "b2996e6a7e88464f",
+        "e740774990b8f623"
+      ],
+      "resource_class": "capability",
+      "sha256": "5a6deba1daebb80462995cee4a0bab2b050824cac07f584403cbcf3ca6799c69",
+      "target_id": "bb566381faf0f786"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/et-ai-regulatory-audit/SKILL.md",
+      "requires": [
+        "0fb17fa4be6b6dfb",
+        "23018e9f815bb6ac",
+        "6338a7690ac6294e",
+        "78742cf88da7281a",
+        "8a84e2a5117d3783",
+        "926499d3f9465f3e",
+        "a231b931602c9da8",
+        "a700b6a708d681a7",
+        "b02b2e92c22ea957",
+        "b2996e6a7e88464f",
+        "bb566381faf0f786",
+        "da316773a2a64be1",
+        "e740774990b8f623",
+        "f549fd8fb68d916f"
+      ],
+      "resource_class": "capability",
+      "sha256": "bc89a49c7496eb88f5b8a83d01cd30fccafdbbc6106364383048bd389e515b40",
+      "target_id": "3087c086ce94e929"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/et-comp-benchmark/SKILL.md",
+      "requires": [
+        "066aa8f1e5eae337",
+        "08a47de548b65f78",
+        "2e6d02443a585d0b",
+        "926499d3f9465f3e",
+        "a231b931602c9da8",
+        "e740774990b8f623"
+      ],
+      "resource_class": "capability",
+      "sha256": "b8f981da2f071dc755be5dc9bbfc91e5291005226dd116f8170ec80628142cb2",
+      "target_id": "70c15cd4f719040a"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/et-compliance-audit/SKILL.md",
+      "requires": [
+        "23018e9f815bb6ac",
+        "3087c086ce94e929",
+        "6338a7690ac6294e",
+        "78742cf88da7281a",
+        "926499d3f9465f3e",
+        "a231b931602c9da8",
+        "a700b6a708d681a7",
+        "b2996e6a7e88464f",
+        "e740774990b8f623",
+        "f549fd8fb68d916f"
+      ],
+      "resource_class": "capability",
+      "sha256": "df96cd4004c659c0e9262b4b0ef71ff8c0143907f4973d751b43cda3d48b559e",
+      "target_id": "b02b2e92c22ea957"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/et-contract-review/SKILL.md",
+      "requires": [
+        "23018e9f815bb6ac",
+        "78742cf88da7281a",
+        "926499d3f9465f3e",
+        "a231b931602c9da8",
+        "a700b6a708d681a7",
+        "b02b2e92c22ea957",
+        "b2996e6a7e88464f",
+        "e740774990b8f623"
+      ],
+      "resource_class": "capability",
+      "sha256": "60b158e8ea09cd55bdde3ae63a7b1f2603f8a5051c781a98686951eede62ec3a",
+      "target_id": "6338a7690ac6294e"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/et-contract-stress-test/SKILL.md",
+      "requires": [
+        "23018e9f815bb6ac",
+        "6338a7690ac6294e",
+        "926499d3f9465f3e",
+        "a231b931602c9da8",
+        "a700b6a708d681a7",
+        "b02b2e92c22ea957",
+        "b2996e6a7e88464f",
+        "e740774990b8f623"
+      ],
+      "resource_class": "capability",
+      "sha256": "94aaae76a7f0837c54cd1940a0d36319588160e945253dda01168d87d973577b",
+      "target_id": "78742cf88da7281a"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/et-cs-segmentation-model/SKILL.md",
+      "requires": [
+        "0138408af599ec88",
+        "1f8b4dbcf90f6167",
+        "365dba9b2f143b00",
+        "a231b931602c9da8",
+        "e740774990b8f623"
+      ],
+      "resource_class": "capability",
+      "sha256": "a3ecca0f0793b2c6f5e10f4569d0de64087514b726bb050e1af9c1967f41f692",
+      "target_id": "e62912c5c6681185"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/et-cs-tool-selection/SKILL.md",
+      "requires": [
+        "0138408af599ec88",
+        "a231b931602c9da8",
+        "e62912c5c6681185",
+        "e740774990b8f623"
+      ],
+      "resource_class": "capability",
+      "sha256": "8aa7a3b8f5f792a821dcb0f0630f4ac6922dd16fa552df7781fcc292d4042448",
+      "target_id": "1f8b4dbcf90f6167"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/et-deal-diligence-checklist/SKILL.md",
+      "requires": [
+        "23018e9f815bb6ac",
+        "3087c086ce94e929",
+        "6338a7690ac6294e",
+        "78742cf88da7281a",
+        "a231b931602c9da8",
+        "a700b6a708d681a7",
+        "b02b2e92c22ea957",
+        "b2996e6a7e88464f",
+        "bb566381faf0f786",
+        "f549fd8fb68d916f"
+      ],
+      "resource_class": "capability",
+      "sha256": "f18be73e74e4bdfdad73940e8581b25a0c545149292a6e6bd8f870d4f0a5bde6",
+      "target_id": "3db36fcc458121cb"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/et-figma-agent-brief/SKILL.md",
+      "requires": [
+        "1d884b2817e0a823",
+        "a231b931602c9da8",
+        "e740774990b8f623"
+      ],
+      "resource_class": "capability",
+      "sha256": "aa7f91f0445b78c4768bc7c93441b09b2e4a3aafd5ac815af0ab2c6e37b7fc1d",
+      "target_id": "f0613c613168795b"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/et-generative-ui-spec/SKILL.md",
+      "requires": [
+        "a231b931602c9da8",
+        "e740774990b8f623",
+        "f0613c613168795b"
+      ],
+      "resource_class": "capability",
+      "sha256": "66e1a0403604a914498468af83b5ee8ba598728e8039bd399eccdb939c96158c",
+      "target_id": "1d884b2817e0a823"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/et-geo-monitoring-setup/SKILL.md",
+      "requires": [
+        "7089e656fef0cc2e",
+        "a231b931602c9da8"
+      ],
+      "resource_class": "capability",
+      "sha256": "386d0cbd203a92cb437b465df1f66ef72989c8af392871081a8a186b178ecfc2",
+      "target_id": "43f218191b0da63f"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/et-health-score-design/SKILL.md",
+      "requires": [
+        "365dba9b2f143b00",
+        "a231b931602c9da8",
+        "c5320a680e28331d",
+        "e62912c5c6681185",
+        "e740774990b8f623"
+      ],
+      "resource_class": "capability",
+      "sha256": "dbf6c8fdc914017778b666a34f2d3a89176f7cf4082d21535059821f603ac50c",
+      "target_id": "0138408af599ec88"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/et-interview-guide/SKILL.md",
+      "requires": [
+        "066aa8f1e5eae337",
+        "08a47de548b65f78",
+        "70c15cd4f719040a",
+        "926499d3f9465f3e",
+        "a231b931602c9da8",
+        "e740774990b8f623"
+      ],
+      "resource_class": "capability",
+      "sha256": "132ca487e630aec1760d7efed3e4f5e8ac944c92945bd7bbbd518bd56a374fec",
+      "target_id": "2e6d02443a585d0b"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/et-job-description-generator/SKILL.md",
+      "requires": [
+        "08a47de548b65f78",
+        "2e6d02443a585d0b",
+        "70c15cd4f719040a",
+        "926499d3f9465f3e",
+        "a231b931602c9da8",
+        "e740774990b8f623"
+      ],
+      "resource_class": "capability",
+      "sha256": "d544399f89d56a8a4f29f82507cd5576f75a674201a4cafce637aa9f3623f3d4",
+      "target_id": "066aa8f1e5eae337"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/et-nda-triage/SKILL.md",
+      "requires": [
+        "23018e9f815bb6ac",
+        "6338a7690ac6294e",
+        "78742cf88da7281a",
+        "926499d3f9465f3e",
+        "a231b931602c9da8",
+        "b02b2e92c22ea957",
+        "b2996e6a7e88464f",
+        "e740774990b8f623"
+      ],
+      "resource_class": "capability",
+      "sha256": "60af24f956f0e4534bc0a44092a8ca99806525ca0bc2ad8f94a4c63fb599a9fa",
+      "target_id": "a700b6a708d681a7"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/et-privacy-policy-audit/SKILL.md",
+      "requires": [
+        "6338a7690ac6294e",
+        "926499d3f9465f3e",
+        "a231b931602c9da8",
+        "a700b6a708d681a7",
+        "b2996e6a7e88464f",
+        "e740774990b8f623"
+      ],
+      "resource_class": "capability",
+      "sha256": "ddfd9b74b66c619122283d9101b9f0917598172ca5660b0fdf3a7854ea31b861",
+      "target_id": "23018e9f815bb6ac"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/et-resume-summarizer/SKILL.md",
+      "requires": [
+        "066aa8f1e5eae337",
+        "2e6d02443a585d0b",
+        "70c15cd4f719040a",
+        "926499d3f9465f3e",
+        "a231b931602c9da8",
+        "e740774990b8f623"
+      ],
+      "resource_class": "capability",
+      "sha256": "9ddf8ae2bcb16acac1b1b0f03390cdfc6b9aa6e547a3b10fa5d2d3752ea68d76",
+      "target_id": "08a47de548b65f78"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/et-risk-analysis/SKILL.md",
+      "requires": [
+        "23018e9f815bb6ac",
+        "6338a7690ac6294e",
+        "78742cf88da7281a",
+        "926499d3f9465f3e",
+        "a231b931602c9da8",
+        "a700b6a708d681a7",
+        "b02b2e92c22ea957",
+        "e740774990b8f623"
+      ],
+      "resource_class": "capability",
+      "sha256": "f8d9ed28bdcef336199c35f1fa24a186bcacf2cce68011743ce740d24e9ea64a",
+      "target_id": "b2996e6a7e88464f"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/experiment-design/SKILL.md",
+      "requires": [
+        "1d6b3ac9c7b7377e",
+        "8c9681e56c4e0587",
+        "a503925d234b1e92",
+        "f8718ea8d9fa459d",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "ddb7064b0f43911bd80ba1d37d77279e2fddace431ed594c5e9a32678593ca33",
+      "target_id": "4679e43fdaf99766"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/feature-spec/SKILL.md",
+      "requires": [
+        "554a80c2a7ee3b57",
+        "665ba2207d0d00dc",
+        "f87f5956c89395b0"
+      ],
+      "resource_class": "capability",
+      "sha256": "8a6e6fae17b8c6fe669020614c4eac54a6ff1a6e72b58a33ccd2bafa6f74af9f",
+      "target_id": "814eccb5cb136474"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/feedback-capture/SKILL.md",
+      "requires": [
+        "252b2f687e3d4644",
+        "615b77c804cbcade",
+        "a503925d234b1e92",
+        "d4ddcc49330b42e0",
+        "fe7e20433cfac49c"
+      ],
+      "resource_class": "capability",
+      "sha256": "1ae56a2252b42787e74875bf698486f2d3b6b9a497d2854a5ac8bddc3ce7e7c4",
+      "target_id": "76aff6be1d79a6b7"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/feedback-recall/SKILL.md",
+      "requires": [
+        "38abd728fc3d11f6",
+        "665ba2207d0d00dc",
+        "76aff6be1d79a6b7",
+        "c7492ccdf0f4fdd3",
+        "c97d3e9a1744ed58",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "ecb680ad54192e8c7819039467504c818b248ed75e8bcba7bf60c4b791aef222",
+      "target_id": "615b77c804cbcade"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/four-risks-check/SKILL.md",
+      "requires": [
+        "4679e43fdaf99766",
+        "615b77c804cbcade",
+        "665ba2207d0d00dc",
+        "8c9681e56c4e0587",
+        "c7492ccdf0f4fdd3",
+        "c97d3e9a1744ed58",
+        "d6478aac50f5dee4"
+      ],
+      "resource_class": "capability",
+      "sha256": "15dbdd2b36635eb170bd477e8c4f9da6a03479f82f959cffee302750e16f2db4",
+      "target_id": "aef7081833f6864b"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/growth-model/SKILL.md",
+      "requires": [
+        "590948f299738bc2",
+        "615b77c804cbcade",
+        "a503925d234b1e92",
+        "c97d3e9a1744ed58",
+        "cde868638c612022",
+        "ff0f3db9b852c492"
+      ],
+      "resource_class": "capability",
+      "sha256": "5e9600b0584e13daa60846cd03dc52f53a5bf31a2121517b766898442b4b69b4",
+      "target_id": "0d5c64538ea48889"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/gtm-brief/SKILL.md",
+      "requires": [
+        "4855cf34de129ed6",
+        "590948f299738bc2",
+        "ac630249dbf29d2e",
+        "ff0f3db9b852c492"
+      ],
+      "resource_class": "capability",
+      "sha256": "f048b49300441be1e2917d12e80fff59fe33025feb24306c797632a0601f2a2b",
+      "target_id": "6891dc17a3948bdc"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/gtm-strategy/SKILL.md",
+      "requires": [
+        "4855cf34de129ed6",
+        "590948f299738bc2",
+        "6891dc17a3948bdc",
+        "ac630249dbf29d2e"
+      ],
+      "resource_class": "capability",
+      "sha256": "3911939100065e615f40d5a8e1b75b8d8fd229396deab2e6264820137d1933b3",
+      "target_id": "ff0f3db9b852c492"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/handoff/SKILL.md",
+      "requires": [
+        "38abd728fc3d11f6",
+        "a503925d234b1e92",
+        "c97d3e9a1744ed58"
+      ],
+      "resource_class": "capability",
+      "sha256": "61ec3328f876407d9ad7a1d839f4a6043ec581082dc03da90977160139853097",
+      "target_id": "ddad7ad923c650be"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/heart-metrics/SKILL.md",
+      "requires": [
+        "2d433e750b92e810",
+        "590948f299738bc2",
+        "615b77c804cbcade",
+        "a503925d234b1e92",
+        "c97d3e9a1744ed58",
+        "cfe92e632bda5147",
+        "fe7e20433cfac49c"
+      ],
+      "resource_class": "capability",
+      "sha256": "def6134e789bac570d85413aaa4628cb8f31bbd8cef63a5fca74bebec73b6146",
+      "target_id": "7c9e8d51544ffdb0"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/index-folder/SKILL.md",
+      "requires": [
+        "a503925d234b1e92",
+        "c97d3e9a1744ed58",
+        "d4ddcc49330b42e0"
+      ],
+      "resource_class": "capability",
+      "sha256": "ceeb313f9c251475f40a0cc1e30921394f2c3bb5b8af38e191664868c78798fe",
+      "target_id": "eafbcbc93b7727f5"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/interaction-recall/SKILL.md",
+      "requires": [
+        "615b77c804cbcade",
+        "c97d3e9a1744ed58",
+        "cfa7b01162681622"
+      ],
+      "resource_class": "capability",
+      "sha256": "c86127ea07605944f505843b1800451f8e5654538aad8e852a9f5541ff01571c",
+      "target_id": "38abd728fc3d11f6"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/interview-synthesis/SKILL.md",
+      "requires": [
+        "4679e43fdaf99766",
+        "615b77c804cbcade",
+        "665ba2207d0d00dc",
+        "76aff6be1d79a6b7",
+        "8c9681e56c4e0587",
+        "a001f6b70a2a6dbc",
+        "a503925d234b1e92",
+        "c97d3e9a1744ed58",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "5e63e911ae754bfde29f83d7ed57a02f589e5dd52c69c529db71463024298fe4",
+      "target_id": "6e65ad92b3595395"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/kano-analysis/SKILL.md",
+      "requires": [
+        "1e79c47bbc7e5133",
+        "4679e43fdaf99766",
+        "665ba2207d0d00dc",
+        "8a772084e2af9a82",
+        "8c4bda96df47d776",
+        "8c9681e56c4e0587",
+        "a503925d234b1e92"
+      ],
+      "resource_class": "capability",
+      "sha256": "068f29b8d406ecf2460cc46ed054bc964a6f88a0b4780b65b38b7f29953f0270",
+      "target_id": "72e4a0fa172bd557"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/launch-plan/SKILL.md",
+      "requires": [
+        "2fd3216a47ad99b2",
+        "590948f299738bc2",
+        "ac630249dbf29d2e",
+        "ff0f3db9b852c492"
+      ],
+      "resource_class": "capability",
+      "sha256": "bc8f436fe1fb9275dffc5378e5015a6a19001db4b644b7eb2a59ebae0e7472ff",
+      "target_id": "4855cf34de129ed6"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/launch-readiness/SKILL.md",
+      "requires": [
+        "4855cf34de129ed6",
+        "d6478aac50f5dee4",
+        "ff0f3db9b852c492"
+      ],
+      "resource_class": "capability",
+      "sha256": "3418e8357ffe787ae38a78ee3f2f9e929dfc1552f2407e33c5053216ad28ec4d",
+      "target_id": "2fd3216a47ad99b2"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/launch-strategy/SKILL.md",
+      "requires": [
+        "4855cf34de129ed6",
+        "715b93fd3bd8a061",
+        "ac630249dbf29d2e",
+        "ff0f3db9b852c492"
+      ],
+      "resource_class": "capability",
+      "sha256": "1786fabf4dbfc87cd22520e7a90e646f4de27aa5bf967711b10ec8954336d274",
+      "target_id": "27de1e08b18f19ee"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/lean-canvas/SKILL.md",
+      "requires": [
+        "4679e43fdaf99766",
+        "8c9681e56c4e0587",
+        "93c046822c573178",
+        "a503925d234b1e92",
+        "c5320a680e28331d",
+        "e5317aea9e592295",
+        "f8a54e571c0bde2d",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "3a45019971cd2e5f1e475bcd6537bdf05ece1a789a727c6b9e60d0bc2d9f3924",
+      "target_id": "d3831f281468bdac"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/llm-seo/SKILL.md",
+      "requires": [],
+      "resource_class": "capability",
+      "sha256": "a63b4ccc0fbd639052895f5d00dabc1e296cb2bbd2bc09f8f81ff7de6414e43e",
+      "target_id": "7089e656fef0cc2e"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/market-analysis/SKILL.md",
+      "requires": [
+        "32d9484d16a27185",
+        "590948f299738bc2",
+        "89365b037b352f70",
+        "93c046822c573178"
+      ],
+      "resource_class": "capability",
+      "sha256": "63d9ecd871c188f72381ee52262ae789f78ca9ad1dc1c2a001700041f3b60f24",
+      "target_id": "cde868638c612022"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/market-segment/SKILL.md",
+      "requires": [
+        "715b93fd3bd8a061",
+        "cde868638c612022"
+      ],
+      "resource_class": "capability",
+      "sha256": "5223bce99ceaff43f7bd55b9113c3e97753a89e47067a6b7ac2fae4494590568",
+      "target_id": "e5317aea9e592295"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/marketing-psychology/SKILL.md",
+      "requires": [
+        "155b7cddd7a14d7c"
+      ],
+      "resource_class": "capability",
+      "sha256": "5e5480af9120236b5767efeabe6a184618739d7f4ec614c09ad7d08d78ac8273",
+      "target_id": "b0d45a14ab31fe18"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/maturity-check/SKILL.md",
+      "requires": [
+        "590948f299738bc2",
+        "8ef82fef226503cf",
+        "ec3719f38b2ac800",
+        "f03cb0a94ea433d7"
+      ],
+      "resource_class": "capability",
+      "sha256": "bcbddd6f9ff97d9fd172575bb413d421a3e85af1a260d47b39f299521583ab14",
+      "target_id": "c5df55d36e8405be"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/north-star-metric/SKILL.md",
+      "requires": [
+        "590948f299738bc2",
+        "615b77c804cbcade",
+        "a503925d234b1e92",
+        "c97d3e9a1744ed58",
+        "f8718ea8d9fa459d",
+        "f8edb40217748271",
+        "fe7e20433cfac49c"
+      ],
+      "resource_class": "capability",
+      "sha256": "0b3d1b2d830f7947ae332104c2a84d2072976af5d4dd6829e20a9c8e3176a677",
+      "target_id": "2d433e750b92e810"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/okr-writer/SKILL.md",
+      "requires": [
+        "1e79c47bbc7e5133",
+        "2d433e750b92e810",
+        "4ff6c2e5efe93809",
+        "590948f299738bc2",
+        "615b77c804cbcade",
+        "a503925d234b1e92",
+        "c97d3e9a1744ed58",
+        "d6478aac50f5dee4",
+        "f8718ea8d9fa459d",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "bbb5e987b98af1d24da396b3337319340a8fb775fc61a907504b355a63d9fa14",
+      "target_id": "eece5360b09dc2e9"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/onboarding-playbook/SKILL.md",
+      "requires": [
+        "4855cf34de129ed6",
+        "590948f299738bc2",
+        "a1bd3d03dbf8c77c",
+        "fe7e20433cfac49c"
+      ],
+      "resource_class": "capability",
+      "sha256": "bec173144454955ee4fc106c8e14159ab7b32cbc2bfe37d9e4cc2b56debaaf1a",
+      "target_id": "22a1319bfb75551f"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/ooda-loop/SKILL.md",
+      "requires": [
+        "1d6b3ac9c7b7377e",
+        "32d9484d16a27185",
+        "4679e43fdaf99766",
+        "4ff6c2e5efe93809",
+        "8c9681e56c4e0587",
+        "a503925d234b1e92",
+        "c7492ccdf0f4fdd3",
+        "c97d3e9a1744ed58",
+        "df13ab18de49c194",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "5a6f544df770c20c16f6fa78e8a2a1943615640e2929e930eae098278ea3a45c",
+      "target_id": "84140a42a113d15b"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/opportunity-tree/SKILL.md",
+      "requires": [
+        "4679e43fdaf99766",
+        "615b77c804cbcade",
+        "665ba2207d0d00dc",
+        "8c9681e56c4e0587",
+        "cde868638c612022",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "8b2e09abe2289d7bb6387afb93d9131afc4c070e9119da8f3b2e64dda38e97ce",
+      "target_id": "a001f6b70a2a6dbc"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/outcome-review/SKILL.md",
+      "requires": [
+        "4ff6c2e5efe93809",
+        "590948f299738bc2",
+        "a503925d234b1e92",
+        "c7492ccdf0f4fdd3",
+        "c97d3e9a1744ed58",
+        "d0d4278c592ba8a5",
+        "edbd5a638e23738f"
+      ],
+      "resource_class": "capability",
+      "sha256": "2a1a7d84fd1ac423e4f10b11b3fb40945247d7060bcc20bc4e328c1d4901267c",
+      "target_id": "f8718ea8d9fa459d"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/ownership-map/SKILL.md",
+      "requires": [
+        "5d602e1f7463fde6",
+        "619eb2fc53eef6c8",
+        "87e0291cbbf4ee34",
+        "8ef82fef226503cf",
+        "c7492ccdf0f4fdd3",
+        "d6478aac50f5dee4"
+      ],
+      "resource_class": "capability",
+      "sha256": "1749236de2df89f33c23dbb0e0889a24217c4581223b0744d6ad36f4dceebf92",
+      "target_id": "53f7fcde1c58c976"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/pestle-analysis/SKILL.md",
+      "requires": [
+        "32d9484d16a27185",
+        "37cdd171f78aeaf8",
+        "6f668b0ab15f0708",
+        "8c9681e56c4e0587",
+        "a503925d234b1e92",
+        "c7492ccdf0f4fdd3",
+        "cde868638c612022",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "2687fb73130454215d1688d01fce1d97e00de2658149b4c9a74d1a2ba5998a00",
+      "target_id": "719701eecc142a46"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/phase-check/SKILL.md",
+      "requires": [
+        "53f7fcde1c58c976",
+        "5eaaa350565e6dbe",
+        "c5df55d36e8405be",
+        "d6478aac50f5dee4"
+      ],
+      "resource_class": "capability",
+      "sha256": "eea0c9e10f585e44c5ff90290a117933b0c813f0f3e0c4c3cc0197ac70fabee2",
+      "target_id": "8ef82fef226503cf"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/pirate-metrics/SKILL.md",
+      "requires": [
+        "0855ef874be8c8b7",
+        "0d5c64538ea48889",
+        "2d433e750b92e810",
+        "4679e43fdaf99766",
+        "590948f299738bc2",
+        "615b77c804cbcade",
+        "a503925d234b1e92",
+        "c97d3e9a1744ed58"
+      ],
+      "resource_class": "capability",
+      "sha256": "1c4abe08d6c717e3ba7fe683a4cdcc4a9cfbf429ed1bab95d491f4947dadf947",
+      "target_id": "cfe92e632bda5147"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/pm-level-check/SKILL.md",
+      "requires": [
+        "8ef82fef226503cf",
+        "c5df55d36e8405be"
+      ],
+      "resource_class": "capability",
+      "sha256": "963d02dcb268ba4f8856f141bbb4a127696ee013cdbfe42baf7da83f3f7a27ff",
+      "target_id": "ec3719f38b2ac800"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/porter-five-forces/SKILL.md",
+      "requires": [
+        "32d9484d16a27185",
+        "6f668b0ab15f0708",
+        "715b93fd3bd8a061",
+        "89365b037b352f70",
+        "a503925d234b1e92",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "fc823aff17ffe79b4f8e1796408f4b87a1290b495c614a3b051f147b461c88e3",
+      "target_id": "9cbc4e30ff125a97"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/portfolio-status/SKILL.md",
+      "requires": [
+        "47257396f4a6d0cd",
+        "590948f299738bc2",
+        "c97d3e9a1744ed58",
+        "ee8faf424aeef83c"
+      ],
+      "resource_class": "capability",
+      "sha256": "44528c8d8a34d5926782b0e375c0c0777ca044f9b3b2a8b590c583b0ed591f83",
+      "target_id": "5eaaa350565e6dbe"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/portfolio-tradeoff/SKILL.md",
+      "requires": [
+        "590948f299738bc2",
+        "5eaaa350565e6dbe",
+        "c7492ccdf0f4fdd3",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "f901fccc0f335db681e334a5221b7600bc10fb0e7a27663126c14f598703abea",
+      "target_id": "47257396f4a6d0cd"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/positioning-statement/SKILL.md",
+      "requires": [
+        "89365b037b352f70",
+        "ac630249dbf29d2e",
+        "ff0f3db9b852c492"
+      ],
+      "resource_class": "capability",
+      "sha256": "bd5b1fd4ceda8d1fe1472d4cc89661ac858837d2bbe8664bc83aa479d6e9c734",
+      "target_id": "715b93fd3bd8a061"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/prd-outline/SKILL.md",
+      "requires": [
+        "665ba2207d0d00dc",
+        "814eccb5cb136474",
+        "f87f5956c89395b0"
+      ],
+      "resource_class": "capability",
+      "sha256": "b7b0bbc512d9c936c4b542a902dda97d85e3d745f503de9a3523cdd6d29fc3ea",
+      "target_id": "554a80c2a7ee3b57"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/prd/SKILL.md",
+      "requires": [
+        "554a80c2a7ee3b57",
+        "590948f299738bc2",
+        "814eccb5cb136474",
+        "f87f5956c89395b0"
+      ],
+      "resource_class": "capability",
+      "sha256": "39eb10dece4780a119045a95ad1db3b1b781e20feb95342d72849e6625d55e89",
+      "target_id": "665ba2207d0d00dc"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/pre-mortem/SKILL.md",
+      "requires": [
+        "1e79c47bbc7e5133",
+        "2fd3216a47ad99b2",
+        "4679e43fdaf99766",
+        "4ff6c2e5efe93809",
+        "8c9681e56c4e0587",
+        "a503925d234b1e92",
+        "aef7081833f6864b",
+        "c7492ccdf0f4fdd3",
+        "d6478aac50f5dee4"
+      ],
+      "resource_class": "capability",
+      "sha256": "3316672a1367037f5c9b1766a38f8211eebd33ff7b55ea7fc391d87b67e71bea",
+      "target_id": "1d6b3ac9c7b7377e"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/present/SKILL.md",
+      "requires": [
+        "0860c6a47764f3c7",
+        "1bf48e02bb237599",
+        "90834a317f74da57",
+        "a1aa35b902a85408",
+        "edbd5a638e23738f"
+      ],
+      "resource_class": "capability",
+      "sha256": "cb556a7d81ac580485b978809b081affebb3793d9164f5df4fa551fc312d5fbb",
+      "target_id": "590948f299738bc2"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/press-release-faq/SKILL.md",
+      "requires": [
+        "1bf48e02bb237599",
+        "4679e43fdaf99766",
+        "4855cf34de129ed6",
+        "619eb2fc53eef6c8",
+        "665ba2207d0d00dc",
+        "715b93fd3bd8a061",
+        "8c9681e56c4e0587",
+        "979fa12f9ce298fd",
+        "a503925d234b1e92",
+        "aef7081833f6864b",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "b00b0de71b331f3394bb2a2a32ae1132b473df2ca905818d63bc7d95a6552e47",
+      "target_id": "171f7781c1297479"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/pretotype/SKILL.md",
+      "requires": [
+        "4679e43fdaf99766",
+        "8c9681e56c4e0587",
+        "a503925d234b1e92",
+        "ae02df19f1b30b64",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "a2dcd093d20a6d1b6a6831a9ab2b046725c440543cd257c8d3292515f51cd43f",
+      "target_id": "e67f63ad780185d6"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/pricing-model/SKILL.md",
+      "requires": [
+        "590948f299738bc2",
+        "93c046822c573178",
+        "c5320a680e28331d",
+        "ff0f3db9b852c492"
+      ],
+      "resource_class": "capability",
+      "sha256": "03032020e8c211be0426d565f9bba92cac2ad712527cd794dd9c0674f6d606e0",
+      "target_id": "155b7cddd7a14d7c"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/pricing-strategy/SKILL.md",
+      "requires": [
+        "155b7cddd7a14d7c",
+        "590948f299738bc2",
+        "715b93fd3bd8a061",
+        "93c046822c573178"
+      ],
+      "resource_class": "capability",
+      "sha256": "408a606c0db864b895e8f3a931606755e93e78ffd7db635039d1387dbd2e1006",
+      "target_id": "c5320a680e28331d"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/prioritize-features/SKILL.md",
+      "requires": [
+        "1e79c47bbc7e5133",
+        "4679e43fdaf99766",
+        "665ba2207d0d00dc",
+        "8c9681e56c4e0587",
+        "c97d3e9a1744ed58",
+        "d6478aac50f5dee4",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "8f1ede219eefed88c5c3cf2942d347982b0c0b6c7d1547df84c70201feef3e00",
+      "target_id": "8c4bda96df47d776"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/product-roadmap/SKILL.md",
+      "requires": [
+        "1bf48e02bb237599",
+        "590948f299738bc2",
+        "d34d532e2bdd13aa",
+        "e8947e3ab16f7321"
+      ],
+      "resource_class": "capability",
+      "sha256": "40d892a2a9f2e9f456761f3b4a31e5266f5f8226eb01581c27fbe35ff1b9aa99",
+      "target_id": "1e79c47bbc7e5133"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/product-teardown/SKILL.md",
+      "requires": [
+        "32d9484d16a27185",
+        "715b93fd3bd8a061",
+        "89365b037b352f70",
+        "a503925d234b1e92",
+        "ae02df19f1b30b64",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "91f2a72ffdc363f5727aa1b70314ae5361b812a464797c76db6fcc80eb2ff5c9",
+      "target_id": "bdce288a369ce9f0"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/qbr-deck/SKILL.md",
+      "requires": [
+        "1bf48e02bb237599",
+        "590948f299738bc2",
+        "5eaaa350565e6dbe",
+        "619eb2fc53eef6c8"
+      ],
+      "resource_class": "capability",
+      "sha256": "39a5591918b8351abdfd2d2aa2095cc5d4ea45034ab00ecb7e0cee3b4e9d1c56",
+      "target_id": "edbd5a638e23738f"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/relevant-learnings/SKILL.md",
+      "requires": [
+        "4ff6c2e5efe93809",
+        "615b77c804cbcade",
+        "c97d3e9a1744ed58"
+      ],
+      "resource_class": "capability",
+      "sha256": "a1ab70b9d7112c51559efb321aab4a617fca1f198f21fdae2663d2e8eb58978d",
+      "target_id": "cfa7b01162681622"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/retrospective/SKILL.md",
+      "requires": [
+        "590948f299738bc2",
+        "a503925d234b1e92",
+        "cfa7b01162681622",
+        "d0d4278c592ba8a5",
+        "f8718ea8d9fa459d"
+      ],
+      "resource_class": "capability",
+      "sha256": "0f5e494d27b6f086362d46ce28a4e96e6daf1b2a81478b1ebabc697d48d08985",
+      "target_id": "4ff6c2e5efe93809"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/roadmap-item/SKILL.md",
+      "requires": [
+        "1e79c47bbc7e5133",
+        "665ba2207d0d00dc",
+        "d34d532e2bdd13aa"
+      ],
+      "resource_class": "capability",
+      "sha256": "66087f3ef7b2529b06f438542e5e70059b2f32a45ab58b54cbf9d53ed693f908",
+      "target_id": "e8947e3ab16f7321"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/roadmap-theme/SKILL.md",
+      "requires": [
+        "1e79c47bbc7e5133",
+        "6f668b0ab15f0708",
+        "e8947e3ab16f7321"
+      ],
+      "resource_class": "capability",
+      "sha256": "ee4a2c0050a95e9deafefd040ada9ebdf596e8af95e7897b2b877ef735b10c3d",
+      "target_id": "d34d532e2bdd13aa"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/roi-report/SKILL.md",
+      "requires": [
+        "0745ab67fcaebf96",
+        "5eaaa350565e6dbe",
+        "93c046822c573178",
+        "a1bd3d03dbf8c77c",
+        "a231b931602c9da8",
+        "da316773a2a64be1"
+      ],
+      "resource_class": "capability",
+      "sha256": "4363d5da5c4e7179b7516528b02b1aea7174e1a820b8d236a918c130cb4b3c4c",
+      "target_id": "ee8faf424aeef83c"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/saas-health-check/SKILL.md",
+      "requires": [
+        "0d5c64538ea48889",
+        "2d433e750b92e810",
+        "590948f299738bc2",
+        "615b77c804cbcade",
+        "93c046822c573178",
+        "a1bd3d03dbf8c77c",
+        "a503925d234b1e92",
+        "c5320a680e28331d",
+        "c97d3e9a1744ed58",
+        "cfe92e632bda5147",
+        "f8718ea8d9fa459d",
+        "f8edb40217748271",
+        "fe7e20433cfac49c"
+      ],
+      "resource_class": "capability",
+      "sha256": "e73e1b54eec179a3269ab6e693a6d70558b0a7bc538cc75785d9b5ba48220411",
+      "target_id": "0855ef874be8c8b7"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/sales-enablement/SKILL.md",
+      "requires": [
+        "590948f299738bc2",
+        "619eb2fc53eef6c8",
+        "ac630249dbf29d2e",
+        "ff0f3db9b852c492"
+      ],
+      "resource_class": "capability",
+      "sha256": "370c381fb2cbfc3c06efb150e2f44dc70a8689924f73484497f2b031b6a1e2e1",
+      "target_id": "43bf2445cb34ad46"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/scale-check/SKILL.md",
+      "requires": [
+        "c5df55d36e8405be",
+        "d6478aac50f5dee4",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "e1cd2f84f6dbcd5e268f4079d2aef5e88d899d6751551cfe07f452266c02243a",
+      "target_id": "f03cb0a94ea433d7"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/seven-powers/SKILL.md",
+      "requires": [
+        "32d9484d16a27185",
+        "37cdd171f78aeaf8",
+        "6f668b0ab15f0708",
+        "715b93fd3bd8a061",
+        "89365b037b352f70",
+        "93c046822c573178",
+        "9cbc4e30ff125a97",
+        "a503925d234b1e92",
+        "c97d3e9a1744ed58",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "e562acb53d07ac32d4e337c5ba90c6c5d6a771fb6454b56021a729aedcfbe321",
+      "target_id": "a5ec9351021d40a8"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/shape-up/SKILL.md",
+      "requires": [
+        "1e79c47bbc7e5133",
+        "4ff6c2e5efe93809",
+        "665ba2207d0d00dc",
+        "814eccb5cb136474",
+        "8c4bda96df47d776",
+        "a503925d234b1e92",
+        "d6478aac50f5dee4",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "12f92a1831e2204f701d9961f9b2b6167094070c9c4e69324c2350a9b190297e",
+      "target_id": "98ab398452a70545"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/stakeholder-brief/SKILL.md",
+      "requires": [
+        "1bf48e02bb237599",
+        "ac630249dbf29d2e",
+        "edbd5a638e23738f"
+      ],
+      "resource_class": "capability",
+      "sha256": "412bf373fc07ba2e22380ff4511dc5fc1675892b771fd8d7ea5056ff94dd4f8c",
+      "target_id": "619eb2fc53eef6c8"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/stakeholder-map/SKILL.md",
+      "requires": [
+        "53f7fcde1c58c976",
+        "590948f299738bc2",
+        "615b77c804cbcade",
+        "87e0291cbbf4ee34",
+        "a503925d234b1e92",
+        "c97d3e9a1744ed58",
+        "d6478aac50f5dee4"
+      ],
+      "resource_class": "capability",
+      "sha256": "620c9eee6915d61732eac6eda52f9e8fe677cef77328c7e33cca098e9410fed8",
+      "target_id": "e2312cda97970bb7"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/strategic-bet/SKILL.md",
+      "requires": [
+        "47257396f4a6d0cd",
+        "590948f299738bc2",
+        "5eaaa350565e6dbe",
+        "93c046822c573178",
+        "a503925d234b1e92",
+        "c7492ccdf0f4fdd3",
+        "c97d3e9a1744ed58",
+        "d4ddcc49330b42e0"
+      ],
+      "resource_class": "capability",
+      "sha256": "316043c8b4213f4c1755e0457b379053118dfc1c39d7b0f66893311738c44a68",
+      "target_id": "f8edb40217748271"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/strategic-intent/SKILL.md",
+      "requires": [
+        "1bf48e02bb237599",
+        "1e79c47bbc7e5133",
+        "590948f299738bc2",
+        "93c046822c573178"
+      ],
+      "resource_class": "capability",
+      "sha256": "cc8c34669fd761aabe4c0d320703dd02ea488ede4ba9633bb30042350dc9e27a",
+      "target_id": "6f668b0ab15f0708"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/strategy-communication/SKILL.md",
+      "requires": [
+        "590948f299738bc2",
+        "619eb2fc53eef6c8",
+        "979fa12f9ce298fd",
+        "edbd5a638e23738f"
+      ],
+      "resource_class": "capability",
+      "sha256": "a07c5ee6c37cde0f517c8dc36a493c1270773733bd5e4bc4c570db418316db76",
+      "target_id": "1bf48e02bb237599"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/subject-line/SKILL.md",
+      "requires": [
+        "43bf2445cb34ad46",
+        "615b77c804cbcade",
+        "715b93fd3bd8a061",
+        "a503925d234b1e92",
+        "ac630249dbf29d2e",
+        "c97d3e9a1744ed58"
+      ],
+      "resource_class": "capability",
+      "sha256": "2d31fd5599295efef655ae599dcf64ef20ff0845a06664ade081619808135421",
+      "target_id": "9f2aacb173ec9997"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/swot-analysis/SKILL.md",
+      "requires": [
+        "32d9484d16a27185",
+        "6f668b0ab15f0708",
+        "715b93fd3bd8a061",
+        "719701eecc142a46",
+        "8c9681e56c4e0587",
+        "9cbc4e30ff125a97",
+        "a503925d234b1e92",
+        "cde868638c612022",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "60106db5a4ad9edfa9fe03c9d8f3f687534f816eff32d227c37772171d4a4488",
+      "target_id": "37cdd171f78aeaf8"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/theory-of-constraints/SKILL.md",
+      "requires": [
+        "1e79c47bbc7e5133",
+        "2fd3216a47ad99b2",
+        "4ff6c2e5efe93809",
+        "87e0291cbbf4ee34",
+        "a503925d234b1e92",
+        "c97d3e9a1744ed58",
+        "f03cb0a94ea433d7",
+        "f8718ea8d9fa459d"
+      ],
+      "resource_class": "capability",
+      "sha256": "8e14944eb03241ea76d9fe560172b814353942aaa78a84b67e6949b607460b82",
+      "target_id": "58c57e8dc2bfee7a"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/user-story/SKILL.md",
+      "requires": [
+        "665ba2207d0d00dc",
+        "814eccb5cb136474",
+        "e8947e3ab16f7321"
+      ],
+      "resource_class": "capability",
+      "sha256": "8a72278b47c4593fa2074e7b88de24432305cd3aa73ef44005fe1d3ff4791dbc",
+      "target_id": "f87f5956c89395b0"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/value-realization-report/SKILL.md",
+      "requires": [
+        "22a1319bfb75551f",
+        "590948f299738bc2",
+        "f8718ea8d9fa459d",
+        "fe7e20433cfac49c"
+      ],
+      "resource_class": "capability",
+      "sha256": "573127dd0bd724d4c31dddbbf76e0d5bb18da65b0bad547f36bf3658e260465c",
+      "target_id": "a1bd3d03dbf8c77c"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/verification-before-completion/SKILL.md",
+      "requires": [
+        "a70e7b7b0b8e8202",
+        "d6478aac50f5dee4",
+        "e74f83be66703480"
+      ],
+      "resource_class": "capability",
+      "sha256": "fad0aeae8776ffb0f6c5a5dc9cfe8ba6a95dc2051677f6f5a9c88be97639a270",
+      "target_id": "f94cb039f7447edc"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/vision-statement/SKILL.md",
+      "requires": [
+        "1bf48e02bb237599",
+        "1e79c47bbc7e5133",
+        "590948f299738bc2",
+        "6f668b0ab15f0708"
+      ],
+      "resource_class": "capability",
+      "sha256": "19ad8ee6758e73081317baa197db6b343ecfa3fcf775f6470411ca05693a06ba",
+      "target_id": "979fa12f9ce298fd"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/vision-to-value-document-map/SKILL.md",
+      "requires": [
+        "5eaaa350565e6dbe",
+        "665ba2207d0d00dc",
+        "8ef82fef226503cf",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "cd989a494a0bebb79885ce5a7fbca734bd2b1dfc729546c6779c64b53a624696",
+      "target_id": "102d4b76a4c8eb89"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/wardley-map/SKILL.md",
+      "requires": [
+        "32d9484d16a27185",
+        "8c9681e56c4e0587",
+        "9cbc4e30ff125a97",
+        "c62964837d840b03",
+        "c7492ccdf0f4fdd3",
+        "cde868638c612022",
+        "f8edb40217748271"
+      ],
+      "resource_class": "capability",
+      "sha256": "35e44cba3aebb9e2b71a001ca3b3006fa360220d98684a4f6c611b17ca1bb7cf",
+      "target_id": "c13b9d1b15c94d70"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "path": "skills/writing-plans/SKILL.md",
+      "requires": [
+        "77da70865948de4b",
+        "814eccb5cb136474",
+        "a70e7b7b0b8e8202",
+        "f94cb039f7447edc"
+      ],
+      "resource_class": "capability",
+      "sha256": "09a3359c7deb19a64a2f19d0f372ce8b4f5f72de7a4a5de5be85d8fc069ab32a",
+      "target_id": "e74f83be66703480"
+    },
+    {
+      "conveyance": "runtime",
+      "distribution": "public",
+      "optional": [],
+      "path": "tools/allocate-id.py",
+      "requires": [],
+      "resource_class": "tool",
+      "sha256": "5960bba3f88c256b402e5070bc1b3e40484e95e21446a85e135485c61429e1b4",
+      "target_id": "d4ddcc49330b42e0"
+    },
+    {
+      "conveyance": "runtime",
+      "distribution": "public",
+      "optional": [],
+      "path": "tools/build/agent-output-handler.py",
+      "requires": [],
+      "resource_class": "tool",
+      "sha256": "1fcb30c0a2ba4bca40bab6f97e6b894f5bc236dcf95a357e230065edfa0b6e84",
+      "target_id": "90834a317f74da57"
+    },
+    {
+      "conveyance": "runtime",
+      "distribution": "public",
+      "optional": [],
+      "path": "tools/build/setup-skills.py",
+      "requires": [],
+      "resource_class": "tool",
+      "sha256": "ad4e551f641ef548e5c6fd42a72901b42f2bf2de680685de16f5f26a3f13515a",
+      "target_id": "d93c89d91e1e24ac"
+    },
+    {
+      "conveyance": "runtime",
+      "distribution": "public",
+      "optional": [],
+      "path": "tools/hooks/audit-block-validator.py",
+      "requires": [],
+      "resource_class": "tool",
+      "sha256": "a363d56d2c876543d7c8848520e1ec95bb4c02d320582be382d2ca9ab95763b3",
+      "target_id": "deccab7d76df82fc"
+    },
+    {
+      "conveyance": "runtime",
+      "distribution": "public",
+      "optional": [],
+      "path": "tools/hooks/baselines.json",
+      "requires": [],
+      "resource_class": "tool",
+      "sha256": "05caa2e79fb2e225413591bcf20aa1013bf99d3867c49c146de251f992450dce",
+      "target_id": "0745ab67fcaebf96"
+    },
+    {
+      "conveyance": "runtime",
+      "distribution": "public",
+      "optional": [],
+      "path": "tools/hooks/os-tracker.py",
+      "requires": [],
+      "resource_class": "tool",
+      "sha256": "b23d719ca703e7882f40539d3e0fb1f6e6c3f451d29153fc0cd3649d413b7013",
+      "target_id": "8cf6886b24a3198f"
+    },
+    {
+      "conveyance": "runtime",
+      "distribution": "public",
+      "optional": [],
+      "path": "tools/hooks/telemetry-extract.py",
+      "requires": [],
+      "resource_class": "tool",
+      "sha256": "8c7f2561c01800c1ba187f80f4d811cbae4e45abc96c7bf9891e8ed954f5b0c2",
+      "target_id": "3e31ddaab3b54851"
+    }
+  ],
+  "id_scheme": "sha256(target_id)[:16]",
+  "loader": "pbaw-runtime-loader/v6",
+  "overlays": [
+    {
+      "distribution": "public",
+      "optional": [],
+      "overlay_class": "distribution",
+      "path": "CHANGELOG.md",
+      "requires": [
+        "45e0efffc5d67760",
+        "7440407d18fc571a"
+      ],
+      "sha256": "98f5c94ea43e4255dd26a5e80d010fa0fa11cade2ece65bc1d77589bd05ca9f8",
+      "target_id": "46c315ca9ba20697"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "overlay_class": "distribution",
+      "path": "CLAUDE.md",
+      "requires": [
+        "45e0efffc5d67760",
+        "7440407d18fc571a",
+        "8a84e2a5117d3783",
+        "da316773a2a64be1"
+      ],
+      "sha256": "551be88b3f202e78aa25320797e9b1da0159c0d86a46869d60cbf96b74221f7c",
+      "target_id": "96f01a257b382b6d"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "overlay_class": "distribution",
+      "path": "COMPONENT-MANIFEST.md",
+      "requires": [],
+      "sha256": "0f12cfa68b99a2835e9e7a086fe93c601f41a44fca593eab8fbe4f9d7b4bb3ba",
+      "target_id": "25b8cf4085e5a5a3"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "overlay_class": "distribution",
+      "path": "INSTALL-AND-ONBOARD.md",
+      "requires": [
+        "45e0efffc5d67760",
+        "c966bf97285e13aa",
+        "da316773a2a64be1"
+      ],
+      "sha256": "d32b3af83ebbbe38fa039a5785f50ce1c32ecb885362e6961fcd2fe0fe6889c5",
+      "target_id": "7440407d18fc571a"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "overlay_class": "distribution",
+      "path": "LICENSE",
+      "requires": [],
+      "sha256": "4b0a254fe1b609cefc2aa10bc2fdb27b9b05f9a81e45a8663e84b58865c5e59c",
+      "target_id": "9c4cac51f32882a6"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "overlay_class": "distribution",
+      "path": "NOTICE",
+      "requires": [],
+      "sha256": "d68c84d8e3bbf32a0814ca0585d6e3d4c21122c418f7578943715c29c8bc26db",
+      "target_id": "30171b1c253c399b"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "overlay_class": "distribution",
+      "path": "README.md",
+      "requires": [
+        "25b8cf4085e5a5a3",
+        "30171b1c253c399b",
+        "45e0efffc5d67760",
+        "46c315ca9ba20697",
+        "7440407d18fc571a",
+        "8c05c838a92a4b3f",
+        "9c4cac51f32882a6"
+      ],
+      "sha256": "7af195f48c1124cab813e2177e777bfed6d11713d325dcd7c9756e8bc19649dd",
+      "target_id": "85236e77cb0a089d"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "overlay_class": "distribution",
+      "path": "VERSION",
+      "requires": [],
+      "sha256": "143d44a26fb0a34265b64a4b268daa11cd45a7200d8c4b23b844cc3028cff6db",
+      "target_id": "4052f8891f0a0b36"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "overlay_class": "distribution",
+      "path": "agent-guide.md",
+      "requires": [
+        "25b8cf4085e5a5a3",
+        "7440407d18fc571a",
+        "8a84e2a5117d3783",
+        "9a27fb97dd31e6c8",
+        "da316773a2a64be1"
+      ],
+      "sha256": "15613dcb791cf1bc1e23ac9c6b4ec7ebc5bb09b061ded7135e788d744d2c6677",
+      "target_id": "45e0efffc5d67760"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "overlay_class": "distribution",
+      "path": "brand-assets/product-org-os-icon.png",
+      "requires": [],
+      "sha256": "d319a17aed876b639003108ba033e0020e1f901acb36ecb3918b4aac3b8c1b9a",
+      "target_id": "eb303b021e2f9b0b"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "overlay_class": "distribution",
+      "path": "brand-assets/product-org-os-logo.svg",
+      "requires": [],
+      "sha256": "10c221a113ead66454f82e20d306c5668cf98847d7989171968b8253e8ef6740",
+      "target_id": "f0bad7dfe95b5994"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "overlay_class": "distribution",
+      "path": "brand-assets/productbeacon-icon.png",
+      "requires": [],
+      "sha256": "563a7338d2e89f6d512a555ff56037af1430af3a1952680a5d5193b8e418d217",
+      "target_id": "da52cd42a72e5f0f"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "overlay_class": "distribution",
+      "path": "brand-assets/productbeacon-logo.svg",
+      "requires": [],
+      "sha256": "21e35f068eaa233cbd4a11cc4170512b1668dd704b39872d8c08243e1c2ab86c",
+      "target_id": "6570873aae9f3281"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "overlay_class": "harness",
+      "path": "harness/audit/SKILL.md",
+      "requires": [
+        "7a1f28f03e73a717",
+        "da316773a2a64be1",
+        "e740774990b8f623"
+      ],
+      "sha256": "54ab439d8a9203539578cd4d44b18d154859e96008bca844ef1f01e6f996a836",
+      "target_id": "836dbcdef1385aa8"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "overlay_class": "harness",
+      "path": "harness/context-harvest/SKILL.md",
+      "requires": [
+        "252b2f687e3d4644",
+        "8cf6886b24a3198f",
+        "d4ddcc49330b42e0",
+        "da316773a2a64be1",
+        "f549fd8fb68d916f",
+        "f8c72cc291b2ffb4"
+      ],
+      "sha256": "57f47718984acd7494435f9bd8c986acd5810558abfe3a7669ff74885bdb6939",
+      "target_id": "f6dbc75b16cfe580"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "overlay_class": "harness",
+      "path": "harness/pbaw/SKILL.md",
+      "requires": [
+        "252b2f687e3d4644",
+        "7a1f28f03e73a717",
+        "8a84e2a5117d3783",
+        "8cf6886b24a3198f",
+        "9a27fb97dd31e6c8",
+        "da316773a2a64be1",
+        "deccab7d76df82fc"
+      ],
+      "sha256": "56ae8ebaff59127eef7d65dac7afb7b3575a2e67d20f681abd320af551be41c3",
+      "target_id": "e9a700194e5d4315"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "overlay_class": "harness",
+      "path": "harness/pbaw/spawn-template.md",
+      "requires": [
+        "0860c6a47764f3c7",
+        "a231b931602c9da8",
+        "d93c89d91e1e24ac",
+        "da316773a2a64be1",
+        "deccab7d76df82fc"
+      ],
+      "sha256": "375d267536d803434c12c788170526978979a7a5bfa23947a17d24f10e7a7cd4",
+      "target_id": "9a27fb97dd31e6c8"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "overlay_class": "harness",
+      "path": "harness/plan/SKILL.md",
+      "requires": [
+        "605966afb1b1cc06",
+        "da316773a2a64be1",
+        "f549fd8fb68d916f"
+      ],
+      "sha256": "f8a6bb3e752e8751980048b750afd2c486f3558aecaabf5b98649c0daa51edb4",
+      "target_id": "3c1fed783211db3b"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "overlay_class": "distribution",
+      "path": "index.html",
+      "requires": [],
+      "sha256": "028533f626b84afbc47630e14d5496d7b0e358ff7a6185525419ac10429baee9",
+      "target_id": "4f775d78ace59f61"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "overlay_class": "distribution",
+      "path": "install.py",
+      "requires": [],
+      "sha256": "98fbc47e631532347344685b1febbda90e5bad3015fad84b0a307ecef577b255",
+      "target_id": "c966bf97285e13aa"
+    },
+    {
+      "distribution": "public",
+      "optional": [],
+      "overlay_class": "distribution",
+      "path": "whats-new-v6.html",
+      "requires": [],
+      "sha256": "5ade9238f55062c874a9e5730b49332cd3bad9729e2c10ed566fb9cfae501469",
+      "target_id": "8c05c838a92a4b3f"
+    }
+  ],
+  "package": "public",
+  "schema": "pbaw-runtime-manifest/v1"
+}

@@ -1,0 +1,215 @@
+openapi: 3.1.0
+info:
+  title: Vision to Value Standard Conformance Reporter API
+  version: 1.1.0
+  description: |
+    POST /v2v/conformance/charter-escalation — single-write endpoint by which a
+    deployer-side Conformance Reporter emits a Charter-level escalation event into
+    the Vision to Value Standard's escalation surface. The endpoint records process;
+    it does not certify a Charter as compliant or grade conformance level.
+  contact:
+    name: Product Org OS
+    url: https://yohayetsion.github.io/product-org-os
+servers:
+  - url: https://reporter.example.com
+    description: Deployer-hosted reporter (URL configured per deployment)
+paths:
+  /v2v/conformance/charter-escalation:
+    post:
+      summary: Emit a Charter-level escalation event
+      operationId: postCharterEscalation
+      security:
+        - bearerAuth: ["conformance:write"]
+      parameters:
+        - name: Idempotency-Key
+          in: header
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CharterEscalationRequest"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharterEscalationResponse"
+        "400":
+          $ref: "#/components/responses/ErrorResponse"
+        "401":
+          $ref: "#/components/responses/ErrorResponse"
+        "403":
+          $ref: "#/components/responses/ErrorResponse"
+        "409":
+          $ref: "#/components/responses/ErrorResponse"
+        "422":
+          $ref: "#/components/responses/ErrorResponse"
+        "429":
+          description: Rate limit exceeded
+          headers:
+            Retry-After:
+              schema:
+                type: integer
+                description: Seconds until next refill
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorEnvelope"
+        "500":
+          $ref: "#/components/responses/ErrorResponse"
+        "502":
+          $ref: "#/components/responses/ErrorResponse"
+        "503":
+          $ref: "#/components/responses/ErrorResponse"
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    CharterEscalationRequest:
+      type: object
+      additionalProperties: false
+      required:
+        - schema_version
+        - charter_id
+        - escalation_type
+        - evidence_window
+        - evidence_metric
+        - evidence_threshold
+        - escalation_timestamp
+        - accountable_owner_ref
+      properties:
+        schema_version:
+          type: string
+          const: "v1.0"
+        charter_id:
+          type: string
+          pattern: "^[a-z0-9][a-z0-9-]{2,127}$"
+        escalation_type:
+          type: string
+          enum:
+            - layer_1_soft_flag_rate_breach
+            - layer_1_hard_flag_record
+            - layer_2_audit_hook_breach
+            - layer_3_peer_review_demotion
+            - layer_4_attestation_refusal
+            - charter_escalation_rule_invoked
+            - disclosure_review_cadence_overdue
+            - schedule_of_records_exception
+            - peer_reviewer_pool_underflow
+        evidence_window:
+          type: object
+          additionalProperties: false
+          required: [start, end]
+          properties:
+            start: {type: string, format: date-time}
+            end: {type: string, format: date-time}
+        evidence_metric:
+          type: string
+          enum:
+            - charter_state_is_fields_completed
+            - mode_declaration_populated
+            - schedule_of_records_committed
+            - record_location_resolvable
+            - accountable_owner_named
+            - re_decision_triggers_minimum_met
+            - every_record_carries_mode_declaration
+            - every_mode_2_record_has_disclosure_block
+            - every_mode_1_edge_case_record_has_disclosure_block
+            - disclosure_block_required_fields_populated
+            - no_silent_mode_drift_in_sample
+            - re_decision_triggers_firing_on_schedule
+            - escalation_rule_records_present_when_invoked
+            - disclosure_review_cadence_current
+            - schedule_of_records_queryable
+            - conformance_level_reporter_output_recent
+            - every_affirmed_record_carries_affirmation_event
+            - every_affirmed_record_carries_seal_hash
+            - no_passive_promotion_to_affirmed_in_sample
+            - superseded_records_retained_in_full
+            - every_redaction_event_carries_operational_store_deletion_attestation
+            - every_mode_2_record_carries_drafting_authority
+            - altitude_to_consent_posture_binding_enforced
+        evidence_threshold:
+          type: object
+          additionalProperties: false
+          required: [operator, value, observed]
+          properties:
+            operator:
+              type: string
+              enum: [gt, gte, lt, lte, eq, neq]
+            value:
+              oneOf:
+                - {type: number}
+                - {type: string}
+                - {type: boolean}
+            observed:
+              oneOf:
+                - {type: number}
+                - {type: string}
+                - {type: boolean}
+            unit: {type: string}
+        escalation_timestamp:
+          type: string
+          format: date-time
+        accountable_owner_ref:
+          type: string
+        narrative:
+          type: string
+          maxLength: 2000
+        linked_record_ids:
+          type: array
+          items: {type: string}
+          maxItems: 200
+        classifier_metadata:
+          type: object
+          additionalProperties: false
+          properties:
+            classifier_version: {type: string}
+            corpus_version: {type: string}
+            confidence:
+              type: number
+              minimum: 0
+              maximum: 1
+      allOf:
+        - if:
+            properties:
+              escalation_type: {pattern: "^layer_1_"}
+          then:
+            required: [classifier_metadata]
+    CharterEscalationResponse:
+      type: object
+      required: [escalation_id, charter_id, accepted_at, received_signals, schema_version]
+      properties:
+        escalation_id: {type: string}
+        charter_id: {type: string}
+        accepted_at: {type: string, format: date-time}
+        received_signals:
+          type: array
+          items: {type: string}
+        schema_version: {type: string, const: "v1.0"}
+    ErrorEnvelope:
+      type: object
+      required: [error_code, error_message, trace_id, schema_version]
+      properties:
+        error_code: {type: string}
+        error_message: {type: string}
+        error_field: {type: ["string", "null"]}
+        retry_after: {type: ["integer", "null"]}
+        trace_id: {type: string}
+        schema_version: {type: string, const: "v1.0"}
+  responses:
+    ErrorResponse:
+      description: Error
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorEnvelope"
